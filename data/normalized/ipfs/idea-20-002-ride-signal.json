@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-20-002-ride-signal",
+  "slug": "ride-signal",
+  "title": "RideSignal",
+  "tagline": "Decentralized ride-sharing with portable driver/rider reputation across any platform.",
+  "category": "Travel & Transportation",
+  "description": "Decentralized ride-sharing with portable driver/rider reputation across any platform.",
+  "comparable": "Uber, Lyft — but portable",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "travel-transportation",
+    "uber",
+    "lyft-but-portable"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-ride-signal/README.md"
+}

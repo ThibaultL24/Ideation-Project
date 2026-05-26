@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-007-cofounder-match",
+  "slug": "cofounder-match",
+  "title": "CofounderMatch",
+  "tagline": "Co-founder matching using reputation triples",
+  "category": "Marketplaces & Discovery",
+  "description": "Co-founder matching using reputation triples. Past collaborators stake on skills, work ethic, and collaboration style.",
+  "comparable": "YC Co-Founder Matching",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "yc-co-founder-matching"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-cofounder-match/README.md"
+}

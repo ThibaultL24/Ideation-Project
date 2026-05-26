@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-20-010-travel-insurance-rank",
+  "slug": "travel-insurance-rank",
+  "title": "TravelInsuranceRank",
+  "tagline": "Travel insurance company ratings",
+  "category": "Travel & Transportation",
+  "description": "Travel insurance company ratings. Travelers stake on claim processing fairness and coverage honesty. (Novel) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "travel-transportation"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-travel-insurance-rank/README.md"
+}

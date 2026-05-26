@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-11-006-pre-print-rank",
+  "slug": "pre-print-rank",
+  "title": "PrePrintRank",
+  "tagline": "Pre-print quality curation",
+  "category": "Science & Academia",
+  "description": "Pre-print quality curation. Researchers stake on pre-print significance before formal publication. Early identification of important work earns returns.",
+  "comparable": "arXiv, but curated",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "science-academia",
+    "arxiv",
+    "but-curated"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-pre-print-rank/README.md"
+}

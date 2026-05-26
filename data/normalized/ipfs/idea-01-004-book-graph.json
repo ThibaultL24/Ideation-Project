@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-004-book-graph",
+  "slug": "book-graph",
+  "title": "BookGraph",
+  "tagline": "Book ratings where readers stake on writing quality, accuracy, and genre fit",
+  "category": "Reviews & Ratings",
+  "description": "Book ratings where readers stake on writing quality, accuracy, and genre fit. Literary curators who identify great books early earn returns.",
+  "comparable": "Goodreads, StoryGraph",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "goodreads",
+    "storygraph"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-book-graph/README.md"
+}

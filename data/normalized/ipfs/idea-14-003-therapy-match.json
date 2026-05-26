@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-14-003-therapy-match",
+  "slug": "therapy-match",
+  "title": "TherapyMatch",
+  "tagline": "Mental health provider matching using stake-weighted specialty and outcome claims",
+  "category": "Healthcare & Wellness",
+  "description": "Mental health provider matching using stake-weighted specialty and outcome claims. Trust signals for the field where fit is everything.",
+  "comparable": "BetterHelp",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "healthcare-wellness",
+    "betterhelp"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-therapy-match/README.md"
+}

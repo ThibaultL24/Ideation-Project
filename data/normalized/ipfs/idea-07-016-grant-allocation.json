@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-07-016-grant-allocation",
+  "slug": "grant-allocation",
+  "title": "GrantAllocation",
+  "tagline": "Retroactive public goods funding with reputationweighted impact evaluation.",
+  "category": "Finance, DeFi & Insurance",
+  "description": "Retroactive public goods funding with reputationweighted impact evaluation.",
+  "comparable": "Optimism RPGF, Gitcoin",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "finance-defi-insurance",
+    "optimism-rpgf",
+    "gitcoin"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-grant-allocation/README.md"
+}

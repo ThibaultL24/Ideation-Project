@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-018-artist-collective",
+  "slug": "artist-collective",
+  "title": "ArtistCollective",
+  "tagline": "Artist community where artists stake on each other's skill and collaboration reliability",
+  "category": "Social Networks & Community",
+  "description": "Artist community where artists stake on each other's skill and collaboration reliability. Meritocratic creative communities.",
+  "comparable": "Behance, DeviantArt",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community",
+    "behance",
+    "deviantart"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-artist-collective/README.md"
+}

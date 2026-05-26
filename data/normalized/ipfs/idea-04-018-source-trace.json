@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-018-source-trace",
+  "slug": "source-trace",
+  "title": "SourceTrace",
+  "tagline": "AI training data provenance tracker",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "AI training data provenance tracker. Creators stake on claims about their work being used in training. Enables attribution and compensation.",
+  "comparable": "Spawning.ai",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence",
+    "spawning-ai"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-source-trace/README.md"
+}

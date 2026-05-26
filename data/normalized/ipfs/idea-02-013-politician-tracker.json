@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-013-politician-tracker",
+  "slug": "politician-tracker",
+  "title": "PoliticianTracker",
+  "tagline": "Elected official promise-keeping tracker",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Elected official promise-keeping tracker. Citizens stake on campaign promise delivery claims. Real-time accountability.",
+  "comparable": "PolitiFact, but staked",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "politifact",
+    "but-staked"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-politician-tracker/README.md"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-14-014-dentist-graph",
+  "slug": "dentist-graph",
+  "title": "DentistGraph",
+  "tagline": "Dental provider ratings with stake-weighted treatment honesty and pricing transparency claims",
+  "category": "Healthcare & Wellness",
+  "description": "Dental provider ratings with stake-weighted treatment honesty and pricing transparency claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "healthcare-wellness"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-dentist-graph/README.md"
+}

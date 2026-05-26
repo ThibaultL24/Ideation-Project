@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-020-contractor-passport",
+  "slug": "contractor-passport",
+  "title": "ContractorPassport",
+  "tagline": "Trade worker portable credential/reputation bundle combining safety certs, skill attestations, and client reviews",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Trade worker portable credential/reputation bundle combining safety certs, skill attestations, and client reviews. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-contractor-passport/README.md"
+}

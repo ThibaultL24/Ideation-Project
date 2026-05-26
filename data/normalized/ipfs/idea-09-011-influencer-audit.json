@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-011-influencer-audit",
+  "slug": "influencer-audit",
+  "title": "InfluencerAudit",
+  "tagline": "Influencer authenticity verification",
+  "category": "Safety, Security & Protection",
+  "description": "Influencer authenticity verification. Stake on follower legitimacy and sponsorship disclosure claims.",
+  "comparable": "HypeAuditor",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection",
+    "hypeauditor"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-influencer-audit/README.md"
+}

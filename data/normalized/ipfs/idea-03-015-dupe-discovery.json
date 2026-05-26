@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-015-dupe-discovery",
+  "slug": "dupe-discovery",
+  "title": "DupeDiscovery",
+  "tagline": "Product dupe (affordable alternative) curation",
+  "category": "Marketplaces & Discovery",
+  "description": "Product dupe (affordable alternative) curation. Users stake on whether budget alternatives match premium originals.",
+  "comparable": "Build on Intuition: 300+ dApp Ideas Reddit dupe threads, TikTok",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "build-on-intuition-300-dapp-ideas-reddit-dupe-threads",
+    "tiktok"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-dupe-discovery/README.md"
+}

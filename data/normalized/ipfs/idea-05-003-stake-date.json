@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-003-stake-date",
+  "slug": "stake-date",
+  "title": "StakeDate",
+  "tagline": "Dating platform with knowledge graph identity verification and stake-weighted vouches from friends",
+  "category": "Social Networks & Community",
+  "description": "Dating platform with knowledge graph identity verification and stake-weighted vouches from friends. Catfishing becomes economically irrational.",
+  "comparable": "Hinge, Bumble",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community",
+    "hinge",
+    "bumble"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-stake-date/README.md"
+}

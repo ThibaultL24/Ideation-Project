@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-25-002-host-graph",
+  "slug": "host-graph",
+  "title": "HostGraph",
+  "tagline": "Web hosting provider ratings",
+  "category": "Telecom & Internet",
+  "description": "Web hosting provider ratings. Developers stake on uptime, support quality, and scaling honesty claims.",
+  "comparable": "hosting review sites",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "telecom-internet",
+    "hosting-review-sites"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-host-graph/README.md"
+}

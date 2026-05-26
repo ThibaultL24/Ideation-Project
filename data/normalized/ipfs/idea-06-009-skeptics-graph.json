@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-009-skeptics-graph",
+  "slug": "skeptics-graph",
+  "title": "SkepticsGraph",
+  "tagline": "Claims-vs-evidence platform",
+  "category": "Knowledge, Research & Information",
+  "description": "Claims-vs-evidence platform. Proponents and skeptics stake on evidence quality for contested claims. Visible, financially-weighted evidence landscape. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-skeptics-graph/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-014-dealer-check",
+  "slug": "dealer-check",
+  "title": "DealerCheck",
+  "tagline": "Car dealership reviews",
+  "category": "Reviews & Ratings",
+  "description": "Car dealership reviews. Buyers stake on pricing transparency, trade-in fairness, and post-sale service.",
+  "comparable": "DealerRater, Cars.com",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "dealerrater",
+    "cars-com"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-dealer-check/README.md"
+}

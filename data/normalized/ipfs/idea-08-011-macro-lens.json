@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-08-011-macro-lens",
+  "slug": "macro-lens",
+  "title": "MacroLens",
+  "tagline": "Macroeconomic signal market",
+  "category": "Prediction & Signal Markets",
+  "description": "Macroeconomic signal market. Economists stake on indicator predictions. Reputation built through accuracy, not affiliation. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "prediction-signal-markets"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-macro-lens/README.md"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-020-streaming-value",
+  "slug": "streaming-value",
+  "title": "StreamingValue",
+  "tagline": "Streaming service value ratings",
+  "category": "Reviews & Ratings",
+  "description": "Streaming service value ratings. Subscribers stake on content library quality and price-to-value ratio.",
+  "comparable": "JustWatch",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "justwatch"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-streaming-value/README.md"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-08-003-ship-or-vapor",
+  "slug": "ship-or-vapor",
+  "title": "ShipOrVapor",
+  "tagline": "Product launch predictions for tech/crypto",
+  "category": "Prediction & Signal Markets",
+  "description": "Product launch predictions for tech/crypto. Stake on whether teams will deliver on roadmap promises. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "prediction-signal-markets"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-ship-or-vapor/README.md"
+}

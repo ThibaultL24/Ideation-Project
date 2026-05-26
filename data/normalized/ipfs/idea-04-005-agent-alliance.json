@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-005-agent-alliance",
+  "slug": "agent-alliance",
+  "title": "AgentAlliance",
+  "tagline": "Multi-agent coordination protocol",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "Multi-agent coordination protocol. Agents check each other's reputation triples before collaborating. Self-organizing swarms with accountability. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-agent-alliance/README.md"
+}

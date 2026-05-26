@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-20-009-rental-car-trust",
+  "slug": "rental-car-trust",
+  "title": "RentalCarTrust",
+  "tagline": "Rental car company ratings",
+  "category": "Travel & Transportation",
+  "description": "Rental car company ratings. Renters stake on hidden fee transparency and vehicle condition claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "travel-transportation"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-rental-car-trust/README.md"
+}

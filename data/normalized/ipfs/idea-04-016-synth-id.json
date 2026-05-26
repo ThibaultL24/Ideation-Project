@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-016-synth-id",
+  "slug": "synth-id",
+  "title": "SynthID",
+  "tagline": "Synthetic identity detection",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "Synthetic identity detection. Investigators stake on whether online identities are AI sockpuppets. (Like: Bot Sentinel, but broader) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-synth-id/README.md"
+}

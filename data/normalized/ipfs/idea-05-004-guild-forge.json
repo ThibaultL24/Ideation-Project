@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-004-guild-forge",
+  "slug": "guild-forge",
+  "title": "GuildForge",
+  "tagline": "DAO and guild creation toolkit using knowledge graph for member reputation, role assignment, and governance.",
+  "category": "Social Networks & Community",
+  "description": "DAO and guild creation toolkit using knowledge graph for member reputation, role assignment, and governance.",
+  "comparable": "Coordinape, Guild.xyz",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community",
+    "coordinape",
+    "guild-xyz"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-guild-forge/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-002-fact-check",
+  "slug": "fact-check",
+  "title": "FactCheck",
+  "tagline": "Real-time fact-checking where journalists and citizens stake on claim veracity",
+  "category": "Knowledge, Research & Information",
+  "description": "Real-time fact-checking where journalists and citizens stake on claim veracity. Financially-backed debunking.",
+  "comparable": "Snopes, PolitiFact",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information",
+    "snopes",
+    "politifact"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-fact-check/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-014-content-creator-id",
+  "slug": "content-creator-id",
+  "title": "ContentCreatorID",
+  "tagline": "Cross-platform creator reputation across YouTube, Twitch, TikTok",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Cross-platform creator reputation across YouTube, Twitch, TikTok. Stake-weighted quality and authenticity claims.",
+  "comparable": "YouTube subscribers, but portable",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "youtube-subscribers",
+    "but-portable"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-content-creator-id/README.md"
+}

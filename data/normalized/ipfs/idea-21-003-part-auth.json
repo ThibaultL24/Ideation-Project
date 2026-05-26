@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-21-003-part-auth",
+  "slug": "part-auth",
+  "title": "PartAuth",
+  "tagline": "Auto and industrial parts authenticity verification",
+  "category": "Supply Chain & Commerce",
+  "description": "Auto and industrial parts authenticity verification. Mechanics and buyers stake on genuine-vs-counterfeit claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "supply-chain-commerce"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-part-auth/README.md"
+}

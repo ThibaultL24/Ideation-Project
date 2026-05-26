@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-008-data-curate",
+  "slug": "data-curate",
+  "title": "DataCurate",
+  "tagline": "Training data quality marketplace",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "Training data quality marketplace. Data labelers stake on dataset quality claims. Bad data becomes expensive to promote.",
+  "comparable": "Scale AI, but decentralized",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence",
+    "scale-ai",
+    "but-decentralized"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-data-curate/README.md"
+}

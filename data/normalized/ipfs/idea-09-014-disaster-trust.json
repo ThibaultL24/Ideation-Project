@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-014-disaster-trust",
+  "slug": "disaster-trust",
+  "title": "DisasterTrust",
+  "tagline": "Disaster relief charity verification",
+  "category": "Safety, Security & Protection",
+  "description": "Disaster relief charity verification. On-the-ground volunteers stake on delivery claims. Real-time aid effectiveness.",
+  "comparable": "GiveWell",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection",
+    "givewell"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-disaster-trust/README.md"
+}

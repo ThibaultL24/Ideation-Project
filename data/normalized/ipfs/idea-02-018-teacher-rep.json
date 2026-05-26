@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-018-teacher-rep",
+  "slug": "teacher-rep",
+  "title": "TeacherRep",
+  "tagline": "Educator reputation across schools and platforms",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Educator reputation across schools and platforms. Students and parents stake on teaching effectiveness claims.",
+  "comparable": "Build on Intuition: 300+ dApp Ideas RateMyProfessors, but staked",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "build-on-intuition-300-dapp-ideas-ratemyprofessors",
+    "but-staked"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-teacher-rep/README.md"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-011-ragtrust",
+  "slug": "ragtrust",
+  "title": "RAGTrust",
+  "tagline": "RAG source quality layer",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "RAG source quality layer. Trustworthiness of retrieval sources scored by community stake. AI systems prefer high-trust sources. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-ragtrust/README.md"
+}

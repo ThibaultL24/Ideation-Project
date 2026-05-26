@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-13-015-fantasy-league",
+  "slug": "fantasy-league",
+  "title": "FantasyLeague",
+  "tagline": "Decentralized fantasy sports with stake-weighted player performance predictions",
+  "category": "Gaming & Esports",
+  "description": "Decentralized fantasy sports with stake-weighted player performance predictions. (Like: DraftKings) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "gaming-esports"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-fantasy-league/README.md"
+}

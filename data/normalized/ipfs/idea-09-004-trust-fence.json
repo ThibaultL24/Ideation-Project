@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-004-trust-fence",
+  "slug": "trust-fence",
+  "title": "TrustFence",
+  "tagline": "Cross-platform content moderation layer",
+  "category": "Safety, Security & Protection",
+  "description": "Cross-platform content moderation layer. Claims about content are staked by community moderators. Any platform can query.",
+  "comparable": "Community Notes",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection",
+    "community-notes"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-trust-fence/README.md"
+}

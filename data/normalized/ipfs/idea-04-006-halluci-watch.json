@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-006-halluci-watch",
+  "slug": "halluci-watch",
+  "title": "HalluciWatch",
+  "tagline": "AI hallucination detection",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "AI hallucination detection. Users stake on AI output accuracy claims. Creates a real-time truth layer and training data for better models. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-halluci-watch/README.md"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-08-013-talent-futures",
+  "slug": "talent-futures",
+  "title": "TalentFutures",
+  "tagline": "Career trajectory predictions",
+  "category": "Prediction & Signal Markets",
+  "description": "Career trajectory predictions. Mentors stake on professional development claims. \"Talent futures\" market. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "prediction-signal-markets"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-talent-futures/README.md"
+}

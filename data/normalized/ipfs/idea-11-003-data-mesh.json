@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-11-003-data-mesh",
+  "slug": "data-mesh",
+  "title": "DataMesh",
+  "tagline": "Scientific dataset quality and citation platform",
+  "category": "Science & Academia",
+  "description": "Scientific dataset quality and citation platform. Dataset creators' contributions are staked triples. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "science-academia"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-data-mesh/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-027-childcare-graph",
+  "slug": "childcare-graph",
+  "title": "ChildcareGraph",
+  "tagline": "Daycare and childcare ratings where parents stake on safety, staff quality, and curriculum claims",
+  "category": "Reviews & Ratings",
+  "description": "Daycare and childcare ratings where parents stake on safety, staff quality, and curriculum claims. Highest-stakes decision deserves highest-stakes reviews.",
+  "comparable": "Care.com, Winnie",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "care-com",
+    "winnie"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-childcare-graph/README.md"
+}

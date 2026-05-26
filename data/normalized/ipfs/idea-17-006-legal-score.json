@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-17-006-legal-score",
+  "slug": "legal-score",
+  "title": "LegalScore",
+  "tagline": "Attorney ratings with stake-weighted responsiveness, competence, and billing fairness claims",
+  "category": "Professional Services & HR",
+  "description": "Attorney ratings with stake-weighted responsiveness, competence, and billing fairness claims. (Like: Avvo) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "professional-services-hr"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-legal-score/README.md"
+}

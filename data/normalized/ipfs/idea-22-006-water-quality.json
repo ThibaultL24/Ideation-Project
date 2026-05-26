@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-22-006-water-quality",
+  "slug": "water-quality",
+  "title": "WaterQuality",
+  "tagline": "Water quality monitoring",
+  "category": "Environment & Sustainability",
+  "description": "Water quality monitoring. Residents and scientists stake on contamination and treatment claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "environment-sustainability"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-water-quality/README.md"
+}

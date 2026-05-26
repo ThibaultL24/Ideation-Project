@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-014-podcast-discovery",
+  "slug": "podcast-discovery",
+  "title": "PodcastDiscovery",
+  "tagline": "Podcast recommendation engine",
+  "category": "Marketplaces & Discovery",
+  "description": "Podcast recommendation engine. Genre curators compete to surface the best shows via stake.",
+  "comparable": "Podchaser, podcast newsletters",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "podchaser",
+    "podcast-newsletters"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-podcast-discovery/README.md"
+}

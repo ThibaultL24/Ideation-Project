@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-016-aitool-review",
+  "slug": "aitool-review",
+  "title": "AIToolReview",
+  "tagline": "AI tool and LLM wrapper reviews",
+  "category": "Reviews & Ratings",
+  "description": "AI tool and LLM wrapper reviews. Users stake on output quality, hallucination frequency, and data privacy claims.",
+  "comparable": "There's An AI For That",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "there-s-an-ai-for-that"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-aitool-review/README.md"
+}

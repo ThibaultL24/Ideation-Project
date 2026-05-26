@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-009-investment-scout",
+  "slug": "investment-scout",
+  "title": "InvestmentScout",
+  "tagline": "Startup and investment opportunity discovery",
+  "category": "Marketplaces & Discovery",
+  "description": "Startup and investment opportunity discovery. Investors stake on team quality and traction claims. Crowdsourced dealflow intelligence.",
+  "comparable": "AngelList, PitchBook",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "angellist",
+    "pitchbook"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-investment-scout/README.md"
+}

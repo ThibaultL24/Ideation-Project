@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-022-vpnverify",
+  "slug": "vpnverify",
+  "title": "VPNVerify",
+  "tagline": "VPN security ratings",
+  "category": "Reviews & Ratings",
+  "description": "VPN security ratings. Researchers stake on no-log compliance and leak protection claims. Eliminates affiliate-conflicted review sites.",
+  "comparable": "VPN review blogs",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "vpn-review-blogs"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-vpnverify/README.md"
+}

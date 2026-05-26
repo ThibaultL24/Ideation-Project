@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-011-album-stake",
+  "slug": "album-stake",
+  "title": "AlbumStake",
+  "tagline": "Music album ratings with stake-backed production quality and innovation claims",
+  "category": "Reviews & Ratings",
+  "description": "Music album ratings with stake-backed production quality and innovation claims. Financially-weighted alternative to Pitchfork scores.",
+  "comparable": "Pitchfork, RateYourMusic",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "pitchfork",
+    "rateyourmusic"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-album-stake/README.md"
+}

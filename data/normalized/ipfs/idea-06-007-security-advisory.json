@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-007-security-advisory",
+  "slug": "security-advisory",
+  "title": "SecurityAdvisory",
+  "tagline": "Cybersecurity vulnerability curation",
+  "category": "Knowledge, Research & Information",
+  "description": "Cybersecurity vulnerability curation. Researchers stake on severity and exploitability claims. Faster than CVE databases.",
+  "comparable": "CVE, NVD",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information",
+    "cve",
+    "nvd"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-security-advisory/README.md"
+}

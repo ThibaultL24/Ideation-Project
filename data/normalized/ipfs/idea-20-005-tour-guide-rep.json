@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-20-005-tour-guide-rep",
+  "slug": "tour-guide-rep",
+  "title": "TourGuideRep",
+  "tagline": "Tour guide and experience provider ratings",
+  "category": "Travel & Transportation",
+  "description": "Tour guide and experience provider ratings. Travelers stake on knowledge depth, engagement, and value claims.",
+  "comparable": "Viator reviews",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "travel-transportation",
+    "viator-reviews"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-tour-guide-rep/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-004-news-credibility",
+  "slug": "news-credibility",
+  "title": "NewsCredibility",
+  "tagline": "News source and article credibility scoring",
+  "category": "Knowledge, Research & Information",
+  "description": "News source and article credibility scoring. Journalists stake on accuracy, bias, and sourcing quality claims.",
+  "comparable": "NewsGuard, AllSides",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information",
+    "newsguard",
+    "allsides"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-news-credibility/README.md"
+}

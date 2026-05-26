@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-25-001-carrier-rank",
+  "slug": "carrier-rank",
+  "title": "CarrierRank",
+  "tagline": "Mobile carrier ratings",
+  "category": "Telecom & Internet",
+  "description": "Mobile carrier ratings. Subscribers stake on coverage accuracy, throttling honesty, and plan value claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "telecom-internet"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-carrier-rank/README.md"
+}

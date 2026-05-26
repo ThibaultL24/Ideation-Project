@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-012-driver-trust",
+  "slug": "driver-trust",
+  "title": "DriverTrust",
+  "tagline": "Rideshare driver reputation portable across Uber, Lyft, DoorDash",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Rideshare driver reputation portable across Uber, Lyft, DoorDash. Drivers own their reputation instead of being platform-locked.",
+  "comparable": "Uber ratings, but portable",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "uber-ratings",
+    "but-portable"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-driver-trust/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-019-pandemic-graph",
+  "slug": "pandemic-graph",
+  "title": "PandemicGraph",
+  "tagline": "Epidemic knowledge graph",
+  "category": "Knowledge, Research & Information",
+  "description": "Epidemic knowledge graph. Epidemiologists stake on transmission, treatment, and prevention claims during health emergencies.",
+  "comparable": "WHO, CDC",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information",
+    "who",
+    "cdc"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-pandemic-graph/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-10-001-provenance-chain",
+  "slug": "provenance-chain",
+  "title": "ProvenanceChain",
+  "tagline": "Art authenticity and provenance verification",
+  "category": "Creative Arts & Culture",
+  "description": "Art authenticity and provenance verification. Experts stake on origin and ownership claims. Forgeries become economically attackable.",
+  "comparable": "Artnet, certificates of authenticity",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "creative-arts-culture",
+    "artnet",
+    "certificates-of-authenticity"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-provenance-chain/README.md"
+}

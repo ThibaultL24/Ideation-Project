@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-14-005-hospital-rank",
+  "slug": "hospital-rank",
+  "title": "HospitalRank",
+  "tagline": "Hospital quality comparison",
+  "category": "Healthcare & Wellness",
+  "description": "Hospital quality comparison. Patients and staff stake on surgical outcomes, nursing quality, and billing transparency.",
+  "comparable": "CMS Hospital Compare",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "healthcare-wellness",
+    "cms-hospital-compare"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-hospital-rank/README.md"
+}

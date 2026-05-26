@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-017-stat-verify",
+  "slug": "stat-verify",
+  "title": "StatVerify",
+  "tagline": "Statistical claim verification",
+  "category": "Knowledge, Research & Information",
+  "description": "Statistical claim verification. Data journalists stake on whether cited statistics are accurate and properly contextualized. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-stat-verify/README.md"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-24-002-kibble-graph",
+  "slug": "kibble-graph",
+  "title": "KibbleGraph",
+  "tagline": "Pet food quality ratings",
+  "category": "Pets & Animals",
+  "description": "Pet food quality ratings. Pet owners and nutritionists stake on ingredient accuracy and health outcome claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "pets-animals"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-kibble-graph/README.md"
+}

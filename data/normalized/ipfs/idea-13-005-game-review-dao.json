@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-13-005-game-review-dao",
+  "slug": "game-review-dao",
+  "title": "GameReviewDAO",
+  "tagline": "Community-governed game reviews",
+  "category": "Gaming & Esports",
+  "description": "Community-governed game reviews. Counter-staking contests biased reviews. Publisher influence eliminated.",
+  "comparable": "Metacritic",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "gaming-esports",
+    "metacritic"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-game-review-dao/README.md"
+}

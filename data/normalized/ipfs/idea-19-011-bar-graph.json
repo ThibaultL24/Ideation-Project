@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-19-011-bar-graph",
+  "slug": "bar-graph",
+  "title": "BarGraph",
+  "tagline": "Bar and cocktail lounge ratings",
+  "category": "Food, Agriculture & Hospitality",
+  "description": "Bar and cocktail lounge ratings. Patrons stake on cocktail quality, atmosphere, and pricing claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "food-agriculture-hospitality"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-bar-graph/README.md"
+}

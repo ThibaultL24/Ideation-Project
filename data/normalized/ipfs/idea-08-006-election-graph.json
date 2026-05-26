@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-08-006-election-graph",
+  "slug": "election-graph",
+  "title": "ElectionGraph",
+  "tagline": "Political prediction and candidate quality signaling",
+  "category": "Prediction & Signal Markets",
+  "description": "Political prediction and candidate quality signaling. Claims about candidates persist as long-term accountability records.",
+  "comparable": "PredictIt, Polymarket",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "prediction-signal-markets",
+    "predictit",
+    "polymarket"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-election-graph/README.md"
+}

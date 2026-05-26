@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-010-rent-shield",
+  "slug": "rent-shield",
+  "title": "RentShield",
+  "tagline": "Rental scam detection",
+  "category": "Safety, Security & Protection",
+  "description": "Rental scam detection. Locals stake on listing legitimacy claims. Check the market before sending deposits. (Novel) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-rent-shield/README.md"
+}

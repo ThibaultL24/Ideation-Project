@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-17-008-salary-transparency",
+  "slug": "salary-transparency",
+  "title": "SalaryTransparency",
+  "tagline": "Salary data verification",
+  "category": "Professional Services & HR",
+  "description": "Salary data verification. Employees stake on compensation claims for roles at specific companies.",
+  "comparable": "Levels.fyi, but staked",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "professional-services-hr",
+    "levels-fyi",
+    "but-staked"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-salary-transparency/README.md"
+}

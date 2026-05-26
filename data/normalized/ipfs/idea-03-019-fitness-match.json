@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-019-fitness-match",
+  "slug": "fitness-match",
+  "title": "FitnessMatch",
+  "tagline": "Personal trainer matching using stake-weighted outcome claims from real clients.",
+  "category": "Marketplaces & Discovery",
+  "description": "Personal trainer matching using stake-weighted outcome claims from real clients.",
+  "comparable": "Trainerize, ClassPass",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "trainerize",
+    "classpass"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-fitness-match/README.md"
+}

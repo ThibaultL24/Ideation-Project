@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-14-010-telehealth-rate",
+  "slug": "telehealth-rate",
+  "title": "TelehealthRate",
+  "tagline": "Telemedicine platform quality",
+  "category": "Healthcare & Wellness",
+  "description": "Telemedicine platform quality. Patients stake on diagnostic accuracy and prescription appropriateness. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "healthcare-wellness"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-telehealth-rate/README.md"
+}

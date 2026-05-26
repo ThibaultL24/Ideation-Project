@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-18-007-property-manager",
+  "slug": "property-manager",
+  "title": "PropertyManager",
+  "tagline": "Property management company ratings",
+  "category": "Real Estate & Property",
+  "description": "Property management company ratings. Tenants and owners stake on maintenance quality and communication claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "real-estate-property"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-property-manager/README.md"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-017-crypto-exchange-watch",
+  "slug": "crypto-exchange-watch",
+  "title": "CryptoExchangeWatch",
+  "tagline": "Exchange trust ratings",
+  "category": "Reviews & Ratings",
+  "description": "Exchange trust ratings. Traders stake on security, withdrawal reliability, and fee accuracy claims.",
+  "comparable": "CoinGecko trust score",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "coingecko-trust-score"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-crypto-exchange-watch/README.md"
+}

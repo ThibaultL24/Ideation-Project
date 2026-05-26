@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-006-safe-hire",
+  "slug": "safe-hire",
+  "title": "SafeHire",
+  "tagline": "Background verification for crypto/remote hiring",
+  "category": "Safety, Security & Protection",
+  "description": "Background verification for crypto/remote hiring. False credentials can be counter-staked by anyone with knowledge.",
+  "comparable": "Checkr",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection",
+    "checkr"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-safe-hire/README.md"
+}

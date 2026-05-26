@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-015-algorithm-audit",
+  "slug": "algorithm-audit",
+  "title": "AlgorithmAudit",
+  "tagline": "Algorithm transparency documentation",
+  "category": "Knowledge, Research & Information",
+  "description": "Algorithm transparency documentation. Researchers stake on how platform algorithms work and what biases they contain.",
+  "comparable": "Algorithm Watch",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information",
+    "algorithm-watch"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-algorithm-audit/README.md"
+}

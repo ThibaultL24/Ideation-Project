@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-08-009-research-bets",
+  "slug": "research-bets",
+  "title": "ResearchBets",
+  "tagline": "Scientific hypothesis market",
+  "category": "Prediction & Signal Markets",
+  "description": "Scientific hypothesis market. Stake on replication predictions. Creates a replication crisis early-warning system.",
+  "comparable": "Metaculus",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "prediction-signal-markets",
+    "metaculus"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-research-bets/README.md"
+}

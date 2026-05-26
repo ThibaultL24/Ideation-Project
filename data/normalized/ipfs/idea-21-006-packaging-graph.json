@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-21-006-packaging-graph",
+  "slug": "packaging-graph",
+  "title": "PackagingGraph",
+  "tagline": "Sustainable packaging verification",
+  "category": "Supply Chain & Commerce",
+  "description": "Sustainable packaging verification. Stake on biodegradability and recyclability claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "supply-chain-commerce"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-packaging-graph/README.md"
+}

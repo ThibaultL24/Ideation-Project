@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-004-dev-reputation",
+  "slug": "dev-reputation",
+  "title": "DevReputation",
+  "tagline": "Developer reputation aggregating stake-weighted claims about code quality and expertise",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Developer reputation aggregating stake-weighted claims about code quality and expertise. Portable across hiring platforms, DAOs, and open-source.",
+  "comparable": "GitHub profile, StackOverflow rep",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "github-profile",
+    "stackoverflow-rep"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-dev-reputation/README.md"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-008-child-safe",
+  "slug": "child-safe",
+  "title": "ChildSafe",
+  "tagline": "Platform safety ratings for parents",
+  "category": "Safety, Security & Protection",
+  "description": "Platform safety ratings for parents. Communities stake on age-appropriate content moderation claims.",
+  "comparable": "Common Sense Media",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection",
+    "common-sense-media"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-child-safe/README.md"
+}

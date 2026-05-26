@@ -1,0 +1,1312 @@
+Build on Intuition: 300+ dApp
+Ideas
+
+🧠
+
+The definitive idea bank for builders. 300+ application concepts
+organized by category, each uniquely powered by Intuition's universal
+knowledge graph, $TRUST staking, bonding curves, and
+permissionless curation. Whether you're a hackathon team, a startup
+founder, or an indie builder — find your next project here.
+
+How to Use This Document
+Browse by category — Find a domain that excites you
+Each idea includes: A name, what it does, and a Web2/Web3 comparable
+(if one exists)
+Difficulty isn't listed — Almost every idea here can start as an MVP using
+Intuition's SDK and grow from there
+Combine ideas — The best products often merge 2-3 concepts (e.g.,
+reputation + marketplace + AI agents)
+
+Intuition Primitives (Quick Reference)
+Primitive
+
+What It Does
+
+Atoms
+
+Identities for any entity — person, org, contract, product, concept
+
+Triples
+
+Claims connecting atoms: [Subject] [Predicate] [Object]
+
+Vaults
+
+Smart contracts holding staked $TRUST per atom/triple
+
+Bonding Curves
+
+Automatic price discovery on the "truth value" of any claim
+
+Counter-Staking
+
+Staking against a claim — disagreement has economic cost
+
+Knowledge Graph The universal, permissionless graph of all atoms and triples
+
+Why Intuition changes everything: Every review, rating, credential, and claim
+gets financial skin-in-the-game. Fake reviews cost real money. Honest curation
+earns real money. Reputation becomes portable. Trust becomes a market.
+
+Build on Intuition: 300+ dApp Ideas
+
+1
+
+Categories
+Table of Contents
+
+How to Use This Document
+Intuition Primitives (Quick Reference)
+Categories
+1. Reviews & Ratings (28 ideas)
+2. Identity, Reputation & Credentials (25 ideas)
+3. Marketplaces & Discovery (22 ideas)
+4. AI Agents & Machine Intelligence (25 ideas)
+5. Social Networks & Community (20 ideas)
+6. Knowledge, Research & Information (20 ideas)
+7. Finance, DeFi & Insurance (20 ideas)
+8. Prediction & Signal Markets (15 ideas)
+9. Safety, Security & Protection (15 ideas)
+10. Creative Arts & Culture (15 ideas)
+11. Science & Academia (12 ideas)
+12. Developer Tools & Infrastructure (15 ideas)
+13. Gaming & Esports (15 ideas)
+14. Healthcare & Wellness (15 ideas)
+15. Education & Learning (15 ideas)
+16. Government & Civic (10 ideas)
+17. Professional Services & HR (12 ideas)
+18. Real Estate & Property (10 ideas)
+19. Food, Agriculture & Hospitality (12 ideas)
+20. Travel & Transportation (10 ideas)
+21. Supply Chain & Commerce (10 ideas)
+22. Environment & Sustainability (8 ideas)
+23. Speculative & Viral Games (12 ideas)
+24. Pets & Animals (8 ideas)
+25. Telecom & Internet (6 ideas)
+Cross-Cutting Themes
+
+1. Reviews & Ratings (28 ideas)
+Reimagining every review platform with stake-weighted, economically-backed
+opinions. Astroturfing becomes expensive; honest early reviewing becomes
+profitable.
+1. StakeReview — Universal product review layer where consumers stake
+$TRUST on quality claims for any product with a barcode/UPC. Bonding
+
+Build on Intuition: 300+ dApp Ideas
+
+2
+
+curves reward early honest reviewers. (Like: Amazon Reviews, Trustpilot)
+2. FilmStake — Movie and TV ratings where viewers stake on quality, acting,
+and rewatchability claims. Financially-weighted consensus immune to
+review-bombing. (Like: Rotten Tomatoes, Letterboxd)
+3. ForkScore — Restaurant ratings where diners stake on food quality,
+service, ambiance, and hygiene claims. Fake reviews from competitors
+become prohibitively expensive. (Like: Yelp, Google Reviews, Michelin)
+4. BookGraph — Book ratings where readers stake on writing quality,
+accuracy, and genre fit. Literary curators who identify great books early
+earn returns. (Like: Goodreads, StoryGraph)
+5. AppCrit — Mobile and desktop app ratings with stake-backed claims on
+usability, privacy, and value. Replaces rage-review and paid-5-star
+distortion. (Like: App Store reviews, G2)
+6. ToolBench — SaaS and B2B software reviews where actual users stake on
+feature accuracy, support quality, and pricing fairness. Eliminates vendorincentivized reviews. (Like: G2, Capterra, TrustRadius)
+7. ServiceScore — Local service provider (plumber, electrician, cleaner)
+reviews with stake-weighted quality and reliability claims. (Like: Yelp, Angi,
+HomeAdvisor)
+8. GadgetGraph — Consumer electronics long-term reliability tracker. Owners
+stake on durability and battery degradation claims after 6+ months. (Like:
+Consumer Reports, Wirecutter)
+9. PodRank — Podcast quality ratings with stake-weighted production quality
+and host expertise claims. Curators build verifiable taste reputation. (Like:
+Apple Podcasts, Podchaser)
+10. GameCrit — Video game reviews where players stake on gameplay, story,
+and value claims. Separates community consensus from publisherinfluenced scores. (Like: Metacritic, OpenCritic)
+11. AlbumStake — Music album ratings with stake-backed production quality
+and innovation claims. Financially-weighted alternative to Pitchfork scores.
+(Like: Pitchfork, RateYourMusic)
+12. StayRank — Hotel and Airbnb reviews where guests stake on cleanliness,
+listing accuracy, and host responsiveness. (Like: TripAdvisor,
+Booking.com)
+
+Build on Intuition: 300+ dApp Ideas
+
+3
+
+13. SupplementScore — Supplement review platform where lab testers and
+consumers stake on ingredient accuracy and efficacy claims. (Like:
+Labdoor, ConsumerLab)
+14. DealerCheck — Car dealership reviews. Buyers stake on pricing
+transparency, trade-in fairness, and post-sale service. (Like: DealerRater,
+Cars.com)
+15. GymRate — Fitness facility and trainer ratings. Members stake on
+equipment quality, cleanliness, and contract fairness claims. (Like:
+ClassPass, Google Reviews)
+16. AIToolReview — AI tool and LLM wrapper reviews. Users stake on output
+quality, hallucination frequency, and data privacy claims. (Like: There's An
+AI For That)
+17. CryptoExchangeWatch — Exchange trust ratings. Traders stake on
+security, withdrawal reliability, and fee accuracy claims. (Like: CoinGecko
+trust score)
+18. OpenSourceRank — Open-source library ratings. Developers stake on
+documentation quality, maintenance, and API stability claims. (Like: GitHub
+stars, npm scores)
+19. InsuranceRank — Insurance company ratings by policyholders. Stake on
+claim processing fairness, rate stability, and coverage honesty. (Like: AM
+Best, J.D. Power)
+20. StreamingValue — Streaming service value ratings. Subscribers stake on
+content library quality and price-to-value ratio. (Like: JustWatch)
+21. ISPTruth — ISP ratings where subscribers stake on actual-vs-advertised
+speed and reliability claims. (Like: BroadbandNow, Speedtest)
+22. VPNVerify — VPN security ratings. Researchers stake on no-log
+compliance and leak protection claims. Eliminates affiliate-conflicted
+review sites. (Like: VPN review blogs)
+23. WeddingVendorGraph — Wedding vendor reputation across
+photographers, florists, caterers. Couples stake on quality and pricing
+honesty. (Like: The Knot, WeddingWire)
+24. CharityRate — Nonprofit effectiveness ratings where donors and
+beneficiaries stake on impact and fund utilization claims. Beyond overhead
+ratios. (Like: GiveWell, Charity Navigator)
+
+Build on Intuition: 300+ dApp Ideas
+
+4
+
+25. BoardGameRate — Board and tabletop game ratings. Players stake on
+replayability, component quality, and learning curve claims. (Like:
+BoardGameGeek)
+26. FranchiseScore — Franchise opportunity ratings. Franchisees stake on
+support quality and revenue claim accuracy. (Like: Franchise Business
+Review)
+27. ChildcareGraph — Daycare and childcare ratings where parents stake on
+safety, staff quality, and curriculum claims. Highest-stakes decision
+deserves highest-stakes reviews. (Like: Care.com, Winnie)
+28. ContractorTrust — General contractor ratings with photo evidence atoms
+linked to review triples. Stake on quality, budget, and timeline accuracy.
+(Like: Thumbtack, BuildZoom)
+
+2. Identity, Reputation & Credentials (25 ideas)
+Portable, composable, stake-weighted identity and reputation. You own your
+reputation as atoms in the knowledge graph.
+1. TrustScore — Universal on-chain reputation score derived from staking
+accuracy across the knowledge graph. Your "credit score" for the
+decentralized web. (Like: FICO score)
+2. TrustGrid — Professional identity where claims like [Alice] [has-skill]
+[Solidity] are staked on by colleagues. Professional reputation becomes a
+portable, financially-backed asset. (Like: LinkedIn)
+3. CredentialVault — Professional credential verification where universities
+and certifying bodies create atoms and individuals stake to claim them.
+Instant employer verification. (Like: Verifiable Credentials)
+4. DevReputation — Developer reputation aggregating stake-weighted claims
+about code quality and expertise. Portable across hiring platforms, DAOs,
+and open-source. (Like: GitHub profile, StackOverflow rep)
+5. ProofOfExpertise — Skill verification where domain experts stake on each
+other's competence. A cryptographer staked by 50 other cryptographers >
+self-declared expertise. (Like: LinkedIn endorsements, but staked)
+6. FreelancerID — Portable freelancer identity aggregating client reviews and
+skill attestations across platforms. Never start from zero on a new
+marketplace. (Like: Upwork profile)
+Build on Intuition: 300+ dApp Ideas
+
+5
+
+7. FounderRep — Startup founder reputation. Investors, employees, and cofounders stake on leadership quality and transparency claims. (Like:
+Crunchbase, but reputation-focused)
+8. DAOContributorID — Cross-DAO contributor reputation. Members stake on
+each other's contribution quality and governance participation. (Like:
+Coordinape, SourceCred)
+9. InfluencerAuth — Influencer credibility scoring. Followers and brands stake
+on genuine product use and follower authenticity claims. (Like:
+HypeAuditor, but decentralized)
+10. AgentSmithScore — AI agent reputation aggregating stake-weighted
+accuracy, safety, and reliability claims from humans and other agents.
+(Like: ERC-8004 registry)
+11. InvestorRep — VC and angel investor reputation FROM the founder's
+perspective. Founders stake on investor helpfulness and follow-on
+reliability. (Like: TheFunded, but alive)
+12. DriverTrust — Rideshare driver reputation portable across Uber, Lyft,
+DoorDash. Drivers own their reputation instead of being platform-locked.
+(Like: Uber ratings, but portable)
+13. PoliticianTracker — Elected official promise-keeping tracker. Citizens
+stake on campaign promise delivery claims. Real-time accountability. (Like:
+PolitiFact, but staked)
+14. ContentCreatorID — Cross-platform creator reputation across YouTube,
+Twitch, TikTok. Stake-weighted quality and authenticity claims. (Like:
+YouTube subscribers, but portable)
+15. GigWorkerID — Gig economy worker portable identity spanning
+TaskRabbit, Uber, DoorDash. Cross-platform reputation so workers never
+restart from zero. (Novel)
+16. TenantLandlordRep — Bilateral rental reputation. Both parties build
+portable rental reputation usable across platforms and geographies. (Like:
+RentPrep, but bilateral)
+17. WhistleblowerShield — Anonymous reputation for whistleblowers. ZK
+proofs protect identity while building credible track records. (Novel)
+18. TeacherRep — Educator reputation across schools and platforms.
+Students and parents stake on teaching effectiveness claims. (Like:
+
+Build on Intuition: 300+ dApp Ideas
+
+6
+
+RateMyProfessors, but staked)
+19. MentorScore — Mentorship quality reputation. Mentees stake on
+helpfulness, accessibility, and career impact claims. (Like: ADPList, but
+with stakes)
+20. ContractorPassport — Trade worker portable credential/reputation bundle
+combining safety certs, skill attestations, and client reviews. (Novel)
+21. BoardMemberRep — Corporate board member reputation. Stakeholders
+stake on governance competence and fiduciary duty claims. (Novel)
+22. ResearcherIntegrity — Scientific integrity tracker. Peers stake on data
+fabrication and methodological rigor claims. Economic incentives for
+research integrity. (Like: Retraction Watch, but proactive)
+23. CredentialStack — Composable credential portfolio assembling verified
+degrees, certs, skill badges, and work attestations into one queryable
+profile. (Like: LinkedIn, but verified)
+24. VolunteerPassport — Volunteer reputation tracking across organizations.
+Nonprofits stake on reliability and impact claims. (Like: VolunteerMatch,
+but with reputation)
+25. OnboardingRep — New employee reputation bootstrapping from previous
+employers. Replaces the broken reference-check system. (Like: LinkedIn
+recommendations, but staked)
+
+3. Marketplaces & Discovery (22 ideas)
+Trust-weighted discovery and matching. Curation replaces algorithmic
+manipulation.
+1. TrustHunt — Decentralized product launch platform. Builders submit
+products; community stakes on quality. Bonding curves reward early
+discoverers of great products. (Like: Product Hunt)
+2. StakeList — Stake-weighted curated lists for any topic (best CRMs, best
+vegan restaurants in Austin). Curators build reputation through accuracy.
+(Like: Wirecutter, "best of" lists)
+3. TalentGraph — Talent marketplace where both employers and candidates
+have stake-weighted reputation. Skills verified through expert attestation
+triples. (Like: LinkedIn Jobs, Indeed)
+
+Build on Intuition: 300+ dApp Ideas
+
+7
+
+4. DAppStore — Decentralized app store with stake-weighted safety and
+quality ratings. Security researchers stake on audit claims. (Like:
+DappRadar)
+5. LocalGuide — City-by-city local business discovery. Residents stake on
+hidden gems and best-value spots. Financial backing behind every
+recommendation. (Like: Google Local Guides, Foursquare)
+6. HomeServiceHub — Unified home service discovery (plumbing, electrical,
+HVAC). Replaces lead-gen platforms that charge for visibility regardless of
+quality. (Like: Angi, HomeAdvisor, Thumbtack)
+7. CofounderMatch — Co-founder matching using reputation triples. Past
+collaborators stake on skills, work ethic, and collaboration style. (Like: YC
+Co-Founder Matching)
+8. MusicDiscovery — Music curation via stake-weighted taste graphs.
+Curators who stake on songs that gain appreciation earn returns. (Like:
+Spotify Discover, SoundCloud)
+9. InvestmentScout — Startup and investment opportunity discovery.
+Investors stake on team quality and traction claims. Crowdsourced dealflow intelligence. (Like: AngelList, PitchBook)
+10. RecipeDiscovery — Recipe curation where cooks stake on accuracy,
+difficulty, and taste claims. Trust-weighted recipe source immune to SEO
+blog spam. (Like: AllRecipes, Epicurious)
+11. NicheMarket — Niche community marketplace (vintage audio, rare plants,
+specialty coffee) with stake-weighted seller authenticity. (Like: Etsy,
+Reverb)
+12. TherapistFinder — Therapist matching using stake-weighted outcome
+claims. Patients stake on which therapists genuinely helped. (Like:
+BetterHelp, Psychology Today)
+13. GrantFinder — Grant discovery where past applicants stake on fairness,
+reliability, and reporting burden claims. (Like: Grants.gov)
+14. PodcastDiscovery — Podcast recommendation engine. Genre curators
+compete to surface the best shows via stake. (Like: Podchaser, podcast
+newsletters)
+15. DupeDiscovery — Product dupe (affordable alternative) curation. Users
+stake on whether budget alternatives match premium originals. (Like:
+
+Build on Intuition: 300+ dApp Ideas
+
+8
+
+Reddit dupe threads, TikTok)
+16. ContractTemplates — Legal contract template marketplace with stakebacked enforceability ratings. Counter-stake templates with hidden
+gotchas. (Like: Rocket Lawyer, LegalZoom)
+17. APIMarketplace — API discovery where developers stake on reliability,
+docs quality, and uptime claims. (Like: RapidAPI)
+18. ToolDiscovery — Developer tool discovery. Engineers stake on tools they
+actually use. Financially-backed "awesome lists." (Like: awesome lists,
+dev.to)
+19. FitnessMatch — Personal trainer matching using stake-weighted outcome
+claims from real clients. (Like: Trainerize, ClassPass)
+20. VendorMatch — B2B vendor discovery. Procurement teams query stakeweighted quality and reliability claims. (Like: ThomasNet, Alibaba)
+21. HiringSignal — Job posting quality signals. Seekers stake on whether
+postings are genuine, salaries accurate, and processes fair. (Like:
+Glassdoor job listings)
+22. CoworkingFinder — Coworking space discovery with stake-weighted WiFi
+quality, vibe, and amenity claims. (Like: Coworker.com)
+
+4. AI Agents & Machine Intelligence (25 ideas)
+The greenfield category. Intuition has no real competitors for AI agent trust
+infrastructure.
+1. AgentRank — AI agent reputation marketplace. Every agent's capabilities
+and safety are tracked as staked triples. First real "credit score" for AI.
+(Novel — ERC-8004 aligned)
+2. ModelMarket — AI model evaluation where model capabilities are staked
+claims. [GPT-5] [outperforms] [Claude-4] [at] [Code Generation] is a
+financial market. (Like: Chatbot Arena, LMSYS)
+3. AgentHire — Agent marketplace where agents compete for tasks based on
+Intuition reputation. Performance claims are verifiable by past clients'
+stakes. (Novel)
+4. PromptVault — Prompt template marketplace with stake-weighted
+effectiveness ratings per model and use case. (Like: PromptBase, FlowGPT)
+
+Build on Intuition: 300+ dApp Ideas
+
+9
+
+5. AgentAlliance — Multi-agent coordination protocol. Agents check each
+other's reputation triples before collaborating. Self-organizing swarms with
+accountability. (Novel)
+6. HalluciWatch — AI hallucination detection. Users stake on AI output
+accuracy claims. Creates a real-time truth layer and training data for better
+models. (Novel)
+7. VeriFact — AI-generated content verification. Humans stake on authenticity
+claims. [Article-X] [is] [AI-Generated] is a live market. (Like: C2PA
+initiatives)
+8. DataCurate — Training data quality marketplace. Data labelers stake on
+dataset quality claims. Bad data becomes expensive to promote. (Like:
+Scale AI, but decentralized)
+9. AgentEscrow — Escrow for AI agent transactions. High-reputation agents
+get lower escrow requirements. No human co-signer needed for trusted
+agents. (Novel)
+10. AgentInsurance — Insurance protocol for AI actions. Premiums priced by
+Knowledge Graph reputation. High-reputation agents pay less. (Like:
+Nexus Mutual, but for AI)
+11. RAGTrust — RAG source quality layer. Trustworthiness of retrieval sources
+scored by community stake. AI systems prefer high-trust sources. (Novel)
+12. SentinelAI — AI safety monitoring. Researchers stake on claims about
+deceptive alignment, emergent capabilities, and safety benchmarks. (Like:
+METR, Apollo Research)
+13. DeepfakeMarket — Deepfake detection marketplace. Forensic analysts
+stake on media authenticity claims. (Like: Reality Defender, Sensity)
+14. BenchmarkDAO — Decentralized AI benchmarking. Community defines,
+runs, and validates benchmarks. Gaming benchmarks faces counter-stake
+pressure. (Like: HF Leaderboards)
+15. AgentCV — AI agent resume system. Every capability claim is a staked
+triple backed by users who experienced the agent's performance. (Like:
+LinkedIn for AI agents)
+16. SynthID — Synthetic identity detection. Investigators stake on whether
+online identities are AI sockpuppets. (Like: Bot Sentinel, but broader)
+
+Build on Intuition: 300+ dApp Ideas
+
+10
+
+17. KnowledgeForge — Collaborative AI training through community
+knowledge contribution. Users create atoms/triples that AI agents
+consume. Contributors earn when their data improves agents. (Novel)
+18. SourceTrace — AI training data provenance tracker. Creators stake on
+claims about their work being used in training. Enables attribution and
+compensation. (Like: Spawning.ai)
+19. CopilotRank — Code copilot evaluation. Developers stake on accuracy
+claims per language and domain. (Novel)
+20. MCPToolRegistry — Model Context Protocol tool registry with stakeweighted quality/safety claims. (Novel)
+21. AgentCredentialIssuer — Verifiable credentials for AI agents. Auditing
+orgs create [Agent-X] [audited-by] [Org-Y] triples. (Novel)
+22. OracleReputation — Blockchain oracle reliability ratings. DeFi protocols
+stake on accuracy, latency, and manipulation resistance. (Like: Chainlink,
+but community-rated)
+23. AutonomyGradient — AI agent autonomy authorization. Humans stake on
+which agents should be trusted with increasing levels of autonomous
+action. (Novel)
+24. TrainingTransparency — AI training data provenance tracker. Content
+creators stake on claims about data usage, creating an accountability layer
+for consent. (Novel)
+25. AIKnowledgeBase — Curated knowledge base optimized for AI
+consumption. Human experts stake on accuracy of triples. Agents query
+this as verified ground truth. (Novel)
+
+5. Social Networks & Community (20 ideas)
+Trust-enhanced social with economically meaningful signals instead of likes.
+1. TrustCircle — Social network where connections are stake-weighted.
+Instead of friending, you stake on character and competence claims. Social
+graph with financial commitment. (Like: Facebook, but staked)
+2. StakePost — Social media where posts can be staked on for accuracy.
+High-stake posts surface; counter-staked posts are flagged. Economicallydriven content quality. (Like: Twitter/X, Community Notes)
+
+Build on Intuition: 300+ dApp Ideas
+
+11
+
+3. StakeDate — Dating platform with knowledge graph identity verification
+and stake-weighted vouches from friends. Catfishing becomes
+economically irrational. (Like: Hinge, Bumble)
+4. GuildForge — DAO and guild creation toolkit using knowledge graph for
+member reputation, role assignment, and governance. (Like: Coordinape,
+Guild.xyz)
+5. NeighborNet — Hyper-local community network. Neighbors stake on
+trustworthiness for tool lending, pet watching, package holding. Digital
+social capital. (Like: Nextdoor, but staked)
+6. ExpertiseGraph — Professional community where contributions are stakeweighted by peers. Answering a question earns stake from people helped.
+(Like: Stack Overflow)
+7. DAOGovernance — Enhanced DAO voting where weight is modified by
+domain-relevant reputation. Financial expertise weights treasury votes; dev
+reputation weights technical votes. (Like: Snapshot, Tally)
+8. MutualAid — Community mutual aid with stake-weighted trust. High-trust
+members get priority access to resources during crises. (Novel)
+9. FeedTrust — Social news aggregation where every posted link has a live
+credibility market. Misinformation costs money; debunking earns money.
+(Like: Reddit, Hacker News)
+10. CommunityModRep — Moderator reputation system. Members stake on
+fairness and effectiveness. Creates accountability for community
+governance. (Like: Reddit mod system, but accountable)
+11. AlumniGraph — Alumni network with stake-weighted endorsements.
+Living alternative to cold LinkedIn outreach. (Like: LinkedIn alumni)
+12. ImpactDAO — Social impact DAO where funding is weighted by domain
+expertise reputation. A climate researcher's vote on climate grants carries
+more weight. (Like: Gitcoin, MolochDAO)
+13. LanguageExchange — Language partner matching with stake-weighted
+teaching quality and reliability claims. (Like: Tandem, HelloTalk)
+14. CommunityPulse — Community health dashboard aggregating stakeweighted satisfaction and governance fairness claims. (Novel)
+15. EventConnect — Event-based social networking. Post-event, participants
+stake on each other's value as connections. (Like: Luma, Meetup)
+Build on Intuition: 300+ dApp Ideas
+
+12
+
+16. CreatorCollective — Content creator collaboration network. Creators
+stake on each other's collaboration quality and audience fit. (Novel)
+17. ParentNetwork — Parent community with stake-weighted advice quality.
+Evidence-based parenting wisdom over fear-mongering. (Like:
+BabyCenter, Peanut)
+18. ArtistCollective — Artist community where artists stake on each other's
+skill and collaboration reliability. Meritocratic creative communities. (Like:
+Behance, DeviantArt)
+19. RecoveryCircle — Addiction recovery support with stake-weighted
+sponsor reputation. Trust-weighted matching for vulnerable populations.
+(Novel)
+20. RunningClub — Running group discovery with stake-weighted pace
+accuracy, route safety, and friendliness claims. (Like: Strava clubs)
+
+6. Knowledge, Research & Information (20 ideas)
+Decentralized, stake-weighted knowledge bases. Truth becomes profitable;
+misinformation becomes expensive.
+1. StakeWiki — Decentralized encyclopedia where every factual claim is a
+stakeable triple. Vandalism and misinformation are economically punished.
+(Like: Wikipedia)
+2. FactCheck — Real-time fact-checking where journalists and citizens stake
+on claim veracity. Financially-backed debunking. (Like: Snopes, PolitiFact)
+3. ResearchGraph — Scientific paper quality and reproducibility curation.
+Researchers stake on methodology and validity claims. (Like: PubPeer,
+Semantic Scholar)
+4. NewsCredibility — News source and article credibility scoring. Journalists
+stake on accuracy, bias, and sourcing quality claims. (Like: NewsGuard,
+AllSides)
+5. ClimateGraph — Climate science knowledge graph with stake-weighted
+emissions data and intervention effectiveness claims. Immune to political
+manipulation. (Like: IPCC reports, but live)
+6. DrugGraph — Drug interaction and side-effect knowledge graph.
+Pharmacists and clinicians stake on interaction severity claims. (Like:
+
+Build on Intuition: 300+ dApp Ideas
+
+13
+
+Drugs.com, Epocrates)
+7. SecurityAdvisory — Cybersecurity vulnerability curation. Researchers
+stake on severity and exploitability claims. Faster than CVE databases.
+(Like: CVE, NVD)
+8. NutritionFacts — Nutritional science claim verification. Researchers stake
+on food health effect claims. Financially-backed alternative to conflicting
+headlines. (Like: Examine.com)
+9. SkepticsGraph — Claims-vs-evidence platform. Proponents and skeptics
+stake on evidence quality for contested claims. Visible, financially-weighted
+evidence landscape. (Novel)
+10. MythBuster — Common misconception debunking. Experts stake on
+whether widely-believed "facts" are true. Repository for AI assistants to
+reference. (Like: Snopes, but market-driven)
+11. OpenIntel — Open-source intelligence curation. OSINT researchers stake
+on geopolitical and corporate activity claims. (Like: Bellingcat, but
+incentivized)
+12. PrecedentGraph — Legal precedent curation. Attorneys stake on case
+relevance and authority. AI legal tools prioritize stake-weighted
+precedents. (Like: Westlaw, LexisNexis)
+13. TechTruth — Technology claim verification. Engineers stake on whether
+products deliver advertised performance (benchmarks, battery life,
+speeds). (Like: Tom's Hardware)
+14. PolicyGraph — Public policy outcome tracking. Researchers stake on
+whether policies achieved stated goals. Financially-backed policy
+evidence. (Novel)
+15. AlgorithmAudit — Algorithm transparency documentation. Researchers
+stake on how platform algorithms work and what biases they contain.
+(Like: Algorithm Watch)
+16. CryptoKnowledge — Crypto/DeFi protocol knowledge base. Developers
+stake on mechanics, risks, and capability claims. (Like: Messari)
+17. StatVerify — Statistical claim verification. Data journalists stake on
+whether cited statistics are accurate and properly contextualized. (Novel)
+18. TaxonomyDAO — Crowdsourced taxonomy governance. Domain experts
+stake on how concepts should be categorized. Community-governed
+Build on Intuition: 300+ dApp Ideas
+
+14
+
+ontology. (Novel)
+19. PandemicGraph — Epidemic knowledge graph. Epidemiologists stake on
+transmission, treatment, and prevention claims during health emergencies.
+(Like: WHO, CDC)
+20. DataGraph — Open data quality ratings. Data scientists stake on dataset
+completeness, accuracy, and methodology claims. (Like: Kaggle, Data.gov)
+
+7. Finance, DeFi & Insurance (20 ideas)
+Stake-weighted financial trust, credit assessment, and risk evaluation.
+1. OnchainCredit — Decentralized credit scoring from knowledge graph
+reputation. Staking accuracy and peer attestations create composable
+credit for undercollateralized lending. (Like: Spectral Finance)
+2. ProtocolSafety — DeFi protocol risk ratings. Auditors, users, and
+researchers stake on code quality and economic design claims. A living
+safety layer. (Like: DeFi Safety, Rekt.news)
+3. FraudGraph — Financial fraud and scam reporting. Victims stake on claims
+about fraudulent wallets and scam patterns. Crowdsourced fraud
+intelligence. (Like: Chainabuse)
+4. YieldTruth — DeFi yield verification. Users stake on whether advertised
+yields are sustainable and achievable. Accountability for yield farming
+marketing. (Like: DeFiLlama, but staked)
+5. AuditRank — Smart contract audit firm reputation. Stake on thoroughness
+and accuracy claims. Accountability for wildly varying audit quality. (Novel)
+6. TokenFundamentals — Token fundamental analysis curation. Analysts
+stake on tokenomics and team execution claims. Financially-backed
+investment intelligence. (Like: Messari, Token Terminal)
+7. PredictionMarket — Prediction market enhanced with reputation-weighted
+participation. High-accuracy bettors' positions weighted more heavily.
+(Like: Polymarket, Kalshi)
+8. RWATrust — Real-world asset tokenization quality ratings. Investors stake
+on asset backing and legal structure claims. (Novel)
+9. BridgeSafety — Cross-chain bridge security ratings. Stake on security
+design and incident response claims. (Like: L2Beat, but community-driven)
+
+Build on Intuition: 300+ dApp Ideas
+
+15
+
+10. StablecoinMonitor — Stablecoin backing verification. Analysts stake on
+reserve composition and peg mechanism claims. Real-time trust signals.
+(Novel)
+11. VCReputation — VC fund reputation from portfolio companies. Founders
+stake on value-add and founder-friendliness claims. (Like: TheFunded)
+12. InsurancePool — Decentralized insurance priced by knowledge graph
+reputation. Strong trust histories = lower premiums. (Like: Nexus Mutual,
+Etherisc)
+13. TreasuryWatch — DAO treasury oversight. Community stakes on
+allocation quality and transparency claims. (Like: DeepDAO)
+14. CarbonCredit — Carbon credit quality verification. Scientists stake on
+legitimacy and additionality claims. (Like: Gold Standard, Verra)
+15. CrowdfundingTrust — Crowdfunding project credibility scoring. Reviewers
+stake on feasibility and team capability claims. (Like: Kickstarter, but
+accountable)
+16. GrantAllocation — Retroactive public goods funding with reputationweighted impact evaluation. (Like: Optimism RPGF, Gitcoin)
+17. AnalystRank — Financial analyst accuracy tracking. Analysts stake on
+predictions; track records become verifiable assets. (Like: TipRanks)
+18. RiskOracle — On-chain risk assessment oracle aggregating stakeweighted risk claims. DeFi protocols query for real-time risk signals. (Like:
+Gauntlet)
+19. DebtMarket — Decentralized debt marketplace with knowledge graph
+credit scoring for interest rates. (Like: Maple Finance, Goldfinch)
+20. MicroInsurance — Parametric micro-insurance with community-staked
+local risk factor claims feeding automated pricing. (Like: Etherisc)
+
+8. Prediction & Signal Markets (15 ideas)
+Every prediction is a triple in the universal Knowledge Graph. Outcomes feed
+back into entity reputation.
+1. ClaimFutures — Forward-looking claim markets. [Company-X] [willachieve] [Profitability by Q4] creates a prediction market using native
+staking. (Like: Polymarket, Metaculus)
+
+Build on Intuition: 300+ dApp Ideas
+
+16
+
+2. TrendCast — Technology and cultural trend forecasting. Analysts stake on
+trend claims. Track record becomes portable reputation. (Like: Gartner
+Hype Cycle, but market-driven)
+3. ShipOrVapor — Product launch predictions for tech/crypto. Stake on
+whether teams will deliver on roadmap promises. (Novel)
+4. StartupSignal — Startup success predictions. VCs and angels stake on
+outcome claims. Transparent "smart money" signals. (Like: AngelList, but
+predictive)
+5. NarrativeIndex — Crypto narrative tracking. Users stake on which
+narratives will dominate next cycle. Financial market for narrative
+momentum. (Novel)
+6. ElectionGraph — Political prediction and candidate quality signaling. Claims
+about candidates persist as long-term accountability records. (Like:
+PredictIt, Polymarket)
+7. SportsOracle — Sports prediction market using Intuition triples. Prediction
+track records become portable analyst reputation. (Like: sports betting, but
+reputation-building)
+8. VibeCheck — Cultural moment predictions. Stake on whether trends,
+memes, or phenomena will break through or fizzle. (Novel)
+9. ResearchBets — Scientific hypothesis market. Stake on replication
+predictions. Creates a replication crisis early-warning system. (Like:
+Metaculus)
+10. RegSignal — Regulatory prediction market. Policy analysts stake on
+upcoming regulation claims. (Like: Polymarket regulatory)
+11. MacroLens — Macroeconomic signal market. Economists stake on
+indicator predictions. Reputation built through accuracy, not affiliation.
+(Novel)
+12. ClimateStake — Climate commitment verification. Stake on [Country-X]
+[will-meet] [Paris Agreement Targets]. Financial accountability for climate
+promises. (Novel)
+13. TalentFutures — Career trajectory predictions. Mentors stake on
+professional development claims. "Talent futures" market. (Novel)
+14. PriceWhisper — Token price signal aggregator. Analysts stake on price
+range claims. Conviction board with accountable track records. (Like:
+Build on Intuition: 300+ dApp Ideas
+
+17
+
+Crypto Twitter, but accountable)
+15. HireSignal — Job candidate signal market. Recruiters stake on candidaterole fit. Early identifiers of great candidates build reputation. (Novel)
+
+9. Safety, Security & Protection (15 ideas)
+Keeping people safe through financially-incentivized threat detection.
+1. ScamShield — Real-time scam detection network. Community stakes on
+[Contract-X] [is-a] [Honeypot Scam]. Wallets query before interacting.
+(Like: ScamSniffer)
+2. PhishNet — Phishing URL and wallet blacklist maintained through staked
+claims. Decentralized, censorship-resistant phishing database. (Like:
+Google Safe Browsing)
+3. RugRadar — DeFi rug pull early warning. Researchers stake on risk
+indicators before rugs happen. Correct early warnings earn returns. (Like:
+RugDoc)
+4. TrustFence — Cross-platform content moderation layer. Claims about
+content are staked by community moderators. Any platform can query.
+(Like: Community Notes)
+5. IdentityShield — Identity theft detection. Counter-staking on disputed
+identity claims creates visible alerts. (Novel)
+6. SafeHire — Background verification for crypto/remote hiring. False
+credentials can be counter-staked by anyone with knowledge. (Like:
+Checkr)
+7. ContractGuard — Legal contract and TOS analyzer. Legal experts stake on
+fairness claims. [TOS-X] [contains] [Hidden Arbitration Clause]. (Like:
+TOS;DR)
+8. ChildSafe — Platform safety ratings for parents. Communities stake on
+age-appropriate content moderation claims. (Like: Common Sense Media)
+9. DrugCheck — Pharmaceutical and supplement authenticity verification.
+Stake on whether products contain advertised ingredients. (Novel)
+10. RentShield — Rental scam detection. Locals stake on listing legitimacy
+claims. Check the market before sending deposits. (Novel)
+
+Build on Intuition: 300+ dApp Ideas
+
+18
+
+11. InfluencerAudit — Influencer authenticity verification. Stake on follower
+legitimacy and sponsorship disclosure claims. (Like: HypeAuditor)
+12. WhistleVault — Anonymous whistleblowing where claims about
+misconduct are staked on. Bonding curve prices claim credibility. (Novel)
+13. SupplyTrace — Supply chain integrity verification. Workers and auditors
+counter-stake on greenwashing or labor violations. (Like: Provenance)
+14. DisasterTrust — Disaster relief charity verification. On-the-ground
+volunteers stake on delivery claims. Real-time aid effectiveness. (Like:
+GiveWell)
+15. VoteGuard — Election integrity monitoring. Poll watchers stake on
+irregularity claims. Unsubstantiated claims face counter-staking. (Novel)
+
+10. Creative Arts & Culture (15 ideas)
+Art, music, fashion, and culture powered by trust markets.
+1. ProvenanceChain — Art authenticity and provenance verification. Experts
+stake on origin and ownership claims. Forgeries become economically
+attackable. (Like: Artnet, certificates of authenticity)
+2. SoundStake — Music discovery where listeners stake on emerging artists.
+Early tastemakers earn returns as artists gain popularity. Financiallyincentivized A&R. (Like: Spotify, SoundCloud)
+3. FashionOracle — Fashion trend forecasting and brand quality. Stake on
+sustainability, quality, and trend claims. [Brand-X] [uses] [Genuine Italian
+Leather] is verifiable. (Like: The RealReal)
+4. TasteMaker — Cross-domain taste mapping. Your staking pattern across
+food, music, film creates a rich taste profile. Find people with aligned taste.
+(Like: Taste.io, but cross-domain)
+5. MemeMint — Meme attribution and cultural impact tracking. [Meme-X]
+[was-created-by] [Creator-Y] is staked. Meme provenance with economic
+consensus. (Like: Know Your Meme)
+6. StudioTrust — Film production marketplace. Creators stake on each other's
+skills. [Director-X] [has-quality] [Delivers On Budget]. (Like: Mandy.com)
+7. CritiqueCurve — Art critique platform where critique quality itself is staked
+on. Critics build economic reputation for actionable feedback. (Novel)
+
+Build on Intuition: 300+ dApp Ideas
+
+19
+
+8. RecipeVault — Culinary knowledge platform. Cooks stake on recipe
+accuracy and dietary claims. [Recipe-X] [is-truly] [Gluten-Free] is
+economically verified. (Like: AllRecipes)
+9. DesignTrust — Design portfolio platform with client-staked quality claims.
+Portable, stake-backed design reputation. (Like: Dribbble, Behance)
+10. CollabGraph — Creative collaboration matching. Past collaborators stake
+on reliability and chemistry. Trust-based creative pairing. (Novel)
+11. FestivalGraph — Music and cultural festival intelligence. Attendees stake
+on quality, safety, and organization claims year over year. (Novel)
+12. StreetArtRegistry — Street art attribution. Community stakes on artwork
+authorship and location. Preserves ephemeral art through provenance.
+(Novel)
+13. WriterRank — Literary quality and ghostwriting verification. Authorship
+claims are staked. Ghostwriters build visible reputation. (Novel)
+14. VenueTrust — Live event and venue quality. Attendees stake on sound,
+accessibility, and experience claims. (Like: Songkick)
+15. CulturalCurator — Museum and gallery experience curation. Cultural
+experts stake on exhibition quality and significance claims. (Like: TimeOut)
+
+11. Science & Academia (12 ideas)
+Transforming peer review, replication, and scientific knowledge sharing.
+1. PeerReview2.0 — Decentralized peer review where reviewer quality and
+paper quality are both staked markets. Good reviewers build economic
+reputation. (Like: Traditional peer review, Publons)
+2. ReplicateIt — Replication crisis attack platform. Stake on study replicability
+predictions before replication attempts. (Like: Replication Markets)
+3. DataMesh — Scientific dataset quality and citation platform. Dataset
+creators' contributions are staked triples. (Novel)
+4. MethodologyGraph — Research methodology quality curation.
+Methodologists stake on approach appropriateness for specific research
+questions. (Novel)
+5. GrantImpact — Research grant outcome tracking. Funders and grantees
+stake on impact and milestone delivery claims. (Novel)
+Build on Intuition: 300+ dApp Ideas
+
+20
+
+6. PrePrintRank — Pre-print quality curation. Researchers stake on pre-print
+significance before formal publication. Early identification of important work
+earns returns. (Like: arXiv, but curated)
+7. LabReputation — Research lab reputation system. Current and former
+members stake on lab culture, mentorship, and scientific rigor claims.
+(Novel)
+8. ClinicalTrialWatch — Clinical trial result curation. Researchers stake on
+outcome validity. Counter-staking on contested results creates transparent
+markets around evidence. (Like: ClinicalTrials.gov)
+9. PatentPulse — Patent validity and prior art assessment. Engineers stake on
+whether patents represent genuine innovation or should be challenged.
+(Novel)
+10. CrossDisciplinary — Cross-disciplinary research connection engine.
+Researchers from different fields stake on potential collaboration value
+between domains. (Novel)
+11. ScienceTranslation — Science-to-public translation quality. Scientists
+stake on whether media coverage accurately represents research findings.
+(Novel)
+12. OpenAccessRank — Open access journal and repository quality.
+Researchers stake on editorial rigor and peer review thoroughness. (Novel)
+
+12. Developer Tools & Infrastructure (15 ideas)
+Tools and infrastructure that other developers build on top of.
+1. TrustAPI — Universal API for querying Intuition reputation data. Any app
+can check entity trust scores, claim consensus, and staking patterns with
+simple REST calls. (Novel)
+2. ClaimQL — GraphQL interface for complex Knowledge Graph queries.
+Developers build rich trust-weighted interfaces without raw smart contract
+interaction. (Novel)
+3. StakeHook — Webhook service that notifies apps when stake thresholds
+change on entities they care about. Real-time reputation event streaming.
+(Novel)
+
+Build on Intuition: 300+ dApp Ideas
+
+21
+
+4. ReputationSDK — Drop-in reputation widget SDK. Add Intuition trust scores
+to any website or app with a few lines of code. (Novel)
+5. TrustGate — Middleware that gates access to resources based on Intuition
+reputation scores. Token-gate but with reputation instead of tokens. (Novel)
+6. ClaimBot — Framework for building automated claim-creation bots that
+feed structured data into the Knowledge Graph from external sources.
+(Novel)
+7. WalletPlugin — Wallet plugin that shows Intuition trust data for any address
+or contract before you interact with it. (Like: MetaMask Snap)
+8. EmbeddableTrust — Embeddable trust badges for websites. Show your
+entity's live Intuition reputation on your homepage. (Like: Trustpilot badges)
+9. GraphExplorer — Interactive knowledge graph visualization tool. Explore
+relationships, claims, and stake patterns visually. (Novel)
+10. ClaimSchema — Schema registry for standardized triple predicates.
+Ensures consistency across applications using the Knowledge Graph.
+(Novel)
+11. ReputationOracle — Chainlink-compatible oracle that serves Intuition
+reputation data to other chains and smart contracts. (Novel)
+12. MigrationKit — Tools for importing existing review/rating data from Web2
+platforms into Intuition atoms and triples. (Novel)
+13. AnalyticsDash — Analytics dashboard for Knowledge Graph activity.
+Track claim creation, staking patterns, and reputation trends. (Novel)
+14. TestnetFaucet — Testnet $TRUST faucet and sandbox environment for
+developers to prototype without mainnet costs. (Novel)
+15. IntegrationHub — Pre-built integrations connecting Intuition to Discord,
+Telegram, Slack, and other platforms for automatic claim creation. (Novel)
+
+13. Gaming & Esports (15 ideas)
+Portable player reputation, verified achievements, and accountable gaming
+ecosystems.
+1. PlayerID — Cross-game player identity. Achievements, skill ratings, and
+sportsmanship are staked and persist across games. Portable gaming
+resume. (Like: Steam profile, Xbox Gamertag)
+Build on Intuition: 300+ dApp Ideas
+
+22
+
+2. GuildReputation — Guild and clan reputation. Members and opponents
+stake on skill, sportsmanship, and culture claims. Trust-weighted guild
+discovery. (Like: WoW guild rankings)
+3. EsportsTrust — Competitive integrity ratings. Opponents and organizers
+stake on fair play and anti-cheat compliance. (Like: ESIC)
+4. SpeedrunVerify — Speedrun verification with stake-weighted community
+validation. Financially-backed alternative to moderator-only verification.
+(Like: Speedrun.com)
+5. GameReviewDAO — Community-governed game reviews. Counter-staking
+contests biased reviews. Publisher influence eliminated. (Like: Metacritic)
+6. StreamerTrust — Streamer credibility ratings. Viewers stake on
+entertainment value and transparency claims. (Like: Twitch rankings)
+7. TournamentRank — Tournament organizer reputation. Players stake on
+prize distribution reliability and rule enforcement. (Like: FACEIT)
+8. SkinAuth — In-game item authenticity verification. Traders stake on
+provenance and scam risk claims. (Like: CS2 skin markets)
+9. CoachRank — Gaming coach reputation. Students stake on effectiveness
+and rank improvement claims. (Like: Metafy)
+10. ModRepository — Game mod safety ratings. Players stake on
+compatibility and malware safety claims. (Like: Nexus Mods)
+11. GameAccessibility — Game accessibility ratings by players with
+disabilities. Stake on accessibility feature quality. (Like: Can I Play That?)
+12. PvPMatchmaking — Reputation-enhanced matchmaking. Sportsmanship
+scores influence pairing. (Like: Valve Trust Factor)
+13. RetroGameAuth — Retro game and console authenticity. Collectors stake
+on item authenticity. (Like: PriceCharting)
+14. BettingIntegrity — Esports and sports betting integrity monitoring.
+Stakeholders stake on match-fixing claims with evidence. (Like: ESIC,
+Sportradar)
+15. FantasyLeague — Decentralized fantasy sports with stake-weighted
+player performance predictions. (Like: DraftKings)
+
+Build on Intuition: 300+ dApp Ideas
+
+23
+
+14. Healthcare & Wellness (15 ideas)
+Stake-weighted trust for healthcare decisions where bad information can be
+dangerous.
+1. DoctorReputation — Multi-dimensional physician ratings. Patients stake on
+competence, bedside manner, and outcome quality across specialties.
+(Like: ZocDoc, Healthgrades)
+2. TreatmentGraph — Treatment effectiveness database. Patients and
+clinicians stake on outcome claims. Patient-powered evidence
+supplementing clinical trials. (Like: PatientsLikeMe)
+3. TherapyMatch — Mental health provider matching using stake-weighted
+specialty and outcome claims. Trust signals for the field where fit is
+everything. (Like: BetterHelp)
+4. MedDeviceWatch — Medical device safety ratings. Clinicians and patients
+stake on reliability and side effect claims. Early-warning signals. (Like: FDA
+MAUDE)
+5. HospitalRank — Hospital quality comparison. Patients and staff stake on
+surgical outcomes, nursing quality, and billing transparency. (Like: CMS
+Hospital Compare)
+6. BiohackerGraph — Biohacking and longevity intervention ratings. Selfexperimenters and researchers stake on effectiveness and safety claims.
+(Novel)
+7. SkinCare — Skincare product effectiveness ratings by skin type.
+Dermatologists and consumers stake on ingredient efficacy and irritation
+risk. (Like: EWG Skin Deep)
+8. ElderCare — Assisted living facility ratings. Family members stake on care
+quality, safety, and dignity claims. Accountability for vulnerable
+populations. (Like: Medicare ratings)
+9. AllergenAlert — Allergen verification for food and products. Consumers
+with allergies and food scientists stake on allergen-free claims. (Novel)
+10. TelehealthRate — Telemedicine platform quality. Patients stake on
+diagnostic accuracy and prescription appropriateness. (Novel)
+11. FertilityGraph — Fertility clinic ratings. Patients stake on success rate
+honesty, support quality, and cost transparency. (Like: FertilityIQ)
+
+Build on Intuition: 300+ dApp Ideas
+
+24
+
+12. VaccineInfo — Vaccine information knowledge graph. Immunologists
+stake on efficacy and safety claims. Credible alternative to social media
+misinfo. (Like: CDC info)
+13. GeneticTesting — Genetic testing service verification. Geneticists stake on
+accuracy and privacy claims for DTC genomics. (Novel)
+14. DentistGraph — Dental provider ratings with stake-weighted treatment
+honesty and pricing transparency claims. (Novel)
+15. PainManagement — Pain management specialist ratings. Chronic pain
+patients stake on effectiveness and opioid-alternative availability claims.
+(Novel)
+
+15. Education & Learning (15 ideas)
+Verified learning outcomes and portable, stake-weighted credentials.
+1. BootcampRank — Coding bootcamp ratings. Graduates stake on career
+outcome accuracy and job placement honesty. (Like: Course Report,
+SwitchUp)
+2. CourseGraph — Cross-platform online course ratings. Students stake on
+learning outcome delivery and content currency. (Like: Coursera/Udemy
+reviews)
+3. SkillBadge — Micro-credential system with stake-weighted verification.
+Employers stake on whether badge holders demonstrate claimed
+competence. (Like: Credly)
+4. TutorMatch — Tutor matching using stake-weighted effectiveness claims.
+Parents stake on tutors who genuinely improved grades. (Like: Wyzant)
+5. DegreeVerify — Instant degree verification. Universities create credential
+atoms; graduates claim them. Employers verify via Knowledge Graph. (Like:
+National Student Clearinghouse)
+6. SchoolBoard — K-12 school ratings by actual families. Stake on academic
+quality, safety, and inclusion claims across dimensions. (Like: GreatSchools,
+Niche)
+7. LearningPath — Curated learning path ratings. Learners stake on whether
+course sequences effectively build skills. (Like: Roadmap.sh)
+
+Build on Intuition: 300+ dApp Ideas
+
+25
+
+8. ResearchMentor — Graduate school advisor ratings. Students stake on
+mentorship quality and lab culture claims. (Novel)
+9. TextbookRate — Textbook quality ratings. Students and instructors stake
+on accuracy and pedagogical quality claims. (Novel)
+10. EdTechReview — Educational technology ratings by teachers. Stake on
+classroom effectiveness and administrative burden claims. (Like: Common
+Sense Education)
+11. CertificationAuth — Professional certification value assessment. Users
+stake on whether certifications (AWS, PMP, CFA) genuinely indicate
+competence. (Novel)
+12. LanguageProficiency — Language skill verification. Native speakers stake
+on proficiency claims. Community-verified alternative to expensive tests.
+(Like: CEFR tests)
+13. StudyAbroadRank — Study abroad program ratings. Past participants
+stake on academic quality, safety, and immersion claims. (Like: GoAbroad)
+14. HomeschoolResource — Homeschool curriculum ratings by parents.
+Stake on effectiveness, engagement, and age-appropriateness. (Like:
+Cathy Duffy Reviews)
+15. TestPrepRate — Test prep service ratings. Students stake on score
+improvement accuracy. Accountability for marketing claims. (Like: Kaplan
+reviews)
+
+16. Government & Civic (10 ideas)
+Public accountability and citizen-powered oversight.
+1. PromiseTracker — Campaign promise tracking. Citizens stake on delivery
+claims. Financially-weighted accountability across election cycles. (Like:
+PolitiFact Promise Tracker)
+2. BudgetWatch — Government spending transparency. Citizens stake on
+whether spending achieved goals. (Like: USASpending.gov)
+3. PublicServiceRate — Government agency and service ratings. Citizens
+stake on efficiency, accessibility, and helpfulness claims. (Like: Yelp for
+government)
+
+Build on Intuition: 300+ dApp Ideas
+
+26
+
+4. PolicyFeedback — Policy proposal feedback. Citizens stake on potential
+impact claims. Quantified civic opinion beyond polls. (Novel)
+5. InfrastructureWatch — Public infrastructure condition monitoring.
+Engineers and citizens stake on safety and maintenance claims. (Like:
+ASCE Report Card)
+6. PermitTracker — Building permit and zoning decision transparency.
+Stakeholders stake on fairness and consistency claims. (Novel)
+7. TransitRate — Public transportation quality ratings. Commuters stake on
+reliability, safety, and cleanliness claims. (Novel)
+8. OpenDataRank — Government open data quality ratings. Researchers
+stake on completeness and accuracy claims. (Like: Data.gov)
+9. MilitaryContractWatch — Defense contractor performance tracking. Stake
+on delivery, cost overrun, and quality claims. (Novel)
+10. EmergencyResponse — Emergency services quality ratings. Community
+members stake on response time and professionalism claims. (Novel)
+
+17. Professional Services & HR (12 ideas)
+Trust-weighted hiring, consulting, and professional discovery.
+1. GlassVault — Anonymous employer reviews backed by $TRUST stakes.
+Reviews can't be silently removed by paying companies. (Like: Glassdoor,
+Blind)
+2. ConsultantGraph — Consulting firm and consultant reputation. Clients
+stake on expertise, delivery quality, and billing accuracy. (Like: Clutch.co)
+3. InterviewFair — Company interview process ratings. Candidates stake on
+fairness, timeline honesty, and ghosting claims. (Like: Glassdoor interviews)
+4. TaxPro — Tax professional reputation by jurisdiction. Clients stake on
+accuracy, fee fairness, and audit defense quality. (Novel)
+5. RealEstateAgent — Real estate agent ratings. Buyers and sellers stake on
+honesty, responsiveness, and negotiation skill claims. (Like: Zillow agent
+reviews)
+6. LegalScore — Attorney ratings with stake-weighted responsiveness,
+competence, and billing fairness claims. (Like: Avvo)
+
+Build on Intuition: 300+ dApp Ideas
+
+27
+
+7. AccountantRep — Accountant and bookkeeper reputation. Business
+owners stake on accuracy and responsiveness claims. (Novel)
+8. SalaryTransparency — Salary data verification. Employees stake on
+compensation claims for roles at specific companies. (Like: Levels.fyi, but
+staked)
+9. RecruiterRep — Recruiter reputation system. Candidates and hiring
+managers stake on professionalism and placement quality claims. (Novel)
+10. FreelancePlatformRank — Freelance platform comparison. Freelancers
+stake on fee fairness, payment reliability, and dispute resolution claims.
+(Novel)
+11. CoachRep — Business and executive coach reputation. Clients stake on
+ROI, accountability, and strategic value claims. (Novel)
+12. RemoteJobVerify — Remote job listing verification. Workers stake on
+whether remote-work claims are genuine or bait-and-switch. (Novel)
+
+18. Real Estate & Property (10 ideas)
+Stake-weighted property, neighborhood, and service provider intelligence.
+1. PropSignal — Real estate intelligence where property claims are backed by
+stake from residents, inspectors, and agents. (Like: Zillow, Redfin)
+2. HoodScore — Neighborhood quality ratings. Residents stake on safety,
+walkability, noise, and community claims. (Like: Walk Score, but
+community-driven)
+3. LandlordWatch — Landlord reputation. Tenants stake on maintenance
+responsiveness, deposit return fairness, and lease honesty claims. (Novel)
+4. InspectorTrust — Home inspector reputation. Homebuyers stake on
+thoroughness and accuracy claims. (Novel)
+5. MortgageLens — Mortgage lender comparison. Borrowers stake on rate
+accuracy, closing cost transparency, and process efficiency claims. (Like:
+LendingTree reviews)
+6. HOAWatch — HOA management company ratings. Homeowners stake on
+fee transparency, responsiveness, and enforcement fairness claims.
+(Novel)
+
+Build on Intuition: 300+ dApp Ideas
+
+28
+
+7. PropertyManager — Property management company ratings. Tenants and
+owners stake on maintenance quality and communication claims. (Novel)
+8. TitleClear — Title company and closing service ratings. Stake on accuracy,
+speed, and fee transparency claims. (Novel)
+9. MovingDay — Moving company ratings. Customers stake on estimate
+accuracy, damage rates, and price-hostage avoidance claims. (Like:
+moveBuddha)
+10. CommercialRank — Commercial real estate broker reputation. Businesses
+stake on market knowledge and deal quality claims. (Novel)
+
+19. Food, Agriculture & Hospitality (12 ideas)
+From farm to fork, with trust at every step.
+1. FarmTrace — Farm-to-table verification. Consumers stake on organic,
+local, and sustainable sourcing claims. (Like: blockchain supply chain
+startups)
+2. OrganicProof — Organic certification validation. Farmers and consumers
+stake on whether products genuinely meet organic standards. (Novel)
+3. CorkGraph — Wine and spirits ratings. Enthusiasts and sommeliers stake
+on quality, value, and terroir claims. (Like: Vivino)
+4. BrewRank — Craft brewery and beer ratings. Beer enthusiasts stake on
+quality and style accuracy claims. (Like: Untappd)
+5. CoffeeGraph — Specialty coffee roaster and cafe ratings. Enthusiasts stake
+on bean quality, roast freshness, and brewing skill claims. (Novel)
+6. FishChain — Seafood sustainability and sourcing verification. Fishermen
+and distributors stake on catch method and origin claims. (Novel)
+7. FoodTruckFinder — Food truck discovery and quality ratings. Customers
+stake on food quality and location accuracy claims. (Novel)
+8. CateringRank — Catering service reputation. Event hosts stake on food
+quality, punctuality, and service claims. (Novel)
+9. GroceryCompare — Grocery store comparison. Shoppers stake on
+produce freshness, pricing fairness, and cleanliness claims. (Novel)
+
+Build on Intuition: 300+ dApp Ideas
+
+29
+
+10. SafePlate — Food safety reporting platform. Diners and health inspectors
+stake on hygiene and safety violation claims. (Novel)
+11. BarGraph — Bar and cocktail lounge ratings. Patrons stake on cocktail
+quality, atmosphere, and pricing claims. (Novel)
+12. MarketFresh — Farmers market vendor reputation. Regular customers
+stake on product quality and freshness claims. (Novel)
+
+20. Travel & Transportation (10 ideas)
+Trust-weighted travel intelligence.
+1. TrustTrail — Travel recommendation platform. Curators stake on
+destination and experience claims. Stake early on hidden gems, earn as
+others discover them. (Like: TripAdvisor, Lonely Planet)
+2. RideSignal — Decentralized ride-sharing with portable driver/rider
+reputation across any platform. (Like: Uber, Lyft — but portable)
+3. AirlineRank — Airline quality ratings. Passengers stake on service,
+legroom, delay honesty, and cancellation handling claims. (Like: Skytrax)
+4. DigitalNomadMap — Digital nomad destination intelligence. Remote
+workers stake on WiFi quality, cost of living, and visa process claims. (Like:
+Nomad List)
+5. TourGuideRep — Tour guide and experience provider ratings. Travelers
+stake on knowledge depth, engagement, and value claims. (Like: Viator
+reviews)
+6. HostelGraph — Hostel quality ratings. Travelers stake on cleanliness, social
+atmosphere, and safety claims. (Like: Hostelworld)
+7. CruiseRank — Cruise line and itinerary ratings. Passengers stake on value,
+food quality, and port excursion claims. (Like: Cruise Critic)
+8. ParkingFinder — Parking facility ratings. Drivers stake on safety, price
+accuracy, and availability claims. (Novel)
+9. RentalCarTrust — Rental car company ratings. Renters stake on hidden fee
+transparency and vehicle condition claims. (Novel)
+10. TravelInsuranceRank — Travel insurance company ratings. Travelers
+stake on claim processing fairness and coverage honesty. (Novel)
+
+Build on Intuition: 300+ dApp Ideas
+
+30
+
+21. Supply Chain & Commerce (10 ideas)
+Product authenticity and sourcing verification.
+1. AuthentiCheck — Luxury goods authentication marketplace. Experts stake
+on authenticity claims for watches, handbags, sneakers. (Like: Entrupy, The
+RealReal)
+2. EthicalSource — Ethical sourcing verification. Workers and auditors stake
+on labor practice and environmental compliance claims. (Like: Fair Trade,
+but staked)
+3. PartAuth — Auto and industrial parts authenticity verification. Mechanics
+and buyers stake on genuine-vs-counterfeit claims. (Novel)
+4. RecallWatch — Product recall awareness. Consumers and safety
+researchers stake on defect severity and response adequacy claims.
+(Novel)
+5. SupplierTrust — B2B supplier reputation. Procurement teams stake on
+delivery reliability, quality consistency, and communication claims. (Like:
+Alibaba reviews)
+6. PackagingGraph — Sustainable packaging verification. Stake on
+biodegradability and recyclability claims. (Novel)
+7. DropshipDetector — Dropshipping and reseller detection. Consumers stake
+on whether sellers are genuine brands or middlemen. (Novel)
+8. WarrantyWatch — Product warranty honesty ratings. Consumers stake on
+whether warranties are honored as advertised. (Novel)
+9. FreightTrust — Freight and logistics provider reputation. Shippers stake on
+delivery reliability and damage rate claims. (Novel)
+10. QualityNet — Manufacturing quality certification verification. Auditors and
+buyers stake on whether quality certs reflect actual standards. (Novel)
+
+22. Environment & Sustainability (8 ideas)
+Financial accountability for environmental claims.
+1. GreenVerify — Green product and company verification. Consumers and
+researchers stake on sustainability claims. Counter-stake greenwashing.
+(Novel)
+
+Build on Intuition: 300+ dApp Ideas
+
+31
+
+2. CarbonGraph — Carbon offset quality verification. Scientists stake on
+additionality and permanence claims. (Like: Gold Standard, Verra)
+3. SolarScore — Solar installer ratings. Homeowners stake on installation
+quality, output accuracy, and warranty claims. (Novel)
+4. EcoProduct — Eco-friendly product rating platform. Environmentalists
+stake on lifecycle impact and biodegradability claims. (Novel)
+5. EVChargeRate — EV charging network ratings. Drivers stake on reliability,
+speed accuracy, and pricing transparency claims. (Novel)
+6. WaterQuality — Water quality monitoring. Residents and scientists stake on
+contamination and treatment claims. (Novel)
+7. ESGWatch — ESG rating verification. Analysts and employees stake on
+whether company ESG scores reflect reality. (Novel)
+8. CleanEnergyRank — Clean energy provider ratings. Subscribers stake on
+renewable energy percentage and pricing honesty claims. (Novel)
+
+23. Speculative & Viral Games (12 ideas)
+High-engagement, speculative applications leveraging Intuition's bonding
+curves. From the Onchain Labs playbook and beyond.
+1. Roast.fun — Universal cross-platform roast and comedic criticism platform.
+Users farm tokens by roasting websites and profiles. Upvotes determine
+farming rewards. The funnier you are, the more you earn. (Novel)
+2. Music.markets — Spotify data games. Connect listening history to
+speculate on building top charts. First to upload and upvote earns fees.
+"What is the value of your music taste?" (Novel)
+3. Conspiracy.markets — Declassified document speculation. Upload
+government documents, create token-curated lists of primary sources, and
+speculate on conclusions via bonding curves. (Novel)
+4. Web3 Product Hunt — Bet on projects pre-token. Stake on which prelaunch projects will succeed. Early believers earn if the project takes off.
+(Like: Product Hunt meets prediction markets)
+5. Influencer.market — Buy and sell "shares" of crypto influencers based on
+performance and predictions. Performance-based dividends from
+prediction accuracy. (Like: Friend.tech, but reputation-based)
+
+Build on Intuition: 300+ dApp Ideas
+
+32
+
+6. AI Model Wars — Speculate on which AI models will achieve specific
+benchmarks. Bonding curves for model performance predictions. (Novel)
+7. Startup Graveyard — Predict which startups will fail. Early predictors earn
+when predictions come true. Time-based multipliers. (Novel)
+8. Meme Oracle Wars — Create and stake on meme templates before they go
+viral. Track meme origins through the Knowledge Graph. Earn by spotting
+viral patterns early. (Novel)
+9. Internet Fame Casino — Trade "shares" in internet personalities based on
+perceived fame. Pure speculation with social proof multipliers. (Novel)
+10. Conference.market — Speculate on crypto conference quality and
+networking potential. Clout multipliers and afterparty speculation. (Novel)
+11. Festival.market — Speculate on music festival experiences. Vibe strength
+multipliers and lineup quality predictions. (Novel)
+12. Agent Marketplace Betting — Bet on AI agents. Which agent will become
+the most-used in its category? Bonding curve speculation on agent
+adoption. (Novel)
+
+24. Pets & Animals (8 ideas)
+1. VetVault — Veterinarian ratings. Pet owners stake on competence,
+compassion, and emergency availability claims. (Novel)
+2. KibbleGraph — Pet food quality ratings. Pet owners and nutritionists stake
+on ingredient accuracy and health outcome claims. (Novel)
+3. BreederTrust — Breeder reputation. Buyers stake on health testing,
+socialization, and ethical practice claims. (Novel)
+4. PetSitterScore — Pet sitter and walker ratings. Owners stake on reliability,
+care quality, and communication claims. (Like: Rover reviews)
+5. ShelterLight — Animal shelter ratings. Adopters and volunteers stake on
+care quality, adoption process, and transparency claims. (Novel)
+6. TrainerRank — Dog trainer and behaviorist ratings. Owners stake on
+method effectiveness and humane practice claims. (Novel)
+7. ExoticVet — Exotic pet veterinarian discovery. Owners of reptiles, birds,
+and exotic pets stake on specialist competence claims. (Novel)
+
+Build on Intuition: 300+ dApp Ideas
+
+33
+
+8. BoardingCheck — Pet boarding facility ratings. Owners stake on safety,
+cleanliness, and activity claims. (Novel)
+
+25. Telecom & Internet (6 ideas)
+1. CarrierRank — Mobile carrier ratings. Subscribers stake on coverage
+accuracy, throttling honesty, and plan value claims. (Novel)
+2. HostGraph — Web hosting provider ratings. Developers stake on uptime,
+support quality, and scaling honesty claims. (Like: hosting review sites)
+3. StreamScore — Video and music streaming quality comparison.
+Subscribers stake on bitrate, catalog accuracy, and recommendation
+quality claims. (Novel)
+4. DataBrokerWatch — Data broker and privacy company ratings. Privacy
+researchers stake on data handling and compliance claims. (Novel)
+5. PrivacyScore — Privacy tool and service ratings. Security researchers
+stake on actual privacy protection vs marketing claims. (Novel)
+6. MeshNet — Decentralized ISP and mesh network quality ratings. Users
+stake on reliability and coverage claims. (Novel)
+
+⚡
+
+How to get started building: Visit docs.intuition.systems for the SDK,
+API reference, and developer guides. Join the Intuition Discord for
+builder support and grant opportunities.
+
+Cross-Cutting Themes
+Six patterns that make Intuition dApps uniquely powerful:
+1. Information Asymmetry Destruction — Every category above features a
+market where one party historically has more information than the other
+(doctor vs patient, employer vs candidate, seller vs buyer). Intuition's
+staking mechanism forces transparency by making information hiding
+expensive.
+2. Review Corruption Resistance — The #1 problem with every Web2 review
+platform is fake reviews. Intuition's bonding curves and counter-staking
+
+Build on Intuition: 300+ dApp Ideas
+
+34
+
+make astroturfing prohibitively expensive and honest early curation
+profitable.
+3. Portable Reputation — Your reputation on Uber doesn't transfer to Lyft.
+Your Airbnb hosting reviews don't help on VRBO. Intuition creates a
+universal reputation layer that follows you across every application.
+4. AI Agent Infrastructure — As AI agents become autonomous economic
+actors, they need trust infrastructure. Intuition is the only protocol designed
+from the ground up to serve as a trust layer for both humans and AI agents.
+5. Curation-as-Investment — Intuition's bonding curves turn curation into an
+investment activity. Being the first to identify a great restaurant, a promising
+startup, or a talented artist creates financial returns. This is a new economic
+primitive.
+6. Counter-Staking as Accountability — The ability to financially stake
+AGAINST a claim is as important as staking for it. This creates economic
+consequences for false claims, greenwashing, fake credentials, and broken
+promises.
+
+Generated 2026-03-08. This is a living document — add your ideas and vote
+on the best ones.
+
+Build on Intuition: 300+ dApp Ideas
+
+35
+
+

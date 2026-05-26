@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-19-003-cork-graph",
+  "slug": "cork-graph",
+  "title": "CorkGraph",
+  "tagline": "Wine and spirits ratings",
+  "category": "Food, Agriculture & Hospitality",
+  "description": "Wine and spirits ratings. Enthusiasts and sommeliers stake on quality, value, and terroir claims.",
+  "comparable": "Vivino",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "food-agriculture-hospitality",
+    "vivino"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-cork-graph/README.md"
+}

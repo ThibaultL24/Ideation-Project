@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-013-supply-trace",
+  "slug": "supply-trace",
+  "title": "SupplyTrace",
+  "tagline": "Supply chain integrity verification",
+  "category": "Safety, Security & Protection",
+  "description": "Supply chain integrity verification. Workers and auditors counter-stake on greenwashing or labor violations.",
+  "comparable": "Provenance",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection",
+    "provenance"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-supply-trace/README.md"
+}

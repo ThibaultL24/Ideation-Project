@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-22-007-esgwatch",
+  "slug": "esgwatch",
+  "title": "ESGWatch",
+  "tagline": "ESG rating verification",
+  "category": "Environment & Sustainability",
+  "description": "ESG rating verification. Analysts and employees stake on whether company ESG scores reflect reality. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "environment-sustainability"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-esgwatch/README.md"
+}

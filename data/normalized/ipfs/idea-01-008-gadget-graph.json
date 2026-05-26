@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-008-gadget-graph",
+  "slug": "gadget-graph",
+  "title": "GadgetGraph",
+  "tagline": "Consumer electronics long-term reliability tracker",
+  "category": "Reviews & Ratings",
+  "description": "Consumer electronics long-term reliability tracker. Owners stake on durability and battery degradation claims after 6+ months.",
+  "comparable": "Consumer Reports, Wirecutter",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "consumer-reports",
+    "wirecutter"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-gadget-graph/README.md"
+}

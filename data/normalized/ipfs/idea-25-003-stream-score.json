@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-25-003-stream-score",
+  "slug": "stream-score",
+  "title": "StreamScore",
+  "tagline": "Video and music streaming quality comparison",
+  "category": "Telecom & Internet",
+  "description": "Video and music streaming quality comparison. Subscribers stake on bitrate, catalog accuracy, and recommendation quality claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "telecom-internet"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-stream-score/README.md"
+}

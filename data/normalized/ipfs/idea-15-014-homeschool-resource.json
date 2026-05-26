@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-014-homeschool-resource",
+  "slug": "homeschool-resource",
+  "title": "HomeschoolResource",
+  "tagline": "Homeschool curriculum ratings by parents",
+  "category": "Education & Learning",
+  "description": "Homeschool curriculum ratings by parents. Stake on effectiveness, engagement, and age-appropriateness.",
+  "comparable": "Cathy Duffy Reviews",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning",
+    "cathy-duffy-reviews"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-homeschool-resource/README.md"
+}

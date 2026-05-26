@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-12-007-wallet-plugin",
+  "slug": "wallet-plugin",
+  "title": "WalletPlugin",
+  "tagline": "Wallet plugin that shows Intuition trust data for any address or contract before you interact with it.",
+  "category": "Developer Tools & Infrastructure",
+  "description": "Wallet plugin that shows Intuition trust data for any address or contract before you interact with it.",
+  "comparable": "MetaMask Snap",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "developer-tools-infrastructure",
+    "metamask-snap"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-wallet-plugin/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-08-014-price-whisper",
+  "slug": "price-whisper",
+  "title": "PriceWhisper",
+  "tagline": "Token price signal aggregator",
+  "category": "Prediction & Signal Markets",
+  "description": "Token price signal aggregator. Analysts stake on price range claims. Conviction board with accountable track records.",
+  "comparable": "Build on Intuition: 300+ dApp Ideas Crypto Twitter, but accountable",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "prediction-signal-markets",
+    "build-on-intuition-300-dapp-ideas-crypto-twitter",
+    "but-accountable"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-price-whisper/README.md"
+}

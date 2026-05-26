@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-015-test-prep-rate",
+  "slug": "test-prep-rate",
+  "title": "TestPrepRate",
+  "tagline": "Test prep service ratings",
+  "category": "Education & Learning",
+  "description": "Test prep service ratings. Students stake on score improvement accuracy. Accountability for marketing claims.",
+  "comparable": "Kaplan reviews",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning",
+    "kaplan-reviews"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-test-prep-rate/README.md"
+}

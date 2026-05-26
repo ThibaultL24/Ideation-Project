@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-015-vote-guard",
+  "slug": "vote-guard",
+  "title": "VoteGuard",
+  "tagline": "Election integrity monitoring",
+  "category": "Safety, Security & Protection",
+  "description": "Election integrity monitoring. Poll watchers stake on irregularity claims. Unsubstantiated claims face counter-staking. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-vote-guard/README.md"
+}

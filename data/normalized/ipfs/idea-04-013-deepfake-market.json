@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-013-deepfake-market",
+  "slug": "deepfake-market",
+  "title": "DeepfakeMarket",
+  "tagline": "Deepfake detection marketplace",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "Deepfake detection marketplace. Forensic analysts stake on media authenticity claims.",
+  "comparable": "Reality Defender, Sensity",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence",
+    "reality-defender",
+    "sensity"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-deepfake-market/README.md"
+}

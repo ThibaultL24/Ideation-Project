@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-008-nutrition-facts",
+  "slug": "nutrition-facts",
+  "title": "NutritionFacts",
+  "tagline": "Nutritional science claim verification",
+  "category": "Knowledge, Research & Information",
+  "description": "Nutritional science claim verification. Researchers stake on food health effect claims. Financially-backed alternative to conflicting headlines.",
+  "comparable": "Examine.com",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information",
+    "examine-com"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-nutrition-facts/README.md"
+}

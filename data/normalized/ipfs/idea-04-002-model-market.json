@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-002-model-market",
+  "slug": "model-market",
+  "title": "ModelMarket",
+  "tagline": "AI model evaluation where model capabilities are staked claims",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "AI model evaluation where model capabilities are staked claims. [GPT-5] [outperforms] [Claude-4] [at] [Code Generation] is a financial market.",
+  "comparable": "Chatbot Arena, LMSYS",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence",
+    "chatbot-arena",
+    "lmsys"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-model-market/README.md"
+}

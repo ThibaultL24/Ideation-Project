@@ -1,0 +1,54 @@
+{
+  "batchSize": 50,
+  "total": 362,
+  "summary": [
+    {
+      "offset": 0,
+      "limit": 50,
+      "exitCode": 0,
+      "reportPath": "data/reports/migration-batch-sdk-0-49.json"
+    },
+    {
+      "offset": 50,
+      "limit": 50,
+      "exitCode": 0,
+      "reportPath": "data/reports/migration-batch-sdk-50-99.json"
+    },
+    {
+      "offset": 100,
+      "limit": 50,
+      "exitCode": 0,
+      "reportPath": "data/reports/migration-batch-sdk-100-149.json"
+    },
+    {
+      "offset": 150,
+      "limit": 50,
+      "exitCode": 0,
+      "reportPath": "data/reports/migration-batch-sdk-150-199.json"
+    },
+    {
+      "offset": 200,
+      "limit": 50,
+      "exitCode": 0,
+      "reportPath": "data/reports/migration-batch-sdk-200-249.json"
+    },
+    {
+      "offset": 250,
+      "limit": 50,
+      "exitCode": 0,
+      "reportPath": "data/reports/migration-batch-sdk-250-299.json"
+    },
+    {
+      "offset": 300,
+      "limit": 50,
+      "exitCode": 0,
+      "reportPath": "data/reports/migration-batch-sdk-300-349.json"
+    },
+    {
+      "offset": 350,
+      "limit": 12,
+      "exitCode": 0,
+      "reportPath": "data/reports/migration-batch-sdk-350-361.json"
+    }
+  ]
+}

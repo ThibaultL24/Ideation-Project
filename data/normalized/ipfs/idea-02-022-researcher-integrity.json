@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-022-researcher-integrity",
+  "slug": "researcher-integrity",
+  "title": "ResearcherIntegrity",
+  "tagline": "Scientific integrity tracker",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Scientific integrity tracker. Peers stake on data fabrication and methodological rigor claims. Economic incentives for research integrity.",
+  "comparable": "Retraction Watch, but proactive",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "retraction-watch",
+    "but-proactive"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-researcher-integrity/README.md"
+}

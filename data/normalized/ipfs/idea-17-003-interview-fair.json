@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-17-003-interview-fair",
+  "slug": "interview-fair",
+  "title": "InterviewFair",
+  "tagline": "Company interview process ratings",
+  "category": "Professional Services & HR",
+  "description": "Company interview process ratings. Candidates stake on fairness, timeline honesty, and ghosting claims.",
+  "comparable": "Glassdoor interviews",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "professional-services-hr",
+    "glassdoor-interviews"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-interview-fair/README.md"
+}

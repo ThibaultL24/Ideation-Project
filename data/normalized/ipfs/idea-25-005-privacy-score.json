@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-25-005-privacy-score",
+  "slug": "privacy-score",
+  "title": "PrivacyScore",
+  "tagline": "Privacy tool and service ratings",
+  "category": "Telecom & Internet",
+  "description": "Privacy tool and service ratings. Security researchers stake on actual privacy protection vs marketing claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "telecom-internet"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-privacy-score/README.md"
+}

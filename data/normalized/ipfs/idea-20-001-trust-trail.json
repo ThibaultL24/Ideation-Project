@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-20-001-trust-trail",
+  "slug": "trust-trail",
+  "title": "TrustTrail",
+  "tagline": "Travel recommendation platform",
+  "category": "Travel & Transportation",
+  "description": "Travel recommendation platform. Curators stake on destination and experience claims. Stake early on hidden gems, earn as others discover them.",
+  "comparable": "TripAdvisor, Lonely Planet",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "travel-transportation",
+    "tripadvisor",
+    "lonely-planet"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-trust-trail/README.md"
+}

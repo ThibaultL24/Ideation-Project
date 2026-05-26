@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-006-school-board",
+  "slug": "school-board",
+  "title": "SchoolBoard",
+  "tagline": "K-12 school ratings by actual families",
+  "category": "Education & Learning",
+  "description": "K-12 school ratings by actual families. Stake on academic quality, safety, and inclusion claims across dimensions.",
+  "comparable": "GreatSchools, Niche",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning",
+    "greatschools",
+    "niche"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-school-board/README.md"
+}

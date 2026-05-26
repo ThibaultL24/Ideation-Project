@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-20-004-digital-nomad-map",
+  "slug": "digital-nomad-map",
+  "title": "DigitalNomadMap",
+  "tagline": "Digital nomad destination intelligence",
+  "category": "Travel & Transportation",
+  "description": "Digital nomad destination intelligence. Remote workers stake on WiFi quality, cost of living, and visa process claims.",
+  "comparable": "Nomad List",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "travel-transportation",
+    "nomad-list"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-digital-nomad-map/README.md"
+}

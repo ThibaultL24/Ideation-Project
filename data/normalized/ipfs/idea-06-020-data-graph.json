@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-020-data-graph",
+  "slug": "data-graph",
+  "title": "DataGraph",
+  "tagline": "Open data quality ratings",
+  "category": "Knowledge, Research & Information",
+  "description": "Open data quality ratings. Data scientists stake on dataset completeness, accuracy, and methodology claims.",
+  "comparable": "Kaggle, Data.gov",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information",
+    "kaggle",
+    "data-gov"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-data-graph/README.md"
+}

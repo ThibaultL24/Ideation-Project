@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-07-014-carbon-credit",
+  "slug": "carbon-credit",
+  "title": "CarbonCredit",
+  "tagline": "Carbon credit quality verification",
+  "category": "Finance, DeFi & Insurance",
+  "description": "Carbon credit quality verification. Scientists stake on legitimacy and additionality claims.",
+  "comparable": "Gold Standard, Verra",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "finance-defi-insurance",
+    "gold-standard",
+    "verra"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-carbon-credit/README.md"
+}

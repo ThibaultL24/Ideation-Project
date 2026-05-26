@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-016-tenant-landlord-rep",
+  "slug": "tenant-landlord-rep",
+  "title": "TenantLandlordRep",
+  "tagline": "Bilateral rental reputation",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Bilateral rental reputation. Both parties build portable rental reputation usable across platforms and geographies.",
+  "comparable": "RentPrep, but bilateral",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "rentprep",
+    "but-bilateral"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-tenant-landlord-rep/README.md"
+}

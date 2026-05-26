@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-009-feed-trust",
+  "slug": "feed-trust",
+  "title": "FeedTrust",
+  "tagline": "Social news aggregation where every posted link has a live credibility market",
+  "category": "Social Networks & Community",
+  "description": "Social news aggregation where every posted link has a live credibility market. Misinformation costs money; debunking earns money.",
+  "comparable": "Reddit, Hacker News",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community",
+    "reddit",
+    "hacker-news"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-feed-trust/README.md"
+}

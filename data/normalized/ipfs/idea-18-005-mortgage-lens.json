@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-18-005-mortgage-lens",
+  "slug": "mortgage-lens",
+  "title": "MortgageLens",
+  "tagline": "Mortgage lender comparison",
+  "category": "Real Estate & Property",
+  "description": "Mortgage lender comparison. Borrowers stake on rate accuracy, closing cost transparency, and process efficiency claims.",
+  "comparable": "LendingTree reviews",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "real-estate-property",
+    "lendingtree-reviews"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-mortgage-lens/README.md"
+}

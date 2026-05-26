@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-16-002-budget-watch",
+  "slug": "budget-watch",
+  "title": "BudgetWatch",
+  "tagline": "Government spending transparency",
+  "category": "Government & Civic",
+  "description": "Government spending transparency. Citizens stake on whether spending achieved goals.",
+  "comparable": "USASpending.gov",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "government-civic",
+    "usaspending-gov"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-budget-watch/README.md"
+}

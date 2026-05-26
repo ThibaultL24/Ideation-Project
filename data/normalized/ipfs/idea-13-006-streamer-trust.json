@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-13-006-streamer-trust",
+  "slug": "streamer-trust",
+  "title": "StreamerTrust",
+  "tagline": "Streamer credibility ratings",
+  "category": "Gaming & Esports",
+  "description": "Streamer credibility ratings. Viewers stake on entertainment value and transparency claims.",
+  "comparable": "Twitch rankings",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "gaming-esports",
+    "twitch-rankings"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-streamer-trust/README.md"
+}

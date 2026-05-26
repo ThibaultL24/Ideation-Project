@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-12-008-embeddable-trust",
+  "slug": "embeddable-trust",
+  "title": "EmbeddableTrust",
+  "tagline": "Embeddable trust badges for websites",
+  "category": "Developer Tools & Infrastructure",
+  "description": "Embeddable trust badges for websites. Show your entity's live Intuition reputation on your homepage.",
+  "comparable": "Trustpilot badges",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "developer-tools-infrastructure",
+    "trustpilot-badges"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-embeddable-trust/README.md"
+}

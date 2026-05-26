@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-22-004-eco-product",
+  "slug": "eco-product",
+  "title": "EcoProduct",
+  "tagline": "Eco-friendly product rating platform",
+  "category": "Environment & Sustainability",
+  "description": "Eco-friendly product rating platform. Environmentalists stake on lifecycle impact and biodegradability claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "environment-sustainability"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-eco-product/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-013-supplement-score",
+  "slug": "supplement-score",
+  "title": "SupplementScore",
+  "tagline": "Supplement review platform where lab testers and consumers stake on ingredient accuracy and efficacy claims.",
+  "category": "Reviews & Ratings",
+  "description": "Supplement review platform where lab testers and consumers stake on ingredient accuracy and efficacy claims.",
+  "comparable": "Labdoor, ConsumerLab",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "labdoor",
+    "consumerlab"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-supplement-score/README.md"
+}

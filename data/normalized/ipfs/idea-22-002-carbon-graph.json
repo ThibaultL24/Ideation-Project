@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-22-002-carbon-graph",
+  "slug": "carbon-graph",
+  "title": "CarbonGraph",
+  "tagline": "Carbon offset quality verification",
+  "category": "Environment & Sustainability",
+  "description": "Carbon offset quality verification. Scientists stake on additionality and permanence claims.",
+  "comparable": "Gold Standard, Verra",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "environment-sustainability",
+    "gold-standard",
+    "verra"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-carbon-graph/README.md"
+}

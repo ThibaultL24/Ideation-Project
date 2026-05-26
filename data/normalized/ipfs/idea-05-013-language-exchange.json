@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-013-language-exchange",
+  "slug": "language-exchange",
+  "title": "LanguageExchange",
+  "tagline": "Language partner matching with stake-weighted teaching quality and reliability claims.",
+  "category": "Social Networks & Community",
+  "description": "Language partner matching with stake-weighted teaching quality and reliability claims.",
+  "comparable": "Tandem, HelloTalk",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community",
+    "tandem",
+    "hellotalk"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-language-exchange/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-019-insurance-rank",
+  "slug": "insurance-rank",
+  "title": "InsuranceRank",
+  "tagline": "Insurance company ratings by policyholders",
+  "category": "Reviews & Ratings",
+  "description": "Insurance company ratings by policyholders. Stake on claim processing fairness, rate stability, and coverage honesty.",
+  "comparable": "AM Best, J.D. Power",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "am-best",
+    "j-d-power"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-insurance-rank/README.md"
+}

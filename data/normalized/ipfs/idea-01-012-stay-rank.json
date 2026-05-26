@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-012-stay-rank",
+  "slug": "stay-rank",
+  "title": "StayRank",
+  "tagline": "Hotel and Airbnb reviews where guests stake on cleanliness, listing accuracy, and host responsiveness",
+  "category": "Reviews & Ratings",
+  "description": "Hotel and Airbnb reviews where guests stake on cleanliness, listing accuracy, and host responsiveness. (Like: TripAdvisor, Booking.com) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-stay-rank/README.md"
+}

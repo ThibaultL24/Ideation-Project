@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-008-research-mentor",
+  "slug": "research-mentor",
+  "title": "ResearchMentor",
+  "tagline": "Graduate school advisor ratings",
+  "category": "Education & Learning",
+  "description": "Graduate school advisor ratings. Students stake on mentorship quality and lab culture claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-research-mentor/README.md"
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-16-007-transit-rate",
+  "slug": "transit-rate",
+  "title": "TransitRate",
+  "tagline": "Public transportation quality ratings",
+  "category": "Government & Civic",
+  "description": "Public transportation quality ratings. Commuters stake on reliability, safety, and cleanliness claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "government-civic"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-transit-rate/README.md"
+}

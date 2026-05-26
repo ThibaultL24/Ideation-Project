@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-10-007-critique-curve",
+  "slug": "critique-curve",
+  "title": "CritiqueCurve",
+  "tagline": "Art critique platform where critique quality itself is staked on",
+  "category": "Creative Arts & Culture",
+  "description": "Art critique platform where critique quality itself is staked on. Critics build economic reputation for actionable feedback. (Novel) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "creative-arts-culture"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-critique-curve/README.md"
+}

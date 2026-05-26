@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-08-007-sports-oracle",
+  "slug": "sports-oracle",
+  "title": "SportsOracle",
+  "tagline": "Sports prediction market using Intuition triples",
+  "category": "Prediction & Signal Markets",
+  "description": "Sports prediction market using Intuition triples. Prediction track records become portable analyst reputation.",
+  "comparable": "sports betting, but reputation-building",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "prediction-signal-markets",
+    "sports-betting",
+    "but-reputation-building"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-sports-oracle/README.md"
+}

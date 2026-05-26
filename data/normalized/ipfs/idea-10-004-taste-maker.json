@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-10-004-taste-maker",
+  "slug": "taste-maker",
+  "title": "TasteMaker",
+  "tagline": "Cross-domain taste mapping",
+  "category": "Creative Arts & Culture",
+  "description": "Cross-domain taste mapping. Your staking pattern across food, music, film creates a rich taste profile. Find people with aligned taste.",
+  "comparable": "Taste.io, but cross-domain",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "creative-arts-culture",
+    "taste-io",
+    "but-cross-domain"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-taste-maker/README.md"
+}

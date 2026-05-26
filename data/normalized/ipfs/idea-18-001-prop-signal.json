@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-18-001-prop-signal",
+  "slug": "prop-signal",
+  "title": "PropSignal",
+  "tagline": "Real estate intelligence where property claims are backed by stake from residents, inspectors, and agents.",
+  "category": "Real Estate & Property",
+  "description": "Real estate intelligence where property claims are backed by stake from residents, inspectors, and agents.",
+  "comparable": "Zillow, Redfin",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "real-estate-property",
+    "zillow",
+    "redfin"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-prop-signal/README.md"
+}

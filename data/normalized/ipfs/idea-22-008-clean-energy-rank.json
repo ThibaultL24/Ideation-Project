@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-22-008-clean-energy-rank",
+  "slug": "clean-energy-rank",
+  "title": "CleanEnergyRank",
+  "tagline": "Clean energy provider ratings",
+  "category": "Environment & Sustainability",
+  "description": "Clean energy provider ratings. Subscribers stake on renewable energy percentage and pricing honesty claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "environment-sustainability"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-clean-energy-rank/README.md"
+}

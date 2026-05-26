@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-13-003-esports-trust",
+  "slug": "esports-trust",
+  "title": "EsportsTrust",
+  "tagline": "Competitive integrity ratings",
+  "category": "Gaming & Esports",
+  "description": "Competitive integrity ratings. Opponents and organizers stake on fair play and anti-cheat compliance.",
+  "comparable": "ESIC",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "gaming-esports",
+    "esic"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-esports-trust/README.md"
+}

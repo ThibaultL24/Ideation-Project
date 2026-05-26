@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-001-trust-circle",
+  "slug": "trust-circle",
+  "title": "TrustCircle",
+  "tagline": "Social network where connections are stake-weighted",
+  "category": "Social Networks & Community",
+  "description": "Social network where connections are stake-weighted. Instead of friending, you stake on character and competence claims. Social graph with financial commitment.",
+  "comparable": "Facebook, but staked",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community",
+    "facebook",
+    "but-staked"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-trust-circle/README.md"
+}

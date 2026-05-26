@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-20-006-hostel-graph",
+  "slug": "hostel-graph",
+  "title": "HostelGraph",
+  "tagline": "Hostel quality ratings",
+  "category": "Travel & Transportation",
+  "description": "Hostel quality ratings. Travelers stake on cleanliness, social atmosphere, and safety claims.",
+  "comparable": "Hostelworld",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "travel-transportation",
+    "hostelworld"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-hostel-graph/README.md"
+}

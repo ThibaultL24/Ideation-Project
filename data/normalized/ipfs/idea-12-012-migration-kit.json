@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-12-012-migration-kit",
+  "slug": "migration-kit",
+  "title": "MigrationKit",
+  "tagline": "Tools for importing existing review/rating data from Web2 platforms into Intuition atoms and triples",
+  "category": "Developer Tools & Infrastructure",
+  "description": "Tools for importing existing review/rating data from Web2 platforms into Intuition atoms and triples. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "developer-tools-infrastructure"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-migration-kit/README.md"
+}

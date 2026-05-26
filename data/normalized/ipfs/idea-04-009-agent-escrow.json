@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-009-agent-escrow",
+  "slug": "agent-escrow",
+  "title": "AgentEscrow",
+  "tagline": "Escrow for AI agent transactions",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "Escrow for AI agent transactions. High-reputation agents get lower escrow requirements. No human co-signer needed for trusted agents. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-agent-escrow/README.md"
+}

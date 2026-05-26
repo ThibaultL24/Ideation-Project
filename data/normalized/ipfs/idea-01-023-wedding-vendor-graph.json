@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-023-wedding-vendor-graph",
+  "slug": "wedding-vendor-graph",
+  "title": "WeddingVendorGraph",
+  "tagline": "Wedding vendor reputation across photographers, florists, caterers",
+  "category": "Reviews & Ratings",
+  "description": "Wedding vendor reputation across photographers, florists, caterers. Couples stake on quality and pricing honesty.",
+  "comparable": "The Knot, WeddingWire",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "the-knot",
+    "weddingwire"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-wedding-vendor-graph/README.md"
+}

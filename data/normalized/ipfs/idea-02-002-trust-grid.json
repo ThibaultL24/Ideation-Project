@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-002-trust-grid",
+  "slug": "trust-grid",
+  "title": "TrustGrid",
+  "tagline": "Professional identity where claims like [Alice] [has-skill] [Solidity] are staked on by colleagues",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Professional identity where claims like [Alice] [has-skill] [Solidity] are staked on by colleagues. Professional reputation becomes a portable, financially-backed asset.",
+  "comparable": "LinkedIn",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "linkedin"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-trust-grid/README.md"
+}

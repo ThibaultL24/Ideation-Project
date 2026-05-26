@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-08-010-reg-signal",
+  "slug": "reg-signal",
+  "title": "RegSignal",
+  "tagline": "Regulatory prediction market",
+  "category": "Prediction & Signal Markets",
+  "description": "Regulatory prediction market. Policy analysts stake on upcoming regulation claims.",
+  "comparable": "Polymarket regulatory",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "prediction-signal-markets",
+    "polymarket-regulatory"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-reg-signal/README.md"
+}

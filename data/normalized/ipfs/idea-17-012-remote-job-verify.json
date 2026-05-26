@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-17-012-remote-job-verify",
+  "slug": "remote-job-verify",
+  "title": "RemoteJobVerify",
+  "tagline": "Remote job listing verification",
+  "category": "Professional Services & HR",
+  "description": "Remote job listing verification. Workers stake on whether remote-work claims are genuine or bait-and-switch. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "professional-services-hr"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-remote-job-verify/README.md"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-012-language-proficiency",
+  "slug": "language-proficiency",
+  "title": "LanguageProficiency",
+  "tagline": "Language skill verification",
+  "category": "Education & Learning",
+  "description": "Language skill verification. Native speakers stake on proficiency claims. Community-verified alternative to expensive tests.",
+  "comparable": "CEFR tests",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning",
+    "cefr-tests"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-language-proficiency/README.md"
+}

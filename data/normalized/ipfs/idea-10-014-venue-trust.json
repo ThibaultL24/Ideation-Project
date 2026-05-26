@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-10-014-venue-trust",
+  "slug": "venue-trust",
+  "title": "VenueTrust",
+  "tagline": "Live event and venue quality",
+  "category": "Creative Arts & Culture",
+  "description": "Live event and venue quality. Attendees stake on sound, accessibility, and experience claims.",
+  "comparable": "Songkick",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "creative-arts-culture",
+    "songkick"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-venue-trust/README.md"
+}

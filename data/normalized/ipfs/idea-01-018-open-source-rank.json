@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-018-open-source-rank",
+  "slug": "open-source-rank",
+  "title": "OpenSourceRank",
+  "tagline": "Open-source library ratings",
+  "category": "Reviews & Ratings",
+  "description": "Open-source library ratings. Developers stake on documentation quality, maintenance, and API stability claims.",
+  "comparable": "GitHub stars, npm scores",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "github-stars",
+    "npm-scores"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-open-source-rank/README.md"
+}

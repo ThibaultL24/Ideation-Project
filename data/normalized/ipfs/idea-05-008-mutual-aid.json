@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-008-mutual-aid",
+  "slug": "mutual-aid",
+  "title": "MutualAid",
+  "tagline": "Community mutual aid with stake-weighted trust",
+  "category": "Social Networks & Community",
+  "description": "Community mutual aid with stake-weighted trust. High-trust members get priority access to resources during crises. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-mutual-aid/README.md"
+}

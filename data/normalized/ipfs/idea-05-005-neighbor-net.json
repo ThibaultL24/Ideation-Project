@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-005-neighbor-net",
+  "slug": "neighbor-net",
+  "title": "NeighborNet",
+  "tagline": "Hyper-local community network",
+  "category": "Social Networks & Community",
+  "description": "Hyper-local community network. Neighbors stake on trustworthiness for tool lending, pet watching, package holding. Digital social capital.",
+  "comparable": "Nextdoor, but staked",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community",
+    "nextdoor",
+    "but-staked"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-neighbor-net/README.md"
+}

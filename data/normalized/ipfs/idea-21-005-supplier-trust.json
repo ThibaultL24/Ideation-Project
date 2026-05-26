@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-21-005-supplier-trust",
+  "slug": "supplier-trust",
+  "title": "SupplierTrust",
+  "tagline": "B2B supplier reputation",
+  "category": "Supply Chain & Commerce",
+  "description": "B2B supplier reputation. Procurement teams stake on delivery reliability, quality consistency, and communication claims.",
+  "comparable": "Alibaba reviews",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "supply-chain-commerce",
+    "alibaba-reviews"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-supplier-trust/README.md"
+}

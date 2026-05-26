@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-022-coworking-finder",
+  "slug": "coworking-finder",
+  "title": "CoworkingFinder",
+  "tagline": "Coworking space discovery with stake-weighted WiFi quality, vibe, and amenity claims.",
+  "category": "Marketplaces & Discovery",
+  "description": "Coworking space discovery with stake-weighted WiFi quality, vibe, and amenity claims.",
+  "comparable": "Coworker.com",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "coworker-com"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-coworking-finder/README.md"
+}

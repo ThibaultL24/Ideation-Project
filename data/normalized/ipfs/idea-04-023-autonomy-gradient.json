@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-023-autonomy-gradient",
+  "slug": "autonomy-gradient",
+  "title": "AutonomyGradient",
+  "tagline": "AI agent autonomy authorization",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "AI agent autonomy authorization. Humans stake on which agents should be trusted with increasing levels of autonomous action. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-autonomy-gradient/README.md"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-007-veri-fact",
+  "slug": "veri-fact",
+  "title": "VeriFact",
+  "tagline": "AI-generated content verification",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "AI-generated content verification. Humans stake on authenticity claims. [Article-X] [is] [AI-Generated] is a live market.",
+  "comparable": "C2PA initiatives",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence",
+    "c2pa-initiatives"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-veri-fact/README.md"
+}

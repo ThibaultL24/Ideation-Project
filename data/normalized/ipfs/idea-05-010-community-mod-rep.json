@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-010-community-mod-rep",
+  "slug": "community-mod-rep",
+  "title": "CommunityModRep",
+  "tagline": "Moderator reputation system",
+  "category": "Social Networks & Community",
+  "description": "Moderator reputation system. Members stake on fairness and effectiveness. Creates accountability for community governance.",
+  "comparable": "Reddit mod system, but accountable",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community",
+    "reddit-mod-system",
+    "but-accountable"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-community-mod-rep/README.md"
+}

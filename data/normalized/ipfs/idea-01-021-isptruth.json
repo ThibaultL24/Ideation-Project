@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-021-isptruth",
+  "slug": "isptruth",
+  "title": "ISPTruth",
+  "tagline": "ISP ratings where subscribers stake on actual-vs-advertised speed and reliability claims.",
+  "category": "Reviews & Ratings",
+  "description": "ISP ratings where subscribers stake on actual-vs-advertised speed and reliability claims.",
+  "comparable": "BroadbandNow, Speedtest",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "broadbandnow",
+    "speedtest"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-isptruth/README.md"
+}

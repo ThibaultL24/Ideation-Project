@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-21-010-quality-net",
+  "slug": "quality-net",
+  "title": "QualityNet",
+  "tagline": "Manufacturing quality certification verification",
+  "category": "Supply Chain & Commerce",
+  "description": "Manufacturing quality certification verification. Auditors and buyers stake on whether quality certs reflect actual standards. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "supply-chain-commerce"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-quality-net/README.md"
+}

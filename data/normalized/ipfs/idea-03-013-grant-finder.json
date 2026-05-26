@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-013-grant-finder",
+  "slug": "grant-finder",
+  "title": "GrantFinder",
+  "tagline": "Grant discovery where past applicants stake on fairness, reliability, and reporting burden claims.",
+  "category": "Marketplaces & Discovery",
+  "description": "Grant discovery where past applicants stake on fairness, reliability, and reporting burden claims.",
+  "comparable": "Grants.gov",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "grants-gov"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-grant-finder/README.md"
+}

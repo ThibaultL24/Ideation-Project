@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-11-002-replicate-it",
+  "slug": "replicate-it",
+  "title": "ReplicateIt",
+  "tagline": "Replication crisis attack platform",
+  "category": "Science & Academia",
+  "description": "Replication crisis attack platform. Stake on study replicability predictions before replication attempts.",
+  "comparable": "Replication Markets",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "science-academia",
+    "replication-markets"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-replicate-it/README.md"
+}

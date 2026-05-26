@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-12-014-testnet-faucet",
+  "slug": "testnet-faucet",
+  "title": "TestnetFaucet",
+  "tagline": "Testnet $TRUST faucet and sandbox environment for developers to prototype without mainnet costs",
+  "category": "Developer Tools & Infrastructure",
+  "description": "Testnet $TRUST faucet and sandbox environment for developers to prototype without mainnet costs. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "developer-tools-infrastructure"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-testnet-faucet/README.md"
+}

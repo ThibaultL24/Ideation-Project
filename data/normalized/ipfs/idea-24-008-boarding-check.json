@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-24-008-boarding-check",
+  "slug": "boarding-check",
+  "title": "BoardingCheck",
+  "tagline": "Pet boarding facility ratings",
+  "category": "Pets & Animals",
+  "description": "Pet boarding facility ratings. Owners stake on safety, cleanliness, and activity claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "pets-animals"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-boarding-check/README.md"
+}

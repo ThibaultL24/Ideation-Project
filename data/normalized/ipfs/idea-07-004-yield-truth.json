@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-07-004-yield-truth",
+  "slug": "yield-truth",
+  "title": "YieldTruth",
+  "tagline": "DeFi yield verification",
+  "category": "Finance, DeFi & Insurance",
+  "description": "DeFi yield verification. Users stake on whether advertised yields are sustainable and achievable. Accountability for yield farming marketing.",
+  "comparable": "DeFiLlama, but staked",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "finance-defi-insurance",
+    "defillama",
+    "but-staked"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-yield-truth/README.md"
+}

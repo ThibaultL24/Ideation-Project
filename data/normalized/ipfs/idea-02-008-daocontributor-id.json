@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-008-daocontributor-id",
+  "slug": "daocontributor-id",
+  "title": "DAOContributorID",
+  "tagline": "Cross-DAO contributor reputation",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Cross-DAO contributor reputation. Members stake on each other's contribution quality and governance participation.",
+  "comparable": "Coordinape, SourceCred",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "coordinape",
+    "sourcecred"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-daocontributor-id/README.md"
+}

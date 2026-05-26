@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-07-001-onchain-credit",
+  "slug": "onchain-credit",
+  "title": "OnchainCredit",
+  "tagline": "Decentralized credit scoring from knowledge graph reputation",
+  "category": "Finance, DeFi & Insurance",
+  "description": "Decentralized credit scoring from knowledge graph reputation. Staking accuracy and peer attestations create composable credit for undercollateralized lending.",
+  "comparable": "Spectral Finance",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "finance-defi-insurance",
+    "spectral-finance"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-onchain-credit/README.md"
+}

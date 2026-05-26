@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-18-002-hood-score",
+  "slug": "hood-score",
+  "title": "HoodScore",
+  "tagline": "Neighborhood quality ratings",
+  "category": "Real Estate & Property",
+  "description": "Neighborhood quality ratings. Residents stake on safety, walkability, noise, and community claims.",
+  "comparable": "Walk Score, but community-driven",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "real-estate-property",
+    "walk-score",
+    "but-community-driven"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-hood-score/README.md"
+}

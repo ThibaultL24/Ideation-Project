@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-006-tool-bench",
+  "slug": "tool-bench",
+  "title": "ToolBench",
+  "tagline": "SaaS and B2B software reviews where actual users stake on feature accuracy, support quality, and pricing fairness",
+  "category": "Reviews & Ratings",
+  "description": "SaaS and B2B software reviews where actual users stake on feature accuracy, support quality, and pricing fairness. Eliminates vendorincentivized reviews.",
+  "comparable": "G2, Capterra, TrustRadius",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "capterra",
+    "trustradius"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-tool-bench/README.md"
+}

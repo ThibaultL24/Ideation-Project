@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-009-drug-check",
+  "slug": "drug-check",
+  "title": "DrugCheck",
+  "tagline": "Pharmaceutical and supplement authenticity verification",
+  "category": "Safety, Security & Protection",
+  "description": "Pharmaceutical and supplement authenticity verification. Stake on whether products contain advertised ingredients. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-drug-check/README.md"
+}

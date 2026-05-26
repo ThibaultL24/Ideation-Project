@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-003-talent-graph",
+  "slug": "talent-graph",
+  "title": "TalentGraph",
+  "tagline": "Talent marketplace where both employers and candidates have stake-weighted reputation",
+  "category": "Marketplaces & Discovery",
+  "description": "Talent marketplace where both employers and candidates have stake-weighted reputation. Skills verified through expert attestation triples. (Like: LinkedIn Jobs, Indeed) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-talent-graph/README.md"
+}

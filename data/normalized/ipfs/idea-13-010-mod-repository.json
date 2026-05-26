@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-13-010-mod-repository",
+  "slug": "mod-repository",
+  "title": "ModRepository",
+  "tagline": "Game mod safety ratings",
+  "category": "Gaming & Esports",
+  "description": "Game mod safety ratings. Players stake on compatibility and malware safety claims.",
+  "comparable": "Nexus Mods",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "gaming-esports",
+    "nexus-mods"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-mod-repository/README.md"
+}

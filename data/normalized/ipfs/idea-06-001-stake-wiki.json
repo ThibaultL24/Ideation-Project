@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-001-stake-wiki",
+  "slug": "stake-wiki",
+  "title": "StakeWiki",
+  "tagline": "Decentralized encyclopedia where every factual claim is a stakeable triple",
+  "category": "Knowledge, Research & Information",
+  "description": "Decentralized encyclopedia where every factual claim is a stakeable triple. Vandalism and misinformation are economically punished.",
+  "comparable": "Wikipedia",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information",
+    "wikipedia"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-stake-wiki/README.md"
+}

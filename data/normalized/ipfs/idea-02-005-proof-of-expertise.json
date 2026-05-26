@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-005-proof-of-expertise",
+  "slug": "proof-of-expertise",
+  "title": "ProofOfExpertise",
+  "tagline": "Skill verification where domain experts stake on each other's competence",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Skill verification where domain experts stake on each other's competence. A cryptographer staked by 50 other cryptographers > self-declared expertise.",
+  "comparable": "LinkedIn endorsements, but staked",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "linkedin-endorsements",
+    "but-staked"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-proof-of-expertise/README.md"
+}

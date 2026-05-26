@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-13-009-coach-rank",
+  "slug": "coach-rank",
+  "title": "CoachRank",
+  "tagline": "Gaming coach reputation",
+  "category": "Gaming & Esports",
+  "description": "Gaming coach reputation. Students stake on effectiveness and rank improvement claims.",
+  "comparable": "Metafy",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "gaming-esports",
+    "metafy"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-coach-rank/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-009-influencer-auth",
+  "slug": "influencer-auth",
+  "title": "InfluencerAuth",
+  "tagline": "Influencer credibility scoring",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Influencer credibility scoring. Followers and brands stake on genuine product use and follower authenticity claims.",
+  "comparable": "HypeAuditor, but decentralized",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "hypeauditor",
+    "but-decentralized"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-influencer-auth/README.md"
+}

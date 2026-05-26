@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-020-vendor-match",
+  "slug": "vendor-match",
+  "title": "VendorMatch",
+  "tagline": "B2B vendor discovery",
+  "category": "Marketplaces & Discovery",
+  "description": "B2B vendor discovery. Procurement teams query stakeweighted quality and reliability claims.",
+  "comparable": "ThomasNet, Alibaba",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "thomasnet",
+    "alibaba"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-vendor-match/README.md"
+}

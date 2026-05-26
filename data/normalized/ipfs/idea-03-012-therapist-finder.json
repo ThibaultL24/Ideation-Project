@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-012-therapist-finder",
+  "slug": "therapist-finder",
+  "title": "TherapistFinder",
+  "tagline": "Therapist matching using stake-weighted outcome claims",
+  "category": "Marketplaces & Discovery",
+  "description": "Therapist matching using stake-weighted outcome claims. Patients stake on which therapists genuinely helped.",
+  "comparable": "BetterHelp, Psychology Today",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "betterhelp",
+    "psychology-today"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-therapist-finder/README.md"
+}

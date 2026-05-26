@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-001-agent-rank",
+  "slug": "agent-rank",
+  "title": "AgentRank",
+  "tagline": "AI agent reputation marketplace",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "AI agent reputation marketplace. Every agent's capabilities and safety are tracked as staked triples. First real \"credit score\" for AI. (Novel — ERC-8004 aligned)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-agent-rank/README.md"
+}

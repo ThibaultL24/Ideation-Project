@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-16-008-open-data-rank",
+  "slug": "open-data-rank",
+  "title": "OpenDataRank",
+  "tagline": "Government open data quality ratings",
+  "category": "Government & Civic",
+  "description": "Government open data quality ratings. Researchers stake on completeness and accuracy claims.",
+  "comparable": "Data.gov",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "government-civic",
+    "data-gov"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-open-data-rank/README.md"
+}

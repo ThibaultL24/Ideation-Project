@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-024-volunteer-passport",
+  "slug": "volunteer-passport",
+  "title": "VolunteerPassport",
+  "tagline": "Volunteer reputation tracking across organizations",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Volunteer reputation tracking across organizations. Nonprofits stake on reliability and impact claims.",
+  "comparable": "VolunteerMatch, but with reputation",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "volunteermatch",
+    "but-with-reputation"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-volunteer-passport/README.md"
+}

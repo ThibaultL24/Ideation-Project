@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-004-tutor-match",
+  "slug": "tutor-match",
+  "title": "TutorMatch",
+  "tagline": "Tutor matching using stake-weighted effectiveness claims",
+  "category": "Education & Learning",
+  "description": "Tutor matching using stake-weighted effectiveness claims. Parents stake on tutors who genuinely improved grades.",
+  "comparable": "Wyzant",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning",
+    "wyzant"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-tutor-match/README.md"
+}

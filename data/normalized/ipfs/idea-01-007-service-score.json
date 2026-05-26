@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-007-service-score",
+  "slug": "service-score",
+  "title": "ServiceScore",
+  "tagline": "Local service provider (plumber, electrician, cleaner) reviews with stake-weighted quality and reliability claims.",
+  "category": "Reviews & Ratings",
+  "description": "Local service provider (plumber, electrician, cleaner) reviews with stake-weighted quality and reliability claims.",
+  "comparable": "Yelp, Angi, HomeAdvisor",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "yelp",
+    "angi",
+    "homeadvisor"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-service-score/README.md"
+}

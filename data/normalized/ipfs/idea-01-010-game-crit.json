@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-010-game-crit",
+  "slug": "game-crit",
+  "title": "GameCrit",
+  "tagline": "Video game reviews where players stake on gameplay, story, and value claims",
+  "category": "Reviews & Ratings",
+  "description": "Video game reviews where players stake on gameplay, story, and value claims. Separates community consensus from publisherinfluenced scores.",
+  "comparable": "Metacritic, OpenCritic",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "metacritic",
+    "opencritic"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-game-crit/README.md"
+}

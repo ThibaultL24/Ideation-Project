@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-11-012-open-access-rank",
+  "slug": "open-access-rank",
+  "title": "OpenAccessRank",
+  "tagline": "Open access journal and repository quality",
+  "category": "Science & Academia",
+  "description": "Open access journal and repository quality. Researchers stake on editorial rigor and peer review thoroughness. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "science-academia"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-open-access-rank/README.md"
+}

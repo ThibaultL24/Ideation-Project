@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-019-recovery-circle",
+  "slug": "recovery-circle",
+  "title": "RecoveryCircle",
+  "tagline": "Addiction recovery support with stake-weighted sponsor reputation",
+  "category": "Social Networks & Community",
+  "description": "Addiction recovery support with stake-weighted sponsor reputation. Trust-weighted matching for vulnerable populations. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-recovery-circle/README.md"
+}

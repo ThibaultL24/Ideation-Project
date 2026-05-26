@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-004-dapp-store",
+  "slug": "dapp-store",
+  "title": "DAppStore",
+  "tagline": "Decentralized app store with stake-weighted safety and quality ratings",
+  "category": "Marketplaces & Discovery",
+  "description": "Decentralized app store with stake-weighted safety and quality ratings. Security researchers stake on audit claims.",
+  "comparable": "DappRadar",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "dappradar"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-dapp-store/README.md"
+}

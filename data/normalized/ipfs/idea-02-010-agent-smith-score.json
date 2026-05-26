@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-010-agent-smith-score",
+  "slug": "agent-smith-score",
+  "title": "AgentSmithScore",
+  "tagline": "AI agent reputation aggregating stake-weighted accuracy, safety, and reliability claims from humans and other agents.",
+  "category": "Identity, Reputation & Credentials",
+  "description": "AI agent reputation aggregating stake-weighted accuracy, safety, and reliability claims from humans and other agents.",
+  "comparable": "ERC-8004 registry",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "erc-8004-registry"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-agent-smith-score/README.md"
+}

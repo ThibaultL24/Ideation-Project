@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-14-012-vaccine-info",
+  "slug": "vaccine-info",
+  "title": "VaccineInfo",
+  "tagline": "Vaccine information knowledge graph",
+  "category": "Healthcare & Wellness",
+  "description": "Vaccine information knowledge graph. Immunologists stake on efficacy and safety claims. Credible alternative to social media misinfo.",
+  "comparable": "CDC info",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "healthcare-wellness",
+    "cdc-info"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-vaccine-info/README.md"
+}

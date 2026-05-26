@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-12-009-graph-explorer",
+  "slug": "graph-explorer",
+  "title": "GraphExplorer",
+  "tagline": "Interactive knowledge graph visualization tool",
+  "category": "Developer Tools & Infrastructure",
+  "description": "Interactive knowledge graph visualization tool. Explore relationships, claims, and stake patterns visually. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "developer-tools-infrastructure"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-graph-explorer/README.md"
+}

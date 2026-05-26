@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-07-020-micro-insurance",
+  "slug": "micro-insurance",
+  "title": "MicroInsurance",
+  "tagline": "Parametric micro-insurance with community-staked local risk factor claims feeding automated pricing.",
+  "category": "Finance, DeFi & Insurance",
+  "description": "Parametric micro-insurance with community-staked local risk factor claims feeding automated pricing.",
+  "comparable": "Etherisc",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "finance-defi-insurance",
+    "etherisc"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-micro-insurance/README.md"
+}

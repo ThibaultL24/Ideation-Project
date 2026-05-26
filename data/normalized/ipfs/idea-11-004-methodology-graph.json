@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-11-004-methodology-graph",
+  "slug": "methodology-graph",
+  "title": "MethodologyGraph",
+  "tagline": "Research methodology quality curation",
+  "category": "Science & Academia",
+  "description": "Research methodology quality curation. Methodologists stake on approach appropriateness for specific research questions. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "science-academia"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-methodology-graph/README.md"
+}

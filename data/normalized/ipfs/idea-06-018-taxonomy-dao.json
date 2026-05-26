@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-06-018-taxonomy-dao",
+  "slug": "taxonomy-dao",
+  "title": "TaxonomyDAO",
+  "tagline": "Crowdsourced taxonomy governance",
+  "category": "Knowledge, Research & Information",
+  "description": "Crowdsourced taxonomy governance. Domain experts stake on how concepts should be categorized. Community-governed Build on Intuition: 300+ dApp Ideas ontology. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "knowledge-research-information"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-taxonomy-dao/README.md"
+}

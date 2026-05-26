@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-019-mentor-score",
+  "slug": "mentor-score",
+  "title": "MentorScore",
+  "tagline": "Mentorship quality reputation",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Mentorship quality reputation. Mentees stake on helpfulness, accessibility, and career impact claims.",
+  "comparable": "ADPList, but with stakes",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "adplist",
+    "but-with-stakes"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-mentor-score/README.md"
+}

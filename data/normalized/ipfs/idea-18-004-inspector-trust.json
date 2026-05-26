@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-18-004-inspector-trust",
+  "slug": "inspector-trust",
+  "title": "InspectorTrust",
+  "tagline": "Home inspector reputation",
+  "category": "Real Estate & Property",
+  "description": "Home inspector reputation. Homebuyers stake on thoroughness and accuracy claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "real-estate-property"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-inspector-trust/README.md"
+}

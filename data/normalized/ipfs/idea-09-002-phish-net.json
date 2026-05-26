@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-09-002-phish-net",
+  "slug": "phish-net",
+  "title": "PhishNet",
+  "tagline": "Phishing URL and wallet blacklist maintained through staked claims",
+  "category": "Safety, Security & Protection",
+  "description": "Phishing URL and wallet blacklist maintained through staked claims. Decentralized, censorship-resistant phishing database.",
+  "comparable": "Google Safe Browsing",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "safety-security-protection",
+    "google-safe-browsing"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-phish-net/README.md"
+}

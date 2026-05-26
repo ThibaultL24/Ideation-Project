@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-02-007-founder-rep",
+  "slug": "founder-rep",
+  "title": "FounderRep",
+  "tagline": "Startup founder reputation",
+  "category": "Identity, Reputation & Credentials",
+  "description": "Startup founder reputation. Investors, employees, and cofounders stake on leadership quality and transparency claims.",
+  "comparable": "Crunchbase, but reputation-focused",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "identity-reputation-credentials",
+    "crunchbase",
+    "but-reputation-focused"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-founder-rep/README.md"
+}

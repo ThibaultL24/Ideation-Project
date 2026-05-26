@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-13-013-retro-game-auth",
+  "slug": "retro-game-auth",
+  "title": "RetroGameAuth",
+  "tagline": "Retro game and console authenticity",
+  "category": "Gaming & Esports",
+  "description": "Retro game and console authenticity. Collectors stake on item authenticity.",
+  "comparable": "PriceCharting",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "gaming-esports",
+    "pricecharting"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-retro-game-auth/README.md"
+}

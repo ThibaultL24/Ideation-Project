@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-17-001-glass-vault",
+  "slug": "glass-vault",
+  "title": "GlassVault",
+  "tagline": "Anonymous employer reviews backed by $TRUST stakes",
+  "category": "Professional Services & HR",
+  "description": "Anonymous employer reviews backed by $TRUST stakes. Reviews can't be silently removed by paying companies.",
+  "comparable": "Glassdoor, Blind",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "professional-services-hr",
+    "glassdoor",
+    "blind"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-glass-vault/README.md"
+}

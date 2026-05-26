@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-07-009-bridge-safety",
+  "slug": "bridge-safety",
+  "title": "BridgeSafety",
+  "tagline": "Cross-chain bridge security ratings",
+  "category": "Finance, DeFi & Insurance",
+  "description": "Cross-chain bridge security ratings. Stake on security design and incident response claims. (Like: L2Beat, but community-driven) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "finance-defi-insurance"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-bridge-safety/README.md"
+}

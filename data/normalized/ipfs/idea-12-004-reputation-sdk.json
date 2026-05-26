@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-12-004-reputation-sdk",
+  "slug": "reputation-sdk",
+  "title": "ReputationSDK",
+  "tagline": "Drop-in reputation widget SDK",
+  "category": "Developer Tools & Infrastructure",
+  "description": "Drop-in reputation widget SDK. Add Intuition trust scores to any website or app with a few lines of code. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "developer-tools-infrastructure"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-reputation-sdk/README.md"
+}

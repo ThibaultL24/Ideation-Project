@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-03-008-music-discovery",
+  "slug": "music-discovery",
+  "title": "MusicDiscovery",
+  "tagline": "Music curation via stake-weighted taste graphs",
+  "category": "Marketplaces & Discovery",
+  "description": "Music curation via stake-weighted taste graphs. Curators who stake on songs that gain appreciation earn returns.",
+  "comparable": "Spotify Discover, SoundCloud",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "marketplaces-discovery",
+    "spotify-discover",
+    "soundcloud"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-music-discovery/README.md"
+}

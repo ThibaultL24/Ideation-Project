@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-16-010-emergency-response",
+  "slug": "emergency-response",
+  "title": "EmergencyResponse",
+  "tagline": "Emergency services quality ratings",
+  "category": "Government & Civic",
+  "description": "Emergency services quality ratings. Community members stake on response time and professionalism claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "government-civic"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-emergency-response/README.md"
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-028-contractor-trust",
+  "slug": "contractor-trust",
+  "title": "ContractorTrust",
+  "tagline": "General contractor ratings with photo evidence atoms linked to review triples",
+  "category": "Reviews & Ratings",
+  "description": "General contractor ratings with photo evidence atoms linked to review triples. Stake on quality, budget, and timeline accuracy.",
+  "comparable": "Thumbtack, BuildZoom",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "thumbtack",
+    "buildzoom"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-contractor-trust/README.md"
+}

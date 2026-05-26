@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-05-002-stake-post",
+  "slug": "stake-post",
+  "title": "StakePost",
+  "tagline": "Social media where posts can be staked on for accuracy",
+  "category": "Social Networks & Community",
+  "description": "Social media where posts can be staked on for accuracy. High-stake posts surface; counter-staked posts are flagged. Economicallydriven content quality. (Like: Twitter/X, Community Notes) Build on Intuition: 300+ dApp Ideas",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "social-networks-community"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-stake-post/README.md"
+}

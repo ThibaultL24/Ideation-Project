@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-24-006-trainer-rank",
+  "slug": "trainer-rank",
+  "title": "TrainerRank",
+  "tagline": "Dog trainer and behaviorist ratings",
+  "category": "Pets & Animals",
+  "description": "Dog trainer and behaviorist ratings. Owners stake on method effectiveness and humane practice claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "pets-animals"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-trainer-rank/README.md"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-07-017-analyst-rank",
+  "slug": "analyst-rank",
+  "title": "AnalystRank",
+  "tagline": "Financial analyst accuracy tracking",
+  "category": "Finance, DeFi & Insurance",
+  "description": "Financial analyst accuracy tracking. Analysts stake on predictions; track records become verifiable assets.",
+  "comparable": "TipRanks",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "finance-defi-insurance",
+    "tipranks"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-analyst-rank/README.md"
+}

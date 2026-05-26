@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-012-sentinel-ai",
+  "slug": "sentinel-ai",
+  "title": "SentinelAI",
+  "tagline": "AI safety monitoring",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "AI safety monitoring. Researchers stake on claims about deceptive alignment, emergent capabilities, and safety benchmarks.",
+  "comparable": "METR, Apollo Research",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence",
+    "metr",
+    "apollo-research"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-sentinel-ai/README.md"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-13-002-guild-reputation",
+  "slug": "guild-reputation",
+  "title": "GuildReputation",
+  "tagline": "Guild and clan reputation",
+  "category": "Gaming & Esports",
+  "description": "Guild and clan reputation. Members and opponents stake on skill, sportsmanship, and culture claims. Trust-weighted guild discovery.",
+  "comparable": "WoW guild rankings",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "gaming-esports",
+    "wow-guild-rankings"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-guild-reputation/README.md"
+}

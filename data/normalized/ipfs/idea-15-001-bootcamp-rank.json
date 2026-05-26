@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-001-bootcamp-rank",
+  "slug": "bootcamp-rank",
+  "title": "BootcampRank",
+  "tagline": "Coding bootcamp ratings",
+  "category": "Education & Learning",
+  "description": "Coding bootcamp ratings. Graduates stake on career outcome accuracy and job placement honesty.",
+  "comparable": "Course Report, SwitchUp",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning",
+    "course-report",
+    "switchup"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-bootcamp-rank/README.md"
+}

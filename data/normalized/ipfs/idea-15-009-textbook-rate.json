@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-009-textbook-rate",
+  "slug": "textbook-rate",
+  "title": "TextbookRate",
+  "tagline": "Textbook quality ratings",
+  "category": "Education & Learning",
+  "description": "Textbook quality ratings. Students and instructors stake on accuracy and pedagogical quality claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-textbook-rate/README.md"
+}

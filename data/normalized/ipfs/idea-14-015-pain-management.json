@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-14-015-pain-management",
+  "slug": "pain-management",
+  "title": "PainManagement",
+  "tagline": "Pain management specialist ratings",
+  "category": "Healthcare & Wellness",
+  "description": "Pain management specialist ratings. Chronic pain patients stake on effectiveness and opioid-alternative availability claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "healthcare-wellness"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-pain-management/README.md"
+}

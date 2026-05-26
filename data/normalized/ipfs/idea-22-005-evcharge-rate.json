@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-22-005-evcharge-rate",
+  "slug": "evcharge-rate",
+  "title": "EVChargeRate",
+  "tagline": "EV charging network ratings",
+  "category": "Environment & Sustainability",
+  "description": "EV charging network ratings. Drivers stake on reliability, speed accuracy, and pricing transparency claims. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "environment-sustainability"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-evcharge-rate/README.md"
+}

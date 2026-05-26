@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-01-009-pod-rank",
+  "slug": "pod-rank",
+  "title": "PodRank",
+  "tagline": "Podcast quality ratings with stake-weighted production quality and host expertise claims",
+  "category": "Reviews & Ratings",
+  "description": "Podcast quality ratings with stake-weighted production quality and host expertise claims. Curators build verifiable taste reputation.",
+  "comparable": "Apple Podcasts, Podchaser",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "reviews-ratings",
+    "apple-podcasts",
+    "podchaser"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-pod-rank/README.md"
+}

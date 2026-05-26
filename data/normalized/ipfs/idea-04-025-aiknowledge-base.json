@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-04-025-aiknowledge-base",
+  "slug": "aiknowledge-base",
+  "title": "AIKnowledgeBase",
+  "tagline": "Curated knowledge base optimized for AI consumption",
+  "category": "AI Agents & Machine Intelligence",
+  "description": "Curated knowledge base optimized for AI consumption. Human experts stake on accuracy of triples. Agents query this as verified ground truth. (Novel)",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "ai-agents-machine-intelligence"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-aiknowledge-base/README.md"
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "canonicalId": "idea-15-013-study-abroad-rank",
+  "slug": "study-abroad-rank",
+  "title": "StudyAbroadRank",
+  "tagline": "Study abroad program ratings",
+  "category": "Education & Learning",
+  "description": "Study abroad program ratings. Past participants stake on academic quality, safety, and immersion claims.",
+  "comparable": "GoAbroad",
+  "tags": [
+    "dapp-idea",
+    "intuition",
+    "mission-03",
+    "education-learning",
+    "goabroad"
+  ],
+  "source": "build-on-intuition-300-ideas",
+  "githubPath": "ideas/2026-05-25-study-abroad-rank/README.md"
+}
