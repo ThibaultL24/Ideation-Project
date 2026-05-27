@@ -1,7 +1,7 @@
 ---
 title: "ToolDiscovery"
 tagline: "Developer tool discovery"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-018-tool-discovery"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - awesome-lists
   - dev-to

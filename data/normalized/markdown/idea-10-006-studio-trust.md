@@ -1,7 +1,7 @@
 ---
 title: "StudioTrust"
 tagline: "Film production marketplace"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-10-006-studio-trust"
@@ -9,7 +9,7 @@ category: "Creative Arts & Culture"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - creative-arts-culture
   - mandy-com
 comparable: "Mandy.com"

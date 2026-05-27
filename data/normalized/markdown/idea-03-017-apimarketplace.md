@@ -1,7 +1,7 @@
 ---
 title: "APIMarketplace"
 tagline: "API discovery where developers stake on reliability, docs quality, and uptime claims."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-017-apimarketplace"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - rapidapi
 comparable: "RapidAPI"

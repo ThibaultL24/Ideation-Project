@@ -1,7 +1,7 @@
 ---
 title: "HoodScore"
 tagline: "Neighborhood quality ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-18-002-hood-score"
@@ -9,7 +9,7 @@ category: "Real Estate & Property"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - real-estate-property
   - walk-score
   - but-community-driven

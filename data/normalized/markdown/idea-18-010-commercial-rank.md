@@ -1,7 +1,7 @@
 ---
 title: "CommercialRank"
 tagline: "Commercial real estate broker reputation"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-18-010-commercial-rank"
@@ -9,7 +9,7 @@ category: "Real Estate & Property"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - real-estate-property
 intuition_atoms: []
 github_discussion: ""

@@ -1,7 +1,7 @@
 ---
 title: "LanguageExchange"
 tagline: "Language partner matching with stake-weighted teaching quality and reliability claims."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-013-language-exchange"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - tandem
   - hellotalk

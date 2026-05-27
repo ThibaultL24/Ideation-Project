@@ -1,7 +1,7 @@
 ---
 title: "AlumniGraph"
 tagline: "Alumni network with stake-weighted endorsements"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-011-alumni-graph"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - linkedin-alumni
 comparable: "LinkedIn alumni"

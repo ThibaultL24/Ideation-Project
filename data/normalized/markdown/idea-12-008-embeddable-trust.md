@@ -1,7 +1,7 @@
 ---
 title: "EmbeddableTrust"
 tagline: "Embeddable trust badges for websites"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-12-008-embeddable-trust"
@@ -9,7 +9,7 @@ category: "Developer Tools & Infrastructure"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - developer-tools-infrastructure
   - trustpilot-badges
 comparable: "Trustpilot badges"

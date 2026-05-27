@@ -1,7 +1,7 @@
 ---
 title: "NewsCredibility"
 tagline: "News source and article credibility scoring"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-06-004-news-credibility"
@@ -9,7 +9,7 @@ category: "Knowledge, Research & Information"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - knowledge-research-information
   - newsguard
   - allsides

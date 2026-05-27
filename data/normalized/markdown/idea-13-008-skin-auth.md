@@ -1,7 +1,7 @@
 ---
 title: "SkinAuth"
 tagline: "In-game item authenticity verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-13-008-skin-auth"
@@ -9,7 +9,7 @@ category: "Gaming & Esports"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - gaming-esports
   - cs2-skin-markets
 comparable: "CS2 skin markets"

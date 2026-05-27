@@ -1,7 +1,7 @@
 ---
 title: "PhishNet"
 tagline: "Phishing URL and wallet blacklist maintained through staked claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-09-002-phish-net"
@@ -9,7 +9,7 @@ category: "Safety, Security & Protection"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - safety-security-protection
   - google-safe-browsing
 comparable: "Google Safe Browsing"

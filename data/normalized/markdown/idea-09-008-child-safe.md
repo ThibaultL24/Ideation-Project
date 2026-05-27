@@ -1,7 +1,7 @@
 ---
 title: "ChildSafe"
 tagline: "Platform safety ratings for parents"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-09-008-child-safe"
@@ -9,7 +9,7 @@ category: "Safety, Security & Protection"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - safety-security-protection
   - common-sense-media
 comparable: "Common Sense Media"

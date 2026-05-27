@@ -1,7 +1,7 @@
 ---
 title: "RetroGameAuth"
 tagline: "Retro game and console authenticity"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-13-013-retro-game-auth"
@@ -9,7 +9,7 @@ category: "Gaming & Esports"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - gaming-esports
   - pricecharting
 comparable: "PriceCharting"

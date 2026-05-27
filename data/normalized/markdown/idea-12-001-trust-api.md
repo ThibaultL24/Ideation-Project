@@ -1,7 +1,7 @@
 ---
 title: "TrustAPI"
 tagline: "Universal API for querying Intuition reputation data"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-12-001-trust-api"
@@ -9,7 +9,7 @@ category: "Developer Tools & Infrastructure"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - developer-tools-infrastructure
 intuition_atoms: []
 github_discussion: ""

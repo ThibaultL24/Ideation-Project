@@ -1,7 +1,7 @@
 ---
 title: "FounderRep"
 tagline: "Startup founder reputation"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-007-founder-rep"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - crunchbase
   - but-reputation-focused

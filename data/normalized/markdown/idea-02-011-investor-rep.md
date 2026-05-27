@@ -1,7 +1,7 @@
 ---
 title: "InvestorRep"
 tagline: "VC and angel investor reputation FROM the founder's perspective"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-011-investor-rep"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - thefunded
   - but-alive

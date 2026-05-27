@@ -1,7 +1,7 @@
 ---
 title: "GameCrit"
 tagline: "Video game reviews where players stake on gameplay, story, and value claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-010-game-crit"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - metacritic
   - opencritic

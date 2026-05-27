@@ -1,7 +1,7 @@
 ---
 title: "BiohackerGraph"
 tagline: "Biohacking and longevity intervention ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-14-006-biohacker-graph"
@@ -9,7 +9,7 @@ category: "Healthcare & Wellness"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - healthcare-wellness
 intuition_atoms: []
 github_discussion: ""

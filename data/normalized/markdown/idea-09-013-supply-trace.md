@@ -1,7 +1,7 @@
 ---
 title: "SupplyTrace"
 tagline: "Supply chain integrity verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-09-013-supply-trace"
@@ -9,7 +9,7 @@ category: "Safety, Security & Protection"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - safety-security-protection
   - provenance
 comparable: "Provenance"

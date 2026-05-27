@@ -1,7 +1,7 @@
 ---
 title: "BootcampRank"
 tagline: "Coding bootcamp ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-001-bootcamp-rank"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
   - course-report
   - switchup

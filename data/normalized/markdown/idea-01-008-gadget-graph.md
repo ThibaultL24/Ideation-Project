@@ -1,7 +1,7 @@
 ---
 title: "GadgetGraph"
 tagline: "Consumer electronics long-term reliability tracker"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-008-gadget-graph"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - consumer-reports
   - wirecutter

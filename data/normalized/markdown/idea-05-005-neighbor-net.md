@@ -1,7 +1,7 @@
 ---
 title: "NeighborNet"
 tagline: "Hyper-local community network"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-005-neighbor-net"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - nextdoor
   - but-staked

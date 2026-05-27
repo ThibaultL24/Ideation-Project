@@ -1,7 +1,7 @@
 ---
 title: "StakeWiki"
 tagline: "Decentralized encyclopedia where every factual claim is a stakeable triple"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-06-001-stake-wiki"
@@ -9,7 +9,7 @@ category: "Knowledge, Research & Information"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - knowledge-research-information
   - wikipedia
 comparable: "Wikipedia"

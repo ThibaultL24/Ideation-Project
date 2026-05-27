@@ -1,7 +1,7 @@
 ---
 title: "StakeDate"
 tagline: "Dating platform with knowledge graph identity verification and stake-weighted vouches from friends"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-003-stake-date"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - hinge
   - bumble

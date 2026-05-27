@@ -1,7 +1,7 @@
 ---
 title: "PublicServiceRate"
 tagline: "Government agency and service ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-16-003-public-service-rate"
@@ -9,7 +9,7 @@ category: "Government & Civic"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - government-civic
 intuition_atoms: []
 github_discussion: ""

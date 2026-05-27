@@ -1,7 +1,7 @@
 ---
 title: "ProofOfExpertise"
 tagline: "Skill verification where domain experts stake on each other's competence"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-005-proof-of-expertise"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - linkedin-endorsements
   - but-staked

@@ -1,7 +1,7 @@
 ---
 title: "ClinicalTrialWatch"
 tagline: "Clinical trial result curation"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-11-008-clinical-trial-watch"
@@ -9,7 +9,7 @@ category: "Science & Academia"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - science-academia
   - clinicaltrials-gov
 comparable: "ClinicalTrials.gov"

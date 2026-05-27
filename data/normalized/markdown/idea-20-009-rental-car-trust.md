@@ -1,7 +1,7 @@
 ---
 title: "RentalCarTrust"
 tagline: "Rental car company ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-20-009-rental-car-trust"
@@ -9,7 +9,7 @@ category: "Travel & Transportation"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - travel-transportation
 intuition_atoms: []
 github_discussion: ""

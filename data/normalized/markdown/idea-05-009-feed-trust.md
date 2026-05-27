@@ -1,7 +1,7 @@
 ---
 title: "FeedTrust"
 tagline: "Social news aggregation where every posted link has a live credibility market"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-009-feed-trust"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - reddit
   - hacker-news

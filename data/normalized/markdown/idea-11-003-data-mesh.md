@@ -1,7 +1,7 @@
 ---
 title: "DataMesh"
 tagline: "Scientific dataset quality and citation platform"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-11-003-data-mesh"
@@ -9,7 +9,7 @@ category: "Science & Academia"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - science-academia
 intuition_atoms: []
 github_discussion: ""

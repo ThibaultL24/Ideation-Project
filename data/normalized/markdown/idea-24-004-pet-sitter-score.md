@@ -1,7 +1,7 @@
 ---
 title: "PetSitterScore"
 tagline: "Pet sitter and walker ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-24-004-pet-sitter-score"
@@ -9,7 +9,7 @@ category: "Pets & Animals"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - pets-animals
   - rover-reviews
 comparable: "Rover reviews"

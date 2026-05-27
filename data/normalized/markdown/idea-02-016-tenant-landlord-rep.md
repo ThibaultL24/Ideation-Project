@@ -1,7 +1,7 @@
 ---
 title: "TenantLandlordRep"
 tagline: "Bilateral rental reputation"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-016-tenant-landlord-rep"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - rentprep
   - but-bilateral

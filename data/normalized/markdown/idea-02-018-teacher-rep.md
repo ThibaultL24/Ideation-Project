@@ -1,7 +1,7 @@
 ---
 title: "TeacherRep"
 tagline: "Educator reputation across schools and platforms"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-018-teacher-rep"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - build-on-intuition-300-dapp-ideas-ratemyprofessors
   - but-staked

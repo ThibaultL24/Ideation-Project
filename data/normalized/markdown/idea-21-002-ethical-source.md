@@ -1,7 +1,7 @@
 ---
 title: "EthicalSource"
 tagline: "Ethical sourcing verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-21-002-ethical-source"
@@ -9,7 +9,7 @@ category: "Supply Chain & Commerce"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - supply-chain-commerce
   - fair-trade
   - but-staked

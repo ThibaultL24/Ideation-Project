@@ -1,7 +1,7 @@
 ---
 title: "PromiseTracker"
 tagline: "Campaign promise tracking"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-16-001-promise-tracker"
@@ -9,7 +9,7 @@ category: "Government & Civic"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - government-civic
   - politifact-promise-tracker
 comparable: "PolitiFact Promise Tracker"

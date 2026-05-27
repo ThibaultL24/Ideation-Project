@@ -1,7 +1,7 @@
 ---
 title: "SkillBadge"
 tagline: "Micro-credential system with stake-weighted verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-003-skill-badge"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
   - credly
 comparable: "Credly"

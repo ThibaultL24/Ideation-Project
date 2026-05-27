@@ -1,7 +1,7 @@
 ---
 title: "TourGuideRep"
 tagline: "Tour guide and experience provider ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-20-005-tour-guide-rep"
@@ -9,7 +9,7 @@ category: "Travel & Transportation"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - travel-transportation
   - viator-reviews
 comparable: "Viator reviews"

@@ -1,7 +1,7 @@
 ---
 title: "AirlineRank"
 tagline: "Airline quality ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-20-003-airline-rank"
@@ -9,7 +9,7 @@ category: "Travel & Transportation"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - travel-transportation
   - skytrax
 comparable: "Skytrax"

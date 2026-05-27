@@ -1,7 +1,7 @@
 ---
 title: "CharityRate"
 tagline: "Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-024-charity-rate"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
 intuition_atoms: []
 github_discussion: ""

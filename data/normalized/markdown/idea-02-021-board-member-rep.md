@@ -1,7 +1,7 @@
 ---
 title: "BoardMemberRep"
 tagline: "Corporate board member reputation"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-021-board-member-rep"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
 intuition_atoms: []
 github_discussion: ""

@@ -1,7 +1,7 @@
 ---
 title: "PriceWhisper"
 tagline: "Token price signal aggregator"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-08-014-price-whisper"
@@ -9,7 +9,7 @@ category: "Prediction & Signal Markets"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - prediction-signal-markets
   - build-on-intuition-300-dapp-ideas-crypto-twitter
   - but-accountable

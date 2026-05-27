@@ -1,7 +1,7 @@
 ---
 title: "AgentCV"
 tagline: "AI agent resume system"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-04-015-agent-cv"
@@ -9,7 +9,7 @@ category: "AI Agents & Machine Intelligence"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - ai-agents-machine-intelligence
   - linkedin-for-ai-agents
 comparable: "LinkedIn for AI agents"

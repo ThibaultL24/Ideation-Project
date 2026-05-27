@@ -1,7 +1,7 @@
 ---
 title: "StablecoinMonitor"
 tagline: "Stablecoin backing verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-07-010-stablecoin-monitor"
@@ -9,7 +9,7 @@ category: "Finance, DeFi & Insurance"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - finance-defi-insurance
 intuition_atoms: []
 github_discussion: ""

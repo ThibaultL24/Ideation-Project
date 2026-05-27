@@ -1,7 +1,7 @@
 ---
 title: "TechTruth"
 tagline: "Technology claim verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-06-013-tech-truth"
@@ -9,7 +9,7 @@ category: "Knowledge, Research & Information"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - knowledge-research-information
   - tom-s-hardware
 comparable: "Tom's Hardware"

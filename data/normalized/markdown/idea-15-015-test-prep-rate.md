@@ -1,7 +1,7 @@
 ---
 title: "TestPrepRate"
 tagline: "Test prep service ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-015-test-prep-rate"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
   - kaplan-reviews
 comparable: "Kaplan reviews"

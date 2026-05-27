@@ -1,7 +1,7 @@
 ---
 title: "ISPTruth"
 tagline: "ISP ratings where subscribers stake on actual-vs-advertised speed and reliability claims."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-021-isptruth"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - broadbandnow
   - speedtest

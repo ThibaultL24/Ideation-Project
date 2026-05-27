@@ -1,7 +1,7 @@
 ---
 title: "ContractTemplates"
 tagline: "Legal contract template marketplace with stakebacked enforceability ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-016-contract-templates"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - rocket-lawyer
   - legalzoom

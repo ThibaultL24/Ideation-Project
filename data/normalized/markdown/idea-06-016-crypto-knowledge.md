@@ -1,7 +1,7 @@
 ---
 title: "CryptoKnowledge"
 tagline: "Crypto/DeFi protocol knowledge base"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-06-016-crypto-knowledge"
@@ -9,7 +9,7 @@ category: "Knowledge, Research & Information"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - knowledge-research-information
   - messari
 comparable: "Messari"

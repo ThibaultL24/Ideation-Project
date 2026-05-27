@@ -1,7 +1,7 @@
 ---
 title: "InsuranceRank"
 tagline: "Insurance company ratings by policyholders"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-019-insurance-rank"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - am-best
   - j-d-power

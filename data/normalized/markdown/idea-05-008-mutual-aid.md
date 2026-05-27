@@ -1,7 +1,7 @@
 ---
 title: "MutualAid"
 tagline: "Community mutual aid with stake-weighted trust"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-008-mutual-aid"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
 intuition_atoms: []
 github_discussion: ""

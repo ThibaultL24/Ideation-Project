@@ -1,7 +1,7 @@
 ---
 title: "DebtMarket"
 tagline: "Decentralized debt marketplace with knowledge graph credit scoring for interest rates."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-07-019-debt-market"
@@ -9,7 +9,7 @@ category: "Finance, DeFi & Insurance"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - finance-defi-insurance
   - maple-finance
   - goldfinch

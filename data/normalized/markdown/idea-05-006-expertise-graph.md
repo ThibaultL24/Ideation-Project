@@ -1,7 +1,7 @@
 ---
 title: "ExpertiseGraph"
 tagline: "Professional community where contributions are stakeweighted by peers"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-006-expertise-graph"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - stack-overflow
 comparable: "Stack Overflow"

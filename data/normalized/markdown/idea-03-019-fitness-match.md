@@ -1,7 +1,7 @@
 ---
 title: "FitnessMatch"
 tagline: "Personal trainer matching using stake-weighted outcome claims from real clients."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-019-fitness-match"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - trainerize
   - classpass

@@ -1,7 +1,7 @@
 ---
 title: "ParentNetwork"
 tagline: "Parent community with stake-weighted advice quality"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-017-parent-network"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - babycenter
   - peanut

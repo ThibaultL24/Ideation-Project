@@ -1,7 +1,7 @@
 ---
 title: "FactCheck"
 tagline: "Real-time fact-checking where journalists and citizens stake on claim veracity"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-06-002-fact-check"
@@ -9,7 +9,7 @@ category: "Knowledge, Research & Information"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - knowledge-research-information
   - snopes
   - politifact

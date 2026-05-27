@@ -1,7 +1,7 @@
 ---
 title: "CryptoExchangeWatch"
 tagline: "Exchange trust ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-017-crypto-exchange-watch"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - coingecko-trust-score
 comparable: "CoinGecko trust score"

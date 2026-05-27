@@ -1,7 +1,7 @@
 ---
 title: "SupplementScore"
 tagline: "Supplement review platform where lab testers and consumers stake on ingredient accuracy and efficacy claims."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-013-supplement-score"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - labdoor
   - consumerlab

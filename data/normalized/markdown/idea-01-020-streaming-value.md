@@ -1,7 +1,7 @@
 ---
 title: "StreamingValue"
 tagline: "Streaming service value ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-020-streaming-value"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - justwatch
 comparable: "JustWatch"

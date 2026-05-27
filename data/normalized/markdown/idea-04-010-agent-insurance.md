@@ -1,7 +1,7 @@
 ---
 title: "AgentInsurance"
 tagline: "Insurance protocol for AI actions"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-04-010-agent-insurance"
@@ -9,7 +9,7 @@ category: "AI Agents & Machine Intelligence"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - ai-agents-machine-intelligence
   - nexus-mutual
   - but-for-ai

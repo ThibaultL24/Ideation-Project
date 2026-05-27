@@ -1,7 +1,7 @@
 ---
 title: "StakeReview"
 tagline: "Universal product review layer where consumers stake $TRUST on quality claims for any product with a barcode/UPC"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-001-stake-review"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - amazon-reviews
   - trustpilot

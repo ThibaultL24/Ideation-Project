@@ -1,7 +1,7 @@
 ---
 title: "RecipeDiscovery"
 tagline: "Recipe curation where cooks stake on accuracy, difficulty, and taste claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-010-recipe-discovery"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - allrecipes
   - epicurious

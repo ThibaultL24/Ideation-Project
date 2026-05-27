@@ -1,7 +1,7 @@
 ---
 title: "ForkScore"
 tagline: "Restaurant ratings where diners stake on food quality, service, ambiance, and hygiene claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-003-fork-score"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - yelp
   - google-reviews

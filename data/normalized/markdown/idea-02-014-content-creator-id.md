@@ -1,7 +1,7 @@
 ---
 title: "ContentCreatorID"
 tagline: "Cross-platform creator reputation across YouTube, Twitch, TikTok"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-014-content-creator-id"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - youtube-subscribers
   - but-portable

@@ -1,7 +1,7 @@
 ---
 title: "ResearcherIntegrity"
 tagline: "Scientific integrity tracker"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-022-researcher-integrity"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - retraction-watch
   - but-proactive

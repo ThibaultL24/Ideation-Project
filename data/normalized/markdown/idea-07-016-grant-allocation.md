@@ -1,7 +1,7 @@
 ---
 title: "GrantAllocation"
 tagline: "Retroactive public goods funding with reputationweighted impact evaluation."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-07-016-grant-allocation"
@@ -9,7 +9,7 @@ category: "Finance, DeFi & Insurance"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - finance-defi-insurance
   - optimism-rpgf
   - gitcoin

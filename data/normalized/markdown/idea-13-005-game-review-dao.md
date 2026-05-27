@@ -1,7 +1,7 @@
 ---
 title: "GameReviewDAO"
 tagline: "Community-governed game reviews"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-13-005-game-review-dao"
@@ -9,7 +9,7 @@ category: "Gaming & Esports"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - gaming-esports
   - metacritic
 comparable: "Metacritic"

@@ -1,7 +1,7 @@
 ---
 title: "RideSignal"
 tagline: "Decentralized ride-sharing with portable driver/rider reputation across any platform."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-20-002-ride-signal"
@@ -9,7 +9,7 @@ category: "Travel & Transportation"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - travel-transportation
   - uber
   - lyft-but-portable

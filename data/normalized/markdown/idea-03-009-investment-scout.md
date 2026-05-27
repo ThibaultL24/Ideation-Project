@@ -1,7 +1,7 @@
 ---
 title: "InvestmentScout"
 tagline: "Startup and investment opportunity discovery"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-009-investment-scout"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - angellist
   - pitchbook

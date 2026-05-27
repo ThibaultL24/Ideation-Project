@@ -1,7 +1,7 @@
 ---
 title: "AgentSmithScore"
 tagline: "AI agent reputation aggregating stake-weighted accuracy, safety, and reliability claims from humans and other agents."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-010-agent-smith-score"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - erc-8004-registry
 comparable: "ERC-8004 registry"

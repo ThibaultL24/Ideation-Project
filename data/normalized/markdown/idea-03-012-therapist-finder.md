@@ -1,7 +1,7 @@
 ---
 title: "TherapistFinder"
 tagline: "Therapist matching using stake-weighted outcome claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-012-therapist-finder"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - betterhelp
   - psychology-today

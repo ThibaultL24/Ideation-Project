@@ -1,7 +1,7 @@
 ---
 title: "PropSignal"
 tagline: "Real estate intelligence where property claims are backed by stake from residents, inspectors, and agents."
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-18-001-prop-signal"
@@ -9,7 +9,7 @@ category: "Real Estate & Property"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - real-estate-property
   - zillow
   - redfin

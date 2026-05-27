@@ -1,7 +1,7 @@
 ---
 title: "CarbonGraph"
 tagline: "Carbon offset quality verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-22-002-carbon-graph"
@@ -9,7 +9,7 @@ category: "Environment & Sustainability"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - environment-sustainability
   - gold-standard
   - verra

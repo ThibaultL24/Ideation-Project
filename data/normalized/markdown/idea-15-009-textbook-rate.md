@@ -1,7 +1,7 @@
 ---
 title: "TextbookRate"
 tagline: "Textbook quality ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-009-textbook-rate"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
 intuition_atoms: []
 github_discussion: ""

@@ -1,7 +1,7 @@
 ---
 title: "TherapyMatch"
 tagline: "Mental health provider matching using stake-weighted specialty and outcome claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-14-003-therapy-match"
@@ -9,7 +9,7 @@ category: "Healthcare & Wellness"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - healthcare-wellness
   - betterhelp
 comparable: "BetterHelp"

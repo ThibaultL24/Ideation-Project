@@ -1,7 +1,7 @@
 ---
 title: "DevReputation"
 tagline: "Developer reputation aggregating stake-weighted claims about code quality and expertise"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-004-dev-reputation"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - github-profile
   - stackoverflow-rep

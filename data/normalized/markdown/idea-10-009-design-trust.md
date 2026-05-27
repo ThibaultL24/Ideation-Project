@@ -1,7 +1,7 @@
 ---
 title: "DesignTrust"
 tagline: "Design portfolio platform with client-staked quality claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-10-009-design-trust"
@@ -9,7 +9,7 @@ category: "Creative Arts & Culture"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - creative-arts-culture
   - dribbble
   - behance

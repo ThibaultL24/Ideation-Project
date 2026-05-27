@@ -1,7 +1,7 @@
 ---
 title: "SalaryTransparency"
 tagline: "Salary data verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-17-008-salary-transparency"
@@ -9,7 +9,7 @@ category: "Professional Services & HR"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - professional-services-hr
   - levels-fyi
   - but-staked

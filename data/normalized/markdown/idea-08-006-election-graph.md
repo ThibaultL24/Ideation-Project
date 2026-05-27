@@ -1,7 +1,7 @@
 ---
 title: "ElectionGraph"
 tagline: "Political prediction and candidate quality signaling"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-08-006-election-graph"
@@ -9,7 +9,7 @@ category: "Prediction & Signal Markets"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - prediction-signal-markets
   - predictit
   - polymarket

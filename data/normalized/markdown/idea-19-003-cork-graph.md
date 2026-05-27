@@ -1,7 +1,7 @@
 ---
 title: "CorkGraph"
 tagline: "Wine and spirits ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-19-003-cork-graph"
@@ -9,7 +9,7 @@ category: "Food, Agriculture & Hospitality"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - food-agriculture-hospitality
   - vivino
 comparable: "Vivino"

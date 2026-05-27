@@ -1,7 +1,7 @@
 ---
 title: "ModRepository"
 tagline: "Game mod safety ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-13-010-mod-repository"
@@ -9,7 +9,7 @@ category: "Gaming & Esports"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - gaming-esports
   - nexus-mods
 comparable: "Nexus Mods"

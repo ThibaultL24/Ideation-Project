@@ -1,7 +1,7 @@
 ---
 title: "WeddingVendorGraph"
 tagline: "Wedding vendor reputation across photographers, florists, caterers"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-023-wedding-vendor-graph"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - the-knot
   - weddingwire

@@ -1,7 +1,7 @@
 ---
 title: "AppCrit"
 tagline: "Mobile and desktop app ratings with stake-backed claims on usability, privacy, and value"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-005-app-crit"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - app-store-reviews
 comparable: "App Store reviews, G2"

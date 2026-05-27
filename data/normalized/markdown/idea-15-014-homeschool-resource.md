@@ -1,7 +1,7 @@
 ---
 title: "HomeschoolResource"
 tagline: "Homeschool curriculum ratings by parents"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-014-homeschool-resource"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
   - cathy-duffy-reviews
 comparable: "Cathy Duffy Reviews"

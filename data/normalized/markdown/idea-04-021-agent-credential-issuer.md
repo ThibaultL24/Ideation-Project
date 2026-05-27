@@ -1,7 +1,7 @@
 ---
 title: "AgentCredentialIssuer"
 tagline: "Verifiable credentials for AI agents"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-04-021-agent-credential-issuer"
@@ -9,7 +9,7 @@ category: "AI Agents & Machine Intelligence"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - ai-agents-machine-intelligence
 intuition_atoms: []
 github_discussion: ""

@@ -1,7 +1,7 @@
 ---
 title: "BoardGameRate"
 tagline: "Board and tabletop game ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-025-board-game-rate"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - boardgamegeek
 comparable: "BoardGameGeek"

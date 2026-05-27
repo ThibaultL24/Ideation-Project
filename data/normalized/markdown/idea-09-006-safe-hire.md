@@ -1,7 +1,7 @@
 ---
 title: "SafeHire"
 tagline: "Background verification for crypto/remote hiring"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-09-006-safe-hire"
@@ -9,7 +9,7 @@ category: "Safety, Security & Protection"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - safety-security-protection
   - checkr
 comparable: "Checkr"

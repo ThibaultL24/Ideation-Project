@@ -1,7 +1,7 @@
 ---
 title: "PlayerID"
 tagline: "Cross-game player identity"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-13-001-player-id"
@@ -9,7 +9,7 @@ category: "Gaming & Esports"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - gaming-esports
 intuition_atoms: []
 github_discussion: ""

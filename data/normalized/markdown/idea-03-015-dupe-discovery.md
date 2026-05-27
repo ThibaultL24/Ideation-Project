@@ -1,7 +1,7 @@
 ---
 title: "DupeDiscovery"
 tagline: "Product dupe (affordable alternative) curation"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-015-dupe-discovery"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - build-on-intuition-300-dapp-ideas-reddit-dupe-threads
   - tiktok

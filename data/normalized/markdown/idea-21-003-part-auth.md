@@ -1,7 +1,7 @@
 ---
 title: "PartAuth"
 tagline: "Auto and industrial parts authenticity verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-21-003-part-auth"
@@ -9,7 +9,7 @@ category: "Supply Chain & Commerce"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - supply-chain-commerce
 intuition_atoms: []
 github_discussion: ""

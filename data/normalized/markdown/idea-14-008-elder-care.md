@@ -1,7 +1,7 @@
 ---
 title: "ElderCare"
 tagline: "Assisted living facility ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-14-008-elder-care"
@@ -9,7 +9,7 @@ category: "Healthcare & Wellness"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - healthcare-wellness
   - medicare-ratings
 comparable: "Medicare ratings"

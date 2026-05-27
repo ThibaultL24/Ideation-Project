@@ -1,7 +1,7 @@
 ---
 title: "HostGraph"
 tagline: "Web hosting provider ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-25-002-host-graph"
@@ -9,7 +9,7 @@ category: "Telecom & Internet"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - telecom-internet
   - hosting-review-sites
 comparable: "hosting review sites"

@@ -1,7 +1,7 @@
 ---
 title: "TrustCircle"
 tagline: "Social network where connections are stake-weighted"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-001-trust-circle"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - facebook
   - but-staked

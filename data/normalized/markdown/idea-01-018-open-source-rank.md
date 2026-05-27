@@ -1,7 +1,7 @@
 ---
 title: "OpenSourceRank"
 tagline: "Open-source library ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-018-open-source-rank"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - github-stars
   - npm-scores

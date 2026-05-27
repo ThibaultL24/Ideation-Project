@@ -1,7 +1,7 @@
 ---
 title: "DeepfakeMarket"
 tagline: "Deepfake detection marketplace"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-04-013-deepfake-market"
@@ -9,7 +9,7 @@ category: "AI Agents & Machine Intelligence"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - ai-agents-machine-intelligence
   - reality-defender
   - sensity

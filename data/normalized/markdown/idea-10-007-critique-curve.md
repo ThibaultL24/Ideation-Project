@@ -1,7 +1,7 @@
 ---
 title: "CritiqueCurve"
 tagline: "Art critique platform where critique quality itself is staked on"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-10-007-critique-curve"
@@ -9,7 +9,7 @@ category: "Creative Arts & Culture"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - creative-arts-culture
 intuition_atoms: []
 github_discussion: ""

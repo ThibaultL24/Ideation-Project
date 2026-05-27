@@ -1,7 +1,7 @@
 ---
 title: "SchoolBoard"
 tagline: "K-12 school ratings by actual families"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-006-school-board"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
   - greatschools
   - niche

@@ -1,7 +1,7 @@
 ---
 title: "HomeServiceHub"
 tagline: "Unified home service discovery (plumbing, electrical, HVAC)"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-006-home-service-hub"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - angi
   - homeadvisor

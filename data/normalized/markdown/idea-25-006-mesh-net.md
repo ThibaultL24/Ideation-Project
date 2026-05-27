@@ -1,7 +1,7 @@
 ---
 title: "MeshNet"
 tagline: "Decentralized ISP and mesh network quality ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-25-006-mesh-net"
@@ -9,7 +9,7 @@ category: "Telecom & Internet"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - telecom-internet
 intuition_atoms: []
 github_discussion: ""

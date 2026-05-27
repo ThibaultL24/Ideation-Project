@@ -1,7 +1,7 @@
 ---
 title: "DealerCheck"
 tagline: "Car dealership reviews"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-01-014-dealer-check"
@@ -9,7 +9,7 @@ category: "Reviews & Ratings"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - reviews-ratings
   - dealerrater
   - cars-com

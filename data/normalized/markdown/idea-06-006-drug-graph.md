@@ -1,7 +1,7 @@
 ---
 title: "DrugGraph"
 tagline: "Drug interaction and side-effect knowledge graph"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-06-006-drug-graph"
@@ -9,7 +9,7 @@ category: "Knowledge, Research & Information"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - knowledge-research-information
   - build-on-intuition-300-dapp-ideas-drugs-com
   - epocrates

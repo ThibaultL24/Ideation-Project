@@ -1,7 +1,7 @@
 ---
 title: "ResearchMentor"
 tagline: "Graduate school advisor ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-008-research-mentor"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
 intuition_atoms: []
 github_discussion: ""

@@ -1,7 +1,7 @@
 ---
 title: "HiringSignal"
 tagline: "Job posting quality signals"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-021-hiring-signal"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - glassdoor-job-listings
 comparable: "Glassdoor job listings"

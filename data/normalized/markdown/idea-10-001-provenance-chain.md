@@ -1,7 +1,7 @@
 ---
 title: "ProvenanceChain"
 tagline: "Art authenticity and provenance verification"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-10-001-provenance-chain"
@@ -9,7 +9,7 @@ category: "Creative Arts & Culture"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - creative-arts-culture
   - artnet
   - certificates-of-authenticity

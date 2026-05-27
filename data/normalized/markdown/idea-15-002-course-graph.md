@@ -1,7 +1,7 @@
 ---
 title: "CourseGraph"
 tagline: "Cross-platform online course ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-002-course-graph"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
   - coursera-udemy-reviews
 comparable: "Coursera/Udemy reviews"

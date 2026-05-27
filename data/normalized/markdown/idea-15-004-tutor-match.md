@@ -1,7 +1,7 @@
 ---
 title: "TutorMatch"
 tagline: "Tutor matching using stake-weighted effectiveness claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-004-tutor-match"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
   - wyzant
 comparable: "Wyzant"

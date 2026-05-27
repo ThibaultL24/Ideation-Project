@@ -1,7 +1,7 @@
 ---
 title: "RegSignal"
 tagline: "Regulatory prediction market"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-08-010-reg-signal"
@@ -9,7 +9,7 @@ category: "Prediction & Signal Markets"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - prediction-signal-markets
   - polymarket-regulatory
 comparable: "Polymarket regulatory"

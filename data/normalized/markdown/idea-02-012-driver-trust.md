@@ -1,7 +1,7 @@
 ---
 title: "DriverTrust"
 tagline: "Rideshare driver reputation portable across Uber, Lyft, DoorDash"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-012-driver-trust"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
   - uber-ratings
   - but-portable

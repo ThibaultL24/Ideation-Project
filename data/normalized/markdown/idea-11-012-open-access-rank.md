@@ -1,7 +1,7 @@
 ---
 title: "OpenAccessRank"
 tagline: "Open access journal and repository quality"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-11-012-open-access-rank"
@@ -9,7 +9,7 @@ category: "Science & Academia"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - science-academia
 intuition_atoms: []
 github_discussion: ""

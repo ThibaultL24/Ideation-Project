@@ -1,7 +1,7 @@
 ---
 title: "TrustTrail"
 tagline: "Travel recommendation platform"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-20-001-trust-trail"
@@ -9,7 +9,7 @@ category: "Travel & Transportation"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - travel-transportation
   - tripadvisor
   - lonely-planet

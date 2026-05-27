@@ -1,7 +1,7 @@
 ---
 title: "GlassVault"
 tagline: "Anonymous employer reviews backed by $TRUST stakes"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-17-001-glass-vault"
@@ -9,7 +9,7 @@ category: "Professional Services & HR"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - professional-services-hr
   - glassdoor
   - blind

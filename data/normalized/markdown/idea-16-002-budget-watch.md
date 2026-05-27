@@ -1,7 +1,7 @@
 ---
 title: "BudgetWatch"
 tagline: "Government spending transparency"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-16-002-budget-watch"
@@ -9,7 +9,7 @@ category: "Government & Civic"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - government-civic
   - usaspending-gov
 comparable: "USASpending.gov"

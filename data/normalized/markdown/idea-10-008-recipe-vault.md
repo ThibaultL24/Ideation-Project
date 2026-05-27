@@ -1,7 +1,7 @@
 ---
 title: "RecipeVault"
 tagline: "Culinary knowledge platform"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-10-008-recipe-vault"
@@ -9,7 +9,7 @@ category: "Creative Arts & Culture"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - creative-arts-culture
   - allrecipes
 comparable: "AllRecipes"

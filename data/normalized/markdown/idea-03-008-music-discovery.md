@@ -1,7 +1,7 @@
 ---
 title: "MusicDiscovery"
 tagline: "Music curation via stake-weighted taste graphs"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-008-music-discovery"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - spotify-discover
   - soundcloud

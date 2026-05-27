@@ -1,7 +1,7 @@
 ---
 title: "SkinCare"
 tagline: "Skincare product effectiveness ratings by skin type"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-14-007-skin-care"
@@ -9,7 +9,7 @@ category: "Healthcare & Wellness"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - healthcare-wellness
   - ewg-skin-deep
 comparable: "EWG Skin Deep"

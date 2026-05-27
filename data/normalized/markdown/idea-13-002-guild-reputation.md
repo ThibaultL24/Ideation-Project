@@ -1,7 +1,7 @@
 ---
 title: "GuildReputation"
 tagline: "Guild and clan reputation"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-13-002-guild-reputation"
@@ -9,7 +9,7 @@ category: "Gaming & Esports"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - gaming-esports
   - wow-guild-rankings
 comparable: "WoW guild rankings"

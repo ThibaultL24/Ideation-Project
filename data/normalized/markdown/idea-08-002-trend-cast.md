@@ -1,7 +1,7 @@
 ---
 title: "TrendCast"
 tagline: "Technology and cultural trend forecasting"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-08-002-trend-cast"
@@ -9,7 +9,7 @@ category: "Prediction & Signal Markets"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - prediction-signal-markets
   - gartner-hype-cycle
   - but-market-driven

@@ -1,7 +1,7 @@
 ---
 title: "EmergencyResponse"
 tagline: "Emergency services quality ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-16-010-emergency-response"
@@ -9,7 +9,7 @@ category: "Government & Civic"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - government-civic
 intuition_atoms: []
 github_discussion: ""

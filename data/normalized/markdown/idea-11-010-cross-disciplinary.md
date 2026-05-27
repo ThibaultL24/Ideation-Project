@@ -1,7 +1,7 @@
 ---
 title: "CrossDisciplinary"
 tagline: "Cross-disciplinary research connection engine"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-11-010-cross-disciplinary"
@@ -9,7 +9,7 @@ category: "Science & Academia"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - science-academia
 intuition_atoms: []
 github_discussion: ""

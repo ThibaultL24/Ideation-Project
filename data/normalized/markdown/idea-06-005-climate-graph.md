@@ -1,7 +1,7 @@
 ---
 title: "ClimateGraph"
 tagline: "Climate science knowledge graph with stake-weighted emissions data and intervention effectiveness claims"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-06-005-climate-graph"
@@ -9,7 +9,7 @@ category: "Knowledge, Research & Information"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - knowledge-research-information
   - ipcc-reports
   - but-live

@@ -1,7 +1,7 @@
 ---
 title: "StakeList"
 tagline: "Stake-weighted curated lists for any topic (best CRMs, best vegan restaurants in Austin)"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-03-002-stake-list"
@@ -9,7 +9,7 @@ category: "Marketplaces & Discovery"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - marketplaces-discovery
   - wirecutter
   - -best-of-lists

@@ -1,7 +1,7 @@
 ---
 title: "VCReputation"
 tagline: "VC fund reputation from portfolio companies"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-07-011-vcreputation"
@@ -9,7 +9,7 @@ category: "Finance, DeFi & Insurance"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - finance-defi-insurance
   - thefunded
 comparable: "TheFunded"

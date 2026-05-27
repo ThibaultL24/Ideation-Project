@@ -1,7 +1,7 @@
 ---
 title: "EdTechReview"
 tagline: "Educational technology ratings by teachers"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-15-010-ed-tech-review"
@@ -9,7 +9,7 @@ category: "Education & Learning"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - education-learning
   - common-sense-education
 comparable: "Common Sense Education"

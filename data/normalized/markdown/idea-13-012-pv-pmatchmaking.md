@@ -1,7 +1,7 @@
 ---
 title: "PvPMatchmaking"
 tagline: "Reputation-enhanced matchmaking"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-13-012-pv-pmatchmaking"
@@ -9,7 +9,7 @@ category: "Gaming & Esports"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - gaming-esports
   - valve-trust-factor
 comparable: "Valve Trust Factor"

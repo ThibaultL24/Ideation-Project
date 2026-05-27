@@ -1,7 +1,7 @@
 ---
 title: "GigWorkerID"
 tagline: "Gig economy worker portable identity spanning TaskRabbit, Uber, DoorDash"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-02-015-gig-worker-id"
@@ -9,7 +9,7 @@ category: "Identity, Reputation & Credentials"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - identity-reputation-credentials
 intuition_atoms: []
 github_discussion: ""

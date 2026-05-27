@@ -1,7 +1,7 @@
 ---
 title: "AnalystRank"
 tagline: "Financial analyst accuracy tracking"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-07-017-analyst-rank"
@@ -9,7 +9,7 @@ category: "Finance, DeFi & Insurance"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - finance-defi-insurance
   - tipranks
 comparable: "TipRanks"

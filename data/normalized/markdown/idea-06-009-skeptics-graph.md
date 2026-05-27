@@ -1,7 +1,7 @@
 ---
 title: "SkepticsGraph"
 tagline: "Claims-vs-evidence platform"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-06-009-skeptics-graph"
@@ -9,7 +9,7 @@ category: "Knowledge, Research & Information"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - knowledge-research-information
 intuition_atoms: []
 github_discussion: ""

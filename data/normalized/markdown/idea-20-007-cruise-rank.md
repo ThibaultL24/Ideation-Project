@@ -1,7 +1,7 @@
 ---
 title: "CruiseRank"
 tagline: "Cruise line and itinerary ratings"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-20-007-cruise-rank"
@@ -9,7 +9,7 @@ category: "Travel & Transportation"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - travel-transportation
   - cruise-critic
 comparable: "Cruise Critic"

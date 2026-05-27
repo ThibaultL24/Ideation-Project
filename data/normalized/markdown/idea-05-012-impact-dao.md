@@ -1,7 +1,7 @@
 ---
 title: "ImpactDAO"
 tagline: "Social impact DAO where funding is weighted by domain expertise reputation"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-05-012-impact-dao"
@@ -9,7 +9,7 @@ category: "Social Networks & Community"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - social-networks-community
   - gitcoin
   - molochdao

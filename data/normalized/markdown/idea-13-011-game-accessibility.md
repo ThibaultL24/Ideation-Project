@@ -1,7 +1,7 @@
 ---
 title: "GameAccessibility"
 tagline: "Game accessibility ratings by players with disabilities"
-author: "Mission 03 Migration"
+author: "Ideation"
 date: "2026-05-25"
 status: draft
 canonical_id: "idea-13-011-game-accessibility"
@@ -9,7 +9,7 @@ category: "Gaming & Esports"
 tags:
   - dapp-idea
   - intuition
-  - mission-03
+  - ideation
   - gaming-esports
   - can-i-play-that-
 comparable: "Can I Play That?"
