@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "TechTruth"
 tagline: "Technology claim verification"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Tom's Hardware"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: TechTruth
+category: Knowledge, Research & Information
+canonicalId: idea-06-013-tech-truth
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TechTruth
 
-> Technology claim verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate knowledge, research & information concepts on Intuition.
-
-## Solution
-
 Technology claim verification. Engineers stake on whether products deliver advertised performance (benchmarks, battery life, speeds).
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Tom's Hardware
-
-## Metadata
-
-- Canonical ID: `idea-06-013-tech-truth`
-- Category: Knowledge, Research & Information
-- Suggested GitHub path: `ideas/2026-05-25-tech-truth/README.md`
+**Comparable:** Tom's Hardware

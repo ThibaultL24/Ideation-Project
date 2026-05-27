@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "InfluencerAudit"
 tagline: "Influencer authenticity verification"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "HypeAuditor"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: InfluencerAudit
+category: Safety, Security & Protection
+canonicalId: idea-09-011-influencer-audit
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InfluencerAudit
 
-> Influencer authenticity verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate safety, security & protection concepts on Intuition.
-
-## Solution
-
 Influencer authenticity verification. Stake on follower legitimacy and sponsorship disclosure claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-HypeAuditor
-
-## Metadata
-
-- Canonical ID: `idea-09-011-influencer-audit`
-- Category: Safety, Security & Protection
-- Suggested GitHub path: `ideas/2026-05-25-influencer-audit/README.md`
+**Comparable:** HypeAuditor

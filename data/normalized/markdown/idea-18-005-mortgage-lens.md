@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "MortgageLens"
 tagline: "Mortgage lender comparison"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "LendingTree reviews"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: MortgageLens
+category: Real Estate & Property
+canonicalId: idea-18-005-mortgage-lens
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MortgageLens
 
-> Mortgage lender comparison
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate real estate & property concepts on Intuition.
-
-## Solution
-
 Mortgage lender comparison. Borrowers stake on rate accuracy, closing cost transparency, and process efficiency claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-LendingTree reviews
-
-## Metadata
-
-- Canonical ID: `idea-18-005-mortgage-lens`
-- Category: Real Estate & Property
-- Suggested GitHub path: `ideas/2026-05-25-mortgage-lens/README.md`
+**Comparable:** LendingTree reviews

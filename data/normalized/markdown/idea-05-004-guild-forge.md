@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "GuildForge"
 tagline: "DAO and guild creation toolkit using knowledge graph for member reputation, role assignment, and governance."
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Coordinape, Guild.xyz"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: GuildForge
+category: Social Networks & Community
+canonicalId: idea-05-004-guild-forge
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GuildForge
 
-> DAO and guild creation toolkit using knowledge graph for member reputation, role assignment, and governance.
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate social networks & community concepts on Intuition.
-
-## Solution
-
 DAO and guild creation toolkit using knowledge graph for member reputation, role assignment, and governance.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Coordinape, Guild.xyz
-
-## Metadata
-
-- Canonical ID: `idea-05-004-guild-forge`
-- Category: Social Networks & Community
-- Suggested GitHub path: `ideas/2026-05-25-guild-forge/README.md`
+**Comparable:** Coordinape, Guild.xyz

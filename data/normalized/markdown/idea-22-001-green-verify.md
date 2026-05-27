@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "GreenVerify"
 tagline: "Green product and company verification"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - environment-sustainability
 intuition_atoms: []
 github_discussion: ""
+=======
+title: GreenVerify
+category: Environment & Sustainability
+canonicalId: idea-22-001-green-verify
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GreenVerify
 
-> Green product and company verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate environment & sustainability concepts on Intuition.
-
-## Solution
-
-Green product and company verification. Consumers and researchers stake on sustainability claims. Counter-stake greenwashing. (Novel) Build on Intuition: 300+ dApp Ideas
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-22-001-green-verify`
-- Category: Environment & Sustainability
-- Suggested GitHub path: `ideas/2026-05-25-green-verify/README.md`
+Green product and company verification. Consumers and researchers stake on sustainability claims. Counter-stake greenwashing. (Novel)

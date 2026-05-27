@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "RecoveryCircle"
 tagline: "Addiction recovery support with stake-weighted sponsor reputation"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - social-networks-community
 intuition_atoms: []
 github_discussion: ""
+=======
+title: RecoveryCircle
+category: Social Networks & Community
+canonicalId: idea-05-019-recovery-circle
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RecoveryCircle
 
-> Addiction recovery support with stake-weighted sponsor reputation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate social networks & community concepts on Intuition.
-
-## Solution
-
 Addiction recovery support with stake-weighted sponsor reputation. Trust-weighted matching for vulnerable populations. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-05-019-recovery-circle`
-- Category: Social Networks & Community
-- Suggested GitHub path: `ideas/2026-05-25-recovery-circle/README.md`

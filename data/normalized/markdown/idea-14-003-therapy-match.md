@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "TherapyMatch"
 tagline: "Mental health provider matching using stake-weighted specialty and outcome claims"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "BetterHelp"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: TherapyMatch
+category: Healthcare & Wellness
+canonicalId: idea-14-003-therapy-match
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TherapyMatch
 
-> Mental health provider matching using stake-weighted specialty and outcome claims
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate healthcare & wellness concepts on Intuition.
-
-## Solution
-
 Mental health provider matching using stake-weighted specialty and outcome claims. Trust signals for the field where fit is everything.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-BetterHelp
-
-## Metadata
-
-- Canonical ID: `idea-14-003-therapy-match`
-- Category: Healthcare & Wellness
-- Suggested GitHub path: `ideas/2026-05-25-therapy-match/README.md`
+**Comparable:** BetterHelp

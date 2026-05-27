@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ProtocolSafety"
 tagline: "DeFi protocol risk ratings"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "DeFi Safety, Rekt.news"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ProtocolSafety
+category: Finance, DeFi & Insurance
+canonicalId: idea-07-002-protocol-safety
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ProtocolSafety
 
-> DeFi protocol risk ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate finance, defi & insurance concepts on Intuition.
-
-## Solution
-
 DeFi protocol risk ratings. Auditors, users, and researchers stake on code quality and economic design claims. A living safety layer.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-DeFi Safety, Rekt.news
-
-## Metadata
-
-- Canonical ID: `idea-07-002-protocol-safety`
-- Category: Finance, DeFi & Insurance
-- Suggested GitHub path: `ideas/2026-05-25-protocol-safety/README.md`
+**Comparable:** DeFi Safety, Rekt.news

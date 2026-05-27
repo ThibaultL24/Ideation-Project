@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ClimateGraph"
 tagline: "Climate science knowledge graph with stake-weighted emissions data and intervention effectiveness claims"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "IPCC reports, but live"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ClimateGraph
+category: Knowledge, Research & Information
+canonicalId: idea-06-005-climate-graph
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ClimateGraph
 
-> Climate science knowledge graph with stake-weighted emissions data and intervention effectiveness claims
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate knowledge, research & information concepts on Intuition.
-
-## Solution
-
 Climate science knowledge graph with stake-weighted emissions data and intervention effectiveness claims. Immune to political manipulation.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-IPCC reports, but live
-
-## Metadata
-
-- Canonical ID: `idea-06-005-climate-graph`
-- Category: Knowledge, Research & Information
-- Suggested GitHub path: `ideas/2026-05-25-climate-graph/README.md`
+**Comparable:** IPCC reports, but live

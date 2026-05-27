@@ -3,7 +3,7 @@
   "canonicalId": "idea-15-002-course-graph",
   "slug": "course-graph",
   "title": "CourseGraph",
-  "tagline": "Cross-platform online course ratings",
+  "tagline": "Cross-platform online course ratings.",
   "category": "Education & Learning",
   "description": "Cross-platform online course ratings. Students stake on learning outcome delivery and content currency.",
   "comparable": "Coursera/Udemy reviews",
@@ -12,7 +12,8 @@
     "intuition",
     "ideation",
     "education-learning",
-    "coursera-udemy-reviews"
+    "coursera",
+    "udemy-reviews"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-course-graph/README.md"

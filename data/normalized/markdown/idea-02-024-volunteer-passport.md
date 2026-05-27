@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "VolunteerPassport"
 tagline: "Volunteer reputation tracking across organizations"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "VolunteerMatch, but with reputation"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: VolunteerPassport
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-024-volunteer-passport
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VolunteerPassport
 
-> Volunteer reputation tracking across organizations
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 Volunteer reputation tracking across organizations. Nonprofits stake on reliability and impact claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-VolunteerMatch, but with reputation
-
-## Metadata
-
-- Canonical ID: `idea-02-024-volunteer-passport`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-volunteer-passport/README.md`
+**Comparable:** VolunteerMatch, but with reputation

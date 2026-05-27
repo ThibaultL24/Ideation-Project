@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "MCPToolRegistry"
 tagline: "Model Context Protocol tool registry with stakeweighted quality/safety claims"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - ai-agents-machine-intelligence
 intuition_atoms: []
 github_discussion: ""
+=======
+title: MCPToolRegistry
+category: AI Agents & Machine Intelligence
+canonicalId: idea-04-020-mcptool-registry
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MCPToolRegistry
 
-> Model Context Protocol tool registry with stakeweighted quality/safety claims
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate ai agents & machine intelligence concepts on Intuition.
-
-## Solution
-
 Model Context Protocol tool registry with stakeweighted quality/safety claims. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-04-020-mcptool-registry`
-- Category: AI Agents & Machine Intelligence
-- Suggested GitHub path: `ideas/2026-05-25-mcptool-registry/README.md`

@@ -3,14 +3,21 @@
   "canonicalId": "idea-08-001-claim-futures",
   "slug": "claim-futures",
   "title": "ClaimFutures",
-  "tagline": "Forward-looking claim markets",
+  "tagline": "Forward-looking claim markets.",
   "category": "Prediction & Signal Markets",
-  "description": "Forward-looking claim markets. [Company-X] [willachieve] [Profitability by Q4] creates a prediction market using native staking. (Like: Polymarket, Metaculus) Build on Intuition: 300+ dApp Ideas",
+  "description": "Forward-looking claim markets. [Company-X] [willachieve] [Profitability by Q4] creates a prediction market using native staking.",
+  "comparable": "Polymarket, Metaculus",
   "tags": [
     "dapp-idea",
     "intuition",
     "ideation",
+<<<<<<< HEAD
     "prediction-signal-markets"
+=======
+    "prediction-signal-markets",
+    "polymarket",
+    "metaculus"
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-claim-futures/README.md"

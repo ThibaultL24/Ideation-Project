@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "AllergenAlert"
 tagline: "Allergen verification for food and products"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - healthcare-wellness
 intuition_atoms: []
 github_discussion: ""
+=======
+title: AllergenAlert
+category: Healthcare & Wellness
+canonicalId: idea-14-009-allergen-alert
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AllergenAlert
 
-> Allergen verification for food and products
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate healthcare & wellness concepts on Intuition.
-
-## Solution
-
 Allergen verification for food and products. Consumers with allergies and food scientists stake on allergen-free claims. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-14-009-allergen-alert`
-- Category: Healthcare & Wellness
-- Suggested GitHub path: `ideas/2026-05-25-allergen-alert/README.md`

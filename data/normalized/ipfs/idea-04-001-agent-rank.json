@@ -3,7 +3,7 @@
   "canonicalId": "idea-04-001-agent-rank",
   "slug": "agent-rank",
   "title": "AgentRank",
-  "tagline": "AI agent reputation marketplace",
+  "tagline": "AI agent reputation marketplace.",
   "category": "AI Agents & Machine Intelligence",
   "description": "AI agent reputation marketplace. Every agent's capabilities and safety are tracked as staked triples. First real \"credit score\" for AI. (Novel — ERC-8004 aligned)",
   "tags": [

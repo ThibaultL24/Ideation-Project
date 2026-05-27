@@ -3,7 +3,7 @@
   "canonicalId": "idea-12-012-migration-kit",
   "slug": "migration-kit",
   "title": "MigrationKit",
-  "tagline": "Tools for importing existing review/rating data from Web2 platforms into Intuition atoms and triples",
+  "tagline": "Tools for importing existing review/rating data from Web2 platforms into Intuition atoms and triples.",
   "category": "Developer Tools & Infrastructure",
   "description": "Tools for importing existing review/rating data from Web2 platforms into Intuition atoms and triples. (Novel)",
   "tags": [

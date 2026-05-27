@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ModRepository"
 tagline: "Game mod safety ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Nexus Mods"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ModRepository
+category: Gaming & Esports
+canonicalId: idea-13-010-mod-repository
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ModRepository
 
-> Game mod safety ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate gaming & esports concepts on Intuition.
-
-## Solution
-
 Game mod safety ratings. Players stake on compatibility and malware safety claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Nexus Mods
-
-## Metadata
-
-- Canonical ID: `idea-13-010-mod-repository`
-- Category: Gaming & Esports
-- Suggested GitHub path: `ideas/2026-05-25-mod-repository/README.md`
+**Comparable:** Nexus Mods

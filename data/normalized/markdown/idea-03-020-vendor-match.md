@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "VendorMatch"
 tagline: "B2B vendor discovery"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "ThomasNet, Alibaba"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: VendorMatch
+category: Marketplaces & Discovery
+canonicalId: idea-03-020-vendor-match
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VendorMatch
 
-> B2B vendor discovery
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate marketplaces & discovery concepts on Intuition.
-
-## Solution
-
 B2B vendor discovery. Procurement teams query stakeweighted quality and reliability claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-ThomasNet, Alibaba
-
-## Metadata
-
-- Canonical ID: `idea-03-020-vendor-match`
-- Category: Marketplaces & Discovery
-- Suggested GitHub path: `ideas/2026-05-25-vendor-match/README.md`
+**Comparable:** ThomasNet, Alibaba

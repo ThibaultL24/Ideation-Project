@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "AlbumStake"
 tagline: "Music album ratings with stake-backed production quality and innovation claims"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Pitchfork, RateYourMusic"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: AlbumStake
+category: Reviews & Ratings
+canonicalId: idea-01-011-album-stake
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AlbumStake
 
-> Music album ratings with stake-backed production quality and innovation claims
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate reviews & ratings concepts on Intuition.
-
-## Solution
-
 Music album ratings with stake-backed production quality and innovation claims. Financially-weighted alternative to Pitchfork scores.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Pitchfork, RateYourMusic
-
-## Metadata
-
-- Canonical ID: `idea-01-011-album-stake`
-- Category: Reviews & Ratings
-- Suggested GitHub path: `ideas/2026-05-25-album-stake/README.md`
+**Comparable:** Pitchfork, RateYourMusic

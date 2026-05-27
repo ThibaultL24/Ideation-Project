@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "PredictionMarket"
 tagline: "Prediction market enhanced with reputation-weighted participation"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Polymarket, Kalshi"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: PredictionMarket
+category: Finance, DeFi & Insurance
+canonicalId: idea-07-007-prediction-market
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PredictionMarket
 
-> Prediction market enhanced with reputation-weighted participation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate finance, defi & insurance concepts on Intuition.
-
-## Solution
-
 Prediction market enhanced with reputation-weighted participation. High-accuracy bettors' positions weighted more heavily.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Polymarket, Kalshi
-
-## Metadata
-
-- Canonical ID: `idea-07-007-prediction-market`
-- Category: Finance, DeFi & Insurance
-- Suggested GitHub path: `ideas/2026-05-25-prediction-market/README.md`
+**Comparable:** Polymarket, Kalshi

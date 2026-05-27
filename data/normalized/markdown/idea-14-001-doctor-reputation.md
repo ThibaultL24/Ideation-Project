@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "DoctorReputation"
 tagline: "Multi-dimensional physician ratings"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "ZocDoc, Healthgrades"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: DoctorReputation
+category: Healthcare & Wellness
+canonicalId: idea-14-001-doctor-reputation
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DoctorReputation
 
-> Multi-dimensional physician ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate healthcare & wellness concepts on Intuition.
-
-## Solution
-
 Multi-dimensional physician ratings. Patients stake on competence, bedside manner, and outcome quality across specialties.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-ZocDoc, Healthgrades
-
-## Metadata
-
-- Canonical ID: `idea-14-001-doctor-reputation`
-- Category: Healthcare & Wellness
-- Suggested GitHub path: `ideas/2026-05-25-doctor-reputation/README.md`
+**Comparable:** ZocDoc, Healthgrades

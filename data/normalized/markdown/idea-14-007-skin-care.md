@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "SkinCare"
 tagline: "Skincare product effectiveness ratings by skin type"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "EWG Skin Deep"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: SkinCare
+category: Healthcare & Wellness
+canonicalId: idea-14-007-skin-care
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SkinCare
 
-> Skincare product effectiveness ratings by skin type
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate healthcare & wellness concepts on Intuition.
-
-## Solution
-
 Skincare product effectiveness ratings by skin type. Dermatologists and consumers stake on ingredient efficacy and irritation risk.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-EWG Skin Deep
-
-## Metadata
-
-- Canonical ID: `idea-14-007-skin-care`
-- Category: Healthcare & Wellness
-- Suggested GitHub path: `ideas/2026-05-25-skin-care/README.md`
+**Comparable:** EWG Skin Deep

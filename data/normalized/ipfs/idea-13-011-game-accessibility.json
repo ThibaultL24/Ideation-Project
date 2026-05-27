@@ -3,7 +3,7 @@
   "canonicalId": "idea-13-011-game-accessibility",
   "slug": "game-accessibility",
   "title": "GameAccessibility",
-  "tagline": "Game accessibility ratings by players with disabilities",
+  "tagline": "Game accessibility ratings by players with disabilities.",
   "category": "Gaming & Esports",
   "description": "Game accessibility ratings by players with disabilities. Stake on accessibility feature quality.",
   "comparable": "Can I Play That?",
@@ -12,7 +12,7 @@
     "intuition",
     "ideation",
     "gaming-esports",
-    "can-i-play-that-"
+    "can-i-play-that"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-game-accessibility/README.md"

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "StreamingValue"
 tagline: "Streaming service value ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "JustWatch"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: StreamingValue
+category: Reviews & Ratings
+canonicalId: idea-01-020-streaming-value
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StreamingValue
 
-> Streaming service value ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate reviews & ratings concepts on Intuition.
-
-## Solution
-
 Streaming service value ratings. Subscribers stake on content library quality and price-to-value ratio.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-JustWatch
-
-## Metadata
-
-- Canonical ID: `idea-01-020-streaming-value`
-- Category: Reviews & Ratings
-- Suggested GitHub path: `ideas/2026-05-25-streaming-value/README.md`
+**Comparable:** JustWatch

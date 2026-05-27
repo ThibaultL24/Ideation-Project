@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "BenchmarkDAO"
 tagline: "Decentralized AI benchmarking"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "HF Leaderboards"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: BenchmarkDAO
+category: AI Agents & Machine Intelligence
+canonicalId: idea-04-014-benchmark-dao
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BenchmarkDAO
 
-> Decentralized AI benchmarking
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate ai agents & machine intelligence concepts on Intuition.
-
-## Solution
-
 Decentralized AI benchmarking. Community defines, runs, and validates benchmarks. Gaming benchmarks faces counter-stake pressure.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-HF Leaderboards
-
-## Metadata
-
-- Canonical ID: `idea-04-014-benchmark-dao`
-- Category: AI Agents & Machine Intelligence
-- Suggested GitHub path: `ideas/2026-05-25-benchmark-dao/README.md`
+**Comparable:** HF Leaderboards

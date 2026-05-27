@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "InfluencerAuth"
 tagline: "Influencer credibility scoring"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "HypeAuditor, but decentralized"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: InfluencerAuth
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-009-influencer-auth
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InfluencerAuth
 
-> Influencer credibility scoring
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 Influencer credibility scoring. Followers and brands stake on genuine product use and follower authenticity claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-HypeAuditor, but decentralized
-
-## Metadata
-
-- Canonical ID: `idea-02-009-influencer-auth`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-influencer-auth/README.md`
+**Comparable:** HypeAuditor, but decentralized

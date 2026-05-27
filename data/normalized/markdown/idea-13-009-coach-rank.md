@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "CoachRank"
 tagline: "Gaming coach reputation"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Metafy"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: CoachRank
+category: Gaming & Esports
+canonicalId: idea-13-009-coach-rank
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CoachRank
 
-> Gaming coach reputation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate gaming & esports concepts on Intuition.
-
-## Solution
-
 Gaming coach reputation. Students stake on effectiveness and rank improvement claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Metafy
-
-## Metadata
-
-- Canonical ID: `idea-13-009-coach-rank`
-- Category: Gaming & Esports
-- Suggested GitHub path: `ideas/2026-05-25-coach-rank/README.md`
+**Comparable:** Metafy

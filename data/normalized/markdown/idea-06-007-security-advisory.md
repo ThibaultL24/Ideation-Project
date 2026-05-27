@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "SecurityAdvisory"
 tagline: "Cybersecurity vulnerability curation"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "CVE, NVD"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: SecurityAdvisory
+category: Knowledge, Research & Information
+canonicalId: idea-06-007-security-advisory
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SecurityAdvisory
 
-> Cybersecurity vulnerability curation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate knowledge, research & information concepts on Intuition.
-
-## Solution
-
 Cybersecurity vulnerability curation. Researchers stake on severity and exploitability claims. Faster than CVE databases.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-CVE, NVD
-
-## Metadata
-
-- Canonical ID: `idea-06-007-security-advisory`
-- Category: Knowledge, Research & Information
-- Suggested GitHub path: `ideas/2026-05-25-security-advisory/README.md`
+**Comparable:** CVE, NVD

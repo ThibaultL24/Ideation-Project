@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "TeacherRep"
 tagline: "Educator reputation across schools and platforms"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Build on Intuition: 300+ dApp Ideas RateMyProfessors, but staked"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: TeacherRep
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-018-teacher-rep
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TeacherRep
 
-> Educator reputation across schools and platforms
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 Educator reputation across schools and platforms. Students and parents stake on teaching effectiveness claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Build on Intuition: 300+ dApp Ideas RateMyProfessors, but staked
-
-## Metadata
-
-- Canonical ID: `idea-02-018-teacher-rep`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-teacher-rep/README.md`
+**Comparable:** RateMyProfessors, but staked

@@ -3,7 +3,7 @@
   "canonicalId": "idea-12-002-claim-ql",
   "slug": "claim-ql",
   "title": "ClaimQL",
-  "tagline": "GraphQL interface for complex Knowledge Graph queries",
+  "tagline": "GraphQL interface for complex Knowledge Graph queries.",
   "category": "Developer Tools & Infrastructure",
   "description": "GraphQL interface for complex Knowledge Graph queries. Developers build rich trust-weighted interfaces without raw smart contract interaction. (Novel)",
   "tags": [

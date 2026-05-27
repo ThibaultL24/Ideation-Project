@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "GrantAllocation"
 tagline: "Retroactive public goods funding with reputationweighted impact evaluation."
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Optimism RPGF, Gitcoin"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: GrantAllocation
+category: Finance, DeFi & Insurance
+canonicalId: idea-07-016-grant-allocation
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GrantAllocation
 
-> Retroactive public goods funding with reputationweighted impact evaluation.
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate finance, defi & insurance concepts on Intuition.
-
-## Solution
-
 Retroactive public goods funding with reputationweighted impact evaluation.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Optimism RPGF, Gitcoin
-
-## Metadata
-
-- Canonical ID: `idea-07-016-grant-allocation`
-- Category: Finance, DeFi & Insurance
-- Suggested GitHub path: `ideas/2026-05-25-grant-allocation/README.md`
+**Comparable:** Optimism RPGF, Gitcoin

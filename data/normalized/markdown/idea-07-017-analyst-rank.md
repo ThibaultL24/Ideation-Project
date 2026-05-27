@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "AnalystRank"
 tagline: "Financial analyst accuracy tracking"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "TipRanks"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: AnalystRank
+category: Finance, DeFi & Insurance
+canonicalId: idea-07-017-analyst-rank
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AnalystRank
 
-> Financial analyst accuracy tracking
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate finance, defi & insurance concepts on Intuition.
-
-## Solution
-
 Financial analyst accuracy tracking. Analysts stake on predictions; track records become verifiable assets.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-TipRanks
-
-## Metadata
-
-- Canonical ID: `idea-07-017-analyst-rank`
-- Category: Finance, DeFi & Insurance
-- Suggested GitHub path: `ideas/2026-05-25-analyst-rank/README.md`
+**Comparable:** TipRanks

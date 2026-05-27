@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "MovingDay"
 tagline: "Moving company ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "moveBuddha"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: MovingDay
+category: Real Estate & Property
+canonicalId: idea-18-009-moving-day
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MovingDay
 
-> Moving company ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate real estate & property concepts on Intuition.
-
-## Solution
-
 Moving company ratings. Customers stake on estimate accuracy, damage rates, and price-hostage avoidance claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-moveBuddha
-
-## Metadata
-
-- Canonical ID: `idea-18-009-moving-day`
-- Category: Real Estate & Property
-- Suggested GitHub path: `ideas/2026-05-25-moving-day/README.md`
+**Comparable:** moveBuddha

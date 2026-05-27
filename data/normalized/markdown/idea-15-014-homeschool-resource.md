@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "HomeschoolResource"
 tagline: "Homeschool curriculum ratings by parents"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Cathy Duffy Reviews"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: HomeschoolResource
+category: Education & Learning
+canonicalId: idea-15-014-homeschool-resource
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HomeschoolResource
 
-> Homeschool curriculum ratings by parents
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate education & learning concepts on Intuition.
-
-## Solution
-
 Homeschool curriculum ratings by parents. Stake on effectiveness, engagement, and age-appropriateness.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Cathy Duffy Reviews
-
-## Metadata
-
-- Canonical ID: `idea-15-014-homeschool-resource`
-- Category: Education & Learning
-- Suggested GitHub path: `ideas/2026-05-25-homeschool-resource/README.md`
+**Comparable:** Cathy Duffy Reviews

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "CryptoKnowledge"
 tagline: "Crypto/DeFi protocol knowledge base"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Messari"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: CryptoKnowledge
+category: Knowledge, Research & Information
+canonicalId: idea-06-016-crypto-knowledge
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CryptoKnowledge
 
-> Crypto/DeFi protocol knowledge base
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate knowledge, research & information concepts on Intuition.
-
-## Solution
-
 Crypto/DeFi protocol knowledge base. Developers stake on mechanics, risks, and capability claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Messari
-
-## Metadata
-
-- Canonical ID: `idea-06-016-crypto-knowledge`
-- Category: Knowledge, Research & Information
-- Suggested GitHub path: `ideas/2026-05-25-crypto-knowledge/README.md`
+**Comparable:** Messari

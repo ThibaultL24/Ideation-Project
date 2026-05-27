@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ChildSafe"
 tagline: "Platform safety ratings for parents"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Common Sense Media"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ChildSafe
+category: Safety, Security & Protection
+canonicalId: idea-09-008-child-safe
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ChildSafe
 
-> Platform safety ratings for parents
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate safety, security & protection concepts on Intuition.
-
-## Solution
-
 Platform safety ratings for parents. Communities stake on age-appropriate content moderation claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Common Sense Media
-
-## Metadata
-
-- Canonical ID: `idea-09-008-child-safe`
-- Category: Safety, Security & Protection
-- Suggested GitHub path: `ideas/2026-05-25-child-safe/README.md`
+**Comparable:** Common Sense Media

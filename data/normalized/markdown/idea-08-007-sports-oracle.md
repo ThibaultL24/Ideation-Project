@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "SportsOracle"
 tagline: "Sports prediction market using Intuition triples"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "sports betting, but reputation-building"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: SportsOracle
+category: Prediction & Signal Markets
+canonicalId: idea-08-007-sports-oracle
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SportsOracle
 
-> Sports prediction market using Intuition triples
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate prediction & signal markets concepts on Intuition.
-
-## Solution
-
 Sports prediction market using Intuition triples. Prediction track records become portable analyst reputation.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-sports betting, but reputation-building
-
-## Metadata
-
-- Canonical ID: `idea-08-007-sports-oracle`
-- Category: Prediction & Signal Markets
-- Suggested GitHub path: `ideas/2026-05-25-sports-oracle/README.md`
+**Comparable:** sports betting, but reputation-building

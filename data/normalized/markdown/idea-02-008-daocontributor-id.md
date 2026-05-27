@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "DAOContributorID"
 tagline: "Cross-DAO contributor reputation"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Coordinape, SourceCred"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: DAOContributorID
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-008-daocontributor-id
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DAOContributorID
 
-> Cross-DAO contributor reputation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 Cross-DAO contributor reputation. Members stake on each other's contribution quality and governance participation.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Coordinape, SourceCred
-
-## Metadata
-
-- Canonical ID: `idea-02-008-daocontributor-id`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-daocontributor-id/README.md`
+**Comparable:** Coordinape, SourceCred

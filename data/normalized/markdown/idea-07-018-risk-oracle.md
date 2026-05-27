@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "RiskOracle"
 tagline: "On-chain risk assessment oracle aggregating stakeweighted risk claims"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Gauntlet"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: RiskOracle
+category: Finance, DeFi & Insurance
+canonicalId: idea-07-018-risk-oracle
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RiskOracle
 
-> On-chain risk assessment oracle aggregating stakeweighted risk claims
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate finance, defi & insurance concepts on Intuition.
-
-## Solution
-
 On-chain risk assessment oracle aggregating stakeweighted risk claims. DeFi protocols query for real-time risk signals.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Gauntlet
-
-## Metadata
-
-- Canonical ID: `idea-07-018-risk-oracle`
-- Category: Finance, DeFi & Insurance
-- Suggested GitHub path: `ideas/2026-05-25-risk-oracle/README.md`
+**Comparable:** Gauntlet

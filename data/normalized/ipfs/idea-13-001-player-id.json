@@ -3,14 +3,21 @@
   "canonicalId": "idea-13-001-player-id",
   "slug": "player-id",
   "title": "PlayerID",
-  "tagline": "Cross-game player identity",
+  "tagline": "Cross-game player identity.",
   "category": "Gaming & Esports",
-  "description": "Cross-game player identity. Achievements, skill ratings, and sportsmanship are staked and persist across games. Portable gaming resume. (Like: Steam profile, Xbox Gamertag) Build on Intuition: 300+ dApp Ideas",
+  "description": "Cross-game player identity. Achievements, skill ratings, and sportsmanship are staked and persist across games. Portable gaming resume.",
+  "comparable": "Steam profile, Xbox Gamertag",
   "tags": [
     "dapp-idea",
     "intuition",
     "ideation",
+<<<<<<< HEAD
     "gaming-esports"
+=======
+    "gaming-esports",
+    "steam-profile",
+    "xbox-gamertag"
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-player-id/README.md"

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "MusicDiscovery"
 tagline: "Music curation via stake-weighted taste graphs"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Spotify Discover, SoundCloud"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: MusicDiscovery
+category: Marketplaces & Discovery
+canonicalId: idea-03-008-music-discovery
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MusicDiscovery
 
-> Music curation via stake-weighted taste graphs
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate marketplaces & discovery concepts on Intuition.
-
-## Solution
-
 Music curation via stake-weighted taste graphs. Curators who stake on songs that gain appreciation earn returns.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Spotify Discover, SoundCloud
-
-## Metadata
-
-- Canonical ID: `idea-03-008-music-discovery`
-- Category: Marketplaces & Discovery
-- Suggested GitHub path: `ideas/2026-05-25-music-discovery/README.md`
+**Comparable:** Spotify Discover, SoundCloud

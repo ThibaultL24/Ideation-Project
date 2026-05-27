@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "PromiseTracker"
 tagline: "Campaign promise tracking"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "PolitiFact Promise Tracker"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: PromiseTracker
+category: Government & Civic
+canonicalId: idea-16-001-promise-tracker
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PromiseTracker
 
-> Campaign promise tracking
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate government & civic concepts on Intuition.
-
-## Solution
-
 Campaign promise tracking. Citizens stake on delivery claims. Financially-weighted accountability across election cycles.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-PolitiFact Promise Tracker
-
-## Metadata
-
-- Canonical ID: `idea-16-001-promise-tracker`
-- Category: Government & Civic
-- Suggested GitHub path: `ideas/2026-05-25-promise-tracker/README.md`
+**Comparable:** PolitiFact Promise Tracker

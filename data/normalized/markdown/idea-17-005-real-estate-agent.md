@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "RealEstateAgent"
 tagline: "Real estate agent ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Zillow agent reviews"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: RealEstateAgent
+category: Professional Services & HR
+canonicalId: idea-17-005-real-estate-agent
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RealEstateAgent
 
-> Real estate agent ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate professional services & hr concepts on Intuition.
-
-## Solution
-
 Real estate agent ratings. Buyers and sellers stake on honesty, responsiveness, and negotiation skill claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Zillow agent reviews
-
-## Metadata
-
-- Canonical ID: `idea-17-005-real-estate-agent`
-- Category: Professional Services & HR
-- Suggested GitHub path: `ideas/2026-05-25-real-estate-agent/README.md`
+**Comparable:** Zillow agent reviews

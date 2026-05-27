@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "CrowdfundingTrust"
 tagline: "Crowdfunding project credibility scoring"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Kickstarter, but accountable"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: CrowdfundingTrust
+category: Finance, DeFi & Insurance
+canonicalId: idea-07-015-crowdfunding-trust
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CrowdfundingTrust
 
-> Crowdfunding project credibility scoring
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate finance, defi & insurance concepts on Intuition.
-
-## Solution
-
 Crowdfunding project credibility scoring. Reviewers stake on feasibility and team capability claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Kickstarter, but accountable
-
-## Metadata
-
-- Canonical ID: `idea-07-015-crowdfunding-trust`
-- Category: Finance, DeFi & Insurance
-- Suggested GitHub path: `ideas/2026-05-25-crowdfunding-trust/README.md`
+**Comparable:** Kickstarter, but accountable

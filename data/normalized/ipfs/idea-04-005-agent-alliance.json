@@ -3,7 +3,7 @@
   "canonicalId": "idea-04-005-agent-alliance",
   "slug": "agent-alliance",
   "title": "AgentAlliance",
-  "tagline": "Multi-agent coordination protocol",
+  "tagline": "Multi-agent coordination protocol.",
   "category": "AI Agents & Machine Intelligence",
   "description": "Multi-agent coordination protocol. Agents check each other's reputation triples before collaborating. Self-organizing swarms with accountability. (Novel)",
   "tags": [

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "EsportsTrust"
 tagline: "Competitive integrity ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "ESIC"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: EsportsTrust
+category: Gaming & Esports
+canonicalId: idea-13-003-esports-trust
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # EsportsTrust
 
-> Competitive integrity ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate gaming & esports concepts on Intuition.
-
-## Solution
-
 Competitive integrity ratings. Opponents and organizers stake on fair play and anti-cheat compliance.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-ESIC
-
-## Metadata
-
-- Canonical ID: `idea-13-003-esports-trust`
-- Category: Gaming & Esports
-- Suggested GitHub path: `ideas/2026-05-25-esports-trust/README.md`
+**Comparable:** ESIC

@@ -3,9 +3,9 @@
   "canonicalId": "idea-12-003-stake-hook",
   "slug": "stake-hook",
   "title": "StakeHook",
-  "tagline": "Webhook service that notifies apps when stake thresholds change on entities they care about",
+  "tagline": "Webhook service that notifies apps when stake thresholds change on entities they care about.",
   "category": "Developer Tools & Infrastructure",
-  "description": "Webhook service that notifies apps when stake thresholds change on entities they care about. Real-time reputation event streaming. (Novel) Build on Intuition: 300+ dApp Ideas",
+  "description": "Webhook service that notifies apps when stake thresholds change on entities they care about. Real-time reputation event streaming. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",

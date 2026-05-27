@@ -3,7 +3,7 @@
   "canonicalId": "idea-04-009-agent-escrow",
   "slug": "agent-escrow",
   "title": "AgentEscrow",
-  "tagline": "Escrow for AI agent transactions",
+  "tagline": "Escrow for AI agent transactions.",
   "category": "AI Agents & Machine Intelligence",
   "description": "Escrow for AI agent transactions. High-reputation agents get lower escrow requirements. No human co-signer needed for trusted agents. (Novel)",
   "tags": [

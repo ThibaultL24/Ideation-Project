@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "FactCheck"
 tagline: "Real-time fact-checking where journalists and citizens stake on claim veracity"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Snopes, PolitiFact"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: FactCheck
+category: Knowledge, Research & Information
+canonicalId: idea-06-002-fact-check
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FactCheck
 
-> Real-time fact-checking where journalists and citizens stake on claim veracity
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate knowledge, research & information concepts on Intuition.
-
-## Solution
-
 Real-time fact-checking where journalists and citizens stake on claim veracity. Financially-backed debunking.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Snopes, PolitiFact
-
-## Metadata
-
-- Canonical ID: `idea-06-002-fact-check`
-- Category: Knowledge, Research & Information
-- Suggested GitHub path: `ideas/2026-05-25-fact-check/README.md`
+**Comparable:** Snopes, PolitiFact

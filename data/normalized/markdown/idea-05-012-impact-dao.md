@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ImpactDAO"
 tagline: "Social impact DAO where funding is weighted by domain expertise reputation"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Gitcoin, MolochDAO"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ImpactDAO
+category: Social Networks & Community
+canonicalId: idea-05-012-impact-dao
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ImpactDAO
 
-> Social impact DAO where funding is weighted by domain expertise reputation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate social networks & community concepts on Intuition.
-
-## Solution
-
 Social impact DAO where funding is weighted by domain expertise reputation. A climate researcher's vote on climate grants carries more weight.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Gitcoin, MolochDAO
-
-## Metadata
-
-- Canonical ID: `idea-05-012-impact-dao`
-- Category: Social Networks & Community
-- Suggested GitHub path: `ideas/2026-05-25-impact-dao/README.md`
+**Comparable:** Gitcoin, MolochDAO

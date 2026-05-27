@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "OracleReputation"
 tagline: "Blockchain oracle reliability ratings"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Chainlink, but community-rated"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: OracleReputation
+category: AI Agents & Machine Intelligence
+canonicalId: idea-04-022-oracle-reputation
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # OracleReputation
 
-> Blockchain oracle reliability ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate ai agents & machine intelligence concepts on Intuition.
-
-## Solution
-
 Blockchain oracle reliability ratings. DeFi protocols stake on accuracy, latency, and manipulation resistance.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Chainlink, but community-rated
-
-## Metadata
-
-- Canonical ID: `idea-04-022-oracle-reputation`
-- Category: AI Agents & Machine Intelligence
-- Suggested GitHub path: `ideas/2026-05-25-oracle-reputation/README.md`
+**Comparable:** Chainlink, but community-rated

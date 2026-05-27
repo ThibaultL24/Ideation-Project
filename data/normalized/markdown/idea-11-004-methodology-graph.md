@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "MethodologyGraph"
 tagline: "Research methodology quality curation"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - science-academia
 intuition_atoms: []
 github_discussion: ""
+=======
+title: MethodologyGraph
+category: Science & Academia
+canonicalId: idea-11-004-methodology-graph
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MethodologyGraph
 
-> Research methodology quality curation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate science & academia concepts on Intuition.
-
-## Solution
-
 Research methodology quality curation. Methodologists stake on approach appropriateness for specific research questions. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-11-004-methodology-graph`
-- Category: Science & Academia
-- Suggested GitHub path: `ideas/2026-05-25-methodology-graph/README.md`

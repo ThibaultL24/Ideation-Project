@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "RegSignal"
 tagline: "Regulatory prediction market"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Polymarket regulatory"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: RegSignal
+category: Prediction & Signal Markets
+canonicalId: idea-08-010-reg-signal
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RegSignal
 
-> Regulatory prediction market
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate prediction & signal markets concepts on Intuition.
-
-## Solution
-
 Regulatory prediction market. Policy analysts stake on upcoming regulation claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Polymarket regulatory
-
-## Metadata
-
-- Canonical ID: `idea-08-010-reg-signal`
-- Category: Prediction & Signal Markets
-- Suggested GitHub path: `ideas/2026-05-25-reg-signal/README.md`
+**Comparable:** Polymarket regulatory

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "MentorScore"
 tagline: "Mentorship quality reputation"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "ADPList, but with stakes"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: MentorScore
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-019-mentor-score
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MentorScore
 
-> Mentorship quality reputation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 Mentorship quality reputation. Mentees stake on helpfulness, accessibility, and career impact claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-ADPList, but with stakes
-
-## Metadata
-
-- Canonical ID: `idea-02-019-mentor-score`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-mentor-score/README.md`
+**Comparable:** ADPList, but with stakes

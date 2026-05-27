@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "StartupSignal"
 tagline: "Startup success predictions"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "AngelList, but predictive"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: StartupSignal
+category: Prediction & Signal Markets
+canonicalId: idea-08-004-startup-signal
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StartupSignal
 
-> Startup success predictions
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate prediction & signal markets concepts on Intuition.
-
-## Solution
-
 Startup success predictions. VCs and angels stake on outcome claims. Transparent "smart money" signals.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-AngelList, but predictive
-
-## Metadata
-
-- Canonical ID: `idea-08-004-startup-signal`
-- Category: Prediction & Signal Markets
-- Suggested GitHub path: `ideas/2026-05-25-startup-signal/README.md`
+**Comparable:** AngelList, but predictive

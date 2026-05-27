@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "HiringSignal"
 tagline: "Job posting quality signals"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Glassdoor job listings"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: HiringSignal
+category: Marketplaces & Discovery
+canonicalId: idea-03-021-hiring-signal
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HiringSignal
 
-> Job posting quality signals
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate marketplaces & discovery concepts on Intuition.
-
-## Solution
-
 Job posting quality signals. Seekers stake on whether postings are genuine, salaries accurate, and processes fair.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Glassdoor job listings
-
-## Metadata
-
-- Canonical ID: `idea-03-021-hiring-signal`
-- Category: Marketplaces & Discovery
-- Suggested GitHub path: `ideas/2026-05-25-hiring-signal/README.md`
+**Comparable:** Glassdoor job listings

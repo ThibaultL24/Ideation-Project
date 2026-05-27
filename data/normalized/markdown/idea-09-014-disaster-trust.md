@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "DisasterTrust"
 tagline: "Disaster relief charity verification"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "GiveWell"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: DisasterTrust
+category: Safety, Security & Protection
+canonicalId: idea-09-014-disaster-trust
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DisasterTrust
 
-> Disaster relief charity verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate safety, security & protection concepts on Intuition.
-
-## Solution
-
 Disaster relief charity verification. On-the-ground volunteers stake on delivery claims. Real-time aid effectiveness.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-GiveWell
-
-## Metadata
-
-- Canonical ID: `idea-09-014-disaster-trust`
-- Category: Safety, Security & Protection
-- Suggested GitHub path: `ideas/2026-05-25-disaster-trust/README.md`
+**Comparable:** GiveWell

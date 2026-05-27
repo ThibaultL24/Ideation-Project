@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "TrainerRank"
 tagline: "Dog trainer and behaviorist ratings"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - pets-animals
 intuition_atoms: []
 github_discussion: ""
+=======
+title: TrainerRank
+category: Pets & Animals
+canonicalId: idea-24-006-trainer-rank
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TrainerRank
 
-> Dog trainer and behaviorist ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate pets & animals concepts on Intuition.
-
-## Solution
-
 Dog trainer and behaviorist ratings. Owners stake on method effectiveness and humane practice claims. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-24-006-trainer-rank`
-- Category: Pets & Animals
-- Suggested GitHub path: `ideas/2026-05-25-trainer-rank/README.md`

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "InsuranceRank"
 tagline: "Insurance company ratings by policyholders"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "AM Best, J.D. Power"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: InsuranceRank
+category: Reviews & Ratings
+canonicalId: idea-01-019-insurance-rank
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InsuranceRank
 
-> Insurance company ratings by policyholders
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate reviews & ratings concepts on Intuition.
-
-## Solution
-
 Insurance company ratings by policyholders. Stake on claim processing fairness, rate stability, and coverage honesty.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-AM Best, J.D. Power
-
-## Metadata
-
-- Canonical ID: `idea-01-019-insurance-rank`
-- Category: Reviews & Ratings
-- Suggested GitHub path: `ideas/2026-05-25-insurance-rank/README.md`
+**Comparable:** AM Best, J.D. Power

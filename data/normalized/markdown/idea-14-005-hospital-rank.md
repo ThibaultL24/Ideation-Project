@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "HospitalRank"
 tagline: "Hospital quality comparison"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "CMS Hospital Compare"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: HospitalRank
+category: Healthcare & Wellness
+canonicalId: idea-14-005-hospital-rank
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HospitalRank
 
-> Hospital quality comparison
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate healthcare & wellness concepts on Intuition.
-
-## Solution
-
 Hospital quality comparison. Patients and staff stake on surgical outcomes, nursing quality, and billing transparency.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-CMS Hospital Compare
-
-## Metadata
-
-- Canonical ID: `idea-14-005-hospital-rank`
-- Category: Healthcare & Wellness
-- Suggested GitHub path: `ideas/2026-05-25-hospital-rank/README.md`
+**Comparable:** CMS Hospital Compare

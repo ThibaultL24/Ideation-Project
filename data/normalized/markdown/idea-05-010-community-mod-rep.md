@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "CommunityModRep"
 tagline: "Moderator reputation system"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Reddit mod system, but accountable"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: CommunityModRep
+category: Social Networks & Community
+canonicalId: idea-05-010-community-mod-rep
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CommunityModRep
 
-> Moderator reputation system
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate social networks & community concepts on Intuition.
-
-## Solution
-
 Moderator reputation system. Members stake on fairness and effectiveness. Creates accountability for community governance.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Reddit mod system, but accountable
-
-## Metadata
-
-- Canonical ID: `idea-05-010-community-mod-rep`
-- Category: Social Networks & Community
-- Suggested GitHub path: `ideas/2026-05-25-community-mod-rep/README.md`
+**Comparable:** Reddit mod system, but accountable

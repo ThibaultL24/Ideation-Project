@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "PoliticianTracker"
 tagline: "Elected official promise-keeping tracker"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "PolitiFact, but staked"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: PoliticianTracker
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-013-politician-tracker
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PoliticianTracker
 
-> Elected official promise-keeping tracker
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 Elected official promise-keeping tracker. Citizens stake on campaign promise delivery claims. Real-time accountability.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-PolitiFact, but staked
-
-## Metadata
-
-- Canonical ID: `idea-02-013-politician-tracker`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-politician-tracker/README.md`
+**Comparable:** PolitiFact, but staked

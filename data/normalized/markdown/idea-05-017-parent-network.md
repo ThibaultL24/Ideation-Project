@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ParentNetwork"
 tagline: "Parent community with stake-weighted advice quality"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "BabyCenter, Peanut"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ParentNetwork
+category: Social Networks & Community
+canonicalId: idea-05-017-parent-network
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ParentNetwork
 
-> Parent community with stake-weighted advice quality
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate social networks & community concepts on Intuition.
-
-## Solution
-
 Parent community with stake-weighted advice quality. Evidence-based parenting wisdom over fear-mongering.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-BabyCenter, Peanut
-
-## Metadata
-
-- Canonical ID: `idea-05-017-parent-network`
-- Category: Social Networks & Community
-- Suggested GitHub path: `ideas/2026-05-25-parent-network/README.md`
+**Comparable:** BabyCenter, Peanut

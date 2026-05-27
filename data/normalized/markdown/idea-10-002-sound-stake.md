@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "SoundStake"
 tagline: "Music discovery where listeners stake on emerging artists"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Spotify, SoundCloud"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: SoundStake
+category: Creative Arts & Culture
+canonicalId: idea-10-002-sound-stake
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SoundStake
 
-> Music discovery where listeners stake on emerging artists
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate creative arts & culture concepts on Intuition.
-
-## Solution
-
 Music discovery where listeners stake on emerging artists. Early tastemakers earn returns as artists gain popularity. Financiallyincentivized A&R.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Spotify, SoundCloud
-
-## Metadata
-
-- Canonical ID: `idea-10-002-sound-stake`
-- Category: Creative Arts & Culture
-- Suggested GitHub path: `ideas/2026-05-25-sound-stake/README.md`
+**Comparable:** Spotify, SoundCloud

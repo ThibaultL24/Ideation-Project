@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "PlayerID"
 tagline: "Cross-game player identity"
 author: "Ideation"
@@ -13,33 +14,16 @@ tags:
   - gaming-esports
 intuition_atoms: []
 github_discussion: ""
+=======
+title: PlayerID
+category: Gaming & Esports
+canonicalId: idea-13-001-player-id
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PlayerID
 
-> Cross-game player identity
+Cross-game player identity. Achievements, skill ratings, and sportsmanship are staked and persist across games. Portable gaming resume.
 
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate gaming & esports concepts on Intuition.
-
-## Solution
-
-Cross-game player identity. Achievements, skill ratings, and sportsmanship are staked and persist across games. Portable gaming resume. (Like: Steam profile, Xbox Gamertag) Build on Intuition: 300+ dApp Ideas
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-13-001-player-id`
-- Category: Gaming & Esports
-- Suggested GitHub path: `ideas/2026-05-25-player-id/README.md`
+**Comparable:** Steam profile, Xbox Gamertag

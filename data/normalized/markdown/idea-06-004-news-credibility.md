@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "NewsCredibility"
 tagline: "News source and article credibility scoring"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "NewsGuard, AllSides"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: NewsCredibility
+category: Knowledge, Research & Information
+canonicalId: idea-06-004-news-credibility
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # NewsCredibility
 
-> News source and article credibility scoring
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate knowledge, research & information concepts on Intuition.
-
-## Solution
-
 News source and article credibility scoring. Journalists stake on accuracy, bias, and sourcing quality claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-NewsGuard, AllSides
-
-## Metadata
-
-- Canonical ID: `idea-06-004-news-credibility`
-- Category: Knowledge, Research & Information
-- Suggested GitHub path: `ideas/2026-05-25-news-credibility/README.md`
+**Comparable:** NewsGuard, AllSides

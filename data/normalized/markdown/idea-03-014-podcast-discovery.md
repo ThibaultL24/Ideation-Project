@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "PodcastDiscovery"
 tagline: "Podcast recommendation engine"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Podchaser, podcast newsletters"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: PodcastDiscovery
+category: Marketplaces & Discovery
+canonicalId: idea-03-014-podcast-discovery
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PodcastDiscovery
 
-> Podcast recommendation engine
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate marketplaces & discovery concepts on Intuition.
-
-## Solution
-
 Podcast recommendation engine. Genre curators compete to surface the best shows via stake.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Podchaser, podcast newsletters
-
-## Metadata
-
-- Canonical ID: `idea-03-014-podcast-discovery`
-- Category: Marketplaces & Discovery
-- Suggested GitHub path: `ideas/2026-05-25-podcast-discovery/README.md`
+**Comparable:** Podchaser, podcast newsletters

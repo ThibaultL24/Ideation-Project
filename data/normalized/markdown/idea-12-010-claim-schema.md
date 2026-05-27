@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ClaimSchema"
 tagline: "Schema registry for standardized triple predicates"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - developer-tools-infrastructure
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ClaimSchema
+category: Developer Tools & Infrastructure
+canonicalId: idea-12-010-claim-schema
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ClaimSchema
 
-> Schema registry for standardized triple predicates
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate developer tools & infrastructure concepts on Intuition.
-
-## Solution
-
 Schema registry for standardized triple predicates. Ensures consistency across applications using the Knowledge Graph. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-12-010-claim-schema`
-- Category: Developer Tools & Infrastructure
-- Suggested GitHub path: `ideas/2026-05-25-claim-schema/README.md`

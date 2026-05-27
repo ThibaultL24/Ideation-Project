@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "SourceTrace"
 tagline: "AI training data provenance tracker"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Spawning.ai"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: SourceTrace
+category: AI Agents & Machine Intelligence
+canonicalId: idea-04-018-source-trace
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SourceTrace
 
-> AI training data provenance tracker
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate ai agents & machine intelligence concepts on Intuition.
-
-## Solution
-
 AI training data provenance tracker. Creators stake on claims about their work being used in training. Enables attribution and compensation.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Spawning.ai
-
-## Metadata
-
-- Canonical ID: `idea-04-018-source-trace`
-- Category: AI Agents & Machine Intelligence
-- Suggested GitHub path: `ideas/2026-05-25-source-trace/README.md`
+**Comparable:** Spawning.ai

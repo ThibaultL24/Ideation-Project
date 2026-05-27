@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "CarbonCredit"
 tagline: "Carbon credit quality verification"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Gold Standard, Verra"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: CarbonCredit
+category: Finance, DeFi & Insurance
+canonicalId: idea-07-014-carbon-credit
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CarbonCredit
 
-> Carbon credit quality verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate finance, defi & insurance concepts on Intuition.
-
-## Solution
-
 Carbon credit quality verification. Scientists stake on legitimacy and additionality claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Gold Standard, Verra
-
-## Metadata
-
-- Canonical ID: `idea-07-014-carbon-credit`
-- Category: Finance, DeFi & Insurance
-- Suggested GitHub path: `ideas/2026-05-25-carbon-credit/README.md`
+**Comparable:** Gold Standard, Verra

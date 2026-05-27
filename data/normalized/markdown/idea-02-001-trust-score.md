@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "TrustScore"
 tagline: "Universal on-chain reputation score derived from staking accuracy across the knowledge graph"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "FICO score"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: TrustScore
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-001-trust-score
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TrustScore
 
-> Universal on-chain reputation score derived from staking accuracy across the knowledge graph
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 Universal on-chain reputation score derived from staking accuracy across the knowledge graph. Your "credit score" for the decentralized web.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-FICO score
-
-## Metadata
-
-- Canonical ID: `idea-02-001-trust-score`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-trust-score/README.md`
+**Comparable:** FICO score

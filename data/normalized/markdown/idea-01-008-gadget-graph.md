@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "GadgetGraph"
 tagline: "Consumer electronics long-term reliability tracker"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Consumer Reports, Wirecutter"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: GadgetGraph
+category: Reviews & Ratings
+canonicalId: idea-01-008-gadget-graph
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GadgetGraph
 
-> Consumer electronics long-term reliability tracker
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate reviews & ratings concepts on Intuition.
-
-## Solution
-
 Consumer electronics long-term reliability tracker. Owners stake on durability and battery degradation claims after 6+ months.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Consumer Reports, Wirecutter
-
-## Metadata
-
-- Canonical ID: `idea-01-008-gadget-graph`
-- Category: Reviews & Ratings
-- Suggested GitHub path: `ideas/2026-05-25-gadget-graph/README.md`
+**Comparable:** Consumer Reports, Wirecutter

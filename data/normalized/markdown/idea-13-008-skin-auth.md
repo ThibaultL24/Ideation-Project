@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "SkinAuth"
 tagline: "In-game item authenticity verification"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "CS2 skin markets"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: SkinAuth
+category: Gaming & Esports
+canonicalId: idea-13-008-skin-auth
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SkinAuth
 
-> In-game item authenticity verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate gaming & esports concepts on Intuition.
-
-## Solution
-
 In-game item authenticity verification. Traders stake on provenance and scam risk claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-CS2 skin markets
-
-## Metadata
-
-- Canonical ID: `idea-13-008-skin-auth`
-- Category: Gaming & Esports
-- Suggested GitHub path: `ideas/2026-05-25-skin-auth/README.md`
+**Comparable:** CS2 skin markets

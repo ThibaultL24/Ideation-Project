@@ -3,7 +3,7 @@
   "canonicalId": "idea-12-010-claim-schema",
   "slug": "claim-schema",
   "title": "ClaimSchema",
-  "tagline": "Schema registry for standardized triple predicates",
+  "tagline": "Schema registry for standardized triple predicates.",
   "category": "Developer Tools & Infrastructure",
   "description": "Schema registry for standardized triple predicates. Ensures consistency across applications using the Knowledge Graph. (Novel)",
   "tags": [

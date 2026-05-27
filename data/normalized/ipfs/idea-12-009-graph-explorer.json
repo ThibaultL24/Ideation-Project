@@ -3,7 +3,7 @@
   "canonicalId": "idea-12-009-graph-explorer",
   "slug": "graph-explorer",
   "title": "GraphExplorer",
-  "tagline": "Interactive knowledge graph visualization tool",
+  "tagline": "Interactive knowledge graph visualization tool.",
   "category": "Developer Tools & Infrastructure",
   "description": "Interactive knowledge graph visualization tool. Explore relationships, claims, and stake patterns visually. (Novel)",
   "tags": [

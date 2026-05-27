@@ -3,7 +3,7 @@
   "canonicalId": "idea-12-014-testnet-faucet",
   "slug": "testnet-faucet",
   "title": "TestnetFaucet",
-  "tagline": "Testnet $TRUST faucet and sandbox environment for developers to prototype without mainnet costs",
+  "tagline": "Testnet $TRUST faucet and sandbox environment for developers to prototype without mainnet costs.",
   "category": "Developer Tools & Infrastructure",
   "description": "Testnet $TRUST faucet and sandbox environment for developers to prototype without mainnet costs. (Novel)",
   "tags": [

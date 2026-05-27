@@ -3,7 +3,7 @@
   "canonicalId": "idea-12-001-trust-api",
   "slug": "trust-api",
   "title": "TrustAPI",
-  "tagline": "Universal API for querying Intuition reputation data",
+  "tagline": "Universal API for querying Intuition reputation data.",
   "category": "Developer Tools & Infrastructure",
   "description": "Universal API for querying Intuition reputation data. Any app can check entity trust scores, claim consensus, and staking patterns with simple REST calls. (Novel)",
   "tags": [

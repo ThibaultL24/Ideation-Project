@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "HostelGraph"
 tagline: "Hostel quality ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Hostelworld"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: HostelGraph
+category: Travel & Transportation
+canonicalId: idea-20-006-hostel-graph
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HostelGraph
 
-> Hostel quality ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate travel & transportation concepts on Intuition.
-
-## Solution
-
 Hostel quality ratings. Travelers stake on cleanliness, social atmosphere, and safety claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Hostelworld
-
-## Metadata
-
-- Canonical ID: `idea-20-006-hostel-graph`
-- Category: Travel & Transportation
-- Suggested GitHub path: `ideas/2026-05-25-hostel-graph/README.md`
+**Comparable:** Hostelworld

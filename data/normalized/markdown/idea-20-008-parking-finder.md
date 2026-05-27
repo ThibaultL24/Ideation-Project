@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ParkingFinder"
 tagline: "Parking facility ratings"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - travel-transportation
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ParkingFinder
+category: Travel & Transportation
+canonicalId: idea-20-008-parking-finder
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ParkingFinder
 
-> Parking facility ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate travel & transportation concepts on Intuition.
-
-## Solution
-
 Parking facility ratings. Drivers stake on safety, price accuracy, and availability claims. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-20-008-parking-finder`
-- Category: Travel & Transportation
-- Suggested GitHub path: `ideas/2026-05-25-parking-finder/README.md`

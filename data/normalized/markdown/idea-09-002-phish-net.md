@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "PhishNet"
 tagline: "Phishing URL and wallet blacklist maintained through staked claims"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Google Safe Browsing"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: PhishNet
+category: Safety, Security & Protection
+canonicalId: idea-09-002-phish-net
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PhishNet
 
-> Phishing URL and wallet blacklist maintained through staked claims
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate safety, security & protection concepts on Intuition.
-
-## Solution
-
 Phishing URL and wallet blacklist maintained through staked claims. Decentralized, censorship-resistant phishing database.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Google Safe Browsing
-
-## Metadata
-
-- Canonical ID: `idea-09-002-phish-net`
-- Category: Safety, Security & Protection
-- Suggested GitHub path: `ideas/2026-05-25-phish-net/README.md`
+**Comparable:** Google Safe Browsing

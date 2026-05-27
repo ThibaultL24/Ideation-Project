@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "StakeList"
 tagline: "Stake-weighted curated lists for any topic (best CRMs, best vegan restaurants in Austin)"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Wirecutter, \"best of\" lists"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: StakeList
+category: Marketplaces & Discovery
+canonicalId: idea-03-002-stake-list
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StakeList
 
-> Stake-weighted curated lists for any topic (best CRMs, best vegan restaurants in Austin)
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate marketplaces & discovery concepts on Intuition.
-
-## Solution
-
 Stake-weighted curated lists for any topic (best CRMs, best vegan restaurants in Austin). Curators build reputation through accuracy.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Wirecutter, "best of" lists
-
-## Metadata
-
-- Canonical ID: `idea-03-002-stake-list`
-- Category: Marketplaces & Discovery
-- Suggested GitHub path: `ideas/2026-05-25-stake-list/README.md`
+**Comparable:** Wirecutter, "best of" lists

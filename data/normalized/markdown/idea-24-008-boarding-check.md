@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "BoardingCheck"
 tagline: "Pet boarding facility ratings"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - pets-animals
 intuition_atoms: []
 github_discussion: ""
+=======
+title: BoardingCheck
+category: Pets & Animals
+canonicalId: idea-24-008-boarding-check
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BoardingCheck
 
-> Pet boarding facility ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate pets & animals concepts on Intuition.
-
-## Solution
-
 Pet boarding facility ratings. Owners stake on safety, cleanliness, and activity claims. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-24-008-boarding-check`
-- Category: Pets & Animals
-- Suggested GitHub path: `ideas/2026-05-25-boarding-check/README.md`

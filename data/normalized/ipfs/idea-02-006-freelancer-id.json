@@ -3,14 +3,20 @@
   "canonicalId": "idea-02-006-freelancer-id",
   "slug": "freelancer-id",
   "title": "FreelancerID",
-  "tagline": "Portable freelancer identity aggregating client reviews and skill attestations across platforms",
+  "tagline": "Portable freelancer identity aggregating client reviews and skill attestations across platforms.",
   "category": "Identity, Reputation & Credentials",
-  "description": "Portable freelancer identity aggregating client reviews and skill attestations across platforms. Never start from zero on a new marketplace. (Like: Upwork profile) Build on Intuition: 300+ dApp Ideas",
+  "description": "Portable freelancer identity aggregating client reviews and skill attestations across platforms. Never start from zero on a new marketplace.",
+  "comparable": "Upwork profile",
   "tags": [
     "dapp-idea",
     "intuition",
     "ideation",
+<<<<<<< HEAD
     "identity-reputation-credentials"
+=======
+    "identity-reputation-credentials",
+    "upwork-profile"
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-freelancer-id/README.md"

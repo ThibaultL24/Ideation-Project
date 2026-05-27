@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "MicroInsurance"
 tagline: "Parametric micro-insurance with community-staked local risk factor claims feeding automated pricing."
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Etherisc"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: MicroInsurance
+category: Finance, DeFi & Insurance
+canonicalId: idea-07-020-micro-insurance
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MicroInsurance
 
-> Parametric micro-insurance with community-staked local risk factor claims feeding automated pricing.
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate finance, defi & insurance concepts on Intuition.
-
-## Solution
-
 Parametric micro-insurance with community-staked local risk factor claims feeding automated pricing.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Etherisc
-
-## Metadata
-
-- Canonical ID: `idea-07-020-micro-insurance`
-- Category: Finance, DeFi & Insurance
-- Suggested GitHub path: `ideas/2026-05-25-micro-insurance/README.md`
+**Comparable:** Etherisc

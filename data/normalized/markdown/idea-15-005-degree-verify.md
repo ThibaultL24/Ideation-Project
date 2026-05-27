@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "DegreeVerify"
 tagline: "Instant degree verification"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "National Student Clearinghouse"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: DegreeVerify
+category: Education & Learning
+canonicalId: idea-15-005-degree-verify
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DegreeVerify
 
-> Instant degree verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate education & learning concepts on Intuition.
-
-## Solution
-
 Instant degree verification. Universities create credential atoms; graduates claim them. Employers verify via Knowledge Graph.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-National Student Clearinghouse
-
-## Metadata
-
-- Canonical ID: `idea-15-005-degree-verify`
-- Category: Education & Learning
-- Suggested GitHub path: `ideas/2026-05-25-degree-verify/README.md`
+**Comparable:** National Student Clearinghouse

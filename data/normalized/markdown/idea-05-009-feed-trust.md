@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "FeedTrust"
 tagline: "Social news aggregation where every posted link has a live credibility market"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Reddit, Hacker News"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: FeedTrust
+category: Social Networks & Community
+canonicalId: idea-05-009-feed-trust
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FeedTrust
 
-> Social news aggregation where every posted link has a live credibility market
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate social networks & community concepts on Intuition.
-
-## Solution
-
 Social news aggregation where every posted link has a live credibility market. Misinformation costs money; debunking earns money.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Reddit, Hacker News
-
-## Metadata
-
-- Canonical ID: `idea-05-009-feed-trust`
-- Category: Social Networks & Community
-- Suggested GitHub path: `ideas/2026-05-25-feed-trust/README.md`
+**Comparable:** Reddit, Hacker News

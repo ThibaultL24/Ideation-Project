@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "LanguageProficiency"
 tagline: "Language skill verification"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "CEFR tests"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: LanguageProficiency
+category: Education & Learning
+canonicalId: idea-15-012-language-proficiency
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # LanguageProficiency
 
-> Language skill verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate education & learning concepts on Intuition.
-
-## Solution
-
 Language skill verification. Native speakers stake on proficiency claims. Community-verified alternative to expensive tests.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-CEFR tests
-
-## Metadata
-
-- Canonical ID: `idea-15-012-language-proficiency`
-- Category: Education & Learning
-- Suggested GitHub path: `ideas/2026-05-25-language-proficiency/README.md`
+**Comparable:** CEFR tests

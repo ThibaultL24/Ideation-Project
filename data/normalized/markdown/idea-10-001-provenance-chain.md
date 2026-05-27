@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ProvenanceChain"
 tagline: "Art authenticity and provenance verification"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Artnet, certificates of authenticity"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ProvenanceChain
+category: Creative Arts & Culture
+canonicalId: idea-10-001-provenance-chain
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ProvenanceChain
 
-> Art authenticity and provenance verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate creative arts & culture concepts on Intuition.
-
-## Solution
-
 Art authenticity and provenance verification. Experts stake on origin and ownership claims. Forgeries become economically attackable.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Artnet, certificates of authenticity
-
-## Metadata
-
-- Canonical ID: `idea-10-001-provenance-chain`
-- Category: Creative Arts & Culture
-- Suggested GitHub path: `ideas/2026-05-25-provenance-chain/README.md`
+**Comparable:** Artnet, certificates of authenticity

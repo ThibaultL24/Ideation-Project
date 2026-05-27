@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "BookGraph"
 tagline: "Book ratings where readers stake on writing quality, accuracy, and genre fit"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Goodreads, StoryGraph"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: BookGraph
+category: Reviews & Ratings
+canonicalId: idea-01-004-book-graph
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BookGraph
 
-> Book ratings where readers stake on writing quality, accuracy, and genre fit
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate reviews & ratings concepts on Intuition.
-
-## Solution
-
 Book ratings where readers stake on writing quality, accuracy, and genre fit. Literary curators who identify great books early earn returns.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Goodreads, StoryGraph
-
-## Metadata
-
-- Canonical ID: `idea-01-004-book-graph`
-- Category: Reviews & Ratings
-- Suggested GitHub path: `ideas/2026-05-25-book-graph/README.md`
+**Comparable:** Goodreads, StoryGraph

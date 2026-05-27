@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "OpenDataRank"
 tagline: "Government open data quality ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Data.gov"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: OpenDataRank
+category: Government & Civic
+canonicalId: idea-16-008-open-data-rank
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # OpenDataRank
 
-> Government open data quality ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate government & civic concepts on Intuition.
-
-## Solution
-
 Government open data quality ratings. Researchers stake on completeness and accuracy claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Data.gov
-
-## Metadata
-
-- Canonical ID: `idea-16-008-open-data-rank`
-- Category: Government & Civic
-- Suggested GitHub path: `ideas/2026-05-25-open-data-rank/README.md`
+**Comparable:** Data.gov

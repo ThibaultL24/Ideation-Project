@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "CryptoExchangeWatch"
 tagline: "Exchange trust ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "CoinGecko trust score"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: CryptoExchangeWatch
+category: Reviews & Ratings
+canonicalId: idea-01-017-crypto-exchange-watch
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CryptoExchangeWatch
 
-> Exchange trust ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate reviews & ratings concepts on Intuition.
-
-## Solution
-
 Exchange trust ratings. Traders stake on security, withdrawal reliability, and fee accuracy claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-CoinGecko trust score
-
-## Metadata
-
-- Canonical ID: `idea-01-017-crypto-exchange-watch`
-- Category: Reviews & Ratings
-- Suggested GitHub path: `ideas/2026-05-25-crypto-exchange-watch/README.md`
+**Comparable:** CoinGecko trust score

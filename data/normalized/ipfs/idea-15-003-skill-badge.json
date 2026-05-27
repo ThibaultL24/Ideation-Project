@@ -3,7 +3,7 @@
   "canonicalId": "idea-15-003-skill-badge",
   "slug": "skill-badge",
   "title": "SkillBadge",
-  "tagline": "Micro-credential system with stake-weighted verification",
+  "tagline": "Micro-credential system with stake-weighted verification.",
   "category": "Education & Learning",
   "description": "Micro-credential system with stake-weighted verification. Employers stake on whether badge holders demonstrate claimed competence.",
   "comparable": "Credly",

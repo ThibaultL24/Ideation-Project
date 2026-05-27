@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "FestivalGraph"
 tagline: "Music and cultural festival intelligence"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - creative-arts-culture
 intuition_atoms: []
 github_discussion: ""
+=======
+title: FestivalGraph
+category: Creative Arts & Culture
+canonicalId: idea-10-011-festival-graph
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FestivalGraph
 
-> Music and cultural festival intelligence
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate creative arts & culture concepts on Intuition.
-
-## Solution
-
 Music and cultural festival intelligence. Attendees stake on quality, safety, and organization claims year over year. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-10-011-festival-graph`
-- Category: Creative Arts & Culture
-- Suggested GitHub path: `ideas/2026-05-25-festival-graph/README.md`

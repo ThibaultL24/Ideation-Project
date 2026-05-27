@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "OnboardingRep"
 tagline: "New employee reputation bootstrapping from previous employers"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "LinkedIn recommendations, but staked"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: OnboardingRep
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-025-onboarding-rep
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # OnboardingRep
 
-> New employee reputation bootstrapping from previous employers
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 New employee reputation bootstrapping from previous employers. Replaces the broken reference-check system.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-LinkedIn recommendations, but staked
-
-## Metadata
-
-- Canonical ID: `idea-02-025-onboarding-rep`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-onboarding-rep/README.md`
+**Comparable:** LinkedIn recommendations, but staked

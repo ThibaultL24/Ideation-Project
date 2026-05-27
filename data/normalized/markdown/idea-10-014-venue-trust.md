@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "VenueTrust"
 tagline: "Live event and venue quality"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Songkick"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: VenueTrust
+category: Creative Arts & Culture
+canonicalId: idea-10-014-venue-trust
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VenueTrust
 
-> Live event and venue quality
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate creative arts & culture concepts on Intuition.
-
-## Solution
-
 Live event and venue quality. Attendees stake on sound, accessibility, and experience claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Songkick
-
-## Metadata
-
-- Canonical ID: `idea-10-014-venue-trust`
-- Category: Creative Arts & Culture
-- Suggested GitHub path: `ideas/2026-05-25-venue-trust/README.md`
+**Comparable:** Songkick

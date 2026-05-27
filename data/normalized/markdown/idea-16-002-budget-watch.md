@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "BudgetWatch"
 tagline: "Government spending transparency"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "USASpending.gov"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: BudgetWatch
+category: Government & Civic
+canonicalId: idea-16-002-budget-watch
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BudgetWatch
 
-> Government spending transparency
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate government & civic concepts on Intuition.
-
-## Solution
-
 Government spending transparency. Citizens stake on whether spending achieved goals.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-USASpending.gov
-
-## Metadata
-
-- Canonical ID: `idea-16-002-budget-watch`
-- Category: Government & Civic
-- Suggested GitHub path: `ideas/2026-05-25-budget-watch/README.md`
+**Comparable:** USASpending.gov

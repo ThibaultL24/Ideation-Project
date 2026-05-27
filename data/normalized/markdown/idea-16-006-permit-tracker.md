@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "PermitTracker"
 tagline: "Building permit and zoning decision transparency"
 author: "Ideation"
@@ -13,33 +14,14 @@ tags:
   - government-civic
 intuition_atoms: []
 github_discussion: ""
+=======
+title: PermitTracker
+category: Government & Civic
+canonicalId: idea-16-006-permit-tracker
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PermitTracker
 
-> Building permit and zoning decision transparency
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate government & civic concepts on Intuition.
-
-## Solution
-
 Building permit and zoning decision transparency. Stakeholders stake on fairness and consistency claims. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-16-006-permit-tracker`
-- Category: Government & Civic
-- Suggested GitHub path: `ideas/2026-05-25-permit-tracker/README.md`

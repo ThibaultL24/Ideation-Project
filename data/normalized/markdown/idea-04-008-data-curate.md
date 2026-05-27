@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "DataCurate"
 tagline: "Training data quality marketplace"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Scale AI, but decentralized"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: DataCurate
+category: AI Agents & Machine Intelligence
+canonicalId: idea-04-008-data-curate
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DataCurate
 
-> Training data quality marketplace
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate ai agents & machine intelligence concepts on Intuition.
-
-## Solution
-
 Training data quality marketplace. Data labelers stake on dataset quality claims. Bad data becomes expensive to promote.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Scale AI, but decentralized
-
-## Metadata
-
-- Canonical ID: `idea-04-008-data-curate`
-- Category: AI Agents & Machine Intelligence
-- Suggested GitHub path: `ideas/2026-05-25-data-curate/README.md`
+**Comparable:** Scale AI, but decentralized

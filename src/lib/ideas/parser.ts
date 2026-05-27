@@ -16,6 +16,25 @@ const LIKE_RE = /\(Like:\s*(.+?)\)\s*$/;
 const NOISE_RE =
   /^(Build on Intuition|Categories|Table of Contents|How to Use|Intuition Primitives|Cross-Cutting||\d+)$/i;
 
+/** PDF header/footer / TOC lines — skip when continuing a description. */
+const CONTINUATION_SKIP_RE =
+  /^(Build on Intuition(?::.*)?|Categories|Table of Contents|How to Use|Intuition Primitives|Cross-Cutting Themes|Why Intuition|Primitive|What It Does|Atoms|Triples|Vaults|Bonding Curves|Counter-Staking|Knowledge Graph|The definitive idea bank|Browse by category|Difficulty isn't listed|Combine ideas|Almost every idea|🧠|\d+)$/i;
+
+const EMBEDDED_PDF_NOISE = /Build on Intuition:\s*300\+\s*dApp\s*Ideas/gi;
+
+function cleanDescription(text: string): string {
+  return text.replace(EMBEDDED_PDF_NOISE, " ").replace(/\s+/g, " ").trim();
+}
+
+function shouldSkipContinuationLine(line: string): boolean {
+  const trimmed = line.trim();
+  if (!trimmed) return true;
+  if (CONTINUATION_SKIP_RE.test(trimmed)) return true;
+  if (isCategoryLine(trimmed)) return true;
+  if (IDEA_START_RE.test(trimmed)) return true;
+  return false;
+}
+
 function isCategoryLine(line: string): boolean {
   return CATEGORY_RE.test(line.trim()) && !IDEA_START_RE.test(line.trim());
 }
@@ -58,7 +77,7 @@ export function parseIdeasFromText(raw: string): RawParsedIdea[] {
     );
     ideas.push({
       ...current,
-      description,
+      description: cleanDescription(description),
       comparable,
     });
     current = null;
@@ -88,7 +107,15 @@ export function parseIdeasFromText(raw: string): RawParsedIdea[] {
     }
 
     if (current) {
-      current.description = `${current.description} ${line}`.trim();
+      if (shouldSkipContinuationLine(line)) continue;
+      const chunk = line.trim();
+      const needsSpace =
+        current.description.length > 0 &&
+        !current.description.endsWith("-") &&
+        !/^[,.;:!?)]/.test(chunk);
+      current.description = needsSpace
+        ? `${current.description} ${chunk}`.trim()
+        : `${current.description}${chunk}`.trim();
     }
   }
 

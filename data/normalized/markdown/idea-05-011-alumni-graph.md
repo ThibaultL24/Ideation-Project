@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "AlumniGraph"
 tagline: "Alumni network with stake-weighted endorsements"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "LinkedIn alumni"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: AlumniGraph
+category: Social Networks & Community
+canonicalId: idea-05-011-alumni-graph
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AlumniGraph
 
-> Alumni network with stake-weighted endorsements
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate social networks & community concepts on Intuition.
-
-## Solution
-
 Alumni network with stake-weighted endorsements. Living alternative to cold LinkedIn outreach.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-LinkedIn alumni
-
-## Metadata
-
-- Canonical ID: `idea-05-011-alumni-graph`
-- Category: Social Networks & Community
-- Suggested GitHub path: `ideas/2026-05-25-alumni-graph/README.md`
+**Comparable:** LinkedIn alumni

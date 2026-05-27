@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "FitnessMatch"
 tagline: "Personal trainer matching using stake-weighted outcome claims from real clients."
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Trainerize, ClassPass"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: FitnessMatch
+category: Marketplaces & Discovery
+canonicalId: idea-03-019-fitness-match
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FitnessMatch
 
-> Personal trainer matching using stake-weighted outcome claims from real clients.
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate marketplaces & discovery concepts on Intuition.
-
-## Solution
-
 Personal trainer matching using stake-weighted outcome claims from real clients.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Trainerize, ClassPass
-
-## Metadata
-
-- Canonical ID: `idea-03-019-fitness-match`
-- Category: Marketplaces & Discovery
-- Suggested GitHub path: `ideas/2026-05-25-fitness-match/README.md`
+**Comparable:** Trainerize, ClassPass

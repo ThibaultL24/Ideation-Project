@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "GameAccessibility"
 tagline: "Game accessibility ratings by players with disabilities"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Can I Play That?"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: GameAccessibility
+category: Gaming & Esports
+canonicalId: idea-13-011-game-accessibility
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GameAccessibility
 
-> Game accessibility ratings by players with disabilities
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate gaming & esports concepts on Intuition.
-
-## Solution
-
 Game accessibility ratings by players with disabilities. Stake on accessibility feature quality.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Can I Play That?
-
-## Metadata
-
-- Canonical ID: `idea-13-011-game-accessibility`
-- Category: Gaming & Esports
-- Suggested GitHub path: `ideas/2026-05-25-game-accessibility/README.md`
+**Comparable:** Can I Play That?

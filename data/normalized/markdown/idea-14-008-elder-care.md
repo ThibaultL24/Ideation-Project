@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ElderCare"
 tagline: "Assisted living facility ratings"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Medicare ratings"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ElderCare
+category: Healthcare & Wellness
+canonicalId: idea-14-008-elder-care
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ElderCare
 
-> Assisted living facility ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate healthcare & wellness concepts on Intuition.
-
-## Solution
-
 Assisted living facility ratings. Family members stake on care quality, safety, and dignity claims. Accountability for vulnerable populations.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Medicare ratings
-
-## Metadata
-
-- Canonical ID: `idea-14-008-elder-care`
-- Category: Healthcare & Wellness
-- Suggested GitHub path: `ideas/2026-05-25-elder-care/README.md`
+**Comparable:** Medicare ratings

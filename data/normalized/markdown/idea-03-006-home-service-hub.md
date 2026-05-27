@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "HomeServiceHub"
 tagline: "Unified home service discovery (plumbing, electrical, HVAC)"
 author: "Ideation"
@@ -17,33 +18,16 @@ tags:
 comparable: "Angi, HomeAdvisor, Thumbtack"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: HomeServiceHub
+category: Marketplaces & Discovery
+canonicalId: idea-03-006-home-service-hub
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HomeServiceHub
 
-> Unified home service discovery (plumbing, electrical, HVAC)
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate marketplaces & discovery concepts on Intuition.
-
-## Solution
-
 Unified home service discovery (plumbing, electrical, HVAC). Replaces lead-gen platforms that charge for visibility regardless of quality.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Angi, HomeAdvisor, Thumbtack
-
-## Metadata
-
-- Canonical ID: `idea-03-006-home-service-hub`
-- Category: Marketplaces & Discovery
-- Suggested GitHub path: `ideas/2026-05-25-home-service-hub/README.md`
+**Comparable:** Angi, HomeAdvisor, Thumbtack

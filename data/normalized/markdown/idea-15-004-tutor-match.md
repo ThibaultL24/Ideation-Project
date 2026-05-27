@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "TutorMatch"
 tagline: "Tutor matching using stake-weighted effectiveness claims"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Wyzant"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: TutorMatch
+category: Education & Learning
+canonicalId: idea-15-004-tutor-match
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TutorMatch
 
-> Tutor matching using stake-weighted effectiveness claims
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate education & learning concepts on Intuition.
-
-## Solution
-
 Tutor matching using stake-weighted effectiveness claims. Parents stake on tutors who genuinely improved grades.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Wyzant
-
-## Metadata
-
-- Canonical ID: `idea-15-004-tutor-match`
-- Category: Education & Learning
-- Suggested GitHub path: `ideas/2026-05-25-tutor-match/README.md`
+**Comparable:** Wyzant

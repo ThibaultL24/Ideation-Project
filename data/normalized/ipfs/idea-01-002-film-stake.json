@@ -3,7 +3,7 @@
   "canonicalId": "idea-01-002-film-stake",
   "slug": "film-stake",
   "title": "FilmStake",
-  "tagline": "Movie and TV ratings where viewers stake on quality, acting, and rewatchability claims",
+  "tagline": "Movie and TV ratings where viewers stake on quality, acting, and rewatchability claims.",
   "category": "Reviews & Ratings",
   "description": "Movie and TV ratings where viewers stake on quality, acting, and rewatchability claims. Financially-weighted consensus immune to review-bombing.",
   "comparable": "Rotten Tomatoes, Letterboxd",

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "CharityRate"
 tagline: "Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims"
 author: "Ideation"
@@ -13,33 +14,16 @@ tags:
   - reviews-ratings
 intuition_atoms: []
 github_discussion: ""
+=======
+title: CharityRate
+category: Reviews & Ratings
+canonicalId: idea-01-024-charity-rate
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CharityRate
 
-> Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims
+Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims. Beyond overhead ratios.
 
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate reviews & ratings concepts on Intuition.
-
-## Solution
-
-Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims. Beyond overhead ratios. (Like: GiveWell, Charity Navigator) Build on Intuition: 300+ dApp Ideas
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-01-024-charity-rate`
-- Category: Reviews & Ratings
-- Suggested GitHub path: `ideas/2026-05-25-charity-rate/README.md`
+**Comparable:** GiveWell, Charity Navigator

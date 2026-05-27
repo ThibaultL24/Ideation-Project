@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "SupplyTrace"
 tagline: "Supply chain integrity verification"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "Provenance"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: SupplyTrace
+category: Safety, Security & Protection
+canonicalId: idea-09-013-supply-trace
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SupplyTrace
 
-> Supply chain integrity verification
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate safety, security & protection concepts on Intuition.
-
-## Solution
-
 Supply chain integrity verification. Workers and auditors counter-stake on greenwashing or labor violations.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Provenance
-
-## Metadata
-
-- Canonical ID: `idea-09-013-supply-trace`
-- Category: Safety, Security & Protection
-- Suggested GitHub path: `ideas/2026-05-25-supply-trace/README.md`
+**Comparable:** Provenance

@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "ScamShield"
 tagline: "Real-time scam detection network"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "ScamSniffer"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: ScamShield
+category: Safety, Security & Protection
+canonicalId: idea-09-001-scam-shield
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ScamShield
 
-> Real-time scam detection network
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate safety, security & protection concepts on Intuition.
-
-## Solution
-
 Real-time scam detection network. Community stakes on [Contract-X] [is-a] [Honeypot Scam]. Wallets query before interacting.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-ScamSniffer
-
-## Metadata
-
-- Canonical ID: `idea-09-001-scam-shield`
-- Category: Safety, Security & Protection
-- Suggested GitHub path: `ideas/2026-05-25-scam-shield/README.md`
+**Comparable:** ScamSniffer

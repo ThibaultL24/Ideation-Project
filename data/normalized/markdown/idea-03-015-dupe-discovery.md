@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "DupeDiscovery"
 tagline: "Product dupe (affordable alternative) curation"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "Build on Intuition: 300+ dApp Ideas Reddit dupe threads, TikTok"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: DupeDiscovery
+category: Marketplaces & Discovery
+canonicalId: idea-03-015-dupe-discovery
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DupeDiscovery
 
-> Product dupe (affordable alternative) curation
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate marketplaces & discovery concepts on Intuition.
-
-## Solution
-
 Product dupe (affordable alternative) curation. Users stake on whether budget alternatives match premium originals.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Build on Intuition: 300+ dApp Ideas Reddit dupe threads, TikTok
-
-## Metadata
-
-- Canonical ID: `idea-03-015-dupe-discovery`
-- Category: Marketplaces & Discovery
-- Suggested GitHub path: `ideas/2026-05-25-dupe-discovery/README.md`
+**Comparable:** Reddit dupe threads, TikTok

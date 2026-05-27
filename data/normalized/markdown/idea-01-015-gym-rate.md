@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "GymRate"
 tagline: "Fitness facility and trainer ratings"
 author: "Ideation"
@@ -16,33 +17,16 @@ tags:
 comparable: "ClassPass, Google Reviews"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: GymRate
+category: Reviews & Ratings
+canonicalId: idea-01-015-gym-rate
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GymRate
 
-> Fitness facility and trainer ratings
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate reviews & ratings concepts on Intuition.
-
-## Solution
-
 Fitness facility and trainer ratings. Members stake on equipment quality, cleanliness, and contract fairness claims.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-ClassPass, Google Reviews
-
-## Metadata
-
-- Canonical ID: `idea-01-015-gym-rate`
-- Category: Reviews & Ratings
-- Suggested GitHub path: `ideas/2026-05-25-gym-rate/README.md`
+**Comparable:** ClassPass, Google Reviews

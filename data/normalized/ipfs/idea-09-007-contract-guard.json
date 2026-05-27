@@ -3,7 +3,7 @@
   "canonicalId": "idea-09-007-contract-guard",
   "slug": "contract-guard",
   "title": "ContractGuard",
-  "tagline": "Legal contract and TOS analyzer",
+  "tagline": "Legal contract and TOS analyzer.",
   "category": "Safety, Security & Protection",
   "description": "Legal contract and TOS analyzer. Legal experts stake on fairness claims. [TOS-X] [contains] [Hidden Arbitration Clause].",
   "comparable": "TOS;DR",
@@ -12,7 +12,8 @@
     "intuition",
     "ideation",
     "safety-security-protection",
-    "tos-dr"
+    "tos",
+    "dr"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-contract-guard/README.md"

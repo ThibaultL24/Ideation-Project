@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 title: "RetroGameAuth"
 tagline: "Retro game and console authenticity"
 author: "Ideation"
@@ -15,33 +16,16 @@ tags:
 comparable: "PriceCharting"
 intuition_atoms: []
 github_discussion: ""
+=======
+title: RetroGameAuth
+category: Gaming & Esports
+canonicalId: idea-13-013-retro-game-auth
+author: Ideation
+>>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RetroGameAuth
 
-> Retro game and console authenticity
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate gaming & esports concepts on Intuition.
-
-## Solution
-
 Retro game and console authenticity. Collectors stake on item authenticity.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-PriceCharting
-
-## Metadata
-
-- Canonical ID: `idea-13-013-retro-game-auth`
-- Category: Gaming & Esports
-- Suggested GitHub path: `ideas/2026-05-25-retro-game-auth/README.md`
+**Comparable:** PriceCharting
