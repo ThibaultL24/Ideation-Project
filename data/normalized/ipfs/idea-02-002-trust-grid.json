@@ -3,14 +3,14 @@
   "canonicalId": "idea-02-002-trust-grid",
   "slug": "trust-grid",
   "title": "TrustGrid",
-  "tagline": "Professional identity where claims like [Alice] [has-skill] [Solidity] are staked on by colleagues",
+  "tagline": "Professional identity where claims like [Alice] [has-skill] [Solidity] are staked on by colleagues.",
   "category": "Identity, Reputation & Credentials",
   "description": "Professional identity where claims like [Alice] [has-skill] [Solidity] are staked on by colleagues. Professional reputation becomes a portable, financially-backed asset.",
   "comparable": "LinkedIn",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "identity-reputation-credentials",
     "linkedin"
   ],

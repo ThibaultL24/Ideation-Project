@@ -3,14 +3,14 @@
   "canonicalId": "idea-05-007-daogovernance",
   "slug": "daogovernance",
   "title": "DAOGovernance",
-  "tagline": "Enhanced DAO voting where weight is modified by domain-relevant reputation",
+  "tagline": "Enhanced DAO voting where weight is modified by domain-relevant reputation.",
   "category": "Social Networks & Community",
   "description": "Enhanced DAO voting where weight is modified by domain-relevant reputation. Financial expertise weights treasury votes; dev reputation weights technical votes.",
   "comparable": "Snapshot, Tally",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "social-networks-community",
     "snapshot",
     "tally"

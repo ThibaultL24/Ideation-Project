@@ -3,14 +3,14 @@
   "canonicalId": "idea-03-010-recipe-discovery",
   "slug": "recipe-discovery",
   "title": "RecipeDiscovery",
-  "tagline": "Recipe curation where cooks stake on accuracy, difficulty, and taste claims",
+  "tagline": "Recipe curation where cooks stake on accuracy, difficulty, and taste claims.",
   "category": "Marketplaces & Discovery",
   "description": "Recipe curation where cooks stake on accuracy, difficulty, and taste claims. Trust-weighted recipe source immune to SEO blog spam.",
   "comparable": "AllRecipes, Epicurious",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "marketplaces-discovery",
     "allrecipes",
     "epicurious"

@@ -3,14 +3,14 @@
   "canonicalId": "idea-04-010-agent-insurance",
   "slug": "agent-insurance",
   "title": "AgentInsurance",
-  "tagline": "Insurance protocol for AI actions",
+  "tagline": "Insurance protocol for AI actions.",
   "category": "AI Agents & Machine Intelligence",
   "description": "Insurance protocol for AI actions. Premiums priced by Knowledge Graph reputation. High-reputation agents pay less.",
   "comparable": "Nexus Mutual, but for AI",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "ai-agents-machine-intelligence",
     "nexus-mutual",
     "but-for-ai"

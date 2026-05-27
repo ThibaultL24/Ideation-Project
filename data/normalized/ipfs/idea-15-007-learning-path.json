@@ -3,14 +3,16 @@
   "canonicalId": "idea-15-007-learning-path",
   "slug": "learning-path",
   "title": "LearningPath",
-  "tagline": "Curated learning path ratings",
+  "tagline": "Curated learning path ratings.",
   "category": "Education & Learning",
-  "description": "Curated learning path ratings. Learners stake on whether course sequences effectively build skills. (Like: Roadmap.sh) Build on Intuition: 300+ dApp Ideas",
+  "description": "Curated learning path ratings. Learners stake on whether course sequences effectively build skills.",
+  "comparable": "Roadmap.sh",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
-    "education-learning"
+    "ideation",
+    "education-learning",
+    "roadmap-sh"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-learning-path/README.md"

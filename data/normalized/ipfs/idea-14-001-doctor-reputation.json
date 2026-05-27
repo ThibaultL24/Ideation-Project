@@ -3,14 +3,14 @@
   "canonicalId": "idea-14-001-doctor-reputation",
   "slug": "doctor-reputation",
   "title": "DoctorReputation",
-  "tagline": "Multi-dimensional physician ratings",
+  "tagline": "Multi-dimensional physician ratings.",
   "category": "Healthcare & Wellness",
   "description": "Multi-dimensional physician ratings. Patients stake on competence, bedside manner, and outcome quality across specialties.",
   "comparable": "ZocDoc, Healthgrades",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "healthcare-wellness",
     "zocdoc",
     "healthgrades"

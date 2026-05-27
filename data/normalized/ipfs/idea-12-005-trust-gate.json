@@ -3,13 +3,13 @@
   "canonicalId": "idea-12-005-trust-gate",
   "slug": "trust-gate",
   "title": "TrustGate",
-  "tagline": "Middleware that gates access to resources based on Intuition reputation scores",
+  "tagline": "Middleware that gates access to resources based on Intuition reputation scores.",
   "category": "Developer Tools & Infrastructure",
   "description": "Middleware that gates access to resources based on Intuition reputation scores. Token-gate but with reputation instead of tokens. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "developer-tools-infrastructure"
   ],
   "source": "build-on-intuition-300-ideas",

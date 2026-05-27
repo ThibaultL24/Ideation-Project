@@ -3,14 +3,14 @@
   "canonicalId": "idea-20-003-airline-rank",
   "slug": "airline-rank",
   "title": "AirlineRank",
-  "tagline": "Airline quality ratings",
+  "tagline": "Airline quality ratings.",
   "category": "Travel & Transportation",
   "description": "Airline quality ratings. Passengers stake on service, legroom, delay honesty, and cancellation handling claims.",
   "comparable": "Skytrax",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "travel-transportation",
     "skytrax"
   ],

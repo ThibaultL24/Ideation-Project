@@ -3,13 +3,13 @@
   "canonicalId": "idea-02-017-whistleblower-shield",
   "slug": "whistleblower-shield",
   "title": "WhistleblowerShield",
-  "tagline": "Anonymous reputation for whistleblowers",
+  "tagline": "Anonymous reputation for whistleblowers.",
   "category": "Identity, Reputation & Credentials",
   "description": "Anonymous reputation for whistleblowers. ZK proofs protect identity while building credible track records. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "identity-reputation-credentials"
   ],
   "source": "build-on-intuition-300-ideas",

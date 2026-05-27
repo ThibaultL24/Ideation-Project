@@ -3,14 +3,14 @@
   "canonicalId": "idea-11-008-clinical-trial-watch",
   "slug": "clinical-trial-watch",
   "title": "ClinicalTrialWatch",
-  "tagline": "Clinical trial result curation",
+  "tagline": "Clinical trial result curation.",
   "category": "Science & Academia",
   "description": "Clinical trial result curation. Researchers stake on outcome validity. Counter-staking on contested results creates transparent markets around evidence.",
   "comparable": "ClinicalTrials.gov",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "science-academia",
     "clinicaltrials-gov"
   ],

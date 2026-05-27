@@ -1,47 +1,12 @@
 ---
-title: "PvPMatchmaking"
-tagline: "Reputation-enhanced matchmaking"
-author: "Mission 03 Migration"
-date: "2026-05-25"
-status: draft
-canonical_id: "idea-13-012-pv-pmatchmaking"
-category: "Gaming & Esports"
-tags:
-  - dapp-idea
-  - intuition
-  - mission-03
-  - gaming-esports
-  - valve-trust-factor
-comparable: "Valve Trust Factor"
-intuition_atoms: []
-github_discussion: ""
+title: PvPMatchmaking
+category: Gaming & Esports
+canonicalId: idea-13-012-pv-pmatchmaking
+author: Ideation
 ---
 
 # PvPMatchmaking
 
-> Reputation-enhanced matchmaking
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate gaming & esports concepts on Intuition.
-
-## Solution
-
 Reputation-enhanced matchmaking. Sportsmanship scores influence pairing.
 
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-Valve Trust Factor
-
-## Metadata
-
-- Canonical ID: `idea-13-012-pv-pmatchmaking`
-- Category: Gaming & Esports
-- Suggested GitHub path: `ideas/2026-05-25-pv-pmatchmaking/README.md`
+**Comparable:** Valve Trust Factor

@@ -3,13 +3,13 @@
   "canonicalId": "idea-04-024-training-transparency",
   "slug": "training-transparency",
   "title": "TrainingTransparency",
-  "tagline": "AI training data provenance tracker",
+  "tagline": "AI training data provenance tracker.",
   "category": "AI Agents & Machine Intelligence",
   "description": "AI training data provenance tracker. Content creators stake on claims about data usage, creating an accountability layer for consent. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "ai-agents-machine-intelligence"
   ],
   "source": "build-on-intuition-300-ideas",

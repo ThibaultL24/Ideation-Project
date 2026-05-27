@@ -3,14 +3,14 @@
   "canonicalId": "idea-05-006-expertise-graph",
   "slug": "expertise-graph",
   "title": "ExpertiseGraph",
-  "tagline": "Professional community where contributions are stakeweighted by peers",
+  "tagline": "Professional community where contributions are stakeweighted by peers.",
   "category": "Social Networks & Community",
   "description": "Professional community where contributions are stakeweighted by peers. Answering a question earns stake from people helped.",
   "comparable": "Stack Overflow",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "social-networks-community",
     "stack-overflow"
   ],

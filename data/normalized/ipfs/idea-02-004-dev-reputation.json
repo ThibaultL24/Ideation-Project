@@ -3,14 +3,14 @@
   "canonicalId": "idea-02-004-dev-reputation",
   "slug": "dev-reputation",
   "title": "DevReputation",
-  "tagline": "Developer reputation aggregating stake-weighted claims about code quality and expertise",
+  "tagline": "Developer reputation aggregating stake-weighted claims about code quality and expertise.",
   "category": "Identity, Reputation & Credentials",
   "description": "Developer reputation aggregating stake-weighted claims about code quality and expertise. Portable across hiring platforms, DAOs, and open-source.",
   "comparable": "GitHub profile, StackOverflow rep",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "identity-reputation-credentials",
     "github-profile",
     "stackoverflow-rep"

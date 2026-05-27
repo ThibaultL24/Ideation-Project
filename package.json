@@ -11,6 +11,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "import:ideas": "tsx scripts/import-ideas.ts",
+    "verify:ideas": "tsx scripts/verify-ideas.ts",
     "migrate:dry-run": "tsx scripts/dry-run.ts",
     "migrate:batch": "tsx scripts/migrate-batch.ts",
     "migrate:batches": "tsx scripts/migrate-batches.ts",

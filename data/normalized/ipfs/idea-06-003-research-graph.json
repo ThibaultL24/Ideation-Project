@@ -3,14 +3,14 @@
   "canonicalId": "idea-06-003-research-graph",
   "slug": "research-graph",
   "title": "ResearchGraph",
-  "tagline": "Scientific paper quality and reproducibility curation",
+  "tagline": "Scientific paper quality and reproducibility curation.",
   "category": "Knowledge, Research & Information",
   "description": "Scientific paper quality and reproducibility curation. Researchers stake on methodology and validity claims.",
   "comparable": "PubPeer, Semantic Scholar",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "knowledge-research-information",
     "pubpeer",
     "semantic-scholar"

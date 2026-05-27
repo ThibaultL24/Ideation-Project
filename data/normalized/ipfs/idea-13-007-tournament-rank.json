@@ -3,14 +3,14 @@
   "canonicalId": "idea-13-007-tournament-rank",
   "slug": "tournament-rank",
   "title": "TournamentRank",
-  "tagline": "Tournament organizer reputation",
+  "tagline": "Tournament organizer reputation.",
   "category": "Gaming & Esports",
   "description": "Tournament organizer reputation. Players stake on prize distribution reliability and rule enforcement.",
   "comparable": "FACEIT",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "gaming-esports",
     "faceit"
   ],

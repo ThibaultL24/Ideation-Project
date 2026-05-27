@@ -3,14 +3,14 @@
   "canonicalId": "idea-03-014-podcast-discovery",
   "slug": "podcast-discovery",
   "title": "PodcastDiscovery",
-  "tagline": "Podcast recommendation engine",
+  "tagline": "Podcast recommendation engine.",
   "category": "Marketplaces & Discovery",
   "description": "Podcast recommendation engine. Genre curators compete to surface the best shows via stake.",
   "comparable": "Podchaser, podcast newsletters",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "marketplaces-discovery",
     "podchaser",
     "podcast-newsletters"

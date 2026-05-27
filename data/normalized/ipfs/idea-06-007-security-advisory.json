@@ -3,14 +3,14 @@
   "canonicalId": "idea-06-007-security-advisory",
   "slug": "security-advisory",
   "title": "SecurityAdvisory",
-  "tagline": "Cybersecurity vulnerability curation",
+  "tagline": "Cybersecurity vulnerability curation.",
   "category": "Knowledge, Research & Information",
   "description": "Cybersecurity vulnerability curation. Researchers stake on severity and exploitability claims. Faster than CVE databases.",
   "comparable": "CVE, NVD",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "knowledge-research-information",
     "cve",
     "nvd"

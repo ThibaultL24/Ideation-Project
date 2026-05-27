@@ -3,14 +3,14 @@
   "canonicalId": "idea-02-008-daocontributor-id",
   "slug": "daocontributor-id",
   "title": "DAOContributorID",
-  "tagline": "Cross-DAO contributor reputation",
+  "tagline": "Cross-DAO contributor reputation.",
   "category": "Identity, Reputation & Credentials",
   "description": "Cross-DAO contributor reputation. Members stake on each other's contribution quality and governance participation.",
   "comparable": "Coordinape, SourceCred",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "identity-reputation-credentials",
     "coordinape",
     "sourcecred"

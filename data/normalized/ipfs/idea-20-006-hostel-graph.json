@@ -3,14 +3,14 @@
   "canonicalId": "idea-20-006-hostel-graph",
   "slug": "hostel-graph",
   "title": "HostelGraph",
-  "tagline": "Hostel quality ratings",
+  "tagline": "Hostel quality ratings.",
   "category": "Travel & Transportation",
   "description": "Hostel quality ratings. Travelers stake on cleanliness, social atmosphere, and safety claims.",
   "comparable": "Hostelworld",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "travel-transportation",
     "hostelworld"
   ],

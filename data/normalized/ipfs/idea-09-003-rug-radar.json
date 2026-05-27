@@ -3,14 +3,14 @@
   "canonicalId": "idea-09-003-rug-radar",
   "slug": "rug-radar",
   "title": "RugRadar",
-  "tagline": "DeFi rug pull early warning",
+  "tagline": "DeFi rug pull early warning.",
   "category": "Safety, Security & Protection",
   "description": "DeFi rug pull early warning. Researchers stake on risk indicators before rugs happen. Correct early warnings earn returns.",
   "comparable": "RugDoc",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "safety-security-protection",
     "rugdoc"
   ],

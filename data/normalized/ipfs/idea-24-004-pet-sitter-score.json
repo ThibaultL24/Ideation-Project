@@ -3,14 +3,14 @@
   "canonicalId": "idea-24-004-pet-sitter-score",
   "slug": "pet-sitter-score",
   "title": "PetSitterScore",
-  "tagline": "Pet sitter and walker ratings",
+  "tagline": "Pet sitter and walker ratings.",
   "category": "Pets & Animals",
   "description": "Pet sitter and walker ratings. Owners stake on reliability, care quality, and communication claims.",
   "comparable": "Rover reviews",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "pets-animals",
     "rover-reviews"
   ],

@@ -3,14 +3,14 @@
   "canonicalId": "idea-15-005-degree-verify",
   "slug": "degree-verify",
   "title": "DegreeVerify",
-  "tagline": "Instant degree verification",
+  "tagline": "Instant degree verification.",
   "category": "Education & Learning",
   "description": "Instant degree verification. Universities create credential atoms; graduates claim them. Employers verify via Knowledge Graph.",
   "comparable": "National Student Clearinghouse",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "education-learning",
     "national-student-clearinghouse"
   ],

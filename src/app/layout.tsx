@@ -5,8 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Ideation — Project ideas on Intuition",
   description:
-    "Discover, explore and curate project ideas attested on the Intuition knowledge graph.",
+    "Discover and explore project ideas attested on the Intuition knowledge graph.",
 };
+
+const PORTAL_EXPLORER_URL =
+  "https://testnet.portal.intuition.systems/explore/home";
 
 export default function RootLayout({
   children,
@@ -24,7 +27,12 @@ export default function RootLayout({
             <a href="/ideas" className="text-[var(--muted)] hover:text-white">
               Catalogue
             </a>
-            <a href="/graph" className="text-[var(--muted)] hover:text-white">
+            <a
+              href={PORTAL_EXPLORER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--muted)] hover:text-white"
+            >
               Explorer
             </a>
             <a href="/random" className="text-[var(--muted)] hover:text-white">

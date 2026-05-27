@@ -3,14 +3,14 @@
   "canonicalId": "idea-06-012-precedent-graph",
   "slug": "precedent-graph",
   "title": "PrecedentGraph",
-  "tagline": "Legal precedent curation",
+  "tagline": "Legal precedent curation.",
   "category": "Knowledge, Research & Information",
   "description": "Legal precedent curation. Attorneys stake on case relevance and authority. AI legal tools prioritize stake-weighted precedents.",
   "comparable": "Westlaw, LexisNexis",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "knowledge-research-information",
     "westlaw",
     "lexisnexis"

@@ -3,13 +3,13 @@
   "canonicalId": "idea-12-015-integration-hub",
   "slug": "integration-hub",
   "title": "IntegrationHub",
-  "tagline": "Pre-built integrations connecting Intuition to Discord, Telegram, Slack, and other platforms for automatic claim creation",
+  "tagline": "Pre-built integrations connecting Intuition to Discord, Telegram, Slack, and other platforms for automatic claim creation.",
   "category": "Developer Tools & Infrastructure",
   "description": "Pre-built integrations connecting Intuition to Discord, Telegram, Slack, and other platforms for automatic claim creation. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "developer-tools-infrastructure"
   ],
   "source": "build-on-intuition-300-ideas",

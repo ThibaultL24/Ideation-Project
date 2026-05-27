@@ -3,16 +3,17 @@
   "canonicalId": "idea-01-005-app-crit",
   "slug": "app-crit",
   "title": "AppCrit",
-  "tagline": "Mobile and desktop app ratings with stake-backed claims on usability, privacy, and value",
+  "tagline": "Mobile and desktop app ratings with stake-backed claims on usability, privacy, and value.",
   "category": "Reviews & Ratings",
   "description": "Mobile and desktop app ratings with stake-backed claims on usability, privacy, and value. Replaces rage-review and paid-5-star distortion.",
   "comparable": "App Store reviews, G2",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "reviews-ratings",
-    "app-store-reviews"
+    "app-store-reviews",
+    "g2"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-app-crit/README.md"

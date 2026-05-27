@@ -3,14 +3,14 @@
   "canonicalId": "idea-13-004-speedrun-verify",
   "slug": "speedrun-verify",
   "title": "SpeedrunVerify",
-  "tagline": "Speedrun verification with stake-weighted community validation",
+  "tagline": "Speedrun verification with stake-weighted community validation.",
   "category": "Gaming & Esports",
   "description": "Speedrun verification with stake-weighted community validation. Financially-backed alternative to moderator-only verification.",
   "comparable": "Speedrun.com",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "gaming-esports",
     "speedrun-com"
   ],

@@ -3,14 +3,14 @@
   "canonicalId": "idea-06-005-climate-graph",
   "slug": "climate-graph",
   "title": "ClimateGraph",
-  "tagline": "Climate science knowledge graph with stake-weighted emissions data and intervention effectiveness claims",
+  "tagline": "Climate science knowledge graph with stake-weighted emissions data and intervention effectiveness claims.",
   "category": "Knowledge, Research & Information",
   "description": "Climate science knowledge graph with stake-weighted emissions data and intervention effectiveness claims. Immune to political manipulation.",
   "comparable": "IPCC reports, but live",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "knowledge-research-information",
     "ipcc-reports",
     "but-live"

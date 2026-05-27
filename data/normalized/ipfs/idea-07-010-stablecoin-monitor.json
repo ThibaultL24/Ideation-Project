@@ -3,13 +3,13 @@
   "canonicalId": "idea-07-010-stablecoin-monitor",
   "slug": "stablecoin-monitor",
   "title": "StablecoinMonitor",
-  "tagline": "Stablecoin backing verification",
+  "tagline": "Stablecoin backing verification.",
   "category": "Finance, DeFi & Insurance",
   "description": "Stablecoin backing verification. Analysts stake on reserve composition and peg mechanism claims. Real-time trust signals. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "finance-defi-insurance"
   ],
   "source": "build-on-intuition-300-ideas",

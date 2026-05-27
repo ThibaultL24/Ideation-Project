@@ -3,14 +3,14 @@
   "canonicalId": "idea-06-015-algorithm-audit",
   "slug": "algorithm-audit",
   "title": "AlgorithmAudit",
-  "tagline": "Algorithm transparency documentation",
+  "tagline": "Algorithm transparency documentation.",
   "category": "Knowledge, Research & Information",
   "description": "Algorithm transparency documentation. Researchers stake on how platform algorithms work and what biases they contain.",
   "comparable": "Algorithm Watch",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "knowledge-research-information",
     "algorithm-watch"
   ],

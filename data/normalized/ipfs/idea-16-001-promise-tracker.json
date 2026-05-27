@@ -3,14 +3,14 @@
   "canonicalId": "idea-16-001-promise-tracker",
   "slug": "promise-tracker",
   "title": "PromiseTracker",
-  "tagline": "Campaign promise tracking",
+  "tagline": "Campaign promise tracking.",
   "category": "Government & Civic",
   "description": "Campaign promise tracking. Citizens stake on delivery claims. Financially-weighted accountability across election cycles.",
   "comparable": "PolitiFact Promise Tracker",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "government-civic",
     "politifact-promise-tracker"
   ],

@@ -3,13 +3,13 @@
   "canonicalId": "idea-22-003-solar-score",
   "slug": "solar-score",
   "title": "SolarScore",
-  "tagline": "Solar installer ratings",
+  "tagline": "Solar installer ratings.",
   "category": "Environment & Sustainability",
   "description": "Solar installer ratings. Homeowners stake on installation quality, output accuracy, and warranty claims. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "environment-sustainability"
   ],
   "source": "build-on-intuition-300-ideas",

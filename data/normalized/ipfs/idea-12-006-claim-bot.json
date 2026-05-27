@@ -3,13 +3,13 @@
   "canonicalId": "idea-12-006-claim-bot",
   "slug": "claim-bot",
   "title": "ClaimBot",
-  "tagline": "Framework for building automated claim-creation bots that feed structured data into the Knowledge Graph from external sources",
+  "tagline": "Framework for building automated claim-creation bots that feed structured data into the Knowledge Graph from external sources.",
   "category": "Developer Tools & Infrastructure",
   "description": "Framework for building automated claim-creation bots that feed structured data into the Knowledge Graph from external sources. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "developer-tools-infrastructure"
   ],
   "source": "build-on-intuition-300-ideas",

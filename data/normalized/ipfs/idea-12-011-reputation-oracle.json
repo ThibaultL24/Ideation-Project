@@ -3,13 +3,13 @@
   "canonicalId": "idea-12-011-reputation-oracle",
   "slug": "reputation-oracle",
   "title": "ReputationOracle",
-  "tagline": "Chainlink-compatible oracle that serves Intuition reputation data to other chains and smart contracts",
+  "tagline": "Chainlink-compatible oracle that serves Intuition reputation data to other chains and smart contracts.",
   "category": "Developer Tools & Infrastructure",
   "description": "Chainlink-compatible oracle that serves Intuition reputation data to other chains and smart contracts. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "developer-tools-infrastructure"
   ],
   "source": "build-on-intuition-300-ideas",

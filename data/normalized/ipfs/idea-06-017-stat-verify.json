@@ -3,13 +3,13 @@
   "canonicalId": "idea-06-017-stat-verify",
   "slug": "stat-verify",
   "title": "StatVerify",
-  "tagline": "Statistical claim verification",
+  "tagline": "Statistical claim verification.",
   "category": "Knowledge, Research & Information",
   "description": "Statistical claim verification. Data journalists stake on whether cited statistics are accurate and properly contextualized. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "knowledge-research-information"
   ],
   "source": "build-on-intuition-300-ideas",

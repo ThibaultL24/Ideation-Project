@@ -3,14 +3,14 @@
   "canonicalId": "idea-03-001-trust-hunt",
   "slug": "trust-hunt",
   "title": "TrustHunt",
-  "tagline": "Decentralized product launch platform",
+  "tagline": "Decentralized product launch platform.",
   "category": "Marketplaces & Discovery",
   "description": "Decentralized product launch platform. Builders submit products; community stakes on quality. Bonding curves reward early discoverers of great products.",
   "comparable": "Product Hunt",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "marketplaces-discovery",
     "product-hunt"
   ],

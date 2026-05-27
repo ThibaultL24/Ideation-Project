@@ -3,14 +3,14 @@
   "canonicalId": "idea-06-002-fact-check",
   "slug": "fact-check",
   "title": "FactCheck",
-  "tagline": "Real-time fact-checking where journalists and citizens stake on claim veracity",
+  "tagline": "Real-time fact-checking where journalists and citizens stake on claim veracity.",
   "category": "Knowledge, Research & Information",
   "description": "Real-time fact-checking where journalists and citizens stake on claim veracity. Financially-backed debunking.",
   "comparable": "Snopes, PolitiFact",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "knowledge-research-information",
     "snopes",
     "politifact"

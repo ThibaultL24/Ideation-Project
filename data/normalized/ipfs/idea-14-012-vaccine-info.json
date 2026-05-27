@@ -3,14 +3,14 @@
   "canonicalId": "idea-14-012-vaccine-info",
   "slug": "vaccine-info",
   "title": "VaccineInfo",
-  "tagline": "Vaccine information knowledge graph",
+  "tagline": "Vaccine information knowledge graph.",
   "category": "Healthcare & Wellness",
   "description": "Vaccine information knowledge graph. Immunologists stake on efficacy and safety claims. Credible alternative to social media misinfo.",
   "comparable": "CDC info",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "healthcare-wellness",
     "cdc-info"
   ],

@@ -3,14 +3,14 @@
   "canonicalId": "idea-06-020-data-graph",
   "slug": "data-graph",
   "title": "DataGraph",
-  "tagline": "Open data quality ratings",
+  "tagline": "Open data quality ratings.",
   "category": "Knowledge, Research & Information",
   "description": "Open data quality ratings. Data scientists stake on dataset completeness, accuracy, and methodology claims.",
   "comparable": "Kaggle, Data.gov",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "knowledge-research-information",
     "kaggle",
     "data-gov"

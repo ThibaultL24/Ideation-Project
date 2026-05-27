@@ -3,14 +3,14 @@
   "canonicalId": "idea-01-008-gadget-graph",
   "slug": "gadget-graph",
   "title": "GadgetGraph",
-  "tagline": "Consumer electronics long-term reliability tracker",
+  "tagline": "Consumer electronics long-term reliability tracker.",
   "category": "Reviews & Ratings",
   "description": "Consumer electronics long-term reliability tracker. Owners stake on durability and battery degradation claims after 6+ months.",
   "comparable": "Consumer Reports, Wirecutter",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "reviews-ratings",
     "consumer-reports",
     "wirecutter"

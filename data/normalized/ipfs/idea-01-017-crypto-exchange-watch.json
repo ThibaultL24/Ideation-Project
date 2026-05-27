@@ -3,14 +3,14 @@
   "canonicalId": "idea-01-017-crypto-exchange-watch",
   "slug": "crypto-exchange-watch",
   "title": "CryptoExchangeWatch",
-  "tagline": "Exchange trust ratings",
+  "tagline": "Exchange trust ratings.",
   "category": "Reviews & Ratings",
   "description": "Exchange trust ratings. Traders stake on security, withdrawal reliability, and fee accuracy claims.",
   "comparable": "CoinGecko trust score",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "reviews-ratings",
     "coingecko-trust-score"
   ],

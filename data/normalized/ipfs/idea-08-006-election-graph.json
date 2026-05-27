@@ -3,14 +3,14 @@
   "canonicalId": "idea-08-006-election-graph",
   "slug": "election-graph",
   "title": "ElectionGraph",
-  "tagline": "Political prediction and candidate quality signaling",
+  "tagline": "Political prediction and candidate quality signaling.",
   "category": "Prediction & Signal Markets",
   "description": "Political prediction and candidate quality signaling. Claims about candidates persist as long-term accountability records.",
   "comparable": "PredictIt, Polymarket",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "prediction-signal-markets",
     "predictit",
     "polymarket"

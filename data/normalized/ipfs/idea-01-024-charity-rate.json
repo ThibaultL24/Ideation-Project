@@ -3,14 +3,17 @@
   "canonicalId": "idea-01-024-charity-rate",
   "slug": "charity-rate",
   "title": "CharityRate",
-  "tagline": "Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims",
+  "tagline": "Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims.",
   "category": "Reviews & Ratings",
-  "description": "Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims. Beyond overhead ratios. (Like: GiveWell, Charity Navigator) Build on Intuition: 300+ dApp Ideas",
+  "description": "Nonprofit effectiveness ratings where donors and beneficiaries stake on impact and fund utilization claims. Beyond overhead ratios.",
+  "comparable": "GiveWell, Charity Navigator",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
-    "reviews-ratings"
+    "ideation",
+    "reviews-ratings",
+    "givewell",
+    "charity-navigator"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-charity-rate/README.md"

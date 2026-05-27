@@ -3,14 +3,14 @@
   "canonicalId": "idea-13-010-mod-repository",
   "slug": "mod-repository",
   "title": "ModRepository",
-  "tagline": "Game mod safety ratings",
+  "tagline": "Game mod safety ratings.",
   "category": "Gaming & Esports",
   "description": "Game mod safety ratings. Players stake on compatibility and malware safety claims.",
   "comparable": "Nexus Mods",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "gaming-esports",
     "nexus-mods"
   ],

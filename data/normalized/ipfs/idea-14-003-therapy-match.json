@@ -3,14 +3,14 @@
   "canonicalId": "idea-14-003-therapy-match",
   "slug": "therapy-match",
   "title": "TherapyMatch",
-  "tagline": "Mental health provider matching using stake-weighted specialty and outcome claims",
+  "tagline": "Mental health provider matching using stake-weighted specialty and outcome claims.",
   "category": "Healthcare & Wellness",
   "description": "Mental health provider matching using stake-weighted specialty and outcome claims. Trust signals for the field where fit is everything.",
   "comparable": "BetterHelp",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "healthcare-wellness",
     "betterhelp"
   ],

@@ -3,14 +3,16 @@
   "canonicalId": "idea-16-003-public-service-rate",
   "slug": "public-service-rate",
   "title": "PublicServiceRate",
-  "tagline": "Government agency and service ratings",
+  "tagline": "Government agency and service ratings.",
   "category": "Government & Civic",
-  "description": "Government agency and service ratings. Citizens stake on efficiency, accessibility, and helpfulness claims. (Like: Yelp for government) Build on Intuition: 300+ dApp Ideas",
+  "description": "Government agency and service ratings. Citizens stake on efficiency, accessibility, and helpfulness claims.",
+  "comparable": "Yelp for government",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
-    "government-civic"
+    "ideation",
+    "government-civic",
+    "yelp-for-government"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-public-service-rate/README.md"

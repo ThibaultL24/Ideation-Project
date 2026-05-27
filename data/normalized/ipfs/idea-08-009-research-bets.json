@@ -3,14 +3,14 @@
   "canonicalId": "idea-08-009-research-bets",
   "slug": "research-bets",
   "title": "ResearchBets",
-  "tagline": "Scientific hypothesis market",
+  "tagline": "Scientific hypothesis market.",
   "category": "Prediction & Signal Markets",
   "description": "Scientific hypothesis market. Stake on replication predictions. Creates a replication crisis early-warning system.",
   "comparable": "Metaculus",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "prediction-signal-markets",
     "metaculus"
   ],

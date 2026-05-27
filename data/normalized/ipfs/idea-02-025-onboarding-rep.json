@@ -3,14 +3,14 @@
   "canonicalId": "idea-02-025-onboarding-rep",
   "slug": "onboarding-rep",
   "title": "OnboardingRep",
-  "tagline": "New employee reputation bootstrapping from previous employers",
+  "tagline": "New employee reputation bootstrapping from previous employers.",
   "category": "Identity, Reputation & Credentials",
   "description": "New employee reputation bootstrapping from previous employers. Replaces the broken reference-check system.",
   "comparable": "LinkedIn recommendations, but staked",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "identity-reputation-credentials",
     "linkedin-recommendations",
     "but-staked"

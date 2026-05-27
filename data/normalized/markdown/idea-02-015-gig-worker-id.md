@@ -1,45 +1,10 @@
 ---
-title: "GigWorkerID"
-tagline: "Gig economy worker portable identity spanning TaskRabbit, Uber, DoorDash"
-author: "Mission 03 Migration"
-date: "2026-05-25"
-status: draft
-canonical_id: "idea-02-015-gig-worker-id"
-category: "Identity, Reputation & Credentials"
-tags:
-  - dapp-idea
-  - intuition
-  - mission-03
-  - identity-reputation-credentials
-intuition_atoms: []
-github_discussion: ""
+title: GigWorkerID
+category: Identity, Reputation & Credentials
+canonicalId: idea-02-015-gig-worker-id
+author: Ideation
 ---
 
 # GigWorkerID
 
-> Gig economy worker portable identity spanning TaskRabbit, Uber, DoorDash
-
-## Problem
-
-Builders need verifiable, stake-weighted ways to discover and validate identity, reputation & credentials concepts on Intuition.
-
-## Solution
-
 Gig economy worker portable identity spanning TaskRabbit, Uber, DoorDash. Cross-platform reputation so workers never restart from zero. (Novel)
-
-## How It Uses Intuition
-
-- **Atoms** for the product concept and key entities
-- **Triples** linking the idea to Intuition and category claims
-- **Vaults** for community conviction on quality and feasibility
-- **Counter-staking** to challenge weak or misleading claims
-
-## Comparable
-
-_Novel concept — no direct Web2/Web3 comparable listed._
-
-## Metadata
-
-- Canonical ID: `idea-02-015-gig-worker-id`
-- Category: Identity, Reputation & Credentials
-- Suggested GitHub path: `ideas/2026-05-25-gig-worker-id/README.md`

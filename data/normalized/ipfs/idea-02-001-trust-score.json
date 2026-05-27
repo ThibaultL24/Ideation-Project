@@ -3,14 +3,14 @@
   "canonicalId": "idea-02-001-trust-score",
   "slug": "trust-score",
   "title": "TrustScore",
-  "tagline": "Universal on-chain reputation score derived from staking accuracy across the knowledge graph",
+  "tagline": "Universal on-chain reputation score derived from staking accuracy across the knowledge graph.",
   "category": "Identity, Reputation & Credentials",
   "description": "Universal on-chain reputation score derived from staking accuracy across the knowledge graph. Your \"credit score\" for the decentralized web.",
   "comparable": "FICO score",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "identity-reputation-credentials",
     "fico-score"
   ],

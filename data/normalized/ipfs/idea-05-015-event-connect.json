@@ -3,14 +3,17 @@
   "canonicalId": "idea-05-015-event-connect",
   "slug": "event-connect",
   "title": "EventConnect",
-  "tagline": "Event-based social networking",
+  "tagline": "Event-based social networking.",
   "category": "Social Networks & Community",
-  "description": "Event-based social networking. Post-event, participants stake on each other's value as connections. (Like: Luma, Meetup) Build on Intuition: 300+ dApp Ideas",
+  "description": "Event-based social networking. Post-event, participants stake on each other's value as connections.",
+  "comparable": "Luma, Meetup",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
-    "social-networks-community"
+    "ideation",
+    "social-networks-community",
+    "luma",
+    "meetup"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-event-connect/README.md"

@@ -3,17 +3,17 @@
   "canonicalId": "idea-03-002-stake-list",
   "slug": "stake-list",
   "title": "StakeList",
-  "tagline": "Stake-weighted curated lists for any topic (best CRMs, best vegan restaurants in Austin)",
+  "tagline": "Stake-weighted curated lists for any topic (best CRMs, best vegan restaurants in Austin).",
   "category": "Marketplaces & Discovery",
   "description": "Stake-weighted curated lists for any topic (best CRMs, best vegan restaurants in Austin). Curators build reputation through accuracy.",
   "comparable": "Wirecutter, \"best of\" lists",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "marketplaces-discovery",
     "wirecutter",
-    "-best-of-lists"
+    "best-of-lists"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-stake-list/README.md"

@@ -3,14 +3,17 @@
   "canonicalId": "idea-04-004-prompt-vault",
   "slug": "prompt-vault",
   "title": "PromptVault",
-  "tagline": "Prompt template marketplace with stake-weighted effectiveness ratings per model and use case",
+  "tagline": "Prompt template marketplace with stake-weighted effectiveness ratings per model and use case.",
   "category": "AI Agents & Machine Intelligence",
-  "description": "Prompt template marketplace with stake-weighted effectiveness ratings per model and use case. (Like: PromptBase, FlowGPT) Build on Intuition: 300+ dApp Ideas",
+  "description": "Prompt template marketplace with stake-weighted effectiveness ratings per model and use case.",
+  "comparable": "PromptBase, FlowGPT",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
-    "ai-agents-machine-intelligence"
+    "ideation",
+    "ai-agents-machine-intelligence",
+    "promptbase",
+    "flowgpt"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-prompt-vault/README.md"

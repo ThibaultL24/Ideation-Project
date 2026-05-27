@@ -3,14 +3,14 @@
   "canonicalId": "idea-18-002-hood-score",
   "slug": "hood-score",
   "title": "HoodScore",
-  "tagline": "Neighborhood quality ratings",
+  "tagline": "Neighborhood quality ratings.",
   "category": "Real Estate & Property",
   "description": "Neighborhood quality ratings. Residents stake on safety, walkability, noise, and community claims.",
   "comparable": "Walk Score, but community-driven",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "real-estate-property",
     "walk-score",
     "but-community-driven"

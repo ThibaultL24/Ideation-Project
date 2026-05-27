@@ -3,14 +3,14 @@
   "canonicalId": "idea-01-020-streaming-value",
   "slug": "streaming-value",
   "title": "StreamingValue",
-  "tagline": "Streaming service value ratings",
+  "tagline": "Streaming service value ratings.",
   "category": "Reviews & Ratings",
   "description": "Streaming service value ratings. Subscribers stake on content library quality and price-to-value ratio.",
   "comparable": "JustWatch",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "reviews-ratings",
     "justwatch"
   ],

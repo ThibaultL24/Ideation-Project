@@ -3,13 +3,13 @@
   "canonicalId": "idea-15-009-textbook-rate",
   "slug": "textbook-rate",
   "title": "TextbookRate",
-  "tagline": "Textbook quality ratings",
+  "tagline": "Textbook quality ratings.",
   "category": "Education & Learning",
   "description": "Textbook quality ratings. Students and instructors stake on accuracy and pedagogical quality claims. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "education-learning"
   ],
   "source": "build-on-intuition-300-ideas",

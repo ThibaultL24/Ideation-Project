@@ -3,14 +3,14 @@
   "canonicalId": "idea-14-007-skin-care",
   "slug": "skin-care",
   "title": "SkinCare",
-  "tagline": "Skincare product effectiveness ratings by skin type",
+  "tagline": "Skincare product effectiveness ratings by skin type.",
   "category": "Healthcare & Wellness",
   "description": "Skincare product effectiveness ratings by skin type. Dermatologists and consumers stake on ingredient efficacy and irritation risk.",
   "comparable": "EWG Skin Deep",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "healthcare-wellness",
     "ewg-skin-deep"
   ],

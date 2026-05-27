@@ -3,14 +3,14 @@
   "canonicalId": "idea-09-001-scam-shield",
   "slug": "scam-shield",
   "title": "ScamShield",
-  "tagline": "Real-time scam detection network",
+  "tagline": "Real-time scam detection network.",
   "category": "Safety, Security & Protection",
   "description": "Real-time scam detection network. Community stakes on [Contract-X] [is-a] [Honeypot Scam]. Wallets query before interacting.",
   "comparable": "ScamSniffer",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "safety-security-protection",
     "scamsniffer"
   ],

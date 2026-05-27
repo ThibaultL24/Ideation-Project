@@ -3,14 +3,14 @@
   "canonicalId": "idea-07-018-risk-oracle",
   "slug": "risk-oracle",
   "title": "RiskOracle",
-  "tagline": "On-chain risk assessment oracle aggregating stakeweighted risk claims",
+  "tagline": "On-chain risk assessment oracle aggregating stakeweighted risk claims.",
   "category": "Finance, DeFi & Insurance",
   "description": "On-chain risk assessment oracle aggregating stakeweighted risk claims. DeFi protocols query for real-time risk signals.",
   "comparable": "Gauntlet",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "finance-defi-insurance",
     "gauntlet"
   ],

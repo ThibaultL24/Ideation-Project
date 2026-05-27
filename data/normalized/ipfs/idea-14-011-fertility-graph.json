@@ -3,14 +3,16 @@
   "canonicalId": "idea-14-011-fertility-graph",
   "slug": "fertility-graph",
   "title": "FertilityGraph",
-  "tagline": "Fertility clinic ratings",
+  "tagline": "Fertility clinic ratings.",
   "category": "Healthcare & Wellness",
-  "description": "Fertility clinic ratings. Patients stake on success rate honesty, support quality, and cost transparency. (Like: FertilityIQ) Build on Intuition: 300+ dApp Ideas",
+  "description": "Fertility clinic ratings. Patients stake on success rate honesty, support quality, and cost transparency.",
+  "comparable": "FertilityIQ",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
-    "healthcare-wellness"
+    "ideation",
+    "healthcare-wellness",
+    "fertilityiq"
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-fertility-graph/README.md"

@@ -3,13 +3,13 @@
   "canonicalId": "idea-04-017-knowledge-forge",
   "slug": "knowledge-forge",
   "title": "KnowledgeForge",
-  "tagline": "Collaborative AI training through community knowledge contribution",
+  "tagline": "Collaborative AI training through community knowledge contribution.",
   "category": "AI Agents & Machine Intelligence",
   "description": "Collaborative AI training through community knowledge contribution. Users create atoms/triples that AI agents consume. Contributors earn when their data improves agents. (Novel)",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "ai-agents-machine-intelligence"
   ],
   "source": "build-on-intuition-300-ideas",

@@ -3,14 +3,14 @@
   "canonicalId": "idea-14-002-treatment-graph",
   "slug": "treatment-graph",
   "title": "TreatmentGraph",
-  "tagline": "Treatment effectiveness database",
+  "tagline": "Treatment effectiveness database.",
   "category": "Healthcare & Wellness",
   "description": "Treatment effectiveness database. Patients and clinicians stake on outcome claims. Patient-powered evidence supplementing clinical trials.",
   "comparable": "PatientsLikeMe",
   "tags": [
     "dapp-idea",
     "intuition",
-    "mission-03",
+    "ideation",
     "healthcare-wellness",
     "patientslikeme"
   ],
