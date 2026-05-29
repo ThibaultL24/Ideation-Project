@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PhishNet"
 tagline: "Phishing URL and wallet blacklist maintained through staked claims"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Google Safe Browsing"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PhishNet
-category: Safety, Security & Protection
-canonicalId: idea-09-002-phish-net
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PhishNet

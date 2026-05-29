@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ResearchGraph"
 tagline: "Scientific paper quality and reproducibility curation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "PubPeer, Semantic Scholar"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ResearchGraph
-category: Knowledge, Research & Information
-canonicalId: idea-06-003-research-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ResearchGraph

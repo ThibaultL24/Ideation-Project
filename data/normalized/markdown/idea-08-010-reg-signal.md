@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RegSignal"
 tagline: "Regulatory prediction market"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Polymarket regulatory"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RegSignal
-category: Prediction & Signal Markets
-canonicalId: idea-08-010-reg-signal
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RegSignal

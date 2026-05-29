@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AnalystRank"
 tagline: "Financial analyst accuracy tracking"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "TipRanks"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AnalystRank
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-017-analyst-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AnalystRank

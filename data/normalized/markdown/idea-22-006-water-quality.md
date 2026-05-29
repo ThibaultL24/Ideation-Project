@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "WaterQuality"
 tagline: "Water quality monitoring"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - environment-sustainability
 intuition_atoms: []
 github_discussion: ""
-=======
-title: WaterQuality
-category: Environment & Sustainability
-canonicalId: idea-22-006-water-quality
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # WaterQuality

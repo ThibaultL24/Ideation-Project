@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "MusicDiscovery"
 tagline: "Music curation via stake-weighted taste graphs"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Spotify Discover, SoundCloud"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: MusicDiscovery
-category: Marketplaces & Discovery
-canonicalId: idea-03-008-music-discovery
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MusicDiscovery

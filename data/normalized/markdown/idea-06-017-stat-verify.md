@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StatVerify"
 tagline: "Statistical claim verification"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - knowledge-research-information
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StatVerify
-category: Knowledge, Research & Information
-canonicalId: idea-06-017-stat-verify
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StatVerify

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RiskOracle"
 tagline: "On-chain risk assessment oracle aggregating stakeweighted risk claims"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Gauntlet"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RiskOracle
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-018-risk-oracle
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RiskOracle

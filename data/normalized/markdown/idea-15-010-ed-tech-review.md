@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "EdTechReview"
 tagline: "Educational technology ratings by teachers"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Common Sense Education"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: EdTechReview
-category: Education & Learning
-canonicalId: idea-15-010-ed-tech-review
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # EdTechReview

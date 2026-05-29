@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DAOGovernance"
 tagline: "Enhanced DAO voting where weight is modified by domain-relevant reputation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Snapshot, Tally"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DAOGovernance
-category: Social Networks & Community
-canonicalId: idea-05-007-daogovernance
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DAOGovernance

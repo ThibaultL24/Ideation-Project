@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RunningClub"
 tagline: "Running group discovery with stake-weighted pace accuracy, route safety, and friendliness claims."
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Strava clubs"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RunningClub
-category: Social Networks & Community
-canonicalId: idea-05-020-running-club
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RunningClub

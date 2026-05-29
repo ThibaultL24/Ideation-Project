@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "FilmStake"
 tagline: "Movie and TV ratings where viewers stake on quality, acting, and rewatchability claims"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Rotten Tomatoes, Letterboxd"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: FilmStake
-category: Reviews & Ratings
-canonicalId: idea-01-002-film-stake
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FilmStake

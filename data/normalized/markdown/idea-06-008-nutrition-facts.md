@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "NutritionFacts"
 tagline: "Nutritional science claim verification"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Examine.com"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: NutritionFacts
-category: Knowledge, Research & Information
-canonicalId: idea-06-008-nutrition-facts
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # NutritionFacts

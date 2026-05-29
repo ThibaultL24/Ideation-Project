@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TrendCast"
 tagline: "Technology and cultural trend forecasting"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Gartner Hype Cycle, but market-driven"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TrendCast
-category: Prediction & Signal Markets
-canonicalId: idea-08-002-trend-cast
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TrendCast

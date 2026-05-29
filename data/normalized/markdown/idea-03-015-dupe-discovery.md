@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DupeDiscovery"
 tagline: "Product dupe (affordable alternative) curation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Build on Intuition: 300+ dApp Ideas Reddit dupe threads, TikTok"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DupeDiscovery
-category: Marketplaces & Discovery
-canonicalId: idea-03-015-dupe-discovery
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DupeDiscovery

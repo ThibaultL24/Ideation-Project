@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SourceTrace"
 tagline: "AI training data provenance tracker"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Spawning.ai"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SourceTrace
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-018-source-trace
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SourceTrace

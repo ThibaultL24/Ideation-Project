@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "GeneticTesting"
 tagline: "Genetic testing service verification"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - healthcare-wellness
 intuition_atoms: []
 github_discussion: ""
-=======
-title: GeneticTesting
-category: Healthcare & Wellness
-canonicalId: idea-14-013-genetic-testing
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GeneticTesting

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "BoardGameRate"
 tagline: "Board and tabletop game ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "BoardGameGeek"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: BoardGameRate
-category: Reviews & Ratings
-canonicalId: idea-01-025-board-game-rate
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BoardGameRate

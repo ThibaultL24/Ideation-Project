@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "GuildForge"
 tagline: "DAO and guild creation toolkit using knowledge graph for member reputation, role assignment, and governance."
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Coordinape, Guild.xyz"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: GuildForge
-category: Social Networks & Community
-canonicalId: idea-05-004-guild-forge
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GuildForge

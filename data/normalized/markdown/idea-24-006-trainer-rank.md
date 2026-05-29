@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TrainerRank"
 tagline: "Dog trainer and behaviorist ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - pets-animals
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TrainerRank
-category: Pets & Animals
-canonicalId: idea-24-006-trainer-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TrainerRank

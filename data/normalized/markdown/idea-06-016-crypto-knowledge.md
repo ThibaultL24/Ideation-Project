@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CryptoKnowledge"
 tagline: "Crypto/DeFi protocol knowledge base"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Messari"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CryptoKnowledge
-category: Knowledge, Research & Information
-canonicalId: idea-06-016-crypto-knowledge
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CryptoKnowledge

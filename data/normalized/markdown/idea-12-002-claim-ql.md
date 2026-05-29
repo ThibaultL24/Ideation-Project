@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ClaimQL"
 tagline: "GraphQL interface for complex Knowledge Graph queries"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - developer-tools-infrastructure
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ClaimQL
-category: Developer Tools & Infrastructure
-canonicalId: idea-12-002-claim-ql
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ClaimQL

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AgentAlliance"
 tagline: "Multi-agent coordination protocol"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - ai-agents-machine-intelligence
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AgentAlliance
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-005-agent-alliance
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AgentAlliance

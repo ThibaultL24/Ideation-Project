@@ -270,13 +270,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "reviews-ratings"
-=======
         "reviews-ratings",
         "tripadvisor",
         "booking-com"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -546,13 +542,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "reviews-ratings"
-=======
         "reviews-ratings",
         "givewell",
         "charity-navigator"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -775,12 +767,8 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "identity-reputation-credentials"
-=======
         "identity-reputation-credentials",
         "upwork-profile"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -1270,13 +1258,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "marketplaces-discovery"
-=======
         "marketplaces-discovery",
         "linkedin-jobs",
         "indeed"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -1792,13 +1776,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "ai-agents-machine-intelligence"
-=======
         "ai-agents-machine-intelligence",
         "promptbase",
         "flowgpt"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -2057,13 +2037,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "ai-agents-machine-intelligence"
-=======
         "ai-agents-machine-intelligence",
         "bot-sentinel",
         "but-broader"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -2292,13 +2268,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "social-networks-community"
-=======
         "social-networks-community",
         "twitter",
         "community-notes"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -2587,13 +2559,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "social-networks-community"
-=======
         "social-networks-community",
         "luma",
         "meetup"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -3341,13 +3309,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "finance-defi-insurance"
-=======
         "finance-defi-insurance",
         "l2beat",
         "but-community-driven"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -3613,13 +3577,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "prediction-signal-markets"
-=======
         "prediction-signal-markets",
         "polymarket",
         "metaculus"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -5115,13 +5075,9 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "gaming-esports"
-=======
         "gaming-esports",
         "steam-profile",
         "xbox-gamertag"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -5429,12 +5385,8 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "gaming-esports"
-=======
         "gaming-esports",
         "draftkings"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -5670,12 +5622,8 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "healthcare-wellness"
-=======
         "healthcare-wellness",
         "fertilityiq"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -5913,12 +5861,8 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "education-learning"
-=======
         "education-learning",
         "roadmap-sh"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -6153,12 +6097,8 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "government-civic"
-=======
         "government-civic",
         "yelp-for-government"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -6432,12 +6372,8 @@
         "dapp-idea",
         "intuition",
         "ideation",
-<<<<<<< HEAD
-        "professional-services-hr"
-=======
         "professional-services-hr",
         "avvo"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
       ],
       "status": "normalized",
       "github": {
@@ -7929,10 +7865,6 @@
     },
     "failed": [],
     "network": "dry-run",
-<<<<<<< HEAD
-    "generatedAt": "2026-05-27T13:25:15.349Z"
-=======
     "generatedAt": "2026-05-27T18:22:42.277Z"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
   }
 }

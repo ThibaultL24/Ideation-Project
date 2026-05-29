@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ScienceTranslation"
 tagline: "Science-to-public translation quality"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - science-academia
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ScienceTranslation
-category: Science & Academia
-canonicalId: idea-11-011-science-translation
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ScienceTranslation

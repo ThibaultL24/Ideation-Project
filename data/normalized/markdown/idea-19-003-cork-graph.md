@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CorkGraph"
 tagline: "Wine and spirits ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Vivino"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CorkGraph
-category: Food, Agriculture & Hospitality
-canonicalId: idea-19-003-cork-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CorkGraph

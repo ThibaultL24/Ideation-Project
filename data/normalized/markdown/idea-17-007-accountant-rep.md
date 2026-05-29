@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AccountantRep"
 tagline: "Accountant and bookkeeper reputation"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - professional-services-hr
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AccountantRep
-category: Professional Services & HR
-canonicalId: idea-17-007-accountant-rep
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AccountantRep

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CleanEnergyRank"
 tagline: "Clean energy provider ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - environment-sustainability
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CleanEnergyRank
-category: Environment & Sustainability
-canonicalId: idea-22-008-clean-energy-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CleanEnergyRank

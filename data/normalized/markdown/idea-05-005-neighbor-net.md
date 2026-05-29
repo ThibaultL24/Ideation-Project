@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "NeighborNet"
 tagline: "Hyper-local community network"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Nextdoor, but staked"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: NeighborNet
-category: Social Networks & Community
-canonicalId: idea-05-005-neighbor-net
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # NeighborNet

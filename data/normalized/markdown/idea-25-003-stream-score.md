@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StreamScore"
 tagline: "Video and music streaming quality comparison"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - telecom-internet
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StreamScore
-category: Telecom & Internet
-canonicalId: idea-25-003-stream-score
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StreamScore

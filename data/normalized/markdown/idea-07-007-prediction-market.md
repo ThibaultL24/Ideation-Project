@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PredictionMarket"
 tagline: "Prediction market enhanced with reputation-weighted participation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Polymarket, Kalshi"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PredictionMarket
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-007-prediction-market
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PredictionMarket

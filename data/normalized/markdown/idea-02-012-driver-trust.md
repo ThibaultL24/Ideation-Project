@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DriverTrust"
 tagline: "Rideshare driver reputation portable across Uber, Lyft, DoorDash"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Uber ratings, but portable"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DriverTrust
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-012-driver-trust
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DriverTrust

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TenantLandlordRep"
 tagline: "Bilateral rental reputation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "RentPrep, but bilateral"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TenantLandlordRep
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-016-tenant-landlord-rep
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TenantLandlordRep

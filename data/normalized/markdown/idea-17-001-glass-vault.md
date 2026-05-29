@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "GlassVault"
 tagline: "Anonymous employer reviews backed by $TRUST stakes"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Glassdoor, Blind"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: GlassVault
-category: Professional Services & HR
-canonicalId: idea-17-001-glass-vault
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GlassVault

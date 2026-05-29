@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RentalCarTrust"
 tagline: "Rental car company ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - travel-transportation
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RentalCarTrust
-category: Travel & Transportation
-canonicalId: idea-20-009-rental-car-trust
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RentalCarTrust

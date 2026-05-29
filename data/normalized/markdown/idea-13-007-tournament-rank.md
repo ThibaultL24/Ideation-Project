@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TournamentRank"
 tagline: "Tournament organizer reputation"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "FACEIT"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TournamentRank
-category: Gaming & Esports
-canonicalId: idea-13-007-tournament-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TournamentRank

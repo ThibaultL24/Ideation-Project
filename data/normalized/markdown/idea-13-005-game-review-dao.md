@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "GameReviewDAO"
 tagline: "Community-governed game reviews"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Metacritic"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: GameReviewDAO
-category: Gaming & Esports
-canonicalId: idea-13-005-game-review-dao
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GameReviewDAO

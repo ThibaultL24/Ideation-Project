@@ -17,6 +17,8 @@
     "migrate:batches": "tsx scripts/migrate-batches.ts",
     "retry:triples": "tsx scripts/retry-triples.ts",
     "verify:onchain": "tsx scripts/verify-onchain.ts",
+    "verify:migration": "tsx scripts/verify-migration-complete.ts",
+    "verify:graphql": "tsx scripts/verify-graphql.ts",
     "feasibility:3a": "tsx scripts/feasibility-3a.ts",
     "publish:one": "tsx scripts/publish-one-idea.ts"
   },

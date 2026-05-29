@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AIToolReview"
 tagline: "AI tool and LLM wrapper reviews"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "There's An AI For That"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AIToolReview
-category: Reviews & Ratings
-canonicalId: idea-01-016-aitool-review
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AIToolReview

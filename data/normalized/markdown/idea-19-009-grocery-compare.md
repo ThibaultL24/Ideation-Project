@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "GroceryCompare"
 tagline: "Grocery store comparison"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - food-agriculture-hospitality
 intuition_atoms: []
 github_discussion: ""
-=======
-title: GroceryCompare
-category: Food, Agriculture & Hospitality
-canonicalId: idea-19-009-grocery-compare
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GroceryCompare

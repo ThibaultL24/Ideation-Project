@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "InfluencerAudit"
 tagline: "Influencer authenticity verification"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "HypeAuditor"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: InfluencerAudit
-category: Safety, Security & Protection
-canonicalId: idea-09-011-influencer-audit
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InfluencerAudit

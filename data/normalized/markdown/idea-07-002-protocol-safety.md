@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ProtocolSafety"
 tagline: "DeFi protocol risk ratings"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "DeFi Safety, Rekt.news"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ProtocolSafety
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-002-protocol-safety
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ProtocolSafety

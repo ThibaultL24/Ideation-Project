@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "EmbeddableTrust"
 tagline: "Embeddable trust badges for websites"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Trustpilot badges"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: EmbeddableTrust
-category: Developer Tools & Infrastructure
-canonicalId: idea-12-008-embeddable-trust
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # EmbeddableTrust

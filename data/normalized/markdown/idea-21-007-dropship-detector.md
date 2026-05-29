@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DropshipDetector"
 tagline: "Dropshipping and reseller detection"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - supply-chain-commerce
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DropshipDetector
-category: Supply Chain & Commerce
-canonicalId: idea-21-007-dropship-detector
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DropshipDetector

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TrainingTransparency"
 tagline: "AI training data provenance tracker"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - ai-agents-machine-intelligence
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TrainingTransparency
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-024-training-transparency
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TrainingTransparency

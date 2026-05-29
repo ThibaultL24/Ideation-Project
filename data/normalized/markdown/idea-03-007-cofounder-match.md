@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CofounderMatch"
 tagline: "Co-founder matching using reputation triples"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "YC Co-Founder Matching"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CofounderMatch
-category: Marketplaces & Discovery
-canonicalId: idea-03-007-cofounder-match
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CofounderMatch

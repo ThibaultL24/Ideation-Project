@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "GraphExplorer"
 tagline: "Interactive knowledge graph visualization tool"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - developer-tools-infrastructure
 intuition_atoms: []
 github_discussion: ""
-=======
-title: GraphExplorer
-category: Developer Tools & Infrastructure
-canonicalId: idea-12-009-graph-explorer
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GraphExplorer

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AgentCV"
 tagline: "AI agent resume system"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "LinkedIn for AI agents"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AgentCV
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-015-agent-cv
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AgentCV

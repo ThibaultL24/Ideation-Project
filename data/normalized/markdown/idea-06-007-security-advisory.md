@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SecurityAdvisory"
 tagline: "Cybersecurity vulnerability curation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "CVE, NVD"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SecurityAdvisory
-category: Knowledge, Research & Information
-canonicalId: idea-06-007-security-advisory
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SecurityAdvisory

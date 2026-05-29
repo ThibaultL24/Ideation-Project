@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "OnchainCredit"
 tagline: "Decentralized credit scoring from knowledge graph reputation"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Spectral Finance"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: OnchainCredit
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-001-onchain-credit
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # OnchainCredit

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RugRadar"
 tagline: "DeFi rug pull early warning"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "RugDoc"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RugRadar
-category: Safety, Security & Protection
-canonicalId: idea-09-003-rug-radar
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RugRadar

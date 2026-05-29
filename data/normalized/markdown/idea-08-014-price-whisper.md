@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PriceWhisper"
 tagline: "Token price signal aggregator"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Build on Intuition: 300+ dApp Ideas Crypto Twitter, but accountable"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PriceWhisper
-category: Prediction & Signal Markets
-canonicalId: idea-08-014-price-whisper
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PriceWhisper

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TrustTrail"
 tagline: "Travel recommendation platform"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "TripAdvisor, Lonely Planet"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TrustTrail
-category: Travel & Transportation
-canonicalId: idea-20-001-trust-trail
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TrustTrail

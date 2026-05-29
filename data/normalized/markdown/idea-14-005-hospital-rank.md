@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "HospitalRank"
 tagline: "Hospital quality comparison"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "CMS Hospital Compare"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: HospitalRank
-category: Healthcare & Wellness
-canonicalId: idea-14-005-hospital-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HospitalRank

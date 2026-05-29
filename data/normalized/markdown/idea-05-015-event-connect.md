@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "EventConnect"
 tagline: "Event-based social networking"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - social-networks-community
 intuition_atoms: []
 github_discussion: ""
-=======
-title: EventConnect
-category: Social Networks & Community
-canonicalId: idea-05-015-event-connect
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # EventConnect

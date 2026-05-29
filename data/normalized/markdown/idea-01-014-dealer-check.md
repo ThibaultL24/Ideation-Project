@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DealerCheck"
 tagline: "Car dealership reviews"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "DealerRater, Cars.com"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DealerCheck
-category: Reviews & Ratings
-canonicalId: idea-01-014-dealer-check
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DealerCheck

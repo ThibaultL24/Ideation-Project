@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "MacroLens"
 tagline: "Macroeconomic signal market"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - prediction-signal-markets
 intuition_atoms: []
 github_discussion: ""
-=======
-title: MacroLens
-category: Prediction & Signal Markets
-canonicalId: idea-08-011-macro-lens
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MacroLens

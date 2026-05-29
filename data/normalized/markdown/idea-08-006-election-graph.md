@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ElectionGraph"
 tagline: "Political prediction and candidate quality signaling"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "PredictIt, Polymarket"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ElectionGraph
-category: Prediction & Signal Markets
-canonicalId: idea-08-006-election-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ElectionGraph

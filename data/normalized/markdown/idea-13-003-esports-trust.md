@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "EsportsTrust"
 tagline: "Competitive integrity ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "ESIC"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: EsportsTrust
-category: Gaming & Esports
-canonicalId: idea-13-003-esports-trust
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # EsportsTrust

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ContentCreatorID"
 tagline: "Cross-platform creator reputation across YouTube, Twitch, TikTok"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "YouTube subscribers, but portable"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ContentCreatorID
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-014-content-creator-id
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ContentCreatorID

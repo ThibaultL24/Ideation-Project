@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SentinelAI"
 tagline: "AI safety monitoring"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "METR, Apollo Research"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SentinelAI
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-012-sentinel-ai
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SentinelAI

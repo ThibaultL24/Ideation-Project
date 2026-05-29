@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ContractGuard"
 tagline: "Legal contract and TOS analyzer"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "TOS;DR"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ContractGuard
-category: Safety, Security & Protection
-canonicalId: idea-09-007-contract-guard
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ContractGuard

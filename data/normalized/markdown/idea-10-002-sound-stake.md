@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SoundStake"
 tagline: "Music discovery where listeners stake on emerging artists"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Spotify, SoundCloud"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SoundStake
-category: Creative Arts & Culture
-canonicalId: idea-10-002-sound-stake
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SoundStake

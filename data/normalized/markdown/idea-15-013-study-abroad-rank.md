@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StudyAbroadRank"
 tagline: "Study abroad program ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "GoAbroad"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StudyAbroadRank
-category: Education & Learning
-canonicalId: idea-15-013-study-abroad-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StudyAbroadRank

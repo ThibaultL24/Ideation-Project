@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ContractorPassport"
 tagline: "Trade worker portable credential/reputation bundle combining safety certs, skill attestations, and client reviews"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - identity-reputation-credentials
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ContractorPassport
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-020-contractor-passport
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ContractorPassport

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PrecedentGraph"
 tagline: "Legal precedent curation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Westlaw, LexisNexis"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PrecedentGraph
-category: Knowledge, Research & Information
-canonicalId: idea-06-012-precedent-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PrecedentGraph

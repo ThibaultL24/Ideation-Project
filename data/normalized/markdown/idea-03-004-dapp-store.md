@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DAppStore"
 tagline: "Decentralized app store with stake-weighted safety and quality ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "DappRadar"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DAppStore
-category: Marketplaces & Discovery
-canonicalId: idea-03-004-dapp-store
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DAppStore

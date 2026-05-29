@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "HiringSignal"
 tagline: "Job posting quality signals"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Glassdoor job listings"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: HiringSignal
-category: Marketplaces & Discovery
-canonicalId: idea-03-021-hiring-signal
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HiringSignal

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "FarmTrace"
 tagline: "Farm-to-table verification"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "blockchain supply chain startups"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: FarmTrace
-category: Food, Agriculture & Hospitality
-canonicalId: idea-19-001-farm-trace
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FarmTrace

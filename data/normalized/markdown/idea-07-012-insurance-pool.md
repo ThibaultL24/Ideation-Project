@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "InsurancePool"
 tagline: "Decentralized insurance priced by knowledge graph reputation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Nexus Mutual, Etherisc"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: InsurancePool
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-012-insurance-pool
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InsurancePool

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DevReputation"
 tagline: "Developer reputation aggregating stake-weighted claims about code quality and expertise"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "GitHub profile, StackOverflow rep"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DevReputation
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-004-dev-reputation
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DevReputation

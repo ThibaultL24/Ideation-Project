@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RecipeDiscovery"
 tagline: "Recipe curation where cooks stake on accuracy, difficulty, and taste claims"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "AllRecipes, Epicurious"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RecipeDiscovery
-category: Marketplaces & Discovery
-canonicalId: idea-03-010-recipe-discovery
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RecipeDiscovery

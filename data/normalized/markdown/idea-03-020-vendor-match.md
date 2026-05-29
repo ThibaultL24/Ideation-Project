@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "VendorMatch"
 tagline: "B2B vendor discovery"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "ThomasNet, Alibaba"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: VendorMatch
-category: Marketplaces & Discovery
-canonicalId: idea-03-020-vendor-match
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VendorMatch

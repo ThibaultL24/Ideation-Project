@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "HomeschoolResource"
 tagline: "Homeschool curriculum ratings by parents"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Cathy Duffy Reviews"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: HomeschoolResource
-category: Education & Learning
-canonicalId: idea-15-014-homeschool-resource
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HomeschoolResource

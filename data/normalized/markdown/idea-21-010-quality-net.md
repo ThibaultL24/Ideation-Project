@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "QualityNet"
 tagline: "Manufacturing quality certification verification"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - supply-chain-commerce
 intuition_atoms: []
 github_discussion: ""
-=======
-title: QualityNet
-category: Supply Chain & Commerce
-canonicalId: idea-21-010-quality-net
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # QualityNet

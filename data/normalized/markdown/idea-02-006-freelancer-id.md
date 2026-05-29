@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "FreelancerID"
 tagline: "Portable freelancer identity aggregating client reviews and skill attestations across platforms"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - identity-reputation-credentials
 intuition_atoms: []
 github_discussion: ""
-=======
-title: FreelancerID
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-006-freelancer-id
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FreelancerID

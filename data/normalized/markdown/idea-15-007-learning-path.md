@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "LearningPath"
 tagline: "Curated learning path ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - education-learning
 intuition_atoms: []
 github_discussion: ""
-=======
-title: LearningPath
-category: Education & Learning
-canonicalId: idea-15-007-learning-path
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # LearningPath

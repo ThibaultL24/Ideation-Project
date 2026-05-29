@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "GadgetGraph"
 tagline: "Consumer electronics long-term reliability tracker"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Consumer Reports, Wirecutter"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: GadgetGraph
-category: Reviews & Ratings
-canonicalId: idea-01-008-gadget-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GadgetGraph

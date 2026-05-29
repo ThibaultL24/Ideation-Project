@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "FounderRep"
 tagline: "Startup founder reputation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Crunchbase, but reputation-focused"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: FounderRep
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-007-founder-rep
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FounderRep

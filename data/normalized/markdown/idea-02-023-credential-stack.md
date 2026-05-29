@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CredentialStack"
 tagline: "Composable credential portfolio assembling verified degrees, certs, skill badges, and work attestations into one queryable profile."
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "LinkedIn, but verified"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CredentialStack
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-023-credential-stack
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CredentialStack

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CarbonCredit"
 tagline: "Carbon credit quality verification"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Gold Standard, Verra"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CarbonCredit
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-014-carbon-credit
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CarbonCredit

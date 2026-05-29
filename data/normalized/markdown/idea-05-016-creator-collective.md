@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CreatorCollective"
 tagline: "Content creator collaboration network"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - social-networks-community
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CreatorCollective
-category: Social Networks & Community
-canonicalId: idea-05-016-creator-collective
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CreatorCollective

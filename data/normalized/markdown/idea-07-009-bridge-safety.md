@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "BridgeSafety"
 tagline: "Cross-chain bridge security ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - finance-defi-insurance
 intuition_atoms: []
 github_discussion: ""
-=======
-title: BridgeSafety
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-009-bridge-safety
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BridgeSafety

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AppCrit"
 tagline: "Mobile and desktop app ratings with stake-backed claims on usability, privacy, and value"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "App Store reviews, G2"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AppCrit
-category: Reviews & Ratings
-canonicalId: idea-01-005-app-crit
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AppCrit

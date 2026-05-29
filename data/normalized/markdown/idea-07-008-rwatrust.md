@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RWATrust"
 tagline: "Real-world asset tokenization quality ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - finance-defi-insurance
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RWATrust
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-008-rwatrust
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RWATrust

@@ -129,3 +129,158 @@ export async function verifyAtomQueryable(
   });
   return (data.atoms?.length ?? 0) > 0;
 }
+
+const ATOMS_AGGREGATE_BY_TERM_IDS = `
+query AtomsAggregateByTermIds($termIds: [String!]!) {
+  atoms_aggregate(where: { term_id: { _in: $termIds } }) {
+    aggregate { count }
+  }
+}`;
+
+const ATOMS_BY_TERM_IDS = `
+query AtomsByTermIds($termIds: [String!]!, $limit: Int!) {
+  atoms(where: { term_id: { _in: $termIds } }, limit: $limit) {
+    term_id
+    label
+  }
+}`;
+
+const TRIPLES_AGGREGATE_BY_SUBJECTS = `
+query TriplesAggregateBySubjects(
+  $subjectIds: [String!]!
+  $predicateId: String!
+  $objectId: String!
+) {
+  triples_aggregate(
+    where: {
+      subject_id: { _in: $subjectIds }
+      predicate_id: { _eq: $predicateId }
+      object_id: { _eq: $objectId }
+    }
+  ) {
+    aggregate { count }
+  }
+}`;
+
+const TRIPLES_BY_SUBJECTS = `
+query TriplesBySubjects(
+  $subjectIds: [String!]!
+  $predicateId: String!
+  $objectId: String!
+  $limit: Int!
+) {
+  triples(
+    where: {
+      subject_id: { _in: $subjectIds }
+      predicate_id: { _eq: $predicateId }
+      object_id: { _eq: $objectId }
+    }
+    limit: $limit
+  ) {
+    term_id
+    subject_id
+  }
+}`;
+
+const FIND_TRIPLE_BY_TERM_ID = `
+query FindTripleByTermId($termId: String!) {
+  triples(where: { term_id: { _eq: $termId } }, limit: 1) {
+    term_id
+    subject_id
+    predicate_id
+    object_id
+  }
+}`;
+
+export async function verifyTripleQueryable(
+  config: IntuitionNetworkConfig,
+  tripleTermId: string,
+): Promise<boolean> {
+  type Out = { triples: Array<{ term_id: string }> };
+  const data = await execGraphql<Out>(config.graphql, FIND_TRIPLE_BY_TERM_ID, {
+    termId: tripleTermId,
+  });
+  return (data.triples?.length ?? 0) > 0;
+}
+
+function chunk<T>(items: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += size) {
+    out.push(items.slice(i, i + size));
+  }
+  return out;
+}
+
+/** Compte les atoms indexés pour une liste de term_id (requête aggregate, sans limite de pagination). */
+export async function countAtomsInGraphql(
+  config: IntuitionNetworkConfig,
+  termIds: string[],
+): Promise<number> {
+  type Out = { atoms_aggregate: { aggregate?: { count?: number | null } | null } };
+  const data = await execGraphql<Out>(
+    config.graphql,
+    ATOMS_AGGREGATE_BY_TERM_IDS,
+    { termIds },
+  );
+  return Number(data.atoms_aggregate?.aggregate?.count ?? 0);
+}
+
+/** Retourne les term_id d'atoms trouvés via GraphQL (par chunks pour contourner la limite de pagination). */
+export async function findAtomTermIdsInGraphql(
+  config: IntuitionNetworkConfig,
+  termIds: string[],
+  chunkSize = 100,
+): Promise<Set<string>> {
+  const found = new Set<string>();
+  for (const batch of chunk(termIds, chunkSize)) {
+    type Out = { atoms: Array<{ term_id: string }> };
+    const data = await execGraphql<Out>(config.graphql, ATOMS_BY_TERM_IDS, {
+      termIds: batch,
+      limit: batch.length,
+    });
+    for (const row of data.atoms ?? []) {
+      found.add(row.term_id);
+    }
+  }
+  return found;
+}
+
+/** Compte les triples [subject → predicate → object] indexés pour une liste de subjects. */
+export async function countTriplesInGraphql(
+  config: IntuitionNetworkConfig,
+  subjectIds: string[],
+  predicateId: string,
+  objectId: string,
+): Promise<number> {
+  type Out = { triples_aggregate: { aggregate?: { count?: number | null } | null } };
+  const data = await execGraphql<Out>(
+    config.graphql,
+    TRIPLES_AGGREGATE_BY_SUBJECTS,
+    { subjectIds, predicateId, objectId },
+  );
+  return Number(data.triples_aggregate?.aggregate?.count ?? 0);
+}
+
+/** Retourne les subject_id de triples trouvés via GraphQL. */
+export async function findTripleSubjectsInGraphql(
+  config: IntuitionNetworkConfig,
+  subjectIds: string[],
+  predicateId: string,
+  objectId: string,
+  chunkSize = 100,
+): Promise<Set<string>> {
+  const found = new Set<string>();
+  for (const batch of chunk(subjectIds, chunkSize)) {
+    type Out = { triples: Array<{ subject_id: string }> };
+    const data = await execGraphql<Out>(config.graphql, TRIPLES_BY_SUBJECTS, {
+      subjectIds: batch,
+      predicateId,
+      objectId,
+      limit: batch.length,
+    });
+    for (const row of data.triples ?? []) {
+      found.add(row.subject_id);
+    }
+  }
+  return found;
+}

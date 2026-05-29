@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SchoolBoard"
 tagline: "K-12 school ratings by actual families"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "GreatSchools, Niche"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SchoolBoard
-category: Education & Learning
-canonicalId: idea-15-006-school-board
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SchoolBoard

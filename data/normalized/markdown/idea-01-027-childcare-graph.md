@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ChildcareGraph"
 tagline: "Daycare and childcare ratings where parents stake on safety, staff quality, and curriculum claims"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Care.com, Winnie"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ChildcareGraph
-category: Reviews & Ratings
-canonicalId: idea-01-027-childcare-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ChildcareGraph

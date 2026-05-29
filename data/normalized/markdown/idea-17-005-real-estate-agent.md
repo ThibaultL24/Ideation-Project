@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RealEstateAgent"
 tagline: "Real estate agent ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Zillow agent reviews"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RealEstateAgent
-category: Professional Services & HR
-canonicalId: idea-17-005-real-estate-agent
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RealEstateAgent

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "FactCheck"
 tagline: "Real-time fact-checking where journalists and citizens stake on claim veracity"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Snopes, PolitiFact"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: FactCheck
-category: Knowledge, Research & Information
-canonicalId: idea-06-002-fact-check
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FactCheck

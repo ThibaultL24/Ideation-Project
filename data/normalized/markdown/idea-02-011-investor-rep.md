@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "InvestorRep"
 tagline: "VC and angel investor reputation FROM the founder's perspective"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "TheFunded, but alive"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: InvestorRep
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-011-investor-rep
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InvestorRep

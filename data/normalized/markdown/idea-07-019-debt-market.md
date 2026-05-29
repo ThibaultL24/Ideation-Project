@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DebtMarket"
 tagline: "Decentralized debt marketplace with knowledge graph credit scoring for interest rates."
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Maple Finance, Goldfinch"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DebtMarket
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-019-debt-market
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DebtMarket

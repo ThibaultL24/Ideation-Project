@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "VoteGuard"
 tagline: "Election integrity monitoring"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - safety-security-protection
 intuition_atoms: []
 github_discussion: ""
-=======
-title: VoteGuard
-category: Safety, Security & Protection
-canonicalId: idea-09-015-vote-guard
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VoteGuard

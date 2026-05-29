@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "VaccineInfo"
 tagline: "Vaccine information knowledge graph"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "CDC info"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: VaccineInfo
-category: Healthcare & Wellness
-canonicalId: idea-14-012-vaccine-info
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VaccineInfo

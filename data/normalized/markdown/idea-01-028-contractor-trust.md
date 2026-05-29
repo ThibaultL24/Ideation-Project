@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ContractorTrust"
 tagline: "General contractor ratings with photo evidence atoms linked to review triples"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Thumbtack, BuildZoom"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ContractorTrust
-category: Reviews & Ratings
-canonicalId: idea-01-028-contractor-trust
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ContractorTrust

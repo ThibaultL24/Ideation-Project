@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TasteMaker"
 tagline: "Cross-domain taste mapping"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Taste.io, but cross-domain"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TasteMaker
-category: Creative Arts & Culture
-canonicalId: idea-10-004-taste-maker
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TasteMaker

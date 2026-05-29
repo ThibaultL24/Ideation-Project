@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ResearchMentor"
 tagline: "Graduate school advisor ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - education-learning
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ResearchMentor
-category: Education & Learning
-canonicalId: idea-15-008-research-mentor
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ResearchMentor

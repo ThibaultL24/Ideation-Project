@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "HomeServiceHub"
 tagline: "Unified home service discovery (plumbing, electrical, HVAC)"
 author: "Ideation"
@@ -18,12 +17,6 @@ tags:
 comparable: "Angi, HomeAdvisor, Thumbtack"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: HomeServiceHub
-category: Marketplaces & Discovery
-canonicalId: idea-03-006-home-service-hub
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HomeServiceHub

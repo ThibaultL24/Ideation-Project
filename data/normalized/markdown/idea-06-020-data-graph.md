@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DataGraph"
 tagline: "Open data quality ratings"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Kaggle, Data.gov"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DataGraph
-category: Knowledge, Research & Information
-canonicalId: idea-06-020-data-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DataGraph

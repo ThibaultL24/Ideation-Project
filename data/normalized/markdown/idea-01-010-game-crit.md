@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "GameCrit"
 tagline: "Video game reviews where players stake on gameplay, story, and value claims"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Metacritic, OpenCritic"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: GameCrit
-category: Reviews & Ratings
-canonicalId: idea-01-010-game-crit
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # GameCrit

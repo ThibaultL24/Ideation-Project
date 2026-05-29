@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TeacherRep"
 tagline: "Educator reputation across schools and platforms"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Build on Intuition: 300+ dApp Ideas RateMyProfessors, but staked"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TeacherRep
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-018-teacher-rep
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TeacherRep

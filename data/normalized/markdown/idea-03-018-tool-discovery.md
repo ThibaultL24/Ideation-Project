@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ToolDiscovery"
 tagline: "Developer tool discovery"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "awesome lists, dev.to"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ToolDiscovery
-category: Marketplaces & Discovery
-canonicalId: idea-03-018-tool-discovery
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ToolDiscovery

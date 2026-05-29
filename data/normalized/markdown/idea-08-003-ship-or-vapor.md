@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ShipOrVapor"
 tagline: "Product launch predictions for tech/crypto"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - prediction-signal-markets
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ShipOrVapor
-category: Prediction & Signal Markets
-canonicalId: idea-08-003-ship-or-vapor
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ShipOrVapor

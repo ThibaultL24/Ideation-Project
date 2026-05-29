@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TalentGraph"
 tagline: "Talent marketplace where both employers and candidates have stake-weighted reputation"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - marketplaces-discovery
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TalentGraph
-category: Marketplaces & Discovery
-canonicalId: idea-03-003-talent-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TalentGraph

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "VolunteerPassport"
 tagline: "Volunteer reputation tracking across organizations"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "VolunteerMatch, but with reputation"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: VolunteerPassport
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-024-volunteer-passport
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VolunteerPassport

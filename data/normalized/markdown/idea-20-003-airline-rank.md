@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AirlineRank"
 tagline: "Airline quality ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Skytrax"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AirlineRank
-category: Travel & Transportation
-canonicalId: idea-20-003-airline-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AirlineRank

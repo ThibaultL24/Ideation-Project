@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SportsOracle"
 tagline: "Sports prediction market using Intuition triples"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "sports betting, but reputation-building"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SportsOracle
-category: Prediction & Signal Markets
-canonicalId: idea-08-007-sports-oracle
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SportsOracle

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AlumniGraph"
 tagline: "Alumni network with stake-weighted endorsements"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "LinkedIn alumni"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AlumniGraph
-category: Social Networks & Community
-canonicalId: idea-05-011-alumni-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AlumniGraph

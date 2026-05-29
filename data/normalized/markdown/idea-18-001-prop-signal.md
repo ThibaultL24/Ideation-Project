@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PropSignal"
 tagline: "Real estate intelligence where property claims are backed by stake from residents, inspectors, and agents."
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Zillow, Redfin"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PropSignal
-category: Real Estate & Property
-canonicalId: idea-18-001-prop-signal
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PropSignal

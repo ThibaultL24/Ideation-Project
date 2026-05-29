@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StudioTrust"
 tagline: "Film production marketplace"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Mandy.com"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StudioTrust
-category: Creative Arts & Culture
-canonicalId: idea-10-006-studio-trust
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StudioTrust

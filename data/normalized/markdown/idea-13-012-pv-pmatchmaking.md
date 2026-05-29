@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PvPMatchmaking"
 tagline: "Reputation-enhanced matchmaking"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Valve Trust Factor"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PvPMatchmaking
-category: Gaming & Esports
-canonicalId: idea-13-012-pv-pmatchmaking
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PvPMatchmaking

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "InsuranceRank"
 tagline: "Insurance company ratings by policyholders"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "AM Best, J.D. Power"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: InsuranceRank
-category: Reviews & Ratings
-canonicalId: idea-01-019-insurance-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InsuranceRank

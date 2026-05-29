@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ElderCare"
 tagline: "Assisted living facility ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Medicare ratings"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ElderCare
-category: Healthcare & Wellness
-canonicalId: idea-14-008-elder-care
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ElderCare

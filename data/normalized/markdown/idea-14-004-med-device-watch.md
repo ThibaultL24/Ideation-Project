@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "MedDeviceWatch"
 tagline: "Medical device safety ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "FDA MAUDE"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: MedDeviceWatch
-category: Healthcare & Wellness
-canonicalId: idea-14-004-med-device-watch
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MedDeviceWatch

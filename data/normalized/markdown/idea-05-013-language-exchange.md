@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "LanguageExchange"
 tagline: "Language partner matching with stake-weighted teaching quality and reliability claims."
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Tandem, HelloTalk"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: LanguageExchange
-category: Social Networks & Community
-canonicalId: idea-05-013-language-exchange
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # LanguageExchange

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "MythBuster"
 tagline: "Common misconception debunking"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Snopes, but market-driven"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: MythBuster
-category: Knowledge, Research & Information
-canonicalId: idea-06-010-myth-buster
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MythBuster

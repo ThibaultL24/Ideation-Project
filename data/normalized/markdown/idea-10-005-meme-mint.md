@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "MemeMint"
 tagline: "Meme attribution and cultural impact tracking"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Know Your Meme"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: MemeMint
-category: Creative Arts & Culture
-canonicalId: idea-10-005-meme-mint
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MemeMint

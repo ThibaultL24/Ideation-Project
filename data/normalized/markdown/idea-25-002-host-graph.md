@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "HostGraph"
 tagline: "Web hosting provider ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "hosting review sites"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: HostGraph
-category: Telecom & Internet
-canonicalId: idea-25-002-host-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HostGraph

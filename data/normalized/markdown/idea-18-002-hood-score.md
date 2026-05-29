@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "HoodScore"
 tagline: "Neighborhood quality ratings"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Walk Score, but community-driven"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: HoodScore
-category: Real Estate & Property
-canonicalId: idea-18-002-hood-score
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # HoodScore

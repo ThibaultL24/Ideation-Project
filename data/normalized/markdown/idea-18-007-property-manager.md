@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PropertyManager"
 tagline: "Property management company ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - real-estate-property
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PropertyManager
-category: Real Estate & Property
-canonicalId: idea-18-007-property-manager
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PropertyManager

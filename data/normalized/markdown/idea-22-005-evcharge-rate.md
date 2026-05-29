@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "EVChargeRate"
 tagline: "EV charging network ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - environment-sustainability
 intuition_atoms: []
 github_discussion: ""
-=======
-title: EVChargeRate
-category: Environment & Sustainability
-canonicalId: idea-22-005-evcharge-rate
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # EVChargeRate

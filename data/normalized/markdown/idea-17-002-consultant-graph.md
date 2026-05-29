@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ConsultantGraph"
 tagline: "Consulting firm and consultant reputation"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Clutch.co"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ConsultantGraph
-category: Professional Services & HR
-canonicalId: idea-17-002-consultant-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ConsultantGraph

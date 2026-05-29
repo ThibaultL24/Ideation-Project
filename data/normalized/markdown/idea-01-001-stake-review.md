@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StakeReview"
 tagline: "Universal product review layer where consumers stake $TRUST on quality claims for any product with a barcode/UPC"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Amazon Reviews, Trustpilot"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StakeReview
-category: Reviews & Ratings
-canonicalId: idea-01-001-stake-review
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StakeReview

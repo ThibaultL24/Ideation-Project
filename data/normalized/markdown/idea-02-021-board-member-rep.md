@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "BoardMemberRep"
 tagline: "Corporate board member reputation"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - identity-reputation-credentials
 intuition_atoms: []
 github_discussion: ""
-=======
-title: BoardMemberRep
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-021-board-member-rep
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BoardMemberRep

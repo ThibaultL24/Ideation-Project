@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "InfluencerAuth"
 tagline: "Influencer credibility scoring"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "HypeAuditor, but decentralized"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: InfluencerAuth
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-009-influencer-auth
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InfluencerAuth

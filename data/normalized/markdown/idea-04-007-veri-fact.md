@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "VeriFact"
 tagline: "AI-generated content verification"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "C2PA initiatives"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: VeriFact
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-007-veri-fact
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VeriFact

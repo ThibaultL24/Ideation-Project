@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TrustGate"
 tagline: "Middleware that gates access to resources based on Intuition reputation scores"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - developer-tools-infrastructure
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TrustGate
-category: Developer Tools & Infrastructure
-canonicalId: idea-12-005-trust-gate
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TrustGate

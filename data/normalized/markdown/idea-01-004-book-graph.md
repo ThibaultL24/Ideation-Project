@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "BookGraph"
 tagline: "Book ratings where readers stake on writing quality, accuracy, and genre fit"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Goodreads, StoryGraph"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: BookGraph
-category: Reviews & Ratings
-canonicalId: idea-01-004-book-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BookGraph

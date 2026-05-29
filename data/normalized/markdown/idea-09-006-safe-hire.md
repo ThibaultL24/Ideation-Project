@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SafeHire"
 tagline: "Background verification for crypto/remote hiring"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Checkr"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SafeHire
-category: Safety, Security & Protection
-canonicalId: idea-09-006-safe-hire
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SafeHire

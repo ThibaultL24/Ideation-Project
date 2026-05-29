@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StakeWiki"
 tagline: "Decentralized encyclopedia where every factual claim is a stakeable triple"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Wikipedia"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StakeWiki
-category: Knowledge, Research & Information
-canonicalId: idea-06-001-stake-wiki
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StakeWiki

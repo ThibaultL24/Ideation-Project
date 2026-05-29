@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ParentNetwork"
 tagline: "Parent community with stake-weighted advice quality"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "BabyCenter, Peanut"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ParentNetwork
-category: Social Networks & Community
-canonicalId: idea-05-017-parent-network
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ParentNetwork

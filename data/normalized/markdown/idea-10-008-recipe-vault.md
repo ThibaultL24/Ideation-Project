@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "RecipeVault"
 tagline: "Culinary knowledge platform"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "AllRecipes"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: RecipeVault
-category: Creative Arts & Culture
-canonicalId: idea-10-008-recipe-vault
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # RecipeVault

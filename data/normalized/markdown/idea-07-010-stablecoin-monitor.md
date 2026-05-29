@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StablecoinMonitor"
 tagline: "Stablecoin backing verification"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - finance-defi-insurance
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StablecoinMonitor
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-010-stablecoin-monitor
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StablecoinMonitor

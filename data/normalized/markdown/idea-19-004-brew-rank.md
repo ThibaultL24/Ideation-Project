@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "BrewRank"
 tagline: "Craft brewery and beer ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Untappd"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: BrewRank
-category: Food, Agriculture & Hospitality
-canonicalId: idea-19-004-brew-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BrewRank

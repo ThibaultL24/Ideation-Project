@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "VCReputation"
 tagline: "VC fund reputation from portfolio companies"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "TheFunded"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: VCReputation
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-011-vcreputation
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VCReputation

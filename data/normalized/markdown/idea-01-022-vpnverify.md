@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "VPNVerify"
 tagline: "VPN security ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "VPN review blogs"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: VPNVerify
-category: Reviews & Ratings
-canonicalId: idea-01-022-vpnverify
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # VPNVerify

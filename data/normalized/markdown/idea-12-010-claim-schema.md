@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ClaimSchema"
 tagline: "Schema registry for standardized triple predicates"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - developer-tools-infrastructure
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ClaimSchema
-category: Developer Tools & Infrastructure
-canonicalId: idea-12-010-claim-schema
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ClaimSchema

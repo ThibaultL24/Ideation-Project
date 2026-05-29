@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "FashionOracle"
 tagline: "Fashion trend forecasting and brand quality"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "The RealReal"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: FashionOracle
-category: Creative Arts & Culture
-canonicalId: idea-10-003-fashion-oracle
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # FashionOracle

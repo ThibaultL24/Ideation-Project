@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SafePlate"
 tagline: "Food safety reporting platform"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - food-agriculture-hospitality
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SafePlate
-category: Food, Agriculture & Hospitality
-canonicalId: idea-19-010-safe-plate
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SafePlate

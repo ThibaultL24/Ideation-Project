@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ProvenanceChain"
 tagline: "Art authenticity and provenance verification"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Artnet, certificates of authenticity"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ProvenanceChain
-category: Creative Arts & Culture
-canonicalId: idea-10-001-provenance-chain
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ProvenanceChain

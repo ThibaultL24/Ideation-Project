@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ReputationSDK"
 tagline: "Drop-in reputation widget SDK"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - developer-tools-infrastructure
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ReputationSDK
-category: Developer Tools & Infrastructure
-canonicalId: idea-12-004-reputation-sdk
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ReputationSDK

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "InvestmentScout"
 tagline: "Startup and investment opportunity discovery"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "AngelList, PitchBook"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: InvestmentScout
-category: Marketplaces & Discovery
-canonicalId: idea-03-009-investment-scout
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # InvestmentScout

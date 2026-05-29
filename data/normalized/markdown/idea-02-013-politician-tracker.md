@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PoliticianTracker"
 tagline: "Elected official promise-keeping tracker"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "PolitiFact, but staked"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PoliticianTracker
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-013-politician-tracker
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PoliticianTracker

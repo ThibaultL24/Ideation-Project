@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TreatmentGraph"
 tagline: "Treatment effectiveness database"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "PatientsLikeMe"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TreatmentGraph
-category: Healthcare & Wellness
-canonicalId: idea-14-002-treatment-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TreatmentGraph

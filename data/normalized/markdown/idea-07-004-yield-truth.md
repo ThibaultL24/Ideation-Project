@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "YieldTruth"
 tagline: "DeFi yield verification"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "DeFiLlama, but staked"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: YieldTruth
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-004-yield-truth
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # YieldTruth

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ReplicateIt"
 tagline: "Replication crisis attack platform"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Replication Markets"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ReplicateIt
-category: Science & Academia
-canonicalId: idea-11-002-replicate-it
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ReplicateIt

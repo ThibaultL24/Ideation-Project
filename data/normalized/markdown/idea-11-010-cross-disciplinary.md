@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CrossDisciplinary"
 tagline: "Cross-disciplinary research connection engine"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - science-academia
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CrossDisciplinary
-category: Science & Academia
-canonicalId: idea-11-010-cross-disciplinary
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CrossDisciplinary

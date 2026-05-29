@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PetSitterScore"
 tagline: "Pet sitter and walker ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Rover reviews"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PetSitterScore
-category: Pets & Animals
-canonicalId: idea-24-004-pet-sitter-score
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PetSitterScore

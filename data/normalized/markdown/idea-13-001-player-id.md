@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PlayerID"
 tagline: "Cross-game player identity"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - gaming-esports
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PlayerID
-category: Gaming & Esports
-canonicalId: idea-13-001-player-id
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PlayerID

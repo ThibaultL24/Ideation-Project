@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StartupSignal"
 tagline: "Startup success predictions"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "AngelList, but predictive"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StartupSignal
-category: Prediction & Signal Markets
-canonicalId: idea-08-004-startup-signal
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StartupSignal

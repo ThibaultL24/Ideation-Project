@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "MentorScore"
 tagline: "Mentorship quality reputation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "ADPList, but with stakes"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: MentorScore
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-019-mentor-score
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MentorScore

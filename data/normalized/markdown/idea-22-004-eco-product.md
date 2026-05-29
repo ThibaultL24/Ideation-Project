@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "EcoProduct"
 tagline: "Eco-friendly product rating platform"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - environment-sustainability
 intuition_atoms: []
 github_discussion: ""
-=======
-title: EcoProduct
-category: Environment & Sustainability
-canonicalId: idea-22-004-eco-product
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # EcoProduct

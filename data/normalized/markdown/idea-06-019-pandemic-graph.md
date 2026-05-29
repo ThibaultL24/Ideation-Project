@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PandemicGraph"
 tagline: "Epidemic knowledge graph"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "WHO, CDC"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PandemicGraph
-category: Knowledge, Research & Information
-canonicalId: idea-06-019-pandemic-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PandemicGraph

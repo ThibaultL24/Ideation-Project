@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ForkScore"
 tagline: "Restaurant ratings where diners stake on food quality, service, ambiance, and hygiene claims"
 author: "Ideation"
@@ -18,12 +17,6 @@ tags:
 comparable: "Yelp, Google Reviews, Michelin"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ForkScore
-category: Reviews & Ratings
-canonicalId: idea-01-003-fork-score
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ForkScore

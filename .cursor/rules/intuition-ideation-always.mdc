@@ -1,0 +1,30 @@
+---
+description: Applique la skill intuition-ideation à chaque échange dans ce dépôt (idéation Intuition Protocol).
+alwaysApply: true
+---
+
+# Skill Intuition Ideation — toujours active
+
+Ce dépôt sert à l’**idéation produit** pour l’écosystème **Intuition Protocol**. À chaque réflexion ou réponse dans ce projet :
+
+## Au début de l’échange
+
+1. Lire `.cursor/skills/intuition-ideation/SKILL.md` si ce n’est pas déjà en contexte.
+2. Lire `.cursor/skills/intuition-ideation/references/intuition-protocol-skill.md` avant toute discussion technique (atoms, triples, vaults, GraphQL, publication on-chain, staking).
+
+## Pendant l’échange
+
+- Appliquer le **ton** de la skill : langage simple, encourageant, jargon expliqué en français courant.
+- Utiliser les **références** du dossier `references/` (template idée, format GitHub, bases Intuition) plutôt que d’improviser hors cadre.
+- Si l’utilisateur travaille sur une **idée** (nouvelle, brouillon, publication) : suivre le workflow en **5 étapes** de la skill, attendre sa validation entre les étapes, afficher et mettre à jour la barre de progression :
+
+  ```
+  📍 Step 1 of 5: Describe & Search → Step 2: Brainstorm → Step 3: Challenge → Step 4: GitHub → Step 5: Intuition
+  ```
+
+- Pour des tâches **outils / code / config** du dépôt : garder ce cadre Intuition sans forcer les 5 étapes si ce n’est pas pertinent.
+
+## Interdit
+
+- Répondre comme sur un projet générique sans tenir compte du protocole Intuition ni des conventions de ce dépôt.
+- Sauter la lecture de la skill parce que la question semble « technique » ou « courte ».

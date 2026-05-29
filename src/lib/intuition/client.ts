@@ -36,7 +36,10 @@ export function loadPrivateKey(): Hex | undefined {
   const raw = process.env["INTUITION_PRIVATE_KEY"]?.trim();
   if (!raw) return undefined;
   if (!/^0x[0-9a-fA-F]{64}$/.test(raw)) {
-    throw new Error("INTUITION_PRIVATE_KEY must be a 32-byte hex key (0x...)");
+    console.warn(
+      "INTUITION_PRIVATE_KEY ignored: expected 32-byte hex (0x + 64 chars). Wallet features disabled.",
+    );
+    return undefined;
   }
   return raw as Hex;
 }

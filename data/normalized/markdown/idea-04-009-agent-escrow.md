@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AgentEscrow"
 tagline: "Escrow for AI agent transactions"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - ai-agents-machine-intelligence
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AgentEscrow
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-009-agent-escrow
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AgentEscrow

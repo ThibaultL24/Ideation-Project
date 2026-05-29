@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "OracleReputation"
 tagline: "Blockchain oracle reliability ratings"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Chainlink, but community-rated"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: OracleReputation
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-022-oracle-reputation
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # OracleReputation

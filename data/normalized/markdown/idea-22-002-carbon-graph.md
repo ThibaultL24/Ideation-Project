@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CarbonGraph"
 tagline: "Carbon offset quality verification"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Gold Standard, Verra"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CarbonGraph
-category: Environment & Sustainability
-canonicalId: idea-22-002-carbon-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CarbonGraph

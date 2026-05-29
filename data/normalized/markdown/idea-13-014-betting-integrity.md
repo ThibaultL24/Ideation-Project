@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "BettingIntegrity"
 tagline: "Esports and sports betting integrity monitoring"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "ESIC, Sportradar"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: BettingIntegrity
-category: Gaming & Esports
-canonicalId: idea-13-014-betting-integrity
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # BettingIntegrity

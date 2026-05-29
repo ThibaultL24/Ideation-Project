@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "OpenDataRank"
 tagline: "Government open data quality ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Data.gov"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: OpenDataRank
-category: Government & Civic
-canonicalId: idea-16-008-open-data-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # OpenDataRank

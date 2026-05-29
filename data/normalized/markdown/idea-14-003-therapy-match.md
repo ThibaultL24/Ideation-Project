@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TherapyMatch"
 tagline: "Mental health provider matching using stake-weighted specialty and outcome claims"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "BetterHelp"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TherapyMatch
-category: Healthcare & Wellness
-canonicalId: idea-14-003-therapy-match
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TherapyMatch

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PromiseTracker"
 tagline: "Campaign promise tracking"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "PolitiFact Promise Tracker"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PromiseTracker
-category: Government & Civic
-canonicalId: idea-16-001-promise-tracker
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PromiseTracker

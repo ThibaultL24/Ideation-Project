@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ImpactDAO"
 tagline: "Social impact DAO where funding is weighted by domain expertise reputation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Gitcoin, MolochDAO"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ImpactDAO
-category: Social Networks & Community
-canonicalId: idea-05-012-impact-dao
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ImpactDAO

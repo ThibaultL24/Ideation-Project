@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TechTruth"
 tagline: "Technology claim verification"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Tom's Hardware"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TechTruth
-category: Knowledge, Research & Information
-canonicalId: idea-06-013-tech-truth
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TechTruth

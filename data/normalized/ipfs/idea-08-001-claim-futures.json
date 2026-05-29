@@ -11,13 +11,9 @@
     "dapp-idea",
     "intuition",
     "ideation",
-<<<<<<< HEAD
-    "prediction-signal-markets"
-=======
     "prediction-signal-markets",
     "polymarket",
     "metaculus"
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
   ],
   "source": "build-on-intuition-300-ideas",
   "githubPath": "ideas/2026-05-25-claim-futures/README.md"

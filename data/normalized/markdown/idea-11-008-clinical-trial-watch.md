@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ClinicalTrialWatch"
 tagline: "Clinical trial result curation"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "ClinicalTrials.gov"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ClinicalTrialWatch
-category: Science & Academia
-canonicalId: idea-11-008-clinical-trial-watch
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ClinicalTrialWatch

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "MortgageLens"
 tagline: "Mortgage lender comparison"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "LendingTree reviews"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: MortgageLens
-category: Real Estate & Property
-canonicalId: idea-18-005-mortgage-lens
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # MortgageLens

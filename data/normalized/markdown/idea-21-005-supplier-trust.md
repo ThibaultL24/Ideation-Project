@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SupplierTrust"
 tagline: "B2B supplier reputation"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Alibaba reviews"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SupplierTrust
-category: Supply Chain & Commerce
-canonicalId: idea-21-005-supplier-trust
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SupplierTrust

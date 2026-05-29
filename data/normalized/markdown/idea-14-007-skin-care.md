@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "SkinCare"
 tagline: "Skincare product effectiveness ratings by skin type"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "EWG Skin Deep"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: SkinCare
-category: Healthcare & Wellness
-canonicalId: idea-14-007-skin-care
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # SkinCare

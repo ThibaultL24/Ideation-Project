@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ResearcherIntegrity"
 tagline: "Scientific integrity tracker"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Retraction Watch, but proactive"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ResearcherIntegrity
-category: Identity, Reputation & Credentials
-canonicalId: idea-02-022-researcher-integrity
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ResearcherIntegrity

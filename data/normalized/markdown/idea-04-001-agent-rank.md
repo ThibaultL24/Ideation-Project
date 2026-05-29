@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "AgentRank"
 tagline: "AI agent reputation marketplace"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - ai-agents-machine-intelligence
 intuition_atoms: []
 github_discussion: ""
-=======
-title: AgentRank
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-001-agent-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # AgentRank

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "EthicalSource"
 tagline: "Ethical sourcing verification"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Fair Trade, but staked"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: EthicalSource
-category: Supply Chain & Commerce
-canonicalId: idea-21-002-ethical-source
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # EthicalSource

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CommunityPulse"
 tagline: "Community health dashboard aggregating stakeweighted satisfaction and governance fairness claims"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - social-networks-community
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CommunityPulse
-category: Social Networks & Community
-canonicalId: idea-05-014-community-pulse
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CommunityPulse

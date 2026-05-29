@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TokenFundamentals"
 tagline: "Token fundamental analysis curation"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Messari, Token Terminal"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TokenFundamentals
-category: Finance, DeFi & Insurance
-canonicalId: idea-07-006-token-fundamentals
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TokenFundamentals

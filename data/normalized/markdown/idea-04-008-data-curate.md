@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "DataCurate"
 tagline: "Training data quality marketplace"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Scale AI, but decentralized"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: DataCurate
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-008-data-curate
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # DataCurate

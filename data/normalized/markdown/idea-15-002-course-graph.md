@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CourseGraph"
 tagline: "Cross-platform online course ratings"
 author: "Ideation"
@@ -16,12 +15,6 @@ tags:
 comparable: "Coursera/Udemy reviews"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CourseGraph
-category: Education & Learning
-canonicalId: idea-15-002-course-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CourseGraph

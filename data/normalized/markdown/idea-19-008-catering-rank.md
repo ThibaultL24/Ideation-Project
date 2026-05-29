@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CateringRank"
 tagline: "Catering service reputation"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - food-agriculture-hospitality
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CateringRank
-category: Food, Agriculture & Hospitality
-canonicalId: idea-19-008-catering-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CateringRank

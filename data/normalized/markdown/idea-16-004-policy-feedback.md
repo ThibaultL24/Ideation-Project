@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "PolicyFeedback"
 tagline: "Policy proposal feedback"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - government-civic
 intuition_atoms: []
 github_discussion: ""
-=======
-title: PolicyFeedback
-category: Government & Civic
-canonicalId: idea-16-004-policy-feedback
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # PolicyFeedback

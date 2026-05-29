@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "CoffeeGraph"
 tagline: "Specialty coffee roaster and cafe ratings"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - food-agriculture-hospitality
 intuition_atoms: []
 github_discussion: ""
-=======
-title: CoffeeGraph
-category: Food, Agriculture & Hospitality
-canonicalId: idea-19-005-coffee-graph
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # CoffeeGraph

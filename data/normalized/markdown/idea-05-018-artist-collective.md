@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ArtistCollective"
 tagline: "Artist community where artists stake on each other's skill and collaboration reliability"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Behance, DeviantArt"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ArtistCollective
-category: Social Networks & Community
-canonicalId: idea-05-018-artist-collective
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ArtistCollective

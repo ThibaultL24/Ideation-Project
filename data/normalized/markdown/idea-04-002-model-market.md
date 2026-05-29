@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "ModelMarket"
 tagline: "AI model evaluation where model capabilities are staked claims"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Chatbot Arena, LMSYS"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: ModelMarket
-category: AI Agents & Machine Intelligence
-canonicalId: idea-04-002-model-market
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # ModelMarket

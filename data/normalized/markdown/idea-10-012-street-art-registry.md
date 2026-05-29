@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "StreetArtRegistry"
 tagline: "Street art attribution"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - creative-arts-culture
 intuition_atoms: []
 github_discussion: ""
-=======
-title: StreetArtRegistry
-category: Creative Arts & Culture
-canonicalId: idea-10-012-street-art-registry
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # StreetArtRegistry

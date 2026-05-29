@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "OpenSourceRank"
 tagline: "Open-source library ratings"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "GitHub stars, npm scores"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: OpenSourceRank
-category: Reviews & Ratings
-canonicalId: idea-01-018-open-source-rank
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # OpenSourceRank

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "OrganicProof"
 tagline: "Organic certification validation"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - food-agriculture-hospitality
 intuition_atoms: []
 github_discussion: ""
-=======
-title: OrganicProof
-category: Food, Agriculture & Hospitality
-canonicalId: idea-19-002-organic-proof
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # OrganicProof

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "TelehealthRate"
 tagline: "Telemedicine platform quality"
 author: "Ideation"
@@ -14,12 +13,6 @@ tags:
   - healthcare-wellness
 intuition_atoms: []
 github_discussion: ""
-=======
-title: TelehealthRate
-category: Healthcare & Wellness
-canonicalId: idea-14-010-telehealth-rate
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # TelehealthRate

@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 title: "LocalGuide"
 tagline: "City-by-city local business discovery"
 author: "Ideation"
@@ -17,12 +16,6 @@ tags:
 comparable: "Google Local Guides, Foursquare"
 intuition_atoms: []
 github_discussion: ""
-=======
-title: LocalGuide
-category: Marketplaces & Discovery
-canonicalId: idea-03-005-local-guide
-author: Ideation
->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
 ---
 
 # LocalGuide
