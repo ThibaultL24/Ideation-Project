@@ -38,6 +38,9 @@ export default function RootLayout({
             <a href="/random" className="text-[var(--muted)] hover:text-white">
               Découvrir
             </a>
+            <a href="/workshop" className="text-[var(--muted)] hover:text-white">
+              Atelier
+            </a>
           </nav>
         </header>
         <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>

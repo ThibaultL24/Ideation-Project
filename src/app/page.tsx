@@ -54,6 +54,20 @@ export default function HomePage() {
           </p>
         </Link>
       </section>
+
+      <section className="rounded-xl border border-[var(--accent)]/30 bg-[var(--card)] p-6">
+        <h2 className="text-lg font-semibold">Atelier idéation</h2>
+        <p className="mt-2 max-w-xl text-sm text-[var(--muted)]">
+          Cartes d&apos;affinage (4×3 tours), puis assistant triples Intuition — atoms,
+          relations, triples imbriqués.
+        </p>
+        <Link
+          href="/workshop"
+          className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+        >
+          Ouvrir l&apos;atelier
+        </Link>
+      </section>
     </div>
   );
 }

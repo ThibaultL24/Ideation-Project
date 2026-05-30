@@ -1,0 +1,39 @@
+// src/lib/assist/schemas.ts
+import { z } from "zod";
+
+const tripleLineSchema = z.object({
+  subject: z.string(),
+  predicate: z.string(),
+  object: z.string(),
+  rationale: z.string(),
+  kind: z.enum(["core", "support", "nested"]),
+  recommended: z.boolean(),
+});
+
+export const assistTripleResponseSchema = z.object({
+  ideaTitle: z.string(),
+  refinedPitch: z.string(),
+  archetypeSummary: z.string(),
+  coreTriple: tripleLineSchema,
+  supportTriples: z.array(tripleLineSchema).max(5),
+  nestedTriples: z.array(tripleLineSchema).max(3),
+  protocolNotes: z.array(z.string()).max(6),
+});
+
+export type AssistTripleResponse = z.infer<typeof assistTripleResponseSchema>;
+
+export const assistCardsResponseSchema = z.object({
+  question: z.string(),
+  cards: z
+    .array(
+      z.object({
+        id: z.string(),
+        title: z.string(),
+        subtitle: z.string(),
+        tags: z.array(z.string()),
+      }),
+    )
+    .length(4),
+});
+
+export type AssistCardsResponse = z.infer<typeof assistCardsResponseSchema>;

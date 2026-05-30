@@ -53,9 +53,17 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
         </section>
       ) : null}
 
-      <Link href="/ideas" className="text-sm text-[var(--accent)] hover:underline">
-        ← Retour au catalogue
-      </Link>
+      <div className="flex flex-wrap gap-4">
+        <Link
+          href={`/workshop/from/${idea.slug}`}
+          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+        >
+          Ouvrir dans l&apos;atelier
+        </Link>
+        <Link href="/ideas" className="text-sm text-[var(--accent)] hover:underline">
+          ← Catalogue
+        </Link>
+      </div>
     </article>
   );
 }
