@@ -105,14 +105,20 @@ export function IdeaStatePanel({
 
       <div className="flex flex-wrap gap-3">
         <Link
-          href={`/brainstorm/${state.slug}`}
+          href={`/scamper/${state.slug}`}
           className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+        >
+          SCAMPER
+        </Link>
+        <Link
+          href={`/brainstorm/${state.slug}`}
+          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
         >
           Brainstorm
         </Link>
         <Link
           href={`/prepare/${state.slug}`}
-          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
+          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
         >
           Prepare
         </Link>

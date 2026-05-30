@@ -38,6 +38,12 @@ export default function RootLayout({
             <a href="/pick" className="text-[var(--muted)] hover:text-white">
               Cartes
             </a>
+            <a href="/scamper" className="text-[var(--muted)] hover:text-white">
+              SCAMPER
+            </a>
+            <a href="/scamper/libre" className="text-[var(--muted)] hover:text-white">
+              Idée libre
+            </a>
             <a href="/brainstorm" className="text-[var(--muted)] hover:text-white">
               Brainstorm
             </a>

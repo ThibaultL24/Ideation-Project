@@ -1,6 +1,7 @@
 // src/components/pick/pick-flow.tsx
 "use client";
 
+import Link from "next/link";
 import { useCallback, useState } from "react";
 import type {
   PickAnswer,
@@ -161,7 +162,7 @@ export function PickFlow() {
         <h1 className="text-2xl font-bold">Cartes · recherche guidée</h1>
         <p className="mt-2 max-w-2xl text-sm text-[var(--muted)]">
           Décrivez votre projet, répondez aux questions — chaque choix affine les
-          mini-cartes du catalogue. Ensuite : vérif état,{" "}
+          mini-cartes du catalogue. Ensuite : <strong>SCAMPER</strong>,{" "}
           <strong>Brainstorm</strong> et <strong>Prepare</strong>.
         </p>
       </div>
@@ -178,13 +179,26 @@ export function PickFlow() {
               onChange={(e) => setIntent(e.target.value)}
             />
           </label>
-          <button
-            type="button"
-            onClick={() => void startRefinement()}
-            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
-          >
-            Affiner avec des questions
-          </button>
+          <div className="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={() => void startRefinement()}
+              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+            >
+              Affiner avec des questions
+            </button>
+            {intent.trim().length >= 3 ? (
+              <Link
+                href={`/scamper/libre?intent=${encodeURIComponent(intent.trim())}`}
+                className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
+              >
+                Développer mon idée (SCAMPER libre) →
+              </Link>
+            ) : null}
+          </div>
+          <p className="text-xs text-[var(--muted)]">
+            Pas dans le catalogue ? Utilisez SCAMPER libre sans choisir de carte.
+          </p>
         </section>
       ) : null}
 

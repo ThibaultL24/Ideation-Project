@@ -27,6 +27,19 @@ query FindAtomsByLabel($label: String!, $limit: Int!) {
   }
 }`;
 
+const FIND_ATOMS_BY_LABEL_ILIKE = `
+query FindAtomsByLabelIlike($pattern: String!, $limit: Int!) {
+  atoms(where: { label: { _ilike: $pattern } }, limit: $limit, order_by: { created_at: desc }) {
+    term_id
+    label
+    type
+    vault {
+      totalShares
+      positionCount
+    }
+  }
+}`;
+
 const FIND_ATOM_BY_TERM_ID = `
 query FindAtomByTermId($termId: String!) {
   atoms(where: { term_id: { _eq: $termId } }, limit: 1) {
@@ -104,6 +117,30 @@ export async function findAtomsByLabel(
   type Out = { atoms: AtomRow[] };
   const data = await execGraphql<Out>(config.graphql, FIND_ATOMS_BY_LABEL, {
     label,
+    limit,
+  });
+  return data.atoms ?? [];
+}
+
+export interface AtomSearchRow {
+  term_id: string;
+  label: string;
+  type: string;
+  vault?: {
+    totalShares?: string | number | null;
+    positionCount?: number | string | null;
+  } | null;
+}
+
+export async function findAtomsByLabelIlike(
+  config: IntuitionNetworkConfig,
+  term: string,
+  limit = 20,
+): Promise<AtomSearchRow[]> {
+  type Out = { atoms: AtomSearchRow[] };
+  const pattern = `%${term.replace(/%/g, "")}%`;
+  const data = await execGraphql<Out>(config.graphql, FIND_ATOMS_BY_LABEL_ILIKE, {
+    pattern,
     limit,
   });
   return data.atoms ?? [];

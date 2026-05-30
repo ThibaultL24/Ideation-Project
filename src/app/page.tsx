@@ -54,6 +54,15 @@ export default function HomePage() {
           </p>
         </Link>
         <Link
+          href="/scamper"
+          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">SCAMPER</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            7 angles créatifs · après les cartes
+          </p>
+        </Link>
+        <Link
           href="/random"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
         >
@@ -64,7 +73,25 @@ export default function HomePage() {
         </Link>
       </section>
 
-      <section className="grid gap-4 sm:grid-cols-2">
+      <section className="grid gap-4 sm:grid-cols-3">
+        <Link
+          href="/scamper/libre"
+          className="rounded-xl border border-[var(--accent)]/40 bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">SCAMPER · idée libre</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            Votre concept, hors catalogue
+          </p>
+        </Link>
+        <Link
+          href="/scamper"
+          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">SCAMPER · catalogue</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            Après les cartes (S→R)
+          </p>
+        </Link>
         <Link
           href="/brainstorm"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
