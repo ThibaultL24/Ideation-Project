@@ -23,7 +23,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/ideas"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
@@ -45,12 +45,42 @@ export default function HomePage() {
           </p>
         </a>
         <Link
+          href="/pick"
+          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">Cartes</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            Intent → questions → mini-cartes affinées
+          </p>
+        </Link>
+        <Link
           href="/random"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
         >
-          <h2 className="font-semibold">Découvrir</h2>
+          <h2 className="font-semibold">Aléatoire</h2>
           <p className="mt-2 text-sm text-[var(--muted)]">
             Une idée au hasard
+          </p>
+        </Link>
+      </section>
+
+      <section className="grid gap-4 sm:grid-cols-2">
+        <Link
+          href="/brainstorm"
+          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">Brainstorm</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            Affiner l&apos;idée — problème, solution, fit Intuition
+          </p>
+        </Link>
+        <Link
+          href="/prepare"
+          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">Prepare</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            Existant, triple cœur, publication GitHub + onchain
           </p>
         </Link>
       </section>

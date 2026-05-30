@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { loadNormalizedIdeas } from "@/lib/ideas/load";
+import { buildIdeaFullState } from "@/lib/ideas/idea-state";
 
 const PORTAL_EXPLORER_URL =
   "https://testnet.portal.intuition.systems/explore/home";
@@ -14,6 +15,7 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
   const { slug } = await params;
   const idea = loadNormalizedIdeas().find((item) => item.slug === slug);
   if (!idea) notFound();
+  const state = await buildIdeaFullState(idea, { verifyOnchain: true });
 
   return (
     <article className="space-y-6">
@@ -36,11 +38,30 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
         </p>
       </section>
 
-      {idea.intuition?.atomId ? (
+      <section className="flex flex-wrap gap-3">
+        <Link
+          href={`/brainstorm/${idea.slug}`}
+          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+        >
+          Brainstorm
+        </Link>
+        <Link
+          href={`/prepare/${idea.slug}`}
+          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
+        >
+          Prepare
+        </Link>
+      </section>
+
+      {state.onchain?.atomId ? (
         <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 text-sm">
           <h2 className="font-semibold">Onchain</h2>
+          <p className="mt-2 text-xs text-[var(--muted)]">
+            Atom indexe: {state.onchain.atomInIndexer ? "oui" : "non"} · Triple
+            coeur: {state.onchain.coreTriplePresent ? "oui" : "non"}
+          </p>
           <p className="mt-2 break-all font-mono text-xs text-[var(--muted)]">
-            {idea.intuition.atomId}
+            {state.onchain.atomId}
           </p>
           <a
             href={PORTAL_EXPLORER_URL}
