@@ -2,6 +2,7 @@
 import { NextResponse } from "next/server";
 import { generateIdeaBrief } from "@/lib/assist/generate-synthesis";
 import { isAssistEnabled } from "@/lib/assist/openai";
+import type { IdeaDebrief } from "@/lib/workshop/idea-debrief";
 
 export async function POST(request: Request) {
   try {
@@ -11,6 +12,8 @@ export async function POST(request: Request) {
       picks?: Array<{ title: string }>;
       ideaTitle?: string;
       catalogDescription?: string;
+      debriefAnswers?: Array<{ question: string; answer: string }>;
+      ideaDebrief?: object;
     };
 
     const rawIntent = body.rawIntent?.trim() ?? "";
@@ -23,6 +26,8 @@ export async function POST(request: Request) {
       picks,
       ideaTitle,
       catalogDescription: body.catalogDescription,
+      debriefAnswers: body.debriefAnswers,
+      ideaDebrief: body.ideaDebrief as IdeaDebrief | undefined,
     });
 
     return NextResponse.json({

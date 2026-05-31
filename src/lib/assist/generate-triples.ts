@@ -1,8 +1,8 @@
 // src/lib/assist/generate-triples.ts
-import {
-  assistTripleResponseSchema,
-} from "./schemas";
+import { assistTripleResponseSchema } from "./schemas";
+import { fetchEcosystemTripleExamples } from "./fetch-triple-examples";
 import { TRIPLE_SYSTEM_PROMPT, buildTripleUserMessage } from "./prompts";
+import { refineTripleDraft } from "./refine-triple-draft";
 import { getAssistModel, getOpenAIClient, isAssistEnabled } from "./openai";
 import {
   normalizeTripleDraft,
@@ -25,14 +25,31 @@ export interface GenerateTriplesInput {
   graphInspect: GraphInspectResult;
 }
 
+function finalizeDraft(
+  draft: TripleDraft,
+  input: GenerateTriplesInput,
+): TripleDraft {
+  const testnet = input.graphInspect.networks.find((n) => n.network === "testnet");
+  const refined = refineTripleDraft(draft, {
+    ideaTitle: input.ideaTitle,
+    ideaBrief: input.ideaBrief,
+    popularPredicates: testnet?.popularPredicates ?? [],
+    coreAlreadyExists: testnet?.coreTriple.exists,
+  });
+  refined.linterWarnings = runTripleLinter(refined);
+  mergeGraphWarnings(refined, input.graphInspect);
+  return refined;
+}
+
 export async function generateTripleDraft(
   input: GenerateTriplesInput,
 ): Promise<{ draft: EnrichedTripleDraft; source: "openai" | "fallback" }> {
   const graphContext = graphInspectForPrompt(input.graphInspect);
+  const ecosystemTripleExamples = await fetchEcosystemTripleExamples(input.graphInspect);
   const client = getOpenAIClient();
 
   if (!isAssistEnabled() || !client) {
-    const base = buildFallbackDraft(input);
+    const base = finalizeDraft(buildFallbackDraft(input, ecosystemTripleExamples), input);
     return {
       draft: enrichTripleDraft(base, input.graphInspect),
       source: "fallback",
@@ -42,7 +59,7 @@ export async function generateTripleDraft(
   try {
     const completion = await client.chat.completions.create({
       model: getAssistModel(),
-      temperature: 0.35,
+      temperature: 0.2,
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: TRIPLE_SYSTEM_PROMPT },
@@ -56,6 +73,7 @@ export async function generateTripleDraft(
             picks: input.picks,
             ideaBrief: input.ideaBrief,
             graphContext,
+            ecosystemTripleExamples,
           }),
         },
       ],
@@ -65,19 +83,17 @@ export async function generateTripleDraft(
     if (!raw) throw new Error("Empty OpenAI response");
 
     const parsed = assistTripleResponseSchema.parse(JSON.parse(raw));
-    const base = normalizeTripleDraft(
-      { ...parsed, linterWarnings: [] },
-      input.ideaTitle,
+    const base = finalizeDraft(
+      normalizeTripleDraft({ ...parsed, linterWarnings: [] }, input.ideaTitle),
+      input,
     );
-    base.linterWarnings = runTripleLinter(base);
-    mergeGraphWarnings(base, input.graphInspect);
 
     return {
       draft: enrichTripleDraft(base, input.graphInspect),
       source: "openai",
     };
   } catch {
-    const base = buildFallbackDraft(input);
+    const base = finalizeDraft(buildFallbackDraft(input, ecosystemTripleExamples), input);
     return {
       draft: enrichTripleDraft(base, input.graphInspect),
       source: "fallback",
@@ -89,7 +105,7 @@ function mergeGraphWarnings(draft: TripleDraft, inspect: GraphInspectResult): vo
   const testnet = inspect.networks.find((n) => n.network === "testnet");
   if (testnet?.coreTriple.exists) {
     draft.linterWarnings.push(
-      "Triple cœur déjà présent sur testnet — publication inutile, vérifie le Portal.",
+      "Triple cœur peut déjà exister sur testnet — référence Portal pour vérification.",
     );
   }
   const dup = testnet?.similarAtoms.find(
@@ -104,47 +120,42 @@ function mergeGraphWarnings(draft: TripleDraft, inspect: GraphInspectResult): vo
   }
 }
 
-function buildFallbackDraft(input: GenerateTriplesInput): TripleDraft {
-  const title = input.ideaTitle.trim() || "New Idea";
+function buildFallbackDraft(
+  input: GenerateTriplesInput,
+  examples: Awaited<ReturnType<typeof fetchEcosystemTripleExamples>>,
+): TripleDraft {
+  const title =
+    input.ideaBrief?.title?.trim() || input.ideaTitle.trim() || "New Idea";
   const testnet = input.graphInspect.networks.find((n) => n.network === "testnet");
-  const exampleTriples = testnet?.subjectTriples.slice(0, 2) ?? [];
-  const popular = testnet?.popularPredicates.slice(0, 3) ?? [];
 
-  const supportFromGraph = exampleTriples.map((t) => ({
+  const supportFromExamples = examples.slice(0, 3).map((ex) => ({
     subject: title,
-    predicate: t.predicate,
-    object: t.object,
-    rationale: `Inspiré d'un triple existant sur testnet (${t.term_id.slice(0, 8)}…).`,
+    predicate: ex.predicate,
+    object: ex.object,
+    rationale: `Aligné sur le graphe (idée « ${ex.ideaLabel} »).`,
     kind: "support" as const,
     recommended: true,
   }));
 
-  if (supportFromGraph.length === 0 && popular[0]) {
-    supportFromGraph.push({
-      subject: title,
-      predicate: popular[0].label,
-      object: "early adopters",
-      rationale: `Prédicat populaire sur testnet (${popular[0].usage} usages).`,
-      kind: "support",
-      recommended: true,
-    });
-  }
-
   const draft = normalizeTripleDraft(
     {
       ideaTitle: title,
-      refinedPitch: input.refinementSummary || input.rawIntent,
+      refinedPitch:
+        input.ideaBrief?.oneLiner ||
+        input.refinementSummary ||
+        input.rawIntent,
       archetypeSummary: input.picks.map((p) => p.title).join(" → "),
-      supportTriples: supportFromGraph,
+      supportTriples: supportFromExamples,
       nestedTriples: [],
       protocolNotes: [
-        "OPENAI_API_KEY absente — brouillon basé sur le graphe testnet réel.",
-        "Publie le triple cœur en premier ; nested seulement si provenance nécessaire.",
+        "Brouillon basé sur le graphe testnet + fiche produit.",
+        testnet?.coreTriple.exists
+          ? "Triple bounty peut déjà exister pour un sujet proche."
+          : "Triple bounty standard documenté pour la PR.",
       ],
     },
     title,
   );
-  draft.linterWarnings = runTripleLinter(draft);
-  mergeGraphWarnings(draft, input.graphInspect);
+
   return draft;
 }

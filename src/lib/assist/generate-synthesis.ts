@@ -2,6 +2,7 @@
 import { assistSynthesisResponseSchema } from "./schemas";
 import { SYNTHESIS_SYSTEM_PROMPT, buildSynthesisUserMessage } from "./prompts-synthesis";
 import { getAssistModel, getOpenAIClient, isAssistEnabled } from "./openai";
+import type { DebriefAnswer, IdeaDebrief } from "@/lib/workshop/idea-debrief";
 import { normalizeIdeaBrief, type IdeaBrief } from "@/lib/workshop/idea-brief";
 
 export interface GenerateSynthesisInput {
@@ -10,6 +11,8 @@ export interface GenerateSynthesisInput {
   picks: Array<{ title: string }>;
   ideaTitle: string;
   catalogDescription?: string;
+  debriefAnswers?: DebriefAnswer[];
+  ideaDebrief?: IdeaDebrief;
 }
 
 export async function generateIdeaBrief(
@@ -35,6 +38,8 @@ export async function generateIdeaBrief(
             picks: input.picks,
             catalogTitle: input.ideaTitle,
             catalogDescription: input.catalogDescription,
+            debriefAnswers: input.debriefAnswers,
+            debrief: input.ideaDebrief,
           }),
         },
       ],
@@ -62,9 +67,15 @@ function fallbackBrief(input: GenerateSynthesisInput): IdeaBrief {
       targetUsers: "Early adopters à définir",
       whyNow: "Moment opportun lié au parcours cartes : " + input.picks.map((p) => p.title).join(" → "),
       intuitionAngle:
-        "Intuition pourrait porter des attestations ou du signal sur cette idée — détail au moment de publier.",
+        "Intuition peut structurer des identités (atoms) et des claims économiquement soutenus plutôt qu'une simple liste d'avis.",
+      trustMechanism:
+        "À définir : quelles entités deviennent des atoms, quelles claims comptent, qui stake et qui interroge le graphe.",
       mvpScope: "3 écrans ou un workflow minimal pour tester l'hypothèse.",
-      openQuestions: "Valider le positionnement avant d'écrire des triples.",
+      openQuestions: [
+        "Quel est le premier cas d'usage payant ou très fréquent ?",
+        "Quelle claim unique justifie Intuition vs une app Web2 ?",
+        "Qui stake en premier et pourquoi ?",
+      ],
     },
     input.ideaTitle,
   );

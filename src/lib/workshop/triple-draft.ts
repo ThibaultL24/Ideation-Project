@@ -1,5 +1,8 @@
 // src/lib/workshop/triple-draft.ts
-import { BOUNTY_PREDICATE_LABEL } from "@/lib/intuition/config";
+import {
+  BOUNTY_PREDICATE_LABEL,
+  INTUITION_PROTOCOL_OBJECT_LABEL,
+} from "@/lib/intuition/config";
 
 export interface TripleLine {
   subject: string;
@@ -28,7 +31,7 @@ export const EMPTY_TRIPLE_DRAFT: TripleDraft = {
   coreTriple: {
     subject: "",
     predicate: BOUNTY_PREDICATE_LABEL,
-    object: "Intuition",
+    object: INTUITION_PROTOCOL_OBJECT_LABEL,
     rationale: "Lien bounty : idée de projet pour l'écosystème Intuition.",
     kind: "core",
     recommended: true,
@@ -44,7 +47,7 @@ export function defaultCoreTriple(ideaTitle: string): TripleLine {
   return {
     subject,
     predicate: BOUNTY_PREDICATE_LABEL,
-    object: "Intuition",
+    object: INTUITION_PROTOCOL_OBJECT_LABEL,
     rationale: "Triple obligatoire du bounty : relie l'idée au protocole.",
     kind: "core",
     recommended: true,
@@ -65,6 +68,11 @@ export function runTripleLinter(draft: TripleDraft): string[] {
   }
   if (draft.coreTriple.predicate !== BOUNTY_PREDICATE_LABEL) {
     warnings.push(`Le triple cœur devrait utiliser le prédicat « ${BOUNTY_PREDICATE_LABEL} ».`);
+  }
+  if (draft.coreTriple.object !== INTUITION_PROTOCOL_OBJECT_LABEL) {
+    warnings.push(
+      `L'objet du triple cœur devrait être « ${INTUITION_PROTOCOL_OBJECT_LABEL} ».`,
+    );
   }
   if (draft.refinedPitch.trim().length < 40) {
     warnings.push("Le pitch affiné est encore court pour une publication GitHub.");
@@ -95,7 +103,14 @@ export function normalizeTripleDraft(
     ...EMPTY_TRIPLE_DRAFT,
     ...input,
     ideaTitle: input?.ideaTitle?.trim() || ideaTitle,
-    coreTriple: { ...defaultCoreTriple(ideaTitle), ...core, kind: "core", recommended: true },
+    coreTriple: {
+      ...defaultCoreTriple(ideaTitle),
+      ...core,
+      predicate: BOUNTY_PREDICATE_LABEL,
+      object: INTUITION_PROTOCOL_OBJECT_LABEL,
+      kind: "core",
+      recommended: true,
+    },
     supportTriples: (input?.supportTriples ?? []).map((t) => ({ ...t, kind: "support" as const })),
     nestedTriples: (input?.nestedTriples ?? []).map((t) => ({ ...t, kind: "nested" as const })),
     linterWarnings: input?.linterWarnings ?? [],

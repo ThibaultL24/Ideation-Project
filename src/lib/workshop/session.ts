@@ -1,6 +1,7 @@
 // src/lib/workshop/session.ts
 import type { CardPick } from "./card-tree";
 import type { EnrichedTripleDraft } from "@/lib/assist/enrich-draft";
+import type { DebriefAnswer, IdeaDebrief } from "./idea-debrief";
 import type { IdeaBrief } from "./idea-brief";
 import type { TripleDraft } from "./triple-draft";
 
@@ -14,6 +15,10 @@ export interface WorkshopSession {
   catalogDescription?: string;
   picks: CardPick[];
   refinementSummary: string;
+  discoverCompletedAt?: string;
+  debriefQuestions?: string[];
+  debriefAnswers?: DebriefAnswer[];
+  ideaDebrief?: IdeaDebrief;
   ideaBrief?: IdeaBrief;
   tripleDraft?: TripleDraft | EnrichedTripleDraft;
 }

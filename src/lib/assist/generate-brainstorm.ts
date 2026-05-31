@@ -7,9 +7,11 @@ import { graphInspectForPrompt } from "@/lib/intuition/graph-inspect";
 
 export const brainstormCoachSchema = z.object({
   reflection: z.string(),
+  clearerNow: z.array(z.string()).min(1).max(6),
+  stillVague: z.array(z.string()).min(1).max(6),
   questions: z.array(z.string()).min(2).max(4),
-  graphInsights: z.array(z.string()).max(6),
   cardGuidance: z.string(),
+  graphInsights: z.array(z.string()).max(6),
   risks: z.array(z.string()).max(4),
 });
 
@@ -18,6 +20,8 @@ export type BrainstormCoach = z.infer<typeof brainstormCoachSchema>;
 export interface BrainstormCoachInput {
   rawIntent: string;
   refinementSummary: string;
+  catalogTitle?: string;
+  catalogDescription?: string;
   picks: Array<{ title: string; levelId: string }>;
   currentLevelQuestion?: string;
   graphInspect: GraphInspectResult;
@@ -69,16 +73,31 @@ function fallbackCoach(input: BrainstormCoachInput): BrainstormCoach {
     );
   }
 
+  const path = input.picks.map((p) => p.title).join(" → ");
+
   return {
     reflection:
-      "Affine ton angle produit avant de figer les triples. Chaque carte doit réduire l'ambiguïté sur qui est attesté et quel signal compte.",
-    questions: [
-      "Qui est le premier utilisateur payant ou actif ?",
-      "Quelle claim précise serait stakée sur Intuition ?",
-      "Quel prédicat du graphe existant pourrait être réutilisé ?",
+      "Affine l'angle produit et le mécanisme de confiance avant de figer la fiche. Tu clarifies l'idée — tu ne la remplaces pas.",
+    clearerNow: path
+      ? [`Modèle choisi : ${path}`]
+      : ["L'intention brute est enregistrée — le modèle produit reste à préciser."],
+    stillVague: [
+      "Qui est le premier utilisateur actif ou payant ?",
+      "Quelle claim précise mériterait un stake sur Intuition ?",
     ],
-    graphInsights: insights.length ? insights : ["Configure OPENAI_API_KEY pour une analyse graphe enrichie."],
-    cardGuidance: "Choisis la carte qui précise le mécanisme de confiance, pas seulement le marché.",
-    risks: ["Doublon d'atom si le label est trop proche d'une idée migrée."],
+    questions: [
+      "Qui a besoin de cette information avant de décider ?",
+      "Quelle claim serait coûteuse ou difficile à falsifier ?",
+      "Qui aurait assez de crédibilité pour staker en premier ?",
+    ],
+    cardGuidance:
+      "Choisis la carte qui précise le modèle d'acteurs : utilisateur, contributeur, vérificateur, attaquant potentiel.",
+    graphInsights: insights.length
+      ? insights
+      : ["Configure OPENAI_API_KEY pour une analyse graphe enrichie."],
+    risks: [
+      "Risque de rester une app Web2 si le mécanisme de stake sur des claims n'est pas explicite.",
+      "Doublon d'atom si le label est trop proche d'une idée migrée.",
+    ],
   };
 }

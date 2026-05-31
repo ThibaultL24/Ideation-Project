@@ -2,6 +2,7 @@
 import { calculateTripleId } from "@0xintuition/sdk";
 import {
   BOUNTY_PREDICATE_LABEL,
+  INTUITION_PROTOCOL_OBJECT_LABEL,
   getNetworkConfig,
   type IntuitionNetwork,
 } from "./config";
@@ -148,7 +149,7 @@ async function inspectNetwork(
     const pred = pickCanonicalAtom(predRows);
     if (pred) bountyPredicate = toInspectAtom(pred as AtomSearchRow);
 
-    const objRows = await findAtomsByLabel(config, "Intuition", 5);
+    const objRows = await findAtomsByLabel(config, INTUITION_PROTOCOL_OBJECT_LABEL, 5);
     const obj = pickCanonicalAtom(objRows);
     if (obj) intuitionObject = toInspectAtom(obj as AtomSearchRow);
 

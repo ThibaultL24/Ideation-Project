@@ -10,6 +10,8 @@ export async function POST(request: Request) {
       rawIntent?: string;
       refinementSummary?: string;
       ideaTitle?: string;
+      catalogTitle?: string;
+      catalogDescription?: string;
       canonicalId?: string;
       picks?: Array<{ title: string; levelId: string }>;
       currentLevelQuestion?: string;
@@ -28,6 +30,8 @@ export async function POST(request: Request) {
     const { coach, source } = await generateBrainstormCoach({
       rawIntent,
       refinementSummary: body.refinementSummary?.trim() ?? rawIntent,
+      catalogTitle: body.catalogTitle?.trim() || ideaTitle,
+      catalogDescription: body.catalogDescription,
       picks,
       currentLevelQuestion: body.currentLevelQuestion,
       graphInspect,

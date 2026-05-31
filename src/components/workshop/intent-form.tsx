@@ -36,7 +36,7 @@ export function IntentForm({
       refinementSummary: "",
     });
     saveSession(session);
-    router.push("/workshop/refine");
+    router.push("/workshop/discover");
   }
 
   return (
@@ -66,8 +66,8 @@ export function IntentForm({
         Affiner avec les cartes →
       </button>
       <p className="text-xs text-[var(--muted)]">
-        Ensuite : 3 tours de 4 cartes (style Wabbojack), puis structuration en triples
-        avec l&apos;assistant IA.
+        Ensuite : similarités (catalogue + graphe + GitHub), affinage, débrief, fiche,
+        puis PR sur intuition-box/ideas — sans publication on-chain.
       </p>
       {catalogSlug && (
         <Link href={`/ideas/${catalogSlug}`} className="text-sm text-[var(--muted)] hover:text-white">

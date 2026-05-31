@@ -46,8 +46,9 @@ export const assistSynthesisResponseSchema = z.object({
   targetUsers: z.string(),
   whyNow: z.string(),
   intuitionAngle: z.string(),
+  trustMechanism: z.string().optional().default(""),
   mvpScope: z.string(),
-  openQuestions: z.string(),
+  openQuestions: z.union([z.string(), z.array(z.string())]),
 });
 
 export type AssistSynthesisResponse = z.infer<typeof assistSynthesisResponseSchema>;

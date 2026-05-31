@@ -4,24 +4,9 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import type { EnrichedTripleDraft } from "@/lib/assist/enrich-draft";
+import { formatTripleLine } from "@/lib/workshop/triple-draft";
 import type { WorkshopPublishPlan } from "@/lib/workshop/publish-plan";
 import { loadSession, saveSession, type WorkshopSession } from "@/lib/workshop/session";
-
-function StepBadge({ status }: { status: string }) {
-  const styles: Record<string, string> = {
-    exists: "border-emerald-800/60 text-emerald-300",
-    will_create: "border-amber-800/60 text-amber-300",
-    skip: "border-blue-800/60 text-blue-300",
-    preview: "border-[var(--border)] text-[var(--muted)]",
-  };
-  return (
-    <span
-      className={`rounded border px-2 py-0.5 text-[10px] uppercase ${styles[status] ?? styles.preview}`}
-    >
-      {status.replace("_", " ")}
-    </span>
-  );
-}
 
 export function PrepareWorkspace() {
   const [session, setSession] = useState<WorkshopSession | null>(null);
@@ -29,10 +14,7 @@ export function PrepareWorkspace() {
   const [loadingPlan, setLoadingPlan] = useState(true);
   const [triplesLoading, setTriplesLoading] = useState(false);
   const [githubLoading, setGithubLoading] = useState(false);
-  const [onchainLoading, setOnchainLoading] = useState(false);
   const [githubResult, setGithubResult] = useState<Record<string, unknown> | null>(null);
-  const [onchainResult, setOnchainResult] = useState<Record<string, unknown> | null>(null);
-  const [network, setNetwork] = useState<"testnet" | "mainnet">("testnet");
 
   useEffect(() => {
     setSession(loadSession());
@@ -88,21 +70,6 @@ export function PrepareWorkspace() {
     setGithubLoading(false);
   }
 
-  async function publishOnchain() {
-    if (!session?.tripleDraft) return;
-    setOnchainLoading(true);
-    setOnchainResult(null);
-    const prUrl =
-      typeof githubResult?.prUrl === "string" ? githubResult.prUrl : undefined;
-    const res = await fetch("/api/workshop/prepare/onchain", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ session, network, githubBlobUrl: prUrl }),
-    });
-    setOnchainResult(await res.json());
-    setOnchainLoading(false);
-  }
-
   if (!session?.rawIntent) {
     return (
       <div className="rounded-xl border border-[var(--border)] p-6">
@@ -126,15 +93,22 @@ export function PrepareWorkspace() {
   }
 
   const brief = session.ideaBrief;
-  const hasTriples = Boolean(session.tripleDraft);
+  const draft = session.tripleDraft;
+  const hasTriples = Boolean(draft);
   const guide = plan?.publishGuide;
 
   return (
     <div className="space-y-8">
       <header className="space-y-2">
-        <p className="text-xs uppercase tracking-widest text-[var(--accent)]">Publier</p>
+        <p className="text-xs uppercase tracking-widest text-[var(--accent)]">
+          Étape 3 sur 3 · Proposer en PR
+        </p>
         <h1 className="text-2xl font-bold">{brief.title || session.catalogTitle}</h1>
         <p className="text-sm text-[var(--muted)]">{brief.oneLiner}</p>
+        <p className="text-xs text-[var(--muted)]">
+          Les triples Intuition documentent le modèle sémantique dans la PR. Aucune
+          transaction on-chain n&apos;est envoyée depuis cet atelier.
+        </p>
       </header>
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 text-sm space-y-2">
@@ -147,11 +121,11 @@ export function PrepareWorkspace() {
 
       {!hasTriples && (
         <section className="space-y-4 rounded-xl border border-[var(--accent)]/30 p-5">
-          <h2 className="text-sm font-semibold">Écrire pour Intuition</h2>
+          <h2 className="text-sm font-semibold">Modèle sémantique Intuition</h2>
           <p className="text-xs text-[var(--muted)]">
-            À partir de ta fiche, l&apos;IA propose atoms et triples alignés sur le graphe
-            (decentrep-like). C&apos;est l&apos;étape d&apos;écriture protocolaire — pas au
-            brainstorm.
+            L&apos;IA s&apos;appuie sur la doc Intuition et des exemples réels du graphe.
+            Triple cœur obligatoire : [titre] → top project ideas for → Intuition Protocol.
+            Support et nested documentés dans le README de la PR uniquement.
           </p>
           <button
             type="button"
@@ -159,17 +133,43 @@ export function PrepareWorkspace() {
             disabled={triplesLoading}
             className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black disabled:opacity-50"
           >
-            {triplesLoading ? "Préparation…" : "Préparer les triples Intuition"}
+            {triplesLoading ? "Préparation…" : "Préparer les triples pour la PR"}
           </button>
         </section>
       )}
 
+      {hasTriples && draft && (
+        <section className="space-y-3 rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+          <h2 className="text-sm font-semibold">Aperçu des triples (PR)</h2>
+          <p className="font-mono text-xs text-[var(--muted)]">
+            {formatTripleLine(draft.coreTriple)}
+          </p>
+          {draft.supportTriples.map((t, i) => (
+            <p key={i} className="font-mono text-xs text-[var(--muted)]">
+              {formatTripleLine(t)}
+            </p>
+          ))}
+          {draft.nestedTriples.map((t, i) => (
+            <p key={i} className="font-mono text-xs text-amber-400/80">
+              nested · {formatTripleLine(t)}
+            </p>
+          ))}
+          {(draft.linterWarnings?.length ?? 0) > 0 && (
+            <ul className="text-xs text-amber-400/90">
+              {draft.linterWarnings.map((w, i) => (
+                <li key={i}>⚠ {w}</li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
       {loadingPlan && hasTriples && (
-        <p className="text-sm text-[var(--muted)]">Chargement du plan…</p>
+        <p className="text-sm text-[var(--muted)]">Chargement du plan PR…</p>
       )}
 
       {hasTriples && plan && guide && (
-        <>
+        <section className="space-y-4">
           <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 space-y-2">
             <p className="text-sm font-medium">{guide.headline}</p>
             <ul className="list-disc space-y-1 pl-4 text-xs text-[var(--muted)]">
@@ -179,89 +179,90 @@ export function PrepareWorkspace() {
             </ul>
           </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
-            <section className="space-y-4">
-              <h2 className="text-sm font-semibold">GitHub</h2>
-              <details className="rounded-xl border border-[var(--border)] bg-[var(--card)]">
-                <summary className="cursor-pointer px-4 py-3 text-sm">Markdown PR</summary>
-                <pre className="max-h-48 overflow-auto border-t border-[var(--border)] p-4 text-xs whitespace-pre-wrap text-[var(--muted)]">
-                  {plan.markdown}
-                </pre>
-              </details>
-              <button
-                type="button"
-                onClick={() => void createPr()}
-                disabled={githubLoading || !plan.readiness.githubReady}
-                className="w-full rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm disabled:opacity-40"
-              >
-                {githubLoading ? "…" : "Créer la PR GitHub"}
-              </button>
-              {typeof githubResult?.prUrl === "string" && (
-                <a
-                  href={githubResult.prUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-xs text-[var(--accent)] break-all"
-                >
-                  {githubResult.prUrl}
-                </a>
-              )}
-            </section>
+          <details className="rounded-xl border border-[var(--border)] bg-[var(--card)]">
+            <summary className="cursor-pointer px-4 py-3 text-sm">
+              Aperçu markdown de la PR
+            </summary>
+            <pre className="max-h-64 overflow-auto border-t border-[var(--border)] p-4 text-xs whitespace-pre-wrap text-[var(--muted)]">
+              {plan.markdown}
+            </pre>
+          </details>
 
-            <section className="space-y-4">
-              <h2 className="text-sm font-semibold">Intuition onchain</h2>
-              <div className="flex gap-2">
-                {(["testnet", "mainnet"] as const).map((n) => (
-                  <button
-                    key={n}
-                    type="button"
-                    onClick={() => setNetwork(n)}
-                    className={`rounded px-3 py-1 text-xs uppercase ${
-                      network === n
-                        ? "bg-[var(--accent)] text-black"
-                        : "border border-[var(--border)]"
-                    }`}
-                  >
-                    {n}
-                  </button>
-                ))}
-              </div>
-              <ul className="max-h-48 space-y-2 overflow-y-auto text-xs">
-                {plan.onchainSteps.map((step) => (
-                  <li
-                    key={step.id}
-                    className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-3"
-                  >
-                    <StepBadge status={step.status} />
-                    <span className="ml-2">{step.label}</span>
-                  </li>
-                ))}
-              </ul>
-              <button
-                type="button"
-                onClick={() => void publishOnchain()}
-                disabled={
-                  onchainLoading ||
-                  !plan.readiness.onchainReady ||
-                  Boolean(guide.publishBlockedReason)
-                }
-                className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black disabled:opacity-40"
-              >
-                {onchainLoading ? "…" : `Publier onchain (${network})`}
-              </button>
-              {onchainResult && (
-                <pre className="max-h-32 overflow-auto rounded border border-[var(--border)] p-2 text-[10px]">
-                  {JSON.stringify(onchainResult, null, 2)}
-                </pre>
+          <button
+            type="button"
+            onClick={() => void createPr()}
+            disabled={githubLoading || !plan.readiness.githubReady}
+            className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black disabled:opacity-40"
+          >
+            {githubLoading ? "Dépôt de la PR…" : "Déposer la PR sur GitHub"}
+          </button>
+
+          {githubResult?.mode === "manual" && (
+            <div className="space-y-2 text-xs text-amber-400/90">
+              <p>
+                {typeof githubResult.reason === "string"
+                  ? githubResult.reason
+                  : "Configure .env pour le dépôt automatique, ou utilise les liens ci-dessous."}
+              </p>
+              {typeof githubResult.manual === "object" && githubResult.manual !== null && (
+                <>
+                  {"instructions" in (githubResult.manual as object) && (
+                    <p>{(githubResult.manual as { instructions: string }).instructions}</p>
+                  )}
+                  {"newFileUrl" in (githubResult.manual as object) && (
+                    <a
+                      href={(githubResult.manual as { newFileUrl: string }).newFileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-[var(--accent)] break-all"
+                    >
+                      Ouvrir l&apos;éditeur GitHub (nouveau fichier → PR)
+                    </a>
+                  )}
+                </>
               )}
-            </section>
-          </div>
-        </>
+            </div>
+          )}
+          {typeof githubResult?.publishRepo === "string" && (
+            <p className="text-[10px] text-[var(--muted)]">
+              Commit : {githubResult.publishRepo as string}
+              {typeof githubResult.targetRepo === "string"
+                ? ` → PR : ${githubResult.targetRepo as string}`
+                : ""}
+            </p>
+          )}
+          {typeof githubResult?.error === "string" && (
+            <p className="text-xs text-rose-400">{githubResult.error}</p>
+          )}
+          {typeof githubResult?.prUrl === "string" && (
+            <a
+              href={githubResult.prUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-sm text-[var(--accent)] break-all"
+            >
+              {githubResult.prUrl}
+            </a>
+          )}
+
+          {plan.readiness.warnings.length > 0 && (
+            <ul className="text-xs text-amber-400/90">
+              {plan.readiness.warnings.map((w, i) => (
+                <li key={i}>⚠ {w}</li>
+              ))}
+            </ul>
+          )}
+        </section>
       )}
 
-      <Link href="/workshop/brainstorm" className="text-sm text-[var(--muted)] hover:text-white">
-        ← Modifier la fiche idée
-      </Link>
+      <div className="flex flex-wrap gap-3 text-sm">
+        <Link href="/workshop/brainstorm" className="text-[var(--muted)] hover:text-white">
+          ← Modifier la fiche
+        </Link>
+        <Link href="/workshop/discover" className="text-[var(--muted)] hover:text-white">
+          Similarités
+        </Link>
+      </div>
     </div>
   );
 }

@@ -25,6 +25,6 @@ describe("triple-linter", () => {
   it("core triple uses bounty predicate", () => {
     const draft = normalizeTripleDraft({}, "StakeReview");
     expect(draft.coreTriple.predicate).toBe("top project ideas for");
-    expect(draft.coreTriple.object).toBe("Intuition");
+    expect(draft.coreTriple.object).toBe("Intuition Protocol");
   });
 });

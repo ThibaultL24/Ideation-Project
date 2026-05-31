@@ -75,6 +75,9 @@ export function buildWorkshopPublishPlan(
     draft?.archetypeSummary?.trim() || session.picks.map((p) => p.title).join(" → ");
 
   if (!brief?.problem?.trim()) warnings.push("Complète le brainstorm (fiche idée) avant de publier.");
+  if (!session.ideaDebrief?.headline) {
+    warnings.push("Passe par le débrief (questions + analyse) pour solidifier l'idée.");
+  }
   if (!draft) warnings.push("Génère les triples Intuition sur cet écran (bouton dédié).");
   if (refinedPitch.length < 40) warnings.push("Pitch encore court pour une PR GitHub.");
 
@@ -245,10 +248,27 @@ export function buildWorkshopPublishPlan(
           "",
           brief.intuitionAngle,
           "",
+          "## Trust mechanism",
+          "",
+          brief.trustMechanism || "_Not specified._",
+          "",
           "## MVP",
           "",
           brief.mvpScope,
           "",
+          brief.openQuestions.length
+            ? `## Open questions\n\n${brief.openQuestions.map((q) => `- ${q}`).join("\n")}\n`
+            : "",
+          session.ideaDebrief
+            ? [
+                "## Debrief (workshop)",
+                "",
+                session.ideaDebrief.headline,
+                "",
+                session.ideaDebrief.analysis,
+                "",
+              ].join("\n")
+            : "",
         ].join("\n")
       : "",
     "## Product model (cards)",
@@ -307,22 +327,23 @@ export function buildWorkshopPublishPlan(
     nestedTriples,
     onchainSteps,
     publishGuide: {
-      headline: "Publication Intuition (assistant sémantique)",
-      checks: publishChecks,
+      headline: "Pull request GitHub (modèle sémantique Intuition dans le README)",
+      checks: [
+        ...publishChecks,
+        "Aucune transaction on-chain depuis l'atelier — review communautaire via PR uniquement.",
+      ],
       portalUrl: "https://testnet.portal.intuition.systems/explore/home",
       catalogAlreadyOnchain,
-      publishBlockedReason: hasOnlySkips
-        ? "Tout est déjà onchain pour cette idée — vérifie le Portal."
-        : undefined,
+      publishBlockedReason: undefined,
     },
     readiness: {
-      githubReady: Boolean(draft) && warnings.length <= 3,
-      onchainReady: Boolean(draft?.coreTriple) && !hasOnlySkips,
+      githubReady: Boolean(draft) && warnings.length <= 4,
+      onchainReady: false,
       warnings,
     },
     fallbackCommands: [
       `gh pr create --repo intuition-box/ideas --title "Idea: ${idea.title}"`,
-      `# Puis publier onchain depuis Prepare (wallet serveur .env)`,
+      `# Triples documentés dans le README — pas de publish on-chain via l'atelier`,
     ],
   };
 }

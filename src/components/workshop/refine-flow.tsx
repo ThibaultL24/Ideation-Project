@@ -69,6 +69,8 @@ export function RefineFlow() {
             rawIntent: s.rawIntent,
             refinementSummary: s.refinementSummary || s.rawIntent,
             ideaTitle: title,
+            catalogTitle: s.catalogTitle,
+            catalogDescription: s.catalogDescription,
             canonicalId: s.catalogCanonicalId,
             picks: s.picks,
             currentLevelQuestion: question,
@@ -109,6 +111,10 @@ export function RefineFlow() {
       setLoading(false);
       return;
     }
+    if (!stored.discoverCompletedAt) {
+      window.location.href = "/workshop/discover";
+      return;
+    }
     setSession(stored);
     void Promise.all([
       fetchLevel(stored.picks),
@@ -116,6 +122,19 @@ export function RefineFlow() {
       fetchCoach(stored),
     ]).finally(() => setLoading(false));
   }, [fetchLevel, fetchInspect, fetchCoach]);
+
+  useEffect(() => {
+    if (!session || !coach?.questions.length) return;
+    const done = isRefinementComplete(session.picks);
+    if (!done) return;
+    const same =
+      session.debriefQuestions?.length === coach.questions.length &&
+      session.debriefQuestions.every((q, i) => q === coach.questions[i]);
+    if (same) return;
+    const updated = { ...session, debriefQuestions: coach.questions };
+    saveSession(updated);
+    setSession(updated);
+  }, [session, coach]);
 
   async function handlePick(card: WorkshopCard) {
     if (!session || !level) return;
@@ -164,7 +183,10 @@ export function RefineFlow() {
       <div className="grid gap-6 lg:grid-cols-[1fr_300px]">
         <div className="space-y-8">
           <header className="space-y-2 rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
-            <p className="text-xs text-[var(--accent)]">Ton idée</p>
+            <p className="text-xs uppercase tracking-widest text-[var(--accent)]">
+              Étape 2 sur 3 · Affiner
+            </p>
+            <p className="text-xs text-[var(--muted)]">Ton idée</p>
             <p className="text-sm leading-relaxed">{session.rawIntent}</p>
             {session.catalogTitle && (
               <p className="text-xs text-[var(--muted)]">Catalogue : {session.catalogTitle}</p>
@@ -196,7 +218,7 @@ export function RefineFlow() {
                 href="/workshop/brainstorm"
                 className="inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black"
               >
-                Consolider l&apos;idée →
+                Questions &amp; débrief →
               </Link>
             </div>
           )}
@@ -218,8 +240,8 @@ export function RefineFlow() {
         </div>
       </div>
 
-      <Link href="/workshop" className="text-sm text-[var(--muted)] hover:text-white">
-        ← Modifier l&apos;idée de départ
+      <Link href="/workshop/discover" className="text-sm text-[var(--muted)] hover:text-white">
+        ← Similarités (étape 1)
       </Link>
     </div>
   );

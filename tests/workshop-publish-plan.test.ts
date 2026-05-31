@@ -19,8 +19,9 @@ describe("buildWorkshopPublishPlan", () => {
         targetUsers: "builders",
         whyNow: "now",
         intuitionAngle: "signal",
+        trustMechanism: "stake on quality claims",
         mvpScope: "mvp",
-        openQuestions: "q",
+        openQuestions: ["Who stakes first?"],
       },
     };
     const idea = {
@@ -37,7 +38,7 @@ describe("buildWorkshopPublishPlan", () => {
     };
     const plan = buildWorkshopPublishPlan(idea, null, session);
     expect(plan.readiness.warnings.some((w) => w.includes("triples Intuition"))).toBe(true);
-    expect(plan.publishGuide.headline).toContain("Publication");
     expect(plan.readiness.onchainReady).toBe(false);
+    expect(plan.publishGuide.headline).toContain("Pull request");
   });
 });

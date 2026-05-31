@@ -9,10 +9,10 @@ export default function WorkshopPage() {
         <p className="text-sm uppercase tracking-widest text-[var(--accent)]">
           Atelier idéation v2
         </p>
-        <h1 className="text-3xl font-bold">Affine ton idée, puis publie-la</h1>
+        <h1 className="text-3xl font-bold">Découvre, affine, propose en PR</h1>
         <p className="max-w-2xl text-[var(--muted)]">
-          Cartes pour préciser le modèle, brainstorm pour consolider la fiche produit.
-          Triples et publication Intuition uniquement quand tu es prêt.
+          1) Similarités existantes · 2) Réflexion (cartes, débrief, fiche) · 3) Triples
+          sémantiques + pull request GitHub. Pas de publication on-chain depuis l&apos;atelier.
         </p>
       </section>
 

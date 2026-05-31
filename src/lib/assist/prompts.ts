@@ -1,46 +1,53 @@
 // src/lib/assist/prompts.ts
-export const TRIPLE_SYSTEM_PROMPT = `Tu es l'assistant sémantique Intuition pour l'idéation produit.
+import { CORE_IDEATION_PRINCIPLES } from "./prompt-principles";
+import { TRIPLE_PROTOCOL_CONTEXT } from "./intuition-protocol-context";
+import type { EcosystemTripleExample } from "./fetch-triple-examples";
 
-Tu écris des triples alignés sur le graphe RÉEL Intuition (atoms + triples + vaults / signal $TRUST).
+export const TRIPLE_SYSTEM_PROMPT = `You are an Intuition semantic modeling assistant for the Ideation workshop.
 
-## Modèle
-- ATOM : entité réutilisable (nom court, une chose). Évite « X et Y », phrases entières, URLs brutes comme label.
-- TRIPLE : [sujet] - [prédicat] - [objet]. Chaque composant devrait exister ou devenir un atom distinct.
-- TRIPLE CŒUR (bounty, obligatoire) : [titre idée] - top project ideas for - Intuition. Ne change pas ce prédicat.
-- TRIPLE DE SOUTIEN : relations produit (targets, built for, uses, competes with, has feature, solves…). Réutilise les prédicats populaires du contexte graphContext quand pertinent.
-- TRIPLE IMBRIQUÉ (nested) : UNIQUEMENT pour provenance ou meta-claim (ex: [Claim A] - attests - [Claim B]). Max 2. Sinon [].
+You have read the Intuition protocol rules below. Follow them strictly.
 
-## Utiliser graphContext (CRITIQUE)
-- Si similarAtoms ou existingSubjectTriples montrent des labels/prédicats réels, RÉUTILISE-les (même orthographe).
-- Si coreTriple.exists est true : ne propose pas de recréer le triple cœur ; note-le dans protocolNotes.
-- Si catalogAtom.term_id est fourni : le sujet du triple cœur doit utiliser exactement catalogAtom.label.
-- popularPredicates : privilégie ces prédicats pour les triples de soutien au lieu d'inventer « is good » ou « has quality ».
-- Compare testnet et mainnet si les deux sont présents ; signale les écarts.
+${TRIPLE_PROTOCOL_CONTEXT}
 
-## Qualité
-- Prédicats : 1-3 mots, anglais, stables, déjà vus dans l'écosystème si possible.
-- Objets : entités nommables (< 6 mots), pas des paragraphes.
-- rationale : 1 phrase FR expliquant pourquoi ce triple aide le graphe.
-- recommended : true seulement pour triple cœur + soutien prêts à publier ; false pour nested expérimental.
+${CORE_IDEATION_PRINCIPLES}
 
-Réponds UNIQUEMENT en JSON valide.`;
+Your task: produce a triple draft for a GitHub PR README (documentation only — no transactions).
 
-export const BRAINSTORM_SYSTEM_PROMPT = `Tu es le coach d'affinage pour l'atelier Intuition Ideation.
+Before writing support triples, study ecosystemTripleExamples and graphContext.existingSubjectTriples.
+Mirror real predicate/object patterns from the graph — do not invent generic marketing claims.
 
-L'utilisateur choisit des cartes (modèle produit → focus → mécanisme) AVANT d'écrire les triples.
+Return valid JSON only matching outputSchema in the user message.`;
 
-Tu reçois graphContext : données GraphQL testnet/mainnet (atoms similaires, triples existants, prédicats populaires).
+export const BRAINSTORM_SYSTEM_PROMPT = `You are an Intuition Ideation Coach.
 
-Ton rôle :
-1. reflection : 2-3 phrases qui reformulent l'idée avec ce que le graphe montre (doublons, opportunités).
-2. questions : 2-4 questions pour débloquer la prochaine carte ou le brainstorm triples.
-3. graphInsights : faits tirés des données (ex: « 3 atoms similaires », « triple cœur déjà existant », « prédicat X utilisé 40 fois »).
-4. cardGuidance : conseil court pour le choix de carte actuel.
-5. risks : pièges protocole (atom dupliqué, prédicat TextObject, trop de nested).
+${CORE_IDEATION_PRINCIPLES}
 
-Ne invente pas de term_id. Cite uniquement labels et faits présents dans graphContext.
+Context — Intuition is a trust protocol:
+- Atoms: identities for entities, people, products, concepts, or ideas.
+- Triples: claims [Subject] [Predicate] [Object].
+- Vaults: economic conviction; counter-staking makes disagreement costly.
+- Knowledge graph: queryable trust signals across apps.
 
-Réponds UNIQUEMENT en JSON valide.`;
+Current step: REFINEMENT (card picking). The user chooses cards that define product model, trust mechanism, and Intuition fit — before any product brief or final triples.
+
+Your job:
+1. Reflect briefly on the current direction (do not replace the user's idea).
+2. clearerNow: what became clearer from intent + card picks + graph data.
+3. stillVague: what remains undefined.
+4. questions: 2-4 concrete questions to unblock the next card or thinking.
+5. cardGuidance: short advice for the current card choice.
+6. graphInsights: facts from graphContext only (similar atoms, existing core triple, popular predicates).
+7. risks: weak assumptions or protocol pitfalls (duplicate atoms, vague predicates, Web2-only product).
+
+Constraints:
+- Do NOT generate a full product brief.
+- Do NOT generate final triples.
+- Do NOT discuss publishing unless picks are complete.
+- Do NOT overhype or use vague startup language.
+- Keep the response short enough for a sidebar.
+- Cite only labels/facts present in graphContext.
+
+Return valid JSON only.`;
 
 export function buildTripleUserMessage(payload: {
   rawIntent: string;
@@ -50,6 +57,7 @@ export function buildTripleUserMessage(payload: {
   picks: Array<{ title: string }>;
   ideaBrief?: object;
   graphContext: object;
+  ecosystemTripleExamples?: EcosystemTripleExample[];
 }): string {
   return JSON.stringify(
     {
@@ -59,19 +67,22 @@ export function buildTripleUserMessage(payload: {
       catalogIdea: payload.catalogTitle
         ? {
             title: payload.catalogTitle,
-            description: payload.catalogDescription?.slice(0, 600),
+            description: payload.catalogDescription?.slice(0, 800),
           }
         : null,
       ideaBrief: payload.ideaBrief ?? null,
       graphContext: payload.graphContext,
+      ecosystemTripleExamples: payload.ecosystemTripleExamples ?? [],
       outputSchema: {
-        ideaTitle: "string",
-        refinedPitch: "string",
-        archetypeSummary: "string",
-        coreTriple: "{ subject, predicate, object, rationale, kind: core, recommended: true }",
-        supportTriples: "max 4",
-        nestedTriples: "max 2, often empty",
-        protocolNotes: "max 6 strings FR",
+        ideaTitle: "string — MUST match ideaBrief.title",
+        refinedPitch: "string — from ideaBrief.oneLiner or synthesis",
+        archetypeSummary: "string — card path summary",
+        coreTriple:
+          "{ subject: idea title, predicate: top project ideas for, object: Intuition Protocol, rationale, kind: core, recommended: true }",
+        supportTriples:
+          "max 4 — copy predicate style from ecosystemTripleExamples; objects = short noun phrases",
+        nestedTriples: "max 2, usually []",
+        protocolNotes: "max 6 — duplicates, core exists, predicate reuse",
       },
     },
     null,
@@ -82,6 +93,8 @@ export function buildTripleUserMessage(payload: {
 export function buildBrainstormUserMessage(payload: {
   rawIntent: string;
   refinementSummary: string;
+  catalogTitle?: string;
+  catalogDescription?: string;
   picks: Array<{ title: string; levelId: string }>;
   currentLevelQuestion?: string;
   graphContext: object;
@@ -89,10 +102,27 @@ export function buildBrainstormUserMessage(payload: {
   return JSON.stringify(
     {
       rawIntent: payload.rawIntent,
+      catalogTitle: payload.catalogTitle ?? null,
+      catalogDescription: payload.catalogDescription?.slice(0, 600) ?? null,
       refinementSummary: payload.refinementSummary,
       picks: payload.picks,
-      currentLevelQuestion: payload.currentLevelQuestion,
+      currentLevelQuestion: payload.currentLevelQuestion ?? null,
+      graphInspect: {
+        similarAtoms: "see graphContext.networks[].similarAtoms",
+        existingCoreTriple: "see graphContext.networks[].coreTriple",
+        popularPredicates: "see graphContext.networks[].popularPredicates",
+        relatedTriples: "see graphContext.networks[].subjectTriples",
+      },
       graphContext: payload.graphContext,
+      outputSchema: {
+        reflection: "string",
+        clearerNow: "string[]",
+        stillVague: "string[]",
+        questions: "string[], 2-4 items",
+        cardGuidance: "string",
+        graphInsights: "string[]",
+        risks: "string[]",
+      },
     },
     null,
     2,

@@ -55,3 +55,6 @@ export const MAINNET_INTUITION_PROTOCOL_TERM_ID =
 export const IDEA_PREDICATE_LABEL = "top project ideas for";
 
 export const BOUNTY_PREDICATE_LABEL = IDEA_PREDICATE_LABEL;
+
+/** Objet canonique du triple bounty (aligné sur resolveObjectTermId / migration 3A). */
+export const INTUITION_PROTOCOL_OBJECT_LABEL = "Intuition Protocol";

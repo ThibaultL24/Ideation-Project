@@ -19,7 +19,7 @@ export function BrainstormCoachPanel({
   return (
     <aside className="rounded-xl border border-[var(--border)] bg-[var(--card)]">
       <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3">
-        <h3 className="text-sm font-semibold">Coach IA · brainstorming</h3>
+        <h3 className="text-sm font-semibold">Coach IA · affinage</h3>
         <button
           type="button"
           onClick={onRefresh}
@@ -32,12 +32,40 @@ export function BrainstormCoachPanel({
       <div className="space-y-4 p-4 text-sm">
         {!coach && !loading && (
           <p className="text-xs text-[var(--muted)]">
-            L&apos;assistant analyse le graphe testnet/mainnet pour guider tes cartes.
+            Clarifie ton idée — sans la remplacer. Le coach s&apos;appuie sur le graphe
+            testnet/mainnet.
           </p>
         )}
         {coach && (
           <>
             <p className="leading-relaxed text-[var(--foreground)]">{coach.reflection}</p>
+
+            {coach.clearerNow.length > 0 && (
+              <div>
+                <h4 className="text-xs font-medium uppercase text-emerald-400/90">
+                  Plus clair
+                </h4>
+                <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-[var(--muted)]">
+                  {coach.clearerNow.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {coach.stillVague.length > 0 && (
+              <div>
+                <h4 className="text-xs font-medium uppercase text-amber-400/90">
+                  Encore flou
+                </h4>
+                <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-[var(--muted)]">
+                  {coach.stillVague.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
             <div>
               <h4 className="text-xs font-medium uppercase text-[var(--accent)]">Questions</h4>
               <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-[var(--muted)]">
@@ -46,6 +74,7 @@ export function BrainstormCoachPanel({
                 ))}
               </ul>
             </div>
+
             {coach.graphInsights.length > 0 && (
               <div>
                 <h4 className="text-xs font-medium uppercase text-[var(--accent)]">
@@ -58,10 +87,12 @@ export function BrainstormCoachPanel({
                 </ul>
               </div>
             )}
+
             <p className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-xs text-[var(--muted)]">
               <span className="text-[var(--foreground)]">Cartes : </span>
               {coach.cardGuidance}
             </p>
+
             {coach.risks.length > 0 && (
               <ul className="text-xs text-amber-400/90">
                 {coach.risks.map((r, i) => (
