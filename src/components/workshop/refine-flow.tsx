@@ -196,7 +196,7 @@ export function RefineFlow() {
                 href="/workshop/brainstorm"
                 className="inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black"
               >
-                Structurer en triples →
+                Consolider l&apos;idée →
               </Link>
             </div>
           )}

@@ -1,6 +1,6 @@
 // src/app/workshop/brainstorm/page.tsx
-import { TripleWorkspace } from "@/components/workshop/triple-workspace";
+import { BrainstormWorkspace } from "@/components/workshop/brainstorm-workspace";
 
 export default function WorkshopBrainstormPage() {
-  return <TripleWorkspace />;
+  return <BrainstormWorkspace />;
 }

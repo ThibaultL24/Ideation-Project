@@ -9,11 +9,10 @@ export default function WorkshopPage() {
         <p className="text-sm uppercase tracking-widest text-[var(--accent)]">
           Atelier idéation v2
         </p>
-        <h1 className="text-3xl font-bold">Affine ton idée, puis structure-la en triples</h1>
+        <h1 className="text-3xl font-bold">Affine ton idée, puis publie-la</h1>
         <p className="max-w-2xl text-[var(--muted)]">
-          Trois tours de cartes pour préciser le modèle produit, puis un assistant IA qui
-          propose atoms, triples de soutien et triples imbriqués (provenance) — avec linter
-          protocole Intuition.
+          Cartes pour préciser le modèle, brainstorm pour consolider la fiche produit.
+          Triples et publication Intuition uniquement quand tu es prêt.
         </p>
       </section>
 

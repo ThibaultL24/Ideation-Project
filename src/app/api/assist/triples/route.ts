@@ -3,27 +3,29 @@ import { NextResponse } from "next/server";
 import { generateTripleDraft } from "@/lib/assist/generate-triples";
 import { isAssistEnabled } from "@/lib/assist/openai";
 import { buildGraphInspect } from "@/lib/intuition/graph-inspect";
+import type { WorkshopSession } from "@/lib/workshop/session";
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as {
-      rawIntent?: string;
-      refinementSummary?: string;
-      picks?: Array<{ title: string }>;
-      ideaTitle?: string;
-      catalogDescription?: string;
-      canonicalId?: string;
-    };
+    const body = (await request.json()) as { session?: WorkshopSession };
 
-    const rawIntent = body.rawIntent?.trim() ?? "";
-    const ideaTitle = body.ideaTitle?.trim() || rawIntent.slice(0, 80) || "New Idea";
-    const picks = body.picks ?? [];
-    const refinementSummary = body.refinementSummary?.trim() ?? rawIntent;
+    const session = body.session;
+    if (!session?.rawIntent?.trim()) {
+      return NextResponse.json({ error: "session required" }, { status: 400 });
+    }
+
+    const rawIntent = session.rawIntent.trim();
+    const ideaTitle =
+      session.ideaBrief?.title?.trim() ||
+      session.catalogTitle?.trim() ||
+      rawIntent.slice(0, 80);
+    const picks = session.picks.map((p) => ({ title: p.title }));
+    const refinementSummary = session.refinementSummary?.trim() ?? rawIntent;
 
     const graphInspect = await buildGraphInspect({
       rawIntent,
       ideaTitle,
-      canonicalId: body.canonicalId,
+      canonicalId: session.catalogCanonicalId,
     });
 
     const { draft, source } = await generateTripleDraft({
@@ -31,7 +33,8 @@ export async function POST(request: Request) {
       refinementSummary,
       picks,
       ideaTitle,
-      catalogDescription: body.catalogDescription,
+      catalogDescription: session.catalogDescription,
+      ideaBrief: session.ideaBrief,
       graphInspect,
     });
 

@@ -48,6 +48,7 @@ export function buildTripleUserMessage(payload: {
   catalogTitle?: string;
   catalogDescription?: string;
   picks: Array<{ title: string }>;
+  ideaBrief?: object;
   graphContext: object;
 }): string {
   return JSON.stringify(
@@ -61,6 +62,7 @@ export function buildTripleUserMessage(payload: {
             description: payload.catalogDescription?.slice(0, 600),
           }
         : null,
+      ideaBrief: payload.ideaBrief ?? null,
       graphContext: payload.graphContext,
       outputSchema: {
         ideaTitle: "string",

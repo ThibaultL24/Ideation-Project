@@ -13,12 +13,15 @@ import type { GraphInspectResult } from "@/lib/intuition/graph-inspect";
 import { graphInspectForPrompt } from "@/lib/intuition/graph-inspect";
 import { enrichTripleDraft, type EnrichedTripleDraft } from "./enrich-draft";
 
+import type { IdeaBrief } from "@/lib/workshop/idea-brief";
+
 export interface GenerateTriplesInput {
   rawIntent: string;
   refinementSummary: string;
   picks: Array<{ title: string }>;
   ideaTitle: string;
   catalogDescription?: string;
+  ideaBrief?: IdeaBrief;
   graphInspect: GraphInspectResult;
 }
 
@@ -51,6 +54,7 @@ export async function generateTripleDraft(
             catalogTitle: input.ideaTitle,
             catalogDescription: input.catalogDescription,
             picks: input.picks,
+            ideaBrief: input.ideaBrief,
             graphContext,
           }),
         },

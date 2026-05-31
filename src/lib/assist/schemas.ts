@@ -37,3 +37,17 @@ export const assistCardsResponseSchema = z.object({
 });
 
 export type AssistCardsResponse = z.infer<typeof assistCardsResponseSchema>;
+
+export const assistSynthesisResponseSchema = z.object({
+  title: z.string(),
+  oneLiner: z.string(),
+  problem: z.string(),
+  solution: z.string(),
+  targetUsers: z.string(),
+  whyNow: z.string(),
+  intuitionAngle: z.string(),
+  mvpScope: z.string(),
+  openQuestions: z.string(),
+});
+
+export type AssistSynthesisResponse = z.infer<typeof assistSynthesisResponseSchema>;
