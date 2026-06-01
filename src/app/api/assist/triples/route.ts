@@ -2,7 +2,8 @@
 import { NextResponse } from "next/server";
 import { generateTripleDraft } from "@/lib/assist/generate-triples";
 import { isAssistEnabled } from "@/lib/assist/openai";
-import { buildGraphInspect } from "@/lib/intuition/graph-inspect";
+import { resolveGraphInspectForAssist } from "@/lib/workshop/resolve-graph-context";
+import { resolveWorkshopAtomLabel } from "@/lib/workshop/atom-label";
 import type { WorkshopSession } from "@/lib/workshop/session";
 
 export async function POST(request: Request) {
@@ -15,23 +16,26 @@ export async function POST(request: Request) {
     }
 
     const rawIntent = session.rawIntent.trim();
-    const ideaTitle =
-      session.ideaBrief?.title?.trim() ||
-      session.catalogTitle?.trim() ||
-      rawIntent.slice(0, 80);
-    const picks = session.picks.map((p) => ({ title: p.title }));
-    const refinementSummary = session.refinementSummary?.trim() ?? rawIntent;
+    const ideaTitle = resolveWorkshopAtomLabel({
+      rawIntent,
+      catalogTitle: session.catalogTitle,
+      ideaBrief: session.ideaBrief,
+    });
+    const refinementSummary =
+      session.ideaBrief?.oneLiner?.trim() ||
+      session.ideaBrief?.problem?.trim()?.slice(0, 300) ||
+      rawIntent;
 
-    const graphInspect = await buildGraphInspect({
+    const graphInspect = await resolveGraphInspectForAssist({
       rawIntent,
       ideaTitle,
       canonicalId: session.catalogCanonicalId,
+      graphContext: session.graphContext,
     });
 
     const { draft, source } = await generateTripleDraft({
       rawIntent,
       refinementSummary,
-      picks,
       ideaTitle,
       catalogDescription: session.catalogDescription,
       ideaBrief: session.ideaBrief,

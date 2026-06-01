@@ -72,16 +72,16 @@ export function enrichTripleDraft(
   const graphSummary: string[] = [];
 
   if (testnet?.coreTriple.exists) {
-    graphSummary.push("Le triple cœur existe déjà sur testnet — ne pas le recréer.");
+    graphSummary.push("Core triple already exists on testnet — do not recreate it.");
   }
   if (testnet?.subjectTriples.length) {
     graphSummary.push(
-      `${testnet.subjectTriples.length} triple(s) existant(s) pour un sujet proche — inspire-toi des prédicats réels.`,
+      `${testnet.subjectTriples.length} existing triple(s) for a similar subject — mirror real predicates.`,
     );
   }
   if (testnet?.popularPredicates.length) {
     graphSummary.push(
-      `Prédicats populaires : ${testnet.popularPredicates.slice(0, 5).map((p) => p.label).join(", ")}.`,
+      `Popular predicates: ${testnet.popularPredicates.slice(0, 5).map((p) => p.label).join(", ")}.`,
     );
   }
 

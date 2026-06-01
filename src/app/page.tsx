@@ -15,11 +15,11 @@ export default function HomePage() {
           Intuition · testnet
         </p>
         <h1 className="text-3xl font-bold leading-tight md:text-4xl">
-          Idées de projets, attestées onchain
+          Project ideas, attested onchain
         </h1>
         <p className="max-w-2xl text-[var(--muted)]">
-          Catalogue issu du document <em>Build on Intuition: 300+ dApp Ideas</em> —
-          chaque fiche reprend le texte source du PDF.
+          Catalog from <em>Build on Intuition: 300+ dApp Ideas</em> — each entry
+          mirrors the source PDF text.
         </p>
       </section>
 
@@ -28,9 +28,9 @@ export default function HomePage() {
           href="/ideas"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
         >
-          <h2 className="font-semibold">Catalogue</h2>
+          <h2 className="font-semibold">Catalog</h2>
           <p className="mt-2 text-sm text-[var(--muted)]">
-            {ideas.length} projets · filtres par catégorie
+            {ideas.length} projects · filter by category
           </p>
         </Link>
         <a
@@ -41,31 +41,29 @@ export default function HomePage() {
         >
           <h2 className="font-semibold">Explorer</h2>
           <p className="mt-2 text-sm text-[var(--muted)]">
-            Portal Intuition — graphe et claims
+            Intuition Portal — graph and claims
           </p>
         </a>
         <Link
           href="/random"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
         >
-          <h2 className="font-semibold">Découvrir</h2>
-          <p className="mt-2 text-sm text-[var(--muted)]">
-            Une idée au hasard
-          </p>
+          <h2 className="font-semibold">Discover</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">Random idea</p>
         </Link>
       </section>
 
       <section className="rounded-xl border border-[var(--accent)]/30 bg-[var(--card)] p-6">
-        <h2 className="text-lg font-semibold">Atelier idéation</h2>
+        <h2 className="text-lg font-semibold">Ideation workshop</h2>
         <p className="mt-2 max-w-xl text-sm text-[var(--muted)]">
-          Cartes d&apos;affinage (4×3 tours), puis assistant triples Intuition — atoms,
-          relations, triples imbriqués.
+          Deep research on your idea, then Intuition triples and a GitHub PR — no
+          on-chain transactions from this app.
         </p>
         <Link
           href="/workshop"
           className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
         >
-          Ouvrir l&apos;atelier
+          Open workshop
         </Link>
       </section>
     </div>

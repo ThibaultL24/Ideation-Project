@@ -13,16 +13,24 @@ import type { GraphInspectResult } from "@/lib/intuition/graph-inspect";
 import { graphInspectForPrompt } from "@/lib/intuition/graph-inspect";
 import { enrichTripleDraft, type EnrichedTripleDraft } from "./enrich-draft";
 
+import { resolveWorkshopAtomLabel } from "@/lib/workshop/atom-label";
 import type { IdeaBrief } from "@/lib/workshop/idea-brief";
 
 export interface GenerateTriplesInput {
   rawIntent: string;
   refinementSummary: string;
-  picks: Array<{ title: string }>;
   ideaTitle: string;
   catalogDescription?: string;
   ideaBrief?: IdeaBrief;
   graphInspect: GraphInspectResult;
+}
+
+function resolveTitle(input: GenerateTriplesInput): string {
+  return resolveWorkshopAtomLabel({
+    rawIntent: input.rawIntent,
+    catalogTitle: input.ideaTitle,
+    ideaBrief: input.ideaBrief,
+  });
 }
 
 function finalizeDraft(
@@ -31,8 +39,9 @@ function finalizeDraft(
 ): TripleDraft {
   const testnet = input.graphInspect.networks.find((n) => n.network === "testnet");
   const refined = refineTripleDraft(draft, {
-    ideaTitle: input.ideaTitle,
+    ideaTitle: resolveTitle(input),
     ideaBrief: input.ideaBrief,
+    rawIntent: input.rawIntent,
     popularPredicates: testnet?.popularPredicates ?? [],
     coreAlreadyExists: testnet?.coreTriple.exists,
   });
@@ -70,7 +79,6 @@ export async function generateTripleDraft(
             refinementSummary: input.refinementSummary,
             catalogTitle: input.ideaTitle,
             catalogDescription: input.catalogDescription,
-            picks: input.picks,
             ideaBrief: input.ideaBrief,
             graphContext,
             ecosystemTripleExamples,
@@ -83,8 +91,9 @@ export async function generateTripleDraft(
     if (!raw) throw new Error("Empty OpenAI response");
 
     const parsed = assistTripleResponseSchema.parse(JSON.parse(raw));
+    const atomLabel = resolveTitle(input);
     const base = finalizeDraft(
-      normalizeTripleDraft({ ...parsed, linterWarnings: [] }, input.ideaTitle),
+      normalizeTripleDraft({ ...parsed, linterWarnings: [] }, atomLabel),
       input,
     );
 
@@ -105,7 +114,7 @@ function mergeGraphWarnings(draft: TripleDraft, inspect: GraphInspectResult): vo
   const testnet = inspect.networks.find((n) => n.network === "testnet");
   if (testnet?.coreTriple.exists) {
     draft.linterWarnings.push(
-      "Triple cœur peut déjà exister sur testnet — référence Portal pour vérification.",
+      "Core triple may already exist on testnet — check Portal for verification.",
     );
   }
   const dup = testnet?.similarAtoms.find(
@@ -115,7 +124,7 @@ function mergeGraphWarnings(draft: TripleDraft, inspect: GraphInspectResult): vo
   );
   if (dup) {
     draft.linterWarnings.push(
-      `Atom proche existant : « ${dup.label} » (${dup.term_id.slice(0, 10)}…).`,
+      `Similar atom exists: « ${dup.label} » (${dup.term_id.slice(0, 10)}…).`,
     );
   }
 }
@@ -124,15 +133,14 @@ function buildFallbackDraft(
   input: GenerateTriplesInput,
   examples: Awaited<ReturnType<typeof fetchEcosystemTripleExamples>>,
 ): TripleDraft {
-  const title =
-    input.ideaBrief?.title?.trim() || input.ideaTitle.trim() || "New Idea";
+  const title = resolveTitle(input);
   const testnet = input.graphInspect.networks.find((n) => n.network === "testnet");
 
   const supportFromExamples = examples.slice(0, 3).map((ex) => ({
     subject: title,
     predicate: ex.predicate,
     object: ex.object,
-    rationale: `Aligné sur le graphe (idée « ${ex.ideaLabel} »).`,
+    rationale: `Aligned with graph (idea « ${ex.ideaLabel} »).`,
     kind: "support" as const,
     recommended: true,
   }));
@@ -144,14 +152,15 @@ function buildFallbackDraft(
         input.ideaBrief?.oneLiner ||
         input.refinementSummary ||
         input.rawIntent,
-      archetypeSummary: input.picks.map((p) => p.title).join(" → "),
+      archetypeSummary:
+        input.ideaBrief?.intuitionAngle?.slice(0, 120) || "Workshop deep research",
       supportTriples: supportFromExamples,
       nestedTriples: [],
       protocolNotes: [
-        "Brouillon basé sur le graphe testnet + fiche produit.",
+        "Draft from testnet graph + product brief.",
         testnet?.coreTriple.exists
-          ? "Triple bounty peut déjà exister pour un sujet proche."
-          : "Triple bounty standard documenté pour la PR.",
+          ? "Bounty triple may already exist for a similar subject."
+          : "Standard bounty triple documented for the PR.",
       ],
     },
     title,

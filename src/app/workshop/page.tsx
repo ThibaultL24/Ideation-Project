@@ -7,12 +7,12 @@ export default function WorkshopPage() {
     <div className="space-y-8">
       <section className="space-y-3">
         <p className="text-sm uppercase tracking-widest text-[var(--accent)]">
-          Atelier idéation v2
+          Ideation workshop
         </p>
-        <h1 className="text-3xl font-bold">Découvre, affine, propose en PR</h1>
+        <h1 className="text-3xl font-bold">Brainstorm → build → publish</h1>
         <p className="max-w-2xl text-[var(--muted)]">
-          1) Similarités existantes · 2) Réflexion (cartes, débrief, fiche) · 3) Triples
-          sémantiques + pull request GitHub. Pas de publication on-chain depuis l&apos;atelier.
+          No fixed idea required. Explore a territory, pick one of five coherent directions,
+          deepen it into a product brief, then publish on the Intuition graph.
         </p>
       </section>
 
@@ -23,15 +23,15 @@ export default function WorkshopPage() {
           href="/random?workshop=1"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 transition hover:border-[var(--accent)]"
         >
-          <h2 className="font-semibold">Idée au hasard</h2>
-          <p className="mt-1 text-sm text-[var(--muted)]">Partir du catalogue 300+ idées</p>
+          <h2 className="font-semibold">Random idea</h2>
+          <p className="mt-1 text-sm text-[var(--muted)]">Start from 300+ catalog ideas</p>
         </Link>
         <Link
           href="/ideas"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 transition hover:border-[var(--accent)]"
         >
-          <h2 className="font-semibold">Catalogue</h2>
-          <p className="mt-1 text-sm text-[var(--muted)]">Choisir une fiche précise</p>
+          <h2 className="font-semibold">Catalog</h2>
+          <p className="mt-1 text-sm text-[var(--muted)]">Pick a specific entry</p>
         </Link>
       </section>
     </div>

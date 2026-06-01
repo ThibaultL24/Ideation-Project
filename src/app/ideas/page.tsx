@@ -17,9 +17,9 @@ export default async function IdeasPage({ searchParams }: IdeasPageProps) {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Catalogue</h1>
+        <h1 className="text-2xl font-bold">Catalog</h1>
         <p className="text-sm text-[var(--muted)]">
-          {filtered.length} projet{filtered.length > 1 ? "s" : ""}
+          {filtered.length} project{filtered.length !== 1 ? "s" : ""}
           {params.category ? ` · ${params.category}` : ""}
         </p>
       </div>
@@ -33,7 +33,7 @@ export default async function IdeasPage({ searchParams }: IdeasPageProps) {
               : "border-[var(--border)] text-[var(--muted)]"
           }`}
         >
-          Tous
+          All
         </Link>
         {categories.map((category) => (
           <Link

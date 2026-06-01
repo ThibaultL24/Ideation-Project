@@ -132,7 +132,7 @@ export function buildGitHubManualPublish(
     newFileUrl,
     compareUrl,
     instructions:
-      "Ouvre le lien « Nouveau fichier », colle le markdown généré, valide : GitHub te proposera de créer la PR sans étape branche manuelle.",
+      "Open the new-file link, paste the generated markdown, submit — GitHub will offer to open a PR without a manual branch step.",
   };
 }
 

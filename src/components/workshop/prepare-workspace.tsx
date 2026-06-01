@@ -4,9 +4,13 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import type { EnrichedTripleDraft } from "@/lib/assist/enrich-draft";
+import type { WorkshopPublishResult } from "@/lib/intuition/publish-workshop";
+import type { OnchainPublishSummary } from "@/lib/workshop/decent-rep";
 import { formatTripleLine } from "@/lib/workshop/triple-draft";
 import type { WorkshopPublishPlan } from "@/lib/workshop/publish-plan";
 import { loadSession, saveSession, type WorkshopSession } from "@/lib/workshop/session";
+import { DecentRepPanel } from "./decent-rep-panel";
+import { SemanticPreview } from "./semantic-preview";
 
 export function PrepareWorkspace() {
   const [session, setSession] = useState<WorkshopSession | null>(null);
@@ -57,6 +61,13 @@ export function PrepareWorkspace() {
     setTriplesLoading(false);
   }
 
+  function handleOnchainPublished(summary: OnchainPublishSummary, _raw: WorkshopPublishResult) {
+    if (!session) return;
+    const updated = { ...session, onchainPublish: summary };
+    saveSession(updated);
+    setSession(updated);
+  }
+
   async function createPr() {
     if (!session) return;
     setGithubLoading(true);
@@ -73,9 +84,9 @@ export function PrepareWorkspace() {
   if (!session?.rawIntent) {
     return (
       <div className="rounded-xl border border-[var(--border)] p-6">
-        <p className="text-[var(--muted)]">Session vide.</p>
+        <p className="text-[var(--muted)]">Empty session.</p>
         <Link href="/workshop" className="mt-4 inline-block text-[var(--accent)]">
-          Démarrer l&apos;atelier
+          Start workshop
         </Link>
       </div>
     );
@@ -84,9 +95,9 @@ export function PrepareWorkspace() {
   if (!session.ideaBrief?.problem?.trim()) {
     return (
       <div className="rounded-xl border border-amber-900/40 bg-amber-950/20 p-6 space-y-4">
-        <p className="text-sm">Consolide d&apos;abord ton idée au brainstorm.</p>
-        <Link href="/workshop/brainstorm" className="text-[var(--accent)]">
-          ← Brainstorm
+        <p className="text-sm">Run deep research first.</p>
+        <Link href="/workshop/research" className="text-[var(--accent)]">
+          ← Research
         </Link>
       </div>
     );
@@ -95,173 +106,186 @@ export function PrepareWorkspace() {
   const brief = session.ideaBrief;
   const draft = session.tripleDraft;
   const hasTriples = Boolean(draft);
-  const guide = plan?.publishGuide;
+  const onchainDone = Boolean(session.onchainPublish);
 
   return (
-    <div className="space-y-8">
-      <header className="space-y-2">
-        <p className="text-xs uppercase tracking-widest text-[var(--accent)]">
-          Étape 3 sur 3 · Proposer en PR
-        </p>
-        <h1 className="text-2xl font-bold">{brief.title || session.catalogTitle}</h1>
-        <p className="text-sm text-[var(--muted)]">{brief.oneLiner}</p>
-        <p className="text-xs text-[var(--muted)]">
-          Les triples Intuition documentent le modèle sémantique dans la PR. Aucune
-          transaction on-chain n&apos;est envoyée depuis cet atelier.
-        </p>
-      </header>
-
-      <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 text-sm space-y-2">
-        <p className="text-xs text-[var(--accent)]">Fiche idée (brainstorm)</p>
-        <p className="text-xs text-[var(--muted)]">
-          <strong>Problème :</strong> {brief.problem.slice(0, 200)}
-          {brief.problem.length > 200 ? "…" : ""}
-        </p>
-      </section>
-
-      {!hasTriples && (
-        <section className="space-y-4 rounded-xl border border-[var(--accent)]/30 p-5">
-          <h2 className="text-sm font-semibold">Modèle sémantique Intuition</h2>
+    <div className="grid gap-6 xl:grid-cols-[1fr_260px]">
+      <div className="space-y-8 min-w-0">
+        <header className="space-y-2">
+          <p className="text-xs uppercase tracking-widest text-[var(--accent)]">
+            Step 2 of 2 · Decentralized reputation
+          </p>
+          <h1 className="text-2xl font-bold">{brief.title || session.catalogTitle}</h1>
+          <p className="text-sm text-[var(--muted)]">{brief.oneLiner}</p>
           <p className="text-xs text-[var(--muted)]">
-            L&apos;IA s&apos;appuie sur la doc Intuition et des exemples réels du graphe.
-            Triple cœur obligatoire : [titre] → top project ideas for → Intuition Protocol.
-            Support et nested documentés dans le README de la PR uniquement.
+            Validate your semantic model, publish atoms and triples on the Intuition graph,
+            then optionally submit the write-up to intuition-box on GitHub.
           </p>
-          <button
-            type="button"
-            onClick={() => void generateTriples()}
-            disabled={triplesLoading}
-            className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black disabled:opacity-50"
-          >
-            {triplesLoading ? "Préparation…" : "Préparer les triples pour la PR"}
-          </button>
-        </section>
-      )}
+        </header>
 
-      {hasTriples && draft && (
-        <section className="space-y-3 rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
-          <h2 className="text-sm font-semibold">Aperçu des triples (PR)</h2>
-          <p className="font-mono text-xs text-[var(--muted)]">
-            {formatTripleLine(draft.coreTriple)}
-          </p>
-          {draft.supportTriples.map((t, i) => (
-            <p key={i} className="font-mono text-xs text-[var(--muted)]">
-              {formatTripleLine(t)}
+        {!hasTriples && (
+          <section className="space-y-4 rounded-xl border border-[var(--accent)]/30 p-5">
+            <h2 className="text-sm font-semibold">Reputation model</h2>
+            <p className="text-xs text-[var(--muted)]">
+              AI drafts atoms and triples aligned with the bounty pattern and your research
+              brief. Required core: [title] → top project ideas for → Intuition Protocol.
             </p>
-          ))}
-          {draft.nestedTriples.map((t, i) => (
-            <p key={i} className="font-mono text-xs text-amber-400/80">
-              nested · {formatTripleLine(t)}
+            <button
+              type="button"
+              onClick={() => void generateTriples()}
+              disabled={triplesLoading}
+              className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black disabled:opacity-50"
+            >
+              {triplesLoading ? "Building model…" : "Build reputation model"}
+            </button>
+          </section>
+        )}
+
+        {hasTriples && draft && (
+          <section className="space-y-3 rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <h2 className="text-sm font-semibold">Semantic model</h2>
+              <button
+                type="button"
+                onClick={() => void generateTriples()}
+                disabled={triplesLoading}
+                className="text-xs text-[var(--accent)] disabled:opacity-50"
+              >
+                {triplesLoading ? "Regenerating…" : "Regenerate"}
+              </button>
+            </div>
+            <p className="font-mono text-xs text-[var(--muted)]">
+              {formatTripleLine(draft.coreTriple)}
             </p>
-          ))}
-          {(draft.linterWarnings?.length ?? 0) > 0 && (
-            <ul className="text-xs text-amber-400/90">
-              {draft.linterWarnings.map((w, i) => (
-                <li key={i}>⚠ {w}</li>
-              ))}
-            </ul>
-          )}
-        </section>
-      )}
-
-      {loadingPlan && hasTriples && (
-        <p className="text-sm text-[var(--muted)]">Chargement du plan PR…</p>
-      )}
-
-      {hasTriples && plan && guide && (
-        <section className="space-y-4">
-          <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 space-y-2">
-            <p className="text-sm font-medium">{guide.headline}</p>
-            <ul className="list-disc space-y-1 pl-4 text-xs text-[var(--muted)]">
-              {guide.checks.map((c, i) => (
-                <li key={i}>{c}</li>
-              ))}
-            </ul>
-          </div>
-
-          <details className="rounded-xl border border-[var(--border)] bg-[var(--card)]">
-            <summary className="cursor-pointer px-4 py-3 text-sm">
-              Aperçu markdown de la PR
-            </summary>
-            <pre className="max-h-64 overflow-auto border-t border-[var(--border)] p-4 text-xs whitespace-pre-wrap text-[var(--muted)]">
-              {plan.markdown}
-            </pre>
-          </details>
-
-          <button
-            type="button"
-            onClick={() => void createPr()}
-            disabled={githubLoading || !plan.readiness.githubReady}
-            className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black disabled:opacity-40"
-          >
-            {githubLoading ? "Dépôt de la PR…" : "Déposer la PR sur GitHub"}
-          </button>
-
-          {githubResult?.mode === "manual" && (
-            <div className="space-y-2 text-xs text-amber-400/90">
-              <p>
-                {typeof githubResult.reason === "string"
-                  ? githubResult.reason
-                  : "Configure .env pour le dépôt automatique, ou utilise les liens ci-dessous."}
+            {draft.supportTriples.map((t, i) => (
+              <p key={i} className="font-mono text-xs text-[var(--muted)]">
+                support · {formatTripleLine(t)}
               </p>
-              {typeof githubResult.manual === "object" && githubResult.manual !== null && (
-                <>
-                  {"instructions" in (githubResult.manual as object) && (
-                    <p>{(githubResult.manual as { instructions: string }).instructions}</p>
-                  )}
-                  {"newFileUrl" in (githubResult.manual as object) && (
-                    <a
-                      href={(githubResult.manual as { newFileUrl: string }).newFileUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block text-[var(--accent)] break-all"
-                    >
-                      Ouvrir l&apos;éditeur GitHub (nouveau fichier → PR)
-                    </a>
-                  )}
-                </>
+            ))}
+            {draft.nestedTriples.map((t, i) => (
+              <p key={i} className="font-mono text-xs text-amber-400/80">
+                nested · {formatTripleLine(t)}
+              </p>
+            ))}
+            {(draft.linterWarnings?.length ?? 0) > 0 && (
+              <ul className="text-xs text-amber-400/90">
+                {draft.linterWarnings.map((w, i) => (
+                  <li key={i}>⚠ {w}</li>
+                ))}
+              </ul>
+            )}
+          </section>
+        )}
+
+        {loadingPlan && hasTriples && (
+          <p className="text-sm text-[var(--muted)]">Loading publish plan…</p>
+        )}
+
+        {hasTriples && plan && (
+          <DecentRepPanel
+            session={session}
+            plan={plan}
+            existingPublish={session.onchainPublish}
+            onPublished={handleOnchainPublished}
+          />
+        )}
+
+        {hasTriples && plan && (
+          <details className="rounded-xl border border-[var(--border)] bg-[var(--card)] group">
+            <summary className="cursor-pointer px-4 py-3 text-sm font-medium">
+              Optional · GitHub PR (community review)
+            </summary>
+            <div className="space-y-4 border-t border-[var(--border)] p-4">
+              <p className="text-xs text-[var(--muted)]">
+                The PR documents your idea for human review. It does not replace on-chain
+                reputation — publish on Intuition first when you can.
+              </p>
+
+              <details className="rounded-lg border border-[var(--border)] bg-black/20">
+                <summary className="cursor-pointer px-3 py-2 text-xs">
+                  README preview
+                </summary>
+                <pre className="max-h-48 overflow-auto p-3 text-xs whitespace-pre-wrap text-[var(--muted)]">
+                  {plan.markdown}
+                </pre>
+              </details>
+
+              <button
+                type="button"
+                onClick={() => void createPr()}
+                disabled={githubLoading || !plan.readiness.githubReady}
+                className="w-full rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm hover:border-[var(--accent)] disabled:opacity-40"
+              >
+                {githubLoading ? "Opening PR…" : "Create GitHub PR"}
+              </button>
+
+              {onchainDone && (
+                <p className="text-[10px] text-emerald-400/80">
+                  On-chain publish complete — link your PR comment to the atom when ready.
+                </p>
+              )}
+
+              {githubResult?.mode === "manual" && (
+                <div className="space-y-2 text-xs text-amber-400/90">
+                  <p>
+                    {typeof githubResult.reason === "string"
+                      ? githubResult.reason
+                      : "Configure .env for automatic PR creation."}
+                  </p>
+                  {typeof githubResult.manual === "object" &&
+                    githubResult.manual !== null &&
+                    "newFileUrl" in (githubResult.manual as object) && (
+                      <a
+                        href={(githubResult.manual as { newFileUrl: string }).newFileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-[var(--accent)] break-all"
+                      >
+                        Open GitHub editor
+                      </a>
+                    )}
+                </div>
+              )}
+              {typeof githubResult?.prUrl === "string" && (
+                <a
+                  href={githubResult.prUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-sm text-[var(--accent)] break-all"
+                >
+                  {githubResult.prUrl}
+                </a>
+              )}
+              {typeof githubResult?.error === "string" && (
+                <p className="text-xs text-rose-400">{githubResult.error}</p>
+              )}
+
+              {plan.readiness.warnings.length > 0 && (
+                <ul className="text-xs text-amber-400/90">
+                  {plan.readiness.warnings.map((w, i) => (
+                    <li key={i}>⚠ {w}</li>
+                  ))}
+                </ul>
               )}
             </div>
-          )}
-          {typeof githubResult?.publishRepo === "string" && (
-            <p className="text-[10px] text-[var(--muted)]">
-              Commit : {githubResult.publishRepo as string}
-              {typeof githubResult.targetRepo === "string"
-                ? ` → PR : ${githubResult.targetRepo as string}`
-                : ""}
-            </p>
-          )}
-          {typeof githubResult?.error === "string" && (
-            <p className="text-xs text-rose-400">{githubResult.error}</p>
-          )}
-          {typeof githubResult?.prUrl === "string" && (
-            <a
-              href={githubResult.prUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-sm text-[var(--accent)] break-all"
-            >
-              {githubResult.prUrl}
-            </a>
-          )}
+          </details>
+        )}
 
-          {plan.readiness.warnings.length > 0 && (
-            <ul className="text-xs text-amber-400/90">
-              {plan.readiness.warnings.map((w, i) => (
-                <li key={i}>⚠ {w}</li>
-              ))}
-            </ul>
-          )}
-        </section>
-      )}
+        <div className="flex flex-wrap gap-3 text-sm">
+          <Link href="/workshop/research" className="text-[var(--muted)] hover:text-white">
+            ← Edit brief
+          </Link>
+        </div>
+      </div>
 
-      <div className="flex flex-wrap gap-3 text-sm">
-        <Link href="/workshop/brainstorm" className="text-[var(--muted)] hover:text-white">
-          ← Modifier la fiche
-        </Link>
-        <Link href="/workshop/discover" className="text-[var(--muted)] hover:text-white">
-          Similarités
-        </Link>
+      <div className="space-y-4">
+        <SemanticPreview
+          ideaTitle={brief.title || session.catalogTitle || "New Idea"}
+          ideaBrief={brief}
+          tripleDraft={draft as EnrichedTripleDraft | undefined}
+          graphContext={session.graphContext}
+          showCreateVsSignal
+        />
       </div>
     </div>
   );

@@ -12,7 +12,27 @@ import type { IntuitionNetwork } from "./config";
 import { createIntuitionClients, getNativeBalance } from "./client";
 import { ensureAtomFromIdea } from "./atoms";
 import { ensureTriple } from "./triples";
+import { resolveAtomTermIdForLabel } from "./resolve-label-atom";
 import { resolveObjectTermId, resolvePredicateTermId } from "./terms";
+import { formatTripleLine } from "@/lib/workshop/triple-draft";
+
+const MAX_SUPPORT_TRIPLES_ONCHAIN = 3;
+
+export interface PublishedAtomRecord {
+  label: string;
+  termId: Hex;
+  created: boolean;
+  role: "idea" | "predicate" | "object" | "support-component";
+}
+
+export interface PublishedSupportTriple {
+  line: string;
+  tripleTermId: Hex;
+  tripleCreated: boolean;
+  subjectAtomId: Hex;
+  predicateAtomId: Hex;
+  objectAtomId: Hex;
+}
 
 export interface WorkshopPublishResult {
   ideaCanonicalId: string;
@@ -23,10 +43,53 @@ export interface WorkshopPublishResult {
   objectAtomId: Hex;
   tripleTermId: Hex;
   tripleCreated: boolean;
+  supportTriples: PublishedSupportTriple[];
+  atomsPublished: PublishedAtomRecord[];
   skipped: string[];
   txHashes: Hex[];
   graphqlVerified: boolean;
   estimatedCostWei: string;
+}
+
+function labelsMatch(a: string, b: string): boolean {
+  return a.trim().toLowerCase() === b.trim().toLowerCase();
+}
+
+async function resolveLineAtomId(params: {
+  label: string;
+  ideaAtomId: Hex;
+  ideaTitle: string;
+  networkConfig: Awaited<ReturnType<typeof createIntuitionClients>>["config"];
+  writeConfig: NonNullable<Awaited<ReturnType<typeof createIntuitionClients>>["writeConfig"]>;
+  hintTermId?: Hex;
+  role: PublishedAtomRecord["role"];
+  atomsPublished: PublishedAtomRecord[];
+  txHashes: Hex[];
+}): Promise<Hex> {
+  if (params.hintTermId) {
+    const exists = await multiVaultIsTermCreated(params.writeConfig, {
+      args: [params.hintTermId],
+    });
+    if (exists) return params.hintTermId;
+  }
+
+  if (labelsMatch(params.label, params.ideaTitle)) {
+    return params.ideaAtomId;
+  }
+
+  const resolved = await resolveAtomTermIdForLabel({
+    networkConfig: params.networkConfig,
+    writeConfig: params.writeConfig,
+    label: params.label,
+  });
+  if (resolved.txHash) params.txHashes.push(resolved.txHash);
+  params.atomsPublished.push({
+    label: params.label,
+    termId: resolved.termId,
+    created: resolved.created,
+    role: params.role,
+  });
+  return resolved.termId;
 }
 
 export async function publishWorkshopOnchain(params: {
@@ -34,6 +97,7 @@ export async function publishWorkshopOnchain(params: {
   draft: EnrichedTripleDraft;
   network?: IntuitionNetwork;
   githubBlobUrl?: string;
+  includeSupportTriples?: boolean;
 }): Promise<WorkshopPublishResult> {
   const clients = await createIntuitionClients(params.network);
   if (!clients.writeConfig) {
@@ -45,15 +109,25 @@ export async function publishWorkshopOnchain(params: {
   const skipped: string[] = [];
   const txHashes: Hex[] = [];
 
+  const supportLines = params.includeSupportTriples !== false
+    ? params.draft.supportTriples.slice(0, MAX_SUPPORT_TRIPLES_ONCHAIN)
+    : [];
+
   const atomCost = await multiVaultGetAtomCost(writeConfig);
   const tripleCost = await multiVaultGetTripleCost(writeConfig);
   const balance = await getNativeBalance(clients);
-  const minNeeded = atomCost * BigInt(2) + tripleCost;
+  const minNeeded =
+    atomCost * BigInt(2 + supportLines.length * 2) +
+    tripleCost * BigInt(1 + supportLines.length);
   if (balance < minNeeded && !oc?.tripleTermId) {
     throw new Error(
-      `Solde ${clients.config.nativeSymbol} insuffisant : ${formatEther(balance)} (besoin ~${formatEther(minNeeded)})`,
+      `Insufficient ${clients.config.nativeSymbol} balance: ${formatEther(balance)} (need ~${formatEther(minNeeded)})`,
     );
   }
+
+  const atomsPublished: PublishedAtomRecord[] = [];
+  const supportTriples: PublishedSupportTriple[] = [];
+  const ideaTitle = params.draft.ideaTitle || params.idea.title;
 
   let ideaAtomId: Hex;
   let ideaAtomCreated = false;
@@ -86,6 +160,13 @@ export async function publishWorkshopOnchain(params: {
     if (atom.txHash) txHashes.push(atom.txHash);
   }
 
+  atomsPublished.push({
+    label: ideaTitle,
+    termId: ideaAtomId,
+    created: ideaAtomCreated,
+    role: "idea",
+  });
+
   let predicateAtomId: Hex;
   if (oc?.predicateTermId) {
     predicateAtomId = oc.predicateTermId as Hex;
@@ -98,6 +179,13 @@ export async function publishWorkshopOnchain(params: {
     predicateAtomId = pred.termId;
     if (pred.txHash) txHashes.push(pred.txHash);
   }
+
+  atomsPublished.push({
+    label: params.draft.coreTriple.predicate,
+    termId: predicateAtomId,
+    created: !oc?.predicateTermId,
+    role: "predicate",
+  });
 
   let objectAtomId: Hex;
   if (oc?.objectTermId) {
@@ -112,6 +200,13 @@ export async function publishWorkshopOnchain(params: {
     objectAtomId = obj.termId;
     if (obj.txHash) txHashes.push(obj.txHash);
   }
+
+  atomsPublished.push({
+    label: params.draft.coreTriple.object,
+    termId: objectAtomId,
+    created: !oc?.objectTermId,
+    role: "object",
+  });
 
   let tripleTermId: Hex;
   let tripleCreated = false;
@@ -146,6 +241,59 @@ export async function publishWorkshopOnchain(params: {
     if (triple.txHash) txHashes.push(triple.txHash);
   }
 
+  for (const line of supportLines) {
+    const subjectId = await resolveLineAtomId({
+      label: line.subject,
+      ideaAtomId,
+      ideaTitle,
+      networkConfig: clients.config,
+      writeConfig,
+      hintTermId: line.onchain?.subjectTermId as Hex | undefined,
+      role: "support-component",
+      atomsPublished,
+      txHashes,
+    });
+    const predicateId = await resolveLineAtomId({
+      label: line.predicate,
+      ideaAtomId,
+      ideaTitle,
+      networkConfig: clients.config,
+      writeConfig,
+      hintTermId: line.onchain?.predicateTermId as Hex | undefined,
+      role: "support-component",
+      atomsPublished,
+      txHashes,
+    });
+    const objectId = await resolveLineAtomId({
+      label: line.object,
+      ideaAtomId,
+      ideaTitle,
+      networkConfig: clients.config,
+      writeConfig,
+      hintTermId: line.onchain?.objectTermId as Hex | undefined,
+      role: "support-component",
+      atomsPublished,
+      txHashes,
+    });
+
+    const triple = await ensureTriple({
+      subjectId,
+      predicateId,
+      objectId,
+      writeConfig,
+    });
+    if (triple.txHash) txHashes.push(triple.txHash);
+
+    supportTriples.push({
+      line: formatTripleLine(line),
+      tripleTermId: triple.tripleTermId,
+      tripleCreated: triple.created,
+      subjectAtomId: subjectId,
+      predicateAtomId: predicateId,
+      objectAtomId: objectId,
+    });
+  }
+
   const waitMs = Number(process.env["INTUITION_INDEXER_WAIT_MS"] ?? 2000);
   if (waitMs > 0) await new Promise((r) => setTimeout(r, waitMs));
 
@@ -166,6 +314,8 @@ export async function publishWorkshopOnchain(params: {
     objectAtomId,
     tripleTermId,
     tripleCreated,
+    supportTriples,
+    atomsPublished,
     skipped,
     txHashes,
     graphqlVerified,

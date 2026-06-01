@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="en">
       <body className="min-h-screen antialiased">
         <header className="border-b border-[var(--border)] bg-[var(--card)]">
           <nav className="mx-auto flex max-w-5xl items-center gap-6 px-4 py-4 text-sm">
@@ -25,7 +25,7 @@ export default function RootLayout({
               Ideation
             </a>
             <a href="/ideas" className="text-[var(--muted)] hover:text-white">
-              Catalogue
+              Catalog
             </a>
             <a
               href={PORTAL_EXPLORER_URL}
@@ -36,10 +36,10 @@ export default function RootLayout({
               Explorer
             </a>
             <a href="/random" className="text-[var(--muted)] hover:text-white">
-              Découvrir
+              Discover
             </a>
             <a href="/workshop" className="text-[var(--muted)] hover:text-white">
-              Atelier
+              Workshop
             </a>
           </nav>
         </header>

@@ -26,8 +26,8 @@ export function resolveIdeaFromSession(session: WorkshopSession): Idea {
     categoryIndex: 1,
     ideaIndex: 1,
     description:
+      session.ideaBrief?.solution?.trim() ||
       session.tripleDraft?.refinedPitch?.trim() ||
-      session.refinementSummary ||
       session.rawIntent,
     tags: ["workshop", "ideation"],
     status: "draft",

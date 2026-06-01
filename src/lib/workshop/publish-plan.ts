@@ -2,6 +2,7 @@
 import { BOUNTY_PREDICATE_LABEL } from "@/lib/intuition/config";
 import type { EnrichedTripleDraft } from "@/lib/assist/enrich-draft";
 import type { Idea } from "@/lib/ideas/schema";
+import { isOnchainPublishConfigured } from "./decent-rep";
 import { formatTripleLine } from "./triple-draft";
 import type { WorkshopSession } from "./session";
 
@@ -69,17 +70,17 @@ export function buildWorkshopPublishPlan(
   const refinedPitch =
     draft?.refinedPitch?.trim() ||
     brief?.oneLiner ||
-    session.refinementSummary ||
     session.rawIntent;
-  const archetype =
-    draft?.archetypeSummary?.trim() || session.picks.map((p) => p.title).join(" → ");
+  const archetype = draft?.archetypeSummary?.trim() || brief?.solution?.slice(0, 120) || "";
 
-  if (!brief?.problem?.trim()) warnings.push("Complète le brainstorm (fiche idée) avant de publier.");
-  if (!session.ideaDebrief?.headline) {
-    warnings.push("Passe par le débrief (questions + analyse) pour solidifier l'idée.");
+  if (!brief?.problem?.trim()) {
+    warnings.push("Complete deep research (idea brief) before publishing.");
   }
-  if (!draft) warnings.push("Génère les triples Intuition sur cet écran (bouton dédié).");
-  if (refinedPitch.length < 40) warnings.push("Pitch encore court pour une PR GitHub.");
+  if (!session.deepResearch?.headline) {
+    warnings.push("Re-run analysis at /workshop/research if the brief is incomplete.");
+  }
+  if (!draft) warnings.push("Generate Intuition triples on this screen (dedicated button).");
+  if (refinedPitch.length < 40) warnings.push("Pitch is still short for a GitHub PR.");
 
   const supportTriples: Array<[string, string, string]> = (draft?.supportTriples ?? []).map(
     (t) => [t.subject, t.predicate, t.object],
@@ -98,7 +99,7 @@ export function buildWorkshopPublishPlan(
   const subjectOc = draft?.coreTriple.onchain;
   const coreAlreadyOnchain = Boolean(
     draft?.graphSummary?.some((g) =>
-      g.toLowerCase().includes("triple cœur existe"),
+      g.toLowerCase().includes("core triple") && g.toLowerCase().includes("exist"),
     ),
   );
   const catalogAlreadyOnchain =
@@ -107,40 +108,40 @@ export function buildWorkshopPublishPlan(
   if (subjectOc?.subjectTermId && subjectOc.subjectStatus === "exists") {
     onchainSteps.push({
       id: "subject-atom",
-      label: `Atom idée : ${core.subject}`,
+      label: `Idea atom: ${core.subject}`,
       status: "skip",
       termId: subjectOc.subjectTermId,
-      detail: "Déjà sur le graphe — réutilisation",
+      detail: "Already on graph — reuse",
     });
   } else if (subjectOc?.subjectTermId) {
     onchainSteps.push({
       id: "subject-atom",
-      label: `Atom idée : ${core.subject}`,
+      label: `Idea atom: ${core.subject}`,
       status: "will_create",
       termId: subjectOc.subjectTermId,
-      detail: "Création atom (IPFS + MultiVault)",
+      detail: "Create atom (IPFS + MultiVault)",
     });
   } else {
     onchainSteps.push({
       id: "subject-atom",
-      label: `Atom idée : ${core.subject}`,
+      label: `Idea atom: ${core.subject}`,
       status: "will_create",
-      detail: "Nouvel atom à créer",
+      detail: "New atom to create",
     });
   }
 
   if (subjectOc?.predicateTermId) {
     onchainSteps.push({
       id: "predicate-atom",
-      label: `Prédicat : ${core.predicate}`,
+      label: `Predicate: ${core.predicate}`,
       status: "skip",
       termId: subjectOc.predicateTermId,
-      detail: "Prédicat canonique existant",
+      detail: "Canonical predicate exists",
     });
   } else {
     onchainSteps.push({
       id: "predicate-atom",
-      label: `Prédicat : ${core.predicate}`,
+      label: `Predicate: ${core.predicate}`,
       status: "will_create",
     });
   }
@@ -148,14 +149,14 @@ export function buildWorkshopPublishPlan(
   if (subjectOc?.objectTermId) {
     onchainSteps.push({
       id: "object-atom",
-      label: `Objet : ${core.object}`,
+      label: `Object: ${core.object}`,
       status: "skip",
       termId: subjectOc.objectTermId,
     });
   } else {
     onchainSteps.push({
       id: "object-atom",
-      label: `Objet : ${core.object}`,
+      label: `Object: ${core.object}`,
       status: "will_create",
     });
   }
@@ -163,27 +164,35 @@ export function buildWorkshopPublishPlan(
   if (coreAlreadyOnchain && subjectOc?.tripleTermId) {
     onchainSteps.push({
       id: "core-triple",
-      label: "Triple cœur bounty",
+      label: "Core bounty triple",
       status: "skip",
       termId: subjectOc.tripleTermId,
-      detail: "Déjà onchain (catalogue 3A ou existant) — rien à recréer",
+      detail: "Already onchain (catalog 3A or existing) — do not recreate",
     });
   } else {
     onchainSteps.push({
       id: "core-triple",
-      label: "Triple cœur bounty",
+      label: "Core bounty triple",
       status: "will_create",
       termId: subjectOc?.tripleTermId,
       detail: `${core.subject} → ${core.predicate} → ${core.object}`,
     });
   }
 
+  const onchainConfigured = isOnchainPublishConfigured();
+  const supportCap = 3;
+
   for (const [i, t] of (draft?.supportTriples ?? []).entries()) {
+    const willPublish = onchainConfigured && i < supportCap;
     onchainSteps.push({
       id: `support-${i}`,
       label: formatTripleLine(t),
-      status: "preview",
-      detail: "Non publié automatiquement — valide d'abord sur le graphe",
+      status: willPublish ? "will_create" : "preview",
+      detail: willPublish
+        ? `Support claim ${i + 1} (batch)`
+        : i >= supportCap
+          ? "Beyond batch limit — document only"
+          : "Enable INTUITION_PRIVATE_KEY to publish",
     });
   }
 
@@ -192,23 +201,21 @@ export function buildWorkshopPublishPlan(
       id: `nested-${i}`,
       label: formatTripleLine(t),
       status: "preview",
-      detail: "Nested / provenance — publication manuelle si besoin",
+      detail: "Provenance — off-chain in this flow",
     });
   }
 
-  const hasOnlySkips = onchainSteps
-    .filter((s) => s.id.startsWith("core") || s.id.includes("atom"))
-    .every((s) => s.status === "skip");
-
   const publishChecks = [
-    "Un atom = une chose (label court, pas « X et Y »).",
-    `Triple cœur : [${core.subject}] → [${BOUNTY_PREDICATE_LABEL}] → [Intuition].`,
-    "Prédicats stables, objets nommables (comme sur le graphe existant).",
-    "Triples de soutien et nested : preview seulement dans ce flux.",
+    "One atom = one thing (short label, not « X and Y »).",
+    `Core triple: [${core.subject}] → [${BOUNTY_PREDICATE_LABEL}] → [Intuition].`,
+    "Stable predicates, nameable objects (like the existing graph).",
+    onchainConfigured
+      ? `Publish core + up to ${supportCap} support triples on testnet, then optionally open a GitHub PR.`
+      : "Set INTUITION_PRIVATE_KEY in .env to publish on-chain from this screen.",
   ];
   if (catalogAlreadyOnchain) {
     publishChecks.push(
-      "Idée catalogue déjà migrée (3A) : la publication ne recréera que ce qui manque.",
+      "Catalog idea already migrated (3A): publishing will only create what is missing.",
     );
   }
 
@@ -259,13 +266,17 @@ export function buildWorkshopPublishPlan(
           brief.openQuestions.length
             ? `## Open questions\n\n${brief.openQuestions.map((q) => `- ${q}`).join("\n")}\n`
             : "",
-          session.ideaDebrief
+          session.deepResearch?.diagnostic.summary
             ? [
-                "## Debrief (workshop)",
+                "## Research diagnostic",
                 "",
-                session.ideaDebrief.headline,
+                session.deepResearch.diagnostic.summary,
                 "",
-                session.ideaDebrief.analysis,
+                "**Strengths:**",
+                session.deepResearch.diagnostic.strengths.map((s) => `- ${s}`).join("\n"),
+                "",
+                "**Weaknesses:**",
+                session.deepResearch.diagnostic.weaknesses.map((w) => `- ${w}`).join("\n"),
                 "",
               ].join("\n")
             : "",
@@ -327,23 +338,22 @@ export function buildWorkshopPublishPlan(
     nestedTriples,
     onchainSteps,
     publishGuide: {
-      headline: "Pull request GitHub (modèle sémantique Intuition dans le README)",
-      checks: [
-        ...publishChecks,
-        "Aucune transaction on-chain depuis l'atelier — review communautaire via PR uniquement.",
-      ],
+      headline: "Decentralized reputation on Intuition",
+      checks: publishChecks,
       portalUrl: "https://testnet.portal.intuition.systems/explore/home",
       catalogAlreadyOnchain,
-      publishBlockedReason: undefined,
+      publishBlockedReason: onchainConfigured
+        ? undefined
+        : "INTUITION_PRIVATE_KEY not configured — on-chain publish unavailable",
     },
     readiness: {
       githubReady: Boolean(draft) && warnings.length <= 4,
-      onchainReady: false,
+      onchainReady: Boolean(draft) && onchainConfigured && warnings.length <= 5,
       warnings,
     },
     fallbackCommands: [
+      `# Publish atoms + triples: POST /api/workshop/prepare/onchain`,
       `gh pr create --repo intuition-box/ideas --title "Idea: ${idea.title}"`,
-      `# Triples documentés dans le README — pas de publish on-chain via l'atelier`,
     ],
   };
 }

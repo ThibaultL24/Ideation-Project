@@ -27,18 +27,18 @@ function NetworkSection({ net }: { net: NetworkGraphInspect }) {
               : "rounded border border-[var(--border)] px-2 py-0.5 text-[var(--muted)]"
           }
         >
-          Triple cœur : {net.coreTriple.exists ? "existe" : "absent"}
+          Core triple: {net.coreTriple.exists ? "exists" : "missing"}
         </span>
         {net.catalogAtom && (
           <span className="rounded border border-blue-800/60 px-2 py-0.5 text-blue-300">
-            Atom catalogue {net.catalogAtom.fromMigration ? "(migration)" : ""}
+            Catalog atom {net.catalogAtom.fromMigration ? "(migration)" : ""}
           </span>
         )}
       </div>
 
       {net.similarAtoms.length > 0 && (
         <div>
-          <h4 className="mb-2 font-medium text-[var(--foreground)]">Atoms similaires</h4>
+          <h4 className="mb-2 font-medium text-[var(--foreground)]">Similar atoms</h4>
           <ul className="max-h-36 space-y-1 overflow-y-auto">
             {net.similarAtoms.slice(0, 8).map((a) => (
               <li key={a.term_id} className="font-mono text-[var(--muted)]">
@@ -54,7 +54,7 @@ function NetworkSection({ net }: { net: NetworkGraphInspect }) {
 
       {net.subjectTriples.length > 0 && (
         <div>
-          <h4 className="mb-2 font-medium text-[var(--foreground)]">Triples existants (sujet)</h4>
+          <h4 className="mb-2 font-medium text-[var(--foreground)]">Existing triples (subject)</h4>
           <ul className="max-h-32 space-y-1 overflow-y-auto">
             {net.subjectTriples.map((t) => (
               <li key={t.term_id} className="text-[var(--muted)]">
@@ -67,7 +67,7 @@ function NetworkSection({ net }: { net: NetworkGraphInspect }) {
 
       {net.popularPredicates.length > 0 && (
         <div>
-          <h4 className="mb-2 font-medium text-[var(--foreground)]">Prédicats populaires</h4>
+          <h4 className="mb-2 font-medium text-[var(--foreground)]">Popular predicates</h4>
           <p className="text-[var(--muted)]">
             {net.popularPredicates
               .slice(0, 6)
@@ -100,7 +100,7 @@ export function IntuitionInspectPanel({
   return (
     <aside className="rounded-xl border border-[var(--border)] bg-[var(--card)]">
       <div className="flex items-center justify-between border-b border-[var(--border)] px-4 py-3">
-        <h3 className="text-sm font-semibold">Graphe Intuition</h3>
+        <h3 className="text-sm font-semibold">Intuition graph</h3>
         <div className="flex gap-1">
           {(["testnet", "mainnet"] as const).map((n) => (
             <button
@@ -119,16 +119,16 @@ export function IntuitionInspectPanel({
         </div>
       </div>
       <div className="p-4">
-        {loading && <p className="text-xs text-[var(--muted)]">Inspection GraphQL…</p>}
+        {loading && <p className="text-xs text-[var(--muted)]">GraphQL inspection…</p>}
         {!loading && !data && (
           <p className="text-xs text-[var(--muted)]">
-            Les données onchain apparaîtront ici (atoms, triples, prédicats).
+            Onchain data will appear here (atoms, triples, predicates).
           </p>
         )}
         {!loading && net && <NetworkSection net={net} />}
         {data?.searchTerms.length ? (
           <p className="mt-3 text-[10px] text-[var(--muted)]">
-            Recherche : {data.searchTerms.join(", ")}
+            Search: {data.searchTerms.join(", ")}
           </p>
         ) : null}
       </div>

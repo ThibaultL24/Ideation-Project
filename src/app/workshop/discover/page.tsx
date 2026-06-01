@@ -1,6 +1,6 @@
 // src/app/workshop/discover/page.tsx
-import { DiscoverWorkspace } from "@/components/workshop/discover-workspace";
+import { redirect } from "next/navigation";
 
-export default function WorkshopDiscoverPage() {
-  return <DiscoverWorkspace />;
+export default function WorkshopDiscoverRedirect() {
+  redirect("/workshop/research");
 }

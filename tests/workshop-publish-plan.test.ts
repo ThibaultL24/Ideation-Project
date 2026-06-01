@@ -9,8 +9,6 @@ describe("buildWorkshopPublishPlan", () => {
       id: "ws_test",
       createdAt: new Date().toISOString(),
       rawIntent: "Une app de reviews stakées pour outils IA",
-      picks: [],
-      refinementSummary: "test",
       ideaBrief: {
         title: "AI Tool Reviews",
         oneLiner: "test",
@@ -37,8 +35,8 @@ describe("buildWorkshopPublishPlan", () => {
       status: "draft" as const,
     };
     const plan = buildWorkshopPublishPlan(idea, null, session);
-    expect(plan.readiness.warnings.some((w) => w.includes("triples Intuition"))).toBe(true);
+    expect(plan.readiness.warnings.some((w) => w.includes("Intuition triples"))).toBe(true);
     expect(plan.readiness.onchainReady).toBe(false);
-    expect(plan.publishGuide.headline).toContain("Pull request");
+    expect(plan.publishGuide.headline).toContain("Decentralized reputation");
   });
 });

@@ -12,9 +12,9 @@ export default function RandomPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Découvrir</h1>
+      <h1 className="text-2xl font-bold">Discover</h1>
       {!idea ? (
-        <p className="text-[var(--muted)]">Catalogue vide.</p>
+        <p className="text-[var(--muted)]">Empty catalog.</p>
       ) : (
         <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-6">
           <p className="text-xs text-[var(--accent)]">{idea.category}</p>
@@ -25,13 +25,13 @@ export default function RandomPage() {
               href={`/workshop/from/${idea.slug}`}
               className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
             >
-              Atelier →
+              Workshop →
             </Link>
             <Link
               href={`/ideas/${idea.slug}`}
               className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm"
             >
-              Voir la fiche
+              View entry
             </Link>
           </div>
         </div>

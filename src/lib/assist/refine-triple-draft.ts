@@ -3,6 +3,11 @@ import {
   BOUNTY_PREDICATE_LABEL,
   INTUITION_PROTOCOL_OBJECT_LABEL,
 } from "@/lib/intuition/config";
+import {
+  deriveAtomLabel,
+  isIntentLikeLabel,
+  isPlaceholderBriefText,
+} from "@/lib/workshop/atom-label";
 import type { IdeaBrief } from "@/lib/workshop/idea-brief";
 import {
   defaultCoreTriple,
@@ -14,12 +19,16 @@ const VAGUE_PREDICATE =
   /\b(is good|are good|has quality|is best|is great|is innovative|related to|about)\b|^(is|are|has|have|good|best|great|quality|innovative)$/i;
 
 const VAGUE_OBJECT =
-  /^(users?|people|everyone|blockchain|web3|early adopters?|quality|trust)$/i;
+  /^(users?|people|everyone|blockchain|web3|early adopters?|quality|trust|intuition protocol)$/i;
 
 function shortenPhrase(text: string, max = 48): string {
   const clean = text.replace(/\s+/g, " ").trim();
   if (clean.length <= max) return clean;
   return clean.slice(0, max - 1).trim() + "…";
+}
+
+function isBountyPredicate(predicate: string): boolean {
+  return predicate.trim().toLowerCase() === BOUNTY_PREDICATE_LABEL.toLowerCase();
 }
 
 function pickPredicate(
@@ -34,6 +43,15 @@ function pickPredicate(
   return fallback?.label ?? preferred[0] ?? "targets";
 }
 
+function briefSnippet(text: string | undefined, max = 48): string | null {
+  if (!text?.trim() || isPlaceholderBriefText(text) || isIntentLikeLabel(text)) {
+    return null;
+  }
+  const sentence = text.split(/[.!?]/)[0]?.trim();
+  if (!sentence || sentence.length < 8) return null;
+  return shortenPhrase(sentence, max);
+}
+
 function buildSupportFromBrief(
   title: string,
   brief: IdeaBrief | undefined,
@@ -42,37 +60,53 @@ function buildSupportFromBrief(
   if (!brief) return [];
 
   const lines: TripleLine[] = [];
-  const target = brief.targetUsers.split(/[.,;\n]/)[0]?.trim();
-  if (target && target.length > 5) {
+
+  const target = briefSnippet(brief.targetUsers, 40);
+  if (target) {
     lines.push({
       subject: title,
       predicate: pickPredicate(["targets", "built for", "for"], popularPredicates),
-      object: shortenPhrase(target, 40),
-      rationale: "Segment utilisateur issu de la fiche produit.",
+      object: target,
+      rationale: "Target segment from product brief.",
       kind: "support",
       recommended: true,
     });
   }
 
-  const problem = brief.problem.split(/[.!?]/)[0]?.trim();
-  if (problem && problem.length > 10) {
+  const problem =
+    briefSnippet(brief.problem, 50) ??
+    briefSnippet(brief.solution, 50) ??
+    briefSnippet(brief.oneLiner, 50);
+  if (problem) {
     lines.push({
       subject: title,
       predicate: pickPredicate(["solves", "addresses", "fixes"], popularPredicates),
-      object: shortenPhrase(problem, 50),
-      rationale: "Problème ciblé issu de la fiche produit.",
+      object: problem,
+      rationale: "Problem or product promise from brief.",
       kind: "support",
       recommended: true,
     });
   }
 
-  const mechanism = brief.trustMechanism.split(/[.!?]/)[0]?.trim();
-  if (mechanism && mechanism.length > 15) {
+  const mechanism = briefSnippet(brief.trustMechanism, 50);
+  if (mechanism) {
     lines.push({
       subject: title,
       predicate: pickPredicate(["uses", "relies on", "has feature"], popularPredicates),
-      object: shortenPhrase(mechanism, 50),
-      rationale: "Mécanisme de confiance issu de la fiche produit.",
+      object: mechanism,
+      rationale: "Trust mechanism from product brief.",
+      kind: "support",
+      recommended: true,
+    });
+  }
+
+  const mvp = briefSnippet(brief.mvpScope, 45);
+  if (mvp && lines.length < 3) {
+    lines.push({
+      subject: title,
+      predicate: pickPredicate(["has feature", "includes", "offers"], popularPredicates),
+      object: mvp,
+      rationale: "MVP scope from product brief.",
       kind: "support",
       recommended: true,
     });
@@ -82,12 +116,20 @@ function buildSupportFromBrief(
 }
 
 function isValidSupportLine(line: TripleLine, title: string): boolean {
-  if (line.subject.toLowerCase() !== title.toLowerCase()) return false;
-  if (line.predicate.toLowerCase() === BOUNTY_PREDICATE_LABEL.toLowerCase()) return false;
-  if (VAGUE_PREDICATE.test(line.predicate.trim())) return false;
-  if (VAGUE_OBJECT.test(line.object.trim())) return false;
-  if (line.object.length > 60 || line.predicate.length > 35) return false;
-  if (line.predicate.split(/\s+/).length > 4) return false;
+  const subject = line.subject.trim();
+  const object = line.object.trim();
+  const predicate = line.predicate.trim();
+
+  if (subject.toLowerCase() !== title.toLowerCase()) return false;
+  if (isBountyPredicate(predicate)) return false;
+  if (predicate.toLowerCase() === INTUITION_PROTOCOL_OBJECT_LABEL.toLowerCase()) return false;
+  if (object.toLowerCase() === INTUITION_PROTOCOL_OBJECT_LABEL.toLowerCase()) return false;
+  if (VAGUE_PREDICATE.test(predicate)) return false;
+  if (VAGUE_OBJECT.test(object)) return false;
+  if (isIntentLikeLabel(object) || isIntentLikeLabel(subject)) return false;
+  if (isPlaceholderBriefText(object)) return false;
+  if (object.length > 60 || predicate.length > 35) return false;
+  if (predicate.split(/\s+/).length > 4) return false;
   return true;
 }
 
@@ -96,17 +138,23 @@ export function refineTripleDraft(
   options: {
     ideaTitle: string;
     ideaBrief?: IdeaBrief;
+    rawIntent?: string;
     popularPredicates?: Array<{ label: string }>;
     coreAlreadyExists?: boolean;
   },
 ): TripleDraft {
-  const title = options.ideaBrief?.title?.trim() || options.ideaTitle.trim() || "New Idea";
+  const title = deriveAtomLabel({
+    title: options.ideaBrief?.title,
+    oneLiner: options.ideaBrief?.oneLiner,
+    rawIntent: options.rawIntent,
+    fallback: options.ideaTitle,
+  });
   const popular = options.popularPredicates ?? [];
 
   const core = defaultCoreTriple(title);
   if (options.coreAlreadyExists) {
     core.rationale =
-      "Triple bounty standard de l'écosystème — peut déjà exister on-chain ; documenté dans la PR.";
+      "Standard ecosystem bounty triple — may already exist on-chain; documented in PR.";
   }
 
   const filteredSupport = (draft.supportTriples ?? []).filter((t) =>
@@ -136,18 +184,25 @@ export function refineTripleDraft(
   const nested = (draft.nestedTriples ?? [])
     .filter((t) => t.subject && t.predicate && t.object && t.object.length <= 60)
     .slice(0, 2)
-    .map((t) => ({ ...t, kind: "nested" as const, recommended: false }));
+    .map((t) => ({ ...t, subject: title, kind: "nested" as const, recommended: false }));
 
   const notes = [...(draft.protocolNotes ?? [])];
   if (!notes.some((n) => n.includes("Intuition Protocol"))) {
     notes.push(
-      `Triple cœur obligatoire : [${title}] → ${BOUNTY_PREDICATE_LABEL} → ${INTUITION_PROTOCOL_OBJECT_LABEL}.`,
+      `Required core triple: [${title}] → ${BOUNTY_PREDICATE_LABEL} → ${INTUITION_PROTOCOL_OBJECT_LABEL}.`,
     );
   }
+
+  const pitch =
+    options.ideaBrief?.oneLiner?.trim() ||
+    draft.refinedPitch?.trim() ||
+    options.ideaBrief?.solution?.trim()?.slice(0, 200) ||
+    "";
 
   return {
     ...draft,
     ideaTitle: title,
+    refinedPitch: pitch.length >= 40 ? pitch : pitch || draft.refinedPitch,
     coreTriple: core,
     supportTriples: support,
     nestedTriples: nested,

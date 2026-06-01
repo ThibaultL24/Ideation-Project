@@ -32,7 +32,7 @@ export const EMPTY_TRIPLE_DRAFT: TripleDraft = {
     subject: "",
     predicate: BOUNTY_PREDICATE_LABEL,
     object: INTUITION_PROTOCOL_OBJECT_LABEL,
-    rationale: "Lien bounty : idée de projet pour l'écosystème Intuition.",
+    rationale: "Bounty link: project idea for the Intuition ecosystem.",
     kind: "core",
     recommended: true,
   },
@@ -48,7 +48,7 @@ export function defaultCoreTriple(ideaTitle: string): TripleLine {
     subject,
     predicate: BOUNTY_PREDICATE_LABEL,
     object: INTUITION_PROTOCOL_OBJECT_LABEL,
-    rationale: "Triple obligatoire du bounty : relie l'idée au protocole.",
+    rationale: "Required bounty triple: links the idea to the protocol.",
     kind: "core",
     recommended: true,
   };
@@ -62,33 +62,33 @@ export function runTripleLinter(draft: TripleDraft): string[] {
   const warnings: string[] = [];
   const label = draft.coreTriple.subject;
 
-  if (label.length < 3) warnings.push("Le label d'atom doit nommer une chose identifiable.");
+  if (label.length < 3) warnings.push("Atom label must name one identifiable thing.");
   if (/\band\b|\bet\b|,.*,|\//i.test(label)) {
-    warnings.push("Évite les labels composites (« X et Y ») — un atom = une chose.");
+    warnings.push('Avoid composite labels ("X and Y") — one atom = one thing.');
   }
   if (draft.coreTriple.predicate !== BOUNTY_PREDICATE_LABEL) {
-    warnings.push(`Le triple cœur devrait utiliser le prédicat « ${BOUNTY_PREDICATE_LABEL} ».`);
+    warnings.push(`Core triple should use predicate « ${BOUNTY_PREDICATE_LABEL} ».`);
   }
   if (draft.coreTriple.object !== INTUITION_PROTOCOL_OBJECT_LABEL) {
     warnings.push(
-      `L'objet du triple cœur devrait être « ${INTUITION_PROTOCOL_OBJECT_LABEL} ».`,
+      `Core triple object should be « ${INTUITION_PROTOCOL_OBJECT_LABEL} ».`,
     );
   }
   if (draft.refinedPitch.trim().length < 40) {
-    warnings.push("Le pitch affiné est encore court pour une publication GitHub.");
+    warnings.push("Refined pitch is still short for a GitHub publication.");
   }
 
   for (const t of draft.supportTriples) {
-    if (t.predicate.length < 2) warnings.push(`Prédicat trop vague : « ${t.predicate} ».`);
-    if (t.object.length > 80) warnings.push(`Objet trop long dans : ${formatTripleLine(t)}.`);
+    if (t.predicate.length < 2) warnings.push(`Predicate too vague: « ${t.predicate} ».`);
+    if (t.object.length > 80) warnings.push(`Object too long in: ${formatTripleLine(t)}.`);
   }
 
   if (draft.nestedTriples.length > 0 && draft.supportTriples.length === 0) {
-    warnings.push("Les triples imbriqués sont avancés : ajoute d'abord des triples de soutien simples.");
+    warnings.push("Nested triples are advanced — add simple support triples first.");
   }
 
   if (draft.nestedTriples.length > 3) {
-    warnings.push("Trop de triples imbriqués — risque de polluer le graphe.");
+    warnings.push("Too many nested triples — risk of graph pollution.");
   }
 
   return warnings;
@@ -98,18 +98,20 @@ export function normalizeTripleDraft(
   input: Partial<TripleDraft> | null | undefined,
   ideaTitle: string,
 ): TripleDraft {
-  const core = input?.coreTriple ?? defaultCoreTriple(ideaTitle);
+  const label = ideaTitle.trim() || "New Idea";
   return {
     ...EMPTY_TRIPLE_DRAFT,
     ...input,
-    ideaTitle: input?.ideaTitle?.trim() || ideaTitle,
+    ideaTitle: label,
     coreTriple: {
-      ...defaultCoreTriple(ideaTitle),
-      ...core,
+      ...defaultCoreTriple(label),
       predicate: BOUNTY_PREDICATE_LABEL,
       object: INTUITION_PROTOCOL_OBJECT_LABEL,
       kind: "core",
       recommended: true,
+      rationale:
+        input?.coreTriple?.rationale ??
+        "Required bounty triple: links the idea to the protocol.",
     },
     supportTriples: (input?.supportTriples ?? []).map((t) => ({ ...t, kind: "support" as const })),
     nestedTriples: (input?.nestedTriples ?? []).map((t) => ({ ...t, kind: "nested" as const })),

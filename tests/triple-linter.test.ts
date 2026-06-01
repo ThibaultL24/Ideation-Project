@@ -19,7 +19,7 @@ describe("triple-linter", () => {
       "Foo and Bar",
     );
     const warnings = runTripleLinter(draft);
-    expect(warnings.some((w) => w.includes("composites"))).toBe(true);
+    expect(warnings.some((w) => w.includes("composite"))).toBe(true);
   });
 
   it("core triple uses bounty predicate", () => {

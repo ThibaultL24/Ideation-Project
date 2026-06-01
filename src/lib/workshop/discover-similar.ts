@@ -73,7 +73,7 @@ export function rankCatalogIdeas(
         category: idea.category,
         score,
         matchReason:
-          reasons.length > 0 ? reasons.join(", ") : "proximité lexicale faible",
+          reasons.length > 0 ? reasons.join(", ") : "low lexical overlap",
       };
     })
     .filter((m) => m.score > 0)

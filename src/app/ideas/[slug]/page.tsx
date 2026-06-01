@@ -48,7 +48,7 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
             rel="noopener noreferrer"
             className="mt-3 inline-block text-[var(--accent)] hover:underline"
           >
-            Voir sur le Portal →
+            View on Portal →
           </a>
         </section>
       ) : null}
@@ -58,10 +58,10 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
           href={`/workshop/from/${idea.slug}`}
           className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
         >
-          Ouvrir dans l&apos;atelier
+          Open in workshop
         </Link>
         <Link href="/ideas" className="text-sm text-[var(--accent)] hover:underline">
-          ← Catalogue
+          ← Catalog
         </Link>
       </div>
     </article>

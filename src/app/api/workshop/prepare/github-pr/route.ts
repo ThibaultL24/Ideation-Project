@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       mode: "manual",
       reason:
-        "Ajoute GITHUB_TOKEN + GITHUB_PUBLISH_REPO (ton fork) ou GITHUB_PR_REPO pour un test sandbox.",
+        "Add GITHUB_TOKEN + GITHUB_PUBLISH_REPO (your fork) or GITHUB_PR_REPO for a sandbox test.",
       ...repos,
       baseBranch,
       manual,

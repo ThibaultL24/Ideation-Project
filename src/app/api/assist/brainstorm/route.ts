@@ -1,47 +1,48 @@
 // src/app/api/assist/brainstorm/route.ts
 import { NextResponse } from "next/server";
-import { generateBrainstormCoach } from "@/lib/assist/generate-brainstorm";
+import { generateBrainstorm } from "@/lib/assist/generate-brainstorm";
 import { isAssistEnabled } from "@/lib/assist/openai";
-import { buildGraphInspect } from "@/lib/intuition/graph-inspect";
+import { gatherResearchContext } from "@/lib/workshop/gather-research-context";
+import type { WorkshopSession } from "@/lib/workshop/session";
 
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as {
-      rawIntent?: string;
-      refinementSummary?: string;
-      ideaTitle?: string;
-      catalogTitle?: string;
-      catalogDescription?: string;
-      canonicalId?: string;
-      picks?: Array<{ title: string; levelId: string }>;
-      currentLevelQuestion?: string;
+      prompt?: string;
+      session?: WorkshopSession;
     };
 
-    const rawIntent = body.rawIntent?.trim() ?? "";
-    const ideaTitle = body.ideaTitle?.trim() || rawIntent.slice(0, 80);
-    const picks = body.picks ?? [];
+    const session = body.session;
+    const explorationPrompt =
+      body.prompt?.trim() || session?.explorationPrompt?.trim() || session?.rawIntent?.trim() || "";
 
-    const graphInspect = await buildGraphInspect({
-      rawIntent,
-      ideaTitle,
-      canonicalId: body.canonicalId,
-    });
+    if (explorationPrompt.length < 10) {
+      return NextResponse.json(
+        { error: "Describe what you want to explore in at least 10 characters." },
+        { status: 400 },
+      );
+    }
 
-    const { coach, source } = await generateBrainstormCoach({
-      rawIntent,
-      refinementSummary: body.refinementSummary?.trim() ?? rawIntent,
-      catalogTitle: body.catalogTitle?.trim() || ideaTitle,
-      catalogDescription: body.catalogDescription,
-      picks,
-      currentLevelQuestion: body.currentLevelQuestion,
-      graphInspect,
+    const ctx = await gatherResearchContext(explorationPrompt, session);
+
+    const { report, source, assistError, modelUsed } = await generateBrainstorm({
+      explorationPrompt,
+      prompt: explorationPrompt,
+      ideaTitle: ctx.ideaTitle,
+      catalogDescription: session?.catalogDescription,
+      graphContext: ctx.graphContext,
+      catalogMatches: ctx.catalogMatches,
+      githubIssues: ctx.githubIssues,
+      overlapMessage: ctx.overlapMessage,
     });
 
     return NextResponse.json({
-      coach,
+      report,
       source,
+      assistError,
+      modelUsed,
+      graphContext: ctx.graphContext,
       assistEnabled: isAssistEnabled(),
-      graphInspect,
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";

@@ -2,17 +2,16 @@
 import { assistSynthesisResponseSchema } from "./schemas";
 import { SYNTHESIS_SYSTEM_PROMPT, buildSynthesisUserMessage } from "./prompts-synthesis";
 import { getAssistModel, getOpenAIClient, isAssistEnabled } from "./openai";
-import type { DebriefAnswer, IdeaDebrief } from "@/lib/workshop/idea-debrief";
+import type { WorkshopGraphContext } from "@/lib/workshop/graph-context-types";
+import { graphContextForPrompt } from "@/lib/workshop/graph-context-types";
 import { normalizeIdeaBrief, type IdeaBrief } from "@/lib/workshop/idea-brief";
 
 export interface GenerateSynthesisInput {
   rawIntent: string;
-  refinementSummary: string;
-  picks: Array<{ title: string }>;
   ideaTitle: string;
   catalogDescription?: string;
-  debriefAnswers?: DebriefAnswer[];
-  ideaDebrief?: IdeaDebrief;
+  graphContext?: WorkshopGraphContext;
+  existingBrief?: Partial<IdeaBrief>;
 }
 
 export async function generateIdeaBrief(
@@ -20,7 +19,14 @@ export async function generateIdeaBrief(
 ): Promise<{ brief: IdeaBrief; source: "openai" | "fallback" }> {
   const client = getOpenAIClient();
   if (!isAssistEnabled() || !client) {
-    return { brief: fallbackBrief(input), source: "fallback" };
+    return {
+      brief: normalizeIdeaBrief(
+        input.existingBrief ?? fallbackFields(input),
+        input.ideaTitle,
+        input.rawIntent,
+      ),
+      source: "fallback",
+    };
   }
 
   try {
@@ -34,12 +40,12 @@ export async function generateIdeaBrief(
           role: "user",
           content: buildSynthesisUserMessage({
             rawIntent: input.rawIntent,
-            refinementSummary: input.refinementSummary,
-            picks: input.picks,
             catalogTitle: input.ideaTitle,
             catalogDescription: input.catalogDescription,
-            debriefAnswers: input.debriefAnswers,
-            debrief: input.ideaDebrief,
+            graphContext: input.graphContext
+              ? graphContextForPrompt(input.graphContext)
+              : undefined,
+            existingBrief: input.existingBrief,
           }),
         },
       ],
@@ -49,34 +55,39 @@ export async function generateIdeaBrief(
     if (!raw) throw new Error("empty");
     const parsed = assistSynthesisResponseSchema.parse(JSON.parse(raw));
     return {
-      brief: normalizeIdeaBrief(parsed, input.ideaTitle),
+      brief: normalizeIdeaBrief(
+        { ...input.existingBrief, ...parsed } as Parameters<typeof normalizeIdeaBrief>[0],
+        input.ideaTitle,
+        input.rawIntent,
+      ),
       source: "openai",
     };
   } catch {
-    return { brief: fallbackBrief(input), source: "fallback" };
+    return {
+      brief: normalizeIdeaBrief(
+        input.existingBrief ?? fallbackFields(input),
+        input.ideaTitle,
+        input.rawIntent,
+      ),
+      source: "fallback",
+    };
   }
 }
 
-function fallbackBrief(input: GenerateSynthesisInput): IdeaBrief {
-  return normalizeIdeaBrief(
-    {
-      title: input.ideaTitle,
-      oneLiner: input.refinementSummary.slice(0, 160) || input.rawIntent.slice(0, 160),
-      problem: "À préciser : qui souffre du problème aujourd'hui ?",
-      solution: input.rawIntent,
-      targetUsers: "Early adopters à définir",
-      whyNow: "Moment opportun lié au parcours cartes : " + input.picks.map((p) => p.title).join(" → "),
-      intuitionAngle:
-        "Intuition peut structurer des identités (atoms) et des claims économiquement soutenus plutôt qu'une simple liste d'avis.",
-      trustMechanism:
-        "À définir : quelles entités deviennent des atoms, quelles claims comptent, qui stake et qui interroge le graphe.",
-      mvpScope: "3 écrans ou un workflow minimal pour tester l'hypothèse.",
-      openQuestions: [
-        "Quel est le premier cas d'usage payant ou très fréquent ?",
-        "Quelle claim unique justifie Intuition vs une app Web2 ?",
-        "Qui stake en premier et pourquoi ?",
-      ],
-    },
-    input.ideaTitle,
-  );
+function fallbackFields(input: GenerateSynthesisInput): Partial<IdeaBrief> {
+  return {
+    title: input.ideaTitle,
+    oneLiner: input.rawIntent.slice(0, 160),
+    problem: input.rawIntent,
+    solution: input.existingBrief?.solution ?? input.rawIntent,
+    targetUsers: "Early adopters to define",
+    intuitionAngle:
+      "Structure attestable claims on the Intuition graph rather than an isolated Web2 app.",
+    trustMechanism: "Who stakes, on which claims, who queries the graph.",
+    mvpScope: "Smallest testable loop in 2–4 weeks.",
+    openQuestions: [
+      "Who is the first active user?",
+      "What unique claim justifies Intuition?",
+    ],
+  };
 }

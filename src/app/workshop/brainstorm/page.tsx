@@ -1,6 +1,6 @@
 // src/app/workshop/brainstorm/page.tsx
-import { BrainstormWorkspace } from "@/components/workshop/brainstorm-workspace";
+import { redirect } from "next/navigation";
 
-export default function WorkshopBrainstormPage() {
-  return <BrainstormWorkspace />;
+export default function WorkshopBrainstormRedirect() {
+  redirect("/workshop/research");
 }

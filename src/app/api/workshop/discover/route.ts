@@ -72,25 +72,25 @@ function buildOverlapMessage(
 ): string {
   const parts: string[] = [];
   if (catalog[0]) {
-    parts.push(`Catalogue proche : « ${catalog[0].title} » (${catalog[0].matchReason}).`);
+    parts.push(`Close catalog match: « ${catalog[0].title} » (${catalog[0].matchReason}).`);
   }
   if (similarAtoms > 0) {
-    parts.push(`${similarAtoms} atom(s) similaire(s) sur le graphe Intuition.`);
+    parts.push(`${similarAtoms} similar atom(s) on the Intuition graph.`);
   }
   if (coreExists) {
-    parts.push("Un triple cœur existe déjà pour un sujet proche.");
+    parts.push("A core triple already exists for a similar subject.");
   }
   if (githubCount > 0) {
-    parts.push(`${githubCount} discussion(s) GitHub trouvée(s) dans intuition-box/ideas.`);
+    parts.push(`${githubCount} discussion(s) found in intuition-box/ideas.`);
   }
   if (parts.length === 0) {
-    return "Peu de doublons détectés — territoire relativement libre.";
+    return "Few duplicates detected — relatively open territory.";
   }
   if (level === "high") {
-    return `${parts.join(" ")} Affine ton angle ou envisage un pivot avant d'aller plus loin.`;
+    return `${parts.join(" ")} Sharpen your angle or consider a pivot before going further.`;
   }
   if (level === "medium") {
-    return `${parts.join(" ")} Vérifie en quoi ton idée se distingue.`;
+    return `${parts.join(" ")} Clarify how your idea differs.`;
   }
   return parts.join(" ");
 }
