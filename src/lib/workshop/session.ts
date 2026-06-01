@@ -5,7 +5,6 @@ import type { IdeaBrief } from "./idea-brief";
 import type { TripleDraft } from "./triple-draft";
 import type { WorkshopGraphContext } from "./graph-context-types";
 import type { BrainstormDirection, BrainstormReport } from "./brainstorm";
-import type { OnchainPublishSummary } from "./decent-rep";
 import type { WorkshopPath } from "./workshop-path";
 
 export interface WorkshopSession {
@@ -27,7 +26,6 @@ export interface WorkshopSession {
   deepResearch?: DeepResearchReport;
   ideaBrief?: IdeaBrief;
   tripleDraft?: TripleDraft | EnrichedTripleDraft;
-  onchainPublish?: OnchainPublishSummary;
   /** ISO timestamp when the user finalized the downloadable idea brief sheet. */
   briefFinalizedAt?: string;
 }
@@ -56,7 +54,6 @@ export function defaultSession(seed?: Partial<WorkshopSession>): WorkshopSession
     deepResearch: seed?.deepResearch,
     ideaBrief: seed?.ideaBrief,
     tripleDraft: seed?.tripleDraft,
-    onchainPublish: seed?.onchainPublish,
     briefFinalizedAt: seed?.briefFinalizedAt,
   };
 }

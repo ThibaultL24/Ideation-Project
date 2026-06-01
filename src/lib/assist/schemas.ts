@@ -22,22 +22,6 @@ export const assistTripleResponseSchema = z.object({
 
 export type AssistTripleResponse = z.infer<typeof assistTripleResponseSchema>;
 
-export const assistCardsResponseSchema = z.object({
-  question: z.string(),
-  cards: z
-    .array(
-      z.object({
-        id: z.string(),
-        title: z.string(),
-        subtitle: z.string(),
-        tags: z.array(z.string()),
-      }),
-    )
-    .length(4),
-});
-
-export type AssistCardsResponse = z.infer<typeof assistCardsResponseSchema>;
-
 export const assistSynthesisResponseSchema = z.object({
   title: z.string(),
   oneLiner: z.string(),

@@ -40,7 +40,7 @@ describe("buildWorkshopPublishPlan", () => {
     expect(plan.markdown).toContain("## Original exploration");
     expect(plan.markdown).toContain("Une app de reviews");
     expect(plan.readiness.warnings.some((w) => w.includes("Intuition triples"))).toBe(true);
-    expect(plan.readiness.onchainReady).toBe(false);
-    expect(plan.publishGuide.headline).toContain("GitHub pull request");
+    expect(plan.prGuide.headline).toContain("GitHub pull request");
+    expect(plan.markdown).not.toContain("Product model (cards)");
   });
 });

@@ -1,28 +1,13 @@
 // src/lib/workshop/publish-plan.ts
-import { BOUNTY_PREDICATE_LABEL } from "@/lib/intuition/config";
+import {
+  BOUNTY_PREDICATE_LABEL,
+  INTUITION_PROTOCOL_OBJECT_LABEL,
+} from "@/lib/intuition/config";
 import type { EnrichedTripleDraft } from "@/lib/assist/enrich-draft";
 import type { Idea } from "@/lib/ideas/schema";
 import { buildPreparePrGuide, type PreparePrGuide } from "./prepare-pr-guide";
-import { formatTripleLine } from "./triple-draft";
 import type { WorkshopSession } from "./session";
 import { normalizeSessionForPublish } from "./workshop-path";
-
-export interface OnchainPublishStep {
-  id: string;
-  label: string;
-  status: "exists" | "will_create" | "skip" | "preview";
-  termId?: string;
-  detail?: string;
-}
-
-/** Checklist sémantique avant publish (esprit decentrep : triples corrects, pas de pollution). */
-export interface PublishGuide {
-  headline: string;
-  checks: string[];
-  portalUrl: string;
-  catalogAlreadyOnchain: boolean;
-  publishBlockedReason?: string;
-}
 
 export interface WorkshopPublishPlan {
   githubPath: string;
@@ -38,12 +23,9 @@ export interface WorkshopPublishPlan {
   coreTriple: [string, string, string];
   supportTriples: Array<[string, string, string]>;
   nestedTriples: Array<[string, string, string]>;
-  onchainSteps: OnchainPublishStep[];
-  publishGuide: PublishGuide;
   prGuide: PreparePrGuide;
   readiness: {
     githubReady: boolean;
-    onchainReady: boolean;
     warnings: string[];
   };
   fallbackCommands: string[];
@@ -74,7 +56,6 @@ export function buildWorkshopPublishPlan(
     draft?.refinedPitch?.trim() ||
     brief?.oneLiner ||
     session.rawIntent;
-  const archetype = draft?.archetypeSummary?.trim() || brief?.solution?.slice(0, 120) || "";
 
   if (session.path === "precise") {
     if (!session.deepResearch?.headline) {
@@ -102,110 +83,15 @@ export function buildWorkshopPublishPlan(
   const core = draft?.coreTriple ?? {
     subject: idea.title,
     predicate: BOUNTY_PREDICATE_LABEL,
-    object: "Intuition",
+    object: INTUITION_PROTOCOL_OBJECT_LABEL,
   };
 
-  const onchainSteps: OnchainPublishStep[] = [];
-  const subjectOc = draft?.coreTriple.onchain;
-  const coreAlreadyOnchain = Boolean(
-    draft?.graphSummary?.some((g) =>
-      g.toLowerCase().includes("core triple") && g.toLowerCase().includes("exist"),
+  const catalogAlreadyOnchain = Boolean(
+    draft?.graphSummary?.some(
+      (g) =>
+        g.toLowerCase().includes("core triple") && g.toLowerCase().includes("exist"),
     ),
   );
-  const catalogAlreadyOnchain =
-    coreAlreadyOnchain || Boolean(subjectOc?.subjectStatus === "exists" && coreAlreadyOnchain);
-
-  if (subjectOc?.subjectTermId && subjectOc.subjectStatus === "exists") {
-    onchainSteps.push({
-      id: "subject-atom",
-      label: `Idea atom: ${core.subject}`,
-      status: "skip",
-      termId: subjectOc.subjectTermId,
-      detail: "Already on graph — reuse",
-    });
-  } else if (subjectOc?.subjectTermId) {
-    onchainSteps.push({
-      id: "subject-atom",
-      label: `Idea atom: ${core.subject}`,
-      status: "will_create",
-      termId: subjectOc.subjectTermId,
-      detail: "Create atom (IPFS + MultiVault)",
-    });
-  } else {
-    onchainSteps.push({
-      id: "subject-atom",
-      label: `Idea atom: ${core.subject}`,
-      status: "will_create",
-      detail: "New atom to create",
-    });
-  }
-
-  if (subjectOc?.predicateTermId) {
-    onchainSteps.push({
-      id: "predicate-atom",
-      label: `Predicate: ${core.predicate}`,
-      status: "skip",
-      termId: subjectOc.predicateTermId,
-      detail: "Canonical predicate exists",
-    });
-  } else {
-    onchainSteps.push({
-      id: "predicate-atom",
-      label: `Predicate: ${core.predicate}`,
-      status: "will_create",
-    });
-  }
-
-  if (subjectOc?.objectTermId) {
-    onchainSteps.push({
-      id: "object-atom",
-      label: `Object: ${core.object}`,
-      status: "skip",
-      termId: subjectOc.objectTermId,
-    });
-  } else {
-    onchainSteps.push({
-      id: "object-atom",
-      label: `Object: ${core.object}`,
-      status: "will_create",
-    });
-  }
-
-  if (coreAlreadyOnchain && subjectOc?.tripleTermId) {
-    onchainSteps.push({
-      id: "core-triple",
-      label: "Core bounty triple",
-      status: "skip",
-      termId: subjectOc.tripleTermId,
-      detail: "Already onchain (catalog 3A or existing) — do not recreate",
-    });
-  } else {
-    onchainSteps.push({
-      id: "core-triple",
-      label: "Core bounty triple",
-      status: "will_create",
-      termId: subjectOc?.tripleTermId,
-      detail: `${core.subject} → ${core.predicate} → ${core.object}`,
-    });
-  }
-
-  for (const [i, t] of (draft?.supportTriples ?? []).entries()) {
-    onchainSteps.push({
-      id: `support-${i}`,
-      label: formatTripleLine(t),
-      status: "preview",
-      detail: "Documented in the PR README — not published on-chain from the workshop",
-    });
-  }
-
-  for (const [i, t] of (draft?.nestedTriples ?? []).entries()) {
-    onchainSteps.push({
-      id: `nested-${i}`,
-      label: formatTripleLine(t),
-      status: "preview",
-      detail: "Nested / provenance — manual publication if needed",
-    });
-  }
 
   const prGuide = buildPreparePrGuide({
     ideaTitle: idea.title,
@@ -215,8 +101,6 @@ export function buildWorkshopPublishPlan(
     workshopPath: session.path,
     catalogAlreadyOnchain,
   });
-
-  const publishChecks = prGuide.checklist;
 
   const markdown = [
     "---",
@@ -250,6 +134,10 @@ export function buildWorkshopPublishPlan(
           "",
           brief.targetUsers,
           "",
+          "## Why now",
+          "",
+          brief.whyNow,
+          "",
           "## Intuition angle",
           "",
           brief.intuitionAngle,
@@ -281,10 +169,6 @@ export function buildWorkshopPublishPlan(
             : "",
         ].join("\n")
       : "",
-    "## Product model (cards)",
-    "",
-    archetype || "_No card path recorded._",
-    "",
     "## Intuition integration",
     "",
     draft?.refinedPitch
@@ -328,12 +212,16 @@ export function buildWorkshopPublishPlan(
 
   const prBody = [
     `## Summary\n${idea.tagline}`,
-    `## Workshop path\n${archetype}`,
+    brief?.intuitionAngle
+      ? `## Intuition angle\n${brief.intuitionAngle}`
+      : "",
     `## Core triple\n\`${core.subject}\` / \`${core.predicate}\` / \`${core.object}\``,
     supportTriples.length
       ? `## Support triples (preview)\n${supportTriples.map(([s, p, o]) => `- ${s} → ${p} → ${o}`).join("\n")}`
       : "",
-  ].join("\n\n");
+  ]
+    .filter(Boolean)
+    .join("\n\n");
 
   return {
     githubPath,
@@ -349,23 +237,14 @@ export function buildWorkshopPublishPlan(
     coreTriple: [core.subject, core.predicate, core.object],
     supportTriples,
     nestedTriples,
-    onchainSteps,
-    publishGuide: {
-      headline: prGuide.headline,
-      checks: publishChecks,
-      portalUrl: "https://testnet.portal.intuition.systems/explore/home",
-      catalogAlreadyOnchain,
-      publishBlockedReason: undefined,
-    },
     prGuide,
     readiness: {
       githubReady: Boolean(draft) && warnings.length <= 4,
-      onchainReady: false,
       warnings,
     },
     fallbackCommands: [
       `gh pr create --repo intuition-box/ideas --title "Idea: ${idea.title}"`,
-      `# Triples documented in README — no on-chain publish from workshop`,
+      "# Triples documented in README — open PR from the workshop Prepare step",
     ],
   };
 }
