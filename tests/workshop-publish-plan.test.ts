@@ -26,7 +26,7 @@ describe("buildWorkshopPublishPlan", () => {
       canonicalId: "workshop-ws_test",
       slug: "workshop-ws_test",
       title: "AI Tool Reviews",
-      tagline: "Staked reviews",
+      tagline: "Staked reviews for builders",
       category: "Workshop",
       categoryIndex: 1,
       ideaIndex: 1,
@@ -35,8 +35,12 @@ describe("buildWorkshopPublishPlan", () => {
       status: "draft" as const,
     };
     const plan = buildWorkshopPublishPlan(idea, null, session);
+    expect(plan.markdown).toContain("AI Tool Reviews");
+    expect(plan.markdown).toContain(session.ideaBrief!.problem);
+    expect(plan.markdown).toContain("## Original exploration");
+    expect(plan.markdown).toContain("Une app de reviews");
     expect(plan.readiness.warnings.some((w) => w.includes("Intuition triples"))).toBe(true);
     expect(plan.readiness.onchainReady).toBe(false);
-    expect(plan.publishGuide.headline).toContain("Decentralized reputation");
+    expect(plan.publishGuide.headline).toContain("GitHub pull request");
   });
 });

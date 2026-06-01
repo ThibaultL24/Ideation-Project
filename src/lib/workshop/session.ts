@@ -6,10 +6,13 @@ import type { TripleDraft } from "./triple-draft";
 import type { WorkshopGraphContext } from "./graph-context-types";
 import type { BrainstormDirection, BrainstormReport } from "./brainstorm";
 import type { OnchainPublishSummary } from "./decent-rep";
+import type { WorkshopPath } from "./workshop-path";
 
 export interface WorkshopSession {
   id: string;
   createdAt: string;
+  /** explore = brainstorm first; precise = skip to Prepare PR */
+  path?: WorkshopPath;
   rawIntent: string;
   /** Original exploration text before a brainstorm direction was chosen. */
   explorationPrompt?: string;
@@ -29,7 +32,7 @@ export interface WorkshopSession {
   briefFinalizedAt?: string;
 }
 
-const STORAGE_KEY = "workshop-session-v4";
+const STORAGE_KEY = "workshop-session-v5";
 
 export function createSessionId(): string {
   return `ws_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
@@ -39,6 +42,7 @@ export function defaultSession(seed?: Partial<WorkshopSession>): WorkshopSession
   return {
     id: seed?.id ?? createSessionId(),
     createdAt: seed?.createdAt ?? new Date().toISOString(),
+    path: seed?.path ?? "explore",
     rawIntent: seed?.rawIntent ?? "",
     explorationPrompt: seed?.explorationPrompt ?? seed?.rawIntent,
     brainstorm: seed?.brainstorm,

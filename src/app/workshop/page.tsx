@@ -9,10 +9,11 @@ export default function WorkshopPage() {
         <p className="text-sm uppercase tracking-widest text-[var(--accent)]">
           Ideation workshop
         </p>
-        <h1 className="text-3xl font-bold">Brainstorm → build → publish</h1>
+        <h1 className="text-3xl font-bold">Brainstorm → (optional) research → PR</h1>
         <p className="max-w-2xl text-[var(--muted)]">
-          No fixed idea required. Explore a territory, pick one of five coherent directions,
-          deepen it into a product brief, then publish on the Intuition graph.
+          Two paths: explore and brainstorm until a direction pleases you, or jump straight to
+          Prepare if you already have a clear idea. The workshop ends with a GitHub pull request
+          on intuition-box/ideas — no on-chain publish from this app.
         </p>
       </section>
 

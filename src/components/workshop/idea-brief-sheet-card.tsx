@@ -108,7 +108,7 @@ export function IdeaBriefSheetCard({
             </h2>
             <p className="mt-1 text-xs text-[var(--muted)] max-w-xl">
               Catalog-style idea sheet — edit, save to finalize, then download as Markdown
-              before decentralized reputation or a GitHub PR.
+              before opening the GitHub PR on Prepare.
             </p>
           </div>
           <div className="text-right text-[10px] uppercase tracking-wide">
@@ -180,7 +180,7 @@ export function IdeaBriefSheetCard({
 
         {!finalizedAt && (
           <p className="text-[10px] text-[var(--muted)]">
-            Save the sheet to unlock download and continue to on-chain reputation.
+            Save the sheet to unlock download and continue to Prepare.
           </p>
         )}
 

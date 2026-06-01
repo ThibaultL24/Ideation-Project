@@ -2,9 +2,10 @@
 import { BOUNTY_PREDICATE_LABEL } from "@/lib/intuition/config";
 import type { EnrichedTripleDraft } from "@/lib/assist/enrich-draft";
 import type { Idea } from "@/lib/ideas/schema";
-import { isOnchainPublishConfigured } from "./decent-rep";
+import { buildPreparePrGuide, type PreparePrGuide } from "./prepare-pr-guide";
 import { formatTripleLine } from "./triple-draft";
 import type { WorkshopSession } from "./session";
+import { normalizeSessionForPublish } from "./workshop-path";
 
 export interface OnchainPublishStep {
   id: string;
@@ -39,6 +40,7 @@ export interface WorkshopPublishPlan {
   nestedTriples: Array<[string, string, string]>;
   onchainSteps: OnchainPublishStep[];
   publishGuide: PublishGuide;
+  prGuide: PreparePrGuide;
   readiness: {
     githubReady: boolean;
     onchainReady: boolean;
@@ -58,8 +60,9 @@ function slugForPath(idea: Idea): string {
 export function buildWorkshopPublishPlan(
   idea: Idea,
   draft: EnrichedTripleDraft | null | undefined,
-  session: WorkshopSession,
+  sessionInput: WorkshopSession,
 ): WorkshopPublishPlan {
+  const session = normalizeSessionForPublish(sessionInput);
   const date = todayIsoDate();
   const pathSlug = slugForPath(idea);
   const githubPath = `ideas/${date}-${pathSlug}/README.md`;
@@ -73,11 +76,18 @@ export function buildWorkshopPublishPlan(
     session.rawIntent;
   const archetype = draft?.archetypeSummary?.trim() || brief?.solution?.slice(0, 120) || "";
 
-  if (!brief?.problem?.trim()) {
-    warnings.push("Complete deep research (idea brief) before publishing.");
-  }
-  if (!session.deepResearch?.headline) {
-    warnings.push("Re-run analysis at /workshop/research if the brief is incomplete.");
+  if (session.path === "precise") {
+    if (!session.deepResearch?.headline) {
+      warnings.push(
+        "Fast path: README uses your intent as draft — enrich sections in the PR or run /workshop/research first.",
+      );
+    }
+  } else if (!brief?.problem?.trim() && !session.selectedDirection) {
+    warnings.push("Complete brainstorm and pick a direction, or finalize the idea brief on Research.");
+  } else if (!session.deepResearch?.headline && session.path === "explore") {
+    warnings.push(
+      "Optional: run deep research to enrich the README — or push from the chosen brainstorm direction.",
+    );
   }
   if (!draft) warnings.push("Generate Intuition triples on this screen (dedicated button).");
   if (refinedPitch.length < 40) warnings.push("Pitch is still short for a GitHub PR.");
@@ -179,20 +189,12 @@ export function buildWorkshopPublishPlan(
     });
   }
 
-  const onchainConfigured = isOnchainPublishConfigured();
-  const supportCap = 3;
-
   for (const [i, t] of (draft?.supportTriples ?? []).entries()) {
-    const willPublish = onchainConfigured && i < supportCap;
     onchainSteps.push({
       id: `support-${i}`,
       label: formatTripleLine(t),
-      status: willPublish ? "will_create" : "preview",
-      detail: willPublish
-        ? `Support claim ${i + 1} (batch)`
-        : i >= supportCap
-          ? "Beyond batch limit — document only"
-          : "Enable INTUITION_PRIVATE_KEY to publish",
+      status: "preview",
+      detail: "Documented in the PR README — not published on-chain from the workshop",
     });
   }
 
@@ -201,23 +203,20 @@ export function buildWorkshopPublishPlan(
       id: `nested-${i}`,
       label: formatTripleLine(t),
       status: "preview",
-      detail: "Provenance — off-chain in this flow",
+      detail: "Nested / provenance — manual publication if needed",
     });
   }
 
-  const publishChecks = [
-    "One atom = one thing (short label, not « X and Y »).",
-    `Core triple: [${core.subject}] → [${BOUNTY_PREDICATE_LABEL}] → [Intuition].`,
-    "Stable predicates, nameable objects (like the existing graph).",
-    onchainConfigured
-      ? `Publish core + up to ${supportCap} support triples on testnet, then optionally open a GitHub PR.`
-      : "Set INTUITION_PRIVATE_KEY in .env to publish on-chain from this screen.",
-  ];
-  if (catalogAlreadyOnchain) {
-    publishChecks.push(
-      "Catalog idea already migrated (3A): publishing will only create what is missing.",
-    );
-  }
+  const prGuide = buildPreparePrGuide({
+    ideaTitle: idea.title,
+    coreSubject: core.subject,
+    tagline: idea.tagline,
+    githubPath,
+    workshopPath: session.path,
+    catalogAlreadyOnchain,
+  });
+
+  const publishChecks = prGuide.checklist;
 
   const markdown = [
     "---",
@@ -306,7 +305,21 @@ export function buildWorkshopPublishPlan(
           .map(([s, p, o]) => `- \`${s}\` - \`${p}\` - \`${o}\``)
           .join("\n")}\n`
       : "",
-    "## Original intent",
+    "## Original exploration",
+    "",
+    session.explorationPrompt?.trim() || session.rawIntent,
+    "",
+    session.selectedDirection
+      ? [
+          "## Chosen brainstorm direction",
+          "",
+          `**${session.selectedDirection.title}** — ${session.selectedDirection.tagline}`,
+          "",
+          session.selectedDirection.problemHook,
+          "",
+        ].join("\n")
+      : "",
+    "## Refined intent (workshop)",
     "",
     session.rawIntent,
   ]
@@ -338,22 +351,21 @@ export function buildWorkshopPublishPlan(
     nestedTriples,
     onchainSteps,
     publishGuide: {
-      headline: "Decentralized reputation on Intuition",
+      headline: prGuide.headline,
       checks: publishChecks,
       portalUrl: "https://testnet.portal.intuition.systems/explore/home",
       catalogAlreadyOnchain,
-      publishBlockedReason: onchainConfigured
-        ? undefined
-        : "INTUITION_PRIVATE_KEY not configured — on-chain publish unavailable",
+      publishBlockedReason: undefined,
     },
+    prGuide,
     readiness: {
       githubReady: Boolean(draft) && warnings.length <= 4,
-      onchainReady: Boolean(draft) && onchainConfigured && warnings.length <= 5,
+      onchainReady: false,
       warnings,
     },
     fallbackCommands: [
-      `# Publish atoms + triples: POST /api/workshop/prepare/onchain`,
       `gh pr create --repo intuition-box/ideas --title "Idea: ${idea.title}"`,
+      `# Triples documented in README — no on-chain publish from workshop`,
     ],
   };
 }

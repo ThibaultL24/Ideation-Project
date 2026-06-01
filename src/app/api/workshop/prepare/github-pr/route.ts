@@ -9,6 +9,7 @@ import {
 import { buildWorkshopPublishPlan } from "@/lib/workshop/publish-plan";
 import { resolveIdeaFromSession } from "@/lib/workshop/resolve-idea";
 import type { WorkshopSession } from "@/lib/workshop/session";
+import { normalizeSessionForPublish } from "@/lib/workshop/workshop-path";
 
 export async function POST(request: Request) {
   const body = (await request.json()) as { session?: WorkshopSession };
@@ -17,9 +18,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "session required" }, { status: 400 });
   }
 
-  const idea = resolveIdeaFromSession(session);
-  const draft = session.tripleDraft as EnrichedTripleDraft | undefined;
-  const plan = buildWorkshopPublishPlan(idea, draft, session);
+  const normalized = normalizeSessionForPublish(session);
+  const idea = resolveIdeaFromSession(normalized);
+  const draft = normalized.tripleDraft as EnrichedTripleDraft | undefined;
+  const plan = buildWorkshopPublishPlan(idea, draft, normalized);
 
   const token = process.env["GITHUB_TOKEN"]?.trim();
   const repos = resolveGitHubPublishRepos({

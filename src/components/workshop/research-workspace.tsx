@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import {
   EMPTY_IDEA_BRIEF,
@@ -13,12 +14,14 @@ import { directionToRefinedIntent } from "@/lib/workshop/brainstorm";
 import type { DeepResearchReport } from "@/lib/workshop/idea-research";
 import { RESEARCH_SECTIONS } from "@/lib/workshop/idea-research";
 import { loadSession, saveSession, type WorkshopSession } from "@/lib/workshop/session";
+import { seedBriefFromDirection } from "@/lib/workshop/workshop-path";
 import { BrainstormDirectionsPanel } from "./brainstorm-directions-panel";
 import { IdeaBriefSheetCard } from "./idea-brief-sheet-card";
 
 type Phase = "brainstorm" | "deepen";
 
 export function ResearchWorkspace() {
+  const router = useRouter();
   const [session, setSession] = useState<WorkshopSession | null>(null);
   const [exploration, setExploration] = useState("");
   const [phase, setPhase] = useState<Phase>("brainstorm");
@@ -33,11 +36,16 @@ export function ResearchWorkspace() {
   const [error, setError] = useState<string | null>(null);
   const [briefFinalizedAt, setBriefFinalizedAt] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [cardAction, setCardAction] = useState<"deepen" | "prepare" | null>(null);
 
   useEffect(() => {
     const stored = loadSession();
     if (!stored?.rawIntent?.trim()) {
       setSession(null);
+      return;
+    }
+    if (stored.path === "precise") {
+      router.replace("/workshop/prepare");
       return;
     }
     setSession(stored);
@@ -52,7 +60,7 @@ export function ResearchWorkspace() {
     } else if (stored.brainstorm) {
       setPhase("brainstorm");
     }
-  }, []);
+  }, [router]);
 
   const runBrainstorm = useCallback(async () => {
     if (!session || exploration.trim().length < 10) {
@@ -111,9 +119,31 @@ export function ResearchWorkspace() {
     return () => clearTimeout(t);
   }, [session?.id, brainstorm, phase, report, exploration, runBrainstorm]);
 
+  function openPrepareFromDirection(direction: BrainstormDirection) {
+    if (!session) return;
+    setSelectedId(direction.id);
+    setCardAction("prepare");
+    const ideaBrief = seedBriefFromDirection(direction, exploration.trim());
+    const refined = directionToRefinedIntent(exploration.trim(), direction);
+    const saved: WorkshopSession = {
+      ...session,
+      path: "explore",
+      rawIntent: refined,
+      explorationPrompt: exploration.trim(),
+      selectedDirection: direction,
+      selectedDirectionId: direction.id,
+      ideaBrief,
+      tripleDraft: undefined,
+    };
+    saveSession(saved);
+    setCardAction(null);
+    router.push("/workshop/prepare");
+  }
+
   async function developDirection(direction: BrainstormDirection) {
     if (!session) return;
     setSelectedId(direction.id);
+    setCardAction("deepen");
     setDeepenLoading(true);
     setError(null);
 
@@ -137,6 +167,7 @@ export function ResearchWorkspace() {
     });
     const data = await res.json();
     setDeepenLoading(false);
+    setCardAction(null);
 
     if (data.error) {
       setError(data.error);
@@ -222,7 +253,9 @@ export function ResearchWorkspace() {
     <div className="mx-auto max-w-3xl space-y-8 pb-16">
       <header className="space-y-2">
         <p className="text-xs uppercase tracking-widest text-[var(--accent)]">
-          {phase === "brainstorm" ? "Step 1 · Brainstorm" : "Step 2 · Deep research"}
+          {phase === "brainstorm"
+            ? "Brainstorm (optional research before Prepare)"
+            : "Deep research (optional)"}
         </p>
         <h1 className="text-2xl font-bold">
           {phase === "brainstorm"
@@ -231,8 +264,8 @@ export function ResearchWorkspace() {
         </h1>
         <p className="text-sm text-[var(--muted)]">
           {phase === "brainstorm"
-            ? "No fixed product required — we propose coherent directions, you pick one to deepen."
-            : "Full diagnostic, improvements, and downloadable brief for the direction you chose."}
+            ? "Pick a direction you like, then open Prepare to push the GitHub PR — or deepen first for a richer README."
+            : "Enrich the brief, then continue to Prepare — the workshop finale is the pull request, not on-chain publish."}
         </p>
       </header>
 
@@ -291,8 +324,9 @@ export function ResearchWorkspace() {
         <BrainstormDirectionsPanel
           report={brainstorm}
           selectedId={selectedId}
-          onSelect={(d) => void developDirection(d)}
-          loadingDeepen={deepenLoading}
+          loadingAction={cardAction}
+          onDeepen={(d) => void developDirection(d)}
+          onPrepare={openPrepareFromDirection}
         />
       )}
 
@@ -434,7 +468,7 @@ export function ResearchWorkspace() {
               disabled={!briefFinalizedAt}
               className="rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black disabled:opacity-40"
             >
-              Continue → decentralized reputation
+              Continue → Prepare
             </button>
             <Link href="/workshop" className="rounded-lg border border-[var(--border)] px-5 py-2.5 text-sm">
               ← Edit exploration

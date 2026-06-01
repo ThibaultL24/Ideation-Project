@@ -6,15 +6,17 @@ import type { BrainstormDirection, BrainstormReport } from "@/lib/workshop/brain
 interface BrainstormDirectionsPanelProps {
   report: BrainstormReport;
   selectedId: string | null;
-  onSelect: (direction: BrainstormDirection) => void;
-  loadingDeepen?: boolean;
+  loadingAction: "deepen" | "prepare" | null;
+  onDeepen: (direction: BrainstormDirection) => void;
+  onPrepare: (direction: BrainstormDirection) => void;
 }
 
 export function BrainstormDirectionsPanel({
   report,
   selectedId,
-  onSelect,
-  loadingDeepen,
+  loadingAction,
+  onDeepen,
+  onPrepare,
 }: BrainstormDirectionsPanelProps) {
   return (
     <div className="space-y-6">
@@ -22,6 +24,10 @@ export function BrainstormDirectionsPanel({
         <h2 className="text-sm font-semibold">Territory explored</h2>
         <p className="text-sm leading-relaxed text-[var(--muted)] whitespace-pre-wrap">
           {report.territory}
+        </p>
+        <p className="text-xs text-[var(--accent)]/90">
+          When a direction feels right, open <strong className="text-white/80">Prepare</strong> to
+          push the PR. Deep research is optional if you want a richer README first.
         </p>
       </section>
 
@@ -37,13 +43,14 @@ export function BrainstormDirectionsPanel({
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-sm font-semibold">
-          5 product directions — pick one to develop
-        </h2>
+        <h2 className="text-sm font-semibold">5 directions — choose what to publish</h2>
         <div className="grid gap-4">
           {report.directions.map((dir) => {
             const isRecommended = report.recommendedDirectionId === dir.id;
             const isSelected = selectedId === dir.id;
+            const loadingDeepen = loadingAction === "deepen" && isSelected;
+            const loadingPrepare = loadingAction === "prepare" && isSelected;
+
             return (
               <article
                 key={dir.id}
@@ -90,16 +97,24 @@ export function BrainstormDirectionsPanel({
                   </ul>
                 )}
 
-                <button
-                  type="button"
-                  onClick={() => onSelect(dir)}
-                  disabled={loadingDeepen}
-                  className="w-full rounded-lg bg-violet-600 px-4 py-2 text-sm font-medium text-white disabled:opacity-50"
-                >
-                  {loadingDeepen && isSelected
-                    ? "Building deep research…"
-                    : "Develop this direction →"}
-                </button>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <button
+                    type="button"
+                    onClick={() => onPrepare(dir)}
+                    disabled={Boolean(loadingAction)}
+                    className="rounded-lg bg-[var(--accent)] px-4 py-2.5 text-sm font-medium text-black disabled:opacity-50"
+                  >
+                    {loadingPrepare ? "Opening Prepare…" : "I like this — open Prepare →"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onDeepen(dir)}
+                    disabled={Boolean(loadingAction)}
+                    className="rounded-lg border border-[var(--border)] px-4 py-2.5 text-sm hover:border-violet-500/50 disabled:opacity-50"
+                  >
+                    {loadingDeepen ? "Deep research…" : "Deepen first (optional)"}
+                  </button>
+                </div>
               </article>
             );
           })}
