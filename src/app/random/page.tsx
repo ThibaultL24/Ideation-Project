@@ -64,12 +64,6 @@ export default async function RandomPage() {
               Brainstorm
             </Link>
             <Link
-              href={`/prepare/${idea.slug}`}
-              className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
-            >
-              Prepare
-            </Link>
-            <Link
               href="/random"
               className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
             >

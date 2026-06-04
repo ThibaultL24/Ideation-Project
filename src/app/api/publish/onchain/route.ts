@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import { loadNormalizedIdeas } from "@/lib/ideas/load";
+import { resolvePublishIdea } from "@/lib/ideas/resolve-publish-idea";
 import { publishIdeaOnchain } from "@/lib/intuition/publish-idea";
 
 export async function POST(request: Request) {
-  const body = (await request.json()) as { slug?: string };
-  const idea = loadNormalizedIdeas().find((item) => item.slug === body.slug);
+  const body = (await request.json()) as { slug?: string; idea?: unknown };
+  const idea = resolvePublishIdea(body);
   if (!idea) {
     return NextResponse.json({ error: "Idea not found" }, { status: 404 });
   }

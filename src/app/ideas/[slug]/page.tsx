@@ -45,12 +45,6 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
         >
           Brainstorm
         </Link>
-        <Link
-          href={`/prepare/${idea.slug}`}
-          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
-        >
-          Prepare
-        </Link>
       </section>
 
       {state.onchain?.atomId ? (
