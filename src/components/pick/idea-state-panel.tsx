@@ -105,7 +105,7 @@ export function IdeaStatePanel({
 
       <div className="flex flex-wrap gap-3">
         <Link
-          href={`/brainstorm/${state.slug}`}
+          href={`/brainstorm/idea/${state.slug}`}
           className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
         >
           Brainstorm

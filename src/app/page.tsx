@@ -71,7 +71,7 @@ export default function HomePage() {
         >
           <h2 className="font-semibold">Brainstorm</h2>
           <p className="mt-2 text-sm text-[var(--muted)]">
-            Affiner l&apos;idée — problème, solution, fit Intuition
+            Thème → idées populaires → vérif doublon avant atom
           </p>
         </Link>
         <Link

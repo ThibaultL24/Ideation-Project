@@ -42,7 +42,9 @@ function StatusMessage({ status }: { status: PublishStatus }) {
   return (
     <div className={`rounded-lg border px-4 py-3 text-sm ${tone}`}>
       <p className="font-medium">{status.label}</p>
-      {status.detail ? <p className="mt-1 break-all text-xs">{status.detail}</p> : null}
+      {"detail" in status && status.detail ? (
+        <p className="mt-1 break-all text-xs">{status.detail}</p>
+      ) : null}
     </div>
   );
 }
@@ -166,7 +168,7 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
           <p className="mt-2 text-sm text-[var(--muted)]">{idea.tagline}</p>
         </div>
         <Link
-          href={`/brainstorm/${idea.slug}`}
+          href={`/brainstorm/idea/${idea.slug}`}
           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
         >
           Brainstorm
