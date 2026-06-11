@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen antialiased">
         <header className="border-b border-[var(--border)] bg-[var(--card)]">
-          <nav className="mx-auto flex max-w-5xl items-center gap-6 px-4 py-4 text-sm">
+          <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-4 px-4 py-4 text-sm md:gap-6">
             <a href="/" className="font-semibold text-[var(--accent)]">
               Ideation
             </a>
@@ -35,8 +35,17 @@ export default function RootLayout({
             >
               Explorer
             </a>
+            <a href="/pick" className="text-[var(--muted)] hover:text-white">
+              Cards
+            </a>
+            <a href="/brainstorm" className="text-[var(--muted)] hover:text-white">
+              Brainstorm
+            </a>
+            <a href="/prepare" className="text-[var(--muted)] hover:text-white">
+              Prepare
+            </a>
             <a href="/random" className="text-[var(--muted)] hover:text-white">
-              Discover
+              Random
             </a>
             <a href="/workshop" className="text-[var(--muted)] hover:text-white">
               Workshop

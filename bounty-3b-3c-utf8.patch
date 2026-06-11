@@ -1,0 +1,3541 @@
+From 30e52735eee725cd602ebabbe4c429507014d16c Mon Sep 17 00:00:00 2001
+From: ThibaultL24 <thibault.lenormand24@gmail.com>
+Date: Fri, 29 May 2026 19:17:37 +0200
+Subject: [PATCH 1/2] test add cards vision + questions to precise idea with
+ cards
+
+---
+ package.json                                  |   4 +-
+ src/app/api/idea-state/[slug]/route.ts        |  24 +
+ src/app/api/pick/deck/route.ts                |  20 +
+ src/app/api/pick/refine/route.ts              |  28 ++
+ src/app/brainstorm/[slug]/page.tsx            |  16 +
+ src/app/brainstorm/page.tsx                   |  28 ++
+ src/app/ideas/[slug]/page.tsx                 |  15 +
+ src/app/layout.tsx                            |  11 +-
+ src/app/page.tsx                              |  34 +-
+ src/app/pick/page.tsx                         |   6 +
+ src/app/prepare/[slug]/page.tsx               |  16 +
+ src/app/prepare/page.tsx                      |  28 ++
+ .../brainstorm/brainstorm-workspace.tsx       | 148 ++++++
+ src/components/pick/idea-card.tsx             |  49 ++
+ src/components/pick/idea-state-panel.tsx      | 183 +++++++
+ src/components/pick/pick-flow.tsx             | 287 +++++++++++
+ src/components/pick/refinement-question.tsx   |  41 ++
+ src/components/prepare/prepare-workspace.tsx  | 186 +++++++
+ src/lib/ideas/idea-state.ts                   | 217 +++++++++
+ src/lib/ideas/pick-refinement.ts              | 452 ++++++++++++++++++
+ tests/idea-state.test.ts                      |  78 +++
+ tests/pick-refinement.test.ts                 |  34 ++
+ 22 files changed, 1901 insertions(+), 4 deletions(-)
+ create mode 100644 src/app/api/idea-state/[slug]/route.ts
+ create mode 100644 src/app/api/pick/deck/route.ts
+ create mode 100644 src/app/api/pick/refine/route.ts
+ create mode 100644 src/app/brainstorm/[slug]/page.tsx
+ create mode 100644 src/app/brainstorm/page.tsx
+ create mode 100644 src/app/pick/page.tsx
+ create mode 100644 src/app/prepare/[slug]/page.tsx
+ create mode 100644 src/app/prepare/page.tsx
+ create mode 100644 src/components/brainstorm/brainstorm-workspace.tsx
+ create mode 100644 src/components/pick/idea-card.tsx
+ create mode 100644 src/components/pick/idea-state-panel.tsx
+ create mode 100644 src/components/pick/pick-flow.tsx
+ create mode 100644 src/components/pick/refinement-question.tsx
+ create mode 100644 src/components/prepare/prepare-workspace.tsx
+ create mode 100644 src/lib/ideas/idea-state.ts
+ create mode 100644 src/lib/ideas/pick-refinement.ts
+ create mode 100644 tests/idea-state.test.ts
+ create mode 100644 tests/pick-refinement.test.ts
+
+diff --git a/package.json b/package.json
+index 9c7fe8f..a9f97f8 100644
+--- a/package.json
++++ b/package.json
+@@ -4,7 +4,9 @@
+   "private": true,
+   "type": "module",
+   "scripts": {
+-    "dev": "next dev --turbopack",
++    "dev": "next dev",
++    "dev:turbo": "next dev --turbopack",
++    "clean": "rm -rf .next",
+     "build": "next build",
+     "start": "next start",
+     "lint": "next lint",
+diff --git a/src/app/api/idea-state/[slug]/route.ts b/src/app/api/idea-state/[slug]/route.ts
+new file mode 100644
+index 0000000..c62a3a4
+--- /dev/null
++++ b/src/app/api/idea-state/[slug]/route.ts
+@@ -0,0 +1,24 @@
++// src/app/api/idea-state/[slug]/route.ts
++import { NextResponse } from "next/server";
++import { loadNormalizedIdeas } from "@/lib/ideas/load";
++import { buildIdeaFullState, buildScopePrompt } from "@/lib/ideas/idea-state";
++
++interface RouteContext {
++  params: Promise<{ slug: string }>;
++}
++
++export async function GET(request: Request, context: RouteContext) {
++  const { slug } = await context.params;
++  const { searchParams } = new URL(request.url);
++  const verifyOnchain = searchParams.get("verifyOnchain") === "true";
++
++  const idea = loadNormalizedIdeas().find((item) => item.slug === slug);
++  if (!idea) {
++    return NextResponse.json({ error: "Idea not found" }, { status: 404 });
++  }
++
++  const state = await buildIdeaFullState(idea, { verifyOnchain });
++  const prompt = buildScopePrompt(idea);
++
++  return NextResponse.json({ idea, state, prompt });
++}
+diff --git a/src/app/api/pick/deck/route.ts b/src/app/api/pick/deck/route.ts
+new file mode 100644
+index 0000000..9e4165e
+--- /dev/null
++++ b/src/app/api/pick/deck/route.ts
+@@ -0,0 +1,20 @@
++// src/app/api/pick/deck/route.ts
++import { NextResponse } from "next/server";
++import { loadNormalizedIdeas } from "@/lib/ideas/load";
++import { buildIdeaFullState, pickRandomIdeas } from "@/lib/ideas/idea-state";
++
++export async function GET(request: Request) {
++  const { searchParams } = new URL(request.url);
++  const count = Math.min(
++    8,
++    Math.max(2, Number(searchParams.get("count") ?? "4") || 4),
++  );
++
++  const ideas = loadNormalizedIdeas();
++  const deck = pickRandomIdeas(ideas, count);
++  const cards = await Promise.all(
++    deck.map((idea) => buildIdeaFullState(idea, { verifyOnchain: false })),
++  );
++
++  return NextResponse.json({ cards });
++}
+diff --git a/src/app/api/pick/refine/route.ts b/src/app/api/pick/refine/route.ts
+new file mode 100644
+index 0000000..5f81987
+--- /dev/null
++++ b/src/app/api/pick/refine/route.ts
+@@ -0,0 +1,28 @@
++// src/app/api/pick/refine/route.ts
++import { NextResponse } from "next/server";
++import {
++  refinePick,
++  type PickRefineRequest,
++} from "@/lib/ideas/pick-refinement";
++
++export async function POST(request: Request) {
++  try {
++    const body = (await request.json()) as PickRefineRequest;
++    if (!body.intent || typeof body.intent !== "string") {
++      return NextResponse.json(
++        { error: "intent is required" },
++        { status: 400 },
++      );
++    }
++    const result = await refinePick({
++      intent: body.intent,
++      answers: body.answers ?? [],
++      excludeSlugs: body.excludeSlugs,
++      focusSlug: body.focusSlug,
++    });
++    return NextResponse.json(result);
++  } catch (error) {
++    const message = error instanceof Error ? error.message : "Unknown error";
++    return NextResponse.json({ error: message }, { status: 500 });
++  }
++}
+diff --git a/src/app/brainstorm/[slug]/page.tsx b/src/app/brainstorm/[slug]/page.tsx
+new file mode 100644
+index 0000000..48ca9f5
+--- /dev/null
++++ b/src/app/brainstorm/[slug]/page.tsx
+@@ -0,0 +1,16 @@
++// src/app/brainstorm/[slug]/page.tsx
++import { notFound } from "next/navigation";
++import { BrainstormWorkspace } from "@/components/brainstorm/brainstorm-workspace";
++import { loadNormalizedIdeas } from "@/lib/ideas/load";
++
++interface BrainstormPageProps {
++  params: Promise<{ slug: string }>;
++}
++
++export default async function BrainstormPage({ params }: BrainstormPageProps) {
++  const { slug } = await params;
++  const idea = loadNormalizedIdeas().find((item) => item.slug === slug);
++  if (!idea) notFound();
++
++  return <BrainstormWorkspace idea={idea} />;
++}
+diff --git a/src/app/brainstorm/page.tsx b/src/app/brainstorm/page.tsx
+new file mode 100644
+index 0000000..d1b62ff
+--- /dev/null
++++ b/src/app/brainstorm/page.tsx
+@@ -0,0 +1,28 @@
++// src/app/brainstorm/page.tsx
++import Link from "next/link";
++
++export default function BrainstormIndexPage() {
++  return (
++    <div className="space-y-6">
++      <h1 className="text-2xl font-bold">Brainstorm</h1>
++      <p className="text-[var(--muted)]">
++        Choisissez une idée via les cartes ou le catalogue, puis affinez le
++        concept (problème, solution, Intuition fit) avant la préparation onchain.
++      </p>
++      <div className="flex flex-wrap gap-3">
++        <Link
++          href="/pick"
++          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++        >
++          Tirer des cartes
++        </Link>
++        <Link
++          href="/ideas"
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          Catalogue
++        </Link>
++      </div>
++    </div>
++  );
++}
+diff --git a/src/app/ideas/[slug]/page.tsx b/src/app/ideas/[slug]/page.tsx
+index 7049841..dc4df3e 100644
+--- a/src/app/ideas/[slug]/page.tsx
++++ b/src/app/ideas/[slug]/page.tsx
+@@ -36,6 +36,21 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
+         </p>
+       </section>
+ 
++      <section className="flex flex-wrap gap-3">
++        <Link
++          href={`/brainstorm/${idea.slug}`}
++          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++        >
++          Brainstorm
++        </Link>
++        <Link
++          href={`/prepare/${idea.slug}`}
++          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
++        >
++          Prepare
++        </Link>
++      </section>
++
+       {idea.intuition?.atomId ? (
+         <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 text-sm">
+           <h2 className="font-semibold">Onchain</h2>
+diff --git a/src/app/layout.tsx b/src/app/layout.tsx
+index e60eeb6..c236030 100644
+--- a/src/app/layout.tsx
++++ b/src/app/layout.tsx
+@@ -35,8 +35,17 @@ export default function RootLayout({
+             >
+               Explorer
+             </a>
++            <a href="/pick" className="text-[var(--muted)] hover:text-white">
++              Cartes
++            </a>
++            <a href="/brainstorm" className="text-[var(--muted)] hover:text-white">
++              Brainstorm
++            </a>
++            <a href="/prepare" className="text-[var(--muted)] hover:text-white">
++              Prepare
++            </a>
+             <a href="/random" className="text-[var(--muted)] hover:text-white">
+-              Découvrir
++              Aléatoire
+             </a>
+           </nav>
+         </header>
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index ea3f860..17e53e0 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -23,7 +23,7 @@ export default function HomePage() {
+         </p>
+       </section>
+ 
+-      <section className="grid gap-4 md:grid-cols-3">
++      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+         <Link
+           href="/ideas"
+           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+@@ -44,16 +44,46 @@ export default function HomePage() {
+             Portal Intuition — graphe et claims
+           </p>
+         </a>
++        <Link
++          href="/pick"
++          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
++        >
++          <h2 className="font-semibold">Cartes</h2>
++          <p className="mt-2 text-sm text-[var(--muted)]">
++            Intent → questions → mini-cartes affinées
++          </p>
++        </Link>
+         <Link
+           href="/random"
+           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+         >
+-          <h2 className="font-semibold">Découvrir</h2>
++          <h2 className="font-semibold">Aléatoire</h2>
+           <p className="mt-2 text-sm text-[var(--muted)]">
+             Une idée au hasard
+           </p>
+         </Link>
+       </section>
++
++      <section className="grid gap-4 sm:grid-cols-2">
++        <Link
++          href="/brainstorm"
++          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
++        >
++          <h2 className="font-semibold">Brainstorm</h2>
++          <p className="mt-2 text-sm text-[var(--muted)]">
++            Affiner l&apos;idée — problème, solution, fit Intuition
++          </p>
++        </Link>
++        <Link
++          href="/prepare"
++          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
++        >
++          <h2 className="font-semibold">Prepare</h2>
++          <p className="mt-2 text-sm text-[var(--muted)]">
++            Existant, triple cœur, publication GitHub + onchain
++          </p>
++        </Link>
++      </section>
+     </div>
+   );
+ }
+diff --git a/src/app/pick/page.tsx b/src/app/pick/page.tsx
+new file mode 100644
+index 0000000..51e503f
+--- /dev/null
++++ b/src/app/pick/page.tsx
+@@ -0,0 +1,6 @@
++// src/app/pick/page.tsx
++import { PickFlow } from "@/components/pick/pick-flow";
++
++export default function PickPage() {
++  return <PickFlow />;
++}
+diff --git a/src/app/prepare/[slug]/page.tsx b/src/app/prepare/[slug]/page.tsx
+new file mode 100644
+index 0000000..67e4a14
+--- /dev/null
++++ b/src/app/prepare/[slug]/page.tsx
+@@ -0,0 +1,16 @@
++// src/app/prepare/[slug]/page.tsx
++import { notFound } from "next/navigation";
++import { PrepareWorkspace } from "@/components/prepare/prepare-workspace";
++import { loadNormalizedIdeas } from "@/lib/ideas/load";
++
++interface PreparePageProps {
++  params: Promise<{ slug: string }>;
++}
++
++export default async function PreparePage({ params }: PreparePageProps) {
++  const { slug } = await params;
++  const idea = loadNormalizedIdeas().find((item) => item.slug === slug);
++  if (!idea) notFound();
++
++  return <PrepareWorkspace idea={idea} />;
++}
+diff --git a/src/app/prepare/page.tsx b/src/app/prepare/page.tsx
+new file mode 100644
+index 0000000..2cfc47a
+--- /dev/null
++++ b/src/app/prepare/page.tsx
+@@ -0,0 +1,28 @@
++// src/app/prepare/page.tsx
++import Link from "next/link";
++
++export default function PrepareIndexPage() {
++  return (
++    <div className="space-y-6">
++      <h1 className="text-2xl font-bold">Prepare & Publish</h1>
++      <p className="text-[var(--muted)]">
++        Après le brainstorm : vérifiez scoped / onchain / PR, formalisez le
++        triple cœur, puis publiez sur GitHub et Intuition testnet.
++      </p>
++      <div className="flex flex-wrap gap-3">
++        <Link
++          href="/pick"
++          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++        >
++          Choisir une carte
++        </Link>
++        <Link
++          href="/brainstorm"
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          Brainstorm
++        </Link>
++      </div>
++    </div>
++  );
++}
+diff --git a/src/components/brainstorm/brainstorm-workspace.tsx b/src/components/brainstorm/brainstorm-workspace.tsx
+new file mode 100644
+index 0000000..55670ed
+--- /dev/null
++++ b/src/components/brainstorm/brainstorm-workspace.tsx
+@@ -0,0 +1,148 @@
++// src/components/brainstorm/brainstorm-workspace.tsx
++"use client";
++
++import Link from "next/link";
++import { useEffect, useState } from "react";
++import type { Idea } from "@/lib/ideas/schema";
++
++const SECTIONS = [
++  {
++    id: "problem",
++    label: "Problème",
++    placeholder: "Qui souffre de quoi ? Comment s'en sort-on aujourd'hui ?",
++  },
++  {
++    id: "solution",
++    label: "Solution",
++    placeholder: "Que fait le produit ? Parcours utilisateur en 3 étapes.",
++  },
++  {
++    id: "users",
++    label: "Utilisateurs cibles",
++    placeholder: "Les 100 premiers utilisateurs — soyez précis.",
++  },
++  {
++    id: "intuitionFit",
++    label: "Pourquoi Intuition",
++    placeholder: "Atoms, triples, staking — qu'est-ce qui est indispensable ?",
++  },
++  {
++    id: "mvp",
++    label: "MVP (3 écrans)",
++    placeholder: "Écran 1, 2, 3 — version hackathon.",
++  },
++] as const;
++
++type DraftKey = (typeof SECTIONS)[number]["id"];
++
++function storageKey(slug: string) {
++  return `brainstorm-draft:${slug}`;
++}
++
++interface BrainstormWorkspaceProps {
++  idea: Idea;
++}
++
++export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
++  const [draft, setDraft] = useState<Record<DraftKey, string>>({
++    problem: "",
++    solution: "",
++    users: "",
++    intuitionFit: "",
++    mvp: "",
++  });
++  const [saved, setSaved] = useState(false);
++
++  useEffect(() => {
++    const raw = localStorage.getItem(storageKey(idea.slug));
++    if (!raw) {
++      setDraft({
++        problem: idea.description.slice(0, 500),
++        solution: "",
++        users: "",
++        intuitionFit: "",
++        mvp: "",
++      });
++      return;
++    }
++    try {
++      setDraft(JSON.parse(raw) as Record<DraftKey, string>);
++    } catch {
++      /* ignore */
++    }
++  }, [idea.slug, idea.description]);
++
++  function updateField(id: DraftKey, value: string) {
++    setDraft((prev) => ({ ...prev, [id]: value }));
++    setSaved(false);
++  }
++
++  function saveDraft() {
++    localStorage.setItem(storageKey(idea.slug), JSON.stringify(draft));
++    setSaved(true);
++    setTimeout(() => setSaved(false), 2000);
++  }
++
++  return (
++    <div className="space-y-8">
++      <div className="flex flex-wrap items-start justify-between gap-4">
++        <div>
++          <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
++            Outil 1 · Brainstorm
++          </p>
++          <h1 className="mt-1 text-2xl font-bold">{idea.title}</h1>
++          <p className="mt-2 text-sm text-[var(--muted)]">{idea.tagline}</p>
++        </div>
++        <Link
++          href={`/prepare/${idea.slug}`}
++          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++        >
++          Préparer & publier →
++        </Link>
++      </div>
++
++      <p className="text-sm text-[var(--muted)]">
++        Affinez l&apos;idée ici (créatif, sans contrainte graphe). Une fois le
++        brouillon prêt, passez à <strong>Prepare</strong> pour similarités,
++        triples et publication.
++      </p>
++
++      <div className="space-y-6">
++        {SECTIONS.map((section) => (
++          <label key={section.id} className="block">
++            <span className="text-sm font-semibold">{section.label}</span>
++            <textarea
++              className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 text-sm text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none"
++              rows={4}
++              placeholder={section.placeholder}
++              value={draft[section.id]}
++              onChange={(e) => updateField(section.id, e.target.value)}
++            />
++          </label>
++        ))}
++      </div>
++
++      <div className="flex flex-wrap gap-3">
++        <button
++          type="button"
++          onClick={saveDraft}
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          {saved ? "Enregistré" : "Enregistrer le brouillon"}
++        </button>
++        <Link
++          href={`/ideas/${idea.slug}`}
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          Fiche catalogue
++        </Link>
++        <Link
++          href="/pick"
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          Retour aux cartes
++        </Link>
++      </div>
++    </div>
++  );
++}
+diff --git a/src/components/pick/idea-card.tsx b/src/components/pick/idea-card.tsx
+new file mode 100644
+index 0000000..25b5366
+--- /dev/null
++++ b/src/components/pick/idea-card.tsx
+@@ -0,0 +1,49 @@
++// src/components/pick/idea-card.tsx
++import type { IdeaFullState } from "@/lib/ideas/idea-state";
++
++const BADGE_LABELS: Record<string, string> = {
++  catalogue: "Catalogue",
++  scoped: "Scoped",
++  pr: "PR GitHub",
++  onchain: "Onchain",
++  triple: "Triple cœur",
++  a_travailler: "À travailler",
++};
++
++interface IdeaCardProps {
++  state: IdeaFullState;
++  selected: boolean;
++  onSelect: () => void;
++}
++
++export function IdeaCard({ state, selected, onSelect }: IdeaCardProps) {
++  return (
++    <button
++      type="button"
++      onClick={onSelect}
++      className={`flex h-full min-h-[220px] w-full flex-col rounded-xl border p-4 text-left transition ${
++        selected
++          ? "border-[var(--accent)] bg-[var(--card)] ring-2 ring-[var(--accent)]"
++          : "border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)]"
++      }`}
++    >
++      <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
++        {state.category}
++      </p>
++      <h3 className="mt-2 line-clamp-2 text-lg font-semibold">{state.title}</h3>
++      <p className="mt-2 line-clamp-3 flex-1 text-sm text-[var(--muted)]">
++        {state.tagline || state.title}
++      </p>
++      <div className="mt-4 flex flex-wrap gap-1.5">
++        {state.badges.map((badge) => (
++          <span
++            key={badge}
++            className="rounded-full border border-[var(--border)] px-2 py-0.5 text-[10px] text-[var(--muted)]"
++          >
++            {BADGE_LABELS[badge] ?? badge}
++          </span>
++        ))}
++      </div>
++    </button>
++  );
++}
+diff --git a/src/components/pick/idea-state-panel.tsx b/src/components/pick/idea-state-panel.tsx
+new file mode 100644
+index 0000000..10e7c56
+--- /dev/null
++++ b/src/components/pick/idea-state-panel.tsx
+@@ -0,0 +1,183 @@
++// src/components/pick/idea-state-panel.tsx
++"use client";
++
++import Link from "next/link";
++import { useState } from "react";
++import type { IdeaFullState, IdeaNextAction } from "@/lib/ideas/idea-state";
++
++const ACTION_COPY: Record<
++  IdeaNextAction,
++  { title: string; description: string }
++> = {
++  view_ready: {
++    title: "Idée prête",
++    description: "Scoped, PR et présence onchain détectées.",
++  },
++  prepare_onchain: {
++    title: "Finaliser onchain",
++    description: "PR présente — compléter atom ou triple cœur.",
++  },
++  sync_db: {
++    title: "Synchroniser",
++    description: "Onchain détecté mais pas marqué scoped en base.",
++  },
++  brainstorm: {
++    title: "Brainstorm",
++    description: "Idée déjà travaillée en base — affiner avant PR.",
++  },
++  create_with_prompt: {
++    title: "Créer l'idée",
++    description: "Pas encore scoped ni PR — utiliser le prompt ci-dessous.",
++  },
++};
++
++interface IdeaStatePanelProps {
++  state: IdeaFullState;
++  prompt: string;
++  loadingOnchain: boolean;
++  githubPrUrl?: string;
++}
++
++export function IdeaStatePanel({
++  state,
++  prompt,
++  loadingOnchain,
++  githubPrUrl,
++}: IdeaStatePanelProps) {
++  const [copied, setCopied] = useState(false);
++  const action = ACTION_COPY[state.nextAction];
++
++  async function copyPrompt() {
++    await navigator.clipboard.writeText(prompt);
++    setCopied(true);
++    setTimeout(() => setCopied(false), 2000);
++  }
++
++  return (
++    <div className="space-y-6 rounded-xl border border-[var(--border)] bg-[var(--card)] p-6">
++      <div>
++        <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
++          {state.category}
++        </p>
++        <h2 className="mt-1 text-2xl font-bold">{state.title}</h2>
++        <p className="mt-2 text-sm text-[var(--muted)]">{state.tagline}</p>
++      </div>
++
++      <section className="grid gap-3 sm:grid-cols-3">
++        <StatusBlock
++          label="Base (scoped)"
++          ok={state.db.scoped}
++          detail={
++            state.db.scoped
++              ? `Statut : ${state.db.status}`
++              : "Encore au catalogue brut"
++          }
++        />
++        <StatusBlock
++          label="GitHub PR"
++          ok={state.db.hasGithubPr}
++          detail={
++            state.db.hasGithubPr ? "PR enregistrée" : "Aucune PR détectée"
++          }
++        />
++        <StatusBlock
++          label="Onchain"
++          ok={Boolean(state.onchain?.atomInIndexer)}
++          loading={loadingOnchain}
++          detail={
++            loadingOnchain
++              ? "Vérification…"
++              : state.onchain?.atomInIndexer
++                ? state.onchain.coreTriplePresent
++                  ? "Atom + triple cœur"
++                  : "Atom sans triple cœur"
++                : state.onchain === null
++                  ? "Non vérifié"
++                  : "Pas d'atom indexé"
++          }
++        />
++      </section>
++
++      <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
++        <h3 className="font-semibold text-[var(--accent)]">{action.title}</h3>
++        <p className="mt-1 text-sm text-[var(--muted)]">{action.description}</p>
++      </div>
++
++      <div className="flex flex-wrap gap-3">
++        <Link
++          href={`/brainstorm/${state.slug}`}
++          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++        >
++          Brainstorm
++        </Link>
++        <Link
++          href={`/prepare/${state.slug}`}
++          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
++        >
++          Prepare
++        </Link>
++        <Link
++          href={`/ideas/${state.slug}`}
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          Fiche catalogue
++        </Link>
++        {!state.db.hasGithubPr ? (
++          <button
++            type="button"
++            onClick={copyPrompt}
++            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++          >
++            {copied ? "Copié" : "Copier le prompt"}
++          </button>
++        ) : null}
++        {githubPrUrl ? (
++          <a
++            href={githubPrUrl}
++            target="_blank"
++            rel="noopener noreferrer"
++            className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++          >
++            Voir la PR
++          </a>
++        ) : null}
++      </div>
++
++      {state.nextAction === "create_with_prompt" ||
++      state.nextAction === "brainstorm" ? (
++        <section>
++          <h3 className="text-sm font-semibold">Prompt suggéré</h3>
++          <pre className="mt-2 max-h-48 overflow-auto rounded-lg bg-[var(--background)] p-4 text-xs text-[var(--muted)] whitespace-pre-wrap">
++            {prompt}
++          </pre>
++        </section>
++      ) : null}
++    </div>
++  );
++}
++
++function StatusBlock({
++  label,
++  ok,
++  detail,
++  loading,
++}: {
++  label: string;
++  ok: boolean;
++  detail: string;
++  loading?: boolean;
++}) {
++  return (
++    <div className="rounded-lg border border-[var(--border)] p-3">
++      <p className="text-xs text-[var(--muted)]">{label}</p>
++      <p
++        className={`mt-1 text-sm font-medium ${
++          loading ? "text-[var(--muted)]" : ok ? "text-emerald-400" : "text-amber-400"
++        }`}
++      >
++        {loading ? "…" : ok ? "Oui" : "Non"}
++      </p>
++      <p className="mt-1 text-xs text-[var(--muted)]">{detail}</p>
++    </div>
++  );
++}
+diff --git a/src/components/pick/pick-flow.tsx b/src/components/pick/pick-flow.tsx
+new file mode 100644
+index 0000000..5d7c912
+--- /dev/null
++++ b/src/components/pick/pick-flow.tsx
+@@ -0,0 +1,287 @@
++// src/components/pick/pick-flow.tsx
++"use client";
++
++import { useCallback, useState } from "react";
++import type {
++  PickAnswer,
++  PickQuestion,
++  PickRefineResponse,
++} from "@/lib/ideas/pick-refinement";
++import type { IdeaFullState } from "@/lib/ideas/idea-state";
++import { IdeaCard } from "./idea-card";
++import { IdeaStatePanel } from "./idea-state-panel";
++import { RefinementQuestion } from "./refinement-question";
++
++interface DetailResponse {
++  state: IdeaFullState;
++  prompt: string;
++  idea: { github?: { prUrl?: string } };
++}
++
++type Phase = "intent" | "refine" | "done";
++
++export function PickFlow() {
++  const [phase, setPhase] = useState<Phase>("intent");
++  const [intent, setIntent] = useState("");
++  const [answers, setAnswers] = useState<PickAnswer[]>([]);
++  const [excludeSlugs, setExcludeSlugs] = useState<string[]>([]);
++  const [focusSlug, setFocusSlug] = useState<string | undefined>();
++
++  const [refine, setRefine] = useState<PickRefineResponse | null>(null);
++  const [loading, setLoading] = useState(false);
++  const [error, setError] = useState<string | null>(null);
++
++  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
++  const [detail, setDetail] = useState<DetailResponse | null>(null);
++  const [loadingDetail, setLoadingDetail] = useState(false);
++
++  const runRefine = useCallback(
++    async (
++      nextAnswers: PickAnswer[],
++      nextExclude: string[],
++      nextFocus?: string,
++    ) => {
++      setLoading(true);
++      setError(null);
++      try {
++        const res = await fetch("/api/pick/refine", {
++          method: "POST",
++          headers: { "Content-Type": "application/json" },
++          body: JSON.stringify({
++            intent,
++            answers: nextAnswers,
++            excludeSlugs: nextExclude,
++            focusSlug: nextFocus,
++          }),
++        });
++        if (!res.ok) {
++          const err = (await res.json()) as { error?: string };
++          throw new Error(err.error ?? "Erreur de recherche");
++        }
++        const data = (await res.json()) as PickRefineResponse;
++        setRefine(data);
++        setAnswers(nextAnswers);
++        setExcludeSlugs(nextExclude);
++        setFocusSlug(nextFocus);
++        return data;
++      } catch (e) {
++        setError(e instanceof Error ? e.message : "Erreur");
++        return null;
++      } finally {
++        setLoading(false);
++      }
++    },
++    [intent],
++  );
++
++  async function startRefinement() {
++    if (intent.trim().length < 3) {
++      setError("Décrivez votre idée en quelques mots (ex. app IA sur la réputation).");
++      return;
++    }
++    setPhase("refine");
++    setSelectedSlug(null);
++    setDetail(null);
++    await runRefine([], [], undefined);
++  }
++
++  async function answerQuestion(choiceId: string, question: PickQuestion) {
++    const next: PickAnswer[] = [
++      ...answers,
++      { questionId: question.id, choiceId },
++    ];
++    let nextExclude = [...excludeSlugs];
++    let nextFocus = focusSlug;
++
++    if (question.id === "card_fit" && choiceId === "not_this" && focusSlug) {
++      nextExclude = [...nextExclude, focusSlug];
++      nextFocus = undefined;
++    }
++    if (question.id === "focus_path" && choiceId === "widen") {
++      nextFocus = undefined;
++    }
++
++    const data = await runRefine(next, nextExclude, nextFocus);
++    if (data?.readyToSelect && focusSlug) {
++      await confirmSelection(focusSlug);
++    }
++  }
++
++  async function pickCard(slug: string) {
++    const next: PickAnswer[] = [
++      ...answers,
++      { questionId: "pick_card", choiceId: slug },
++    ];
++    setFocusSlug(slug);
++    const data = await runRefine(next, excludeSlugs, slug);
++
++    if (data?.readyToSelect) {
++      await confirmSelection(slug);
++      return;
++    }
++
++    if (!data?.question) {
++      setSelectedSlug(slug);
++    }
++  }
++
++  async function confirmSelection(slug: string) {
++    setSelectedSlug(slug);
++    setPhase("done");
++    setLoadingDetail(true);
++    setDetail(null);
++    try {
++      const res = await fetch(
++        `/api/idea-state/${encodeURIComponent(slug)}?verifyOnchain=true`,
++      );
++      if (!res.ok) throw new Error("Impossible de charger l'état");
++      setDetail((await res.json()) as DetailResponse);
++    } catch (e) {
++      setError(e instanceof Error ? e.message : "Erreur");
++    } finally {
++      setLoadingDetail(false);
++    }
++  }
++
++  function resetAll() {
++    setPhase("intent");
++    setIntent("");
++    setAnswers([]);
++    setExcludeSlugs([]);
++    setFocusSlug(undefined);
++    setRefine(null);
++    setSelectedSlug(null);
++    setDetail(null);
++    setError(null);
++  }
++
++  return (
++    <div className="space-y-8">
++      <div>
++        <h1 className="text-2xl font-bold">Cartes · recherche guidée</h1>
++        <p className="mt-2 max-w-2xl text-sm text-[var(--muted)]">
++          Décrivez votre projet, répondez aux questions — chaque choix affine les
++          mini-cartes du catalogue. Ensuite : vérif état,{" "}
++          <strong>Brainstorm</strong> et <strong>Prepare</strong>.
++        </p>
++      </div>
++
++      {phase === "intent" ? (
++        <section className="space-y-4 rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++          <label className="block">
++            <span className="text-sm font-semibold">Votre idée en une phrase</span>
++            <textarea
++              className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] p-4 text-sm focus:border-[var(--accent)] focus:outline-none"
++              rows={3}
++              placeholder="Ex. Je veux créer une app sur l'IA pour la réputation des modèles..."
++              value={intent}
++              onChange={(e) => setIntent(e.target.value)}
++            />
++          </label>
++          <button
++            type="button"
++            onClick={() => void startRefinement()}
++            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++          >
++            Affiner avec des questions
++          </button>
++        </section>
++      ) : null}
++
++      {error ? <p className="text-sm text-red-400">{error}</p> : null}
++
++      {phase === "refine" && refine ? (
++        <>
++          <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--muted)]">
++            <span>
++              {refine.matchCount} idée{refine.matchCount > 1 ? "s" : ""} correspondante
++              {refine.matchCount > 1 ? "s" : ""}
++            </span>
++            <button
++              type="button"
++              onClick={resetAll}
++              className="text-[var(--accent)] hover:underline"
++            >
++              Recommencer
++            </button>
++          </div>
++
++          {refine.filtersSummary.length > 0 ? (
++            <p className="text-xs text-[var(--muted)]">
++              Filtres : {refine.filtersSummary.join(" · ")}
++            </p>
++          ) : null}
++
++          {refine.question ? (
++            <RefinementQuestion
++              question={refine.question}
++              onChoose={(id) => void answerQuestion(id, refine.question!)}
++              disabled={loading}
++            />
++          ) : null}
++
++          <section className="space-y-3">
++            <h3 className="text-sm font-semibold text-[var(--muted)]">
++              Mini-cartes {refine.question ? "(aperçu)" : "— choisissez la plus proche"}
++            </h3>
++            {loading && refine.cards.length === 0 ? (
++              <p className="text-[var(--muted)]">Recherche…</p>
++            ) : refine.cards.length === 0 ? (
++              <p className="text-[var(--muted)]">
++                Aucune carte — élargissez via une réponse ou reformulez l&apos;intention.
++              </p>
++            ) : (
++              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
++                {refine.cards.map((card) => (
++                  <IdeaCard
++                    key={card.slug}
++                    state={card}
++                    selected={selectedSlug === card.slug || focusSlug === card.slug}
++                    onSelect={() => void pickCard(card.slug)}
++                  />
++                ))}
++              </div>
++            )}
++          </section>
++
++          {refine.readyToSelect && focusSlug && !selectedSlug ? (
++            <button
++              type="button"
++              onClick={() => void confirmSelection(focusSlug)}
++              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++            >
++              Continuer avec cette idée →
++            </button>
++          ) : null}
++        </>
++      ) : null}
++
++      {phase === "done" && selectedSlug ? (
++        <IdeaStatePanel
++          state={
++            detail?.state ??
++            refine?.cards.find((c) => c.slug === selectedSlug) ?? {
++              slug: selectedSlug,
++              canonicalId: "",
++              title: "",
++              category: "",
++              tagline: "",
++              db: {
++                scoped: false,
++                hasGithubPath: false,
++                hasGithubPr: false,
++                status: "normalized",
++              },
++              onchain: null,
++              nextAction: "create_with_prompt",
++              badges: ["catalogue"],
++            }
++          }
++          prompt={detail?.prompt ?? ""}
++          loadingOnchain={loadingDetail}
++          githubPrUrl={detail?.idea.github?.prUrl}
++        />
++      ) : null}
++    </div>
++  );
++}
+diff --git a/src/components/pick/refinement-question.tsx b/src/components/pick/refinement-question.tsx
+new file mode 100644
+index 0000000..055cdc4
+--- /dev/null
++++ b/src/components/pick/refinement-question.tsx
+@@ -0,0 +1,41 @@
++// src/components/pick/refinement-question.tsx
++import type { PickQuestion } from "@/lib/ideas/pick-refinement";
++
++interface RefinementQuestionProps {
++  question: PickQuestion;
++  onChoose: (choiceId: string) => void;
++  disabled?: boolean;
++}
++
++export function RefinementQuestion({
++  question,
++  onChoose,
++  disabled,
++}: RefinementQuestionProps) {
++  return (
++    <section className="rounded-xl border border-[var(--accent)]/40 bg-[var(--card)] p-5">
++      <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
++        Question {question.id.replace(/_/g, " ")}
++      </p>
++      <h2 className="mt-2 text-lg font-semibold leading-snug">{question.text}</h2>
++      <div className="mt-4 grid gap-2 sm:grid-cols-2">
++        {question.choices.map((choice) => (
++          <button
++            key={choice.id}
++            type="button"
++            disabled={disabled}
++            onClick={() => onChoose(choice.id)}
++            className="rounded-lg border border-[var(--border)] p-3 text-left transition hover:border-[var(--accent)] disabled:opacity-50"
++          >
++            <span className="font-medium">{choice.label}</span>
++            {choice.hint ? (
++              <span className="mt-1 block text-xs text-[var(--muted)]">
++                {choice.hint}
++              </span>
++            ) : null}
++          </button>
++        ))}
++      </div>
++    </section>
++  );
++}
+diff --git a/src/components/prepare/prepare-workspace.tsx b/src/components/prepare/prepare-workspace.tsx
+new file mode 100644
+index 0000000..8c90831
+--- /dev/null
++++ b/src/components/prepare/prepare-workspace.tsx
+@@ -0,0 +1,186 @@
++// src/components/prepare/prepare-workspace.tsx
++"use client";
++
++import Link from "next/link";
++import { useEffect, useState } from "react";
++import type { Idea } from "@/lib/ideas/schema";
++import type { IdeaFullState } from "@/lib/ideas/idea-state";
++import { BOUNTY_PREDICATE_LABEL } from "@/lib/intuition/config";
++
++interface PrepareWorkspaceProps {
++  idea: Idea;
++}
++
++interface DetailResponse {
++  state: IdeaFullState;
++  prompt: string;
++}
++
++export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
++  const [state, setState] = useState<IdeaFullState | null>(null);
++  const [loading, setLoading] = useState(true);
++  const [subject, setSubject] = useState(idea.title);
++  const [predicate, setPredicate] = useState(BOUNTY_PREDICATE_LABEL);
++  const [object, setObject] = useState("Intuition");
++  const [hasBrainstormDraft, setHasBrainstormDraft] = useState(false);
++
++  useEffect(() => {
++    setHasBrainstormDraft(
++      Boolean(localStorage.getItem(`brainstorm-draft:${idea.slug}`)),
++    );
++  }, [idea.slug]);
++
++  useEffect(() => {
++    void (async () => {
++      setLoading(true);
++      try {
++        const res = await fetch(
++          `/api/idea-state/${encodeURIComponent(idea.slug)}?verifyOnchain=true`,
++        );
++        if (res.ok) {
++          const data = (await res.json()) as DetailResponse;
++          setState(data.state);
++        }
++      } finally {
++        setLoading(false);
++      }
++    })();
++  }, [idea.slug]);
++
++  return (
++    <div className="space-y-8">
++      <div className="flex flex-wrap items-start justify-between gap-4">
++        <div>
++          <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
++            Outil 2 · Prepare & Publish
++          </p>
++          <h1 className="mt-1 text-2xl font-bold">{idea.title}</h1>
++          <p className="mt-2 text-sm text-[var(--muted)]">{idea.tagline}</p>
++        </div>
++        <Link
++          href={`/brainstorm/${idea.slug}`}
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          ← Brainstorm
++        </Link>
++      </div>
++
++      <p className="text-sm text-[var(--muted)]">
++        Vérifiez l&apos;existant, formalisez le triple cœur de la bounty, puis
++        publiez via PR GitHub et scripts onchain.
++      </p>
++
++      {hasBrainstormDraft ? (
++        <p className="rounded-lg border border-emerald-900/50 bg-emerald-950/30 px-4 py-2 text-sm text-emerald-300">
++          Brouillon brainstorm détecté (localStorage).
++        </p>
++      ) : (
++        <p className="rounded-lg border border-amber-900/50 bg-amber-950/30 px-4 py-2 text-sm text-amber-200">
++          Pas encore de brouillon brainstorm —{" "}
++          <Link href={`/brainstorm/${idea.slug}`} className="underline">
++            commencer par Brainstorm
++          </Link>
++          .
++        </p>
++      )}
++
++      <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++        <h2 className="font-semibold">État (DB + onchain)</h2>
++        {loading ? (
++          <p className="mt-2 text-sm text-[var(--muted)]">Vérification…</p>
++        ) : state ? (
++          <ul className="mt-3 space-y-1 text-sm text-[var(--muted)]">
++            <li>Scoped : {state.db.scoped ? "oui" : "non"}</li>
++            <li>PR GitHub : {state.db.hasGithubPr ? "oui" : "non"}</li>
++            <li>
++              Atom indexé :{" "}
++              {state.onchain?.atomInIndexer ? state.onchain.atomId : "non"}
++            </li>
++            <li>
++              Triple cœur :{" "}
++              {state.onchain?.coreTriplePresent ? "oui" : "non"}
++            </li>
++          </ul>
++        ) : (
++          <p className="mt-2 text-sm text-[var(--muted)]">
++            Impossible de charger l&apos;état.
++          </p>
++        )}
++      </section>
++
++      <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++        <h2 className="font-semibold">Triple cœur (bounty 3A)</h2>
++        <p className="mt-1 text-xs text-[var(--muted)]">
++          Sujet · prédicat · objet — à valider avant publication.
++        </p>
++        <div className="mt-4 grid gap-4 sm:grid-cols-3">
++          <label className="block">
++            <span className="text-xs text-blue-400">Sujet</span>
++            <input
++              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-sm"
++              value={subject}
++              onChange={(e) => setSubject(e.target.value)}
++            />
++          </label>
++          <label className="block">
++            <span className="text-xs text-orange-400">Prédicat</span>
++            <input
++              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-sm"
++              value={predicate}
++              onChange={(e) => setPredicate(e.target.value)}
++            />
++          </label>
++          <label className="block">
++            <span className="text-xs text-purple-400">Objet</span>
++            <input
++              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-sm"
++              value={object}
++              onChange={(e) => setObject(e.target.value)}
++            />
++          </label>
++        </div>
++        <p className="mt-4 rounded-lg bg-[var(--background)] p-3 font-mono text-sm">
++          <span className="text-blue-400">{subject}</span>{" "}
++          <span className="text-orange-400">{predicate}</span>{" "}
++          <span className="text-purple-400">{object}</span>
++        </p>
++      </section>
++
++      <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++        <h2 className="font-semibold">Publication</h2>
++        <ul className="mt-3 list-inside list-disc space-y-2 text-sm text-[var(--muted)]">
++          <li>
++            PR : dépôt{" "}
++            <a
++              href="https://github.com/intuition-box/ideas"
++              className="text-[var(--accent)] hover:underline"
++              target="_blank"
++              rel="noopener noreferrer"
++            >
++              intuition-box/ideas
++            </a>
++          </li>
++          <li>
++            Onchain :{" "}
++            <code className="text-xs">pnpm publish:one -- --slug={idea.slug}</code>
++          </li>
++        </ul>
++      </section>
++
++      <div className="flex flex-wrap gap-3">
++        <Link
++          href={`/ideas/${idea.slug}`}
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          Fiche catalogue
++        </Link>
++        <Link
++          href="/pick"
++          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++        >
++          Cartes
++        </Link>
++      </div>
++    </div>
++  );
++}
+diff --git a/src/lib/ideas/idea-state.ts b/src/lib/ideas/idea-state.ts
+new file mode 100644
+index 0000000..dd01450
+--- /dev/null
++++ b/src/lib/ideas/idea-state.ts
+@@ -0,0 +1,217 @@
++// src/lib/ideas/idea-state.ts
++import type { Idea, IdeaStatus } from "./schema";
++import {
++  BOUNTY_PREDICATE_LABEL,
++  getNetworkConfig,
++  MAINNET_INTUITION_PROTOCOL_TERM_ID,
++  type IntuitionNetworkConfig,
++} from "@/lib/intuition/config";
++import {
++  countTriplesInGraphql,
++  findAtomsByLabel,
++  pickCanonicalAtom,
++  verifyAtomQueryable,
++} from "@/lib/intuition/graphql";
++
++const SCOPED_STATUSES = new Set<IdeaStatus>([
++  "github_ready",
++  "github_published",
++  "ipfs_pinned",
++  "atom_created",
++  "triples_created",
++  "verified",
++  "published",
++  "onchain",
++]);
++
++export interface IdeaDbState {
++  scoped: boolean;
++  hasGithubPath: boolean;
++  hasGithubPr: boolean;
++  status: IdeaStatus;
++}
++
++export interface IdeaOnchainState {
++  atomId: string | null;
++  atomInIndexer: boolean;
++  coreTriplePresent: boolean;
++  network: string;
++}
++
++export type IdeaNextAction =
++  | "view_ready"
++  | "prepare_onchain"
++  | "brainstorm"
++  | "create_with_prompt"
++  | "sync_db";
++
++export interface IdeaFullState {
++  slug: string;
++  canonicalId: string;
++  title: string;
++  category: string;
++  tagline: string;
++  db: IdeaDbState;
++  onchain: IdeaOnchainState | null;
++  nextAction: IdeaNextAction;
++  badges: string[];
++}
++
++export function getIdeaDbState(idea: Idea): IdeaDbState {
++  const hasGithubPath = Boolean(idea.github?.path);
++  const hasGithubPr = Boolean(idea.github?.prUrl);
++  const scoped =
++    SCOPED_STATUSES.has(idea.status) || hasGithubPath || hasGithubPr;
++
++  return {
++    scoped,
++    hasGithubPath,
++    hasGithubPr,
++    status: idea.status,
++  };
++}
++
++async function resolveObjectTermIdReadonly(
++  config: IntuitionNetworkConfig,
++): Promise<string | null> {
++  if (config.network === "mainnet") {
++    return MAINNET_INTUITION_PROTOCOL_TERM_ID;
++  }
++  const rows = await findAtomsByLabel(config, "Intuition Protocol", 10);
++  return pickCanonicalAtom(rows)?.term_id ?? null;
++}
++
++async function resolvePredicateTermIdReadonly(
++  config: IntuitionNetworkConfig,
++): Promise<string | null> {
++  const rows = await findAtomsByLabel(config, BOUNTY_PREDICATE_LABEL, 10);
++  return pickCanonicalAtom(rows)?.term_id ?? null;
++}
++
++export async function verifyIdeaOnchain(
++  idea: Idea,
++): Promise<IdeaOnchainState> {
++  const config = getNetworkConfig();
++  const atomId = idea.intuition?.atomId?.trim() ?? null;
++
++  let atomInIndexer = false;
++  if (atomId) {
++    atomInIndexer = await verifyAtomQueryable(config, atomId);
++  }
++
++  let coreTriplePresent = false;
++  if (atomId && atomInIndexer) {
++    const predicateId = await resolvePredicateTermIdReadonly(config);
++    const objectId = await resolveObjectTermIdReadonly(config);
++    if (predicateId && objectId) {
++      const count = await countTriplesInGraphql(
++        config,
++        [atomId],
++        predicateId,
++        objectId,
++      );
++      coreTriplePresent = count > 0;
++    }
++  }
++
++  return {
++    atomId,
++    atomInIndexer,
++    coreTriplePresent,
++    network: config.network,
++  };
++}
++
++export function resolveNextAction(
++  db: IdeaDbState,
++  onchain: IdeaOnchainState | null,
++): IdeaNextAction {
++  const hasAtom = Boolean(onchain?.atomInIndexer);
++  const hasTriple = Boolean(onchain?.coreTriplePresent);
++
++  if (db.hasGithubPr && hasAtom && hasTriple) return "view_ready";
++  if (db.hasGithubPr) return "prepare_onchain";
++  if (hasAtom && !db.hasGithubPr) return "sync_db";
++  if (db.scoped && !db.hasGithubPr) return "brainstorm";
++  return "create_with_prompt";
++}
++
++export function buildBadges(
++  db: IdeaDbState,
++  onchain: IdeaOnchainState | null,
++): string[] {
++  const badges: string[] = ["catalogue"];
++  if (db.scoped) badges.push("scoped");
++  if (db.hasGithubPr) badges.push("pr");
++  if (onchain?.atomInIndexer) badges.push("onchain");
++  if (onchain?.coreTriplePresent) badges.push("triple");
++  if (!db.scoped && !onchain?.atomInIndexer && !db.hasGithubPr) {
++    badges.push("a_travailler");
++  }
++  return badges;
++}
++
++export async function buildIdeaFullState(
++  idea: Idea,
++  options?: { verifyOnchain?: boolean },
++): Promise<IdeaFullState> {
++  const db = getIdeaDbState(idea);
++  let onchain: IdeaOnchainState | null = null;
++
++  if (options?.verifyOnchain) {
++    try {
++      onchain = await verifyIdeaOnchain(idea);
++    } catch {
++      onchain = {
++        atomId: idea.intuition?.atomId ?? null,
++        atomInIndexer: false,
++        coreTriplePresent: false,
++        network: getNetworkConfig().network,
++      };
++    }
++  }
++
++  const nextAction = resolveNextAction(db, onchain);
++
++  return {
++    slug: idea.slug,
++    canonicalId: idea.canonicalId,
++    title: idea.title,
++    category: idea.category,
++    tagline: idea.tagline,
++    db,
++    onchain,
++    nextAction,
++    badges: buildBadges(db, onchain),
++  };
++}
++
++export function buildScopePrompt(idea: Idea): string {
++  return `You are helping scope an Intuition ecosystem product idea.
++
++Catalog idea: ${idea.title}
++Category: ${idea.category}
++Tagline: ${idea.tagline}
++Description: ${idea.description}
++
++Produce:
++1. Problem statement (who hurts, how often)
++2. Proposed solution (user journey in 3 steps)
++3. Target users (first 100 users, specific)
++4. Why Intuition (atoms, triples, staking — which features are essential)
++5. Core triple suggestion: [Subject] — [predicate] — [Object]
++6. MVP in 3 screens
++7. GitHub deliverable outline for intuition-box/ideas
++8. Main risks and a hackathon-sized version`;
++}
++
++export function pickRandomIdeas<T>(items: T[], count: number): T[] {
++  const pool = [...items];
++  const picked: T[] = [];
++  while (picked.length < count && pool.length > 0) {
++    const index = Math.floor(Math.random() * pool.length);
++    const [item] = pool.splice(index, 1);
++    if (item !== undefined) picked.push(item);
++  }
++  return picked;
++}
+diff --git a/src/lib/ideas/pick-refinement.ts b/src/lib/ideas/pick-refinement.ts
+new file mode 100644
+index 0000000..29e3f47
+--- /dev/null
++++ b/src/lib/ideas/pick-refinement.ts
+@@ -0,0 +1,452 @@
++// src/lib/ideas/pick-refinement.ts
++import type { Idea } from "./schema";
++import { buildIdeaFullState, type IdeaFullState } from "./idea-state";
++import { loadNormalizedIdeas } from "./load";
++
++const STOP_WORDS = new Set([
++  "je",
++  "veux",
++  "créer",
++  "creer",
++  "une",
++  "un",
++  "des",
++  "du",
++  "de",
++  "la",
++  "le",
++  "les",
++  "sur",
++  "pour",
++  "avec",
++  "app",
++  "application",
++  "dapp",
++  "the",
++  "a",
++  "an",
++  "to",
++  "for",
++  "on",
++  "and",
++  "or",
++  "i",
++  "want",
++  "build",
++  "make",
++]);
++
++export interface PickChoice {
++  id: string;
++  label: string;
++  hint?: string;
++}
++
++export interface PickQuestion {
++  id: string;
++  text: string;
++  choices: PickChoice[];
++}
++
++export interface PickAnswer {
++  questionId: string;
++  choiceId: string;
++}
++
++export interface PickFilters {
++  categories: string[];
++  archetype?: string;
++  keywords: string[];
++  focusSlug?: string;
++  excludeSlugs: string[];
++}
++
++export interface PickRefineRequest {
++  intent: string;
++  answers: PickAnswer[];
++  excludeSlugs?: string[];
++  focusSlug?: string;
++}
++
++export interface PickRefineResponse {
++  step: number;
++  matchCount: number;
++  filters: PickFilters;
++  filtersSummary: string[];
++  question: PickQuestion | null;
++  cards: IdeaFullState[];
++  readyToSelect: boolean;
++}
++
++const ARCHETYPES: Record<
++  string,
++  { label: string; hint: string; categories: string[]; keywords: string[] }
++> = {
++  curation: {
++    label: "Listes & curation",
++    hint: "Découvrir, classer, recommander",
++    categories: ["Marketplaces & Discovery", "Knowledge, Research & Information"],
++    keywords: ["curat", "discover", "list", "rank", "marketplace"],
++  },
++  reputation: {
++    label: "Réputation & avis",
++    hint: "Confiance, reviews, scores",
++    categories: ["Reviews & Ratings", "Identity, Reputation & Credentials"],
++    keywords: ["review", "reputation", "trust", "rating", "score", "stake"],
++  },
++  social: {
++    label: "Social & communauté",
++    hint: "Attestations entre pairs",
++    categories: ["Social Networks & Community"],
++    keywords: ["social", "community", "network", "friend"],
++  },
++  agents: {
++    label: "IA & agents",
++    hint: "Agents, ML, intelligence",
++    categories: ["AI Agents & Machine Intelligence"],
++    keywords: ["ai", "agent", "ml", "machine", "intelligence", "llm", "model", "bot"],
++  },
++  safety: {
++    label: "Sécurité & fraude",
++    hint: "Détection, protection, vérification",
++    categories: ["Safety, Security & Protection"],
++    keywords: ["fraud", "scam", "security", "safety", "verify", "detect"],
++  },
++  signals: {
++    label: "Signaux & prédiction",
++    hint: "Marchés, forecasting",
++    categories: ["Prediction & Signal Markets", "Finance, DeFi & Insurance"],
++    keywords: ["predict", "signal", "market", "forecast", "defi"],
++  },
++};
++
++const DOMAIN_HINTS: Record<string, { keywords: string[]; categories: string[] }> =
++  {
++    ai: {
++      keywords: ["ai", "agent", "ml", "intelligence", "llm", "model", "gpt"],
++      categories: ["AI Agents & Machine Intelligence"],
++    },
++    finance: {
++      keywords: ["defi", "finance", "insurance", "token", "payment"],
++      categories: ["Finance, DeFi & Insurance"],
++    },
++    health: {
++      keywords: ["health", "medical", "wellness", "doctor", "patient"],
++      categories: ["Healthcare & Wellness"],
++    },
++    education: {
++      keywords: ["learn", "education", "course", "student", "teacher"],
++      categories: ["Education & Learning"],
++    },
++    identity: {
++      keywords: ["identity", "credential", "reputation", "kyc", "verify"],
++      categories: ["Identity, Reputation & Credentials"],
++    },
++  };
++
++function tokenize(text: string): string[] {
++  return text
++    .toLowerCase()
++    .normalize("NFD")
++    .replace(/\p{M}/gu, "")
++    .split(/[^a-z0-9]+/)
++    .filter((t) => t.length > 2 && !STOP_WORDS.has(t));
++}
++
++function ideaSearchText(idea: Idea): string {
++  return [
++    idea.title,
++    idea.tagline,
++    idea.description,
++    idea.category,
++    idea.comparable ?? "",
++    ...idea.tags,
++  ]
++    .join(" ")
++    .toLowerCase();
++}
++
++function scoreIdea(idea: Idea, tokens: string[], filters: PickFilters): number {
++  if (filters.excludeSlugs.includes(idea.slug)) return -1;
++
++  const text = ideaSearchText(idea);
++  let score = 0;
++
++  for (const token of tokens) {
++    if (text.includes(token)) score += 3;
++  }
++
++  for (const kw of filters.keywords) {
++    if (text.includes(kw)) score += 2;
++  }
++
++  if (filters.categories.length > 0 && filters.categories.includes(idea.category)) {
++    score += 8;
++  }
++
++  if (filters.focusSlug) {
++    const focus = loadNormalizedIdeas().find((i) => i.slug === filters.focusSlug);
++    if (focus) {
++      if (idea.category === focus.category) score += 6;
++      const sharedTags = idea.tags.filter((t) => focus.tags.includes(t));
++      score += sharedTags.length * 2;
++      if (idea.slug === filters.focusSlug) score += 20;
++    }
++  }
++
++  return score;
++}
++
++function buildFiltersFromAnswers(
++  intent: string,
++  answers: PickAnswer[],
++  excludeSlugs: string[],
++  focusSlug?: string,
++): PickFilters {
++  const tokens = tokenize(intent);
++  const categories = new Set<string>();
++  const keywords = new Set<string>(tokens);
++  let archetype: string | undefined;
++
++  for (const domain of Object.values(DOMAIN_HINTS)) {
++    if (tokens.some((t) => domain.keywords.includes(t))) {
++      domain.categories.forEach((c) => categories.add(c));
++      domain.keywords.forEach((k) => keywords.add(k));
++    }
++  }
++
++  for (const answer of answers) {
++    if (answer.questionId === "domain" && answer.choiceId.startsWith("cat:")) {
++      categories.add(answer.choiceId.slice(4));
++    }
++    if (answer.questionId === "archetype" && ARCHETYPES[answer.choiceId]) {
++      archetype = answer.choiceId;
++      const arch = ARCHETYPES[answer.choiceId];
++      arch.categories.forEach((c) => categories.add(c));
++      arch.keywords.forEach((k) => keywords.add(k));
++    }
++    if (answer.questionId === "focus_path") {
++      if (answer.choiceId === "narrow" && focusSlug) {
++        /* focus already set */
++      }
++      if (answer.choiceId === "widen") {
++        categories.clear();
++      }
++    }
++    if (answer.questionId === "card_fit" && answer.choiceId === "not_this") {
++      if (focusSlug) excludeSlugs.push(focusSlug);
++    }
++  }
++
++  return {
++    categories: [...categories],
++    archetype,
++    keywords: [...keywords],
++    focusSlug,
++    excludeSlugs: [...new Set(excludeSlugs)],
++  };
++}
++
++function rankIdeas(ideas: Idea[], filters: PickFilters, intent: string): Idea[] {
++  const tokens = tokenize(intent);
++  return [...ideas]
++    .map((idea) => ({ idea, score: scoreIdea(idea, tokens, filters) }))
++    .filter((row) => row.score >= 0)
++    .sort((a, b) => b.score - a.score)
++    .map((row) => row.idea);
++}
++
++function topCategories(ranked: Idea[], limit = 4): string[] {
++  const counts = new Map<string, number>();
++  for (const idea of ranked.slice(0, 40)) {
++    counts.set(idea.category, (counts.get(idea.category) ?? 0) + 1);
++  }
++  return [...counts.entries()]
++    .sort((a, b) => b[1] - a[1])
++    .slice(0, limit)
++    .map(([cat]) => cat);
++}
++
++function nextQuestion(
++  intent: string,
++  answers: PickAnswer[],
++  ranked: Idea[],
++  focusSlug?: string,
++): PickQuestion | null {
++  const answered = new Set(answers.map((a) => a.questionId));
++
++  if (!answered.has("archetype") && ranked.length > 5) {
++    const suggested = Object.entries(ARCHETYPES)
++      .filter(([, arch]) =>
++        ranked.slice(0, 30).some((idea) =>
++          arch.categories.includes(idea.category),
++        ),
++      )
++      .slice(0, 4);
++
++    const choices: PickChoice[] =
++      suggested.length > 0
++        ? suggested.map(([id, arch]) => ({
++            id,
++            label: arch.label,
++            hint: arch.hint,
++          }))
++        : Object.entries(ARCHETYPES).slice(0, 4).map(([id, arch]) => ({
++            id,
++            label: arch.label,
++            hint: arch.hint,
++          }));
++
++    choices.push({
++      id: "any",
++      label: "Tout domaine",
++      hint: "Ne pas filtrer par archétype",
++    });
++
++    return {
++      id: "archetype",
++      text: `Pour « ${intent.slice(0, 80)}${intent.length > 80 ? "…" : ""} », quel type de produit Intuition envisagez-vous ?`,
++      choices,
++    };
++  }
++
++  if (!answered.has("domain") && ranked.length > 15) {
++    const cats = topCategories(ranked);
++    if (cats.length >= 2) {
++      return {
++        id: "domain",
++        text: "Quel secteur du catalogue se rapproche le plus de votre idée ?",
++        choices: [
++          ...cats.map((cat) => ({
++            id: `cat:${cat}`,
++            label: cat,
++          })),
++          {
++            id: "cat:any",
++            label: "Plusieurs secteurs",
++            hint: "Garder toutes les pistes",
++          },
++        ],
++      };
++    }
++  }
++
++  if (focusSlug && !answered.has("focus_path")) {
++    const focus = loadNormalizedIdeas().find((i) => i.slug === focusSlug);
++    return {
++      id: "focus_path",
++      text: focus
++        ? `« ${focus.title} » vous inspire — on affine dans cette direction ?`
++        : "Affiner autour de cette carte ?",
++      choices: [
++        {
++          id: "narrow",
++          label: "Oui, des idées plus proches",
++          hint: "Cartes plus précises dans le même espace",
++        },
++        {
++          id: "widen",
++          label: "Non, élargir la recherche",
++          hint: "Autres catégories",
++        },
++      ],
++    };
++  }
++
++  if (focusSlug && !answered.has("card_fit")) {
++    return {
++      id: "card_fit",
++      text: "Cette carte correspond-elle à ce que vous voulez construire ?",
++      choices: [
++        {
++          id: "yes",
++          label: "Oui, partir de là",
++          hint: "Brainstorm & prepare ensuite",
++        },
++        {
++          id: "not_this",
++          label: "Pas vraiment",
++          hint: "Proposer d'autres cartes",
++        },
++      ],
++    };
++  }
++
++  return null;
++}
++
++function filtersSummary(filters: PickFilters): string[] {
++  const lines: string[] = [];
++  if (filters.archetype && ARCHETYPES[filters.archetype]) {
++    lines.push(`Archétype : ${ARCHETYPES[filters.archetype].label}`);
++  }
++  if (filters.categories.length > 0) {
++    lines.push(`Secteurs : ${filters.categories.join(" · ")}`);
++  }
++  if (filters.focusSlug) {
++    lines.push(`Focus : ${filters.focusSlug}`);
++  }
++  if (filters.excludeSlugs.length > 0) {
++    lines.push(`${filters.excludeSlugs.length} carte(s) écartée(s)`);
++  }
++  return lines;
++}
++
++export async function refinePick(
++  request: PickRefineRequest,
++): Promise<PickRefineResponse> {
++  const intent = request.intent.trim();
++  const answers = request.answers ?? [];
++  const excludeSlugs = [...(request.excludeSlugs ?? [])];
++  let focusSlug = request.focusSlug;
++
++  const lastCardAnswer = [...answers]
++    .reverse()
++    .find((a) => a.questionId === "pick_card");
++  if (lastCardAnswer && !focusSlug) {
++    focusSlug = lastCardAnswer.choiceId;
++  }
++
++  if (answers.some((a) => a.questionId === "card_fit" && a.choiceId === "not_this")) {
++    if (focusSlug) excludeSlugs.push(focusSlug);
++    focusSlug = undefined;
++  }
++
++  const filters = buildFiltersFromAnswers(intent, answers, excludeSlugs, focusSlug);
++  const all = loadNormalizedIdeas();
++  const ranked = rankIdeas(all, filters, intent);
++  const matchCount = ranked.length;
++
++  const question = intent.length < 3 ? null : nextQuestion(intent, answers, ranked, focusSlug);
++
++  const cardCount = question ? 4 : 6;
++  const top = ranked.slice(0, cardCount);
++  const cards = await Promise.all(
++    top.map((idea) => buildIdeaFullState(idea, { verifyOnchain: false })),
++  );
++
++  const readyToSelect =
++    !question &&
++    cards.length > 0 &&
++    (answers.some((a) => a.questionId === "card_fit" && a.choiceId === "yes") ||
++      (matchCount <= 8 && answers.length >= 1) ||
++      Boolean(focusSlug && answers.length >= 2));
++
++  return {
++    step: answers.length + 1,
++    matchCount,
++    filters,
++    filtersSummary: filtersSummary(filters),
++    question: readyToSelect ? null : question,
++    cards,
++    readyToSelect,
++  };
++}
++
++export function pickCardChoiceQuestion(): PickQuestion {
++  return {
++    id: "pick_card",
++    text: "Choisissez la carte la plus proche de votre projet :",
++    choices: [],
++  };
++}
+diff --git a/tests/idea-state.test.ts b/tests/idea-state.test.ts
+new file mode 100644
+index 0000000..009f0f7
+--- /dev/null
++++ b/tests/idea-state.test.ts
+@@ -0,0 +1,78 @@
++// tests/idea-state.test.ts
++import { describe, expect, it } from "vitest";
++import {
++  getIdeaDbState,
++  resolveNextAction,
++  buildBadges,
++  pickRandomIdeas,
++} from "../src/lib/ideas/idea-state";
++import type { Idea } from "../src/lib/ideas/schema";
++
++const baseIdea: Idea = {
++  canonicalId: "idea-01-001-test",
++  slug: "test-idea",
++  title: "Test Idea",
++  tagline: "A test",
++  category: "Reviews & Ratings",
++  categoryIndex: 1,
++  ideaIndex: 1,
++  description: "Description",
++  tags: [],
++  status: "normalized",
++};
++
++describe("getIdeaDbState", () => {
++  it("marks normalized idea as not scoped", () => {
++    const db = getIdeaDbState(baseIdea);
++    expect(db.scoped).toBe(false);
++    expect(db.hasGithubPr).toBe(false);
++  });
++
++  it("marks github PR as scoped", () => {
++    const db = getIdeaDbState({
++      ...baseIdea,
++      status: "normalized",
++      github: { prUrl: "https://github.com/intuition-box/ideas/pull/1" },
++    });
++    expect(db.scoped).toBe(true);
++    expect(db.hasGithubPr).toBe(true);
++  });
++});
++
++describe("resolveNextAction", () => {
++  it("suggests create_with_prompt when no PR and not scoped", () => {
++    const db = getIdeaDbState(baseIdea);
++    expect(resolveNextAction(db, null)).toBe("create_with_prompt");
++  });
++
++  it("suggests view_ready when PR and onchain complete", () => {
++    const db = getIdeaDbState({
++      ...baseIdea,
++      github: { prUrl: "https://github.com/intuition-box/ideas/pull/1" },
++    });
++    expect(
++      resolveNextAction(db, {
++        atomId: "0xabc",
++        atomInIndexer: true,
++        coreTriplePresent: true,
++        network: "testnet",
++      }),
++    ).toBe("view_ready");
++  });
++});
++
++describe("pickRandomIdeas", () => {
++  it("returns requested count without duplicates", () => {
++    const items = [1, 2, 3, 4, 5, 6];
++    const picked = pickRandomIdeas(items, 4);
++    expect(picked).toHaveLength(4);
++    expect(new Set(picked).size).toBe(4);
++  });
++});
++
++describe("buildBadges", () => {
++  it("includes a_travailler for raw ideas", () => {
++    const db = getIdeaDbState(baseIdea);
++    expect(buildBadges(db, null)).toContain("a_travailler");
++  });
++});
+diff --git a/tests/pick-refinement.test.ts b/tests/pick-refinement.test.ts
+new file mode 100644
+index 0000000..2bc5765
+--- /dev/null
++++ b/tests/pick-refinement.test.ts
+@@ -0,0 +1,34 @@
++// tests/pick-refinement.test.ts
++import { describe, expect, it } from "vitest";
++import { refinePick } from "../src/lib/ideas/pick-refinement";
++
++describe("refinePick", () => {
++  it("returns AI-related cards for IA intent", async () => {
++    const result = await refinePick({
++      intent: "je veux créer une app sur l'ia et les agents",
++      answers: [],
++    });
++    expect(result.matchCount).toBeGreaterThan(0);
++    expect(result.cards.length).toBeGreaterThan(0);
++    const hasAi = result.cards.some(
++      (c) =>
++        c.category.includes("AI") ||
++        c.title.toLowerCase().includes("agent") ||
++        c.tagline.toLowerCase().includes("ai"),
++    );
++    expect(hasAi).toBe(true);
++  });
++
++  it("narrows after archetype answer", async () => {
++    const first = await refinePick({
++      intent: "application intelligence artificielle",
++      answers: [],
++    });
++    const second = await refinePick({
++      intent: "application intelligence artificielle",
++      answers: [{ questionId: "archetype", choiceId: "agents" }],
++    });
++    expect(second.filters.archetype).toBe("agents");
++    expect(second.matchCount).toBeLessThanOrEqual(first.matchCount);
++  });
++});
+-- 
+2.44.0.windows.1
+
+
+From cf2eeba3008731f9d0ef3590fd080d5935eef9d5 Mon Sep 17 00:00:00 2001
+From: Thibault Lenormand <164227382+ThibaultL24@users.noreply.github.com>
+Date: Sat, 30 May 2026 15:36:23 +0200
+Subject: [PATCH 2/2] feat: complete ideation dapp publish flow
+
+---
+ .cursor/skills/intuition-ideation/SKILL.md    |  59 ++++
+ .env.example                                  |   7 +
+ data/reports/migration-report.json            |   6 +-
+ src/app/api/publish/github-pr/route.ts        | 141 ++++++++
+ src/app/api/publish/onchain/route.ts          |  26 ++
+ src/app/api/publish/plan/route.ts             |  24 ++
+ src/app/ideas/[slug]/page.tsx                 |  10 +-
+ src/app/random/page.tsx                       |  72 +++-
+ .../brainstorm/brainstorm-workspace.tsx       | 128 +++++--
+ src/components/prepare/prepare-workspace.tsx  | 323 ++++++++++++------
+ src/lib/ideas/idea-state.ts                   |  41 ++-
+ src/lib/ideas/publish-plan.ts                 | 188 ++++++++++
+ tests/publish-plan.test.ts                    |  44 +++
+ 13 files changed, 919 insertions(+), 150 deletions(-)
+ create mode 100644 src/app/api/publish/github-pr/route.ts
+ create mode 100644 src/app/api/publish/onchain/route.ts
+ create mode 100644 src/app/api/publish/plan/route.ts
+ create mode 100644 src/lib/ideas/publish-plan.ts
+ create mode 100644 tests/publish-plan.test.ts
+
+diff --git a/.cursor/skills/intuition-ideation/SKILL.md b/.cursor/skills/intuition-ideation/SKILL.md
+index 55b137d..fbed2d6 100644
+--- a/.cursor/skills/intuition-ideation/SKILL.md
++++ b/.cursor/skills/intuition-ideation/SKILL.md
+@@ -56,6 +56,65 @@ Display this progress bar at the start and update it as you go:
+ 
+ ---
+ 
++## Enhanced 3B/3C Modes
++
++The skill now works with the Ideation Dapp as a shared workflow. When the user asks for a random idea, card picker, bounty 3B flow, or "pick something for me", use the onchain/catalogue source first:
++
++1. Prefer the local dapp data if available:
++   - `data/normalized/ideas.json` for the normalized ideas.
++   - `data/reports/migration-batch-sdk-retry.json` for atom term IDs created by bounty 3A.
++   - `data/reports/migration-verify-graphql.json` for proof that atoms and triples are queryable.
++2. Pick a random idea from that list, then run the same preflight the dapp runs:
++   - GitHub state: does it already have a `github.path`, `github.prUrl`, or scoped status?
++   - Onchain state: does the reported atom exist, and is the core triple queryable?
++   - Core triple: `[Idea] - [top project ideas for] - [Intuition]`.
++3. Present the result as a starting card, not as a finished idea. Offer to continue into Step 2.
++
++When the user is already using the dapp, mirror the dapp's three workspaces:
++
++- **Pick**: choose or randomize an onchain idea, then show existing state.
++- **Brainstorm**: fill a semantic draft with problem, solution, users, Intuition fit, MVP, risks, challenge, and optional support triples.
++- **Prepare**: produce GitHub Markdown, the PR plan, the core triple, support-triple preview, and the onchain publication plan.
++
++Use this shared draft shape whenever you need to hand work between the skill and the dapp:
++
++```ts
++type BrainstormDraft = {
++  archetype:
++    | "curated-list"
++    | "reputation"
++    | "social-attestation"
++    | "risk-detection"
++    | "prediction-signal"
++    | "agent-memory"
++  problem: string
++  solution: string
++  users: string
++  intuitionFit: string
++  mvp: string
++  risks: string
++  challenge: string
++  supportTriples: string
++}
++```
++
++Before publishing, always run a semantic linter:
++
++- the atom label must name one reusable thing;
++- the problem and solution must be specific enough for a PR;
++- the Intuition fit must name atoms, triples, staking, signal, or graph discovery;
++- support triples are suggestions by default, not automatic writes;
++- nested triples are advanced/provenance only unless the user explicitly asks.
++
++For Step 5, make the onchain path smoother:
++
++- If the idea already has an atom and the core triple is queryable, do not recreate it. Report the IDs and skip to optional support/staking discussion.
++- If GitHub is not published yet, generate the Markdown and PR plan first, because the atom URL should point at the permanent GitHub blob where possible.
++- If the dapp/server has `INTUITION_PRIVATE_KEY`, the dapp can call its onchain publish endpoint. Otherwise provide the CLI fallback: `pnpm publish:one -- --slug=<slug>`.
++- Treat mainnet/testnet explicitly. The current bounty 3A evidence in this repo is for testnet unless a mainnet report is present.
++
++---
++
+ ## Step 1: Brief Description & Search for Similarity
+ 
+ **Goal:** Understand the user's idea at a high level and check if something similar already exists in the Intuition ecosystem.
+diff --git a/.env.example b/.env.example
+index 0733b58..619d4de 100644
+--- a/.env.example
++++ b/.env.example
+@@ -1,3 +1,10 @@
+ INTUITION_NETWORK=testnet
+ INTUITION_PRIVATE_KEY=0xYOUR_64_CHAR_HEX_PRIVATE_KEY
+ INTUITION_RPC_URL=https://testnet.rpc.intuition.systems/http
++
++# Optional: lets the dapp create PR branches/files automatically.
++# Without these, the Prepare screen still produces Markdown and gh fallback commands.
++GITHUB_TOKEN=ghp_YOUR_TOKEN
++GITHUB_TARGET_REPO=intuition-box/ideas
++GITHUB_PUBLISH_REPO=YOUR_USER_OR_ORG/ideas
++GITHUB_BASE_BRANCH=main
+diff --git a/data/reports/migration-report.json b/data/reports/migration-report.json
+index 0f759fa..8d72c2d 100644
+--- a/data/reports/migration-report.json
++++ b/data/reports/migration-report.json
+@@ -32,9 +32,5 @@
+   },
+   "failed": [],
+   "network": "dry-run",
+-<<<<<<< HEAD
+-  "generatedAt": "2026-05-27T13:25:15.349Z"
+-=======
+   "generatedAt": "2026-05-27T18:22:42.277Z"
+->>>>>>> 84d92ac1e49ecee9c7bbfa3c6d38b05a1c75f771
+-}
+\ No newline at end of file
++}
+diff --git a/src/app/api/publish/github-pr/route.ts b/src/app/api/publish/github-pr/route.ts
+new file mode 100644
+index 0000000..8702ca1
+--- /dev/null
++++ b/src/app/api/publish/github-pr/route.ts
+@@ -0,0 +1,141 @@
++import { NextResponse } from "next/server";
++import { loadNormalizedIdeas } from "@/lib/ideas/load";
++import { buildPublishPlan, type BrainstormDraft } from "@/lib/ideas/publish-plan";
++
++interface GitHubRef {
++  object?: { sha?: string };
++}
++
++interface GitHubCommit {
++  commit?: { sha?: string };
++}
++
++interface GitHubPullRequest {
++  html_url?: string;
++  number?: number;
++}
++
++function githubHeaders(token: string) {
++  return {
++    Authorization: `Bearer ${token}`,
++    Accept: "application/vnd.github+json",
++    "X-GitHub-Api-Version": "2022-11-28",
++  };
++}
++
++async function githubJson<T>(
++  url: string,
++  init: RequestInit & { token: string },
++): Promise<T> {
++  const response = await fetch(url, {
++    ...init,
++    headers: {
++      ...githubHeaders(init.token),
++      "Content-Type": "application/json",
++      ...(init.headers ?? {}),
++    },
++  });
++  const json = (await response.json()) as T & { message?: string };
++  if (!response.ok) {
++    throw new Error(json.message ?? `GitHub HTTP ${response.status}`);
++  }
++  return json;
++}
++
++export async function POST(request: Request) {
++  const body = (await request.json()) as {
++    slug?: string;
++    draft?: Partial<BrainstormDraft>;
++  };
++  const idea = loadNormalizedIdeas().find((item) => item.slug === body.slug);
++  if (!idea) {
++    return NextResponse.json({ error: "Idea not found" }, { status: 404 });
++  }
++
++  const plan = buildPublishPlan(idea, body.draft);
++  const token = process.env["GITHUB_TOKEN"]?.trim();
++  const targetRepo = process.env["GITHUB_TARGET_REPO"]?.trim() || "intuition-box/ideas";
++  const publishRepo = process.env["GITHUB_PUBLISH_REPO"]?.trim();
++  const baseBranch = process.env["GITHUB_BASE_BRANCH"]?.trim() || "main";
++
++  if (!token || !publishRepo) {
++    return NextResponse.json({
++      mode: "manual",
++      reason:
++        "Set GITHUB_TOKEN and GITHUB_PUBLISH_REPO on the server to create the branch and PR automatically.",
++      targetRepo,
++      publishRepo: publishRepo ?? null,
++      plan,
++    });
++  }
++
++  const [owner, repo] = publishRepo.split("/");
++  const [targetOwner, targetName] = targetRepo.split("/");
++  if (!owner || !repo || !targetOwner || !targetName) {
++    return NextResponse.json({ error: "Invalid repo env config" }, { status: 500 });
++  }
++
++  try {
++    const ref = await githubJson<GitHubRef>(
++      `https://api.github.com/repos/${owner}/${repo}/git/ref/heads/${baseBranch}`,
++      { method: "GET", token },
++    );
++    const baseSha = ref.object?.sha;
++    if (!baseSha) throw new Error("Could not resolve base branch SHA");
++
++    const branch = `${plan.branchName}-${Date.now().toString(36)}`;
++    await githubJson(`https://api.github.com/repos/${owner}/${repo}/git/refs`, {
++      method: "POST",
++      token,
++      body: JSON.stringify({
++        ref: `refs/heads/${branch}`,
++        sha: baseSha,
++      }),
++    });
++
++    const file = await githubJson<GitHubCommit>(
++      `https://api.github.com/repos/${owner}/${repo}/contents/${encodeURIComponent(plan.githubPath).replaceAll("%2F", "/")}`,
++      {
++        method: "PUT",
++        token,
++        body: JSON.stringify({
++          message: `idea: ${idea.title}`,
++          content: Buffer.from(plan.markdown, "utf8").toString("base64"),
++          branch,
++        }),
++      },
++    );
++
++    const pr = await githubJson<GitHubPullRequest>(
++      `https://api.github.com/repos/${targetOwner}/${targetName}/pulls`,
++      {
++        method: "POST",
++        token,
++        body: JSON.stringify({
++          title: plan.prTitle,
++          body: plan.prBody,
++          head: `${owner}:${branch}`,
++          base: baseBranch,
++        }),
++      },
++    );
++
++    return NextResponse.json({
++      mode: "created",
++      branch,
++      commitSha: file.commit?.sha,
++      prUrl: pr.html_url,
++      prNumber: pr.number,
++      plan,
++    });
++  } catch (error) {
++    return NextResponse.json(
++      {
++        error: error instanceof Error ? error.message : String(error),
++        mode: "manual",
++        plan,
++      },
++      { status: 502 },
++    );
++  }
++}
+diff --git a/src/app/api/publish/onchain/route.ts b/src/app/api/publish/onchain/route.ts
+new file mode 100644
+index 0000000..c71e118
+--- /dev/null
++++ b/src/app/api/publish/onchain/route.ts
+@@ -0,0 +1,26 @@
++import { NextResponse } from "next/server";
++import { loadNormalizedIdeas } from "@/lib/ideas/load";
++import { publishIdeaOnchain } from "@/lib/intuition/publish-idea";
++
++export async function POST(request: Request) {
++  const body = (await request.json()) as { slug?: string };
++  const idea = loadNormalizedIdeas().find((item) => item.slug === body.slug);
++  if (!idea) {
++    return NextResponse.json({ error: "Idea not found" }, { status: 404 });
++  }
++
++  try {
++    const result = await publishIdeaOnchain({ idea });
++    return NextResponse.json({ mode: "published", result });
++  } catch (error) {
++    return NextResponse.json(
++      {
++        mode: "not_published",
++        error: error instanceof Error ? error.message : String(error),
++        hint:
++          "Onchain publishing from the dapp needs INTUITION_PRIVATE_KEY and enough TRUST/tTRUST on the server wallet.",
++      },
++      { status: 502 },
++    );
++  }
++}
+diff --git a/src/app/api/publish/plan/route.ts b/src/app/api/publish/plan/route.ts
+new file mode 100644
+index 0000000..7f0c306
+--- /dev/null
++++ b/src/app/api/publish/plan/route.ts
+@@ -0,0 +1,24 @@
++import { NextResponse } from "next/server";
++import { loadNormalizedIdeas } from "@/lib/ideas/load";
++import { buildPublishPlan, type BrainstormDraft } from "@/lib/ideas/publish-plan";
++
++export async function POST(request: Request) {
++  const body = (await request.json()) as {
++    slug?: string;
++    draft?: Partial<BrainstormDraft>;
++  };
++
++  const idea = loadNormalizedIdeas().find((item) => item.slug === body.slug);
++  if (!idea) {
++    return NextResponse.json({ error: "Idea not found" }, { status: 404 });
++  }
++
++  return NextResponse.json({
++    idea: {
++      slug: idea.slug,
++      title: idea.title,
++      canonicalId: idea.canonicalId,
++    },
++    plan: buildPublishPlan(idea, body.draft),
++  });
++}
+diff --git a/src/app/ideas/[slug]/page.tsx b/src/app/ideas/[slug]/page.tsx
+index dc4df3e..7fdaf79 100644
+--- a/src/app/ideas/[slug]/page.tsx
++++ b/src/app/ideas/[slug]/page.tsx
+@@ -2,6 +2,7 @@
+ import Link from "next/link";
+ import { notFound } from "next/navigation";
+ import { loadNormalizedIdeas } from "@/lib/ideas/load";
++import { buildIdeaFullState } from "@/lib/ideas/idea-state";
+ 
+ const PORTAL_EXPLORER_URL =
+   "https://testnet.portal.intuition.systems/explore/home";
+@@ -14,6 +15,7 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
+   const { slug } = await params;
+   const idea = loadNormalizedIdeas().find((item) => item.slug === slug);
+   if (!idea) notFound();
++  const state = await buildIdeaFullState(idea, { verifyOnchain: true });
+ 
+   return (
+     <article className="space-y-6">
+@@ -51,11 +53,15 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
+         </Link>
+       </section>
+ 
+-      {idea.intuition?.atomId ? (
++      {state.onchain?.atomId ? (
+         <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 text-sm">
+           <h2 className="font-semibold">Onchain</h2>
++          <p className="mt-2 text-xs text-[var(--muted)]">
++            Atom indexe: {state.onchain.atomInIndexer ? "oui" : "non"} · Triple
++            coeur: {state.onchain.coreTriplePresent ? "oui" : "non"}
++          </p>
+           <p className="mt-2 break-all font-mono text-xs text-[var(--muted)]">
+-            {idea.intuition.atomId}
++            {state.onchain.atomId}
+           </p>
+           <a
+             href={PORTAL_EXPLORER_URL}
+diff --git a/src/app/random/page.tsx b/src/app/random/page.tsx
+index de49208..8296c52 100644
+--- a/src/app/random/page.tsx
++++ b/src/app/random/page.tsx
+@@ -1,31 +1,81 @@
+-// src/app/random/page.tsx
+ import Link from "next/link";
+ import { loadNormalizedIdeas } from "@/lib/ideas/load";
++import { buildIdeaFullState } from "@/lib/ideas/idea-state";
+ 
+ function pickRandom<T>(items: T[]): T | undefined {
+   if (items.length === 0) return undefined;
+   return items[Math.floor(Math.random() * items.length)];
+ }
+ 
+-export default function RandomPage() {
++export default async function RandomPage() {
+   const idea = pickRandom(loadNormalizedIdeas());
++  const state = idea
++    ? await buildIdeaFullState(idea, { verifyOnchain: true })
++    : null;
+ 
+   return (
+     <div className="space-y-6">
+-      <h1 className="text-2xl font-bold">Découvrir</h1>
+-      {!idea ? (
++      <div>
++        <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
++          Random onchain idea
++        </p>
++        <h1 className="mt-1 text-2xl font-bold">Decouvrir une piste</h1>
++      </div>
++      {!idea || !state ? (
+         <p className="text-[var(--muted)]">Catalogue vide.</p>
+       ) : (
+         <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-6">
+-          <p className="text-xs text-[var(--accent)]">{idea.category}</p>
++          <div className="flex flex-wrap items-center gap-2">
++            {state.badges.map((badge) => (
++              <span
++                key={badge}
++                className="rounded-full border border-[var(--border)] px-2 py-1 text-xs text-[var(--muted)]"
++              >
++                {badge}
++              </span>
++            ))}
++          </div>
++          <p className="mt-5 text-xs text-[var(--accent)]">{idea.category}</p>
+           <h2 className="mt-2 text-2xl font-bold">{idea.title}</h2>
+           <p className="mt-3 text-[var(--muted)]">{idea.description}</p>
+-          <Link
+-            href={`/ideas/${idea.slug}`}
+-            className="mt-6 inline-block rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+-          >
+-            Voir la fiche
+-          </Link>
++          <div className="mt-5 grid gap-3 text-xs sm:grid-cols-3">
++            <div className="rounded-lg bg-[var(--background)] p-3">
++              <p className="text-[var(--muted)]">Atom</p>
++              <p className="mt-1 break-all font-mono">
++                {state.onchain?.atomInIndexer ? state.onchain.atomId : "not indexed"}
++              </p>
++            </div>
++            <div className="rounded-lg bg-[var(--background)] p-3">
++              <p className="text-[var(--muted)]">Core triple</p>
++              <p className="mt-1">
++                {state.onchain?.coreTriplePresent ? "queryable" : "missing"}
++              </p>
++            </div>
++            <div className="rounded-lg bg-[var(--background)] p-3">
++              <p className="text-[var(--muted)]">Next action</p>
++              <p className="mt-1">{state.nextAction}</p>
++            </div>
++          </div>
++          <div className="mt-6 flex flex-wrap gap-3">
++            <Link
++              href={`/brainstorm/${idea.slug}`}
++              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++            >
++              Brainstorm
++            </Link>
++            <Link
++              href={`/prepare/${idea.slug}`}
++              className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
++            >
++              Prepare
++            </Link>
++            <Link
++              href="/random"
++              className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++            >
++              Tirer une autre idee
++            </Link>
++          </div>
+         </div>
+       )}
+     </div>
+diff --git a/src/components/brainstorm/brainstorm-workspace.tsx b/src/components/brainstorm/brainstorm-workspace.tsx
+index 55670ed..b654307 100644
+--- a/src/components/brainstorm/brainstorm-workspace.tsx
++++ b/src/components/brainstorm/brainstorm-workspace.tsx
+@@ -4,37 +4,68 @@
+ import Link from "next/link";
+ import { useEffect, useState } from "react";
+ import type { Idea } from "@/lib/ideas/schema";
++import {
++  DEFAULT_BRAINSTORM_DRAFT,
++  buildPublishPlan,
++  normalizeBrainstormDraft,
++  type BrainstormArchetype,
++  type BrainstormDraft,
++} from "@/lib/ideas/publish-plan";
+ 
+ const SECTIONS = [
+   {
+     id: "problem",
+-    label: "Problème",
++    label: "Probleme",
+     placeholder: "Qui souffre de quoi ? Comment s'en sort-on aujourd'hui ?",
+   },
+   {
+     id: "solution",
+     label: "Solution",
+-    placeholder: "Que fait le produit ? Parcours utilisateur en 3 étapes.",
++    placeholder: "Que fait le produit ? Parcours utilisateur en 3 etapes.",
+   },
+   {
+     id: "users",
+     label: "Utilisateurs cibles",
+-    placeholder: "Les 100 premiers utilisateurs — soyez précis.",
++    placeholder: "Les 100 premiers utilisateurs, de facon precise.",
+   },
+   {
+     id: "intuitionFit",
+     label: "Pourquoi Intuition",
+-    placeholder: "Atoms, triples, staking — qu'est-ce qui est indispensable ?",
++    placeholder: "Atoms, triples, staking : qu'est-ce qui est indispensable ?",
+   },
+   {
+     id: "mvp",
+-    label: "MVP (3 écrans)",
+-    placeholder: "Écran 1, 2, 3 — version hackathon.",
++    label: "MVP",
++    placeholder: "Trois ecrans ou workflows pour une version hackathon.",
++  },
++  {
++    id: "risks",
++    label: "Risques",
++    placeholder: "Redondance, cold start, UX crypto, qualite du graphe.",
++  },
++  {
++    id: "challenge",
++    label: "Challenge",
++    placeholder: "Pourquoi cette idee pourrait echouer ? Que faut-il prouver ?",
++  },
++  {
++    id: "supportTriples",
++    label: "Triples de soutien",
++    placeholder: "Un par ligne. Exemple : StakeReview -> targets -> consumers",
+   },
+ ] as const;
+ 
+ type DraftKey = (typeof SECTIONS)[number]["id"];
+ 
++const ARCHETYPES: Array<{ id: BrainstormArchetype; label: string; hint: string }> = [
++  { id: "curated-list", label: "Liste curee", hint: "classer, recommander, decouvrir" },
++  { id: "reputation", label: "Reputation", hint: "avis, scores, confiance" },
++  { id: "social-attestation", label: "Attestations", hint: "preuves entre pairs" },
++  { id: "risk-detection", label: "Risque", hint: "fraude, securite, alertes" },
++  { id: "prediction-signal", label: "Signal", hint: "marches, prediction, conviction" },
++  { id: "agent-memory", label: "Agents IA", hint: "memoire, contexte, RAG" },
++];
++
+ function storageKey(slug: string) {
+   return `brainstorm-draft:${slug}`;
+ }
+@@ -44,29 +75,20 @@ interface BrainstormWorkspaceProps {
+ }
+ 
+ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
+-  const [draft, setDraft] = useState<Record<DraftKey, string>>({
+-    problem: "",
+-    solution: "",
+-    users: "",
+-    intuitionFit: "",
+-    mvp: "",
+-  });
++  const [draft, setDraft] = useState<BrainstormDraft>(DEFAULT_BRAINSTORM_DRAFT);
+   const [saved, setSaved] = useState(false);
+ 
+   useEffect(() => {
+     const raw = localStorage.getItem(storageKey(idea.slug));
+     if (!raw) {
+       setDraft({
++        ...DEFAULT_BRAINSTORM_DRAFT,
+         problem: idea.description.slice(0, 500),
+-        solution: "",
+-        users: "",
+-        intuitionFit: "",
+-        mvp: "",
+       });
+       return;
+     }
+     try {
+-      setDraft(JSON.parse(raw) as Record<DraftKey, string>);
++      setDraft(normalizeBrainstormDraft(JSON.parse(raw) as Partial<BrainstormDraft>));
+     } catch {
+       /* ignore */
+     }
+@@ -77,18 +99,25 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
+     setSaved(false);
+   }
+ 
++  function updateArchetype(archetype: BrainstormArchetype) {
++    setDraft((prev) => ({ ...prev, archetype }));
++    setSaved(false);
++  }
++
+   function saveDraft() {
+     localStorage.setItem(storageKey(idea.slug), JSON.stringify(draft));
+     setSaved(true);
+     setTimeout(() => setSaved(false), 2000);
+   }
+ 
++  const plan = buildPublishPlan(idea, draft);
++
+   return (
+     <div className="space-y-8">
+       <div className="flex flex-wrap items-start justify-between gap-4">
+         <div>
+           <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
+-            Outil 1 · Brainstorm
++            Outil 1 - Brainstorm
+           </p>
+           <h1 className="mt-1 text-2xl font-bold">{idea.title}</h1>
+           <p className="mt-2 text-sm text-[var(--muted)]">{idea.tagline}</p>
+@@ -97,23 +126,46 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
+           href={`/prepare/${idea.slug}`}
+           className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+         >
+-          Préparer & publier →
++          Preparer & publier
+         </Link>
+       </div>
+ 
+       <p className="text-sm text-[var(--muted)]">
+-        Affinez l&apos;idée ici (créatif, sans contrainte graphe). Une fois le
+-        brouillon prêt, passez à <strong>Prepare</strong> pour similarités,
+-        triples et publication.
++        Affinez l&apos;idee comme un brouillon semantique: probleme, utilisateur,
++        mecanisme Intuition, challenge et triples suggeres. Une fois le brouillon
++        pret, passez a <strong>Prepare</strong>.
+       </p>
+ 
++      <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++        <h2 className="text-sm font-semibold">Archetype Intuition</h2>
++        <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
++          {ARCHETYPES.map((item) => (
++            <button
++              key={item.id}
++              type="button"
++              onClick={() => updateArchetype(item.id)}
++              className={`rounded-lg border p-3 text-left text-sm transition ${
++                draft.archetype === item.id
++                  ? "border-[var(--accent)] bg-teal-950/30"
++                  : "border-[var(--border)] hover:border-[var(--accent)]"
++              }`}
++            >
++              <span className="block font-medium">{item.label}</span>
++              <span className="mt-1 block text-xs text-[var(--muted)]">
++                {item.hint}
++              </span>
++            </button>
++          ))}
++        </div>
++      </section>
++
+       <div className="space-y-6">
+         {SECTIONS.map((section) => (
+           <label key={section.id} className="block">
+             <span className="text-sm font-semibold">{section.label}</span>
+             <textarea
+               className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 text-sm text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none"
+-              rows={4}
++              rows={section.id === "supportTriples" ? 3 : 4}
+               placeholder={section.placeholder}
+               value={draft[section.id]}
+               onChange={(e) => updateField(section.id, e.target.value)}
+@@ -122,13 +174,39 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
+         ))}
+       </div>
+ 
++      <section className="grid gap-4 md:grid-cols-2">
++        <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++          <h2 className="font-semibold">Linter semantique</h2>
++          {plan.readiness.warnings.length === 0 ? (
++            <p className="mt-2 text-sm text-emerald-300">
++              Le brouillon est assez structure pour une PR et un plan onchain.
++            </p>
++          ) : (
++            <ul className="mt-3 space-y-2 text-sm text-amber-200">
++              {plan.readiness.warnings.map((warning) => (
++                <li key={warning}>{warning}</li>
++              ))}
++            </ul>
++          )}
++        </div>
++        <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++          <h2 className="font-semibold">Triple coeur</h2>
++          <p className="mt-3 rounded-lg bg-[var(--background)] p-3 font-mono text-xs text-[var(--muted)]">
++            {plan.coreTriple.join(" - ")}
++          </p>
++          <p className="mt-2 text-xs text-[var(--muted)]">
++            Les triples de soutien restent en preview pour eviter de fragmenter le graphe.
++          </p>
++        </div>
++      </section>
++
+       <div className="flex flex-wrap gap-3">
+         <button
+           type="button"
+           onClick={saveDraft}
+           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+         >
+-          {saved ? "Enregistré" : "Enregistrer le brouillon"}
++          {saved ? "Enregistre" : "Enregistrer le brouillon"}
+         </button>
+         <Link
+           href={`/ideas/${idea.slug}`}
+diff --git a/src/components/prepare/prepare-workspace.tsx b/src/components/prepare/prepare-workspace.tsx
+index 8c90831..155c7a3 100644
+--- a/src/components/prepare/prepare-workspace.tsx
++++ b/src/components/prepare/prepare-workspace.tsx
+@@ -2,10 +2,15 @@
+ "use client";
+ 
+ import Link from "next/link";
+-import { useEffect, useState } from "react";
++import { useEffect, useMemo, useState } from "react";
+ import type { Idea } from "@/lib/ideas/schema";
+ import type { IdeaFullState } from "@/lib/ideas/idea-state";
+-import { BOUNTY_PREDICATE_LABEL } from "@/lib/intuition/config";
++import {
++  buildPublishPlan,
++  normalizeBrainstormDraft,
++  type BrainstormDraft,
++  type PublishPlan,
++} from "@/lib/ideas/publish-plan";
+ 
+ interface PrepareWorkspaceProps {
+   idea: Idea;
+@@ -16,18 +21,46 @@ interface DetailResponse {
+   prompt: string;
+ }
+ 
++type PublishStatus =
++  | { state: "idle" }
++  | { state: "loading"; label: string }
++  | { state: "ok"; label: string; detail?: string }
++  | { state: "error"; label: string; detail?: string };
++
++function draftStorageKey(slug: string) {
++  return `brainstorm-draft:${slug}`;
++}
++
++function StatusMessage({ status }: { status: PublishStatus }) {
++  if (status.state === "idle") return null;
++  const tone =
++    status.state === "error"
++      ? "border-red-900/50 bg-red-950/30 text-red-200"
++      : status.state === "ok"
++        ? "border-emerald-900/50 bg-emerald-950/30 text-emerald-200"
++        : "border-sky-900/50 bg-sky-950/30 text-sky-200";
++  return (
++    <div className={`rounded-lg border px-4 py-3 text-sm ${tone}`}>
++      <p className="font-medium">{status.label}</p>
++      {status.detail ? <p className="mt-1 break-all text-xs">{status.detail}</p> : null}
++    </div>
++  );
++}
++
+ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
+   const [state, setState] = useState<IdeaFullState | null>(null);
+   const [loading, setLoading] = useState(true);
+-  const [subject, setSubject] = useState(idea.title);
+-  const [predicate, setPredicate] = useState(BOUNTY_PREDICATE_LABEL);
+-  const [object, setObject] = useState("Intuition");
+-  const [hasBrainstormDraft, setHasBrainstormDraft] = useState(false);
++  const [draft, setDraft] = useState<BrainstormDraft | null>(null);
++  const [status, setStatus] = useState<PublishStatus>({ state: "idle" });
+ 
+   useEffect(() => {
+-    setHasBrainstormDraft(
+-      Boolean(localStorage.getItem(`brainstorm-draft:${idea.slug}`)),
+-    );
++    const raw = localStorage.getItem(draftStorageKey(idea.slug));
++    if (!raw) return;
++    try {
++      setDraft(normalizeBrainstormDraft(JSON.parse(raw) as Partial<BrainstormDraft>));
++    } catch {
++      setDraft(null);
++    }
+   }, [idea.slug]);
+ 
+   useEffect(() => {
+@@ -47,12 +80,87 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
+     })();
+   }, [idea.slug]);
+ 
++  const plan: PublishPlan = useMemo(
++    () => buildPublishPlan(idea, draft),
++    [idea, draft],
++  );
++
++  async function copyMarkdown() {
++    await navigator.clipboard.writeText(plan.markdown);
++    setStatus({ state: "ok", label: "Markdown copie dans le presse-papiers." });
++  }
++
++  async function createGithubPr() {
++    setStatus({ state: "loading", label: "Preparation de la PR GitHub..." });
++    const res = await fetch("/api/publish/github-pr", {
++      method: "POST",
++      headers: { "Content-Type": "application/json" },
++      body: JSON.stringify({ slug: idea.slug, draft }),
++    });
++    const data = (await res.json()) as {
++      mode: string;
++      prUrl?: string;
++      reason?: string;
++      error?: string;
++      plan?: PublishPlan;
++    };
++    if (!res.ok) {
++      setStatus({
++        state: "error",
++        label: "La creation automatique de PR a echoue.",
++        detail: data.error,
++      });
++      return;
++    }
++    if (data.mode === "created") {
++      setStatus({
++        state: "ok",
++        label: "PR GitHub creee.",
++        detail: data.prUrl,
++      });
++      return;
++    }
++    setStatus({
++      state: "ok",
++      label: "Mode manuel pret.",
++      detail: data.reason,
++    });
++  }
++
++  async function publishOnchain() {
++    setStatus({ state: "loading", label: "Publication onchain en cours..." });
++    const res = await fetch("/api/publish/onchain", {
++      method: "POST",
++      headers: { "Content-Type": "application/json" },
++      body: JSON.stringify({ slug: idea.slug }),
++    });
++    const data = (await res.json()) as {
++      mode: string;
++      error?: string;
++      hint?: string;
++      result?: { ideaAtomId?: string; tripleTermId?: string };
++    };
++    if (!res.ok) {
++      setStatus({
++        state: "error",
++        label: "Publication onchain non executee.",
++        detail: [data.error, data.hint].filter(Boolean).join(" "),
++      });
++      return;
++    }
++    setStatus({
++      state: "ok",
++      label: "Publication onchain terminee.",
++      detail: `Atom ${data.result?.ideaAtomId} / Triple ${data.result?.tripleTermId}`,
++    });
++  }
++
+   return (
+     <div className="space-y-8">
+       <div className="flex flex-wrap items-start justify-between gap-4">
+         <div>
+           <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
+-            Outil 2 · Prepare & Publish
++            Outil 2 - Prepare & Publish
+           </p>
+           <h1 className="mt-1 text-2xl font-bold">{idea.title}</h1>
+           <p className="mt-2 text-sm text-[var(--muted)]">{idea.tagline}</p>
+@@ -61,126 +169,131 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
+           href={`/brainstorm/${idea.slug}`}
+           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+         >
+-          ← Brainstorm
++          Brainstorm
+         </Link>
+       </div>
+ 
+-      <p className="text-sm text-[var(--muted)]">
+-        Vérifiez l&apos;existant, formalisez le triple cœur de la bounty, puis
+-        publiez via PR GitHub et scripts onchain.
+-      </p>
++      <StatusMessage status={status} />
+ 
+-      {hasBrainstormDraft ? (
+-        <p className="rounded-lg border border-emerald-900/50 bg-emerald-950/30 px-4 py-2 text-sm text-emerald-300">
+-          Brouillon brainstorm détecté (localStorage).
++      {!draft ? (
++        <p className="rounded-lg border border-amber-900/50 bg-amber-950/30 px-4 py-2 text-sm text-amber-200">
++          Pas encore de brouillon local. Vous pouvez publier le draft catalogue,
++          ou retourner a Brainstorm pour enrichir l&apos;idee.
+         </p>
+       ) : (
+-        <p className="rounded-lg border border-amber-900/50 bg-amber-950/30 px-4 py-2 text-sm text-amber-200">
+-          Pas encore de brouillon brainstorm —{" "}
+-          <Link href={`/brainstorm/${idea.slug}`} className="underline">
+-            commencer par Brainstorm
+-          </Link>
+-          .
++        <p className="rounded-lg border border-emerald-900/50 bg-emerald-950/30 px-4 py-2 text-sm text-emerald-300">
++          Brouillon brainstorm detecte et integre au plan de publication.
+         </p>
+       )}
+ 
+       <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+-        <h2 className="font-semibold">État (DB + onchain)</h2>
++        <h2 className="font-semibold">Etat GitHub + onchain</h2>
+         {loading ? (
+-          <p className="mt-2 text-sm text-[var(--muted)]">Vérification…</p>
++          <p className="mt-2 text-sm text-[var(--muted)]">Verification...</p>
+         ) : state ? (
+-          <ul className="mt-3 space-y-1 text-sm text-[var(--muted)]">
+-            <li>Scoped : {state.db.scoped ? "oui" : "non"}</li>
+-            <li>PR GitHub : {state.db.hasGithubPr ? "oui" : "non"}</li>
+-            <li>
+-              Atom indexé :{" "}
+-              {state.onchain?.atomInIndexer ? state.onchain.atomId : "non"}
+-            </li>
+-            <li>
+-              Triple cœur :{" "}
+-              {state.onchain?.coreTriplePresent ? "oui" : "non"}
+-            </li>
+-          </ul>
++          <div className="mt-3 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
++            <div className="rounded-lg bg-[var(--background)] p-3">
++              <p className="text-xs text-[var(--muted)]">Scoped</p>
++              <p className="font-medium">{state.db.scoped ? "Oui" : "Non"}</p>
++            </div>
++            <div className="rounded-lg bg-[var(--background)] p-3">
++              <p className="text-xs text-[var(--muted)]">PR GitHub</p>
++              <p className="font-medium">{state.db.hasGithubPr ? "Oui" : "Non"}</p>
++            </div>
++            <div className="rounded-lg bg-[var(--background)] p-3">
++              <p className="text-xs text-[var(--muted)]">Atom indexe</p>
++              <p className="break-all font-mono text-xs">
++                {state.onchain?.atomInIndexer ? state.onchain.atomId : "Non"}
++              </p>
++            </div>
++            <div className="rounded-lg bg-[var(--background)] p-3">
++              <p className="text-xs text-[var(--muted)]">Triple coeur</p>
++              <p className="font-medium">
++                {state.onchain?.coreTriplePresent ? "Oui" : "Non"}
++              </p>
++            </div>
++          </div>
+         ) : (
+           <p className="mt-2 text-sm text-[var(--muted)]">
+-            Impossible de charger l&apos;état.
++            Impossible de charger l&apos;etat.
+           </p>
+         )}
+       </section>
+ 
++      <section className="grid gap-4 lg:grid-cols-2">
++        <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++          <h2 className="font-semibold">Plan semantique</h2>
++          <div className="mt-4 space-y-3 text-sm">
++            <p>
++              <span className="text-[var(--muted)]">Atom:</span>{" "}
++              <span className="font-medium">{plan.atom.label}</span>
++            </p>
++            <p className="rounded-lg bg-[var(--background)] p-3 font-mono text-xs">
++              {plan.coreTriple.join(" - ")}
++            </p>
++            {plan.supportTriples.length > 0 ? (
++              <ul className="space-y-1 text-xs text-[var(--muted)]">
++                {plan.supportTriples.map((triple) => (
++                  <li key={triple.join("|")}>{triple.join(" - ")}</li>
++                ))}
++              </ul>
++            ) : null}
++          </div>
++        </div>
++
++        <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
++          <h2 className="font-semibold">Publication</h2>
++          <div className="mt-4 flex flex-wrap gap-3">
++            <button
++              type="button"
++              onClick={() => void createGithubPr()}
++              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
++            >
++              Soumettre en PR
++            </button>
++            <button
++              type="button"
++              onClick={() => void publishOnchain()}
++              className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
++            >
++              Publier onchain
++            </button>
++            <button
++              type="button"
++              onClick={() => void copyMarkdown()}
++              className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
++            >
++              Copier Markdown
++            </button>
++          </div>
++          <p className="mt-4 text-xs text-[var(--muted)]">
++            La PR automatique utilise GITHUB_TOKEN + GITHUB_PUBLISH_REPO si le
++            serveur les expose. Sinon la dapp affiche le plan manuel. La publication
++            onchain utilise INTUITION_PRIVATE_KEY cote serveur.
++          </p>
++        </div>
++      </section>
++
+       <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+-        <h2 className="font-semibold">Triple cœur (bounty 3A)</h2>
++        <h2 className="font-semibold">Preview GitHub</h2>
+         <p className="mt-1 text-xs text-[var(--muted)]">
+-          Sujet · prédicat · objet — à valider avant publication.
+-        </p>
+-        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+-          <label className="block">
+-            <span className="text-xs text-blue-400">Sujet</span>
+-            <input
+-              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-sm"
+-              value={subject}
+-              onChange={(e) => setSubject(e.target.value)}
+-            />
+-          </label>
+-          <label className="block">
+-            <span className="text-xs text-orange-400">Prédicat</span>
+-            <input
+-              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-sm"
+-              value={predicate}
+-              onChange={(e) => setPredicate(e.target.value)}
+-            />
+-          </label>
+-          <label className="block">
+-            <span className="text-xs text-purple-400">Objet</span>
+-            <input
+-              className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-sm"
+-              value={object}
+-              onChange={(e) => setObject(e.target.value)}
+-            />
+-          </label>
+-        </div>
+-        <p className="mt-4 rounded-lg bg-[var(--background)] p-3 font-mono text-sm">
+-          <span className="text-blue-400">{subject}</span>{" "}
+-          <span className="text-orange-400">{predicate}</span>{" "}
+-          <span className="text-purple-400">{object}</span>
++          {plan.githubPath}
+         </p>
++        <pre className="mt-4 max-h-[30rem] overflow-auto rounded-lg bg-[var(--background)] p-4 text-xs leading-relaxed text-[var(--muted)]">
++          {plan.markdown}
++        </pre>
+       </section>
+ 
+       <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+-        <h2 className="font-semibold">Publication</h2>
+-        <ul className="mt-3 list-inside list-disc space-y-2 text-sm text-[var(--muted)]">
+-          <li>
+-            PR : dépôt{" "}
+-            <a
+-              href="https://github.com/intuition-box/ideas"
+-              className="text-[var(--accent)] hover:underline"
+-              target="_blank"
+-              rel="noopener noreferrer"
+-            >
+-              intuition-box/ideas
+-            </a>
+-          </li>
+-          <li>
+-            Onchain :{" "}
+-            <code className="text-xs">pnpm publish:one -- --slug={idea.slug}</code>
+-          </li>
+-        </ul>
++        <h2 className="font-semibold">Fallback CLI</h2>
++        <ol className="mt-3 list-inside list-decimal space-y-1 text-xs text-[var(--muted)]">
++          {plan.fallbackCommands.map((command) => (
++            <li key={command}>
++              <code>{command}</code>
++            </li>
++          ))}
++        </ol>
+       </section>
+-
+-      <div className="flex flex-wrap gap-3">
+-        <Link
+-          href={`/ideas/${idea.slug}`}
+-          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+-        >
+-          Fiche catalogue
+-        </Link>
+-        <Link
+-          href="/pick"
+-          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+-        >
+-          Cartes
+-        </Link>
+-      </div>
+     </div>
+   );
+ }
+diff --git a/src/lib/ideas/idea-state.ts b/src/lib/ideas/idea-state.ts
+index dd01450..cb1558f 100644
+--- a/src/lib/ideas/idea-state.ts
++++ b/src/lib/ideas/idea-state.ts
+@@ -1,5 +1,7 @@
+ // src/lib/ideas/idea-state.ts
+ import type { Idea, IdeaStatus } from "./schema";
++import { existsSync, readFileSync } from "node:fs";
++import path from "node:path";
+ import {
+   BOUNTY_PREDICATE_LABEL,
+   getNetworkConfig,
+@@ -24,6 +26,41 @@ const SCOPED_STATUSES = new Set<IdeaStatus>([
+   "onchain",
+ ]);
+ 
++interface MigrationAtomRow {
++  canonicalId: string;
++  termId: string;
++  ipfsUri?: string;
++}
++
++let reportAtomCache: Map<string, string> | null = null;
++
++function loadReportedAtomIds(): Map<string, string> {
++  if (reportAtomCache) return reportAtomCache;
++  const map = new Map<string, string>();
++  const retryPath = path.join(
++    process.cwd(),
++    "data/reports/migration-batch-sdk-retry.json",
++  );
++  if (existsSync(retryPath)) {
++    try {
++      const report = JSON.parse(readFileSync(retryPath, "utf8")) as {
++        ideaAtomIds?: MigrationAtomRow[];
++      };
++      for (const row of report.ideaAtomIds ?? []) {
++        map.set(row.canonicalId, row.termId);
++      }
++    } catch {
++      /* ignore malformed optional report */
++    }
++  }
++  reportAtomCache = map;
++  return map;
++}
++
++export function getReportedAtomId(idea: Idea): string | null {
++  return idea.intuition?.atomId?.trim() || loadReportedAtomIds().get(idea.canonicalId) || null;
++}
++
+ export interface IdeaDbState {
+   scoped: boolean;
+   hasGithubPath: boolean;
+@@ -92,7 +129,7 @@ export async function verifyIdeaOnchain(
+   idea: Idea,
+ ): Promise<IdeaOnchainState> {
+   const config = getNetworkConfig();
+-  const atomId = idea.intuition?.atomId?.trim() ?? null;
++  const atomId = getReportedAtomId(idea);
+ 
+   let atomInIndexer = false;
+   if (atomId) {
+@@ -163,7 +200,7 @@ export async function buildIdeaFullState(
+       onchain = await verifyIdeaOnchain(idea);
+     } catch {
+       onchain = {
+-        atomId: idea.intuition?.atomId ?? null,
++        atomId: getReportedAtomId(idea),
+         atomInIndexer: false,
+         coreTriplePresent: false,
+         network: getNetworkConfig().network,
+diff --git a/src/lib/ideas/publish-plan.ts b/src/lib/ideas/publish-plan.ts
+new file mode 100644
+index 0000000..4bff93c
+--- /dev/null
++++ b/src/lib/ideas/publish-plan.ts
+@@ -0,0 +1,188 @@
++import type { Idea } from "./schema";
++import { BOUNTY_PREDICATE_LABEL } from "@/lib/intuition/config";
++
++export type BrainstormArchetype =
++  | "curated-list"
++  | "reputation"
++  | "social-attestation"
++  | "risk-detection"
++  | "prediction-signal"
++  | "agent-memory";
++
++export interface BrainstormDraft {
++  archetype: BrainstormArchetype;
++  problem: string;
++  solution: string;
++  users: string;
++  intuitionFit: string;
++  mvp: string;
++  risks: string;
++  challenge: string;
++  supportTriples: string;
++}
++
++export interface PublishPlan {
++  githubPath: string;
++  branchName: string;
++  prTitle: string;
++  prBody: string;
++  markdown: string;
++  atom: {
++    label: string;
++    description: string;
++    urlHint: string;
++  };
++  coreTriple: [string, string, string];
++  supportTriples: Array<[string, string, string]>;
++  readiness: {
++    githubReady: boolean;
++    onchainReady: boolean;
++    warnings: string[];
++  };
++  fallbackCommands: string[];
++}
++
++export const DEFAULT_BRAINSTORM_DRAFT: BrainstormDraft = {
++  archetype: "reputation",
++  problem: "",
++  solution: "",
++  users: "",
++  intuitionFit: "",
++  mvp: "",
++  risks: "",
++  challenge: "",
++  supportTriples: "",
++};
++
++const ARCHETYPE_LABELS: Record<BrainstormArchetype, string> = {
++  "curated-list": "Curated list",
++  reputation: "Reputation system",
++  "social-attestation": "Social attestations",
++  "risk-detection": "Risk detection",
++  "prediction-signal": "Prediction / signal market",
++  "agent-memory": "Agent memory / data layer",
++};
++
++function todayIsoDate(): string {
++  return new Date().toISOString().slice(0, 10);
++}
++
++function cleanLine(value: string): string {
++  return value.trim().replace(/\s+/g, " ");
++}
++
++function markdownBlock(title: string, body: string, fallback: string): string {
++  const value = body.trim() || fallback;
++  return `## ${title}\n\n${value}\n`;
++}
++
++function parseSupportTriples(raw: string, ideaTitle: string): Array<[string, string, string]> {
++  return raw
++    .split(/\r?\n/)
++    .map((line) => line.trim())
++    .filter(Boolean)
++    .slice(0, 5)
++    .map((line) => {
++      const parts = line
++        .split(/\s*(?:->|—|-{2,}|,)\s*/)
++        .map((part) => part.trim())
++        .filter(Boolean);
++      if (parts.length >= 3) return [parts[0], parts[1], parts.slice(2).join(" ")] as [string, string, string];
++      return [ideaTitle, "relates to", line] as [string, string, string];
++    });
++}
++
++export function normalizeBrainstormDraft(input: Partial<BrainstormDraft> | null | undefined): BrainstormDraft {
++  return {
++    ...DEFAULT_BRAINSTORM_DRAFT,
++    ...(input ?? {}),
++  };
++}
++
++export function buildPublishPlan(idea: Idea, draftInput?: Partial<BrainstormDraft> | null): PublishPlan {
++  const draft = normalizeBrainstormDraft(draftInput);
++  const date = todayIsoDate();
++  const githubPath = `ideas/${date}-${idea.slug}/README.md`;
++  const branchName = `idea/${idea.slug}`;
++  const warnings: string[] = [];
++
++  if (cleanLine(draft.problem).length < 30) warnings.push("Problem statement is still thin.");
++  if (cleanLine(draft.solution).length < 30) warnings.push("Solution journey needs more detail.");
++  if (cleanLine(draft.intuitionFit).length < 30) warnings.push("Intuition integration should name atoms, triples, or signal.");
++  if (cleanLine(draft.users).length < 15) warnings.push("Target users should be more specific.");
++
++  const supportTriples = parseSupportTriples(draft.supportTriples, idea.title);
++  const markdown = [
++    "---",
++    `title: "${idea.title.replaceAll('"', '\\"')}"`,
++    `tagline: "${idea.tagline.replaceAll('"', '\\"')}"`,
++    `category: "${idea.category.replaceAll('"', '\\"')}"`,
++    `canonicalId: "${idea.canonicalId}"`,
++    `status: "proposed"`,
++    `archetype: "${ARCHETYPE_LABELS[draft.archetype]}"`,
++    "source: \"intuition-ideation-dapp\"",
++    "---",
++    "",
++    `# ${idea.title}`,
++    "",
++    idea.tagline,
++    "",
++    markdownBlock("Problem", draft.problem, idea.description),
++    markdownBlock("Proposed Solution", draft.solution, "The dapp turns this catalog idea into a focused product workflow."),
++    markdownBlock("Target Users", draft.users, "Early Intuition builders and community members evaluating new product ideas."),
++    markdownBlock("Intuition Integration", draft.intuitionFit, `Create an idea atom and the core triple [${idea.title}] - [${BOUNTY_PREDICATE_LABEL}] - [Intuition].`),
++    markdownBlock("MVP", draft.mvp, "Random idea picker, existing-state check, brainstorm canvas, GitHub PR preview, onchain publish action."),
++    markdownBlock("Challenge Notes", draft.challenge, draft.risks || "Main risks should be validated before build."),
++    "## Core Triple",
++    "",
++    `\`${idea.title}\` - \`${BOUNTY_PREDICATE_LABEL}\` - \`Intuition\``,
++    "",
++    supportTriples.length > 0
++      ? `## Support Triple Suggestions\n\n${supportTriples
++          .map(([s, p, o]) => `- \`${s}\` - \`${p}\` - \`${o}\``)
++          .join("\n")}\n`
++      : "",
++  ]
++    .filter(Boolean)
++    .join("\n");
++
++  const prBody = [
++    `## Summary\n${idea.tagline}`,
++    `## Intuition Integration\n${cleanLine(draft.intuitionFit) || `Core triple: [${idea.title}] - [${BOUNTY_PREDICATE_LABEL}] - [Intuition].`}`,
++    "## Publish Plan",
++    `- GitHub path: \`${githubPath}\``,
++    `- Atom label: \`${idea.title}\``,
++    `- Core triple: \`${idea.title}\` / \`${BOUNTY_PREDICATE_LABEL}\` / \`Intuition\``,
++  ].join("\n\n");
++
++  return {
++    githubPath,
++    branchName,
++    prTitle: `Idea: ${idea.title}`,
++    prBody,
++    markdown,
++    atom: {
++      label: idea.title,
++      description: idea.tagline,
++      urlHint: `https://github.com/intuition-box/ideas/blob/<COMMIT_SHA>/${githubPath}`,
++    },
++    coreTriple: [idea.title, BOUNTY_PREDICATE_LABEL, "Intuition"],
++    supportTriples,
++    readiness: {
++      githubReady: warnings.length <= 2,
++      onchainReady: true,
++      warnings,
++    },
++    fallbackCommands: [
++      "gh repo fork intuition-box/ideas --clone",
++      "cd ideas",
++      `git checkout -b ${branchName}`,
++      `mkdir -p ${githubPath.replace(/\/README\.md$/, "")}`,
++      `# write the generated markdown to ${githubPath}`,
++      `git add ${githubPath}`,
++      `git commit -m "idea: ${idea.title.replaceAll('"', '\\"')}"`,
++      `git push origin ${branchName}`,
++      `gh pr create --repo intuition-box/ideas --title "${`Idea: ${idea.title}`.replaceAll('"', '\\"')}" --body-file pr-body.md`,
++    ],
++  };
++}
+diff --git a/tests/publish-plan.test.ts b/tests/publish-plan.test.ts
+new file mode 100644
+index 0000000..32be7b8
+--- /dev/null
++++ b/tests/publish-plan.test.ts
+@@ -0,0 +1,44 @@
++import { describe, expect, it } from "vitest";
++import { buildPublishPlan } from "../src/lib/ideas/publish-plan";
++import type { Idea } from "../src/lib/ideas/schema";
++
++const idea: Idea = {
++  canonicalId: "idea-01-001-stake-review",
++  slug: "stake-review",
++  title: "StakeReview",
++  tagline: "Stake-backed reviews for products",
++  category: "Reviews & Ratings",
++  categoryIndex: 1,
++  ideaIndex: 1,
++  description: "A review layer where consumers stake on quality claims.",
++  tags: ["reviews-ratings", "intuition"],
++  status: "normalized",
++};
++
++describe("buildPublishPlan", () => {
++  it("creates the GitHub markdown and core triple for a refined idea", () => {
++    const plan = buildPublishPlan(idea, {
++      archetype: "reputation",
++      problem: "Consumers cannot tell which product reviews are durable and backed by real conviction.",
++      solution: "Users create quality claims, stake on them, and browse ranked product trust signals.",
++      users: "Power shoppers, review communities, and Intuition builders.",
++      intuitionFit: "Products and claims become atoms. Review claims become triples with signal.",
++      mvp: "Random product, claim composer, trust-ranked review page.",
++      risks: "Cold start and review spam.",
++      challenge: "The MVP must prove that stake changes review quality.",
++      supportTriples: "StakeReview -> targets -> shoppers",
++    });
++
++    expect(plan.githubPath).toMatch(/ideas\/\d{4}-\d{2}-\d{2}-stake-review\/README\.md/);
++    expect(plan.coreTriple).toEqual([
++      "StakeReview",
++      "top project ideas for",
++      "Intuition",
++    ]);
++    expect(plan.markdown).toContain("# StakeReview");
++    expect(plan.supportTriples).toEqual([
++      ["StakeReview", "targets", "shoppers"],
++    ]);
++    expect(plan.readiness.githubReady).toBe(true);
++  });
++});
+-- 
+2.44.0.windows.1
+

@@ -56,6 +56,65 @@ Display this progress bar at the start and update it as you go:
 
 ---
 
+## Enhanced 3B/3C Modes
+
+The skill now works with the Ideation Dapp as a shared workflow. When the user asks for a random idea, card picker, bounty 3B flow, or "pick something for me", use the onchain/catalogue source first:
+
+1. Prefer the local dapp data if available:
+   - `data/normalized/ideas.json` for the normalized ideas.
+   - `data/reports/migration-batch-sdk-retry.json` for atom term IDs created by bounty 3A.
+   - `data/reports/migration-verify-graphql.json` for proof that atoms and triples are queryable.
+2. Pick a random idea from that list, then run the same preflight the dapp runs:
+   - GitHub state: does it already have a `github.path`, `github.prUrl`, or scoped status?
+   - Onchain state: does the reported atom exist, and is the core triple queryable?
+   - Core triple: `[Idea] - [top project ideas for] - [Intuition]`.
+3. Present the result as a starting card, not as a finished idea. Offer to continue into Step 2.
+
+When the user is already using the dapp, mirror the dapp's three workspaces:
+
+- **Pick**: choose or randomize an onchain idea, then show existing state.
+- **Brainstorm**: fill a semantic draft with problem, solution, users, Intuition fit, MVP, risks, challenge, and optional support triples.
+- **Prepare**: produce GitHub Markdown, the PR plan, the core triple, support-triple preview, and the onchain publication plan.
+
+Use this shared draft shape whenever you need to hand work between the skill and the dapp:
+
+```ts
+type BrainstormDraft = {
+  archetype:
+    | "curated-list"
+    | "reputation"
+    | "social-attestation"
+    | "risk-detection"
+    | "prediction-signal"
+    | "agent-memory"
+  problem: string
+  solution: string
+  users: string
+  intuitionFit: string
+  mvp: string
+  risks: string
+  challenge: string
+  supportTriples: string
+}
+```
+
+Before publishing, always run a semantic linter:
+
+- the atom label must name one reusable thing;
+- the problem and solution must be specific enough for a PR;
+- the Intuition fit must name atoms, triples, staking, signal, or graph discovery;
+- support triples are suggestions by default, not automatic writes;
+- nested triples are advanced/provenance only unless the user explicitly asks.
+
+For Step 5, make the onchain path smoother:
+
+- If the idea already has an atom and the core triple is queryable, do not recreate it. Report the IDs and skip to optional support/staking discussion.
+- If GitHub is not published yet, generate the Markdown and PR plan first, because the atom URL should point at the permanent GitHub blob where possible.
+- If the dapp/server has `INTUITION_PRIVATE_KEY`, the dapp can call its onchain publish endpoint. Otherwise provide the CLI fallback: `pnpm publish:one -- --slug=<slug>`.
+- Treat mainnet/testnet explicitly. The current bounty 3A evidence in this repo is for testnet unless a mainnet report is present.
+
+---
+
 ## Step 1: Brief Description & Search for Similarity
 
 **Goal:** Understand the user's idea at a high level and check if something similar already exists in the Intuition ecosystem.

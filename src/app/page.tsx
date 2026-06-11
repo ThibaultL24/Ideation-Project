@@ -18,12 +18,12 @@ export default function HomePage() {
           Project ideas, attested onchain
         </h1>
         <p className="max-w-2xl text-[var(--muted)]">
-          Catalog from <em>Build on Intuition: 300+ dApp Ideas</em> — each entry
-          mirrors the source PDF text.
+          Catalog from <em>Build on Intuition: 300+ dApp Ideas</em> — random pick, AI brainstorm,
+          GitHub PR and on-chain publish.
         </p>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-3">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/ideas"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
@@ -45,23 +45,54 @@ export default function HomePage() {
           </p>
         </a>
         <Link
+          href="/pick"
+          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">Cards</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            Intent → questions → refined mini-cards
+          </p>
+        </Link>
+        <Link
           href="/random"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
         >
-          <h2 className="font-semibold">Discover</h2>
-          <p className="mt-2 text-sm text-[var(--muted)]">Random idea</p>
+          <h2 className="font-semibold">Random</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            On-chain state · brainstorm · prepare
+          </p>
         </Link>
       </section>
 
-      <section className="rounded-xl border border-[var(--accent)]/30 bg-[var(--card)] p-6">
-        <h2 className="text-lg font-semibold">Ideation workshop</h2>
-        <p className="mt-2 max-w-xl text-sm text-[var(--muted)]">
-          Deep research on your idea, then Intuition triples and a GitHub PR — no
-          on-chain transactions from this app.
+      <section className="grid gap-4 sm:grid-cols-2">
+        <Link
+          href="/brainstorm"
+          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">Brainstorm</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            AI-assisted draft — problem, Intuition fit, semantic linter
+          </p>
+        </Link>
+        <Link
+          href="/prepare"
+          className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
+        >
+          <h2 className="font-semibold">Prepare</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">
+            GitHub PR + on-chain atom and core triple
+          </p>
+        </Link>
+      </section>
+
+      <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+        <h2 className="font-semibold">Advanced workshop</h2>
+        <p className="mt-2 text-sm text-[var(--muted)]">
+          Deep research and PR-only flow without on-chain publish from the workshop UI.
         </p>
         <Link
           href="/workshop"
-          className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+          className="mt-4 inline-block rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
         >
           Open workshop
         </Link>
