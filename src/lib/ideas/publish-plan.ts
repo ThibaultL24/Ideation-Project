@@ -112,7 +112,8 @@ export function buildPublishPlan(idea: Idea, draftInput?: Partial<BrainstormDraf
   if (cleanLine(draft.users).length < 15) warnings.push("Target users should be more specific.");
 
   const supportTriples = parseSupportTriples(draft.supportTriples, idea.title);
-  const markdown = [
+
+  const frontmatter = [
     "---",
     `title: "${idea.title.replaceAll('"', '\\"')}"`,
     `tagline: "${idea.tagline.replaceAll('"', '\\"')}"`,
@@ -122,7 +123,10 @@ export function buildPublishPlan(idea: Idea, draftInput?: Partial<BrainstormDraf
     `archetype: "${ARCHETYPE_LABELS[draft.archetype]}"`,
     "source: \"intuition-ideation-dapp\"",
     "---",
-    "",
+  ].join("\n");
+
+  // Frontmatter-free document: reused as the README body and the PR preview.
+  const documentBody = [
     `# ${idea.title}`,
     "",
     idea.tagline,
@@ -146,13 +150,20 @@ export function buildPublishPlan(idea: Idea, draftInput?: Partial<BrainstormDraf
     .filter(Boolean)
     .join("\n");
 
+  const markdown = `${frontmatter}\n\n${documentBody}`;
+
   const prBody = [
     `## Summary\n${idea.tagline}`,
     `## Intuition Integration\n${cleanLine(draft.intuitionFit) || `Core triple: [${idea.title}] - [${BOUNTY_PREDICATE_LABEL}] - [Intuition].`}`,
     "## Publish Plan",
-    `- GitHub path: \`${githubPath}\``,
-    `- Atom label: \`${idea.title}\``,
-    `- Core triple: \`${idea.title}\` / \`${BOUNTY_PREDICATE_LABEL}\` / \`Intuition\``,
+    [
+      `- GitHub path: \`${githubPath}\``,
+      `- Atom label: \`${idea.title}\``,
+      `- Core triple: \`${idea.title}\` / \`${BOUNTY_PREDICATE_LABEL}\` / \`Intuition\``,
+    ].join("\n"),
+    "---",
+    "## Idea Preview",
+    documentBody,
   ].join("\n\n");
 
   return {

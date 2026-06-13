@@ -197,7 +197,7 @@ function scoreIdea(idea: Idea, tokens: string[], filters: PickFilters): number {
   return score;
 }
 
-function buildFiltersFromAnswers(
+export function buildFiltersFromAnswers(
   intent: string,
   answers: PickAnswer[],
   excludeSlugs: string[],
@@ -247,7 +247,7 @@ function buildFiltersFromAnswers(
   };
 }
 
-function rankIdeas(ideas: Idea[], filters: PickFilters, intent: string): Idea[] {
+export function rankIdeas(ideas: Idea[], filters: PickFilters, intent: string): Idea[] {
   const tokens = tokenize(intent);
   return [...ideas]
     .map((idea) => ({ idea, score: scoreIdea(idea, tokens, filters) }))

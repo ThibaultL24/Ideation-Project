@@ -12,7 +12,7 @@ export default function PrepareIndexPage() {
       <div className="flex flex-wrap gap-3">
         <Link
           href="/pick"
-          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
         >
           Choisir une carte
         </Link>

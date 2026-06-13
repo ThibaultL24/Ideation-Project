@@ -106,7 +106,7 @@ export function IdeaStatePanel({
       <div className="flex flex-wrap gap-3">
         <Link
           href={`/brainstorm/${state.slug}`}
-          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
         >
           Brainstorm
         </Link>
@@ -126,7 +126,7 @@ export function IdeaStatePanel({
           <button
             type="button"
             onClick={copyPrompt}
-            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+            className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
           >
             {copied ? "Copié" : "Copier le prompt"}
           </button>

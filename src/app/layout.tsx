@@ -1,11 +1,14 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { HunchGlyph } from "@/components/brand/hunch-logo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ideation — Project ideas on Intuition",
+  title: "Hunch — Every idea starts as a hunch",
   description:
-    "Discover and explore project ideas attested on the Intuition knowledge graph.",
+    "Turn a raw hunch into a structured idea: AI brainstorm, challenge, GitHub PR and onchain attestation on the Intuition knowledge graph.",
 };
 
 const PORTAL_EXPLORER_URL =
@@ -17,12 +20,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="min-h-screen antialiased">
-        <header className="border-b border-[var(--border)] bg-[var(--card)]">
+        <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[oklch(0.145_0_0_/_0.65)] backdrop-blur-xl">
           <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-4 px-4 py-4 text-sm md:gap-6">
-            <a href="/" className="font-semibold text-[var(--accent)]">
-              Ideation
+            <a
+              href="/"
+              className="inline-flex items-center gap-2 font-semibold tracking-tight text-[var(--foreground)]"
+            >
+              <HunchGlyph size={22} />
+              Hunch
+              <span className="text-[10px] font-normal uppercase tracking-widest text-[var(--accent)]">
+                Intuition
+              </span>
             </a>
             <a href="/ideas" className="text-[var(--muted)] hover:text-white">
               Catalog
@@ -46,9 +56,6 @@ export default function RootLayout({
             </a>
             <a href="/random" className="text-[var(--muted)] hover:text-white">
               Random
-            </a>
-            <a href="/workshop" className="text-[var(--muted)] hover:text-white">
-              Workshop
             </a>
           </nav>
         </header>

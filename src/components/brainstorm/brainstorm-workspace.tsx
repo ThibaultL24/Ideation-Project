@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BrainstormAiSection } from "@/components/brainstorm/brainstorm-ai-section";
+import { BrainstormReflectionPanel } from "@/components/brainstorm/brainstorm-reflection-panel";
 import { IdeaStatePanel } from "@/components/pick/idea-state-panel";
 import type { IdeaFullState } from "@/lib/ideas/idea-state";
 import type { Idea } from "@/lib/ideas/schema";
@@ -148,7 +148,7 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
         </div>
         <Link
           href={`/prepare/${idea.slug}`}
-          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
         >
           Prepare & publier
         </Link>
@@ -162,7 +162,7 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
         />
       )}
 
-      <BrainstormAiSection
+      <BrainstormReflectionPanel
         idea={idea}
         draftStorageKey={storageKey(idea.slug)}
         onDraftApplied={(next) => {
@@ -172,8 +172,8 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
       />
 
       <p className="text-sm text-[var(--muted)]">
-        Ajustez le brouillon manuellement si besoin — il alimente la preview Markdown et le plan
-        on-chain dans <strong>Prepare</strong>.
+        La réflexion IA remplit le brouillon ci-dessous. Ajustez si besoin avant{" "}
+        <strong>Prepare</strong>.
       </p>
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
@@ -254,12 +254,6 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
         >
           Cartes
-        </Link>
-        <Link
-          href={`/workshop/from/${idea.slug}`}
-          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm text-[var(--muted)] hover:border-[var(--accent)]"
-        >
-          Atelier avancé (optionnel)
         </Link>
       </div>
     </div>

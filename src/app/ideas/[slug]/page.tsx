@@ -41,7 +41,7 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
       <section className="flex flex-wrap gap-3">
         <Link
           href={`/brainstorm/${idea.slug}`}
-          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
         >
           Brainstorm
         </Link>
@@ -76,10 +76,16 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
 
       <div className="flex flex-wrap gap-4">
         <Link
-          href={`/workshop/from/${idea.slug}`}
-          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+          href={`/brainstorm/${idea.slug}`}
+          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
         >
-          Open in workshop
+          Brainstorm
+        </Link>
+        <Link
+          href={`/prepare/${idea.slug}`}
+          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
+        >
+          Prepare
         </Link>
         <Link href="/ideas" className="text-sm text-[var(--accent)] hover:underline">
           ← Catalog

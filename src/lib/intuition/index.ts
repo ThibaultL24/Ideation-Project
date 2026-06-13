@@ -6,6 +6,7 @@ export * from "./idea-thing";
 export * from "./atoms";
 export * from "./triples";
 export * from "./terms";
+export * from "./publish-preview";
 export * from "./publish-idea";
 export * from "./batch-publish";
 export * from "./graphql";

@@ -8,6 +8,7 @@ import {
 import { multiVaultIsTermCreated, type WriteConfig } from "@0xintuition/protocol";
 import { toHex, type Hex } from "viem";
 import type { PinThingMutationVariables } from "@0xintuition/graphql";
+import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
 import type { Idea } from "@/lib/ideas/schema";
 import { ideaToPinThing, labelToPinThing } from "./idea-thing";
 
@@ -60,10 +61,11 @@ export async function ensureAtomFromIdea(params: {
   idea: Idea;
   writeConfig: WriteConfig;
   githubBlobUrl?: string;
+  draft?: Partial<BrainstormDraft> | null;
   depositWei?: bigint;
 }): Promise<EnsureAtomResult> {
   return ensureAtomFromThing({
-    thing: ideaToPinThing(params.idea, params.githubBlobUrl),
+    thing: ideaToPinThing(params.idea, params.githubBlobUrl, params.draft),
     writeConfig: params.writeConfig,
     depositWei: params.depositWei,
   });

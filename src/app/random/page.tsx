@@ -59,7 +59,7 @@ export default async function RandomPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href={`/brainstorm/${idea.slug}`}
-              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+              className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
             >
               Brainstorm (AI)
             </Link>

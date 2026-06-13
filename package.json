@@ -22,13 +22,15 @@
     "verify:migration": "tsx scripts/verify-migration-complete.ts",
     "verify:graphql": "tsx scripts/verify-graphql.ts",
     "feasibility:3a": "tsx scripts/feasibility-3a.ts",
-    "publish:one": "tsx scripts/publish-one-idea.ts"
+    "publish:one": "tsx scripts/publish-one-idea.ts",
+    "check:skill": "tsx scripts/check-skill-refs.ts"
   },
   "dependencies": {
     "@0xintuition/graphql": "^2.0.2",
     "@0xintuition/protocol": "^2.0.2",
     "@0xintuition/sdk": "^2.0.2",
     "dotenv": "^16.4.7",
+    "geist": "^1.7.2",
     "next": "^15.3.3",
     "openai": "^6.39.1",
     "react": "^19.1.0",

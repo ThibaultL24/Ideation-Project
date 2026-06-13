@@ -157,37 +157,41 @@ gh search issues --repo intuition-box/ideas "KEYWORD" --limit 10
 
 ## Step 2: Brainstorm & Draft the Idea
 
-**Goal:** Structure the idea into a standardized template through guided conversation.
+**Goal:** Widen the user's concept through open ideation questions, then synthesize — the same protocol the dapp runs on `/brainstorm`.
 
-Read the idea template from `references/idea-template.md` and fill it in **section by section** with the user. Don't dump the whole template at once — walk through it conversationally:
+This step mirrors the dapp's ideation flow so work can move between skill and dapp seamlessly. Do NOT walk through a form template. Instead, ask the **five ideation questions** below, **one at a time**, conversationally. The user's own intent stays primary — catalog or graph matches found in Step 1 are inspiration, never a replacement.
 
-### Conversation flow:
+### 2a. The five ideation questions (ask one at a time, wait for each answer)
 
-1. **Title & Tagline** — "Let's give your idea a working title. Something catchy that captures the essence. And a one-liner that explains it to someone in 10 seconds."
+1. **Why Intuition?** — "What's the interest for Intuition here? Why would atoms, triples, or the signal matter for this idea?" (If they're unsure, suggest: could people stake on quality, rank by conviction, attest to facts?)
 
-2. **Problem Statement** — "What problem does this solve? Who feels this pain today, and how are they dealing with it (or not)?"
+2. **Key feature** — "What's the single most important feature, in your view? The one thing this product cannot exist without."
 
-3. **Proposed Solution** — "How does your product solve this? Walk me through what a user would experience."
+3. **Inspirations** — "What are your inspirations for this idea? Products, readings, experiences, other dapps…"
 
-4. **Intuition Integration** — "Here's where it gets interesting. The Intuition Protocol lets people create 'atoms' (think of them as building blocks of knowledge) and connect them with 'triples' (like saying 'Alice recommends Bob'). How would your product use this? Let me suggest some possibilities based on what you've told me..."
+4. **First users** — "Who would use this first? Be specific — not 'everyone' but a concrete group of 10-100 people."
 
-   Suggest 2-3 concrete integration patterns based on the idea:
-   - Trust/reputation signals (staking on quality, reviews, endorsements)
-   - Identity verification (linking real-world credentials to on-chain atoms)
-   - Knowledge graph building (creating structured relationships between concepts)
-   - Discovery and curation (using existing attestations to surface relevant content)
+5. **Angle to explore (optional)** — "Any angle or perspective you'd like to explore? An educational version, a B2B variant, a controversial twist…" (The user may skip this one.)
 
-5. **Target Users** — "Who are the first 100 people who would use this? Be specific — not 'everyone' but a concrete group."
+### 2b. Ideative synthesis
 
-6. **How It Could Make Money** — "How could this sustain itself? Don't stress about this being final — just initial thoughts."
+After the answers, produce a synthesis with this exact structure (same shape as the dapp's `IdeationSynthesis`):
 
-7. **What Would Need to Be Built** — "At a high level, what are the main pieces? A website? A bot? A mobile app? Smart contracts?"
+- **Headline** — product name or sharp one-liner (2-8 words).
+- **Reflection** — 150-220 words elaborating THEIR concept. Build on their words; do not replace their intent or inject generic features.
+- **Perspectives** — 2-4 short "what if…" bullets. Each one must cite or extend something from the user's answers, not generic startup features.
+- **App description** — 80-150 words, polished, editable by the user (problem + solution + Intuition hook).
+- **Intuition fit** — 2-3 sentences naming concrete atoms/triples/signal usage.
+- **MVP** — 2 sentences, the smallest loop.
+- **Risks** — 2-3 honest risks (keep them for Step 3).
 
-After completing all sections, compile the full draft and show it to the user:
+Show the synthesis, let the user edit the headline and description, and confirm before moving on.
 
-> "Here's your idea, all structured up. Take a look and let me know if anything needs tweaking before we stress-test it."
+### 2c. Map to the draft contract
 
-Save the draft to a local file: `idea-draft-[slugified-title].md`
+Silently fill the shared `BrainstormDraft` shape (see "Enhanced 3B/3C Modes" above) from the synthesis: problem = original intent, solution = app description, users = answer 4, intuitionFit, mvp, risks. Save the draft to a local file: `idea-draft-[slugified-title].md`
+
+> Bridge with the dapp: if the user started in the dapp, a draft may already exist under the browser key `brainstorm-draft:[slug]` — ask them to paste it rather than redoing the questions. If they started here, offer to continue in the dapp's Prepare page for PR + onchain publishing.
 
 ---
 
@@ -216,14 +220,16 @@ This is the "devil's advocate" phase. Be constructive but honest. Run through th
 - "Would a non-crypto person understand and use this?"
 - "What's the onboarding like for someone who's never heard of Intuition?"
 
-Present each challenge as a question, let the user respond, and then offer your perspective. After all challenges, summarize:
+Present each challenge as a question, let the user respond, and then offer your perspective. After all challenges, summarize using the same structure the dapp's Challenge step produces:
 
 > "Here's what came out of our stress test:
-> **Strengths:** [list]
-> **Risks to address:** [list]
-> **Suggested refinements:** [list]"
+> **Main objection:** [the single strongest argument against the idea]
+> **Counter-direction (what if…):** [one variation of the same idea that dodges the objection]
+> **Killer assumptions:** [2-4 things that MUST be true, riskiest first]
+> **Open questions:** [2-4 questions to answer before building]
+> **Verdict:** [honest 1-2 sentence judgment — encouraging if deserved]"
 
-Ask if they want to update the draft based on the feedback. If yes, revise the draft file.
+Ask if they want to update the draft based on the feedback. If yes, revise the draft file (append killer assumptions to `risks`, set `challenge` to the main objection + counter-direction).
 
 ---
 

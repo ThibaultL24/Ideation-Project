@@ -181,7 +181,7 @@ export function PickFlow() {
           <button
             type="button"
             onClick={() => void startRefinement()}
-            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+            className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
           >
             Affiner avec des questions
           </button>
@@ -248,7 +248,7 @@ export function PickFlow() {
             <button
               type="button"
               onClick={() => void confirmSelection(focusSlug)}
-              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+              className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
             >
               Continuer avec cette idée →
             </button>

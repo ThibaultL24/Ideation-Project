@@ -5,12 +5,14 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { Idea } from "@/lib/ideas/schema";
 import type { IdeaFullState } from "@/lib/ideas/idea-state";
+import { isFreeIdeaSlug } from "@/lib/ideas/free-idea";
 import {
   buildPublishPlan,
   normalizeBrainstormDraft,
   type BrainstormDraft,
   type PublishPlan,
 } from "@/lib/ideas/publish-plan";
+import type { OnchainPublishPreview } from "@/lib/intuition/publish-preview";
 
 interface PrepareWorkspaceProps {
   idea: Idea;
@@ -29,6 +31,25 @@ type PublishStatus =
 
 function draftStorageKey(slug: string) {
   return `brainstorm-draft:${slug}`;
+}
+
+function buildFreeIdeaState(idea: Idea): IdeaFullState {
+  return {
+    slug: idea.slug,
+    canonicalId: idea.canonicalId,
+    title: idea.title,
+    category: idea.category,
+    tagline: idea.tagline,
+    db: {
+      scoped: false,
+      hasGithubPath: false,
+      hasGithubPr: false,
+      status: idea.status,
+    },
+    onchain: null,
+    nextAction: "create_with_prompt",
+    badges: ["libre", "a_travailler"],
+  };
 }
 
 function StatusMessage({ status }: { status: PublishStatus }) {
@@ -53,6 +74,10 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
   const [state, setState] = useState<IdeaFullState | null>(null);
   const [loading, setLoading] = useState(true);
   const [draft, setDraft] = useState<BrainstormDraft | null>(null);
+  const [onchainPreview, setOnchainPreview] = useState<OnchainPublishPreview | null>(
+    null,
+  );
+  const [previewLoading, setPreviewLoading] = useState(false);
   const [status, setStatus] = useState<PublishStatus>({ state: "idle" });
 
   useEffect(() => {
@@ -66,6 +91,11 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
   }, [idea.slug]);
 
   useEffect(() => {
+    if (isFreeIdeaSlug(idea.slug)) {
+      setState(buildFreeIdeaState(idea));
+      setLoading(false);
+      return;
+    }
     void (async () => {
       setLoading(true);
       try {
@@ -80,7 +110,26 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
         setLoading(false);
       }
     })();
-  }, [idea.slug]);
+  }, [idea]);
+
+  useEffect(() => {
+    void (async () => {
+      setPreviewLoading(true);
+      try {
+        const res = await fetch("/api/publish/onchain/preview", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ slug: idea.slug, idea, draft }),
+        });
+        if (res.ok) {
+          const data = (await res.json()) as { preview: OnchainPublishPreview };
+          setOnchainPreview(data.preview);
+        }
+      } finally {
+        setPreviewLoading(false);
+      }
+    })();
+  }, [idea, draft]);
 
   const plan: PublishPlan = useMemo(
     () => buildPublishPlan(idea, draft),
@@ -97,7 +146,7 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
     const res = await fetch("/api/publish/github-pr", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug: idea.slug, draft }),
+      body: JSON.stringify({ slug: idea.slug, idea, draft }),
     });
     const data = (await res.json()) as {
       mode: string;
@@ -129,18 +178,36 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
     });
   }
 
+  async function refreshIdeaState() {
+    if (isFreeIdeaSlug(idea.slug)) return;
+    const res = await fetch(
+      `/api/idea-state/${encodeURIComponent(idea.slug)}?verifyOnchain=true`,
+    );
+    if (res.ok) {
+      const data = (await res.json()) as DetailResponse;
+      setState(data.state);
+    }
+  }
+
   async function publishOnchain() {
     setStatus({ state: "loading", label: "Publication onchain en cours..." });
     const res = await fetch("/api/publish/onchain", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug: idea.slug }),
+      body: JSON.stringify({ slug: idea.slug, idea, draft }),
     });
     const data = (await res.json()) as {
       mode: string;
+      message?: string;
       error?: string;
       hint?: string;
-      result?: { ideaAtomId?: string; tripleTermId?: string };
+      result?: {
+        ideaAtomId?: string;
+        tripleTermId?: string;
+        explorerUrls?: { ideaAtom?: string; triple?: string };
+        graphqlVerified?: boolean;
+        coreTripleQueryable?: boolean;
+      };
     };
     if (!res.ok) {
       setStatus({
@@ -150,10 +217,39 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
       });
       return;
     }
+
+    await refreshIdeaState();
+
+    const previewRes = await fetch("/api/publish/onchain/preview", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug: idea.slug, idea, draft }),
+    });
+    if (previewRes.ok) {
+      const previewData = (await previewRes.json()) as {
+        preview: OnchainPublishPreview;
+      };
+      setOnchainPreview(previewData.preview);
+    }
+
+    const label =
+      data.mode === "already_complete"
+        ? "Deja onchain."
+        : "Publication onchain terminee.";
+
     setStatus({
       state: "ok",
-      label: "Publication onchain terminee.",
-      detail: `Atom ${data.result?.ideaAtomId} / Triple ${data.result?.tripleTermId}`,
+      label,
+      detail: [
+        data.message,
+        data.result?.ideaAtomId ? `Atom ${data.result.ideaAtomId}` : "",
+        data.result?.tripleTermId ? `Triple ${data.result.tripleTermId}` : "",
+        data.result?.explorerUrls?.ideaAtom,
+        data.result?.graphqlVerified ? "GraphQL atom OK" : "",
+        data.result?.coreTripleQueryable ? "Core triple queryable" : "",
+      ]
+        .filter(Boolean)
+        .join(" · "),
     });
   }
 
@@ -168,7 +264,7 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
           <p className="mt-2 text-sm text-[var(--muted)]">{idea.tagline}</p>
         </div>
         <Link
-          href={`/brainstorm/${idea.slug}`}
+          href={isFreeIdeaSlug(idea.slug) ? "/brainstorm" : `/brainstorm/${idea.slug}`}
           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
         >
           Brainstorm
@@ -245,20 +341,69 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
 
         <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
           <h2 className="font-semibold">Publication</h2>
+          {previewLoading ? (
+            <p className="mt-3 text-sm text-[var(--muted)]">
+              Calcul des couts SDK (atomCost, tripleCost)…
+            </p>
+          ) : onchainPreview ? (
+            <div className="mt-4 space-y-3 text-sm">
+              <p className="text-[var(--muted)]">
+                Reseau <strong className="text-white/90">{onchainPreview.network}</strong>
+                {" · "}
+                cout estime{" "}
+                <strong className="text-white/90">
+                  {onchainPreview.totalEstimatedCostFormatted}{" "}
+                  {onchainPreview.nativeSymbol}
+                </strong>
+                {onchainPreview.walletBalanceFormatted
+                  ? ` · solde ${onchainPreview.walletBalanceFormatted}`
+                  : ""}
+              </p>
+              <ul className="space-y-2 text-xs">
+                {onchainPreview.steps.map((step) => (
+                  <li
+                    key={step.id}
+                    className="rounded-lg bg-[var(--background)] px-3 py-2"
+                  >
+                    <span className="font-medium">{step.label}</span>
+                    {" — "}
+                    {step.exists
+                      ? "deja onchain"
+                      : `a creer (~${(Number(step.estimatedCostWei) / 1e18).toFixed(6)} ${onchainPreview.nativeSymbol})`}
+                  </li>
+                ))}
+              </ul>
+              {onchainPreview.blockers.length > 0 ? (
+                <ul className="space-y-1 text-xs text-amber-200">
+                  {onchainPreview.blockers.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              ) : null}
+              {onchainPreview.alreadyComplete ? (
+                <p className="text-xs text-emerald-300">
+                  Atom + triple cœur deja presents — rien a creer.
+                </p>
+              ) : null}
+            </div>
+          ) : null}
           <div className="mt-4 flex flex-wrap gap-3">
             <button
               type="button"
               onClick={() => void createGithubPr()}
-              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+              className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
             >
               Soumettre en PR
             </button>
             <button
               type="button"
               onClick={() => void publishOnchain()}
-              className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
+              disabled={onchainPreview ? !onchainPreview.canPublish && !onchainPreview.alreadyComplete : false}
+              className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] disabled:opacity-40"
             >
-              Publier onchain
+              {onchainPreview?.alreadyComplete
+                ? "Verifier onchain"
+                : "Publier onchain"}
             </button>
             <button
               type="button"
@@ -269,9 +414,11 @@ export function PrepareWorkspace({ idea }: PrepareWorkspaceProps) {
             </button>
           </div>
           <p className="mt-4 text-xs text-[var(--muted)]">
-            La PR automatique utilise GITHUB_TOKEN + GITHUB_PUBLISH_REPO si le
-            serveur les expose. Sinon la dapp affiche le plan manuel. La publication
-            onchain utilise INTUITION_PRIVATE_KEY cote serveur.
+            On-chain : SDK <code className="text-[10px]">pinThing</code> →{" "}
+            <code className="text-[10px]">createAtomFromIpfsUri</code> →{" "}
+            <code className="text-[10px]">createTripleStatement</code> via wallet
+            serveur (<code className="text-[10px]">INTUITION_PRIVATE_KEY</code>).
+            Les atoms existants sont reutilises (<code className="text-[10px]">multiVaultIsTermCreated</code>).
           </p>
         </div>
       </section>

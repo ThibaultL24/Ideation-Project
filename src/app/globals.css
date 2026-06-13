@@ -1,22 +1,38 @@
 @import "tailwindcss";
 
+/*
+ * Intuition theme — monochrome OKLCH base from 0xintuition/intuition-advanced-template,
+ * plus our teal accent kept for links, active states and guidance.
+ */
 :root {
-  --background: #0b0f14;
-  --foreground: #e8edf5;
-  --accent: #5eead4;
-  --muted: #94a3b8;
-  --card: #121a24;
-  --border: #1e293b;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(1 0 0 / 0.045);
+  --border: oklch(1 0 0 / 0.1);
+  --muted: oklch(0.708 0 0);
+  --primary: oklch(0.922 0 0);
+  --accent: oklch(0.87 0.085 174);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  /* Signature halo: faint white glow up top, faint teal glow bottom-right. */
+  background-image:
+    radial-gradient(60rem 38rem at 50% -12%, oklch(1 0 0 / 0.06), transparent 60%),
+    radial-gradient(48rem 32rem at 88% 112%, oklch(0.87 0.085 174 / 0.05), transparent 65%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Glass effect for every panel built on the shared card token. */
+[class*="bg-[var(--card)]"] {
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
 }
