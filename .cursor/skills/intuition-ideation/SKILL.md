@@ -20,9 +20,15 @@ compatibility:
     - name: gh-cli
       install: "brew install gh"
       note: "Required for Step 4 (GitHub PR). The user needs to be authenticated with `gh auth login`."
+    - name: hunch-dapp
+      install: "pnpm dev in this repo (http://localhost:3000)"
+      note: "Optional but recommended for Step 1 overlap API and handoff to Prepare. See references/hunch-dapp-bridge.md."
 ---
 
-# Intuition Ideation Skill
+# Intuition Ideation Skill (Hunch)
+
+**Product name:** [Hunch](http://localhost:3000) — *Every idea starts as a hunch.*  
+This skill and the **Hunch dapp** share the same 5-step journey. Read `references/hunch-dapp-bridge.md` for route mapping, handoff, and test scenarios.
 
 ## Bootstrap: Load Protocol Context
 
@@ -70,11 +76,14 @@ The skill now works with the Ideation Dapp as a shared workflow. When the user a
    - Core triple: `[Idea] - [top project ideas for] - [Intuition]`.
 3. Present the result as a starting card, not as a finished idea. Offer to continue into Step 2.
 
-When the user is already using the dapp, mirror the dapp's three workspaces:
+When the user is already using the dapp, mirror Hunch's workspaces (same engine):
 
-- **Pick**: choose or randomize an onchain idea, then show existing state.
-- **Brainstorm**: fill a semantic draft with problem, solution, users, Intuition fit, MVP, risks, challenge, and optional support triples.
-- **Prepare**: produce GitHub Markdown, the PR plan, the core triple, support-triple preview, and the onchain publication plan.
+- **Home** (`/`): concept + entry to brainstorm
+- **Brainstorm** (`/brainstorm`): intent → similar catalog → 5 questions → synthesis → challenge → Prepare
+- **Prepare** (`/prepare/[slug]`): GitHub PR preview + onchain publish
+- **Pick** (`/pick`) / **Random** (`/random`): alternate entry points from onchain catalog
+
+Full mapping: `references/hunch-dapp-bridge.md`.
 
 Use this shared draft shape whenever you need to hand work between the skill and the dapp:
 
@@ -191,7 +200,7 @@ Show the synthesis, let the user edit the headline and description, and confirm 
 
 Silently fill the shared `BrainstormDraft` shape (see "Enhanced 3B/3C Modes" above) from the synthesis: problem = original intent, solution = app description, users = answer 4, intuitionFit, mvp, risks. Save the draft to a local file: `idea-draft-[slugified-title].md`
 
-> Bridge with the dapp: if the user started in the dapp, a draft may already exist under the browser key `brainstorm-draft:[slug]` — ask them to paste it rather than redoing the questions. If they started here, offer to continue in the dapp's Prepare page for PR + onchain publishing.
+> Bridge with Hunch: if the user started in the dapp, a draft may exist under `brainstorm-draft:[slug]` in localStorage — ask them to paste it. If they started here, offer **Continue in Hunch →** `/prepare/{slug}` (catalog) or finish `/brainstorm` first for free ideas (`free-*` slugs).
 
 ---
 

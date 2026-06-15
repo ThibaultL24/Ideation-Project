@@ -23,7 +23,8 @@
     "verify:graphql": "tsx scripts/verify-graphql.ts",
     "feasibility:3a": "tsx scripts/feasibility-3a.ts",
     "publish:one": "tsx scripts/publish-one-idea.ts",
-    "check:skill": "tsx scripts/check-skill-refs.ts"
+    "check:skill": "tsx scripts/check-skill-refs.ts",
+    "test:skill-journey": "tsx scripts/test-skill-journey.ts"
   },
   "dependencies": {
     "@0xintuition/graphql": "^2.0.2",
