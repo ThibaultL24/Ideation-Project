@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import type { Idea } from "@/lib/ideas/schema";
 import type { IdeaFullState } from "@/lib/ideas/idea-state";
 import {
@@ -8,6 +9,7 @@ import {
   type BrainstormDraft,
   type PublishPlan,
 } from "@/lib/ideas/publish-plan";
+import { GithubAuthPanel } from "@/components/github/github-auth-panel";
 
 interface DetailResponse {
   state: IdeaFullState;
@@ -16,7 +18,8 @@ interface DetailResponse {
 type PublishStatus =
   | { state: "idle" }
   | { state: "loading"; label: string }
-  | { state: "ok"; label: string; detail?: string }
+  | { state: "ok"; label: string; detail?: string; prUrl?: string }
+  | { state: "warning"; label: string; detail?: string; githubNewFileUrl?: string }
   | { state: "error"; label: string; detail?: string };
 
 function StatusMessage({ status }: { status: PublishStatus }) {
@@ -24,14 +27,36 @@ function StatusMessage({ status }: { status: PublishStatus }) {
   const tone =
     status.state === "error"
       ? "border-red-900/50 bg-red-950/30 text-red-200"
-      : status.state === "ok"
-        ? "border-emerald-900/50 bg-emerald-950/30 text-emerald-200"
-        : "border-sky-900/50 bg-sky-950/30 text-sky-200";
+      : status.state === "warning"
+        ? "border-amber-900/50 bg-amber-950/30 text-amber-100"
+        : status.state === "ok"
+          ? "border-emerald-900/50 bg-emerald-950/30 text-emerald-200"
+          : "border-sky-900/50 bg-sky-950/30 text-sky-200";
   return (
     <div className={`rounded-lg border px-4 py-3 text-sm ${tone}`}>
       <p className="font-medium">{status.label}</p>
       {"detail" in status && status.detail ? (
         <p className="mt-1 break-all text-xs">{status.detail}</p>
+      ) : null}
+      {status.state === "ok" && status.prUrl ? (
+        <a
+          href={status.prUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-block text-xs text-[var(--accent)] hover:underline"
+        >
+          Ouvrir la PR sur GitHub →
+        </a>
+      ) : null}
+      {status.state === "warning" && status.githubNewFileUrl ? (
+        <a
+          href={status.githubNewFileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-block text-xs text-[var(--accent)] hover:underline"
+        >
+          Créer le fichier sur GitHub (navigateur) →
+        </a>
       ) : null}
     </div>
   );
@@ -46,10 +71,19 @@ export function BrainstormPublishSection({
   idea,
   draft,
 }: BrainstormPublishSectionProps) {
+  const pathname = usePathname();
   const isDraft = idea.slug.startsWith("draft-");
   const [state, setState] = useState<IdeaFullState | null>(null);
   const [loading, setLoading] = useState(!isDraft);
   const [status, setStatus] = useState<PublishStatus>({ state: "idle" });
+  const [githubConnected, setGithubConnected] = useState(false);
+
+  const returnTo = useMemo(() => {
+    if (typeof window !== "undefined") {
+      return `${window.location.pathname}${window.location.hash || "#publication"}`;
+    }
+    return `${pathname}#publication`;
+  }, [pathname]);
 
   useEffect(() => {
     if (isDraft) return;
@@ -74,12 +108,18 @@ export function BrainstormPublishSection({
     [idea, draft],
   );
 
-  function publishBody(githubOnly = false) {
+  function publishBody() {
+    const currentReturnTo =
+      typeof window !== "undefined"
+        ? `${window.location.pathname}${window.location.hash || "#publication"}`
+        : `${pathname}#publication`;
     return JSON.stringify({
       slug: idea.slug,
       draft,
-      githubOnly,
-      ...(isDraft ? { idea } : {}),
+      idea,
+      prompt: idea.tagline || idea.description,
+      category: idea.category,
+      returnTo: currentReturnTo,
     });
   }
 
@@ -93,70 +133,104 @@ export function BrainstormPublishSection({
       state: "loading",
       label: "Ouverture d'une PR sur intuition-box/ideas…",
     });
-    const res = await fetch("/api/publish/github-pr", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: publishBody(true),
-    });
-    const data = (await res.json()) as {
-      mode: string;
+
+    let res: Response;
+    try {
+      res = await fetch("/api/publish/github-pr", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: publishBody(),
+      });
+    } catch (err) {
+      setStatus({
+        state: "error",
+        label: "Impossible de joindre l'API de publication.",
+        detail: err instanceof Error ? err.message : String(err),
+      });
+      return;
+    }
+
+    let data: {
+      mode?: string;
       prUrl?: string;
       reason?: string;
       error?: string;
+      githubNewFileUrl?: string;
+      loginUrl?: string;
     };
-    if (!res.ok) {
+    try {
+      data = (await res.json()) as typeof data;
+    } catch {
       setStatus({
         state: "error",
-        label: "La création automatique de PR a échoué.",
-        detail: data.error,
+        label: "Réponse serveur invalide.",
       });
       return;
     }
-    if (data.mode === "created") {
+
+    if (data.mode === "auth_required" || (res.status === 401 && data.loginUrl)) {
+      setStatus({
+        state: "warning",
+        label: "Connexion GitHub requise.",
+        detail: data.reason,
+      });
+      if (data.loginUrl) {
+        window.location.href = data.loginUrl;
+      }
+      return;
+    }
+
+    if (data.mode === "created" && data.prUrl) {
+      try {
+        await navigator.clipboard.writeText(plan.markdown);
+      } catch {
+        /* ignore */
+      }
+      window.open(data.prUrl, "_blank", "noopener,noreferrer");
       setStatus({
         state: "ok",
-        label: "PR ouverte sur intuition-box/ideas.",
+        label: "PR créée sur intuition-box/ideas.",
         detail: data.prUrl,
+        prUrl: data.prUrl,
       });
       return;
     }
-    setStatus({
-      state: "ok",
-      label: "Mode manuel — copiez le Markdown ci-dessous.",
-      detail: data.reason,
-    });
-  }
 
-  async function publishOnchain() {
-    setStatus({
-      state: "loading",
-      label: "Publication des atoms sur Intuition testnet…",
-    });
-    const res = await fetch("/api/publish/onchain", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: publishBody(false),
-    });
-    const data = (await res.json()) as {
-      message?: string;
-      error?: string;
-      hint?: string;
-      result?: { ideaAtomId?: string; tripleTermId?: string };
-    };
-    if (!res.ok) {
+    if (data.mode === "manual") {
+      try {
+        await navigator.clipboard.writeText(plan.markdown);
+      } catch {
+        /* ignore */
+      }
       setStatus({
-        state: "error",
-        label: "Création des atoms non exécutée.",
-        detail: [data.message, data.error, data.hint].filter(Boolean).join(" "),
+        state: "warning",
+        label: "PR automatique non configurée — Markdown copié.",
+        detail: data.reason,
+        githubNewFileUrl: data.githubNewFileUrl,
       });
       return;
     }
+
+    try {
+      await navigator.clipboard.writeText(plan.markdown);
+    } catch {
+      /* ignore */
+    }
+
+    if (data.githubNewFileUrl) {
+      setStatus({
+        state: "warning",
+        label: "PR automatique échouée — Markdown copié.",
+        detail: data.error,
+        githubNewFileUrl: data.githubNewFileUrl,
+      });
+      return;
+    }
+
     setStatus({
-      state: "ok",
-      label: "Atoms publiés onchain.",
-      detail: data.result?.ideaAtomId
-        ? `Atom ${data.result.ideaAtomId} · Triple ${data.result.tripleTermId}`
-        : undefined,
+      state: "error",
+      label: res.status === 404 ? "Idée introuvable pour la PR." : "Échec GitHub API.",
+      detail: [data.error, data.reason].filter(Boolean).join(" "),
     });
   }
 
@@ -169,9 +243,9 @@ export function BrainstormPublishSection({
         <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
           Préparer & publier
         </p>
-        <h2 className="mt-1 text-xl font-bold">PR GitHub puis atoms onchain</h2>
+        <h2 className="mt-1 text-xl font-bold">Publication via PR GitHub</h2>
         <p className="mt-2 text-sm text-[var(--muted)]">
-          Vérifiez l&apos;état scoped / onchain, puis déposez une PR sur{" "}
+          Les atoms Intuition sont créés après revue et fusion de la PR sur{" "}
           <a
             href="https://github.com/intuition-box/ideas"
             className="text-[var(--accent)] hover:underline"
@@ -179,17 +253,22 @@ export function BrainstormPublishSection({
             rel="noopener noreferrer"
           >
             intuition-box/ideas
-          </a>{" "}
-          avant la création des atoms.
+          </a>
+          , pas depuis cette interface.
         </p>
       </div>
 
       <StatusMessage status={status} />
 
+      <GithubAuthPanel
+        returnTo={returnTo}
+        onConnectedChange={setGithubConnected}
+      />
+
       {isDraft ? (
         <p className="rounded-lg border border-amber-900/40 bg-amber-950/20 px-4 py-3 text-sm text-amber-100">
           Brouillon nouveau : l&apos;état catalogue n&apos;est pas encore indexé.
-          La PR et les atoms utilisent le contenu affiné ci-dessus.
+          La PR reprend le contenu affiné ci-dessus.
         </p>
       ) : (
         <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
@@ -248,18 +327,17 @@ export function BrainstormPublishSection({
           <div className="mt-4 flex flex-wrap gap-3">
             <button
               type="button"
-              onClick={() => void publishOnchain()}
-              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
-            >
-              Créer les atoms (onchain)
-            </button>
-            <button
-              type="button"
               onClick={() => void createGithubPr()}
-              className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
+              disabled={!githubConnected}
+              className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black disabled:cursor-not-allowed disabled:opacity-50"
             >
-              PR GitHub seulement
+              Ouvrir une PR GitHub
             </button>
+            {!githubConnected ? (
+              <p className="w-full text-xs text-[var(--muted)]">
+                Connectez GitHub ci-dessus pour activer la création de PR.
+              </p>
+            ) : null}
             <button
               type="button"
               onClick={() => void copyMarkdown()}

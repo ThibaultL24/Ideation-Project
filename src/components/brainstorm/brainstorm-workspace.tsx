@@ -133,7 +133,8 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
 
       <p className="text-sm text-[var(--muted)]">
         Affinez le brouillon ci-dessous, puis utilisez la section{" "}
-        <strong>Preparer & publier</strong> en bas de page (etat, PR, onchain).
+        <strong>Preparer & publier</strong> en bas de page pour deposer une PR
+        GitHub (atoms apres fusion).
       </p>
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
