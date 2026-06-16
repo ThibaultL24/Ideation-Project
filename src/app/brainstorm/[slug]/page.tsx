@@ -1,16 +1,13 @@
-// src/app/brainstorm/[slug]/page.tsx
-import { notFound } from "next/navigation";
-import { BrainstormWorkspace } from "@/components/brainstorm/brainstorm-workspace";
-import { loadNormalizedIdeas } from "@/lib/ideas/load";
+// src/app/brainstorm/[slug]/page.tsx — redirection vers /brainstorm/idea/[slug]
+import { redirect } from "next/navigation";
 
-interface BrainstormPageProps {
+interface LegacyBrainstormPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function BrainstormPage({ params }: BrainstormPageProps) {
+export default async function LegacyBrainstormPage({
+  params,
+}: LegacyBrainstormPageProps) {
   const { slug } = await params;
-  const idea = loadNormalizedIdeas().find((item) => item.slug === slug);
-  if (!idea) notFound();
-
-  return <BrainstormWorkspace idea={idea} />;
+  redirect(`/brainstorm/idea/${slug}`);
 }

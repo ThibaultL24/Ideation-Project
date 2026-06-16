@@ -21,7 +21,7 @@ import {
 import type { PickRefineResponse } from "@/lib/ideas/pick-refinement";
 import { normalizeBrainstormDraft } from "@/lib/ideas/publish-plan";
 import { synthesisToBrainstormDraft } from "@/lib/ideas/synthesis-to-draft";
-import { IdeaCard } from "@/components/pick/idea-card";
+import { IdeaCard } from "@/components/brainstorm/idea-card";
 import { IdeationQuestionCard } from "./ideation-question-card";
 
 type Phase = "intent" | "similar" | "questions" | "synthesis" | "challenge";
@@ -252,7 +252,7 @@ export function IdeationFlow() {
     });
 
     setWorkingSlug(slug);
-    window.location.href = `/prepare/${slug}`;
+    window.location.href = `/brainstorm/idea/${slug}#publication`;
   }
 
   function resetAll() {
@@ -578,14 +578,14 @@ export function IdeationFlow() {
                 disabled={appDescription.trim().length < 20}
                 className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white disabled:opacity-40"
               >
-                Continuer vers Prepare →
+                Continuer vers publication →
               </button>
               {workingSlug ? (
                 <Link
-                  href={`/prepare/${workingSlug}`}
+                  href={`/brainstorm/idea/${workingSlug}#publication`}
                   className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
                 >
-                  Prepare
+                  Publier
                 </Link>
               ) : null}
             </div>

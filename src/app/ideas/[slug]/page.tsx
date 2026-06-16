@@ -40,16 +40,10 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
 
       <section className="flex flex-wrap gap-3">
         <Link
-          href={`/brainstorm/${idea.slug}`}
-          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
+          href={`/brainstorm/idea/${idea.slug}`}
+          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
         >
           Brainstorm
-        </Link>
-        <Link
-          href={`/prepare/${idea.slug}`}
-          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
-        >
-          Prepare
         </Link>
       </section>
 
@@ -76,16 +70,16 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
 
       <div className="flex flex-wrap gap-4">
         <Link
-          href={`/brainstorm/${idea.slug}`}
-          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
+          href={`/brainstorm/idea/${idea.slug}`}
+          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
         >
           Brainstorm
         </Link>
         <Link
-          href={`/prepare/${idea.slug}`}
+          href={`/brainstorm/idea/${idea.slug}#publication`}
           className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
         >
-          Prepare
+          Publier
         </Link>
         <Link href="/ideas" className="text-sm text-[var(--accent)] hover:underline">
           ← Catalog

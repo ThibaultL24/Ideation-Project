@@ -141,12 +141,13 @@ export default function HomePage() {
           </p>
         </Link>
         <Link
-          href="/pick"
+          href="/brainstorm"
           className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 transition hover:border-[var(--accent)]"
         >
-          <h3 className="font-semibold">Cartes guidées</h3>
+          <h3 className="font-semibold">Brainstorm</h3>
           <p className="mt-2 text-[var(--muted)]">
-            Affinez le catalogue par questions jusqu&apos;à la bonne carte.
+            Idée libre avec IA ou parcours thème → idées populaires → vérif
+            doublon avant atom.
           </p>
         </Link>
         <a

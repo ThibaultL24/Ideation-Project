@@ -45,14 +45,8 @@ export default function RootLayout({
             >
               Explorer
             </a>
-            <a href="/pick" className="text-[var(--muted)] hover:text-white">
-              Cards
-            </a>
             <a href="/brainstorm" className="text-[var(--muted)] hover:text-white">
               Brainstorm
-            </a>
-            <a href="/prepare" className="text-[var(--muted)] hover:text-white">
-              Prepare
             </a>
             <a href="/random" className="text-[var(--muted)] hover:text-white">
               Random

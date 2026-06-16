@@ -27,6 +27,29 @@ query FindAtomsByLabel($label: String!, $limit: Int!) {
   }
 }`;
 
+const FIND_ATOMS_BY_LABEL_ILIKE = `
+query FindAtomsByLabelIlike($pattern: String!, $limit: Int!) {
+  atoms(where: { label: { _ilike: $pattern } }, limit: $limit) {
+    term_id
+    label
+    type
+    as_predicate_triples_aggregate {
+      aggregate { count }
+    }
+  }
+}`;
+
+const ATOMS_BY_TERM_IDS_WITH_VAULT = `
+query AtomsByTermIdsWithVault($termIds: [String!]!, $limit: Int!) {
+  atoms(where: { term_id: { _in: $termIds } }, limit: $limit) {
+    term_id
+    label
+    vault {
+      totalShares
+    }
+  }
+}`;
+
 const FIND_ATOM_BY_TERM_ID = `
 query FindAtomByTermId($termId: String!) {
   atoms(where: { term_id: { _eq: $termId } }, limit: 1) {
@@ -107,6 +130,54 @@ export async function findAtomsByLabel(
     limit,
   });
   return data.atoms ?? [];
+}
+
+export async function findAtomsByLabelIlike(
+  config: IntuitionNetworkConfig,
+  pattern: string,
+  limit = 20,
+): Promise<AtomRow[]> {
+  type Out = { atoms: AtomRow[] };
+  const data = await execGraphql<Out>(
+    config.graphql,
+    FIND_ATOMS_BY_LABEL_ILIKE,
+    { pattern, limit },
+  );
+  return data.atoms ?? [];
+}
+
+export async function fetchAtomVaultShares(
+  config: IntuitionNetworkConfig,
+  termIds: string[],
+): Promise<Map<string, number>> {
+  const map = new Map<string, number>();
+  if (termIds.length === 0) return map;
+
+  type VaultAtom = {
+    term_id: string;
+    vault?: { totalShares?: string | number | null } | null;
+  };
+  type Out = { atoms: VaultAtom[] };
+
+  const chunkSize = 50;
+  for (let i = 0; i < termIds.length; i += chunkSize) {
+    const batch = termIds.slice(i, i + chunkSize);
+    const data = await execGraphql<Out>(
+      config.graphql,
+      ATOMS_BY_TERM_IDS_WITH_VAULT,
+      { termIds: batch, limit: batch.length },
+    );
+    for (const row of data.atoms ?? []) {
+      const raw = row.vault?.totalShares;
+      const shares =
+        typeof raw === "bigint"
+          ? Number(raw)
+          : Number(raw ?? 0);
+      map.set(row.term_id, Number.isFinite(shares) ? shares : 0);
+    }
+  }
+
+  return map;
 }
 
 export function pickCanonicalAtom(rows: AtomRow[]): AtomRow | undefined {

@@ -1,7 +1,7 @@
 // src/app/api/publish/onchain/route.ts
 import { NextResponse } from "next/server";
 import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
-import { resolveIdeaInput } from "@/lib/ideas/resolve-idea-input";
+import { resolvePublishIdea } from "@/lib/ideas/resolve-publish-idea";
 import { publishIdeaOnchain } from "@/lib/intuition/publish-idea";
 
 export async function POST(request: Request) {
@@ -11,9 +11,11 @@ export async function POST(request: Request) {
     draft?: Partial<BrainstormDraft>;
     githubBlobUrl?: string;
     dryRun?: boolean;
+    prompt?: string;
+    category?: string;
   };
 
-  const idea = resolveIdeaInput(body.slug, body.idea);
+  const idea = resolvePublishIdea(body);
   if (!idea) {
     return NextResponse.json({ error: "Idea not found" }, { status: 404 });
   }

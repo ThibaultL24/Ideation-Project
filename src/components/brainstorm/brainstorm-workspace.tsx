@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BrainstormReflectionPanel } from "@/components/brainstorm/brainstorm-reflection-panel";
-import { IdeaStatePanel } from "@/components/pick/idea-state-panel";
+import { IdeaStatePanel } from "@/components/brainstorm/idea-state-panel";
 import type { IdeaFullState } from "@/lib/ideas/idea-state";
 import type { Idea } from "@/lib/ideas/schema";
 import {
@@ -14,6 +14,7 @@ import {
   type BrainstormArchetype,
   type BrainstormDraft,
 } from "@/lib/ideas/publish-plan";
+import { BrainstormPublishSection } from "./brainstorm-publish-section";
 
 const SECTIONS = [
   {
@@ -146,12 +147,12 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
           <h1 className="mt-1 text-2xl font-bold">{idea.title}</h1>
           <p className="mt-2 text-sm text-[var(--muted)]">{idea.tagline}</p>
         </div>
-        <Link
-          href={`/prepare/${idea.slug}`}
-          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
+        <a
+          href="#publication"
+          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
         >
-          Prepare & publier
-        </Link>
+          Preparer & publier
+        </a>
       </div>
 
       {fullState && (
@@ -172,8 +173,9 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
       />
 
       <p className="text-sm text-[var(--muted)]">
-        La réflexion IA remplit le brouillon ci-dessous. Ajustez si besoin avant{" "}
-        <strong>Prepare</strong>.
+        Affinez le brouillon ci-dessous, puis utilisez la section{" "}
+        <strong>Preparer & publier</strong> en bas de page pour deposer une PR
+        GitHub (atoms apres fusion).
       </p>
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
@@ -243,19 +245,23 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
         >
           {saved ? "Enregistre" : "Enregistrer le brouillon"}
         </button>
+        {!idea.slug.startsWith("draft-") ? (
+          <Link
+            href={`/ideas/${idea.slug}`}
+            className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+          >
+            Fiche catalogue
+          </Link>
+        ) : null}
         <Link
-          href={`/ideas/${idea.slug}`}
+          href="/brainstorm"
           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
         >
-          Fiche catalogue
-        </Link>
-        <Link
-          href="/pick"
-          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
-        >
-          Cartes
+          Retour aux themes
         </Link>
       </div>
+
+      <BrainstormPublishSection idea={idea} draft={draft} />
     </div>
   );
 }

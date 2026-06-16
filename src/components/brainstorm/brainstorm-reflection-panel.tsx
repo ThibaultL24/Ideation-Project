@@ -68,7 +68,7 @@ export function BrainstormReflectionPanel({
     const draft = reflectionToBrainstormDraft(report);
     localStorage.setItem(draftStorageKey, JSON.stringify(draft));
     onDraftApplied(draft);
-    if (goToPrepare) router.push(`/prepare/${idea.slug}`);
+    if (goToPrepare) router.push(`/brainstorm/idea/${idea.slug}#publication`);
   }
 
   return (
@@ -159,13 +159,13 @@ export function BrainstormReflectionPanel({
               onClick={() => applyDraft(true)}
               className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
             >
-              Appliquer → Prepare
+              Appliquer → Publier
             </button>
             <Link
-              href={`/prepare/${idea.slug}`}
+              href={`/brainstorm/idea/${idea.slug}#publication`}
               className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
             >
-              Prepare sans appliquer
+              Publier sans appliquer
             </Link>
           </div>
         </div>
