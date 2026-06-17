@@ -30,13 +30,13 @@ export function getGithubOAuthConfig():
     return {
       ok: false,
       reason:
-        "GITHUB_OAUTH_CLIENT_ID et GITHUB_OAUTH_CLIENT_SECRET sont requis.",
+        "GITHUB_OAUTH_CLIENT_ID and GITHUB_OAUTH_CLIENT_SECRET are required.",
     };
   }
   if (!sessionSecret || sessionSecret.length < 16) {
     return {
       ok: false,
-      reason: "SESSION_SECRET doit contenir au moins 16 caractères.",
+      reason: "SESSION_SECRET must be at least 16 characters.",
     };
   }
 

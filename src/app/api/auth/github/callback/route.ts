@@ -30,7 +30,7 @@ export async function GET(request: Request) {
   const code = searchParams.get("code")?.trim();
   const state = searchParams.get("state")?.trim();
   if (!code || !state) {
-    return redirectWithError(request, "Paramètres OAuth GitHub manquants.");
+    return redirectWithError(request, "Missing GitHub OAuth parameters.");
   }
 
   const cookieStore = await cookies();
@@ -38,7 +38,7 @@ export async function GET(request: Request) {
   cookieStore.delete(GITHUB_OAUTH_STATE_COOKIE);
 
   if (!stateCookie || stateCookie !== state) {
-    return redirectWithError(request, "État OAuth invalide — réessayez la connexion.");
+    return redirectWithError(request, "Invalid OAuth state — try connecting again.");
   }
 
   const statePayload = verifyPayload<GithubOAuthStatePayload>(
@@ -46,7 +46,7 @@ export async function GET(request: Request) {
     oauth.config.sessionSecret,
   );
   if (!statePayload) {
-    return redirectWithError(request, "Session OAuth expirée.");
+    return redirectWithError(request, "OAuth session expired.");
   }
 
   try {
@@ -79,7 +79,7 @@ export async function GET(request: Request) {
     return NextResponse.redirect(new URL(returnTo, origin));
   } catch (error) {
     const message =
-      error instanceof Error ? error.message : "Connexion GitHub impossible.";
+      error instanceof Error ? error.message : "GitHub connection failed.";
     return redirectWithError(request, message);
   }
 }

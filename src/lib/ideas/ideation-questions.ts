@@ -10,29 +10,29 @@ export interface IdeationQuestion {
 export const IDEATION_QUESTIONS: IdeationQuestion[] = [
   {
     id: "intuition_why",
-    text: "Quel est l'intérêt pour Intuition ? Pourquoi atoms, triples ou le signal comptent ici ?",
+    text: "Why does Intuition matter here? Why do atoms, triples, or signal count?",
     placeholder:
-      "Ex. : les gens pourraient staker sur la qualité d'une interprétation historique ou la performance d'un agent IA…",
+      "E.g. people could stake on the quality of a historical interpretation or an AI agent's performance…",
   },
   {
     id: "key_feature",
-    text: "Quelle est la feature la plus importante selon toi ?",
-    placeholder: "Ex. : carte avec tracés de vie, vote communautaire, classement par conviction…",
+    text: "What is the most important feature, in your view?",
+    placeholder: "E.g. map with life paths, community voting, conviction-based ranking…",
   },
   {
     id: "inspirations",
-    text: "Quelles sont tes inspirations pour cette idée ?",
-    placeholder: "Produits, lectures, expériences, théories historiques, autres dapps…",
+    text: "What are your inspirations for this idea?",
+    placeholder: "Products, readings, experiences, historical theories, other dapps…",
   },
   {
     id: "users",
-    text: "Qui utiliserait ce produit en premier ?",
-    placeholder: "Sois précis : étudiants, curateurs, développeurs d'agents, touristes…",
+    text: "Who would use this product first?",
+    placeholder: "Be specific: students, curators, agent developers, tourists…",
   },
   {
     id: "perspectives",
-    text: "Un angle ou une perspective à explorer ? (optionnel)",
-    placeholder: "Ex. : version éducative, B2B musées, controverse historique comme feature…",
+    text: "An angle or perspective to explore? (optional)",
+    placeholder: "E.g. educational version, B2B museums, historical controversy as a feature…",
     optional: true,
   },
 ];

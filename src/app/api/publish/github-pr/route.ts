@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
   try {
     body = (await request.json()) as typeof body;
   } catch {
-    return NextResponse.json({ error: "Corps JSON invalide" }, { status: 400 });
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 
   const idea = resolvePublishIdea(body);
@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         error:
-          "Idea not found — rechargez la page ou complétez le brouillon avant de publier.",
+          "Idea not found — reload the page or complete the draft before publishing.",
       },
       { status: 404 },
     );
@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
             error:
               error instanceof Error
                 ? error.message
-                : "Fork GitHub utilisateur inaccessible.",
+                : "User GitHub fork unavailable.",
             plan,
             githubNewFileUrl: newFileUrl,
             fallbackCommands: plan.fallbackCommands,
@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
       {
         mode: "auth_required",
         reason:
-          "Connectez votre compte GitHub pour ouvrir une PR depuis votre fork.",
+          "Connect your GitHub account to open a PR from your fork.",
         loginUrl: loginUrl(returnTo),
         plan,
         githubNewFileUrl: newFileUrl,

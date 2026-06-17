@@ -37,7 +37,7 @@ export async function searchGithubIdeasRepo(
         issues: [],
         error: token
           ? `GitHub search HTTP ${res.status}`
-          : "Ajoute GITHUB_TOKEN pour chercher dans intuition-box/ideas",
+          : "Set GITHUB_TOKEN to search intuition-box/ideas",
       };
     }
 

@@ -83,38 +83,38 @@ const ARCHETYPES: Record<
   { label: string; hint: string; categories: string[]; keywords: string[] }
 > = {
   curation: {
-    label: "Listes & curation",
-    hint: "Découvrir, classer, recommander",
+    label: "Lists & curation",
+    hint: "Discover, rank, recommend",
     categories: ["Marketplaces & Discovery", "Knowledge, Research & Information"],
     keywords: ["curat", "discover", "list", "rank", "marketplace"],
   },
   reputation: {
-    label: "Réputation & avis",
-    hint: "Confiance, reviews, scores",
+    label: "Reputation & reviews",
+    hint: "Trust, reviews, scores",
     categories: ["Reviews & Ratings", "Identity, Reputation & Credentials"],
     keywords: ["review", "reputation", "trust", "rating", "score", "stake"],
   },
   social: {
-    label: "Social & communauté",
-    hint: "Attestations entre pairs",
+    label: "Social & community",
+    hint: "Peer attestations",
     categories: ["Social Networks & Community"],
     keywords: ["social", "community", "network", "friend"],
   },
   agents: {
-    label: "IA & agents",
+    label: "AI & agents",
     hint: "Agents, ML, intelligence",
     categories: ["AI Agents & Machine Intelligence"],
     keywords: ["ai", "agent", "ml", "machine", "intelligence", "llm", "model", "bot"],
   },
   safety: {
-    label: "Sécurité & fraude",
-    hint: "Détection, protection, vérification",
+    label: "Security & fraud",
+    hint: "Detection, protection, verification",
     categories: ["Safety, Security & Protection"],
     keywords: ["fraud", "scam", "security", "safety", "verify", "detect"],
   },
   signals: {
-    label: "Signaux & prédiction",
-    hint: "Marchés, forecasting",
+    label: "Signals & prediction",
+    hint: "Markets, forecasting",
     categories: ["Prediction & Signal Markets", "Finance, DeFi & Insurance"],
     keywords: ["predict", "signal", "market", "forecast", "defi"],
   },
@@ -299,13 +299,13 @@ function nextQuestion(
 
     choices.push({
       id: "any",
-      label: "Tout domaine",
-      hint: "Ne pas filtrer par archétype",
+      label: "Any domain",
+      hint: "Do not filter by archetype",
     });
 
     return {
       id: "archetype",
-      text: `Pour « ${intent.slice(0, 80)}${intent.length > 80 ? "…" : ""} », quel type de produit Intuition envisagez-vous ?`,
+      text: `For « ${intent.slice(0, 80)}${intent.length > 80 ? "…" : ""} », what type of Intuition product do you have in mind?`,
       choices,
     };
   }
@@ -315,7 +315,7 @@ function nextQuestion(
     if (cats.length >= 2) {
       return {
         id: "domain",
-        text: "Quel secteur du catalogue se rapproche le plus de votre idée ?",
+        text: "Which catalog sector is closest to your idea?",
         choices: [
           ...cats.map((cat) => ({
             id: `cat:${cat}`,
@@ -323,8 +323,8 @@ function nextQuestion(
           })),
           {
             id: "cat:any",
-            label: "Plusieurs secteurs",
-            hint: "Garder toutes les pistes",
+            label: "Multiple sectors",
+            hint: "Keep all leads",
           },
         ],
       };
@@ -336,18 +336,18 @@ function nextQuestion(
     return {
       id: "focus_path",
       text: focus
-        ? `« ${focus.title} » vous inspire — on affine dans cette direction ?`
-        : "Affiner autour de cette carte ?",
+        ? `« ${focus.title} » inspires you — refine in this direction?`
+        : "Refine around this card?",
       choices: [
         {
           id: "narrow",
-          label: "Oui, des idées plus proches",
-          hint: "Cartes plus précises dans le même espace",
+          label: "Yes, closer ideas",
+          hint: "More precise cards in the same space",
         },
         {
           id: "widen",
-          label: "Non, élargir la recherche",
-          hint: "Autres catégories",
+          label: "No, broaden search",
+          hint: "Other categories",
         },
       ],
     };
@@ -356,17 +356,17 @@ function nextQuestion(
   if (focusSlug && !answered.has("card_fit")) {
     return {
       id: "card_fit",
-      text: "Cette carte correspond-elle à ce que vous voulez construire ?",
+      text: "Does this card match what you want to build?",
       choices: [
         {
           id: "yes",
-          label: "Oui, partir de là",
-          hint: "Brainstorm & prepare ensuite",
+          label: "Yes, start from here",
+          hint: "Brainstorm & prepare next",
         },
         {
           id: "not_this",
-          label: "Pas vraiment",
-          hint: "Proposer d'autres cartes",
+          label: "Not really",
+          hint: "Suggest other cards",
         },
       ],
     };
@@ -378,16 +378,16 @@ function nextQuestion(
 function filtersSummary(filters: PickFilters): string[] {
   const lines: string[] = [];
   if (filters.archetype && ARCHETYPES[filters.archetype]) {
-    lines.push(`Archétype : ${ARCHETYPES[filters.archetype].label}`);
+    lines.push(`Archetype: ${ARCHETYPES[filters.archetype].label}`);
   }
   if (filters.categories.length > 0) {
-    lines.push(`Secteurs : ${filters.categories.join(" · ")}`);
+    lines.push(`Sectors: ${filters.categories.join(" · ")}`);
   }
   if (filters.focusSlug) {
-    lines.push(`Focus : ${filters.focusSlug}`);
+    lines.push(`Focus: ${filters.focusSlug}`);
   }
   if (filters.excludeSlugs.length > 0) {
-    lines.push(`${filters.excludeSlugs.length} carte(s) écartée(s)`);
+    lines.push(`${filters.excludeSlugs.length} card(s) excluded`);
   }
   return lines;
 }
@@ -446,7 +446,7 @@ export async function refinePick(
 export function pickCardChoiceQuestion(): PickQuestion {
   return {
     id: "pick_card",
-    text: "Choisissez la carte la plus proche de votre projet :",
+    text: "Pick the card closest to your project:",
     choices: [],
   };
 }

@@ -27,7 +27,7 @@ export function IdeationQuestionCard({
   return (
     <section className="rounded-xl border border-[var(--accent)]/40 bg-[var(--card)] p-5 space-y-4">
       <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
-        Idéation · {step}/{total}
+        Ideation · {step}/{total}
       </p>
       <h2 className="text-lg font-semibold leading-snug">{question.text}</h2>
       <textarea
@@ -44,7 +44,7 @@ export function IdeationQuestionCard({
           onClick={onContinue}
           className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white disabled:opacity-40"
         >
-          Continuer
+          Continue
         </button>
         {question.optional && onSkip ? (
           <button
@@ -53,7 +53,7 @@ export function IdeationQuestionCard({
             onClick={onSkip}
             className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
           >
-            Passer
+            Skip
           </button>
         ) : null}
       </div>

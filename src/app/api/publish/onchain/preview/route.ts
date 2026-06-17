@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
 import { loadNormalizedIdeas } from "@/lib/ideas/load";
-import { resolveIdeaInput } from "@/lib/ideas/resolve-idea-input";
+import { resolvePublishIdea } from "@/lib/ideas/resolve-publish-idea";
 import { previewOnchainPublish } from "@/lib/intuition/publish-preview";
 
 export async function GET(request: Request) {
@@ -33,9 +33,11 @@ export async function POST(request: Request) {
     idea?: unknown;
     draft?: Partial<BrainstormDraft>;
     githubBlobUrl?: string;
+    prompt?: string;
+    category?: string;
   };
 
-  const idea = resolveIdeaInput(body.slug, body.idea);
+  const idea = resolvePublishIdea(body);
   if (!idea) {
     return NextResponse.json({ error: "Idea not found" }, { status: 404 });
   }

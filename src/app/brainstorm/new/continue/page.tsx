@@ -32,12 +32,12 @@ export default async function BrainstormContinuePage({
   return (
     <div className="space-y-6">
       <div className="rounded-lg border border-emerald-900/40 bg-emerald-950/20 px-4 py-3 text-sm text-emerald-100">
-        Aucun doublon fort détecté — structurez votre brouillon avant toute PR
-        ou publication onchain.
+        No strong duplicate detected — structure your draft before any PR or onchain
+        publication.
       </div>
       <BrainstormWorkspace idea={idea} />
       <Link href="/brainstorm" className="text-sm text-[var(--accent)] hover:underline">
-        ← Retour aux thèmes
+        ← Back to themes
       </Link>
     </div>
   );

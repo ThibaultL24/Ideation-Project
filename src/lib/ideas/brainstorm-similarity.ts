@@ -190,8 +190,8 @@ export async function findSimilarIdeas(params: {
 
 export function draftIdeaFromPrompt(prompt: string, category: string): Idea {
   const title =
-    prompt.length > 80 ? `${prompt.slice(0, 77)}…` : prompt || "Nouvelle idée";
-  const slug = slugifyTitle(prompt.slice(0, 60)) || "nouvelle-idee";
+    prompt.length > 80 ? `${prompt.slice(0, 77)}…` : prompt || "New idea";
+  const slug = slugifyTitle(prompt.slice(0, 60)) || "new-idea";
   const draftSlug = `draft-${slug}`;
 
   return {

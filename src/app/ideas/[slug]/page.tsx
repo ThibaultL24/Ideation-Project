@@ -51,8 +51,8 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
         <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 text-sm">
           <h2 className="font-semibold">Onchain</h2>
           <p className="mt-2 text-xs text-[var(--muted)]">
-            Atom indexe: {state.onchain.atomInIndexer ? "oui" : "non"} · Triple
-            coeur: {state.onchain.coreTriplePresent ? "oui" : "non"}
+            Atom indexed: {state.onchain.atomInIndexer ? "yes" : "no"} · Core triple:{" "}
+            {state.onchain.coreTriplePresent ? "yes" : "no"}
           </p>
           <p className="mt-2 break-all font-mono text-xs text-[var(--muted)]">
             {state.onchain.atomId}
@@ -79,7 +79,7 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
           href={`/brainstorm/idea/${idea.slug}#publication`}
           className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
         >
-          Publier
+          Publish
         </Link>
         <Link href="/ideas" className="text-sm text-[var(--accent)] hover:underline">
           ← Catalog

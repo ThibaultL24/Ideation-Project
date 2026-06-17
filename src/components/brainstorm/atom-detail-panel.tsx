@@ -31,7 +31,7 @@ export function AtomDetailPanel({
           href={`/brainstorm/category/${categorySlug}`}
           className="text-sm text-[var(--accent)] hover:underline"
         >
-          ← Retour à la catégorie
+          ← Back to category
         </Link>
         <p className="mt-4 text-xs uppercase tracking-wide text-[var(--accent)]">
           {idea.category}
@@ -53,20 +53,20 @@ export function AtomDetailPanel({
       </section>
 
       <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5 text-sm">
-        <h2 className="font-semibold">État onchain</h2>
+        <h2 className="font-semibold">Onchain status</h2>
         <ul className="mt-3 space-y-2 text-[var(--muted)]">
           <li>
-            <span className="text-[var(--foreground)]">Atom indexé · </span>
-            {onchain.atomInIndexer ? "oui" : "non"}
+            <span className="text-[var(--foreground)]">Atom indexed · </span>
+            {onchain.atomInIndexer ? "yes" : "no"}
           </li>
           <li>
-            <span className="text-[var(--foreground)]">Triple cœur · </span>
+            <span className="text-[var(--foreground)]">Core triple · </span>
             {onchain.coreTriplePresent
-              ? "oui (relié à Intuition Protocol)"
-              : "non"}
+              ? "yes (linked to Intuition Protocol)"
+              : "no"}
           </li>
           <li>
-            <span className="text-[var(--foreground)]">Réseau · </span>
+            <span className="text-[var(--foreground)]">Network · </span>
             {onchain.network}
           </li>
         </ul>
@@ -79,13 +79,13 @@ export function AtomDetailPanel({
           rel="noopener noreferrer"
           className="mt-4 inline-block text-[var(--accent)] hover:underline"
         >
-          Voir sur l’explorateur →
+          View on explorer →
         </a>
       </section>
 
       <p className="rounded-lg border border-amber-900/40 bg-amber-950/20 px-4 py-3 text-sm text-amber-100/90">
-        Cette idée existe déjà sur le graphe. Vous ne pouvez pas la dupliquer —
-        affinez-la ou contribuez via le workspace.
+        This idea already exists on the graph. You cannot duplicate it — refine it
+        or contribute via the workspace.
       </p>
 
       <div className="flex flex-wrap gap-3">
@@ -93,13 +93,13 @@ export function AtomDetailPanel({
           href={`/brainstorm/idea/${idea.slug}`}
           className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
         >
-          Affiner cette idée
+          Refine this idea
         </Link>
         <Link
           href={`/brainstorm/category/${categorySlug}`}
           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
         >
-          Autres idées de la catégorie
+          Other ideas in this category
         </Link>
       </div>
     </article>

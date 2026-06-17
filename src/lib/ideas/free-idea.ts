@@ -13,7 +13,7 @@ export function createFreeIdea(params: {
   return {
     canonicalId: slug,
     slug,
-    title: params.title.trim() || "Nouvelle idée",
+    title: params.title.trim() || "New idea",
     tagline: params.intent.trim().slice(0, 160),
     category: "Community Ideas",
     categoryIndex: 999,

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { githubStrings as s } from "@/lib/strings/publish";
 
 interface GithubSessionResponse {
   connected: boolean;
@@ -39,7 +40,7 @@ export function GithubAuthPanel({
 
   useEffect(() => {
     void refresh();
-  }, [refresh, onConnectedChange]);
+  }, [refresh]);
 
   function connect() {
     window.location.href = `/api/auth/github/login?returnTo=${encodeURIComponent(returnTo)}`;
@@ -51,16 +52,16 @@ export function GithubAuthPanel({
   }
 
   if (loading) {
-    return (
-      <p className="text-sm text-[var(--muted)]">Vérification de la session GitHub…</p>
-    );
+    return <p className="text-sm text-[var(--muted)]">{s.checkingSession}</p>;
   }
 
   if (session?.oauthConfigured === false) {
     return (
       <div className="rounded-lg border border-amber-900/40 bg-amber-950/20 px-4 py-3 text-sm text-amber-100">
-        OAuth GitHub non configuré sur le serveur ({session.reason ?? "variables manquantes"}).
-        Vous pouvez encore copier le Markdown et ouvrir l&apos;éditeur GitHub manuellement.
+        {s.oauthNotConfigured.replace(
+          "{reason}",
+          session.reason ?? "missing env vars",
+        )}
       </div>
     );
   }
@@ -71,16 +72,12 @@ export function GithubAuthPanel({
         <div className="flex items-center gap-3">
           {session.avatarUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={session.avatarUrl}
-              alt=""
-              className="h-8 w-8 rounded-full"
-            />
+            <img src={session.avatarUrl} alt="" className="h-8 w-8 rounded-full" />
           ) : null}
           <div className="text-sm">
             <p className="font-medium">@{session.login}</p>
             <p className="text-xs text-[var(--muted)]">
-              Fork : {session.publishRepo ?? `${session.login}/ideas`}
+              {s.forkLabel}: {session.publishRepo ?? `${session.login}/ideas`}
             </p>
           </div>
         </div>
@@ -89,7 +86,7 @@ export function GithubAuthPanel({
           onClick={() => void logout()}
           className="rounded-lg border border-[var(--border)] px-3 py-1.5 text-xs hover:border-[var(--accent)]"
         >
-          Se déconnecter
+          {s.disconnect}
         </button>
       </div>
     );
@@ -97,16 +94,13 @@ export function GithubAuthPanel({
 
   return (
     <div className="rounded-lg border border-sky-900/40 bg-sky-950/20 px-4 py-4 text-sm">
-      <p className="text-sky-100">
-        Connectez GitHub pour ouvrir une PR depuis <strong>votre fork</strong> de
-        intuition-box/ideas.
-      </p>
+      <p className="text-sky-100">{s.connectLead}</p>
       <button
         type="button"
         onClick={connect}
         className="mt-3 rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
       >
-        Se connecter avec GitHub
+        {s.connectButton}
       </button>
     </div>
   );

@@ -1,0 +1,92 @@
+// src/lib/strings/publish.ts
+
+export const publishStrings = {
+  kicker: "Prepare & publish",
+  title: "GitHub & on-chain publication",
+  lead:
+    "Open a PR on intuition-box/ideas first, then on-chain attestation (atom + core triple) if the name is not taken yet.",
+  tabs: {
+    overview: "Overview",
+    github: "GitHub",
+    onchain: "On-chain",
+    preview: "Preview",
+  },
+  draftNotice:
+    "New draft: catalog state is not indexed yet. The PR will use the refined content above.",
+  statusTitle: "GitHub & on-chain status",
+  checking: "Checking…",
+  loadFailed: "Could not load status.",
+  scoped: "Scoped",
+  githubPr: "GitHub PR",
+  atomIndexed: "Atom indexed",
+  coreTriple: "Core triple",
+  yes: "Yes",
+  no: "No",
+  complete: "Complete",
+  toCreate: "To create",
+  semanticPlan: "Semantic plan",
+  actions: "Actions",
+  openGithubPr: "Open GitHub PR",
+  connectGithubHint: "Connect GitHub in the GitHub tab to enable PR creation.",
+  copyMarkdown: "Copy Markdown",
+  onchainTitle: "On-chain publication",
+  onchainLead:
+    'Atom "{title}" + core triple on {network}. Connect your wallet (testnet). Server wallet fallback if INTUITION_PRIVATE_KEY is set.',
+  estimatingCost: "Estimating cost…",
+  estimatedCost: "Estimated cost",
+  serverWallet: "Server wallet",
+  configured: "Configured",
+  missing: "Missing",
+  existingAtom: "Existing atom",
+  previewUnavailable: "On-chain preview unavailable.",
+  verifyOnchain: "Verify on-chain",
+  publishOnchain: "Publish on-chain",
+  blockedExistingName: 'Blocked: an atom already uses the name "{title}".',
+  readmePreview: "README preview (PR)",
+  viewAtomExplorer: "View atom on explorer →",
+  openPrGithub: "Open PR on GitHub →",
+  createFileGithub: "Create file on GitHub (browser) →",
+  markdownCopied: "Markdown copied to clipboard.",
+  openingPr: "Opening a PR on intuition-box/ideas…",
+  apiUnreachable: "Could not reach the publish API.",
+  invalidResponse: "Invalid server response.",
+  githubLoginRequired: "GitHub login required.",
+  prCreated: "PR created on intuition-box/ideas.",
+  manualPr: "Automatic PR not configured — Markdown copied.",
+  prFailedCopied: "Automatic PR failed — Markdown copied.",
+  ideaNotFound: "Idea not found for PR.",
+  githubApiFailed: "GitHub API failed.",
+  publishBlocked: "Publication blocked — atom already exists under this name.",
+  publishing: "Publishing on-chain…",
+  publishFailed: "On-chain publication failed.",
+  alreadyComplete: "Atom and core triple already present on-chain.",
+  publishSuccess: "On-chain publication succeeded.",
+  onchainApiUnreachable: "Could not reach the on-chain API.",
+} as const;
+
+export const verificationStrings = {
+  loading: 'Checking on-chain name "{name}"…',
+  slowHint: " (GraphQL indexer, may take ~10 s)",
+  errorPrefix: "On-chain check:",
+  retry: "Retry",
+  fetchFailed:
+    "Could not reach the API (network or server still compiling). Try again in a few seconds.",
+  unknownError: "Unknown error",
+  verificationFailed: "Verification failed",
+  exactMatch: "Atom already exists under this name",
+  similarNames: "Similar names on the graph",
+  nameAvailable: "Name available on-chain",
+  viewExplorer: "View on explorer →",
+  coreTripleTag: " · core triple",
+} as const;
+
+export const githubStrings = {
+  checkingSession: "Checking GitHub session…",
+  oauthNotConfigured:
+    "GitHub OAuth is not configured on the server ({reason}). You can still copy Markdown and open the GitHub editor manually.",
+  disconnect: "Sign out",
+  connectLead:
+    "Connect GitHub to open a PR from your fork of intuition-box/ideas.",
+  connectButton: "Sign in with GitHub",
+  forkLabel: "Fork",
+} as const;

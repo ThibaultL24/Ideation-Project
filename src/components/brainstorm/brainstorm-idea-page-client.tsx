@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BrainstormWorkspace } from "@/components/brainstorm/brainstorm-workspace";
+import { workspaceStrings as ws } from "@/lib/strings/brainstorm-workspace";
 import { loadFreeIdea } from "@/lib/ideas/ideation-session";
 import type { Idea } from "@/lib/ideas/schema";
 
@@ -39,20 +40,17 @@ export function BrainstormIdeaPageClient({
   if (missing) {
     return (
       <div className="space-y-4">
-        <h1 className="text-xl font-bold">Idée introuvable</h1>
-        <p className="text-sm text-[var(--muted)]">
-          Cette idée libre n&apos;est pas enregistrée sur cet appareil. Relancez le
-          parcours Brainstorm.
-        </p>
+        <h1 className="text-xl font-bold">{ws.ideaNotFound}</h1>
+        <p className="text-sm text-[var(--muted)]">{ws.ideaNotFoundDetail}</p>
         <Link href="/brainstorm" className="text-[var(--accent)] hover:underline">
-          Retour Brainstorm
+          {ws.backBrainstorm}
         </Link>
       </div>
     );
   }
 
   if (!idea) {
-    return <p className="text-[var(--muted)]">Chargement…</p>;
+    return <p className="text-[var(--muted)]">{ws.loading}</p>;
   }
 
   return <BrainstormWorkspace idea={idea} />;

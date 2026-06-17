@@ -22,30 +22,30 @@ export function buildFallbackIdeationSynthesis(params: {
     headline,
     reflection: [
       params.intent,
-      feature ? `Feature centrale : ${feature}.` : "",
-      inspirations ? `Inspirations : ${inspirations}.` : "",
-      intuition ? `Lien Intuition : ${intuition}.` : "",
+      feature ? `Core feature: ${feature}.` : "",
+      inspirations ? `Inspirations: ${inspirations}.` : "",
+      intuition ? `Intuition link: ${intuition}.` : "",
     ]
       .filter(Boolean)
       .join(" "),
     perspectives: [
-      perspectives || "Version minimale testnet avec une seule communauté pilote.",
-      "Couche de curation communautaire avec signal plutôt que likes.",
+      perspectives || "Minimal testnet version with a single pilot community.",
+      "Community curation layer with signal instead of likes.",
       params.catalogTitle
-        ? `Différenciation par rapport à « ${params.catalogTitle} » du catalogue.`
-        : "Publication GitHub + atom d'idée sur le graphe Intuition.",
+        ? `Differentiation from catalog entry « ${params.catalogTitle} ».`
+        : "GitHub publication + idea atom on the Intuition graph.",
     ].filter(Boolean),
     appDescription: [params.intent, feature, intuition].filter(Boolean).join("\n\n"),
     intuitionFit:
       intuition ||
-      "Créer un atom pour l'idée et le triple [Idea] - [top project ideas for] - [Intuition]; le staking qualifie les claims clés.",
+      "Create an atom for the idea and the triple [Idea] - [top project ideas for] - [Intuition]; staking qualifies key claims.",
     mvp: feature
-      ? `MVP : ${feature} — boucle courte avec 10-50 premiers utilisateurs (${users || "à préciser"}).`
-      : "Un parcours : décrire → attester → lire le signal sur le graphe.",
+      ? `MVP: ${feature} — short loop with 10-50 early users (${users || "TBD"}).`
+      : "One journey: describe → attest → read signal on the graph.",
     risks: [
-      "Cold start sans contenu ou utilisateurs initiaux.",
-      "UX crypto si le staking arrive avant la valeur produit.",
-      "Risque de doublon dans le catalogue ou sur GitHub.",
+      "Cold start without initial content or users.",
+      "Crypto UX if staking arrives before product value.",
+      "Duplicate risk in the catalog or on GitHub.",
     ],
   };
 }

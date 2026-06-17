@@ -71,8 +71,8 @@ describe("pickRandomIdeas", () => {
 });
 
 describe("buildBadges", () => {
-  it("includes a_travailler for raw ideas", () => {
+  it("includes needs_work for raw ideas", () => {
     const db = getIdeaDbState(baseIdea);
-    expect(buildBadges(db, null)).toContain("a_travailler");
+    expect(buildBadges(db, null)).toContain("needs_work");
   });
 });

@@ -17,12 +17,12 @@ export default async function BrainstormNewPage({
   if (!categoryParam) {
     return (
       <div className="space-y-4">
-        <h1 className="text-2xl font-bold">Créer une idée</h1>
+        <h1 className="text-2xl font-bold">Create an idea</h1>
         <p className="text-[var(--muted)]">
-          Choisissez d’abord un thème depuis la page Brainstorm.
+          Pick a theme from the Brainstorm page first.
         </p>
         <Link href="/brainstorm" className="text-[var(--accent)] hover:underline">
-          ← Choisir un thème
+          ← Choose a theme
         </Link>
       </div>
     );
@@ -38,9 +38,9 @@ export default async function BrainstormNewPage({
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-bold">Décrire votre idée</h1>
+        <h1 className="text-2xl font-bold">Describe your idea</h1>
         <p className="mt-2 text-sm text-[var(--muted)]">
-          Vérification anti-doublon avant structuration — aucun atom créé ici.
+          Duplicate check before structuring — no atom is created here.
         </p>
       </header>
       <BrainstormNewForm category={category} />

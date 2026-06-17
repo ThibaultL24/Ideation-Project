@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../styles/intuition-wallet.css";
 
 /*
  * Intuition theme — monochrome OKLCH base from 0xintuition/intuition-advanced-template,
@@ -12,6 +13,36 @@
   --muted: oklch(0.708 0 0);
   --primary: oklch(0.922 0 0);
   --accent: oklch(0.87 0.085 174);
+
+  /* Wallet panel tokens (Portal / Talaria parity) */
+  --rgb-sea-accent: 120 220 210;
+  --color-bg-elevated: oklch(0.18 0 0);
+  --color-bg-surface: oklch(0.145 0 0);
+  --color-border-strong: oklch(1 0 0 / 0.14);
+  --color-border-subtle: oklch(1 0 0 / 0.08);
+  --color-text-primary: var(--foreground);
+  --color-text-secondary: oklch(0.82 0 0);
+  --color-text-muted: var(--muted);
+  --color-accent: rgb(var(--rgb-sea-accent));
+  --color-accent-soft: rgba(var(--rgb-sea-accent), 0.14);
+  --color-accent-strong: oklch(0.87 0.085 174);
+  --color-on-accent: oklch(0.145 0 0);
+  --color-trust-medium: oklch(0.82 0.12 85);
+  --color-trust-low: oklch(0.72 0.14 25);
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.375rem;
+  --shadow-elevated-interactive: 0 12px 40px oklch(0 0 0 / 0.35);
+  --motion-fast: 150ms ease;
+  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --agora-intuition-accent: var(--color-accent-strong);
+  --agora-intuition-border: rgba(var(--rgb-sea-accent), 0.32);
+  --agora-intuition-surface: oklch(1 0 0 / 0.045);
+  --agora-intuition-heading: var(--color-text-primary);
+  --agora-intuition-muted: var(--color-text-secondary);
+  --agora-intuition-dim: var(--color-text-muted);
+  --agora-intuition-shadow: var(--shadow-elevated-interactive);
+  --agora-intuition-gold: var(--agora-intuition-accent);
 }
 
 body {

@@ -74,20 +74,19 @@ export function BrainstormReflectionPanel({
   return (
     <section className="space-y-5 rounded-xl border border-teal-500/25 bg-teal-950/10 p-5">
       <div>
-        <h2 className="text-sm font-semibold">Réflexion sur cette idée</h2>
+        <h2 className="text-sm font-semibold">Reflection on this idea</h2>
         <p className="mt-1 text-sm text-[var(--muted)]">
-          Analyse convergente de <strong className="text-white/85">{idea.title}</strong>{" "}
-          — pas de variantes, pas de quiz. L&apos;IA commente l&apos;idée que vous avez
-          sélectionnée.
+          Convergent analysis of <strong className="text-white/85">{idea.title}</strong>{" "}
+          — no variants, no quiz. AI comments on the idea you selected.
         </p>
       </div>
 
       <label className="block text-sm">
-        <span className="text-[var(--muted)]">Votre angle (optionnel)</span>
+        <span className="text-[var(--muted)]">Your angle (optional)</span>
         <textarea
           className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--background)] p-3 text-sm"
           rows={2}
-          placeholder="Ex. : version pour les musées locaux, pas les touristes"
+          placeholder="E.g. version for local museums, not tourists"
           value={userAngle}
           onChange={(e) => setUserAngle(e.target.value)}
         />
@@ -99,18 +98,18 @@ export function BrainstormReflectionPanel({
         onClick={() => void runReflection(userAngle)}
         className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)] disabled:opacity-50"
       >
-        {loading ? "Réflexion en cours…" : "Relancer la réflexion"}
+        {loading ? "Reflecting…" : "Re-run reflection"}
       </button>
 
       {source && (
         <p className="text-xs text-[var(--muted)]">
-          Source : {source === "openai" ? "OpenAI" : "fallback local"}
+          Source: {source === "openai" ? "OpenAI" : "local fallback"}
           {assistError ? ` · ${assistError}` : ""}
         </p>
       )}
 
       {loading && !report ? (
-        <p className="text-sm text-[var(--muted)]">Lecture du catalogue, graphe et GitHub…</p>
+        <p className="text-sm text-[var(--muted)]">Reading catalog, graph, and GitHub…</p>
       ) : null}
 
       {report && (
@@ -124,7 +123,7 @@ export function BrainstormReflectionPanel({
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-4">
-              <h3 className="text-xs font-medium text-emerald-400">Forces</h3>
+              <h3 className="text-xs font-medium text-emerald-400">Strengths</h3>
               <ul className="mt-2 list-disc pl-4 text-sm text-[var(--muted)] space-y-1">
                 {report.strengths.map((s) => (
                   <li key={s}>{s}</li>
@@ -132,7 +131,7 @@ export function BrainstormReflectionPanel({
               </ul>
             </div>
             <div className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-4">
-              <h3 className="text-xs font-medium text-amber-400">Faiblesses</h3>
+              <h3 className="text-xs font-medium text-amber-400">Weaknesses</h3>
               <ul className="mt-2 list-disc pl-4 text-sm text-[var(--muted)] space-y-1">
                 {report.weaknesses.map((w) => (
                   <li key={w}>{w}</li>
@@ -142,7 +141,7 @@ export function BrainstormReflectionPanel({
           </div>
 
           <div className="rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 text-sm text-[var(--muted)]">
-            <h3 className="text-xs font-medium text-[var(--accent)]">Écosystème</h3>
+            <h3 className="text-xs font-medium text-[var(--accent)]">Ecosystem</h3>
             <p className="mt-2">{report.ecosystemNote}</p>
           </div>
 
@@ -152,20 +151,20 @@ export function BrainstormReflectionPanel({
               onClick={() => applyDraft(false)}
               className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
             >
-              Appliquer au brouillon
+              Apply to draft
             </button>
             <button
               type="button"
               onClick={() => applyDraft(true)}
               className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
             >
-              Appliquer → Publier
+              Apply → Publish
             </button>
             <Link
               href={`/brainstorm/idea/${idea.slug}#publication`}
               className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
             >
-              Publier sans appliquer
+              Publish without applying
             </Link>
           </div>
         </div>

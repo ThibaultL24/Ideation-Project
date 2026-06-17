@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BrainstormReflectionPanel } from "@/components/brainstorm/brainstorm-reflection-panel";
 import { IdeaStatePanel } from "@/components/brainstorm/idea-state-panel";
+import { PublishTabNav } from "@/components/brainstorm/publish-tab-nav";
 import type { IdeaFullState } from "@/lib/ideas/idea-state";
 import type { Idea } from "@/lib/ideas/schema";
 import {
@@ -14,60 +15,36 @@ import {
   type BrainstormArchetype,
   type BrainstormDraft,
 } from "@/lib/ideas/publish-plan";
+import { workspaceStrings as ws } from "@/lib/strings/brainstorm-workspace";
 import { BrainstormPublishSection } from "./brainstorm-publish-section";
 
-const SECTIONS = [
-  {
-    id: "problem",
-    label: "Probleme",
-    placeholder: "Qui souffre de quoi ? Comment s'en sort-on aujourd'hui ?",
-  },
-  {
-    id: "solution",
-    label: "Solution",
-    placeholder: "Que fait le produit ? Parcours utilisateur en 3 etapes.",
-  },
-  {
-    id: "users",
-    label: "Utilisateurs cibles",
-    placeholder: "Les 100 premiers utilisateurs, de facon precise.",
-  },
-  {
-    id: "intuitionFit",
-    label: "Pourquoi Intuition",
-    placeholder: "Atoms, triples, staking : qu'est-ce qui est indispensable ?",
-  },
-  {
-    id: "mvp",
-    label: "MVP",
-    placeholder: "Trois ecrans ou workflows pour une version hackathon.",
-  },
-  {
-    id: "risks",
-    label: "Risques",
-    placeholder: "Redondance, cold start, UX crypto, qualite du graphe.",
-  },
-  {
-    id: "challenge",
-    label: "Challenge",
-    placeholder: "Pourquoi cette idee pourrait echouer ? Que faut-il prouver ?",
-  },
-  {
-    id: "supportTriples",
-    label: "Triples de soutien",
-    placeholder: "Un par ligne. Exemple : StakeReview -> targets -> consumers",
-  },
+type WorkspaceTab = "draft" | "publish";
+
+const WORKSPACE_TABS: ReadonlyArray<{ id: WorkspaceTab; label: string }> = [
+  { id: "draft", label: ws.draftTab },
+  { id: "publish", label: ws.publishTab },
+];
+
+const SECTION_KEYS = [
+  "problem",
+  "solution",
+  "users",
+  "intuitionFit",
+  "mvp",
+  "risks",
+  "challenge",
+  "supportTriples",
 ] as const;
 
-type DraftKey = (typeof SECTIONS)[number]["id"];
+type DraftKey = (typeof SECTION_KEYS)[number];
 
-const ARCHETYPES: Array<{ id: BrainstormArchetype; label: string; hint: string }> = [
-  { id: "curated-list", label: "Liste curee", hint: "classer, recommander, decouvrir" },
-  { id: "reputation", label: "Reputation", hint: "avis, scores, confiance" },
-  { id: "social-attestation", label: "Attestations", hint: "preuves entre pairs" },
-  { id: "risk-detection", label: "Risque", hint: "fraude, securite, alertes" },
-  { id: "prediction-signal", label: "Signal", hint: "marches, prediction, conviction" },
-  { id: "agent-memory", label: "Agents IA", hint: "memoire, contexte, RAG" },
+const ARCHETYPE_IDS: BrainstormArchetype[] = [
+  "curated-list",
+  "reputation",
+  "social-attestation",
+  "risk-detection",
+  "prediction-signal",
+  "agent-memory",
 ];
 
 function storageKey(slug: string) {
@@ -79,6 +56,7 @@ interface BrainstormWorkspaceProps {
 }
 
 export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
+  const [activeTab, setActiveTab] = useState<WorkspaceTab>("draft");
   const [draft, setDraft] = useState<BrainstormDraft>(DEFAULT_BRAINSTORM_DRAFT);
   const [saved, setSaved] = useState(false);
   const [fullState, setFullState] = useState<IdeaFullState | null>(null);
@@ -142,126 +120,144 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
-            Bounty 3B — Brainstorm
+            {ws.kicker}
           </p>
           <h1 className="mt-1 text-2xl font-bold">{idea.title}</h1>
           <p className="mt-2 text-sm text-[var(--muted)]">{idea.tagline}</p>
         </div>
-        <a
-          href="#publication"
-          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
-        >
-          Preparer & publier
-        </a>
-      </div>
-
-      {fullState && (
-        <IdeaStatePanel
-          state={fullState}
-          prompt={statePrompt}
-          loadingOnchain={loadingState}
-        />
-      )}
-
-      <BrainstormReflectionPanel
-        idea={idea}
-        draftStorageKey={storageKey(idea.slug)}
-        onDraftApplied={(next) => {
-          setDraft(next);
-          setSaved(false);
-        }}
-      />
-
-      <p className="text-sm text-[var(--muted)]">
-        Affinez le brouillon ci-dessous, puis utilisez la section{" "}
-        <strong>Preparer & publier</strong> en bas de page pour deposer une PR
-        GitHub (atoms apres fusion).
-      </p>
-
-      <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
-        <h2 className="text-sm font-semibold">Archetype Intuition</h2>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {ARCHETYPES.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => updateArchetype(item.id)}
-              className={`rounded-lg border p-3 text-left text-sm transition ${
-                draft.archetype === item.id
-                  ? "border-[var(--accent)] bg-teal-950/30"
-                  : "border-[var(--border)] hover:border-[var(--accent)]"
-              }`}
-            >
-              <span className="block font-medium">{item.label}</span>
-              <span className="mt-1 block text-xs text-[var(--muted)]">{item.hint}</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      <div className="space-y-6">
-        {SECTIONS.map((section) => (
-          <label key={section.id} className="block">
-            <span className="text-sm font-semibold">{section.label}</span>
-            <textarea
-              className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 text-sm text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none"
-              rows={section.id === "supportTriples" ? 3 : 4}
-              placeholder={section.placeholder}
-              value={draft[section.id]}
-              onChange={(e) => updateField(section.id, e.target.value)}
-            />
-          </label>
-        ))}
-      </div>
-
-      <section className="grid gap-4 md:grid-cols-2">
-        <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
-          <h2 className="font-semibold">Linter semantique</h2>
-          {plan.readiness.warnings.length === 0 ? (
-            <p className="mt-2 text-sm text-emerald-300">
-              Le brouillon est assez structure pour une PR et un plan onchain.
-            </p>
-          ) : (
-            <ul className="mt-3 space-y-2 text-sm text-amber-200">
-              {plan.readiness.warnings.map((warning) => (
-                <li key={warning}>{warning}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-        <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
-          <h2 className="font-semibold">Triple coeur</h2>
-          <p className="mt-3 rounded-lg bg-[var(--background)] p-3 font-mono text-xs text-[var(--muted)]">
-            {plan.coreTriple.join(" - ")}
-          </p>
-        </div>
-      </section>
-
-      <div className="flex flex-wrap gap-3">
-        <button
-          type="button"
-          onClick={saveDraft}
-          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
-        >
-          {saved ? "Enregistre" : "Enregistrer le brouillon"}
-        </button>
-        {!idea.slug.startsWith("draft-") ? (
-          <Link
-            href={`/ideas/${idea.slug}`}
-            className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+        {activeTab === "draft" ? (
+          <button
+            type="button"
+            onClick={() => setActiveTab("publish")}
+            className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
           >
-            Fiche catalogue
-          </Link>
+            {ws.preparePublish} →
+          </button>
         ) : null}
-        <Link
-          href="/brainstorm"
-          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
-        >
-          Retour aux themes
-        </Link>
       </div>
 
-      <BrainstormPublishSection idea={idea} draft={draft} />
+      <PublishTabNav tabs={WORKSPACE_TABS} active={activeTab} onChange={setActiveTab} />
+
+      {activeTab === "draft" ? (
+        <>
+          {fullState ? (
+            <IdeaStatePanel
+              state={fullState}
+              prompt={statePrompt}
+              loadingOnchain={loadingState}
+            />
+          ) : null}
+
+          <BrainstormReflectionPanel
+            idea={idea}
+            draftStorageKey={storageKey(idea.slug)}
+            onDraftApplied={(next) => {
+              setDraft(next);
+              setSaved(false);
+            }}
+          />
+
+          <p className="text-sm text-[var(--muted)]">{ws.refineHint}</p>
+
+          <section className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+            <h2 className="text-sm font-semibold">{ws.archetypeTitle}</h2>
+            <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {ARCHETYPE_IDS.map((id) => {
+                const item = ws.archetypes[id];
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => updateArchetype(id)}
+                    className={`rounded-lg border p-3 text-left text-sm transition ${
+                      draft.archetype === id
+                        ? "border-[var(--accent)] bg-teal-950/30"
+                        : "border-[var(--border)] hover:border-[var(--accent)]"
+                    }`}
+                  >
+                    <span className="block font-medium">{item.label}</span>
+                    <span className="mt-1 block text-xs text-[var(--muted)]">
+                      {item.hint}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+
+          <div className="space-y-6">
+            {SECTION_KEYS.map((sectionId) => {
+              const section = ws.sections[sectionId];
+              return (
+                <label key={sectionId} className="block">
+                  <span className="text-sm font-semibold">{section.label}</span>
+                  <textarea
+                    className="mt-2 w-full rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 text-sm text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none"
+                    rows={sectionId === "supportTriples" ? 3 : 4}
+                    placeholder={section.placeholder}
+                    value={draft[sectionId]}
+                    onChange={(e) => updateField(sectionId, e.target.value)}
+                  />
+                </label>
+              );
+            })}
+          </div>
+
+          <section className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+              <h2 className="font-semibold">{ws.semanticLinter}</h2>
+              {plan.readiness.warnings.length === 0 ? (
+                <p className="mt-2 text-sm text-emerald-300">{ws.draftReady}</p>
+              ) : (
+                <ul className="mt-3 space-y-2 text-sm text-amber-200">
+                  {plan.readiness.warnings.map((warning) => (
+                    <li key={warning}>{warning}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+            <div className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+              <h2 className="font-semibold">{ws.coreTriple}</h2>
+              <p className="mt-3 rounded-lg bg-[var(--background)] p-3 font-mono text-xs text-[var(--muted)]">
+                {plan.coreTriple.join(" - ")}
+              </p>
+            </div>
+          </section>
+
+          <div className="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={saveDraft}
+              className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+            >
+              {saved ? ws.saved : ws.saveDraft}
+            </button>
+            {!idea.slug.startsWith("draft-") ? (
+              <Link
+                href={`/ideas/${idea.slug}`}
+                className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+              >
+                {ws.catalogCard}
+              </Link>
+            ) : null}
+            <Link
+              href="/brainstorm"
+              className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+            >
+              {ws.backThemes}
+            </Link>
+            <button
+              type="button"
+              onClick={() => setActiveTab("publish")}
+              className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black hover:bg-white"
+            >
+              {ws.preparePublish} →
+            </button>
+          </div>
+        </>
+      ) : (
+        <BrainstormPublishSection idea={idea} draft={draft} />
+      )}
     </div>
   );
 }

@@ -10,19 +10,19 @@ export function synthesisToBrainstormDraft(
 ): BrainstormDraft {
   const risks = [
     ...synthesis.risks,
-    ...(challenge?.killerAssumptions.map((a) => `Hypothèse à valider : ${a}`) ?? []),
+    ...(challenge?.killerAssumptions.map((a) => `Assumption to validate: ${a}`) ?? []),
   ];
 
   return {
     archetype: "reputation",
     problem: intent,
     solution: synthesis.appDescription,
-    users: "À préciser dans la description.",
+    users: "To be specified in the description.",
     intuitionFit: synthesis.intuitionFit,
     mvp: synthesis.mvp,
     risks: risks.join("\n"),
     challenge: challenge
-      ? [challenge.mainObjection, `Contre-direction : ${challenge.counterDirection}`].join("\n\n")
+      ? [challenge.mainObjection, `Counter-direction: ${challenge.counterDirection}`].join("\n\n")
       : (synthesis.perspectives[0] ?? ""),
     supportTriples: "",
   };

@@ -26,41 +26,41 @@ export function buildFallbackIdeaReflection(
   return {
     headline: angle ? `${idea.title} — ${angle}` : idea.title,
     reflection: [
-      `${idea.title} part du catalogue Intuition comme piste concrète : ${idea.tagline}`,
+      `${idea.title} starts from the Intuition catalog as a concrete lead: ${idea.tagline}`,
       idea.description.slice(0, 400),
-      angle ? `Angle personnel : ${angle}` : "",
-      "La réflexion consiste à transformer cette fiche en proposition produit vérifiable : problème réel, utilisateurs précis, boucle MVP, et claims Intuition (atoms/triples) qui portent la confiance.",
+      angle ? `Personal angle: ${angle}` : "",
+      "The reflection turns this entry into a verifiable product proposal: real problem, specific users, MVP loop, and Intuition claims (atoms/triples) that carry trust.",
     ]
       .filter(Boolean)
       .join(" "),
     strengths: [
-      `Proposition déjà structurée dans le catalogue (${idea.category}).`,
-      `Tagline claire : ${idea.tagline}`,
-      "Triple cœur bounty prêt : [Idea] - [top project ideas for] - [Intuition].",
+      `Proposal already structured in the catalog (${idea.category}).`,
+      `Clear tagline: ${idea.tagline}`,
+      "Bounty core triple ready: [Idea] - [top project ideas for] - [Intuition].",
     ],
     weaknesses: [
-      "La fiche catalogue reste générique — il faut préciser le premier utilisateur et le premier workflow.",
-      "Le fit Intuition doit nommer explicitement quels claims sont stakés et par qui.",
-      "Risque de doublon si une idée proche existe déjà on-chain ou sur GitHub.",
+      "The catalog entry stays generic — specify the first user and first workflow.",
+      "Intuition fit must name explicitly which claims are staked and by whom.",
+      "Duplicate risk if a similar idea already exists on-chain or on GitHub.",
     ],
     problem: idea.description.slice(0, 500) || idea.tagline,
-    solution: `${idea.title} : ${idea.tagline}. ${angle ?? "À préciser dans le brouillon."}`,
+    solution: `${idea.title}: ${idea.tagline}. ${angle ?? "To be specified in the draft."}`,
     users:
-      "Builders et membres de la communauté Intuition qui testent des idées produit avant publication GitHub + on-chain.",
-    intuitionFit: `Créer ou réutiliser l'atom « ${idea.title} » et le triple [${idea.title}] - [top project ideas for] - [Intuition]. Le signal (staking) peut ensuite qualifier la qualité de la proposition.`,
+      "Builders and Intuition community members testing product ideas before GitHub + on-chain publication.",
+    intuitionFit: `Create or reuse the atom « ${idea.title} » and the triple [${idea.title}] - [top project ideas for] - [Intuition]. Signal (staking) can then qualify the quality of the proposal.`,
     mvp:
-      "Écran idée → vérification état existant → brouillon affiné → PR intuition-box/ideas → publish on-chain.",
+      "Idea screen → state check → refined draft → PR intuition-box/ideas → publish on-chain.",
     risks: [
-      "Cold start si personne ne stake sur la proposition.",
-      "Fragmentation du graphe si les prédicats de soutien sont publiés trop tôt.",
-      "UX crypto si le staking est demandé avant la valeur produit.",
+      "Cold start if nobody stakes on the proposal.",
+      "Graph fragmentation if support predicates are published too early.",
+      "Crypto UX if staking is required before product value.",
     ],
     challenge:
-      "Prouver qu'un utilisateur non technique comprend pourquoi cette idée mérite d'être scoped et soutenue sur Intuition.",
+      "Prove that a non-technical user understands why this idea deserves to be scoped and supported on Intuition.",
     archetype,
     ecosystemNote:
       overlapMessage?.trim() ||
-      "Vérifiez le graphe et intuition-box/ideas avant de publier de nouveaux atoms.",
+      "Check the graph and intuition-box/ideas before publishing new atoms.",
     generatedAt: new Date().toISOString(),
   };
 }

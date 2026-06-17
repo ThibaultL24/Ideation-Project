@@ -18,12 +18,12 @@ export default function BrainstormIndexPage() {
       <section className="space-y-6">
         <header className="space-y-3">
           <p className="text-xs uppercase tracking-widest text-[var(--accent)]">
-            Brainstorm · idée libre
+            Brainstorm · free-form
           </p>
-          <h1 className="text-3xl font-bold">Décrivez votre hunch</h1>
+          <h1 className="text-3xl font-bold">Describe your hunch</h1>
           <p className="max-w-2xl text-sm text-[var(--muted)]">
-            Parcours IA en 5 étapes : similarités, questions, synthèse, challenge
-            — puis publication GitHub et attestation onchain.
+            5-step AI journey: similarities, questions, synthesis, challenge — then
+            GitHub publication and onchain attestation.
           </p>
         </header>
         <IdeationFlow />
@@ -32,15 +32,15 @@ export default function BrainstormIndexPage() {
       <section className="space-y-6 border-t border-[var(--border)] pt-10">
         <header className="space-y-3">
           <p className="text-xs uppercase tracking-widest text-[var(--accent)]">
-            Catalogue · par thème
+            Catalog · by theme
           </p>
           <h2 className="text-2xl font-bold">
-            Que voulez-vous créer aujourd&apos;hui ?
+            What do you want to build today?
           </h2>
           <p className="max-w-2xl text-sm text-[var(--muted)]">
-            Choisissez un thème pour voir les idées déjà soutenues onchain. Si rien
-            ne correspond, décrivez votre projet — nous vérifierons les doublons
-            avant toute publication.
+            Pick a theme to see ideas already supported onchain. If nothing fits,
+            describe your project — we will check for duplicates before any
+            publication.
           </p>
         </header>
         <CategoryGrid categories={grid} />

@@ -5,9 +5,9 @@ import { categoryToSlug } from "@/lib/ideas/category";
 
 function formatShares(shares: number): string {
   if (shares <= 0) return "—";
-  if (shares >= 1_000_000) return `${(shares / 1_000_000).toFixed(1)}M parts`;
-  if (shares >= 1_000) return `${(shares / 1_000).toFixed(1)}k parts`;
-  return `${shares} parts`;
+  if (shares >= 1_000_000) return `${(shares / 1_000_000).toFixed(1)}M shares`;
+  if (shares >= 1_000) return `${(shares / 1_000).toFixed(1)}k shares`;
+  return `${shares} shares`;
 }
 
 interface PopularIdeaCardProps {
@@ -28,7 +28,7 @@ export function PopularIdeaCard({ row }: PopularIdeaCardProps) {
         {row.idea.tagline}
       </p>
       <p className="mt-4 text-xs text-[var(--accent)]">
-        Popularité · {formatShares(row.totalShares)}
+        Popularity · {formatShares(row.totalShares)}
       </p>
     </Link>
   );

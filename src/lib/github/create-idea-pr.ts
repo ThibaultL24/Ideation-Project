@@ -145,7 +145,7 @@ export async function createIdeaGithubPr(
     return {
       mode: "manual",
       reason:
-        "Connectez votre compte GitHub pour ouvrir une PR depuis votre fork.",
+        "Connect your GitHub account to open a PR from your fork.",
       plan,
       githubNewFileUrl: newFileUrl,
       fallbackCommands: plan.fallbackCommands,
@@ -159,7 +159,7 @@ export async function createIdeaGithubPr(
   if (!owner || !repo || !targetOwner || !targetName) {
     return {
       mode: "error",
-      error: "GITHUB_PUBLISH_REPO ou GITHUB_TARGET_REPO invalide (format owner/repo).",
+      error: "Invalid GITHUB_PUBLISH_REPO or GITHUB_TARGET_REPO (expected owner/repo).",
       plan,
       githubNewFileUrl: newFileUrl,
       fallbackCommands: plan.fallbackCommands,
@@ -172,7 +172,7 @@ export async function createIdeaGithubPr(
       { method: "GET", token },
     );
     const baseSha = ref.object?.sha;
-    if (!baseSha) throw new Error("Impossible de lire la branche de base sur le fork.");
+    if (!baseSha) throw new Error("Could not read base branch on fork.");
 
     const branch = `${plan.branchName}-${Date.now().toString(36)}`;
     await githubJson(`https://api.github.com/repos/${owner}/${repo}/git/refs`, {
@@ -222,7 +222,7 @@ export async function createIdeaGithubPr(
       },
     );
 
-    if (!pr.html_url) throw new Error("PR créée mais URL manquante dans la réponse GitHub.");
+    if (!pr.html_url) throw new Error("PR created but URL missing in GitHub response.");
 
     return {
       mode: "created",

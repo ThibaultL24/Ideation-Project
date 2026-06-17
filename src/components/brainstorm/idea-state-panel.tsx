@@ -10,24 +10,24 @@ const ACTION_COPY: Record<
   { title: string; description: string }
 > = {
   view_ready: {
-    title: "Idée prête",
-    description: "Scoped, PR et présence onchain détectées.",
+    title: "Idea ready",
+    description: "Scoped, PR, and on-chain presence detected.",
   },
   prepare_onchain: {
-    title: "Finaliser onchain",
-    description: "PR présente — compléter atom ou triple cœur.",
+    title: "Finalize on-chain",
+    description: "PR present — complete atom or core triple.",
   },
   sync_db: {
-    title: "Synchroniser",
-    description: "Onchain détecté mais pas marqué scoped en base.",
+    title: "Sync",
+    description: "On-chain detected but not marked scoped in catalog.",
   },
   brainstorm: {
     title: "Brainstorm",
-    description: "Idée déjà travaillée en base — affiner avant PR.",
+    description: "Idea already worked in catalog — refine before PR.",
   },
   create_with_prompt: {
-    title: "Créer l'idée",
-    description: "Pas encore scoped ni PR — utiliser le prompt ci-dessous.",
+    title: "Create the idea",
+    description: "Not scoped or PR yet — use the suggested prompt below.",
   },
 };
 
@@ -65,35 +65,33 @@ export function IdeaStatePanel({
 
       <section className="grid gap-3 sm:grid-cols-3">
         <StatusBlock
-          label="Base (scoped)"
+          label="Catalog (scoped)"
           ok={state.db.scoped}
           detail={
             state.db.scoped
-              ? `Statut : ${state.db.status}`
-              : "Encore au catalogue brut"
+              ? `Status: ${state.db.status}`
+              : "Still raw catalog entry"
           }
         />
         <StatusBlock
           label="GitHub PR"
           ok={state.db.hasGithubPr}
-          detail={
-            state.db.hasGithubPr ? "PR enregistrée" : "Aucune PR détectée"
-          }
+          detail={state.db.hasGithubPr ? "PR on record" : "No PR detected"}
         />
         <StatusBlock
-          label="Onchain"
+          label="On-chain"
           ok={Boolean(state.onchain?.atomInIndexer)}
           loading={loadingOnchain}
           detail={
             loadingOnchain
-              ? "Vérification…"
+              ? "Checking…"
               : state.onchain?.atomInIndexer
                 ? state.onchain.coreTriplePresent
-                  ? "Atom + triple cœur"
-                  : "Atom sans triple cœur"
+                  ? "Atom + core triple"
+                  : "Atom without core triple"
                 : state.onchain === null
-                  ? "Non vérifié"
-                  : "Pas d'atom indexé"
+                  ? "Not verified"
+                  : "No indexed atom"
           }
         />
       </section>
@@ -114,21 +112,21 @@ export function IdeaStatePanel({
           href={`/brainstorm/idea/${state.slug}#publication`}
           className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
         >
-          Publier
+          Publish
         </Link>
         <Link
           href={`/ideas/${state.slug}`}
           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
         >
-          Fiche catalogue
+          Catalog entry
         </Link>
         {!state.db.hasGithubPr ? (
           <button
             type="button"
-            onClick={copyPrompt}
+            onClick={() => void copyPrompt()}
             className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
           >
-            {copied ? "Copié" : "Copier le prompt"}
+            {copied ? "Copied" : "Copy prompt"}
           </button>
         ) : null}
         {githubPrUrl ? (
@@ -138,7 +136,7 @@ export function IdeaStatePanel({
             rel="noopener noreferrer"
             className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
           >
-            Voir la PR
+            View PR
           </a>
         ) : null}
       </div>
@@ -146,7 +144,7 @@ export function IdeaStatePanel({
       {state.nextAction === "create_with_prompt" ||
       state.nextAction === "brainstorm" ? (
         <section>
-          <h3 className="text-sm font-semibold">Prompt suggéré</h3>
+          <h3 className="text-sm font-semibold">Suggested prompt</h3>
           <pre className="mt-2 max-h-48 overflow-auto rounded-lg bg-[var(--background)] p-4 text-xs text-[var(--muted)] whitespace-pre-wrap">
             {prompt}
           </pre>
@@ -175,7 +173,7 @@ function StatusBlock({
           loading ? "text-[var(--muted)]" : ok ? "text-emerald-400" : "text-amber-400"
         }`}
       >
-        {loading ? "…" : ok ? "Oui" : "Non"}
+        {loading ? "…" : ok ? "Yes" : "No"}
       </p>
       <p className="mt-1 text-xs text-[var(--muted)]">{detail}</p>
     </div>

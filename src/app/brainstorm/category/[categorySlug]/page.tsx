@@ -28,17 +28,17 @@ export default async function BrainstormCategoryPage({
           href="/brainstorm"
           className="text-sm text-[var(--accent)] hover:underline"
         >
-          ← Tous les thèmes
+          ← All themes
         </Link>
         <h1 className="text-2xl font-bold">{category}</h1>
         <p className="text-sm text-[var(--muted)]">
-          Idées déjà publiées onchain, triées par popularité (parts du vault).
+          Ideas already published onchain, sorted by popularity (vault shares).
         </p>
       </header>
 
       {popular.length === 0 ? (
         <p className="rounded-xl border border-[var(--border)] bg-[var(--card)] p-6 text-[var(--muted)]">
-          Aucune idée indexée dans cette catégorie pour l’instant.
+          No ideas indexed in this category yet.
         </p>
       ) : (
         <ul className="grid gap-4 sm:grid-cols-2">
@@ -52,13 +52,13 @@ export default async function BrainstormCategoryPage({
 
       <div className="border-t border-[var(--border)] pt-8">
         <p className="text-sm text-[var(--muted)]">
-          Rien ne correspond à ce que vous voulez créer ?
+          Nothing matches what you want to build?
         </p>
         <Link
           href={`/brainstorm/new?category=${encodeURIComponent(category)}`}
           className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black"
         >
-          Créer une nouvelle idée
+          Create a new idea
         </Link>
       </div>
     </div>

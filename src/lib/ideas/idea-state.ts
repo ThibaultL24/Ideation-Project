@@ -14,6 +14,7 @@ import {
   pickCanonicalAtom,
   verifyAtomQueryable,
 } from "@/lib/intuition/graphql";
+import { resolveAtomIdByProjectName } from "./verify-atom-by-name";
 
 const SCOPED_STATUSES = new Set<IdeaStatus>([
   "github_ready",
@@ -129,7 +130,11 @@ export async function verifyIdeaOnchain(
   idea: Idea,
 ): Promise<IdeaOnchainState> {
   const config = getNetworkConfig();
-  const atomId = getReportedAtomId(idea);
+  let atomId = getReportedAtomId(idea);
+
+  if (!atomId && idea.title.trim()) {
+    atomId = await resolveAtomIdByProjectName(idea.title, config.network);
+  }
 
   let atomInIndexer = false;
   if (atomId) {
@@ -177,13 +182,13 @@ export function buildBadges(
   db: IdeaDbState,
   onchain: IdeaOnchainState | null,
 ): string[] {
-  const badges: string[] = ["catalogue"];
+  const badges: string[] = ["catalog"];
   if (db.scoped) badges.push("scoped");
   if (db.hasGithubPr) badges.push("pr");
   if (onchain?.atomInIndexer) badges.push("onchain");
   if (onchain?.coreTriplePresent) badges.push("triple");
   if (!db.scoped && !onchain?.atomInIndexer && !db.hasGithubPr) {
-    badges.push("a_travailler");
+    badges.push("needs_work");
   }
   return badges;
 }

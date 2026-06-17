@@ -2,12 +2,12 @@
 import type { IdeaFullState } from "@/lib/ideas/idea-state";
 
 const BADGE_LABELS: Record<string, string> = {
-  catalogue: "Catalogue",
+  catalog: "Catalog",
   scoped: "Scoped",
-  pr: "PR GitHub",
+  pr: "GitHub PR",
   onchain: "Onchain",
-  triple: "Triple cœur",
-  a_travailler: "À travailler",
+  triple: "Core triple",
+  needs_work: "Needs work",
 };
 
 interface IdeaCardProps {

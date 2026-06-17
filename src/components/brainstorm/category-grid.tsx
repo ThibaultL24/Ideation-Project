@@ -17,7 +17,7 @@ export function CategoryGrid({ categories }: CategoryGridProps) {
           >
             <h2 className="font-semibold leading-snug">{name}</h2>
             <p className="mt-auto pt-3 text-xs text-[var(--muted)]">
-              {count} idée{count > 1 ? "s" : ""} au catalogue
+              {count} idea{count !== 1 ? "s" : ""} in catalog
             </p>
           </Link>
         </li>

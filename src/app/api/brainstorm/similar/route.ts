@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     if (intent) {
       if (intent.length < 10) {
         return NextResponse.json(
-          { error: "Décrivez votre idée en au moins 10 caractères." },
+          { error: "Describe your idea in at least 10 characters." },
           { status: 400 },
         );
       }

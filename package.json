@@ -30,6 +30,8 @@
     "@0xintuition/graphql": "^2.0.2",
     "@0xintuition/protocol": "^2.0.2",
     "@0xintuition/sdk": "^2.0.2",
+    "@tanstack/react-query": "^5.101.0",
+    "@walletconnect/ethereum-provider": "^2.23.9",
     "dotenv": "^16.4.7",
     "geist": "^1.7.2",
     "next": "^15.3.3",
@@ -37,6 +39,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "viem": "^2.48.1",
+    "wagmi": "^3.6.16",
     "zod": "^3.25.28"
   },
   "devDependencies": {

@@ -31,7 +31,7 @@ async function githubJson<T>(
 
 export function userPublishRepo(login: string, targetRepo: string): string {
   const [, repoName] = targetRepo.split("/");
-  if (!repoName) throw new Error("GITHUB_TARGET_REPO invalide.");
+  if (!repoName) throw new Error("Invalid GITHUB_TARGET_REPO.");
   return `${login}/${repoName}`;
 }
 
@@ -43,7 +43,7 @@ export async function ensureUserIdeasFork(params: {
   const targetRepo = params.targetRepo?.trim() || "intuition-box/ideas";
   const publishRepo = userPublishRepo(params.login, targetRepo);
   const [owner, repo] = publishRepo.split("/");
-  if (!owner || !repo) throw new Error("Impossible de déterminer le fork utilisateur.");
+  if (!owner || !repo) throw new Error("Could not determine user fork.");
 
   const existing = await fetch(
     `https://api.github.com/repos/${owner}/${repo}`,

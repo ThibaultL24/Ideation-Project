@@ -6,22 +6,22 @@ export function buildFallbackIdeationChallenge(params: {
   overlapMessage?: string;
 }) {
   return {
-    mainObjection: `« ${params.headline} » doit prouver que le staking apporte plus que des likes ou des votes classiques. Si les utilisateurs n'ont aucune raison de mettre de la valeur derrière leurs claims, l'idée fonctionne aussi bien en Web2 — et donc Intuition n'est plus nécessaire.`,
+    mainObjection: `« ${params.headline} » must prove that staking adds more than likes or classic votes. If users have no reason to put value behind their claims, the idea works just as well on Web2 — and Intuition is no longer necessary.`,
     counterDirection:
-      "Et si la première version inversait la logique : au lieu de demander aux utilisateurs de staker, l'app lit le signal existant du graphe Intuition pour classer ou recommander, et n'introduit le staking qu'une fois la valeur démontrée.",
+      "What if the first version flipped the logic: instead of asking users to stake, the app reads existing signal from the Intuition graph to rank or recommend, and only introduces staking once value is demonstrated.",
     killerAssumptions: [
-      "Les premiers utilisateurs acceptent de staker (ou au moins d'attester) sans incitation financière immédiate.",
-      `Le fit Intuition est réel : ${params.intuitionFit.slice(0, 120)}…`,
-      "Le cold start est surmontable avec une seule communauté pilote.",
+      "Early users accept staking (or at least attesting) without immediate financial incentive.",
+      `Intuition fit is real: ${params.intuitionFit.slice(0, 120)}…`,
+      "Cold start is surmountable with a single pilot community.",
     ],
     openQuestions: [
-      "Quel est le premier claim concret sur lequel quelqu'un stakerait ?",
-      "Que voit un utilisateur qui arrive quand le graphe est encore vide ?",
+      "What is the first concrete claim someone would stake on?",
+      "What does a user see when they arrive and the graph is still empty?",
       params.overlapMessage
-        ? `Comment se différencier de l'existant ? (${params.overlapMessage})`
-        : "Existe-t-il déjà un atom ou une idée proche sur le graphe ?",
+        ? `How to differentiate from existing work? (${params.overlapMessage})`
+        : "Does a similar atom or idea already exist on the graph?",
     ],
     verdict:
-      "Idée à potentiel, mais le « pourquoi Intuition » doit être prouvé par un cas d'usage précis avant de construire. Stress test local (sans IA) — relancez avec une clé OpenAI pour une critique plus fine.",
+      "Promising idea, but the « why Intuition » must be proven with a specific use case before building. Local stress test (no AI) — re-run with an OpenAI key for a finer critique.",
   };
 }
