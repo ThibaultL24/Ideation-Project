@@ -96,6 +96,12 @@ export function AtomDetailPanel({
           Refine this idea
         </Link>
         <Link
+          href="/brainstorm#free-form"
+          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black"
+        >
+          Create my own idea instead
+        </Link>
+        <Link
           href={`/brainstorm/category/${categorySlug}`}
           className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
         >

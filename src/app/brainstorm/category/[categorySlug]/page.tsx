@@ -34,6 +34,12 @@ export default async function BrainstormCategoryPage({
         <p className="text-sm text-[var(--muted)]">
           Ideas already published onchain, sorted by popularity (vault shares).
         </p>
+        <Link
+          href="/brainstorm#free-form"
+          className="inline-block rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
+        >
+          Create my own idea (no card) →
+        </Link>
       </header>
 
       {popular.length === 0 ? (

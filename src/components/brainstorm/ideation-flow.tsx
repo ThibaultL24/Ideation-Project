@@ -310,6 +310,7 @@ export function IdeationFlow() {
               onChange={(e) => setIntent(e.target.value)}
             />
           </label>
+          <div className="flex flex-wrap gap-3">
           <button
             type="button"
             disabled={loading || intent.trim().length < 10}
@@ -318,6 +319,18 @@ export function IdeationFlow() {
           >
             {loading ? "Searching…" : "Find similar ideas"}
           </button>
+          <button
+            type="button"
+            disabled={intent.trim().length < 10}
+            onClick={chooseNew}
+            className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] transition hover:bg-[var(--accent)]/10 disabled:opacity-40"
+          >
+            Start without catalog →
+          </button>
+          </div>
+          <p className="text-xs text-[var(--muted)]">
+            No card needed — go straight to the guided questions with your own idea.
+          </p>
         </section>
       ) : null}
 
@@ -346,10 +359,24 @@ export function IdeationFlow() {
             compact
           />
 
+          <section className="rounded-xl border border-dashed border-[var(--accent)]/50 bg-[var(--card)] p-5">
+            <h3 className="font-semibold">Create a new idea</h3>
+            <p className="mt-1 text-sm text-[var(--muted)]">
+              Keep your original wording and run ideation on it — no catalog card required.
+            </p>
+            <button
+              type="button"
+              onClick={chooseNew}
+              className="mt-4 rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
+            >
+              Start from my idea →
+            </button>
+          </section>
+
           {similar.cards.length > 0 ? (
             <section className="space-y-3">
               <h3 className="text-sm font-semibold">
-                Does one of these ideas inspire you?
+                Or pick a catalog idea for inspiration (optional)
               </h3>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {similar.cards.map((card) => (
@@ -364,23 +391,9 @@ export function IdeationFlow() {
             </section>
           ) : (
             <p className="text-sm text-[var(--muted)]">
-              No close match — you can start from scratch.
+              No close match in the catalog.
             </p>
           )}
-
-          <section className="rounded-xl border border-dashed border-[var(--accent)]/50 bg-[var(--card)] p-5">
-            <h3 className="font-semibold">Create a new idea</h3>
-            <p className="mt-1 text-sm text-[var(--muted)]">
-              Keep your original wording and run ideation on it.
-            </p>
-            <button
-              type="button"
-              onClick={chooseNew}
-              className="mt-4 rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
-            >
-              Start from my idea →
-            </button>
-          </section>
         </>
       ) : null}
 
@@ -507,6 +520,13 @@ export function IdeationFlow() {
               >
                 Skip to Prepare
               </button>
+              <button
+                type="button"
+                onClick={resetAll}
+                className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+              >
+                Start another project →
+              </button>
             </div>
           </section>
         )
@@ -590,6 +610,13 @@ export function IdeationFlow() {
                 className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white disabled:opacity-40"
               >
                 Continue to publication →
+              </button>
+              <button
+                type="button"
+                onClick={resetAll}
+                className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+              >
+                Start another project →
               </button>
               {workingSlug ? (
                 <Link

@@ -15,6 +15,7 @@ export const workspaceStrings = {
   saved: "Saved",
   catalogCard: "Catalog entry",
   backThemes: "Back to themes",
+  newProject: "Start a new project",
   ideaNotFound: "Idea not found",
   ideaNotFoundDetail:
     "This free-form idea is not stored on this device. Restart the Brainstorm flow.",

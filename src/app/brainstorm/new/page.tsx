@@ -19,11 +19,22 @@ export default async function BrainstormNewPage({
       <div className="space-y-4">
         <h1 className="text-2xl font-bold">Create an idea</h1>
         <p className="text-[var(--muted)]">
-          Pick a theme from the Brainstorm page first.
+          You do not need to pick a theme first — describe your project in the
+          free-form brainstorm flow.
         </p>
-        <Link href="/brainstorm" className="text-[var(--accent)] hover:underline">
-          ← Choose a theme
+        <Link
+          href="/brainstorm#free-form"
+          className="inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black"
+        >
+          Start without a card →
         </Link>
+        <p className="text-sm text-[var(--muted)]">
+          Or{" "}
+          <Link href="/brainstorm" className="text-[var(--accent)] hover:underline">
+            browse themes
+          </Link>{" "}
+          to explore existing catalog ideas.
+        </p>
       </div>
     );
   }

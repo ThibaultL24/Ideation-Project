@@ -241,6 +241,12 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
               </Link>
             ) : null}
             <Link
+              href="/brainstorm#free-form"
+              className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+            >
+              {ws.newProject} →
+            </Link>
+            <Link
               href="/brainstorm"
               className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
             >

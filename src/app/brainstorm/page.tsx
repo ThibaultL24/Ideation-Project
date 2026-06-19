@@ -1,4 +1,5 @@
 // src/app/brainstorm/page.tsx
+import Link from "next/link";
 import { CategoryGrid } from "@/components/brainstorm/category-grid";
 import { IdeationFlow } from "@/components/brainstorm/ideation-flow";
 import { getCategoryCounts } from "@/lib/ideas/category";
@@ -15,7 +16,7 @@ export default function BrainstormIndexPage() {
 
   return (
     <div className="space-y-12">
-      <section className="space-y-6">
+      <section className="space-y-6" id="free-form">
         <header className="space-y-3">
           <p className="text-xs uppercase tracking-widest text-[var(--accent)]">
             Brainstorm · free-form
@@ -38,10 +39,15 @@ export default function BrainstormIndexPage() {
             What do you want to build today?
           </h2>
           <p className="max-w-2xl text-sm text-[var(--muted)]">
-            Pick a theme to see ideas already supported onchain. If nothing fits,
-            describe your project — we will check for duplicates before any
-            publication.
+            Pick a theme to see ideas already supported onchain — or skip the catalog
+            and describe your own project above.
           </p>
+          <Link
+            href="#free-form"
+            className="inline-block rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
+          >
+            Create without a card →
+          </Link>
         </header>
         <CategoryGrid categories={grid} />
       </section>

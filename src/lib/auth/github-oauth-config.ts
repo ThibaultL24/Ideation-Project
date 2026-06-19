@@ -18,6 +18,11 @@ function appOrigin(): string {
   return "http://localhost:3000";
 }
 
+/** Public browser origin (respects NEXT_PUBLIC_APP_URL / Cursor port forward). */
+export function appPublicOrigin(): string {
+  return appOrigin();
+}
+
 export function getGithubOAuthConfig():
   | { ok: true; config: GithubOAuthConfig }
   | { ok: false; reason: string } {

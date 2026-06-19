@@ -46,6 +46,7 @@ export const publishStrings = {
   viewAtomExplorer: "View atom on explorer →",
   openPrGithub: "Open PR on GitHub →",
   createFileGithub: "Create file on GitHub (browser) →",
+  startAnotherIdea: "Start another project",
   markdownCopied: "Markdown copied to clipboard.",
   openingPr: "Opening a PR on intuition-box/ideas…",
   apiUnreachable: "Could not reach the publish API.",
@@ -89,4 +90,5 @@ export const githubStrings = {
     "Connect GitHub to open a PR from your fork of intuition-box/ideas.",
   connectButton: "Sign in with GitHub",
   forkLabel: "Fork",
+  oauthErrorPrefix: "GitHub connection failed:",
 } as const;

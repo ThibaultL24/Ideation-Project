@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import type { Idea } from "@/lib/ideas/schema";
@@ -561,6 +562,19 @@ export function BrainstormPublishSection({
           </pre>
         </section>
       ) : null}
+
+      <section className="rounded-xl border border-dashed border-[var(--border)] bg-[var(--card)] p-5">
+        <h3 className="font-semibold">{s.startAnotherIdea}</h3>
+        <p className="mt-1 text-sm text-[var(--muted)]">
+          Done with this idea? Start a fresh brainstorm without picking a catalog card.
+        </p>
+        <Link
+          href="/brainstorm#free-form"
+          className="mt-4 inline-block rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
+        >
+          {s.startAnotherIdea} →
+        </Link>
+      </section>
     </section>
   );
 }

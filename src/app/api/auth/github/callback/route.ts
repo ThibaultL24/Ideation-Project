@@ -1,52 +1,69 @@
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import {
   GITHUB_OAUTH_STATE_COOKIE,
-  setGithubSessionCookie,
+  GITHUB_SESSION_COOKIE,
+  githubSessionCookieOptions,
+  oauthStateCookieOptions,
+  readRequestCookie,
+  signPayload,
   verifyPayload,
   type GithubOAuthStatePayload,
+  type GithubSessionPayload,
 } from "@/lib/auth/github-session";
-import { getGithubOAuthConfig, safeReturnTo } from "@/lib/auth/github-oauth-config";
+import {
+  appPublicOrigin,
+  getGithubOAuthConfig,
+  safeReturnTo,
+} from "@/lib/auth/github-oauth-config";
 import {
   ensureUserIdeasFork,
   exchangeGithubCode,
   fetchGithubUser,
 } from "@/lib/github/user-fork";
 
-function redirectWithError(request: Request, message: string): NextResponse {
-  const origin = new URL(request.url).origin;
-  const url = new URL("/brainstorm", origin);
+function redirectWithError(
+  message: string,
+  returnTo?: string,
+): NextResponse {
+  const url = new URL(safeReturnTo(returnTo), appPublicOrigin());
   url.searchParams.set("github_error", message.slice(0, 180));
-  return NextResponse.redirect(url);
+  const response = NextResponse.redirect(url);
+  response.cookies.delete(GITHUB_OAUTH_STATE_COOKIE);
+  return response;
 }
 
 export async function GET(request: Request) {
   const oauth = getGithubOAuthConfig();
   if (!oauth.ok) {
-    return redirectWithError(request, oauth.reason);
+    return redirectWithError(oauth.reason);
   }
 
   const { searchParams } = new URL(request.url);
   const code = searchParams.get("code")?.trim();
   const state = searchParams.get("state")?.trim();
   if (!code || !state) {
-    return redirectWithError(request, "Missing GitHub OAuth parameters.");
+    return redirectWithError("Missing GitHub OAuth parameters.");
   }
 
-  const cookieStore = await cookies();
-  const stateCookie = cookieStore.get(GITHUB_OAUTH_STATE_COOKIE)?.value;
-  cookieStore.delete(GITHUB_OAUTH_STATE_COOKIE);
-
-  if (!stateCookie || stateCookie !== state) {
-    return redirectWithError(request, "Invalid OAuth state — try connecting again.");
-  }
+  const stateCookie = readRequestCookie(request, GITHUB_OAUTH_STATE_COOKIE);
 
   const statePayload = verifyPayload<GithubOAuthStatePayload>(
     state,
     oauth.config.sessionSecret,
   );
+  const returnTo = statePayload
+    ? safeReturnTo(statePayload.returnTo)
+    : undefined;
+
+  if (!stateCookie || stateCookie !== state) {
+    return redirectWithError(
+      "Invalid OAuth state — use the same URL as NEXT_PUBLIC_APP_URL (e.g. http://localhost:3047) and try again.",
+      returnTo,
+    );
+  }
+
   if (!statePayload) {
-    return redirectWithError(request, "OAuth session expired.");
+    return redirectWithError("OAuth session expired.", returnTo);
   }
 
   try {
@@ -63,23 +80,27 @@ export async function GET(request: Request) {
       targetRepo: oauth.config.targetRepo,
     });
 
-    await setGithubSessionCookie(
-      {
-        accessToken,
-        login: user.login,
-        avatarUrl: user.avatarUrl,
-        publishRepo,
-        createdAt: Date.now(),
-      },
-      oauth.config.sessionSecret,
-    );
+    const session: GithubSessionPayload = {
+      accessToken,
+      login: user.login,
+      avatarUrl: user.avatarUrl,
+      publishRepo,
+      createdAt: Date.now(),
+    };
 
-    const returnTo = safeReturnTo(statePayload.returnTo);
-    const origin = new URL(request.url).origin;
-    return NextResponse.redirect(new URL(returnTo, origin));
+    const response = NextResponse.redirect(
+      new URL(safeReturnTo(statePayload.returnTo), appPublicOrigin()),
+    );
+    response.cookies.delete(GITHUB_OAUTH_STATE_COOKIE);
+    response.cookies.set(
+      GITHUB_SESSION_COOKIE,
+      signPayload(session, oauth.config.sessionSecret),
+      githubSessionCookieOptions(),
+    );
+    return response;
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "GitHub connection failed.";
-    return redirectWithError(request, message);
+    return redirectWithError(message, returnTo);
   }
 }
