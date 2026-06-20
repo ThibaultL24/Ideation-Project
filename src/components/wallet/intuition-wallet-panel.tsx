@@ -29,7 +29,7 @@ export function IntuitionWalletPanel() {
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-(--agora-intuition-gold)">
-            {walletStrings.panelKicker}
+            {networkLabel}
           </p>
           <h3 className="mt-1 text-sm font-semibold tracking-tight text-(--agora-intuition-heading)">
             {walletStrings.panelTitle}
@@ -64,7 +64,10 @@ export function IntuitionWalletPanel() {
           role="status"
         >
           <p className="text-xs leading-snug text-amber-100/90">
-            {walletStrings.wrongNetwork.replace("{chainId}", String(targetChain.id))}
+            {walletStrings.wrongNetwork
+              .replace("{network}", networkLabel)
+              .replace("{chainId}", String(targetChain.id))
+              .replace("{symbol}", balanceSymbol)}
           </p>
           <button
             type="button"

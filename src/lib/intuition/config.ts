@@ -4,8 +4,13 @@ import {
   intuitionMainnet,
   intuitionTestnet,
 } from "@0xintuition/protocol";
+import {
+  readIntuitionNetworkEnv,
+  readIntuitionRpcOverride,
+  type IntuitionNetwork,
+} from "@/lib/env/network";
 
-export type IntuitionNetwork = "mainnet" | "testnet";
+export type { IntuitionNetwork };
 
 export interface IntuitionNetworkConfig {
   network: IntuitionNetwork;
@@ -13,6 +18,8 @@ export interface IntuitionNetworkConfig {
   rpc: string;
   graphql: string;
   explorer: string;
+  portal: string;
+  hub: string;
   multivault: `0x${string}`;
   nativeSymbol: string;
 }
@@ -24,6 +31,8 @@ const CONFIG: Record<IntuitionNetwork, IntuitionNetworkConfig> = {
     rpc: "https://rpc.intuition.systems/http",
     graphql: "https://mainnet.intuition.sh/v1/graphql",
     explorer: "https://explorer.intuition.systems",
+    portal: "https://portal.intuition.systems/explore/home",
+    hub: "https://hub.intuition.systems/",
     multivault: getMultiVaultAddressFromChainId(intuitionMainnet.id),
     nativeSymbol: "TRUST",
   },
@@ -33,20 +42,29 @@ const CONFIG: Record<IntuitionNetwork, IntuitionNetworkConfig> = {
     rpc: "https://testnet.rpc.intuition.systems/http",
     graphql: "https://testnet.intuition.sh/v1/graphql",
     explorer: "https://testnet.explorer.intuition.systems",
+    portal: "https://testnet.portal.intuition.systems/explore/home",
+    hub: "https://testnet.hub.intuition.systems/",
     multivault: getMultiVaultAddressFromChainId(intuitionTestnet.id),
     nativeSymbol: "tTRUST",
   },
 };
 
+/** @deprecated Prefer readIntuitionNetworkEnv from @/lib/env/network */
 export function resolveNetwork(): IntuitionNetwork {
-  const raw = process.env["INTUITION_NETWORK"]?.trim().toLowerCase();
-  return raw === "mainnet" ? "mainnet" : "testnet";
+  return readIntuitionNetworkEnv();
 }
 
 export function getNetworkConfig(
-  network = resolveNetwork(),
+  network = readIntuitionNetworkEnv(),
 ): IntuitionNetworkConfig {
-  return CONFIG[network];
+  const base = CONFIG[network];
+  const rpcOverride = readIntuitionRpcOverride();
+  if (!rpcOverride) return base;
+  return { ...base, rpc: rpcOverride };
+}
+
+export function getNetworkLabel(network = readIntuitionNetworkEnv()): string {
+  return network === "mainnet" ? "Intuition mainnet" : "Intuition testnet";
 }
 
 export const MAINNET_INTUITION_PROTOCOL_TERM_ID =
@@ -56,5 +74,24 @@ export const IDEA_PREDICATE_LABEL = "top project ideas for";
 
 export const BOUNTY_PREDICATE_LABEL = IDEA_PREDICATE_LABEL;
 
-/** Objet canonique du triple bounty (aligné sur resolveObjectTermId / migration 3A). */
+/** Canonical triple object label (aligned with resolveObjectTermId / migration 3A). */
 export const INTUITION_PROTOCOL_OBJECT_LABEL = "Intuition Protocol";
+
+export function getPortalExplorerUrl(
+  network = readIntuitionNetworkEnv(),
+): string {
+  return getNetworkConfig(network).portal;
+}
+
+export function getExplorerUrl(
+  network = readIntuitionNetworkEnv(),
+): string {
+  return getNetworkConfig(network).explorer;
+}
+
+export function explorerAtomUrl(
+  termId: string,
+  network = readIntuitionNetworkEnv(),
+): string {
+  return `${getExplorerUrl(network)}/atom/${termId}`;
+}

@@ -97,7 +97,7 @@ export async function exchangeGithubCode(params: {
 
   if (!response.ok || !json.access_token) {
     throw new Error(
-      json.error_description || json.error || "Échec OAuth GitHub.",
+      json.error_description || json.error || "GitHub OAuth failed.",
     );
   }
 

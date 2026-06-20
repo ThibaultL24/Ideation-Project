@@ -14,7 +14,7 @@
   --primary: oklch(0.922 0 0);
   --accent: oklch(0.87 0.085 174);
 
-  /* Wallet panel tokens (Portal / Talaria parity) */
+  /* Wallet panel design tokens */
   --rgb-sea-accent: 120 220 210;
   --color-bg-elevated: oklch(0.18 0 0);
   --color-bg-surface: oklch(0.145 0 0);

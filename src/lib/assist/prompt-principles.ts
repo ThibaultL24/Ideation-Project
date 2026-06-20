@@ -1,5 +1,8 @@
 // src/lib/assist/prompt-principles.ts
-/** Principes communs — coach produit + architecte sémantique, pas générateur d'idées. */
+/** Shared principles — product coach + semantic architect, not idea generator. */
+
+export const OUTPUT_LANGUAGE_RULE =
+  "Always write all user-facing text in English only, regardless of the user's input language.";
 
 export const CORE_IDEATION_PRINCIPLES = `
 Help the user turn a raw idea into a solid Intuition-native product proposal.
@@ -18,5 +21,5 @@ Do not replace the user's intent.
 Do not over-expand the idea.
 Do not produce vague startup language.
 Prefer clarity, semantic precision, and feasibility.
-Write in the same language as the user's input when possible.
+${OUTPUT_LANGUAGE_RULE}
 `.trim();

@@ -162,8 +162,8 @@ export async function verifyAtomByProjectName(params: {
       coreTriplePresent,
       canPublishNewAtom: false,
       message: coreTriplePresent
-        ? `An atom « ${canonical.label} » already exists with the core triple on ${config.network}.`
-        : `An atom « ${canonical.label} » already exists on ${config.network} (core triple missing).`,
+        ? `An atom "${canonical.label}" already exists with the core triple on ${config.network}.`
+        : `An atom "${canonical.label}" already exists on ${config.network} (core triple missing).`,
     };
   }
 
@@ -176,7 +176,7 @@ export async function verifyAtomByProjectName(params: {
       canonicalAtomId: canonical?.term_id ?? null,
       coreTriplePresent: false,
       canPublishNewAtom: true,
-      message: `No exact atom « ${projectName} » — ${matches.length} similar name(s) found.`,
+      message: `No exact atom "${projectName}" — ${matches.length} similar name(s) found.`,
     };
   }
 
@@ -188,7 +188,7 @@ export async function verifyAtomByProjectName(params: {
     canonicalAtomId: null,
     coreTriplePresent: false,
     canPublishNewAtom: true,
-    message: `No atom found for « ${projectName} » on ${config.network}.`,
+    message: `No atom found for "${projectName}" on ${config.network}.`,
   };
 }
 

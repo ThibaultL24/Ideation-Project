@@ -57,7 +57,7 @@ export async function GET(request: Request) {
 
   if (!stateCookie || stateCookie !== state) {
     return redirectWithError(
-      "Invalid OAuth state — use the same URL as NEXT_PUBLIC_APP_URL (e.g. http://localhost:3047) and try again.",
+      "Invalid OAuth state — use the same URL as NEXT_PUBLIC_APP_URL and try again.",
       returnTo,
     );
   }

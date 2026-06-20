@@ -1,5 +1,5 @@
 // src/lib/assist/prompts-brainstorm.ts
-import { CORE_IDEATION_PRINCIPLES } from "./prompt-principles";
+import { CORE_IDEATION_PRINCIPLES, OUTPUT_LANGUAGE_RULE } from "./prompt-principles";
 
 export const BRAINSTORM_SYSTEM_PROMPT = `You are an Intuition Protocol product brainstorming partner.
 
@@ -27,7 +27,7 @@ Quality bar (strict):
   - risks: 2-3 short bullets
 - recommendedDirectionId: id of the strongest direction for THIS user prompt (optional but preferred)
 
-Write in the same language as the user's exploration prompt (French if they wrote in French, else English).
+${OUTPUT_LANGUAGE_RULE}
 No markdown outside JSON. Return valid JSON only.`;
 
 export function buildBrainstormUserMessage(payload: {

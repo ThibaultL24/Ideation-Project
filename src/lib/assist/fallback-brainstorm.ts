@@ -114,17 +114,17 @@ export function buildFallbackBrainstorm(input: GenerateBrainstormInput): Brainst
         "One canonical predicate + object taxonomy; all UI optimized for staking on that claim only. Graph stays clean — avoids semantic pollution.",
       mvpSketch:
         "Single-screen stake flow, 100 target entities in one category, leaderboard of predictors, export core triple for bounty PR.",
-      whyInteresting: "Fastest path to a legible demo on testnet with minimal atoms.",
-      risks: ["May feel too small", "Hard to expand later", "Needs vivid demo data"],
+      whyInteresting: "Fastest path to a credible v1 with minimal atoms on the graph.",
+      risks: ["May feel too small", "Hard to expand later", "Needs strong seed content"],
     },
   ];
 
   return {
-    territory: `You are exploring ${themes.label} without a fixed product yet — the Intuition ecosystem already has adjacent ideas such as « ${catalogHint} », but there is room to differentiate via audience, wedge, or business model. The white space is not "another app" but **which claims** get staked, **who** seeds supply, and **how** reputation travels. Brainstorm below contrasts consumer, B2B, platform, community, and narrow-wedge paths so you can commit before deep research.`,
+    territory: `You are exploring ${themes.label} without a fixed product yet — the Intuition ecosystem already has adjacent ideas such as "${catalogHint}", but there is room to differentiate via audience, wedge, or business model. The white space is not "another app" but **which claims** get staked, **who** seeds supply, and **how** reputation travels. Brainstorm below contrasts consumer, B2B, platform, community, and narrow-wedge paths so you can commit before deep research.`,
     clarifyingQuestions: [
       "Do you want to serve end-users directly, or empower institutions/experts who already have an audience?",
       "What is your unfair advantage: domain knowledge, distribution, design, or protocol fluency?",
-      "Are you optimizing for a fast testnet demo or a fundable long-term marketplace?",
+      "Are you optimizing for a fast launch or a fundable long-term marketplace?",
       "Which existing product would your ideal user abandon if yours worked?",
       "How comfortable are you with visible disagreement (counter-stakes) in the UX?",
     ],

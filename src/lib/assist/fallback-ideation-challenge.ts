@@ -6,7 +6,7 @@ export function buildFallbackIdeationChallenge(params: {
   overlapMessage?: string;
 }) {
   return {
-    mainObjection: `« ${params.headline} » must prove that staking adds more than likes or classic votes. If users have no reason to put value behind their claims, the idea works just as well on Web2 — and Intuition is no longer necessary.`,
+    mainObjection: `"${params.headline}" must prove that staking adds more than likes or classic votes. If users have no reason to put value behind their claims, the idea works just as well on Web2 — and Intuition is no longer necessary.`,
     counterDirection:
       "What if the first version flipped the logic: instead of asking users to stake, the app reads existing signal from the Intuition graph to rank or recommend, and only introduces staking once value is demonstrated.",
     killerAssumptions: [
@@ -22,6 +22,6 @@ export function buildFallbackIdeationChallenge(params: {
         : "Does a similar atom or idea already exist on the graph?",
     ],
     verdict:
-      "Promising idea, but the « why Intuition » must be proven with a specific use case before building. Local stress test (no AI) — re-run with an OpenAI key for a finer critique.",
+      "Promising idea, but the \"why Intuition\" case must be proven with a specific use case before building. Re-run with an OpenAI key for a deeper critique.",
   };
 }

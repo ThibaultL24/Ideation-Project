@@ -29,11 +29,11 @@ export function buildFallbackIdeationSynthesis(params: {
       .filter(Boolean)
       .join(" "),
     perspectives: [
-      perspectives || "Minimal testnet version with a single pilot community.",
+      perspectives || "A focused pilot with one early community before scaling.",
       "Community curation layer with signal instead of likes.",
       params.catalogTitle
-        ? `Differentiation from catalog entry « ${params.catalogTitle} ».`
-        : "GitHub publication + idea atom on the Intuition graph.",
+        ? `Differentiation from catalog entry "${params.catalogTitle}".`
+        : "GitHub publication plus an idea atom on the Intuition graph.",
     ].filter(Boolean),
     appDescription: [params.intent, feature, intuition].filter(Boolean).join("\n\n"),
     intuitionFit:

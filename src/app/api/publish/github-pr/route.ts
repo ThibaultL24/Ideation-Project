@@ -8,6 +8,7 @@ import {
 } from "@/lib/github/create-idea-pr";
 import { getGithubOAuthConfig } from "@/lib/auth/github-oauth-config";
 import { readGithubSessionFromRequest } from "@/lib/auth/github-session";
+import { getGithubPublishEnv } from "@/lib/env/github-config";
 import { ensureUserIdeasFork } from "@/lib/github/user-fork";
 import { buildPublishPlan } from "@/lib/ideas/publish-plan";
 
@@ -42,11 +43,12 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const publishEnv = getGithubPublishEnv();
   const oauth = getGithubOAuthConfig();
   const targetRepo =
-    oauth.ok ? oauth.config.targetRepo : process.env["GITHUB_TARGET_REPO"]?.trim() || "intuition-box/ideas";
+    oauth.ok ? oauth.config.targetRepo : publishEnv.targetRepo;
   const baseBranch =
-    oauth.ok ? oauth.config.baseBranch : process.env["GITHUB_BASE_BRANCH"]?.trim() || "main";
+    oauth.ok ? oauth.config.baseBranch : publishEnv.baseBranch;
   const plan = buildPublishPlan(idea, body.draft);
   const newFileUrl = buildGithubNewFileUrl(targetRepo, baseBranch, plan.githubPath);
 
@@ -85,11 +87,9 @@ export async function POST(request: NextRequest) {
   }
 
   if (!token) {
-    const envToken = process.env["GITHUB_TOKEN"]?.trim();
-    const envPublishRepo = process.env["GITHUB_PUBLISH_REPO"]?.trim();
-    if (envToken && envPublishRepo) {
-      token = envToken;
-      publishRepo = envPublishRepo;
+    if (publishEnv.botToken && publishEnv.botPublishRepo) {
+      token = publishEnv.botToken;
+      publishRepo = publishEnv.botPublishRepo;
     }
   }
 

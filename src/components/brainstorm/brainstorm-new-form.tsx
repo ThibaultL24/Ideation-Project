@@ -62,7 +62,7 @@ export function BrainstormNewForm({ category }: BrainstormNewFormProps) {
       <form onSubmit={handleVerify} className="space-y-4">
         <label className="block">
           <span className="text-sm font-medium">
-            What do you want to build in « {category} »?
+            What do you want to build in "{category}"?
           </span>
           <textarea
             value={prompt}

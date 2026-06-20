@@ -17,6 +17,7 @@ import { PublishTabNav } from "@/components/brainstorm/publish-tab-nav";
 import type { OnchainPublishPreview } from "@/lib/intuition/publish-preview";
 import type { AtomNameVerification } from "@/lib/ideas/verify-atom-by-name";
 import { publishStrings as s } from "@/lib/strings/publish";
+import { getNetworkConfig } from "@/lib/intuition/config";
 
 interface DetailResponse {
   state: IdeaFullState;
@@ -360,7 +361,7 @@ export function BrainstormPublishSection({
       const explorerUrl =
         data.result?.explorerUrls?.ideaAtom ??
         (data.result?.ideaAtomId
-          ? `${onchainPreview?.explorerBase ?? "https://testnet.explorer.intuition.systems"}/atom/${data.result.ideaAtomId}`
+          ? `${onchainPreview?.explorerBase ?? getNetworkConfig().explorer}/atom/${data.result.ideaAtomId}`
           : undefined);
 
       setOnchainStatus({

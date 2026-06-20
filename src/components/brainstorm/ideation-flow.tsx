@@ -401,7 +401,7 @@ export function IdeationFlow() {
         <>
           <p className="text-sm text-[var(--muted)]">
             {source === "catalog" && catalogTitle
-              ? `Catalog anchor: « ${catalogTitle} » — your intent stays primary.`
+              ? `Catalog anchor: "${catalogTitle}" — your intent stays primary.`
               : "New idea from your description."}
           </p>
           <IdeationQuestionCard
@@ -419,7 +419,7 @@ export function IdeationFlow() {
             onClick={resetAll}
             className="text-sm text-[var(--accent)] hover:underline"
           >
-            Recommencer
+            Start over
           </button>
         </>
       ) : null}

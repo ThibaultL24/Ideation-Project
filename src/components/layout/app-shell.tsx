@@ -1,9 +1,9 @@
 // src/components/layout/app-shell.tsx
 import { HunchGlyph } from "@/components/brand/hunch-logo";
 import { WalletHeaderSlot } from "@/components/wallet/wallet-header-slot";
+import { getExplorerUrl } from "@/lib/intuition/config";
 
-const PORTAL_EXPLORER_URL =
-  "https://testnet.portal.intuition.systems/explore/home";
+const EXPLORER_URL = getExplorerUrl();
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -28,7 +28,7 @@ export function AppShell({ children }: AppShellProps) {
             Catalog
           </a>
           <a
-            href={PORTAL_EXPLORER_URL}
+            href={EXPLORER_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-[var(--muted)] hover:text-white"

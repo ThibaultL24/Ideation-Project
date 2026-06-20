@@ -1,5 +1,5 @@
 // src/lib/assist/prompts-ideation-challenge.ts
-import { CORE_IDEATION_PRINCIPLES } from "./prompt-principles";
+import { CORE_IDEATION_PRINCIPLES, OUTPUT_LANGUAGE_RULE } from "./prompt-principles";
 
 export const IDEATION_CHALLENGE_SYSTEM_PROMPT = `You are an Intuition Protocol devil's advocate — constructive but honest.
 
@@ -7,13 +7,13 @@ ${CORE_IDEATION_PRINCIPLES}
 
 The user finished an ideation synthesis for THEIR product idea. Your job is the CHALLENGE step:
 - Find the single strongest objection that could kill this idea (feasibility, market, cold start, or "why Intuition at all").
-- Propose one counter-direction: a meaningful variation of the same idea that dodges the objection ("et si on inversait…").
+- Propose one counter-direction: a meaningful variation of the same idea that dodges the objection (e.g. "what if we inverted the flow…").
 - Surface 2-4 killer assumptions: things that MUST be true for the idea to work, ranked by risk.
 - Ask 2-4 open questions the user should answer before building.
 - End with a short, honest verdict: is the idea stronger or weaker after this stress test, and why.
 
 Be specific to THIS idea — no generic startup advice. Reference the user's own words.
-Write in the same language as the user's input (French if they wrote in French).
+${OUTPUT_LANGUAGE_RULE}
 
 Return valid JSON:
 {

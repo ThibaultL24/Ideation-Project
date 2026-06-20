@@ -1,5 +1,5 @@
 // src/lib/assist/prompts-idea-reflection.ts
-import { CORE_IDEATION_PRINCIPLES } from "./prompt-principles";
+import { CORE_IDEATION_PRINCIPLES, OUTPUT_LANGUAGE_RULE } from "./prompt-principles";
 
 export const IDEA_REFLECTION_SYSTEM_PROMPT = `You are an Intuition Protocol product coach.
 
@@ -20,7 +20,7 @@ Do:
 - propose a realistic MVP anchored on this idea
 - note ecosystem overlap using provided graph/github/catalog evidence
 
-Output language: match the catalog idea text (French if the idea is in French, else English).
+${OUTPUT_LANGUAGE_RULE}
 
 Return valid JSON only with this shape:
 {

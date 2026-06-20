@@ -1,5 +1,4 @@
-const DEFAULT_TARGET_REPO = "intuition-box/ideas";
-const DEFAULT_BASE_BRANCH = "main";
+import { getGithubPublishEnv } from "@/lib/env/github-config";
 
 export interface GithubOAuthConfig {
   clientId: string;
@@ -45,6 +44,8 @@ export function getGithubOAuthConfig():
     };
   }
 
+  const publish = getGithubPublishEnv();
+
   return {
     ok: true,
     config: {
@@ -53,10 +54,8 @@ export function getGithubOAuthConfig():
       callbackUrl:
         callbackOverride || `${appOrigin()}/api/auth/github/callback`,
       sessionSecret,
-      targetRepo:
-        process.env["GITHUB_TARGET_REPO"]?.trim() || DEFAULT_TARGET_REPO,
-      baseBranch:
-        process.env["GITHUB_BASE_BRANCH"]?.trim() || DEFAULT_BASE_BRANCH,
+      targetRepo: publish.targetRepo,
+      baseBranch: publish.baseBranch,
     },
   };
 }

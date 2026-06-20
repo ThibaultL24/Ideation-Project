@@ -47,7 +47,7 @@ export function buildFallbackIdeaReflection(
     solution: `${idea.title}: ${idea.tagline}. ${angle ?? "To be specified in the draft."}`,
     users:
       "Builders and Intuition community members testing product ideas before GitHub + on-chain publication.",
-    intuitionFit: `Create or reuse the atom « ${idea.title} » and the triple [${idea.title}] - [top project ideas for] - [Intuition]. Signal (staking) can then qualify the quality of the proposal.`,
+    intuitionFit: `Create or reuse the atom "${idea.title}" and the triple [${idea.title}] - [top project ideas for] - [Intuition]. Staking can then qualify the quality of the proposal.`,
     mvp:
       "Idea screen → state check → refined draft → PR intuition-box/ideas → publish on-chain.",
     risks: [

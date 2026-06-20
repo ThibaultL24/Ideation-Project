@@ -31,7 +31,7 @@ export const publishStrings = {
   copyMarkdown: "Copy Markdown",
   onchainTitle: "On-chain publication",
   onchainLead:
-    'Atom "{title}" + core triple on {network}. Connect your wallet (testnet). Server wallet fallback if INTUITION_PRIVATE_KEY is set.',
+    'Publish atom "{title}" and the core triple on {network}. Connect your wallet to sign transactions. A server wallet is used only when INTUITION_PRIVATE_KEY is configured.',
   estimatingCost: "Estimating cost…",
   estimatedCost: "Estimated cost",
   serverWallet: "Server wallet",
