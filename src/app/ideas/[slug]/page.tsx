@@ -1,7 +1,7 @@
 // src/app/ideas/[slug]/page.tsx
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { explorerAtomUrl } from "@/lib/intuition/config";
+import { networkExplorerAtomUrl } from "@/lib/intuition/config";
 import { loadNormalizedIdeas } from "@/lib/ideas/load";
 import { buildIdeaFullState } from "@/lib/ideas/idea-state";
 
@@ -56,7 +56,7 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
             {state.onchain.atomId}
           </p>
           <a
-            href={explorerAtomUrl(state.onchain.atomId)}
+            href={networkExplorerAtomUrl(state.onchain.atomId)}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-3 inline-block text-[var(--accent)] hover:underline"

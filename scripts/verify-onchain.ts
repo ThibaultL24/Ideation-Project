@@ -1,14 +1,10 @@
 // scripts/verify-onchain.ts
 import "dotenv/config";
-import { readFileSync } from "node:fs";
-import path from "node:path";
 import { multiVaultIsTermCreated } from "@0xintuition/protocol";
 import type { Hex } from "viem";
 import { getNetworkConfig, resolveNetwork } from "../src/lib/intuition/config";
 import { createIntuitionClients } from "../src/lib/intuition/client";
 import { verifyAtomQueryable } from "../src/lib/intuition/graphql";
-
-const ROOT = path.resolve(import.meta.dirname, "..");
 
 async function main() {
   const termId = process.argv[2] as Hex | undefined;

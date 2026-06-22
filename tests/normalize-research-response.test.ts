@@ -19,9 +19,11 @@ describe("normalizeRawResearchResponse", () => {
         ideaTitle: "Cinelma",
         catalogMatches: [
           {
+            canonicalId: "idea-test-cultural",
             title: "CulturalCurator",
             slug: "cultural-curator",
             tagline: "Museums",
+            category: "Culture",
             matchReason: "cultural",
             score: 5,
           },

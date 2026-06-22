@@ -77,10 +77,59 @@ Contributor flow: sign in with GitHub → app forks `intuition-box/ideas` to `{u
 |---------|-------------|
 | `npm run dev` | Start dev server |
 | `npm run build` | Production build |
+| `npm run check` | Typecheck + lint + tests (CI-style gate) |
+| `npm run typecheck` | TypeScript (`tsc --noEmit`) |
+| `npm run lint` | ESLint (Next.js strict + TypeScript) |
+| `npm run lint:fix` | ESLint with auto-fix |
+| `npm run format` | Prettier write |
+| `npm run format:check` | Prettier check |
 | `npm run env:check` | Print resolved network + GitHub config |
 | `npm run test` | Run Vitest |
 | `npm run import:ideas` | Import ideas catalog |
 | `npm run verify:onchain` | Verify on-chain state |
+
+## Code organization
+
+For a new contributor, start here:
+
+```
+src/
+  app/                    # Next.js App Router — pages + API only
+    api/
+      auth/github/        # OAuth login, callback, session
+      brainstorm/         # AI: similar, synthesize, challenge
+      publish/            # GitHub PR + on-chain publish
+      idea-state/         # Scoped / on-chain status per slug
+  components/
+    brainstorm/           # Ideation UI (flow, workspace, publish)
+    wallet/               # Wagmi connect panel
+    github/               # OAuth panel
+    layout/               # App shell (header)
+  lib/
+    ideas/                # Catalog, drafts, publish-plan (active dapp path)
+    intuition/            # Protocol: config, GraphQL, atoms, triples
+    assist/               # OpenAI prompts + local fallbacks
+    auth/                 # GitHub session cookies
+    env/                  # INTUITION_NETWORK, GitHub env
+    strings/              # UI copy (English)
+    workshop/             # Legacy research pipeline (used by some API routes)
+```
+
+**Conventions**
+
+- Import alias: `@/` → `src/`
+- Domain logic lives in `lib/`, not in route handlers or components
+- UI strings in `lib/strings/` — avoid hard-coded copy in components
+- File header: `// src/path/to/file.ts` on new modules
+- Deep imports preferred over barrels (`@/lib/ideas/load`, not `@/lib/ideas`)
+- Active user flow: `ideas/` + `components/brainstorm/` — `workshop/` is secondary
+
+**Quality gate before PR**
+
+```bash
+npm run check
+npm run format:check
+```
 
 ## Project layout
 

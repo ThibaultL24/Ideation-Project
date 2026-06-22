@@ -30,7 +30,7 @@ function inferArchetype(angle: string): BrainstormArchetype {
 
 export function directionToBrainstormDraft(
   direction: BrainstormDirection,
-  seedDescription?: string,
+  _seedDescription?: string,
 ): BrainstormDraft {
   return {
     archetype: inferArchetype(direction.angle),

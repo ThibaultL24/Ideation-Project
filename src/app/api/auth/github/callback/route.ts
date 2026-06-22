@@ -3,7 +3,6 @@ import {
   GITHUB_OAUTH_STATE_COOKIE,
   GITHUB_SESSION_COOKIE,
   githubSessionCookieOptions,
-  oauthStateCookieOptions,
   readRequestCookie,
   signPayload,
   verifyPayload,

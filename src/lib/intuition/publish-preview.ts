@@ -240,6 +240,9 @@ export async function previewOnchainPublish(params: {
   };
 }
 
-export function explorerAtomUrl(explorerBase: string, termId: Hex): string {
+export function formatExplorerAtomUrl(explorerBase: string, termId: Hex): string {
   return `${explorerBase}/atom/${termId}`;
 }
+
+/** @deprecated Use formatExplorerAtomUrl */
+export const explorerAtomUrl = formatExplorerAtomUrl;

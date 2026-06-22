@@ -1,6 +1,6 @@
 // src/lib/intuition/publish-idea.ts
 import { getAtomDetails } from "@0xintuition/sdk";
-import { formatEther, type Hex } from "viem";
+import { type Hex } from "viem";
 import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
 import type { Idea } from "@/lib/ideas/schema";
 import { countTriplesInGraphql } from "./graphql";

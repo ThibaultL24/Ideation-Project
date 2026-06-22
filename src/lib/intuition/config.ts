@@ -89,7 +89,7 @@ export function getExplorerUrl(
   return getNetworkConfig(network).explorer;
 }
 
-export function explorerAtomUrl(
+export function networkExplorerAtomUrl(
   termId: string,
   network = readIntuitionNetworkEnv(),
 ): string {

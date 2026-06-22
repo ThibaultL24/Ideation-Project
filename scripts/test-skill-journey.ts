@@ -1,13 +1,12 @@
 // scripts/test-skill-journey.ts
 // Smoke tests for the Hunch skill ↔ dapp journey. Run: pnpm test:skill-journey
 // Requires: pnpm dev on http://localhost:3000 for API checks (skipped if down).
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { searchSimilarCatalog } from "../src/lib/ideas/similar-catalog";
 import { buildPublishPlan } from "../src/lib/ideas/publish-plan";
 import { loadNormalizedIdeas } from "../src/lib/ideas/load";
 import { IDEATION_QUESTIONS } from "../src/lib/ideas/ideation-questions";
-import type { Idea } from "../src/lib/ideas/schema";
 
 const ROOT = process.cwd();
 const BASE = process.env["HUNCH_BASE_URL"]?.trim() || "http://localhost:3000";

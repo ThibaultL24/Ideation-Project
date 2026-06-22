@@ -45,7 +45,7 @@ describe("refineTripleDraft", () => {
         mvpScope: "mvp",
         openQuestions: [],
       },
-      popularPredicates: [{ label: "targets", term_id: "0x1", usage: 10 }],
+      popularPredicates: [{ label: "targets" }],
     });
 
     expect(refined.coreTriple.predicate).toBe("top project ideas for");

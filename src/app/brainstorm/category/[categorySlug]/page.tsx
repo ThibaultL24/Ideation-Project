@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PopularIdeaCard } from "@/components/brainstorm/popular-idea-card";
-import { categoryFromSlug, categoryToSlug } from "@/lib/ideas/category";
+import { categoryFromSlug } from "@/lib/ideas/category";
 import { getPopularIdeasInCategory } from "@/lib/ideas/category-popular";
 import { getCategories, loadNormalizedIdeas } from "@/lib/ideas/load";
 

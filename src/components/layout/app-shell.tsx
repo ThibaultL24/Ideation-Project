@@ -1,4 +1,5 @@
 // src/components/layout/app-shell.tsx
+import Link from "next/link";
 import { HunchGlyph } from "@/components/brand/hunch-logo";
 import { WalletHeaderSlot } from "@/components/wallet/wallet-header-slot";
 import { getExplorerUrl } from "@/lib/intuition/config";
@@ -14,7 +15,7 @@ export function AppShell({ children }: AppShellProps) {
     <>
       <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[oklch(0.145_0_0_/_0.65)] backdrop-blur-xl">
         <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-4 px-4 py-4 text-sm md:gap-6">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center gap-2 font-semibold tracking-tight text-[var(--foreground)]"
           >
@@ -23,10 +24,10 @@ export function AppShell({ children }: AppShellProps) {
             <span className="text-[10px] font-normal uppercase tracking-widest text-[var(--accent)]">
               Intuition
             </span>
-          </a>
-          <a href="/ideas" className="text-[var(--muted)] hover:text-white">
+          </Link>
+          <Link href="/ideas" className="text-[var(--muted)] hover:text-white">
             Catalog
-          </a>
+          </Link>
           <a
             href={EXPLORER_URL}
             target="_blank"
@@ -35,12 +36,12 @@ export function AppShell({ children }: AppShellProps) {
           >
             Explorer
           </a>
-          <a href="/brainstorm" className="text-[var(--muted)] hover:text-white">
+          <Link href="/brainstorm" className="text-[var(--muted)] hover:text-white">
             Brainstorm
-          </a>
-          <a href="/random" className="text-[var(--muted)] hover:text-white">
+          </Link>
+          <Link href="/random" className="text-[var(--muted)] hover:text-white">
             Random
-          </a>
+          </Link>
           <WalletHeaderSlot />
         </nav>
       </header>

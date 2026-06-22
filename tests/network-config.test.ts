@@ -1,10 +1,10 @@
 // tests/network-config.test.ts
 import { afterEach, describe, expect, it } from "vitest";
 import {
-  explorerAtomUrl,
   getExplorerUrl,
   getNetworkConfig,
   getPortalExplorerUrl,
+  networkExplorerAtomUrl,
 } from "@/lib/intuition/config";
 
 const ENV_KEYS = [
@@ -45,7 +45,7 @@ describe("getNetworkConfig explorer URLs", () => {
       expect(getPortalExplorerUrl()).toBe(
         "https://testnet.portal.intuition.systems/explore/home",
       );
-      expect(explorerAtomUrl("0xabc")).toBe(
+      expect(networkExplorerAtomUrl("0xabc")).toBe(
         "https://testnet.explorer.intuition.systems/atom/0xabc",
       );
     });
@@ -60,7 +60,7 @@ describe("getNetworkConfig explorer URLs", () => {
       expect(getPortalExplorerUrl()).toBe(
         "https://portal.intuition.systems/explore/home",
       );
-      expect(explorerAtomUrl("0xabc")).toBe(
+      expect(networkExplorerAtomUrl("0xabc")).toBe(
         "https://explorer.intuition.systems/atom/0xabc",
       );
     });
