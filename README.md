@@ -87,6 +87,55 @@ Contributor flow: sign in with GitHub → app forks `intuition-box/ideas` to `{u
 | `npm run test` | Run Vitest |
 | `npm run import:ideas` | Import ideas catalog |
 | `npm run verify:onchain` | Verify on-chain state |
+| `npm run verify:graphql` | Bounty 3A — GraphQL queryability (atoms + triples) |
+| `npm run verify:migration` | Bounty 3A — on-chain + GraphQL full check |
+| `npm run migrate:batches` | Bounty 3A — batch atom + triple migration |
+| `npm run feasibility:3a` | Bounty 3A — cost & SDK dry checks |
+
+## Bounty 3A — Migrate Ideas Onchain
+
+Official mission (four steps) and how this repo implements them:
+
+| Mission step | Repo implementation | Status (testnet) |
+|--------------|---------------------|------------------|
+| 1. Parse ~300 dApp ideas from Notion | Export → `data/raw/ideas.txt`, then `npm run import:ideas` → `data/normalized/ideas.json` (362 after normalize/dedupe) | Done |
+| 2. Create an atom per idea | `INTUITION_PRIVATE_KEY` + `npm run migrate:batches` (SDK batch in `src/lib/intuition/batch-publish.ts`) | Done — reports under `data/reports/migration-batch-sdk-*.json` |
+| 3. Core triple per idea | `[Idea] — top project ideas for — Intuition` (on-chain object term: Intuition Protocol atom `0xda797f…`) | Done — 362 triples |
+| 4. Verify GraphQL queryability | `INTUITION_NETWORK=testnet npm run verify:graphql` | Done — `migration-verify-graphql.json` → `ok: true` |
+
+**Core triple (always):**
+
+```
+[Idea Title] — top project ideas for — Intuition
+```
+
+On-chain, subject = idea atom, predicate = `top project ideas for`, object = canonical Intuition Protocol term ID (same on mainnet and testnet).
+
+**Re-run verification:**
+
+```bash
+export INTUITION_NETWORK=testnet
+npm run verify:graphql      # GraphQL only (fast)
+npm run verify:migration    # RPC on-chain + GraphQL (slower)
+```
+
+**Re-migrate a slice (requires funded server wallet):**
+
+```bash
+npm run migrate:batch -- --sdk-batch --offset=0 --limit=50
+```
+
+Catalog migration uses `catalogIdeaToPinThing` (stable metadata). The dapp brainstorm path uses `ideaToPinThing` with a variant fingerprint so user iterations can mint distinct atoms without colliding with the catalog.
+
+**Mainnet notes**
+
+- Set `INTUITION_NETWORK=mainnet` and `INTUITION_RPC_URL=https://rpc.intuition.systems/http`.
+- Mainnet GraphQL is read-only — IPFS pinning uses testnet GraphQL (`pinThingForNetwork`); atom term IDs stay identical.
+- Fund the server wallet with **~72 TRUST** for 362 ideas (~0.2 TRUST per idea: atom + triple).
+- Preflight: `npm run mainnet:preflight`
+- After migration: `npm run verify:graphql` and `npm run verify:migration`
+- Catalog UI (`/ideas`, `/random`) reads the **on-chain GraphQL slice** first (120s cache), enriched from `ideas.json`; falls back to JSON if the graph is empty on the active network.
+- API: `GET /api/catalog` — same list as JSON for agents and tooling.
 
 ## Code organization
 

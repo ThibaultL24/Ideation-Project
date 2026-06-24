@@ -3,14 +3,15 @@ import {
   calculateAtomId,
   createAtomFromIpfsUri,
   createAtomFromThing,
-  pinThing,
 } from "@0xintuition/sdk";
 import { multiVaultIsTermCreated, type WriteConfig } from "@0xintuition/protocol";
 import { toHex, type Hex } from "viem";
 import type { PinThingMutationVariables } from "@0xintuition/graphql";
 import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
 import type { Idea } from "@/lib/ideas/schema";
+import { getNetworkConfig, type IntuitionNetwork } from "./config";
 import { ideaToPinThing, labelToPinThing } from "./idea-thing";
+import { pinThingForNetwork } from "./pin-thing";
 
 export interface EnsureAtomResult {
   termId: Hex;
@@ -19,11 +20,17 @@ export interface EnsureAtomResult {
   txHash?: Hex;
 }
 
+function networkFromWriteConfig(writeConfig: WriteConfig): IntuitionNetwork {
+  const chainId = writeConfig.publicClient.chain?.id;
+  return chainId === 1155 ? "mainnet" : "testnet";
+}
+
 async function resolveIpfsUri(
   thing: PinThingMutationVariables,
+  network: IntuitionNetwork,
 ): Promise<string> {
-  const uri = await pinThing(thing);
-  if (!uri?.startsWith("ipfs://")) {
+  const uri = await pinThingForNetwork(getNetworkConfig(network), thing);
+  if (!uri.startsWith("ipfs://")) {
     throw new Error(`pinThing failed for "${thing.name}"`);
   }
   return uri;
@@ -35,7 +42,8 @@ export async function ensureAtomFromThing(params: {
   depositWei?: bigint;
 }): Promise<EnsureAtomResult> {
   const { thing, writeConfig, depositWei } = params;
-  const ipfsUri = await resolveIpfsUri(thing);
+  const network = networkFromWriteConfig(writeConfig);
+  const ipfsUri = await resolveIpfsUri(thing, network);
   const termId = calculateAtomId(toHex(ipfsUri)) as Hex;
 
   const exists = await multiVaultIsTermCreated(writeConfig, { args: [termId] });

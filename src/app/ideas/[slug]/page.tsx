@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { networkExplorerAtomUrl } from "@/lib/intuition/config";
-import { loadNormalizedIdeas } from "@/lib/ideas/load";
+import { loadCatalogIdeaBySlug } from "@/lib/ideas/load-catalog";
 import { buildIdeaFullState } from "@/lib/ideas/idea-state";
 
 interface IdeaDetailPageProps {
@@ -11,7 +11,7 @@ interface IdeaDetailPageProps {
 
 export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
   const { slug } = await params;
-  const idea = loadNormalizedIdeas().find((item) => item.slug === slug);
+  const idea = await loadCatalogIdeaBySlug(slug);
   if (!idea) notFound();
   const state = await buildIdeaFullState(idea, { verifyOnchain: true });
 

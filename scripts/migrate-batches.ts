@@ -59,7 +59,7 @@ async function main() {
     }
 
     console.log(`\n=== ${label} ===`);
-    const cmd = `pnpm migrate:batch -- --limit=${limit} --offset=${offset} --sdk-batch`;
+    const cmd = `npm run migrate:batch -- --limit=${limit} --offset=${offset} --sdk-batch`;
     let exitCode = 0;
     try {
       execSync(cmd, {

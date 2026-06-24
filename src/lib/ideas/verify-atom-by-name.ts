@@ -160,10 +160,10 @@ export async function verifyAtomByProjectName(params: {
       matches,
       canonicalAtomId: canonical.term_id,
       coreTriplePresent,
-      canPublishNewAtom: false,
+      canPublishNewAtom: true,
       message: coreTriplePresent
-        ? `An atom "${canonical.label}" already exists with the core triple on ${config.network}.`
-        : `An atom "${canonical.label}" already exists on ${config.network} (core triple missing).`,
+        ? `A catalog atom "${canonical.label}" already exists with the core triple on ${config.network}. You can still publish a new brainstorm variant — it gets a unique IPFS payload (draft + PR link) and its own explorer URL.`
+        : `A catalog atom "${canonical.label}" already exists on ${config.network}. You can publish a separate brainstorm variant distinguished by its IPFS metadata and PR link.`,
     };
   }
 

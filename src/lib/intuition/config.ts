@@ -74,7 +74,10 @@ export const IDEA_PREDICATE_LABEL = "top project ideas for";
 
 export const BOUNTY_PREDICATE_LABEL = IDEA_PREDICATE_LABEL;
 
-/** Canonical triple object label (aligned with resolveObjectTermId / migration 3A). */
+/** Human-readable object in bounty core triple: [Idea] - [predicate] - [Intuition]. */
+export const BOUNTY_OBJECT_DISPLAY_LABEL = "Intuition";
+
+/** On-chain object atom label (term ID shared with mainnet Intuition Protocol atom). */
 export const INTUITION_PROTOCOL_OBJECT_LABEL = "Intuition Protocol";
 
 export function getPortalExplorerUrl(

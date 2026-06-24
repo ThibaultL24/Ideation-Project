@@ -1,6 +1,10 @@
 // src/app/ideas/page.tsx
 import Link from "next/link";
-import { loadNormalizedIdeas, getCategories } from "@/lib/ideas/load";
+import {
+  getCatalogCategories,
+  loadCatalogIdeas,
+} from "@/lib/ideas/load-catalog";
+import { getNetworkLabel } from "@/lib/intuition/config";
 
 interface IdeasPageProps {
   searchParams: Promise<{ category?: string }>;
@@ -8,8 +12,9 @@ interface IdeasPageProps {
 
 export default async function IdeasPage({ searchParams }: IdeasPageProps) {
   const params = await searchParams;
-  const ideas = loadNormalizedIdeas();
-  const categories = getCategories(ideas);
+  const catalog = await loadCatalogIdeas();
+  const ideas = catalog.ideas;
+  const categories = await getCatalogCategories();
   const filtered = params.category
     ? ideas.filter((idea) => idea.category === params.category)
     : ideas;
@@ -21,6 +26,9 @@ export default async function IdeasPage({ searchParams }: IdeasPageProps) {
         <p className="text-sm text-[var(--muted)]">
           {filtered.length} project{filtered.length !== 1 ? "s" : ""}
           {params.category ? ` · ${params.category}` : ""}
+          {catalog.source === "graph"
+            ? ` · on-chain list (${getNetworkLabel(catalog.network)})`
+            : " · local snapshot (graph empty — migrate or switch network)"}
         </p>
       </div>
 

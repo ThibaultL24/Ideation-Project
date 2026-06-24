@@ -14,6 +14,7 @@ import { GithubAuthPanel } from "@/components/github/github-auth-panel";
 import { AtomNameVerificationPanel } from "@/components/brainstorm/atom-name-verification-panel";
 import { WalletPanelSlot } from "@/components/wallet/wallet-panel-slot";
 import { PublishTabNav } from "@/components/brainstorm/publish-tab-nav";
+import { OnchainTermPreview } from "@/components/brainstorm/onchain-term-preview";
 import type { OnchainPublishPreview } from "@/lib/intuition/publish-preview";
 import type { AtomNameVerification } from "@/lib/ideas/verify-atom-by-name";
 import { publishStrings as s } from "@/lib/strings/publish";
@@ -151,6 +152,19 @@ export function BrainstormPublishSection({
   const [nameVerification, setNameVerification] = useState<AtomNameVerification | null>(null);
   const [onchainPreview, setOnchainPreview] = useState<OnchainPublishPreview | null>(null);
   const [onchainPreviewLoading, setOnchainPreviewLoading] = useState(true);
+  const [githubPrUrl, setGithubPrUrl] = useState(
+    () => idea.github?.prUrl ?? idea.github?.blobUrl ?? "",
+  );
+
+  const githubAttestationUrl = useMemo(
+    () =>
+      (status.state === "ok" && status.prUrl) ||
+      githubPrUrl ||
+      idea.github?.prUrl ||
+      idea.github?.blobUrl ||
+      undefined,
+    [status, githubPrUrl, idea.github?.prUrl, idea.github?.blobUrl],
+  );
 
   const returnTo = useMemo(() => {
     if (typeof window !== "undefined") {
@@ -184,7 +198,12 @@ export function BrainstormPublishSection({
         const res = await fetch("/api/publish/onchain/preview", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ slug: idea.slug, idea, draft }),
+          body: JSON.stringify({
+            slug: idea.slug,
+            idea,
+            draft,
+            githubBlobUrl: githubAttestationUrl,
+          }),
         });
         if (res.ok) {
           const data = (await res.json()) as { preview: OnchainPublishPreview };
@@ -196,7 +215,7 @@ export function BrainstormPublishSection({
         setOnchainPreviewLoading(false);
       }
     })();
-  }, [idea, draft]);
+  }, [idea, draft, githubAttestationUrl]);
 
   const plan: PublishPlan = useMemo(
     () => buildPublishPlan(idea, draft),
@@ -215,6 +234,7 @@ export function BrainstormPublishSection({
       prompt: idea.tagline || idea.description,
       category: idea.category,
       returnTo: currentReturnTo,
+      githubBlobUrl: githubAttestationUrl,
     });
   }
 
@@ -274,6 +294,7 @@ export function BrainstormPublishSection({
         /* ignore */
       }
       window.open(data.prUrl, "_blank", "noopener,noreferrer");
+      setGithubPrUrl(data.prUrl);
       setStatus({
         state: "ok",
         label: s.prCreated,
@@ -322,22 +343,18 @@ export function BrainstormPublishSection({
   }
 
   async function publishOnchain() {
-    if (nameVerification && !nameVerification.canPublishNewAtom) {
-      setOnchainStatus({
-        state: "warning",
-        label: s.publishBlocked,
-        detail: nameVerification.message,
-      });
-      return;
-    }
-
     setOnchainStatus({ state: "loading", label: s.publishing });
 
     try {
       const res = await fetch("/api/publish/onchain", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug: idea.slug, idea, draft }),
+        body: JSON.stringify({
+          slug: idea.slug,
+          idea,
+          draft,
+          githubBlobUrl: githubAttestationUrl,
+        }),
       });
       const data = (await res.json()) as {
         mode?: string;
@@ -391,8 +408,7 @@ export function BrainstormPublishSection({
   }
 
   const canPublishOnchain =
-    Boolean(onchainPreview?.canPublish || onchainPreview?.alreadyComplete) &&
-    (nameVerification?.canPublishNewAtom ?? true);
+    Boolean(onchainPreview?.canPublish) && !onchainPreviewLoading;
 
   return (
     <section
@@ -412,7 +428,7 @@ export function BrainstormPublishSection({
           >
             intuition-box/ideas
           </a>
-          , then on-chain attestation (atom + core triple) if the name is not taken yet.
+          , then on-chain attestation for this brainstorm variant (unique atom + core triple per draft / PR link).
         </p>
       </div>
 
@@ -444,6 +460,9 @@ export function BrainstormPublishSection({
               </ul>
             ) : null}
           </section>
+          {onchainPreview && !onchainPreviewLoading ? (
+            <OnchainTermPreview preview={onchainPreview} githubUrl={githubAttestationUrl} />
+          ) : null}
         </div>
       ) : null}
 
@@ -519,13 +538,29 @@ export function BrainstormPublishSection({
                 <div className="rounded-lg bg-[var(--background)] p-3">
                   <p className="text-xs text-[var(--muted)]">{s.coreTriple}</p>
                   <p className="font-medium">
-                    {onchainPreview.alreadyComplete ? s.complete : s.toCreate}
+                    {onchainPreview.steps.find((step) => step.id === "coreTriple")?.exists
+                      ? s.complete
+                      : s.toCreate}
                   </p>
                 </div>
               </div>
             ) : (
               <p className="text-sm text-[var(--muted)]">{s.previewUnavailable}</p>
             )}
+
+            {onchainPreview && !onchainPreviewLoading ? (
+              <OnchainTermPreview preview={onchainPreview} githubUrl={githubAttestationUrl} />
+            ) : null}
+
+            {onchainPreview && !onchainPreviewLoading ? (
+              <p className="text-xs text-[var(--muted)]">
+                {onchainPreview.alreadyComplete
+                  ? s.variantAlreadyOnchain
+                  : onchainPreview.variantNeedsPublish
+                    ? s.variantReady
+                    : null}
+              </p>
+            ) : null}
 
             {onchainPreview?.blockers.length ? (
               <ul className="space-y-1 text-xs text-amber-200">
@@ -544,11 +579,6 @@ export function BrainstormPublishSection({
               >
                 {onchainPreview?.alreadyComplete ? s.verifyOnchain : s.publishOnchain}
               </button>
-              {nameVerification && !nameVerification.canPublishNewAtom ? (
-                <p className="text-xs text-amber-200">
-                  {s.blockedExistingName.replace("{title}", idea.title)}
-                </p>
-              ) : null}
             </div>
           </section>
         </div>

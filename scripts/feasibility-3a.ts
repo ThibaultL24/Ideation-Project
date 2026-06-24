@@ -2,10 +2,7 @@
 import "dotenv/config";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import {
-  calculateAtomId,
-  pinThing,
-} from "@0xintuition/sdk";
+import { calculateAtomId } from "@0xintuition/sdk";
 import {
   multiVaultGetAtomCost,
   multiVaultGetTripleCost,
@@ -20,7 +17,8 @@ import {
 } from "../src/lib/intuition/config";
 import { createIntuitionClients, getNativeBalance } from "../src/lib/intuition/client";
 import { findAtomsByLabel, pickCanonicalAtom } from "../src/lib/intuition/graphql";
-import { ideaToPinThing } from "../src/lib/intuition/idea-thing";
+import { catalogIdeaToPinThing } from "../src/lib/intuition/idea-thing";
+import { pinThingForNetwork } from "../src/lib/intuition/pin-thing";
 import type { Idea } from "../src/lib/ideas/schema";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
@@ -30,11 +28,13 @@ async function main() {
   const config = getNetworkConfig(network);
   const clients = await createIntuitionClients(network);
 
-  console.log("=== Mission 3A — Feasibility (@0xintuition/sdk) ===\n");
+  console.log("=== Mission 3A — Feasibility ===\n");
   console.log(`Network: ${config.network} (chain ${config.chainId})`);
   console.log(`GraphQL: ${config.graphql}`);
   console.log(`MultiVault: ${config.multivault}`);
-  console.log("SDK: createAtomFromThing, createTripleStatement, batchCreateAtomsFromThings\n");
+  if (network === "mainnet") {
+    console.log("IPFS pin: testnet GraphQL (mainnet GraphQL is read-only)\n");
+  }
 
   const payload = JSON.parse(
     readFileSync(path.join(ROOT, "data/normalized/ideas.json"), "utf8"),
@@ -42,9 +42,8 @@ async function main() {
   const sample = payload.ideas[0];
   if (!sample) throw new Error("No ideas in normalized JSON");
 
-  console.log("1) pinThing via SDK");
-  const testUri = await pinThing(ideaToPinThing(sample));
-  if (!testUri) throw new Error("SDK pinThing returned null");
+  console.log("1) pinThing (network-aware)");
+  const testUri = await pinThingForNetwork(config, catalogIdeaToPinThing(sample));
   console.log(`   OK — ${testUri}`);
 
   const previewAtomId = calculateAtomId(toHex(testUri)) as Hex;
@@ -55,13 +54,13 @@ async function main() {
   } else {
     const atomCost = await multiVaultGetAtomCost(clients.writeConfig);
     const tripleCost = await multiVaultGetTripleCost(clients.writeConfig);
-    const perIdeaWei = atomCost * BigInt(2) + tripleCost;
+    const perIdeaWei = atomCost + tripleCost;
     console.log("2) On-chain costs");
     console.log(`   atomCost: ${formatEther(atomCost)} ${config.nativeSymbol}`);
     console.log(`   tripleCost: ${formatEther(tripleCost)} ${config.nativeSymbol}`);
     console.log(`   ~per idea: ${formatEther(perIdeaWei)}`);
     console.log(
-      `   ~362 ideas (1 predicate): ${formatEther(atomCost + atomCost * BigInt(362) + tripleCost * BigInt(362))}\n`,
+      `   ~${payload.ideas.length} ideas: ${formatEther(atomCost * BigInt(payload.ideas.length) + tripleCost * BigInt(payload.ideas.length))}\n`,
     );
   }
 
@@ -90,8 +89,6 @@ async function main() {
   console.log("4) Wallet");
   if (!clients.writeConfig || !clients.account) {
     console.log("   BLOCKED — set INTUITION_PRIVATE_KEY in .env");
-    console.log("   pnpm publish:one stake-review");
-    console.log("   pnpm migrate:batch -- --limit=10 --sdk-batch");
     process.exitCode = 2;
     return;
   }
@@ -99,9 +96,8 @@ async function main() {
   const balance = await getNativeBalance(clients);
   console.log(`   Wallet: ${clients.account}`);
   console.log(`   Balance: ${formatEther(balance)} ${config.nativeSymbol}`);
-  console.log("\n✅ Ready — SDK path aligned with official docs");
-  console.log("   pnpm publish:one stake-review");
-  console.log("   pnpm migrate:batch -- --limit=25 --sdk-batch");
+  console.log("\n✅ Ready for batch migration");
+  console.log("   npm run migrate:batch -- --limit=25 --offset=0 --sdk-batch");
 }
 
 main().catch((error) => {

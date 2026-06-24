@@ -1,69 +1,24 @@
 // scripts/verify-graphql.ts — vérifie que atoms et triples sont queryables via GraphQL uniquement
 import "dotenv/config";
-import { readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import type { Hex } from "viem";
 import {
   getNetworkConfig,
   resolveNetwork,
-  IDEA_PREDICATE_LABEL,
 } from "../src/lib/intuition/config";
+import { resolveCatalogAnchorIds } from "../src/lib/intuition/catalog-graph";
+import { loadMigrationAtomMap } from "../src/lib/ideas/migration-reports";
 import {
   countAtomsInGraphql,
   countTriplesInGraphql,
   findAtomTermIdsInGraphql,
-  findAtomsByLabel,
   findTripleSubjectsInGraphql,
-  pickCanonicalAtom,
 } from "../src/lib/intuition/graphql";
-import type { BatchPublishReport } from "../src/lib/intuition/batch-publish";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const REPORTS_DIR = path.join(ROOT, "data/reports");
 const OUT_PATH = path.join(REPORTS_DIR, "migration-verify-graphql.json");
-
-const TESTNET_PREDICATE =
-  "0xc3e6f1bb243fa82208dbfb2b5b73cf11a1ad26b04e59fd275b163e244c7825b5" as Hex;
-const TESTNET_OBJECT =
-  "0xda797f4aa19c2b129bd3a33cdb8d260b94672fcdb295d04e2533dc02a994a3d8" as Hex;
-
-function requireExists(p: string): boolean {
-  try {
-    readFileSync(p);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
-function loadAtomIds(): Map<string, Hex> {
-  const byCanonical = new Map<string, Hex>();
-
-  const retryPath = path.join(REPORTS_DIR, "migration-batch-sdk-retry.json");
-  if (requireExists(retryPath)) {
-    const retry = JSON.parse(
-      readFileSync(retryPath, "utf8"),
-    ) as BatchPublishReport;
-    for (const row of retry.ideaAtomIds) {
-      byCanonical.set(row.canonicalId, row.termId as Hex);
-    }
-    return byCanonical;
-  }
-
-  for (const file of readdirSync(REPORTS_DIR)) {
-    if (!file.startsWith("migration-batch-sdk-") || file === "migration-batch-sdk-retry.json") {
-      continue;
-    }
-    if (!file.endsWith(".json")) continue;
-    const report = JSON.parse(
-      readFileSync(path.join(REPORTS_DIR, file), "utf8"),
-    ) as BatchPublishReport;
-    for (const row of report.ideaAtomIds ?? []) {
-      byCanonical.set(row.canonicalId, row.termId as Hex);
-    }
-  }
-  return byCanonical;
-}
 
 function invertMap(map: Map<string, Hex>): Map<string, string> {
   const out = new Map<string, string>();
@@ -82,22 +37,13 @@ async function main() {
   ) as { ideas: Array<{ canonicalId: string }> };
   const totalIdeas = ideasPayload.ideas.length;
 
-  const atomMap = loadAtomIds();
+  const atomMap = loadMigrationAtomMap(network);
   const termIdToCanonical = invertMap(atomMap);
   const expectedTermIds = [...atomMap.values()];
 
-  let predicateId = TESTNET_PREDICATE;
-  let objectId = TESTNET_OBJECT;
-
-  if (network === "testnet") {
-    const predRows = await findAtomsByLabel(config, IDEA_PREDICATE_LABEL);
-    const pred = pickCanonicalAtom(predRows);
-    if (pred?.term_id) predicateId = pred.term_id as Hex;
-
-    const objRows = await findAtomsByLabel(config, "Intuition Protocol");
-    const obj = pickCanonicalAtom(objRows);
-    if (obj?.term_id) objectId = obj.term_id as Hex;
-  }
+  const anchors = await resolveCatalogAnchorIds(config);
+  const predicateId = anchors.predicateId as Hex;
+  const objectId = anchors.objectId as Hex;
 
   console.log(`=== Vérification GraphQL ${network} ===`);
   console.log(`Endpoint: ${config.graphql}`);

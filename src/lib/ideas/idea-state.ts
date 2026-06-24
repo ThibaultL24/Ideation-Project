@@ -1,7 +1,5 @@
 // src/lib/ideas/idea-state.ts
 import type { Idea, IdeaStatus } from "./schema";
-import { existsSync, readFileSync } from "node:fs";
-import path from "node:path";
 import {
   BOUNTY_PREDICATE_LABEL,
   getNetworkConfig,
@@ -14,7 +12,17 @@ import {
   pickCanonicalAtom,
   verifyAtomQueryable,
 } from "@/lib/intuition/graphql";
+import { loadMigrationAtomMap } from "./migration-reports";
 import { resolveAtomIdByProjectName } from "./verify-atom-by-name";
+
+export function getReportedAtomId(idea: Idea): string | null {
+  const fromIdea = idea.intuition?.atomId?.trim();
+  if (fromIdea) return fromIdea;
+  const termId = loadMigrationAtomMap(getNetworkConfig().network).get(
+    idea.canonicalId,
+  );
+  return termId ?? null;
+}
 
 const SCOPED_STATUSES = new Set<IdeaStatus>([
   "github_ready",
@@ -26,41 +34,6 @@ const SCOPED_STATUSES = new Set<IdeaStatus>([
   "published",
   "onchain",
 ]);
-
-interface MigrationAtomRow {
-  canonicalId: string;
-  termId: string;
-  ipfsUri?: string;
-}
-
-let reportAtomCache: Map<string, string> | null = null;
-
-function loadReportedAtomIds(): Map<string, string> {
-  if (reportAtomCache) return reportAtomCache;
-  const map = new Map<string, string>();
-  const retryPath = path.join(
-    process.cwd(),
-    "data/reports/migration-batch-sdk-retry.json",
-  );
-  if (existsSync(retryPath)) {
-    try {
-      const report = JSON.parse(readFileSync(retryPath, "utf8")) as {
-        ideaAtomIds?: MigrationAtomRow[];
-      };
-      for (const row of report.ideaAtomIds ?? []) {
-        map.set(row.canonicalId, row.termId);
-      }
-    } catch {
-      /* ignore malformed optional report */
-    }
-  }
-  reportAtomCache = map;
-  return map;
-}
-
-export function getReportedAtomId(idea: Idea): string | null {
-  return idea.intuition?.atomId?.trim() || loadReportedAtomIds().get(idea.canonicalId) || null;
-}
 
 export interface IdeaDbState {
   scoped: boolean;

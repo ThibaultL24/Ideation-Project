@@ -1,5 +1,5 @@
 {
-  "network": "testnet",
+  "network": "mainnet",
   "requested": 50,
   "atomsPinned": 50,
   "atomsCreated": 0,
@@ -14,63 +14,63 @@
     },
     {
       "canonicalId": "idea-02-024-volunteer-passport",
-      "termId": "0x75a4a05ad5b1d736a8d587e718cd8859199747ba636c6ddf61344665cff8d1fd",
-      "ipfsUri": "ipfs://bafkreiavc4dv2nujmla5t3q5uihw232s6nag5ghwaahvghmo5shfu3yo4a"
+      "termId": "0x81b66ce9c159a9b094883d35b9dafe62059a134c56fb2570de789ad1d37e6eac",
+      "ipfsUri": "ipfs://bafkreifxaxbsvujaser7xfcxtu4jgwuvc4kpkcigypudkycittfwry6abu"
     },
     {
       "canonicalId": "idea-02-025-onboarding-rep",
-      "termId": "0xd25b800bb1ef95874179ce1a6e3d65cb883d5387d15b08a57d6267e7efe239c1",
-      "ipfsUri": "ipfs://bafkreiaon25rltsdeqdxmhk6zlmbra2lmzyanpbnjeqs6uwd2jf3k5w5c4"
+      "termId": "0x592752e30c3408553291698a775777830da5aad86b2f4601577bb4990e7b1ae4",
+      "ipfsUri": "ipfs://bafkreiaeg2ppqgrbvdw3sungc7j6df4epat7547aatsfs46cd2spmghxmi"
     },
     {
       "canonicalId": "idea-03-001-trust-hunt",
-      "termId": "0x914fd9b4146129acfc32012cd72f934df52576ea0334f83560b74dcc1b75bb28",
-      "ipfsUri": "ipfs://bafkreiebx6trif7ubwau6dqxwxveh43xuoynkaykpjiqwvxbbydgv7z4sa"
+      "termId": "0xb2a804ad64d1c87a99542d41e980e7e85092a22bcca9513b1b005c8c93f5dab9",
+      "ipfsUri": "ipfs://bafkreibzpn6quilwi7wvt7zvkxmeua4iy7rrmvt4r4ax2woyzthc42lahe"
     },
     {
       "canonicalId": "idea-03-002-stake-list",
-      "termId": "0xd912d6e87938bd606f7e54668127fc0902ca19c22b2226af2aefc01ab13d37e1",
-      "ipfsUri": "ipfs://bafkreic4hlomeqy7vlgugj4eqym2lmsxbvxecx6p5k5ouu6r62ovrboxoi"
+      "termId": "0x4d2971d9cc20569b865ab59b7c2a2cfc426ee9ad3c71e89a42c20a007f3cfdfd",
+      "ipfsUri": "ipfs://bafkreifypm3pw3tmelrujxr6q3tqcnfsrs4d7zva7sli23z6strlees4xe"
     },
     {
       "canonicalId": "idea-03-003-talent-graph",
-      "termId": "0x711de7b98a9bf8283ef581b155e506cb2f2d7b46dfc5c05152aa1257fa9201ae",
-      "ipfsUri": "ipfs://bafkreie3ilz2aitpzw66bj2ylx7xhhdunk267ck2eym5hks4dn62e37t3m"
+      "termId": "0xd6ef7a54af1de9f6256501a76837aa70635ccab264f5fec152e45e0747623d58",
+      "ipfsUri": "ipfs://bafkreidou2oxp4riarqd5q2fcankkn5ulz23v5ml54qos7fxivkaytxk6q"
     },
     {
       "canonicalId": "idea-03-004-dapp-store",
-      "termId": "0xd083099f32b9b5982831cee940bf8e3917ecd364068bad4a6556218483029b69",
-      "ipfsUri": "ipfs://bafkreicr2auxwtceq45n4r3lr6uynm6zsbfv6twyzsj7r7cvzpplapw2g4"
+      "termId": "0x1480f249425de3a47402dcd2f1ac47e3d04cdbad4a856f8dd98a6bf92db2e794",
+      "ipfsUri": "ipfs://bafkreifijiqc7lrzgxxdqumeglzpw66g2tmpc6rsrtzunx5bvvnjgogkfi"
     },
     {
       "canonicalId": "idea-03-005-local-guide",
-      "termId": "0x17ceb29ea38de0c92d5db37f8f26f0042ec42daa35fc0bf4b1abc9fb9427811b",
-      "ipfsUri": "ipfs://bafkreibdlr5pooib2awox55c5cpypn5ys7b3ntsunqih2cwoujtgn6fptu"
+      "termId": "0xd4efe71f60ba45f570de4f3034c84ff7f36ff5091ef5b313061ed9415791ae0d",
+      "ipfsUri": "ipfs://bafkreieagyomootwu7j24shr4wdm7hf2foae7kp6qb7ksfhc6lm77jyw2u"
     },
     {
       "canonicalId": "idea-03-006-home-service-hub",
-      "termId": "0x1c22b827bc21ab699b12c971061504783db9ab392e13e1f8eff092dfe400cc98",
-      "ipfsUri": "ipfs://bafkreicvzrq4ba6zo3umovijo33cvqteueilup3xipmzsvo5zn5uos75d4"
+      "termId": "0x7957b1b96b9c2fe06ea5d09bcb15992ee69c3c971ad9770fcd7974e28c5a984a",
+      "ipfsUri": "ipfs://bafkreie3j7prwfnnnads6zhp5qzmilp5deznkaoxtjwu22mktcxhhkrc4q"
     },
     {
       "canonicalId": "idea-03-007-cofounder-match",
-      "termId": "0xd4a0ccbc84c19e1995c38b33011cd13ab408648072a8940c214688ac9d9b7abc",
-      "ipfsUri": "ipfs://bafkreigsuukz66xgtkdcdfe4zjhxus6jrsehxfc77rfykitj7wl3et5kiu"
+      "termId": "0xde7ec2cc52321d43926c6e14f55a81e518861306f849b566deff44ce8bfa0fa4",
+      "ipfsUri": "ipfs://bafkreiepbctbegyulyztpcy2u7qpc5tefr4wyliobyqflx6jugoqodsmlm"
     },
     {
       "canonicalId": "idea-03-008-music-discovery",
-      "termId": "0xe4697c7eef22530a7a8a6e08ea3ba8dc844ed8770a5ba54e29191f5d8b2820f2",
-      "ipfsUri": "ipfs://bafkreibotpulp36mzfxpcgmf6n4ebew73u3zp3vgth3dkrfgsqwl3tyuzm"
+      "termId": "0x8bd230dae5db05ce7424bb42a92326e9fa579ed9b8731e623126f54e90454407",
+      "ipfsUri": "ipfs://bafkreiesagcsefuvtvevxdvppbjxe2vfcl5tbwkesxe47r56ekgnng3khy"
     },
     {
       "canonicalId": "idea-03-009-investment-scout",
-      "termId": "0x1ccc38c2a7878ab74e5c812857d0a2b69c872b96efd00c4fd9dfaa1d8b2e8523",
-      "ipfsUri": "ipfs://bafkreifz42e56jvhegt54tixkzw2u5f2ry6szkuorenkfziiqabme2q2dy"
+      "termId": "0x614577f90c9bb8ddf3ab4f8ee80d3af56f1780484044befa1f17dae85bf53c62",
+      "ipfsUri": "ipfs://bafkreieo6nsozp2du4ge66fqhfrwvafmdkaylt4axykk7a6uw4cg7siffy"
     },
     {
       "canonicalId": "idea-03-010-recipe-discovery",
-      "termId": "0x22af9fc9deddca443dd46c6bd5d7445ec293241d389e3079a713769b7ad02c4e",
-      "ipfsUri": "ipfs://bafkreiaoq3mpvuxyeyrb26b2zsvjfcxxscwpb6evrbzjgntsa7bihtprdy"
+      "termId": "0x25bd2d6226069e57ab7911598dae70ded0e5ac9bf97b8dd3094b6622b9c40bbb",
+      "ipfsUri": "ipfs://bafkreiaudnrptsniq65com5r2qeudsze3g4manc6ny7ujyiii6fjyizzwa"
     },
     {
       "canonicalId": "idea-03-011-niche-market",
@@ -79,8 +79,8 @@
     },
     {
       "canonicalId": "idea-03-012-therapist-finder",
-      "termId": "0xe48195c3600883173db2b76172bf62737066fb11f3cc0f3bd7ef4de605f41cf8",
-      "ipfsUri": "ipfs://bafkreiaphug7bjo2wuhti37brir3jpy75vwtvl3rmsziemqdggimzkscqi"
+      "termId": "0xcab9feacf26169071778548eda4b3a22e7dc5f23877e75eddb909586caf21a0d",
+      "ipfsUri": "ipfs://bafkreifjcr262ljzn7tkvapw2heicjyilmoes7qs44przeqbnenzuqz5eq"
     },
     {
       "canonicalId": "idea-03-013-grant-finder",
@@ -89,18 +89,18 @@
     },
     {
       "canonicalId": "idea-03-014-podcast-discovery",
-      "termId": "0x67bc510510ced9133a7e9caac2d1567f6b19d737d7ccd265656d351e2d967ee1",
-      "ipfsUri": "ipfs://bafkreigcfveizhrzggztcgr6ewgia3jpyh3mu2ttqpq26fnwmlkpvenute"
+      "termId": "0xdf51dd1e2b3abc665da7171a498fac079d896e4841e0e3e987eb75ecf6d24f26",
+      "ipfsUri": "ipfs://bafkreifvpwzkaenjjti5c74rzt3heckmd6j6y3wzfkc4vdvt6c5qaptvwm"
     },
     {
       "canonicalId": "idea-03-015-dupe-discovery",
-      "termId": "0x34cf0712a7b7f852e583d9ee1f2c04b863add015afe089bc207c493807112ae6",
-      "ipfsUri": "ipfs://bafkreiaqg3oyisqcd3k2x2e3m5fx5htpgncv76dvrrdd5bykjtbkkz4ape"
+      "termId": "0xdb9ba10017b96240fd8000e6f9c4bed970ba01b186d682974c11ae6b7599db25",
+      "ipfsUri": "ipfs://bafkreif6uzv2cfhm7hggw74m34e3rpzh5lplzp6t2a7xt4junwll4uewpu"
     },
     {
       "canonicalId": "idea-03-016-contract-templates",
-      "termId": "0x8c5d02e3c66895d2f65bf62e345c9702f715ef3a0ac5495b6bc77c31a6e3fc6d",
-      "ipfsUri": "ipfs://bafkreia7jcesvzjcfqdsbew3e35mxe4zmc5p4d6ql7fxwjspnbr3kdj6bm"
+      "termId": "0xed654ac5799657b90b68beb65afce153e187dd3e4f8f9ae792240b0a9c476090",
+      "ipfsUri": "ipfs://bafkreid3x72cbeeliynpimqgbdhtetijs2guzntqkfoaa2ba5yauedzilm"
     },
     {
       "canonicalId": "idea-03-017-apimarketplace",
@@ -109,8 +109,8 @@
     },
     {
       "canonicalId": "idea-03-018-tool-discovery",
-      "termId": "0x26dc63fafe4e5b58ba3639e06dae47fdb2098e225de19c11a237351bdc36def2",
-      "ipfsUri": "ipfs://bafkreihc3ty63baiyqmwu6dfd2by36z2vx54c5d7xw2g3bzficuir22iei"
+      "termId": "0xb3a2efbc3bc484c665bedbc24b20faf022776dc7280543e4f669a918b6906f59",
+      "ipfsUri": "ipfs://bafkreihlthg7sa4heqk2zpyfnfifwtmxukdooxyfm7hch3gewzmafem55a"
     },
     {
       "canonicalId": "idea-03-019-fitness-match",
@@ -119,13 +119,13 @@
     },
     {
       "canonicalId": "idea-03-020-vendor-match",
-      "termId": "0x508bfd9b1aa10f2a7235dc0cf836a80fa13574dc7b3910e56a2ef55e2f1dc9ec",
-      "ipfsUri": "ipfs://bafkreihadqlh6mpnh77uv5mlphepmio2dp66uvqld3esvennxr4qskq7te"
+      "termId": "0x9941bfd0c6565f98c00b679469d9ab3272f1d157e157c9119f75b6f8060bf6d2",
+      "ipfsUri": "ipfs://bafkreig6glgup72dwkpc73zk4ywwarkqjbuw4uhedqxim76fdgl2sksftu"
     },
     {
       "canonicalId": "idea-03-021-hiring-signal",
-      "termId": "0x021b22c307f1e74377abfd405e20773438d926a2d331b51d1723943dbc42c9dc",
-      "ipfsUri": "ipfs://bafkreigp46atcd5btisxru2pgcyzofduff5ndetssfuzer3fpfdqu3wwzi"
+      "termId": "0x4fcfa98ce6247d7711a8fb26405b321741544c592c8a653d7e32272a7d0d2342",
+      "ipfsUri": "ipfs://bafkreiakgowj3ry6iksx6f76uj4ef3urhw2dg5ybftwmc5ckk36zgnfsae"
     },
     {
       "canonicalId": "idea-03-022-coworking-finder",
@@ -134,128 +134,128 @@
     },
     {
       "canonicalId": "idea-04-001-agent-rank",
-      "termId": "0xc8ea5d7ed9cebfca3bbe88516095c86e15023de03b96d02b1e68fcb2bf3ebad9",
-      "ipfsUri": "ipfs://bafkreibkoxzxywlffbqypturvgcdofkhpojnuaxrcpxyjn2t3st7o4spvy"
+      "termId": "0xc21f47e6c09b62817c13ca7d42af8fc3b372f4c9671b50967dd5825a233916ab",
+      "ipfsUri": "ipfs://bafkreihcibpohid5v6ywlzhacxlf6ux7ikpuopuwzccvbagnzrdelj42tm"
     },
     {
       "canonicalId": "idea-04-002-model-market",
-      "termId": "0x4a2b8f4444fbe27b5abec8caf6ccd53c4aba544ac3b557eb8245588fe96b3ad5",
-      "ipfsUri": "ipfs://bafkreifn42vwtvwrharistfeyakpx6o27zrff7jjxoyflpjm3lhjr7eru4"
+      "termId": "0x9f255aca8e50123a04dd4ce92681ef4e91cfe1deae7fe7c6dee7931ed7e04870",
+      "ipfsUri": "ipfs://bafkreibog23e2uf4enwspjg7lc26aecasmswjyq6nwgqg6y6kjo6rzdpwi"
     },
     {
       "canonicalId": "idea-04-003-agent-hire",
-      "termId": "0x293126520e848af12926e637851d0fbcfbe9436b031f8fdf4abd365727625d37",
-      "ipfsUri": "ipfs://bafkreifmouraxdergsilfwkfls5ubx33oaaioy4tbaubt7szbt6t6hpw7u"
+      "termId": "0x2f5301a0f078932e2c69821ca0ad7c7d95bf0383458bc03ba51256d43da9c71f",
+      "ipfsUri": "ipfs://bafkreib64ue57habarv2ucwd4dr5ecsbpho4nmazfwi4qgpeeqfiy77qga"
     },
     {
       "canonicalId": "idea-04-004-prompt-vault",
-      "termId": "0x6a01f566dca3329f55f9508a132ef80e7c8a219263d60d6cbd65a6845b2a3e47",
-      "ipfsUri": "ipfs://bafkreiclbrsgngsm6ukebfculiar6rsdml5xuh4g6jwf6k57mxhvayutlm"
+      "termId": "0x0cb10f0b91b0d84bfbfaeead5a160edaf58fa25736571b6d5e44815257f39117",
+      "ipfsUri": "ipfs://bafkreichi6hypidfw7yczbbapexknbv4jhdvya6mqbxfo3dlbkt4hkqgsi"
     },
     {
       "canonicalId": "idea-04-005-agent-alliance",
-      "termId": "0x3ffead1a0db02de3f8f03403c1fd1b0329f4422bed603343c854f56c9a9ec640",
-      "ipfsUri": "ipfs://bafkreicufubouetmlvzo5srg6jxvyn2jsk45p5bljfr3saaytqnszl77im"
+      "termId": "0xf1d0b1fa50b9d79c071f1a2e386c2933d41bf35b4528c8dddacfe2d74eceb311",
+      "ipfsUri": "ipfs://bafkreiapyyyvfouedwwi3knlj6bmo345ilbxfkdsu6pemw5kxkedykqgv4"
     },
     {
       "canonicalId": "idea-04-006-halluci-watch",
-      "termId": "0x1911eb417ae9b93cca7cf53869203d986a33e899633c3bbb45c371284e706a8b",
-      "ipfsUri": "ipfs://bafkreieyog7zqpfptr67lnpkwpr2m524ai3mqvd25gmcx6ki5uwqzx2kvy"
+      "termId": "0x1f9b12fdd6c753b5191ab6d547d242a2b97f2829adcb23c642c7bc8bfd0a5c49",
+      "ipfsUri": "ipfs://bafkreia3i73vbhv2x5ubwzl62f6otr5psaj4x6qizfhlgu7x2btqcijisy"
     },
     {
       "canonicalId": "idea-04-007-veri-fact",
-      "termId": "0xadd694677c6b7414e6b3ef1d32b6cc54ad0cf2193756c791e667ffe92d5870a6",
-      "ipfsUri": "ipfs://bafkreiaay64tdegd6o6sejytdjqjskblgjyj6qwprjjoq52mn7xlin4mdi"
+      "termId": "0xd912331848555ced76483d183dae879f41d4013ce80a19973da8a9ec1b4f2f75",
+      "ipfsUri": "ipfs://bafkreicbjj5blkewk5pvxwwemnoxabppkfewacqd7amyqpugbk6tvtef3e"
     },
     {
       "canonicalId": "idea-04-008-data-curate",
-      "termId": "0x17357dcfd80449ead2c903344e71d1d1e17b07cf3e6018da53b9affb6706b528",
-      "ipfsUri": "ipfs://bafkreic5yu46z74k7y4hby3kybcpbnnp5apeugzwrc7pimcbnn2ix5s3sm"
+      "termId": "0xc4b3c8f7e1a44c9ec5b458709aa8eca0b134be4ed2d150e3e14b6511eefd726b",
+      "ipfsUri": "ipfs://bafkreihaupk6iioxzq5r5r4qr6m6oypyxd7gkon3452d5cflulla3nlwam"
     },
     {
       "canonicalId": "idea-04-009-agent-escrow",
-      "termId": "0xea9659b37241a5cf334293798ff5eb17f16f9163050a3d67079c6755cb1d05cc",
-      "ipfsUri": "ipfs://bafkreielfhgclxtj3x34me5ximgd2lb6vijgl64gs7dx3el7wxeytbm5ki"
+      "termId": "0x0b6c77f9ced99d5a8c88130604b33379c9c3e0b1e88eee920d61d7c9e74de69d",
+      "ipfsUri": "ipfs://bafkreiaj7vhnlaxwuuywyda2v7rlw6h66fc2jnceurjlsyqidowh4nwzmm"
     },
     {
       "canonicalId": "idea-04-010-agent-insurance",
-      "termId": "0x450bef558c1217d81f6a0a130fac722fba84ddfbb26e70f58fb339262fd8b6d0",
-      "ipfsUri": "ipfs://bafkreid3uhy5ogggey7y7lewoi2rbszrpscwprfb3v57tnfvxziyntq2au"
+      "termId": "0x5dbc57b09d8d38a1fb28a5e8af4a79a99a3f210d4ade412eb6a433c682d75526",
+      "ipfsUri": "ipfs://bafkreifnq5ehnephd5szzs4bsot56zdultezs6ke2ahucvjwjypyifjdsq"
     },
     {
       "canonicalId": "idea-04-011-ragtrust",
-      "termId": "0x34d882521139510309efa29632b9e822941d05b2800f0e8def432696f1135928",
-      "ipfsUri": "ipfs://bafkreigtmrudh26wmppgp4etfutobnm3zccorptw2dkdknnxsuk4nlmi7q"
+      "termId": "0x796e26faf1d7da58f6bab1aae6200eeefbe987eb858e533e0bb32caa2a0ee855",
+      "ipfsUri": "ipfs://bafkreic5py5yjjicskeakjurcwvfj2ly5yp53tliqvspltg7vul5tkvq2a"
     },
     {
       "canonicalId": "idea-04-012-sentinel-ai",
-      "termId": "0xc040875609b6c0c8b80f05b55308ea1ac0f51116bd8a411c003f552801469782",
-      "ipfsUri": "ipfs://bafkreibws3yh5tsv7yz2g3jmuds4nwlc3t5dior7aghk3f3wuc7ot5bwsm"
+      "termId": "0x7c58053ddbdffabcbb79fcc84025113d636f41f4c0272e92d142e28c9223b419",
+      "ipfsUri": "ipfs://bafkreicb4tikpdzk474ueyhd5a7lgmmn2xwcoeq7dc6z44cxhwyweu3mku"
     },
     {
       "canonicalId": "idea-04-013-deepfake-market",
-      "termId": "0x196bdef99b8d1fbe3e594264d0da068620c84b80f72c06139fd7ef945bd5c835",
-      "ipfsUri": "ipfs://bafkreieup3cbhyqpzkmco77xkstyit246ahyxfjfq56h6anzagmvu64fm4"
+      "termId": "0x748b7dec64b66bf7efb357b5cc926172f3555f28291e4c00af4fb9beec10cac0",
+      "ipfsUri": "ipfs://bafkreigcdkbmnd2wsgkv2fl6jghlq3gbjaimfogidd3uo6bgc6nd72md5y"
     },
     {
       "canonicalId": "idea-04-014-benchmark-dao",
-      "termId": "0x85d0cbae67517f1a4fcc24261b0773f118eae798cfee0a9eec7db2455bdc9977",
-      "ipfsUri": "ipfs://bafkreig6wgh7eusuaoxwhok33cv35nbp42ep2o3nk6fgp65so2wgkgdlba"
+      "termId": "0x577f3aed1c213fd01ee2e8d8bd4a0eb0b4a5ec834fd06c8ac88a8d5e04087b5a",
+      "ipfsUri": "ipfs://bafkreiaacovicefoejdfixyyvmescpgnl46sljectqsjjltb4o4ozba5du"
     },
     {
       "canonicalId": "idea-04-015-agent-cv",
-      "termId": "0x2cab656293f1aef20582381fe032d02ab733296f701efb8b3da8a930f2863859",
-      "ipfsUri": "ipfs://bafkreif6ffoj6kqumdrenzzesrlxib2gpyxx7ngfoyvetrbtfjlspphaxq"
+      "termId": "0xe7731aa997bd2e17ea9d71c80512bf0cdfc65258e9755a946ffdded277f7d271",
+      "ipfsUri": "ipfs://bafkreihmt7u6sxfrpdectfnuavef5cjf5ii2t7y46xrkkhgnnzkp4vkw6a"
     },
     {
       "canonicalId": "idea-04-016-synth-id",
-      "termId": "0xa51f07f6d8e725b394a1e9114ffd91752a0da1fd016dd4f9dd293635f1f14719",
-      "ipfsUri": "ipfs://bafkreicqfv3wsgwtoros6r6aancko2h5wchdorbtscukpdx4nfp6tbrllm"
+      "termId": "0x3a060045de467562e06626f094d9c3f413943c761c6b1afef2c658bc57f3726c",
+      "ipfsUri": "ipfs://bafkreidzjwgdg6w3vdkytracdjgsuaqbqbki4vzisaygsb3xhhs6nluhdm"
     },
     {
       "canonicalId": "idea-04-017-knowledge-forge",
-      "termId": "0xf7bdae3e82e268db4d9daadb446162c7bdbbaf53966940b8c06be9fde14d3227",
-      "ipfsUri": "ipfs://bafkreid73c5iaokk4jxsehnugyh6y4gnopqrjzgb6yd5mg6axhniq6yhdq"
+      "termId": "0xc3baadce44dfd45eda48407a2e0be7fe035d41a7b7691e5f34d304b91d2dc541",
+      "ipfsUri": "ipfs://bafkreidgkwrwuke253x33gm6hay2hhacph7rzrcyfj4h6lc4d7z3cjylwy"
     },
     {
       "canonicalId": "idea-04-018-source-trace",
-      "termId": "0x161391b2f270e0c90b9754487d213837b5e33d05827f9d879c4c9b3c42e89f79",
-      "ipfsUri": "ipfs://bafkreiehzzdy7kxe42dtoaxtpnzznjhymjtei3k5byd4l2ygooxclosslm"
+      "termId": "0x5ab929fe43f3ebde22b85bb7b30a0f98b10322d3d28a23a246db5903b0fb79cc",
+      "ipfsUri": "ipfs://bafkreib4uofy6j4t6rs2u5qw3l4zdxeuibnkore5eg5o665wtdxbb6gil4"
     },
     {
       "canonicalId": "idea-04-019-copilot-rank",
-      "termId": "0x86d2e400cacdec3674ce80c54edb92acc4b050d3a0231b25ca8e5af84f771fa6",
-      "ipfsUri": "ipfs://bafkreicumykcjr54ccmhz3lsr2snvof6eihfd6lt4sjgnft5qa2lefj2xe"
+      "termId": "0x491197725af3c3f2b60259828f95287857c311dd8468d46cf843dc9c7cf2453e",
+      "ipfsUri": "ipfs://bafkreia7xvbfghjwwxzkx4i7h3owymieiv6yfilqx5nzhjbxxgtjz4a6ym"
     },
     {
       "canonicalId": "idea-04-020-mcptool-registry",
-      "termId": "0x94729bcd72b4b70b028cbd188bb024adbf425e64fb2169dec2f8c66ea039388e",
-      "ipfsUri": "ipfs://bafkreih5njskckni5xbwkpccx6e7pdlmemz5jhgo6qd3xh7v6ourdn5ckq"
+      "termId": "0xae6c1198b953c84dd0aca49ebbc697f78e72e5b979b43a3c1b9b0196def10adf",
+      "ipfsUri": "ipfs://bafkreihxxbvav25ksyczxx7sqbg3gx6p4q3jk4jygqzes3o2frobqb75ey"
     },
     {
       "canonicalId": "idea-04-021-agent-credential-issuer",
-      "termId": "0x4b968f74186bfd6270a4498490a84d49701b8b747daf2122fdff351801b71d5c",
-      "ipfsUri": "ipfs://bafkreicugcxp2tg5e22rq5r5c6esu3hdcam3pho3z5vjp6ms4krwujilfa"
+      "termId": "0xc03464305d4ff677ecacc30ecb684fa40849970510814a9d63382435b8d39fd8",
+      "ipfsUri": "ipfs://bafkreigt2ae3nlijs2bwabwd75qyzzewfasvb4emwnpmnn4isbbwlqxwcq"
     },
     {
       "canonicalId": "idea-04-022-oracle-reputation",
-      "termId": "0xdfac80271f6620df1279474ab9e8bd702e0388a26f879d4394115968c8e6d41f",
-      "ipfsUri": "ipfs://bafkreigrumaixq3oy3loqy5dhwdzbtwtbrylebkbcgaduijup7ht5eibp4"
+      "termId": "0x8da1a17074413e0170d532e95ce5ec6575c1815d8ce154a28556e18decc77b77",
+      "ipfsUri": "ipfs://bafkreicdlxcctiacmtkktphgkyyxztritr5ue3easd4c42rtxeuwjaad2e"
     },
     {
       "canonicalId": "idea-04-023-autonomy-gradient",
-      "termId": "0xc7ed2ed86a586abca8b05799d2991ec048bb47038d7cb386ef60d7682ca36109",
-      "ipfsUri": "ipfs://bafkreiaxges45itfjvvvv5i4yrrynq4tq2y4qbvobgnl3xa4xvjtm7owki"
+      "termId": "0xd64d618921339136b955d735a1bb4c08384c2c81254a3f7cd6279dc7f33b264c",
+      "ipfsUri": "ipfs://bafkreiejxj3xxwwpell6t6677x3cxgk6s52lndaais4bmw4fqcxkzynmgy"
     },
     {
       "canonicalId": "idea-04-024-training-transparency",
-      "termId": "0xcb38ad6a7e62bceb5453a3f09abb07316a697d7fe69585a306084059b4a68a27",
-      "ipfsUri": "ipfs://bafkreic6oi4fnills6f55laf2xrvxyc3tu3axxertt2z6b4py53kuubrq4"
+      "termId": "0x985093628dee5c9e0e35e2ae6b7f4d87ee17328a691470fb07e6f8684ae795fd",
+      "ipfsUri": "ipfs://bafkreidahx56pwnuk3at2k4ehm5qjt4pyjia2sstlkqskqbhgs3mwtphha"
     },
     {
       "canonicalId": "idea-04-025-aiknowledge-base",
-      "termId": "0x8cb958578073b872fbedb7ebcdce373162cdcfcab1154d200ddb83879dae60ca",
-      "ipfsUri": "ipfs://bafkreievs7ihn52ya5a6epujp5fyqafzksjf6mgpdxvdg33nwbaei5razq"
+      "termId": "0x728745ebcf05faa4b97737c122dea0decf66302d7eb276dbf1e429e1e6c9c18e",
+      "ipfsUri": "ipfs://bafkreiejeccsrboo7kirg4ahej4jwjoqewrr7rye3huhktbbgw7hputmgu"
     }
   ],
   "failed": []

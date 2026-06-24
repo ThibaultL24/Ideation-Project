@@ -1,0 +1,262 @@
+{
+  "network": "testnet",
+  "requested": 50,
+  "atomsPinned": 50,
+  "atomsCreated": 0,
+  "triplesCreated": 0,
+  "skippedExisting": 50,
+  "txHashes": [],
+  "ideaAtomIds": [
+    {
+      "canonicalId": "idea-07-011-vcreputation",
+      "termId": "0xc3a9559902a414448592ab9889a33513297f999adce7f3aa3d58c15281ecf4cd",
+      "ipfsUri": "ipfs://bafkreiamfhrj3ruli7gdlxlrigoviglp4jfxcctebic7fwh4aiuom7csru"
+    },
+    {
+      "canonicalId": "idea-07-012-insurance-pool",
+      "termId": "0xfa7b921841f8f41d6026f470b25c66d91a7560f09f250919cfb1e98aa3e84542",
+      "ipfsUri": "ipfs://bafkreiateyydx2mxrohbwdcbrmknwwpfwth3vddjtdz6nuse7g7wa2cfuu"
+    },
+    {
+      "canonicalId": "idea-07-013-treasury-watch",
+      "termId": "0x6a8521fd088c91094df3b8d6c4ed374398bf9a6c651424e90686020ae34abd6d",
+      "ipfsUri": "ipfs://bafkreiaqddgofnhhzpmgqoutjng7yp3pbc7d24hwqwj47ldps7pm2cds54"
+    },
+    {
+      "canonicalId": "idea-07-014-carbon-credit",
+      "termId": "0xa34a0d3ae440679dddda1817ad8a25912ee9041abd9ec4a0812bfcb202a43ac0",
+      "ipfsUri": "ipfs://bafkreigyzsrpjmoaxqqjhpefd34qdgdqvf7lh7s3p7agq5wqd2q45p642a"
+    },
+    {
+      "canonicalId": "idea-07-015-crowdfunding-trust",
+      "termId": "0xc673a5ce90866c6a662f0199043f6e42c2eaea7cc59661b72b1c560faa626c85",
+      "ipfsUri": "ipfs://bafkreicefjbrd2pokjrovotcetvdoem4i53hhugmxduovohxzjgjabvihq"
+    },
+    {
+      "canonicalId": "idea-07-016-grant-allocation",
+      "termId": "0x4e88239dc107a0a9eb3d8ce50054fea6f0c1dc8f541202939dbbd5fe21b0ba9f",
+      "ipfsUri": "ipfs://bafkreicvblclx6cywo6sws4con2vc6h6hjtjmucvdbog5zohcj6b5ilkum"
+    },
+    {
+      "canonicalId": "idea-07-017-analyst-rank",
+      "termId": "0xf3ac61fff8406d879ac762d968838b0c2a6bc7f52bf675e33d7ad1f83b8db02b",
+      "ipfsUri": "ipfs://bafkreiciam6ojgxgr4skctzsa7v5tckek26no7ano3wh7v7poupcd4yunq"
+    },
+    {
+      "canonicalId": "idea-07-018-risk-oracle",
+      "termId": "0x574382c822ad9083bbd9dd50195e98803ae2d1f079f1221704d39b682896881a",
+      "ipfsUri": "ipfs://bafkreifewph3tnsz34r5rzw7bdqid542dbb3ou7vemypabycvhjwviwzmu"
+    },
+    {
+      "canonicalId": "idea-07-019-debt-market",
+      "termId": "0xa450990aa7995ee098f6a98e9b2fb2fa562a3262b1d02572ee288e67979d2f63",
+      "ipfsUri": "ipfs://bafkreihhf4oik73r4iobfqthti5kldmqg4acgpixdtxa6cvv6ukqdstxae"
+    },
+    {
+      "canonicalId": "idea-07-020-micro-insurance",
+      "termId": "0xbb509f11ee8c0820d7fb9efa8dd73bd51c473325333032a250808f504e7ced64",
+      "ipfsUri": "ipfs://bafkreichajabfckt3ywbb23zrkx4ztzb2ovrvcp3vm4ymo76xuycjxm2fa"
+    },
+    {
+      "canonicalId": "idea-08-001-claim-futures",
+      "termId": "0x207661fe21d963344ea1b2d137bc180af6e90253b26c9c8a2be7c1111bb3e71c",
+      "ipfsUri": "ipfs://bafkreihxb2msrzf5k2a36gu7dk5t6dbg57j64nrp3p6jgun4lq5w4bgiwy"
+    },
+    {
+      "canonicalId": "idea-08-002-trend-cast",
+      "termId": "0x7e0d4b6fa37066fdfa3df5ef7c7924f7d5b7163046584c4d322d2ff2d314b39c",
+      "ipfsUri": "ipfs://bafkreic47otrzftxxykhtnzjmpq5tgduwcswabu2y5bwvs6nbxki7gowsu"
+    },
+    {
+      "canonicalId": "idea-08-003-ship-or-vapor",
+      "termId": "0xa08611d46b48f0ed469d39b97508b6ae19b60dfe694a22e3052a11668aee96a2",
+      "ipfsUri": "ipfs://bafkreibevcw4fkd5diansdjph46npswf2txs4j5k5kpmydnlhkdp24wji4"
+    },
+    {
+      "canonicalId": "idea-08-004-startup-signal",
+      "termId": "0x506f94e839b603c12c5687ad8b40043ef4e3599f3e99ff8b1a45c2d097c92116",
+      "ipfsUri": "ipfs://bafkreid3g3secezvt3imiw3b5lks3hodo54pk75qwzwpc2x4ssthgveq6i"
+    },
+    {
+      "canonicalId": "idea-08-005-narrative-index",
+      "termId": "0xb841ff13886c8babbffd21fb9f33c868151d0be5f64851562cf62ce5d8d3493c",
+      "ipfsUri": "ipfs://bafkreigyu2yzzjrodt65avufejhgctjxen4md72enud6zbcwcczfq2vysm"
+    },
+    {
+      "canonicalId": "idea-08-006-election-graph",
+      "termId": "0x5a7e324fa9fcdb481adf0b4afd280e41235cab39231293acadb510258a97c5ee",
+      "ipfsUri": "ipfs://bafkreie5mvlg3vakcmqfxxwfxvb7ysvpzya22pgzuaynun6xpbdjqubxtu"
+    },
+    {
+      "canonicalId": "idea-08-007-sports-oracle",
+      "termId": "0x4ce4ecdfb4833ee3e7e393335f9f1588abd4d21a271b9c91252889e257cbca2c",
+      "ipfsUri": "ipfs://bafkreicyaz6ugiuvk3p3fwceoe7r5b5kzuc7plk6jmrnlo4qbrpl7drmqa"
+    },
+    {
+      "canonicalId": "idea-08-008-vibe-check",
+      "termId": "0xad6b4a0d0d5c1eaa5c152fc1ac6562cc6a80a1d0da41d79d6d26ebc9e94a395d",
+      "ipfsUri": "ipfs://bafkreidsfj5ocgp67d4ufvuz626lreooqunbpaq27xzknccf3qyvr6bksy"
+    },
+    {
+      "canonicalId": "idea-08-009-research-bets",
+      "termId": "0xfb65c4382e78f90112c20d61899c5cab5f49385ba94e13bad5d734ef236d151f",
+      "ipfsUri": "ipfs://bafkreigxuotthey66y4cq5tiw7blmg7gqfydmccmsy6gq25cps4ufb2tfi"
+    },
+    {
+      "canonicalId": "idea-08-010-reg-signal",
+      "termId": "0xea15036bd2c9aaf374e05e20fff4e754e57adaeedbb635da7ec926f34b7f0352",
+      "ipfsUri": "ipfs://bafkreifl7nce6x42jt762lqx6fyp2qoxnh6lhlb4j5uaxtmdchyjzzzuya"
+    },
+    {
+      "canonicalId": "idea-08-011-macro-lens",
+      "termId": "0xd6db80bf365cb0de72ebb9140fc83f221a87e679fcd646d4b90d11fb81cb4f9e",
+      "ipfsUri": "ipfs://bafkreicavvbmawbnx2yv2ge4okq7aecbks2hkjvrxzzmkopv7fjk2wjo2y"
+    },
+    {
+      "canonicalId": "idea-08-012-climate-stake",
+      "termId": "0x86ed8512c50c74f5127402101b81093f799bda540c19b52b76fc62e9c10ac057",
+      "ipfsUri": "ipfs://bafkreibqi2faxl76ibvgkwsvl6yky4q5bmejgabpm23w3ux4upfz7rxemm"
+    },
+    {
+      "canonicalId": "idea-08-013-talent-futures",
+      "termId": "0x326b4febbb221909bdd1f7ac37543b64ae5d92654e49a6c38ed2c208530293e3",
+      "ipfsUri": "ipfs://bafkreif6bxagcvjkb73wrzvt7tog2a6mcnqqemfjo2yejd7w6cmkvgkemm"
+    },
+    {
+      "canonicalId": "idea-08-014-price-whisper",
+      "termId": "0x155cea41acc1b36dc4a0d9c0f91d0f628a249109834204f5796d60c4a7529f9a",
+      "ipfsUri": "ipfs://bafkreia765ampzgsitdezghb5s7wpi7yze64hx7xmlkdd3puen2hszlkky"
+    },
+    {
+      "canonicalId": "idea-08-015-hire-signal",
+      "termId": "0x3cc9e8b96a272cbacae8534b88c00ec2db228ba4104e667c701f3d240d6adbba",
+      "ipfsUri": "ipfs://bafkreibd4me37gxwolnt7kivd45p7rkkdu5flu5xj75cfafgsavh6nghvi"
+    },
+    {
+      "canonicalId": "idea-09-001-scam-shield",
+      "termId": "0xf7da66ed3a6c9dbfe3a4bb851f3116a206b114f53e733fc0c615d08a37dfe574",
+      "ipfsUri": "ipfs://bafkreibxwdjnalngcq7ocejflgahbfzot4khiahyhd5rs6725cyvk4po6q"
+    },
+    {
+      "canonicalId": "idea-09-002-phish-net",
+      "termId": "0x832484b2cfd18e1f909ccd0042628bfff93b222638b5ad0d6253dfff6527620b",
+      "ipfsUri": "ipfs://bafkreidwo3q54hu2mtw2bssjlu5t6437uzynwaeiwznfkinkakb5xn7bny"
+    },
+    {
+      "canonicalId": "idea-09-003-rug-radar",
+      "termId": "0x6a7577fbb5b4a2bd6c80a8727bb3a5ee78917de8f0b03799843d83a9d6174e18",
+      "ipfsUri": "ipfs://bafkreia4plsndeht5g4qpw2etdicoetdc3v4a4vdf6kueiktkgjsn5mpvy"
+    },
+    {
+      "canonicalId": "idea-09-004-trust-fence",
+      "termId": "0x600763c5db197353b192c218af616d401e43cd58b4c97ab419f3817641f753d4",
+      "ipfsUri": "ipfs://bafkreicxsje67bjeer346hw6jibj7vzi3onwk7p72z6pdp5kwui6llyflq"
+    },
+    {
+      "canonicalId": "idea-09-005-identity-shield",
+      "termId": "0x7699af8518721210cfb39df75713768f89369f55926a55d21392a623447791b7",
+      "ipfsUri": "ipfs://bafkreicxsquwuen2ml4tyvotxu72qzv75kzyln7vdqd3lqyadppc2zcnum"
+    },
+    {
+      "canonicalId": "idea-09-006-safe-hire",
+      "termId": "0x7af5d18497fdaa2eb312a0f09817e087407fb54c925632a9ca8292e62b5a427a",
+      "ipfsUri": "ipfs://bafkreig4rhlbq72vkec3mx3glrfjmkef7exxx72tajwonyezd7erkckuyq"
+    },
+    {
+      "canonicalId": "idea-09-007-contract-guard",
+      "termId": "0x8a6d965af4c0ee2ad9a1dcce4aee19d0296bb9b4c1880a5c4fb10dad7f70889f",
+      "ipfsUri": "ipfs://bafkreiei7cn5g6nxmbuh6e3ttsu44pgrgbfeobbzh22hcz7kqmf76p4cdq"
+    },
+    {
+      "canonicalId": "idea-09-008-child-safe",
+      "termId": "0x4fd3cd98ccba87086b137e83101c34293a2774897bff8b1b1e9eb889754afb71",
+      "ipfsUri": "ipfs://bafkreieooq7zhah2nzsez6mk2rcxwjmz4e73cg6rckvfgeiufko6su7wxe"
+    },
+    {
+      "canonicalId": "idea-09-009-drug-check",
+      "termId": "0x508351362d0a226db0a5771dc9815d048d7383031f3740146dba152e1177ffcc",
+      "ipfsUri": "ipfs://bafkreiaztl526r4zar6ebdlilbpeetgprixk2ug5ee4752hzirtukjdqk4"
+    },
+    {
+      "canonicalId": "idea-09-010-rent-shield",
+      "termId": "0x526e8d46d47522d0603a745b264314aa036b233b1eb59ec6adea960bb0041c39",
+      "ipfsUri": "ipfs://bafkreidrsvisfbteyzlikadc7vx2ztz3pvfx5l74nsjuashcqufwrtrlqa"
+    },
+    {
+      "canonicalId": "idea-09-011-influencer-audit",
+      "termId": "0x63206839ec5c26ef3b92f7c1afe81e9eaf6c845fbf088d5b27d5f455553a311a",
+      "ipfsUri": "ipfs://bafkreibudhhr6izmotfdsnwbr5tqd4qzg7yo632qu6fldcza2ehcmwfdgq"
+    },
+    {
+      "canonicalId": "idea-09-012-whistle-vault",
+      "termId": "0xd07b9f71d911d9a6ade0c7dbf42dd2bb6a7958ec943cc528799dac257618c495",
+      "ipfsUri": "ipfs://bafkreibp2zwdkeojyhkn44fyk3vy73j2eghhek5wd6ggbi7hnxvvd3bed4"
+    },
+    {
+      "canonicalId": "idea-09-013-supply-trace",
+      "termId": "0xedcef3d477f8ac66a211c663c7613577ed9a819e01eac3b07cdb3e1fe163256f",
+      "ipfsUri": "ipfs://bafkreigmi23rzvst34cszh54awdur27fictnqy6yrmavxdwvu34dsaq3hy"
+    },
+    {
+      "canonicalId": "idea-09-014-disaster-trust",
+      "termId": "0x37f4a1bfcd05745294f2031cbe436e670d487a432b5810bf743d77cfc9c838b5",
+      "ipfsUri": "ipfs://bafkreifb4gzfunxqnrksywiprl422ndvysankvvd3alkjifoczakqq7ju4"
+    },
+    {
+      "canonicalId": "idea-09-015-vote-guard",
+      "termId": "0x17580528a6af33dd52895798ecdbade8ebbe4a0b255e8eae030c9bc25e2c7f55",
+      "ipfsUri": "ipfs://bafkreigmruxfb3yi7bqjl6ryogb7hyro3jmodlry4hzhpolv2sxvgp5oi4"
+    },
+    {
+      "canonicalId": "idea-10-001-provenance-chain",
+      "termId": "0x88f0af21692f19f67a6a6f806ddfcad93e88271acb5e3a0e35bea0261cfa605a",
+      "ipfsUri": "ipfs://bafkreidi3dq3si4r7uxyie7vqbe4wyrrsxwurarswtwoxcdc74gccb6i3q"
+    },
+    {
+      "canonicalId": "idea-10-002-sound-stake",
+      "termId": "0x3c3c9b37012e3099c67cd1ee2dfe7917d9868ca6aaebddf1ff55a142d3d9fa20",
+      "ipfsUri": "ipfs://bafkreib66di2np3i43g4gjhw3bukblatwbfn4qdjyptjbegtg7oaendhn4"
+    },
+    {
+      "canonicalId": "idea-10-003-fashion-oracle",
+      "termId": "0x15eeb99192360b68ae66a89e382453923cabc5b5581a16720f88ceac45467335",
+      "ipfsUri": "ipfs://bafkreianluanfkmpy6dl7mtwfqjvpxekexna3x2dyhigddpyvxhwo5vyqq"
+    },
+    {
+      "canonicalId": "idea-10-004-taste-maker",
+      "termId": "0x7b8b7b643ed849fa386fa38ca0227d47dca449277a0e2a9f03a5327c3d80360a",
+      "ipfsUri": "ipfs://bafkreif57zu62xyidnxq7u5vdcrkhzureodfpolsptk2fruepx325csrmu"
+    },
+    {
+      "canonicalId": "idea-10-005-meme-mint",
+      "termId": "0x737961eed17de666d393335c4165bbde235e27732427573af8d321f03f3ff8e4",
+      "ipfsUri": "ipfs://bafkreicvwh2wxsgrk3thxoklelpmj5qpb5w3mj3c6ez6wf64knfwlbpmgq"
+    },
+    {
+      "canonicalId": "idea-10-006-studio-trust",
+      "termId": "0x5a87d5f4ff90daaa12f685412b2c6ac6998544267f52f86e506688c90907d6d6",
+      "ipfsUri": "ipfs://bafkreicvs4u7arhwhli6t2uwicn54izjiov2pqxencadnxp4h27grde4su"
+    },
+    {
+      "canonicalId": "idea-10-007-critique-curve",
+      "termId": "0xe9dac583a5e0bac7fee5d57cb4c85102125f648ed373f6eecc68d6e6329dad2e",
+      "ipfsUri": "ipfs://bafkreifnggqdo7oew2no75xamfvweaqbonn2d6mj3kwkhnpkxdpzyntmoi"
+    },
+    {
+      "canonicalId": "idea-10-008-recipe-vault",
+      "termId": "0xc8b7308a0a6c431f7ac429a0edb2aa7b63acf49890265581b897caf42f7270f1",
+      "ipfsUri": "ipfs://bafkreifbsftkdyes4wsguqyfwjhyprlf3fzzgo7k2lck6zzuhixfhe7sxa"
+    },
+    {
+      "canonicalId": "idea-10-009-design-trust",
+      "termId": "0x89e60892dcf878902cf2c940bcaea8d04bc0d9655aee8ed62d048af7beec362d",
+      "ipfsUri": "ipfs://bafkreigs6lottvuvo6wgvytjt5uqebg4who3iyi6l7cr6zotmolxpvxana"
+    },
+    {
+      "canonicalId": "idea-10-010-collab-graph",
+      "termId": "0x8966997ce14fd00b0affe0a770c78c385a1ac2d80dad48ecff2d09f4a0a61a72",
+      "ipfsUri": "ipfs://bafkreift2eiv7eutbwzproycvaoe7vxzx7sqooc65ywwk4ysqzqazwl2vm"
+    }
+  ],
+  "failed": []
+}

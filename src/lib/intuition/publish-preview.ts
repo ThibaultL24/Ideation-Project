@@ -2,7 +2,6 @@
 import {
   calculateAtomId,
   calculateTripleId,
-  pinThing,
 } from "@0xintuition/sdk";
 import {
   multiVaultGetAtomCost,
@@ -12,7 +11,6 @@ import {
 import { formatEther, toHex, type Hex } from "viem";
 import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
 import type { Idea } from "@/lib/ideas/schema";
-import { getReportedAtomId } from "@/lib/ideas/idea-state";
 import { createIntuitionClients, getNativeBalance } from "./client";
 import {
   BOUNTY_PREDICATE_LABEL,
@@ -20,6 +18,7 @@ import {
   type IntuitionNetwork,
 } from "./config";
 import { ideaToPinThing } from "./idea-thing";
+import { pinThingForNetwork } from "./pin-thing";
 import { ensureSdkGraphqlClient } from "./sdk-setup";
 import { lookupObjectTermId, lookupPredicateTermId } from "./terms";
 
@@ -46,6 +45,8 @@ export interface OnchainPublishPreview {
   totalEstimatedCostWei: string;
   totalEstimatedCostFormatted: string;
   alreadyComplete: boolean;
+  /** True when this brainstorm variant (IPFS fingerprint) is not on-chain yet. */
+  variantNeedsPublish: boolean;
   canPublish: boolean;
   blockers: string[];
   explorerBase: string;
@@ -81,26 +82,19 @@ export async function previewOnchainPublish(params: {
   ]);
 
   const blockers: string[] = [];
-  const reportedAtomId = getReportedAtomId(params.idea);
 
   let ideaIpfsUri: string | undefined;
-  let ideaTermId: Hex | null = reportedAtomId as Hex | null;
+  let ideaTermId: Hex | null = null;
 
-  if (ideaTermId) {
-    const exists = await termExists(publicClient, multivault, ideaTermId);
-    if (!exists) ideaTermId = null;
-  }
-
-  if (!ideaTermId) {
-    const uri = await pinThing(
+  try {
+    const uri = await pinThingForNetwork(
+      config,
       ideaToPinThing(params.idea, params.githubBlobUrl, params.draft),
     );
-    if (!uri?.startsWith("ipfs://")) {
-      blockers.push(`IPFS pin failed for "${params.idea.title}".`);
-    } else {
-      ideaIpfsUri = uri;
-      ideaTermId = calculateAtomId(toHex(uri)) as Hex;
-    }
+    ideaIpfsUri = uri;
+    ideaTermId = calculateAtomId(toHex(uri)) as Hex;
+  } catch {
+    blockers.push(`IPFS pin failed for "${params.idea.title}".`);
   }
 
   let predicateTermId = await lookupPredicateTermId(config);
@@ -197,6 +191,9 @@ export async function previewOnchainPublish(params: {
   const ideaStep = steps.find((s) => s.id === "ideaAtom");
   const tripleStep = steps.find((s) => s.id === "coreTriple");
   const alreadyComplete = Boolean(ideaStep?.exists && tripleStep?.exists);
+  const variantNeedsPublish = Boolean(
+    ideaStep?.willCreate || tripleStep?.willCreate,
+  );
 
   const walletConfigured = Boolean(clients.writeConfig && clients.account);
   let walletBalanceWei: string | undefined;
@@ -218,7 +215,7 @@ export async function previewOnchainPublish(params: {
   }
 
   const canPublish =
-    !alreadyComplete && walletConfigured && blockers.length === 0;
+    variantNeedsPublish && walletConfigured && blockers.length === 0;
 
   return {
     network: config.network,
@@ -234,6 +231,7 @@ export async function previewOnchainPublish(params: {
     totalEstimatedCostWei,
     totalEstimatedCostFormatted: formatEther(BigInt(totalEstimatedCostWei)),
     alreadyComplete,
+    variantNeedsPublish,
     canPublish,
     blockers,
     explorerBase: config.explorer,

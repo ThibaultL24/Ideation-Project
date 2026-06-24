@@ -1,0 +1,20 @@
+{
+  "ideaCanonicalId": "idea-01-001-stake-review",
+  "network": "testnet",
+  "ipfsUri": "ipfs://bafkreihl554xbri3q2rrohrnte76o672vilird52lq6ofhfp67drdoftcm",
+  "ideaAtomId": "0x15cfa296a4c53232df083cc8610c9829f3b44860e5ba0d46d74f82cdd92b8fbb",
+  "ideaAtomCreated": true,
+  "predicateAtomId": "0xc3e6f1bb243fa82208dbfb2b5b73cf11a1ad26b04e59fd275b163e244c7825b5",
+  "predicateAtomCreated": true,
+  "objectAtomId": "0xda797f4aa19c2b129bd3a33cdb8d260b94672fcdb295d04e2533dc02a994a3d8",
+  "tripleTermId": "0x2417a2cf13bf2616dd7a00a16079a9767a6600ff0243408fb92084acb6930ceb",
+  "tripleCreated": true,
+  "txHashes": [
+    "0x9aee77ae0dc4d057471b902430d7cfad086359edc91350a09041c25bc6c298b3",
+    "0x8e9a2922f7949dbbbb99cbf6c6259edc4a56467b845dbc7602003aee4afd9d5a",
+    "0x968655a6663dc4fa4a0213d821abbe6773ffebb0baeeeb55e17f8dc86a69d75b"
+  ],
+  "graphqlVerified": true,
+  "atomLabel": "StakeReview",
+  "estimatedCostWei": "3000000004000000"
+}

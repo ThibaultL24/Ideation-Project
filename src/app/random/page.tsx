@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { loadNormalizedIdeas } from "@/lib/ideas/load";
+import { loadCatalogIdeas } from "@/lib/ideas/load-catalog";
 import { buildIdeaFullState } from "@/lib/ideas/idea-state";
+import { getNetworkLabel } from "@/lib/intuition/config";
 
 function pickRandom<T>(items: T[]): T | undefined {
   if (items.length === 0) return undefined;
@@ -8,7 +9,8 @@ function pickRandom<T>(items: T[]): T | undefined {
 }
 
 export default async function RandomPage() {
-  const idea = pickRandom(loadNormalizedIdeas());
+  const catalog = await loadCatalogIdeas();
+  const idea = pickRandom(catalog.ideas);
   const state = idea
     ? await buildIdeaFullState(idea, { verifyOnchain: true })
     : null;
@@ -20,6 +22,11 @@ export default async function RandomPage() {
           Random on-chain idea
         </p>
         <h1 className="mt-1 text-2xl font-bold">Discover a lead</h1>
+        <p className="text-sm text-[var(--muted)]">
+          {catalog.source === "graph"
+            ? `${catalog.onchainCount} ideas from the on-chain ideation slice (${getNetworkLabel(catalog.network)})`
+            : "Local catalog snapshot — on-chain list not available on this network yet"}
+        </p>
       </div>
       {!idea || !state ? (
         <p className="text-[var(--muted)]">Empty catalog.</p>

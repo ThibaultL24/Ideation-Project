@@ -3,10 +3,12 @@ import Link from "next/link";
 import { CategoryGrid } from "@/components/brainstorm/category-grid";
 import { IdeationFlow } from "@/components/brainstorm/ideation-flow";
 import { getCategoryCounts } from "@/lib/ideas/category";
-import { getCategories, loadNormalizedIdeas } from "@/lib/ideas/load";
+import { loadCatalogIdeas } from "@/lib/ideas/load-catalog";
+import { getCategories } from "@/lib/ideas/load";
 
-export default function BrainstormIndexPage() {
-  const ideas = loadNormalizedIdeas();
+export default async function BrainstormIndexPage() {
+  const catalog = await loadCatalogIdeas();
+  const ideas = catalog.ideas;
   const categories = getCategories(ideas);
   const counts = getCategoryCounts(ideas);
   const grid = categories.map((name) => ({

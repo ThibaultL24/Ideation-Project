@@ -1,6 +1,6 @@
 {
-  "network": "mainnet",
-  "graphqlEndpoint": "https://mainnet.intuition.sh/v1/graphql",
+  "network": "testnet",
+  "graphqlEndpoint": "https://testnet.intuition.sh/v1/graphql",
   "totalIdeas": 362,
   "termIdsInReports": 362,
   "atomsAggregateCount": 362,
@@ -10,8 +10,8 @@
   "missingFromReports": [],
   "missingGraphqlAtoms": [],
   "missingGraphqlTriples": [],
-  "predicateId": "0x2fc0053ca47d158884bc39bd3b92047acc4e7c978de75f8b4f43ccdaa53cca7a",
+  "predicateId": "0xc3e6f1bb243fa82208dbfb2b5b73cf11a1ad26b04e59fd275b163e244c7825b5",
   "objectId": "0xda797f4aa19c2b129bd3a33cdb8d260b94672fcdb295d04e2533dc02a994a3d8",
   "ok": true,
-  "generatedAt": "2026-06-24T21:23:37.649Z"
+  "generatedAt": "2026-06-24T18:49:31.199Z"
 }

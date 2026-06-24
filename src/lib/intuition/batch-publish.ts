@@ -4,14 +4,14 @@ import {
   calculateAtomId,
   calculateTripleId,
   createTripleStatement,
-  pinThing,
 } from "@0xintuition/sdk";
 import { multiVaultGetTripleCost, multiVaultIsTermCreated, type WriteConfig } from "@0xintuition/protocol";
 import { toHex, type Hex } from "viem";
 import type { Idea } from "@/lib/ideas/schema";
-import type { IntuitionNetwork } from "./config";
+import type { IntuitionNetwork, IntuitionNetworkConfig } from "./config";
 import { createIntuitionClients } from "./client";
-import { ideaToPinThing } from "./idea-thing";
+import { catalogIdeaToPinThing } from "./idea-thing";
+import { pinThingForNetwork } from "./pin-thing";
 import { resolveObjectTermId, resolvePredicateTermId } from "./terms";
 
 const DEFAULT_CHUNK = 25;
@@ -65,12 +65,13 @@ interface PreparedIdea {
 async function prepareIdeas(
   writeConfig: WriteConfig,
   ideas: Idea[],
+  networkConfig: IntuitionNetworkConfig,
 ): Promise<{ toCreate: PreparedIdea[]; existing: PreparedIdea[] }> {
   const toCreate: PreparedIdea[] = [];
   const existing: PreparedIdea[] = [];
 
   for (const idea of ideas) {
-    const uri = await pinThing(ideaToPinThing(idea));
+    const uri = await pinThingForNetwork(networkConfig, catalogIdeaToPinThing(idea));
     if (!uri?.startsWith("ipfs://")) {
       throw new Error(`pinThing failed: ${idea.canonicalId}`);
     }
@@ -102,7 +103,11 @@ export async function publishIdeasBatch(params: {
   const ideaAtomIds: BatchPublishReport["ideaAtomIds"] = [];
   const failed: BatchPublishReport["failed"] = [];
 
-  const { toCreate, existing } = await prepareIdeas(writeConfig, params.ideas);
+  const { toCreate, existing } = await prepareIdeas(
+    writeConfig,
+    params.ideas,
+    clients.config,
+  );
 
   for (const item of existing) {
     ideaAtomIds.push({

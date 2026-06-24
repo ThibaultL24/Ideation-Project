@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { HunchGlyph } from "@/components/brand/hunch-logo";
 import { getNetworkConfig, getPortalExplorerUrl } from "@/lib/intuition/config";
-import { loadNormalizedIdeas } from "@/lib/ideas/load";
+import { loadCatalogIdeas } from "@/lib/ideas/load-catalog";
 
 const ENTRY_PATHS = [
   {
@@ -61,8 +61,9 @@ const FLOW = [
   },
 ];
 
-export default function HomePage() {
-  const ideaCount = loadNormalizedIdeas().length;
+export default async function HomePage() {
+  const catalog = await loadCatalogIdeas();
+  const ideaCount = catalog.ideas.length;
   const networkConfig = getNetworkConfig();
   const portalUrl = getPortalExplorerUrl(networkConfig.network);
 
