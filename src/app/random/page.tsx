@@ -1,16 +1,23 @@
+// src/app/random/page.tsx
 import Link from "next/link";
 import { loadCatalogIdeas } from "@/lib/ideas/load-catalog";
-import { buildIdeaFullState } from "@/lib/ideas/idea-state";
+import {
+  buildIdeaFullState,
+  pickRandomIdeaExcluding,
+} from "@/lib/ideas/idea-state";
 import { getNetworkLabel } from "@/lib/intuition/config";
 
-function pickRandom<T>(items: T[]): T | undefined {
-  if (items.length === 0) return undefined;
-  return items[Math.floor(Math.random() * items.length)];
+export const dynamic = "force-dynamic";
+
+interface RandomPageProps {
+  searchParams: Promise<{ exclude?: string }>;
 }
 
-export default async function RandomPage() {
+export default async function RandomPage({ searchParams }: RandomPageProps) {
+  const params = await searchParams;
   const catalog = await loadCatalogIdeas();
-  const idea = pickRandom(catalog.ideas);
+  const excludedSlug = params.exclude?.trim();
+  const idea = pickRandomIdeaExcluding(catalog.ideas, excludedSlug);
   const state = idea
     ? await buildIdeaFullState(idea, { verifyOnchain: true })
     : null;
@@ -77,7 +84,7 @@ export default async function RandomPage() {
               Catalog entry
             </Link>
             <Link
-              href="/random"
+              href={`/random?exclude=${encodeURIComponent(idea.slug)}`}
               className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
             >
               Another random

@@ -4,6 +4,7 @@ import {
   getIdeaDbState,
   resolveNextAction,
   buildBadges,
+  pickRandomIdeaExcluding,
   pickRandomIdeas,
 } from "../src/lib/ideas/idea-state";
 import type { Idea } from "../src/lib/ideas/schema";
@@ -67,6 +68,20 @@ describe("pickRandomIdeas", () => {
     const picked = pickRandomIdeas(items, 4);
     expect(picked).toHaveLength(4);
     expect(new Set(picked).size).toBe(4);
+  });
+});
+
+describe("pickRandomIdeaExcluding", () => {
+  it("does not return the excluded idea when alternatives exist", () => {
+    const ideas = [
+      { slug: "current", title: "Current" },
+      { slug: "next", title: "Next" },
+      { slug: "last", title: "Last" },
+    ];
+
+    const picked = pickRandomIdeaExcluding(ideas, "current", () => 0);
+
+    expect(picked?.slug).toBe("next");
   });
 });
 

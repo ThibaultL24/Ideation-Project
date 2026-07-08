@@ -230,3 +230,19 @@ export function pickRandomIdeas<T>(items: T[], count: number): T[] {
   }
   return picked;
 }
+
+export function pickRandomIdeaExcluding<T extends { slug: string }>(
+  items: T[],
+  excludedSlug?: string,
+  random = Math.random,
+): T | undefined {
+  if (items.length === 0) return undefined;
+
+  const candidates = excludedSlug
+    ? items.filter((item) => item.slug !== excludedSlug)
+    : items;
+  const pool = candidates.length > 0 ? candidates : items;
+  const index = Math.floor(random() * pool.length);
+
+  return pool[index];
+}
