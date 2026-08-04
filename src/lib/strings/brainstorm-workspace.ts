@@ -6,7 +6,7 @@ export const workspaceStrings = {
   draftTab: "Draft & refine",
   publishTab: "Prepare & publish",
   refineHint:
-    "Refine the draft fields below, then switch to Prepare & publish to open a GitHub PR (on-chain atoms after merge).",
+    "Use the helpers above, refine the draft fields below, then Prepare & publish for GitHub PR and on-chain attestation (you confirm before anything is published).",
   archetypeTitle: "Intuition archetype",
   semanticLinter: "Semantic linter",
   draftReady: "Draft is structured enough for a PR and on-chain plan.",

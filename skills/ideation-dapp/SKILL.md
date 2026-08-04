@@ -64,13 +64,29 @@ Comme `intuition-ideation` : **ne pas précipiter**. Attendre la validation de l
 📍 Step 1 of 5: Describe & Search → Step 2: Brainstorm → Step 3: Challenge → Step 4: GitHub → Step 5: Intuition
 ```
 
-| Étape | Nom skill | Écran / action dapp |
-|-------|-----------|---------------------|
-| 1 | Describe & Search | `/brainstorm`, `/ideas`, `/random`, API similar |
-| 2 | Brainstorm | `/brainstorm/idea/[slug]` ou brouillon `draft-*` |
-| 3 | Challenge | champs `challenge`, `risks` + linter sémantique |
-| 4 | GitHub | section « Préparer & publier » (`#publication`) |
-| 5 | Intuition | **après merge PR** — pas de bouton onchain dans la dapp |
+| Étape | Nom skill         | Écran / action dapp                                                                                                    |
+| ----- | ----------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| 1     | Describe & Search | `/brainstorm`, `/ideas`, `/random`, API similar                                                                        |
+| 2     | Brainstorm        | `/brainstorm/idea/[slug]` — cadrage + **5 actions d’élaboration**                                                      |
+| 3     | Challenge         | action optionnelle `challenge` (après une première élaboration)                                                        |
+| 4     | GitHub            | onglet Prepare & publish — OAuth PR                                                                                    |
+| 5     | Intuition         | onglet On-chain — publication atom + triple **accessible dans la dapp** (confirmation utilisateur, pas d’auto-publish) |
+
+### Actions d’élaboration (outcome-driven)
+
+Après le cadrage, la dapp demande : _What does your idea need before publication?_
+
+| Action          | But                   | Champs touchés (suggestions)    |
+| --------------- | --------------------- | ------------------------------- |
+| `clarify`       | Clarifier             | problem, solution, users        |
+| `intuition-fit` | Fit Intuition         | intuitionFit, supportTriples    |
+| `mvp`           | MVP minimal           | mvp                             |
+| `plan`          | Plan d’élaboration    | (analyse ; rarement des champs) |
+| `challenge`     | Stress-test optionnel | challenge, risks                |
+
+API : `POST /api/brainstorm/elaborate`. Résultats = livrables intermédiaires (pas d’atom / pas de PR). Historique local : `brainstorm-history:{slug}`.
+
+**Skill autonome** (`intuition-box/intuition-ideation-skill`) : parcours 3 étapes Describe → Structure → Challenge, **ne publie pas**. Ne pas la fusionner avec cette skill opératoire. Import JSON optionnel : schéma `SkillIdeaImport` v1.
 
 Pour du **code / config / debug** du dépôt : garder le cadre Intuition **sans** forcer les 5 étapes si ce n’est pas pertinent.
 
@@ -88,16 +104,16 @@ type BrainstormDraft = {
     | "social-attestation"
     | "risk-detection"
     | "prediction-signal"
-    | "agent-memory"
-  problem: string
-  solution: string
-  users: string
-  intuitionFit: string
-  mvp: string
-  risks: string
-  challenge: string
-  supportTriples: string   // une ligne par triple suggéré
-}
+    | "agent-memory";
+  problem: string;
+  solution: string;
+  users: string;
+  intuitionFit: string;
+  mvp: string;
+  risks: string;
+  challenge: string;
+  supportTriples: string; // une ligne par triple suggéré
+};
 ```
 
 Stockage dapp : `localStorage` clé `brainstorm-draft:{slug}`.
@@ -148,12 +164,12 @@ Reformuler en un paragraphe ; faire confirmer. Extraire : **quoi**, **pour qui**
 
 ### 1b. Choisir un point d’entrée dapp
 
-| Intention utilisateur | Route dapp |
-|----------------------|------------|
-| Parcourir le catalogue | `/ideas` |
-| Idée au hasard | `/random` |
-| Nouveau projet par thème | `/brainstorm` → catégorie → `/brainstorm/new` |
-| Affiner une idée existante | `/brainstorm/idea/{slug}` |
+| Intention utilisateur      | Route dapp                                    |
+| -------------------------- | --------------------------------------------- |
+| Parcourir le catalogue     | `/ideas`                                      |
+| Idée au hasard             | `/random`                                     |
+| Nouveau projet par thème   | `/brainstorm` → catégorie → `/brainstorm/new` |
+| Affiner une idée existante | `/brainstorm/idea/{slug}`                     |
 
 ### 1c. Rechercher les similaires
 
@@ -291,11 +307,11 @@ Recap final (célébrer la fin) :
 
 ## Données & API (référence rapide)
 
-| Ressource | Usage |
-|-----------|--------|
+| Ressource                                       | Usage                 |
+| ----------------------------------------------- | --------------------- |
 | `GET /api/idea-state/{slug}?verifyOnchain=true` | État scoped / onchain |
-| `GET /api/auth/github/session` | Session OAuth |
-| `POST /api/publish/github-pr` | Création PR |
+| `GET /api/auth/github/session`                  | Session OAuth         |
+| `POST /api/publish/github-pr`                   | Création PR           |
 
 Détail : [references/dapp-api.md](references/dapp-api.md).
 
@@ -303,14 +319,14 @@ Détail : [references/dapp-api.md](references/dapp-api.md).
 
 ## Gestion des erreurs
 
-| Situation | Action |
-|-----------|--------|
-| Non connecté GitHub | Guider vers « Se connecter avec GitHub » ou `gh auth login` |
-| OAuth non configuré serveur | Mode manuel Markdown + lien éditeur |
-| Doublon fort (score ≥ 9) | Montrer les idées proches ; affiner ou fusionner |
+| Situation                     | Action                                                                     |
+| ----------------------------- | -------------------------------------------------------------------------- |
+| Non connecté GitHub           | Guider vers « Se connecter avec GitHub » ou `gh auth login`                |
+| OAuth non configuré serveur   | Mode manuel Markdown + lien éditeur                                        |
+| Doublon fort (score ≥ 9)      | Montrer les idées proches ; affiner ou fusionner                           |
 | Idée peu compatible Intuition | Être honnête ; proposer d’explorer le fit ou publier comme concept général |
-| GraphQL indisponible | Catalogue JSON + recherche GitHub seulement |
-| Atom déjà présent | Afficher IDs + explorer ; ne pas recréer |
+| GraphQL indisponible          | Catalogue JSON + recherche GitHub seulement                                |
+| Atom déjà présent             | Afficher IDs + explorer ; ne pas recréer                                   |
 
 ---
 
@@ -335,12 +351,12 @@ Détail : [references/dapp-api.md](references/dapp-api.md).
 
 ## Ressources
 
-| Fichier | Contenu |
-|---------|---------|
-| [references/dapp-workflow.md](references/dapp-workflow.md) | Routes, flux UI |
-| [references/brainstorm-template.md](references/brainstorm-template.md) | Champs, README PR |
-| [references/scoped-and-onchain.md](references/scoped-and-onchain.md) | Scoped, GraphQL |
-| [references/github-oauth.md](references/github-oauth.md) | OAuth par utilisateur |
-| [references/dapp-api.md](references/dapp-api.md) | Endpoints, scripts |
-| [INSTALL.md](INSTALL.md) | Claude, ChatGPT, Cursor |
-| `../intuition-ideation/SKILL.md` | Skill compagnon (5 étapes détaillées) |
+| Fichier                                                                | Contenu                               |
+| ---------------------------------------------------------------------- | ------------------------------------- |
+| [references/dapp-workflow.md](references/dapp-workflow.md)             | Routes, flux UI                       |
+| [references/brainstorm-template.md](references/brainstorm-template.md) | Champs, README PR                     |
+| [references/scoped-and-onchain.md](references/scoped-and-onchain.md)   | Scoped, GraphQL                       |
+| [references/github-oauth.md](references/github-oauth.md)               | OAuth par utilisateur                 |
+| [references/dapp-api.md](references/dapp-api.md)                       | Endpoints, scripts                    |
+| [INSTALL.md](INSTALL.md)                                               | Claude, ChatGPT, Cursor               |
+| `../intuition-ideation/SKILL.md`                                       | Skill compagnon (5 étapes détaillées) |

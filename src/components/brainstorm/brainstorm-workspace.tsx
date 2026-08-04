@@ -4,6 +4,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BrainstormReflectionPanel } from "@/components/brainstorm/brainstorm-reflection-panel";
+import { IdeationActionsPanel } from "@/components/brainstorm/ideation-actions-panel";
 import { IdeaStatePanel } from "@/components/brainstorm/idea-state-panel";
 import { PublishTabNav } from "@/components/brainstorm/publish-tab-nav";
 import type { IdeaFullState } from "@/lib/ideas/idea-state";
@@ -155,6 +156,16 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
               setDraft(next);
               setSaved(false);
             }}
+          />
+
+          <IdeationActionsPanel
+            idea={idea}
+            draft={draft}
+            onDraftChange={(next) => {
+              setDraft(next);
+              setSaved(false);
+            }}
+            onContinuePublish={() => setActiveTab("publish")}
           />
 
           <p className="text-sm text-[var(--muted)]">{ws.refineHint}</p>
