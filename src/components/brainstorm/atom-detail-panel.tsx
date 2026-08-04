@@ -2,7 +2,11 @@
 import Link from "next/link";
 import type { Idea } from "@/lib/ideas/schema";
 import type { IdeaOnchainState } from "@/lib/ideas/idea-state";
-import { getNetworkConfig, getPortalExplorerUrl } from "@/lib/intuition/config";
+import {
+  getNetworkConfig,
+  getPortalExplorerUrl,
+  networkExplorerAtomUrl,
+} from "@/lib/intuition/config";
 
 interface AtomDetailPanelProps {
   idea: Idea;
@@ -18,7 +22,7 @@ export function AtomDetailPanel({
   const config = getNetworkConfig();
   const portalHome = getPortalExplorerUrl(config.network);
   const explorerAtomUrl = onchain.atomId
-    ? `${config.explorer}/atom/${onchain.atomId}`
+    ? networkExplorerAtomUrl(onchain.atomId, config.network)
     : portalHome;
 
   return (

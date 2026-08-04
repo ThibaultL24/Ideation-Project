@@ -46,12 +46,12 @@ describe("getNetworkConfig explorer URLs", () => {
         "https://testnet.portal.intuition.systems/explore/home",
       );
       expect(networkExplorerAtomUrl("0xabc")).toBe(
-        "https://testnet.explorer.intuition.systems/atom/0xabc",
+        "https://testnet.portal.intuition.systems/explore/atom/0xabc",
       );
     });
   });
 
-  it("uses mainnet explorer when INTUITION_NETWORK=mainnet", () => {
+  it("uses mainnet portal atom URL when INTUITION_NETWORK=mainnet", () => {
     withNetwork("mainnet", () => {
       const config = getNetworkConfig();
       expect(config.network).toBe("mainnet");
@@ -61,7 +61,7 @@ describe("getNetworkConfig explorer URLs", () => {
         "https://portal.intuition.systems/explore/home",
       );
       expect(networkExplorerAtomUrl("0xabc")).toBe(
-        "https://explorer.intuition.systems/atom/0xabc",
+        "https://portal.intuition.systems/explore/atom/0xabc",
       );
     });
   });

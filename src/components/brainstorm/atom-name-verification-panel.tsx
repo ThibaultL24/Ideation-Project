@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { AtomNameVerification } from "@/lib/ideas/verify-atom-by-name";
-import { getNetworkConfig } from "@/lib/intuition/config";
+import { networkExplorerAtomUrl } from "@/lib/intuition/config";
 import { verificationStrings as s } from "@/lib/strings/publish";
 
 interface AtomNameVerificationPanelProps {
@@ -98,7 +98,6 @@ export function AtomNameVerificationPanel({
 
   if (projectName.trim().length < 2) return null;
 
-  const explorer = getNetworkConfig().explorer;
   const trimmedName = projectName.trim();
 
   if (loading) {
@@ -170,7 +169,7 @@ export function AtomNameVerificationPanel({
                 {match.coreTriplePresent ? s.coreTripleTag : ""}
               </p>
               <a
-                href={`${explorer}/atom/${match.termId}`}
+                href={networkExplorerAtomUrl(match.termId)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-1 inline-block text-[var(--accent)] hover:underline"

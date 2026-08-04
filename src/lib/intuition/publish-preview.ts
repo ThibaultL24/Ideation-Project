@@ -14,6 +14,7 @@ import type { Idea } from "@/lib/ideas/schema";
 import { createIntuitionClients, getNativeBalance } from "./client";
 import {
   BOUNTY_PREDICATE_LABEL,
+  getPortalAtomBaseUrl,
   INTUITION_PROTOCOL_OBJECT_LABEL,
   type IntuitionNetwork,
 } from "./config";
@@ -234,12 +235,12 @@ export async function previewOnchainPublish(params: {
     variantNeedsPublish,
     canPublish,
     blockers,
-    explorerBase: config.explorer,
+    explorerBase: getPortalAtomBaseUrl(config.network),
   };
 }
 
 export function formatExplorerAtomUrl(explorerBase: string, termId: Hex): string {
-  return `${explorerBase}/atom/${termId}`;
+  return `${explorerBase.replace(/\/$/, "")}/atom/${termId}`;
 }
 
 /** @deprecated Use formatExplorerAtomUrl */

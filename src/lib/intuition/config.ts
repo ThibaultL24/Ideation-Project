@@ -92,9 +92,16 @@ export function getExplorerUrl(
   return getNetworkConfig(network).explorer;
 }
 
+/** Atom pages live on the Intuition Portal, not the Blockscout chain explorer. */
+export function getPortalAtomBaseUrl(
+  network = readIntuitionNetworkEnv(),
+): string {
+  return getPortalExplorerUrl(network).replace(/\/home\/?$/, "");
+}
+
 export function networkExplorerAtomUrl(
   termId: string,
   network = readIntuitionNetworkEnv(),
 ): string {
-  return `${getExplorerUrl(network)}/atom/${termId}`;
+  return `${getPortalAtomBaseUrl(network)}/atom/${termId}`;
 }

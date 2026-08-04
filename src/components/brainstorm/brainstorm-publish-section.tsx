@@ -18,7 +18,10 @@ import { OnchainTermPreview } from "@/components/brainstorm/onchain-term-preview
 import type { OnchainPublishPreview } from "@/lib/intuition/publish-preview";
 import type { AtomNameVerification } from "@/lib/ideas/verify-atom-by-name";
 import { publishStrings as s } from "@/lib/strings/publish";
-import { getNetworkConfig } from "@/lib/intuition/config";
+import {
+  getNetworkConfig,
+  networkExplorerAtomUrl,
+} from "@/lib/intuition/config";
 
 interface DetailResponse {
   state: IdeaFullState;
@@ -378,7 +381,10 @@ export function BrainstormPublishSection({
       const explorerUrl =
         data.result?.explorerUrls?.ideaAtom ??
         (data.result?.ideaAtomId
-          ? `${onchainPreview?.explorerBase ?? getNetworkConfig().explorer}/atom/${data.result.ideaAtomId}`
+          ? networkExplorerAtomUrl(
+              data.result.ideaAtomId,
+              onchainPreview?.network ?? getNetworkConfig().network,
+            )
           : undefined);
 
       setOnchainStatus({
