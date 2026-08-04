@@ -11,7 +11,7 @@ import {
 import { formatEther, toHex, type Hex } from "viem";
 import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
 import type { Idea } from "@/lib/ideas/schema";
-import { createIntuitionClients, getNativeBalance } from "./client";
+import { createIntuitionClients } from "./client";
 import {
   BOUNTY_PREDICATE_LABEL,
   getPortalAtomBaseUrl,
@@ -36,10 +36,13 @@ export interface OnchainPublishPreview {
   network: IntuitionNetwork;
   nativeSymbol: string;
   multivault: Hex;
+  /** Always false for the dapp — users pay with their connected wallet. */
   walletConfigured: boolean;
   walletAddress?: string;
   walletBalanceWei?: string;
   walletBalanceFormatted?: string;
+  /** How the UI should pay for createAtom / createTriple. */
+  paymentMode: "user_wallet";
   coreTriple: [string, string, string];
   ideaIpfsUri?: string;
   steps: OnchainPublishStep[];
@@ -48,6 +51,10 @@ export interface OnchainPublishPreview {
   alreadyComplete: boolean;
   /** True when this brainstorm variant (IPFS fingerprint) is not on-chain yet. */
   variantNeedsPublish: boolean;
+  /**
+   * Protocol-side readiness (IPFS + term ids). Wallet connect / balance are
+   * checked in the browser before signing.
+   */
   canPublish: boolean;
   blockers: string[];
   explorerBase: string;
@@ -196,36 +203,15 @@ export async function previewOnchainPublish(params: {
     ideaStep?.willCreate || tripleStep?.willCreate,
   );
 
-  const walletConfigured = Boolean(clients.writeConfig && clients.account);
-  let walletBalanceWei: string | undefined;
-  let walletBalanceFormatted: string | undefined;
-
-  if (walletConfigured) {
-    const balance = await getNativeBalance(clients);
-    walletBalanceWei = balance.toString();
-    walletBalanceFormatted = formatEther(balance);
-    if (balance < BigInt(totalEstimatedCostWei)) {
-      blockers.push(
-        `Insufficient ${config.nativeSymbol}: have ${walletBalanceFormatted}, need ~${formatEther(BigInt(totalEstimatedCostWei))}.`,
-      );
-    }
-  } else {
-    blockers.push(
-      "INTUITION_PRIVATE_KEY is not configured on the server (32-byte hex 0x…).",
-    );
-  }
-
-  const canPublish =
-    variantNeedsPublish && walletConfigured && blockers.length === 0;
+  // Dapp users sign & pay with their own wallet. Server key is for scripts only.
+  const canPublish = variantNeedsPublish && blockers.length === 0;
 
   return {
     network: config.network,
     nativeSymbol: config.nativeSymbol,
     multivault,
-    walletConfigured,
-    walletAddress: clients.account,
-    walletBalanceWei,
-    walletBalanceFormatted,
+    walletConfigured: false,
+    paymentMode: "user_wallet",
     coreTriple: [params.idea.title, BOUNTY_PREDICATE_LABEL, "Intuition"],
     ideaIpfsUri,
     steps,

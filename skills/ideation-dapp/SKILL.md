@@ -70,7 +70,7 @@ Comme `intuition-ideation` : **ne pas précipiter**. Attendre la validation de l
 | 2 | Brainstorm | `/brainstorm/idea/[slug]` ou brouillon `draft-*` |
 | 3 | Challenge | champs `challenge`, `risks` + linter sémantique |
 | 4 | GitHub | section « Préparer & publier » (`#publication`) |
-| 5 | Intuition | **après merge PR** — pas de bouton onchain dans la dapp |
+| 5 | Intuition | onglet On-chain — l’utilisateur connecte son wallet, signe et paie |
 
 Pour du **code / config / debug** du dépôt : garder le cadre Intuition **sans** forcer les 5 étapes si ce n’est pas pertinent.
 

@@ -43,7 +43,7 @@ Full reference: **[`.env.example`](.env.example)** (commented for intuition-box 
 | `GITHUB_OAUTH_CLIENT_ID` / `SECRET` | GitHub OAuth App for user PRs |
 | `SESSION_SECRET` | Signs httpOnly session cookies (≥ 16 chars) |
 | `OPENAI_API_KEY` | AI brainstorm (optional if `ASSIST_ENABLED=false`) |
-| `INTUITION_PRIVATE_KEY` | Server wallet for on-chain publish (optional) |
+| `INTUITION_PRIVATE_KEY` | Optional — migration scripts only (dapp users pay with their wallet) |
 
 ### Network switch
 
@@ -212,7 +212,7 @@ See [`skills/ideation-dapp/README.md`](skills/ideation-dapp/README.md).
 - [ ] `GITHUB_TARGET_REPO=intuition-box/ideas`, `GITHUB_BASE_BRANCH=main`
 - [ ] `SESSION_SECRET` — strong random value
 - [ ] `OPENAI_API_KEY` — for AI assist
-- [ ] Fund server wallet with TRUST if using `INTUITION_PRIVATE_KEY`
+- [ ] Users fund their own wallets with TRUST to publish on-chain (no server key required for the UI)
 - [ ] Run `npm run env:check` before go-live
 
 ## License

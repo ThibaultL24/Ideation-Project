@@ -4,7 +4,7 @@ export const publishStrings = {
   kicker: "Prepare & publish",
   title: "GitHub & on-chain publication",
   lead:
-    "Open a PR on intuition-box/ideas, then attest this brainstorm variant on-chain. Each variant gets its own atom (unique IPFS + explorer link) even when the display title matches a catalog idea.",
+    "Open a PR on intuition-box/ideas, then attest on-chain with your own wallet (you pay the fees). Each variant gets its own atom even when the display title matches a catalog idea.",
   tabs: {
     overview: "Overview",
     github: "GitHub",
@@ -31,12 +31,17 @@ export const publishStrings = {
   copyMarkdown: "Copy Markdown",
   onchainTitle: "On-chain publication",
   onchainLead:
-    'Publish this brainstorm variant for "{title}" on {network}. Each publish uses your current draft and PR link to build a unique on-chain atom and core triple.',
+    'Publish this brainstorm variant for "{title}" on {network}. You connect your wallet, sign the transactions, and pay the {symbol} fees yourself.',
   estimatingCost: "Estimating cost…",
   estimatedCost: "Estimated cost",
-  serverWallet: "Server wallet",
-  configured: "Configured",
-  missing: "Missing",
+  yourWallet: "Your wallet",
+  walletConnected: "Connected",
+  walletMissing: "Connect wallet",
+  wrongNetwork: "Wrong network",
+  insufficientBalance: "Insufficient balance",
+  serverWallet: "Your wallet",
+  configured: "Connected",
+  missing: "Not connected",
   existingAtom: "This variant on-chain",
   previewUnavailable: "On-chain preview unavailable.",
   verifyOnchain: "Verify on-chain",
@@ -75,11 +80,15 @@ export const publishStrings = {
   ideaNotFound: "Idea not found for PR.",
   githubApiFailed: "GitHub API failed.",
   publishBlocked: "Publication blocked — atom already exists under this name.",
-  publishing: "Publishing on-chain…",
+  publishing: "Confirm in your wallet…",
   publishFailed: "On-chain publication failed.",
   alreadyComplete: "This brainstorm variant is already on-chain.",
-  publishSuccess: "On-chain publication succeeded.",
-  onchainApiUnreachable: "Could not reach the on-chain API.",
+  publishSuccess: "On-chain publication succeeded — paid from your wallet.",
+  onchainApiUnreachable: "Wallet publish failed.",
+  connectWalletFirst: "Connect your wallet above, then try again.",
+  switchNetworkFirst: "Switch to the Intuition network in your wallet, then try again.",
+  needFunds:
+    "Your wallet needs about {cost} {symbol} (plus a little gas) to publish.",
 } as const;
 
 export const verificationStrings = {

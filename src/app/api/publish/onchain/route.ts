@@ -2,8 +2,12 @@
 import { NextResponse } from "next/server";
 import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
 import { resolvePublishIdea } from "@/lib/ideas/resolve-publish-idea";
-import { publishIdeaOnchain } from "@/lib/intuition/publish-idea";
+import { publishIdeaWithWriteConfig } from "@/lib/intuition/publish-execute";
 
+/**
+ * Preview / dry-run only. Real publishes are signed in the browser with the
+ * user's wallet (see BrainstormPublishSection + publishIdeaWithWriteConfig).
+ */
 export async function POST(request: Request) {
   const body = (await request.json()) as {
     slug?: string;
@@ -20,34 +24,33 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Idea not found" }, { status: 404 });
   }
 
+  if (!body.dryRun) {
+    return NextResponse.json(
+      {
+        mode: "user_wallet_required",
+        error:
+          "On-chain publish must be signed by your connected wallet in the browser.",
+        hint: "Connect a wallet on the On-chain tab, switch to Intuition, then publish. The server no longer broadcasts with INTUITION_PRIVATE_KEY.",
+      },
+      { status: 400 },
+    );
+  }
+
   try {
-    const result = await publishIdeaOnchain({
+    const result = await publishIdeaWithWriteConfig({
       idea,
       draft: body.draft,
       githubBlobUrl: body.githubBlobUrl,
-      dryRun: body.dryRun,
+      dryRun: true,
     });
 
-    if (body.dryRun) {
-      return NextResponse.json({ mode: "dry_run", result });
-    }
-
-    if (result.mode === "already_complete") {
-      return NextResponse.json({
-        mode: "already_complete",
-        message: "Idea atom and core triple already exist on-chain.",
-        result,
-      });
-    }
-
-    return NextResponse.json({ mode: "published", result });
+    return NextResponse.json({ mode: "dry_run", result });
   } catch (error) {
     return NextResponse.json(
       {
         mode: "not_published",
         error: error instanceof Error ? error.message : String(error),
-        hint:
-          "Requires INTUITION_PRIVATE_KEY (server wallet), INTUITION_NETWORK, and enough tTRUST/TRUST. Use GET /api/publish/onchain/preview?slug=… to inspect costs first.",
+        hint: "Use POST /api/publish/onchain/preview to inspect costs, then publish from the connected wallet.",
       },
       { status: 502 },
     );

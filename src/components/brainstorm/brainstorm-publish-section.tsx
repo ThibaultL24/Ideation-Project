@@ -22,6 +22,9 @@ import {
   getNetworkConfig,
   networkExplorerAtomUrl,
 } from "@/lib/intuition/config";
+import { publishIdeaWithWriteConfig } from "@/lib/intuition/publish-execute";
+import { useIntuitionWallet } from "@/hooks/use-intuition-wallet";
+import { formatEther } from "viem";
 
 interface DetailResponse {
   state: IdeaFullState;
@@ -146,6 +149,17 @@ export function BrainstormPublishSection({
 }: BrainstormPublishSectionProps) {
   const pathname = usePathname();
   const isDraft = idea.slug.startsWith("draft-");
+  const {
+    isConnected,
+    isOnTargetChain,
+    canTransact,
+    walletClient,
+    publicClient,
+    multiVaultAddress,
+    balance,
+    balanceSymbol,
+    ensureTargetChain,
+  } = useIntuitionWallet();
   const [activeTab, setActiveTab] = useState<PublishTab>("overview");
   const [state, setState] = useState<IdeaFullState | null>(null);
   const [loading, setLoading] = useState(!isDraft);
@@ -345,53 +359,78 @@ export function BrainstormPublishSection({
     });
   }
 
+  const estimatedCostWei = onchainPreview
+    ? BigInt(onchainPreview.totalEstimatedCostWei)
+    : BigInt(0);
+  const hasEnoughBalance =
+    !onchainPreview?.variantNeedsPublish ||
+    (balance != null && balance.value >= estimatedCostWei);
+
   async function publishOnchain() {
     setOnchainStatus({ state: "loading", label: s.publishing });
 
     try {
-      const res = await fetch("/api/publish/onchain", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          slug: idea.slug,
-          idea,
-          draft,
-          githubBlobUrl: githubAttestationUrl,
-        }),
-      });
-      const data = (await res.json()) as {
-        mode?: string;
-        result?: {
-          explorerUrls?: { ideaAtom?: string };
-          ideaAtomId?: string;
-        };
-        error?: string;
-        hint?: string;
-      };
-
-      if (!res.ok) {
+      if (!isConnected) {
         setOnchainStatus({
           state: "error",
           label: s.publishFailed,
-          detail: [data.error, data.hint].filter(Boolean).join(" "),
+          detail: s.connectWalletFirst,
         });
         return;
       }
 
-      const explorerUrl =
-        data.result?.explorerUrls?.ideaAtom ??
-        (data.result?.ideaAtomId
-          ? networkExplorerAtomUrl(
-              data.result.ideaAtomId,
-              onchainPreview?.network ?? getNetworkConfig().network,
+      await ensureTargetChain();
+
+      if (!walletClient?.account || !publicClient || !multiVaultAddress) {
+        setOnchainStatus({
+          state: "error",
+          label: s.publishFailed,
+          detail: s.connectWalletFirst,
+        });
+        return;
+      }
+
+      if (onchainPreview?.variantNeedsPublish && !hasEnoughBalance) {
+        setOnchainStatus({
+          state: "error",
+          label: s.publishFailed,
+          detail: s.needFunds
+            .replace(
+              "{cost}",
+              onchainPreview?.totalEstimatedCostFormatted ?? "?",
             )
-          : undefined);
+            .replace(
+              "{symbol}",
+              onchainPreview?.nativeSymbol ?? balanceSymbol,
+            ),
+        });
+        return;
+      }
+
+      const writeConfig = {
+        address: multiVaultAddress,
+        publicClient,
+        walletClient,
+      };
+
+      const result = await publishIdeaWithWriteConfig({
+        idea,
+        draft,
+        githubBlobUrl: githubAttestationUrl,
+        writeConfig,
+        network: onchainPreview?.network ?? getNetworkConfig().network,
+        preview: onchainPreview ?? undefined,
+      });
+
+      const explorerUrl =
+        result.explorerUrls.ideaAtom ??
+        networkExplorerAtomUrl(result.ideaAtomId, result.network);
 
       setOnchainStatus({
         state: "ok",
         label:
-          data.mode === "already_complete" ? s.alreadyComplete : s.publishSuccess,
-        detail: data.result?.ideaAtomId,
+          result.mode === "already_complete" ? s.alreadyComplete : s.publishSuccess,
+        detail: result.ideaAtomId,
         explorerUrl,
       });
 
@@ -404,17 +443,52 @@ export function BrainstormPublishSection({
           setState(stateData.state);
         }
       }
+
+      if (onchainPreview) {
+        setOnchainPreview({
+          ...onchainPreview,
+          alreadyComplete: true,
+          variantNeedsPublish: false,
+          canPublish: false,
+          steps: onchainPreview.steps.map((step) => ({
+            ...step,
+            exists: true,
+            willCreate: false,
+            estimatedCostWei: "0",
+          })),
+          totalEstimatedCostWei: "0",
+          totalEstimatedCostFormatted: formatEther(BigInt(0)),
+        });
+      }
     } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      const detail = /switch|chain|network/i.test(message)
+        ? s.switchNetworkFirst
+        : message;
       setOnchainStatus({
         state: "error",
         label: s.onchainApiUnreachable,
-        detail: err instanceof Error ? err.message : String(err),
+        detail,
       });
     }
   }
 
   const canPublishOnchain =
-    Boolean(onchainPreview?.canPublish) && !onchainPreviewLoading;
+    !onchainPreviewLoading &&
+    Boolean(onchainPreview) &&
+    (Boolean(onchainPreview?.alreadyComplete) ||
+      (Boolean(onchainPreview?.canPublish) &&
+        canTransact &&
+        isOnTargetChain &&
+        hasEnoughBalance));
+
+  const walletStatusLabel = !isConnected
+    ? s.walletMissing
+    : !isOnTargetChain
+      ? s.wrongNetwork
+      : !hasEnoughBalance && onchainPreview?.variantNeedsPublish
+        ? s.insufficientBalance
+        : s.walletConnected;
 
   return (
     <section
@@ -434,7 +508,8 @@ export function BrainstormPublishSection({
           >
             intuition-box/ideas
           </a>
-          , then on-chain attestation for this brainstorm variant (unique atom + core triple per draft / PR link).
+          , then attest on-chain with your wallet (you sign and pay TRUST / tTRUST for this
+          variant’s atom + core triple).
         </p>
       </div>
 
@@ -512,7 +587,11 @@ export function BrainstormPublishSection({
               <p className="mt-1 text-sm text-[var(--muted)]">
                 {s.onchainLead
                   .replace("{title}", idea.title)
-                  .replace("{network}", onchainPreview?.network ?? "testnet")}
+                  .replace("{network}", onchainPreview?.network ?? "testnet")
+                  .replace(
+                    "{symbol}",
+                    onchainPreview?.nativeSymbol ?? balanceSymbol,
+                  )}
               </p>
             </div>
 
@@ -528,10 +607,8 @@ export function BrainstormPublishSection({
                   </p>
                 </div>
                 <div className="rounded-lg bg-[var(--background)] p-3">
-                  <p className="text-xs text-[var(--muted)]">{s.serverWallet}</p>
-                  <p className="font-medium">
-                    {onchainPreview.walletConfigured ? s.configured : s.missing}
-                  </p>
+                  <p className="text-xs text-[var(--muted)]">{s.yourWallet}</p>
+                  <p className="font-medium">{walletStatusLabel}</p>
                 </div>
                 <div className="rounded-lg bg-[var(--background)] p-3">
                   <p className="text-xs text-[var(--muted)]">{s.existingAtom}</p>
