@@ -25,6 +25,11 @@ const STOP_WORDS = new Set([
   "sur",
   "pour",
   "avec",
+  "dans",
+  "qui",
+  "que",
+  "est",
+  "sont",
   "app",
   "application",
   "dapp",
@@ -43,7 +48,56 @@ const STOP_WORDS = new Set([
   "mon",
   "ma",
   "mes",
+  // English filler common in long free-form intents
+  "that",
+  "this",
+  "these",
+  "those",
+  "can",
+  "could",
+  "would",
+  "should",
+  "their",
+  "there",
+  "them",
+  "they",
+  "then",
+  "than",
+  "each",
+  "from",
+  "with",
+  "into",
+  "about",
+  "which",
+  "will",
+  "have",
+  "been",
+  "were",
+  "was",
+  "are",
+  "who",
+  "how",
+  "what",
+  "when",
+  "where",
+  "your",
+  "our",
+  "also",
+  "just",
+  "more",
+  "most",
+  "some",
+  "any",
+  "all",
+  "users",
+  "user",
+  "people",
+  "piece",
+  "information",
 ]);
+
+/** Minimum lexical score to count as nearby (~1 meaningful token hit after stop-word filtering). */
+export const NEARBY_MATCH_SCORE = 3;
 
 export const STRONG_MATCH_SCORE = 9;
 
@@ -69,16 +123,20 @@ function ideaSearchText(idea: Idea): string {
     .toLowerCase();
 }
 
-function scoreIdeaForPrompt(
+export function scoreIdeaForPrompt(
   idea: Idea,
   tokens: string[],
   category?: string,
 ): number {
+  const title = idea.title.toLowerCase();
+  const tagline = idea.tagline.toLowerCase();
   const text = ideaSearchText(idea);
   let score = 0;
 
   for (const token of tokens) {
-    if (text.includes(token)) score += 3;
+    if (title.includes(token)) score += 5;
+    else if (tagline.includes(token)) score += 3;
+    else if (text.includes(token)) score += 1;
   }
 
   if (category && idea.category === category) score += 6;
@@ -96,6 +154,28 @@ function scoreIdeaForPrompt(
   }
 
   return score;
+}
+
+/** Rank catalog ideas by lexical overlap; only keep scores ≥ minScore. */
+export function rankCatalogByPrompt(params: {
+  prompt: string;
+  category?: string;
+  minScore?: number;
+  limit?: number;
+}): Array<{ idea: Idea; score: number }> {
+  const tokens = tokenizePrompt(params.prompt.trim());
+  if (tokens.length === 0) return [];
+
+  const minScore = params.minScore ?? NEARBY_MATCH_SCORE;
+  const ranked = loadNormalizedIdeas()
+    .map((idea) => ({
+      idea,
+      score: scoreIdeaForPrompt(idea, tokens, params.category),
+    }))
+    .filter((row) => row.score >= minScore)
+    .sort((a, b) => b.score - a.score);
+
+  return params.limit != null ? ranked.slice(0, params.limit) : ranked;
 }
 
 export interface CatalogSimilarMatch {
@@ -120,16 +200,13 @@ export async function findSimilarIdeas(params: {
   const prompt = params.prompt.trim();
   const tokens = tokenizePrompt(prompt);
   const limit = params.limit ?? 5;
-  const ideas = loadNormalizedIdeas();
 
-  const ranked = ideas
-    .map((idea) => ({
-      idea,
-      score: scoreIdeaForPrompt(idea, tokens, params.category),
-    }))
-    .filter((row) => row.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, limit);
+  const ranked = rankCatalogByPrompt({
+    prompt,
+    category: params.category,
+    minScore: NEARBY_MATCH_SCORE,
+    limit,
+  });
 
   const catalogMatches: CatalogSimilarMatch[] = await Promise.all(
     ranked.map(async (row) => ({

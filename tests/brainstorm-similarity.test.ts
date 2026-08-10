@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  NEARBY_MATCH_SCORE,
   STRONG_MATCH_SCORE,
   tokenizePrompt,
 } from "@/lib/ideas/brainstorm-similarity";
@@ -11,7 +12,8 @@ describe("brainstorm-similarity", () => {
     expect(tokens).not.toContain("veux");
   });
 
-  it("defines strong match threshold", () => {
-    expect(STRONG_MATCH_SCORE).toBeGreaterThanOrEqual(6);
+  it("defines nearby and strong match thresholds", () => {
+    expect(NEARBY_MATCH_SCORE).toBeGreaterThanOrEqual(3);
+    expect(STRONG_MATCH_SCORE).toBeGreaterThan(NEARBY_MATCH_SCORE);
   });
 });
