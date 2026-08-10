@@ -3,7 +3,10 @@
 export const ideationActionStrings = {
   sectionTitle: "What does your idea need before publication?",
   sectionLead:
-    "Choose where you need help. Every step improves the same Intuition proposal.",
+    "Each helper produces suggestions for the draft below. Apply them to pre-fill empty fields, then edit. Nothing is published from this step.",
+  howToUseTitle: "How to use a helper",
+  howToUse:
+    "1) Click Generate → 2) Read the analysis → 3) Keep the checkboxes you want → 4) Apply selected suggestions into the draft.",
   generate: "Generate",
   regenerating: "Generating…",
   regeneratingHint: "Keep this tab open — your draft stays saved locally.",
@@ -12,13 +15,14 @@ export const ideationActionStrings = {
   regenerate: "Regenerate",
   chooseAnother: "Choose another action",
   continuePublish: "Continue to publication",
-  fallbackUsed: "Offline helper used (AI unavailable). Review carefully before applying.",
+  fallbackUsed:
+    "Offline helper used (AI unavailable). Review carefully before applying.",
   openaiUsed: "Generated with AI assistance.",
   optionalChallenge: "Optional — best after a first elaboration.",
-  currentVersion: "Active version",
-  historyTitle: "Idea evolution",
+  currentVersion: "Active draft version",
+  historyTitle: "What changed in your draft",
   historyEmpty:
-    "No accepted changes yet — generate and apply a result to start the timeline.",
+    "No applied helpers yet. When you apply suggestions, versions appear here so you can see how the idea evolved.",
   conflictTitle: "Confirm replacements",
   conflictLead: "These fields already have content. Confirm before overwriting.",
   currentValue: "Current",
@@ -33,9 +37,11 @@ export const ideationActionStrings = {
     accepted: "Accepted",
     rejected: "Rejected",
   },
-  importTitle: "Already developed your idea with the Intuition Ideation Skill?",
-  importLead: "Paste your structured idea here to continue preparing it for publication.",
-  importPlaceholder: '{ "version": 1, "source": "intuition-ideation-skill", ... }',
+  importTitle: "Import from Intuition Ideation Skill (optional)",
+  importLead:
+    "If you already structured an idea in the conversational skill, paste the JSON here. Preview first — nothing is published automatically.",
+  importPlaceholder:
+    '{ "version": 1, "source": "intuition-ideation-skill", ... }',
   importPreview: "Preview import",
   importConfirm: "Import into draft",
   importCancel: "Cancel",

@@ -72,12 +72,14 @@ export function BrainstormReflectionPanel({
   }
 
   return (
-    <section className="space-y-5 rounded-xl border border-teal-500/25 bg-teal-950/10 p-5">
+    <section className="neon-card space-y-5 rounded-2xl p-5">
       <div>
         <h2 className="text-sm font-semibold">Reflection on this idea</h2>
-        <p className="mt-1 text-sm text-[var(--muted)]">
-          Convergent analysis of <strong className="text-white/85">{idea.title}</strong>{" "}
-          — no variants, no quiz. AI comments on the idea you selected.
+        <p className="mt-1 text-sm leading-relaxed text-[var(--muted)]">
+          Optional AI snapshot of <strong className="text-white/85">{idea.title}</strong>
+          : strengths, weaknesses, and catalog overlap. Use{" "}
+          <strong className="text-white/85">Apply to draft</strong> only if the
+          suggestions improve your proposal — you can skip this step entirely.
         </p>
       </div>
 
@@ -149,14 +151,14 @@ export function BrainstormReflectionPanel({
             <button
               type="button"
               onClick={() => applyDraft(false)}
-              className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
+              className="neon-btn rounded-lg px-4 py-2 text-sm font-medium"
             >
               Apply to draft
             </button>
             <button
               type="button"
               onClick={() => applyDraft(true)}
-              className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)]"
+              className="neon-btn-ghost rounded-lg border-[var(--cyan)] px-4 py-2 text-sm text-[var(--cyan)]"
             >
               Apply → Publish
             </button>

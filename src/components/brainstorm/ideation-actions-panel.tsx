@@ -213,12 +213,18 @@ export function IdeationActionsPanel({
     result && overwriteConfirmed ? listSuggestionConflicts(draft, result) : [];
 
   return (
-    <section className="space-y-5 rounded-xl border border-[var(--border)] bg-[var(--card)] p-5">
+    <section className="neon-card space-y-5 rounded-2xl p-5 md:p-6">
       <div>
-        <h2 className="text-lg font-semibold">{s.sectionTitle}</h2>
-        <p className="mt-1 text-sm text-[var(--muted)]">{s.sectionLead}</p>
+        <h2 className="text-lg font-semibold tracking-tight">{s.sectionTitle}</h2>
+        <p className="mt-1 text-sm leading-relaxed text-[var(--muted)]">{s.sectionLead}</p>
+        <div className="mt-3 rounded-lg border border-[rgba(78,234,213,0.2)] bg-[rgba(78,234,213,0.04)] px-3 py-2">
+          <p className="text-[10px] font-semibold uppercase tracking-wider text-[var(--cyan)]">
+            {s.howToUseTitle}
+          </p>
+          <p className="mt-1 text-xs leading-relaxed text-[var(--muted)]">{s.howToUse}</p>
+        </div>
         {history ? (
-          <p className="mt-2 text-xs text-[var(--muted)]">
+          <p className="mt-2 text-xs text-[var(--cyan)]/80">
             {s.currentVersion}: v{history.currentVersion || 1}
           </p>
         ) : null}
@@ -227,6 +233,7 @@ export function IdeationActionsPanel({
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {actions.map((action) => {
           const isSelected = selected === action.id;
+          const isGenerating = uiState === "generating" && isSelected;
           const disabled = uiState === "generating";
           return (
             <button
@@ -234,17 +241,15 @@ export function IdeationActionsPanel({
               type="button"
               disabled={disabled}
               onClick={() => void runAction(action.id)}
-              className={`rounded-lg border p-4 text-left transition disabled:opacity-50 ${
-                isSelected
-                  ? "border-[var(--accent)] bg-teal-950/30"
-                  : "border-[var(--border)] hover:border-[var(--accent)]"
-              }`}
+              className={`neon-card rounded-xl p-4 text-left disabled:opacity-50 ${
+                isSelected ? "neon-card-active" : ""
+              } ${isGenerating ? "neon-generating" : ""}`}
             >
               <span className="block text-sm font-semibold">{action.label}</span>
               <span className="mt-1 block text-xs text-[var(--muted)]">
                 {action.description}
               </span>
-              <span className="mt-2 block text-[11px] text-[var(--accent)]">
+              <span className="mt-2 block text-[11px] text-[var(--cyan-bright)]">
                 → {action.outcome}
               </span>
               {action.id === "challenge" ? (
@@ -252,8 +257,8 @@ export function IdeationActionsPanel({
                   {s.optionalChallenge}
                 </span>
               ) : null}
-              <span className="mt-3 inline-block text-xs font-medium text-[var(--foreground)]">
-                {uiState === "generating" && isSelected ? s.regenerating : s.generate}
+              <span className="mt-3 inline-block text-xs font-medium text-[var(--cyan)]">
+                {isGenerating ? s.regenerating : s.generate}
               </span>
             </button>
           );
@@ -267,13 +272,13 @@ export function IdeationActionsPanel({
       {error ? <p className="text-sm text-amber-200">{error}</p> : null}
 
       {result && (uiState === "generated" || uiState === "fallback") ? (
-        <div className="space-y-4 rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
+        <div className="neon-card neon-card-active space-y-4 rounded-xl p-4">
           <div className="flex flex-wrap items-start justify-between gap-2">
             <div>
               <h3 className="font-semibold">{result.title}</h3>
               <p className="mt-1 text-sm text-[var(--muted)]">{result.summary}</p>
             </div>
-            <span className="text-[10px] uppercase tracking-wide text-[var(--muted)]">
+            <span className="text-[10px] uppercase tracking-wide text-[var(--cyan)]">
               {uiState === "fallback" ? s.fallbackUsed : s.openaiUsed}
             </span>
           </div>
@@ -281,7 +286,7 @@ export function IdeationActionsPanel({
           <div className="space-y-3">
             {result.sections.map((section) => (
               <div key={section.id}>
-                <h4 className="text-xs font-semibold uppercase tracking-wide text-[var(--accent)]">
+                <h4 className="neon-kicker text-[10px] font-semibold uppercase">
                   {section.title}
                 </h4>
                 <p className="mt-1 whitespace-pre-wrap text-sm text-[var(--foreground)]">
@@ -300,7 +305,7 @@ export function IdeationActionsPanel({
                 return (
                   <li
                     key={`${suggestion.targetField}-${suggestion.proposedValue.slice(0, 24)}`}
-                    className="rounded-md border border-[var(--border)] p-3 text-sm"
+                    className="neon-card rounded-md p-3 text-sm"
                   >
                     <label className="flex cursor-pointer items-start gap-2">
                       <input
@@ -357,7 +362,7 @@ export function IdeationActionsPanel({
               <>
                 <button
                   type="button"
-                  className="rounded-lg bg-[var(--primary)] px-3 py-2 text-sm font-medium text-black"
+                  className="neon-btn rounded-lg px-3 py-2 text-sm font-medium"
                   onClick={() => void applySelected("empty-only")}
                 >
                   {overwriteConfirmed ? s.applyEmptyOnly : s.acceptSelected}
@@ -375,21 +380,21 @@ export function IdeationActionsPanel({
             ) : null}
             <button
               type="button"
-              className="rounded-lg border border-[var(--border)] px-3 py-2 text-sm"
+              className="neon-btn-ghost rounded-lg px-3 py-2 text-sm"
               onClick={() => void rejectResult()}
             >
               {s.rejectResult}
             </button>
             <button
               type="button"
-              className="rounded-lg border border-[var(--border)] px-3 py-2 text-sm"
+              className="neon-btn-ghost rounded-lg px-3 py-2 text-sm"
               onClick={() => selected && void runAction(selected)}
             >
               {s.regenerate}
             </button>
             <button
               type="button"
-              className="rounded-lg border border-[var(--border)] px-3 py-2 text-sm"
+              className="neon-btn-ghost rounded-lg px-3 py-2 text-sm"
               onClick={() => {
                 setResult(null);
                 setSelected(null);
@@ -400,7 +405,7 @@ export function IdeationActionsPanel({
             </button>
             <button
               type="button"
-              className="rounded-lg bg-[var(--accent)] px-3 py-2 text-sm font-medium text-black"
+              className="neon-btn rounded-lg px-3 py-2 text-sm font-medium"
               onClick={onContinuePublish}
             >
               {s.continuePublish} →
@@ -409,7 +414,7 @@ export function IdeationActionsPanel({
         </div>
       ) : null}
 
-      <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
+      <div className="neon-panel rounded-xl p-4">
         <h3 className="text-sm font-semibold">{s.historyTitle}</h3>
         {!history || history.versions.length === 0 ? (
           <p className="mt-2 text-xs text-[var(--muted)]">{s.historyEmpty}</p>
@@ -418,9 +423,9 @@ export function IdeationActionsPanel({
             {history.versions.slice(0, 8).map((version) => (
               <li
                 key={version.id}
-                className="rounded-md border border-[var(--border)] px-3 py-2 text-xs"
+                className="neon-card rounded-md px-3 py-2 text-xs"
               >
-                <span className="font-medium">
+                <span className="font-medium text-[var(--cyan-bright)]">
                   v{version.version} · {version.origin}
                 </span>
                 <span className="mt-0.5 block text-[var(--muted)]">
@@ -432,11 +437,11 @@ export function IdeationActionsPanel({
         )}
       </div>
 
-      <div className="rounded-lg border border-dashed border-[var(--border)] p-4">
-        <h3 className="text-sm font-semibold">{s.importTitle}</h3>
-        <p className="mt-1 text-xs text-[var(--muted)]">{s.importLead}</p>
+      <details className="rounded-xl border border-dashed border-[rgba(78,234,213,0.28)] bg-[rgba(78,234,213,0.03)] p-4">
+        <summary className="cursor-pointer text-sm font-semibold">{s.importTitle}</summary>
+        <p className="mt-2 text-xs text-[var(--muted)]">{s.importLead}</p>
         <textarea
-          className="mt-3 w-full rounded-lg border border-[var(--border)] bg-[var(--card)] p-3 font-mono text-xs"
+          className="neon-input mt-3 w-full rounded-lg border border-[var(--border)] bg-[var(--card)] p-3 font-mono text-xs"
           rows={4}
           placeholder={s.importPlaceholder}
           value={importText}
@@ -448,20 +453,20 @@ export function IdeationActionsPanel({
           </p>
         ) : null}
         {importPreview ? (
-          <div className="mt-3 rounded-md border border-[var(--border)] p-3 text-xs">
+          <div className="neon-card mt-3 rounded-md p-3 text-xs">
             <p className="font-medium">{importPreview.title}</p>
             <p className="mt-1 text-[var(--muted)]">{importPreview.summary}</p>
             <div className="mt-2 flex gap-2">
               <button
                 type="button"
-                className="rounded-md bg-[var(--primary)] px-2 py-1 text-black"
+                className="neon-btn rounded-md px-2 py-1 text-xs font-medium"
                 onClick={confirmImport}
               >
                 {s.importConfirm}
               </button>
               <button
                 type="button"
-                className="rounded-md border border-[var(--border)] px-2 py-1"
+                className="neon-btn-ghost rounded-md px-2 py-1 text-xs"
                 onClick={() => setImportPreview(null)}
               >
                 {s.importCancel}
@@ -471,13 +476,13 @@ export function IdeationActionsPanel({
         ) : (
           <button
             type="button"
-            className="mt-2 rounded-md border border-[var(--border)] px-3 py-1.5 text-xs"
+            className="neon-btn-ghost mt-2 rounded-md px-3 py-1.5 text-xs"
             onClick={previewImport}
           >
             {s.importPreview}
           </button>
         )}
-      </div>
+      </details>
     </section>
   );
 }

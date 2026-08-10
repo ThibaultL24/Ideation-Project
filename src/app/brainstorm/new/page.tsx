@@ -24,7 +24,7 @@ export default async function BrainstormNewPage({
         </p>
         <Link
           href="/brainstorm#free-form"
-          className="inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black"
+          className="inline-block neon-btn rounded-lg px-5 py-2.5 text-sm font-medium"
         >
           Start without a card →
         </Link>

@@ -138,20 +138,19 @@ export function AtomNameVerificationPanel({
 
   if (!verification) return null;
 
+  // Silence "name available" noise — only surface collisions / near-matches.
+  if (!verification.exactMatch && verification.matches.length === 0) {
+    return null;
+  }
+
   const tone = verification.exactMatch
     ? "border-amber-900/50 bg-amber-950/30 text-amber-100"
-    : verification.matches.length > 0
-      ? "border-sky-900/40 bg-sky-950/20 text-sky-100"
-      : "border-emerald-900/50 bg-emerald-950/30 text-emerald-100";
+    : "border-sky-900/40 bg-sky-950/20 text-sky-100";
 
   return (
     <div className={`rounded-lg border px-4 py-3 text-sm ${tone}`}>
       <p className="font-medium">
-        {verification.exactMatch
-          ? s.exactMatch
-          : verification.matches.length > 0
-            ? s.similarNames
-            : s.nameAvailable}
+        {verification.exactMatch ? s.exactMatch : s.similarNames}
       </p>
       <p className="mt-1 text-xs opacity-90">{verification.message}</p>
 

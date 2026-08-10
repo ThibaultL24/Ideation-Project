@@ -60,7 +60,7 @@ export default async function IdeaDetailPage({ params }: IdeaDetailPageProps) {
       <div className="flex flex-wrap gap-4">
         <Link
           href={`/brainstorm/idea/${idea.slug}`}
-          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+          className="neon-btn rounded-lg px-4 py-2 text-sm font-medium"
         >
           Brainstorm
         </Link>

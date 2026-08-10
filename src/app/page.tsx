@@ -85,13 +85,13 @@ export default async function HomePage() {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/brainstorm#free-form"
-            className="rounded-lg bg-[var(--primary)] px-6 py-3 text-sm font-medium text-black transition hover:bg-white"
+            className="neon-btn rounded-lg px-6 py-3 text-sm font-medium"
           >
             Start brainstorming →
           </Link>
           <Link
             href="/ideas"
-            className="rounded-lg border border-[var(--border)] px-6 py-3 text-sm text-[var(--foreground)] transition hover:border-[var(--accent)]"
+            className="neon-btn-ghost rounded-lg px-6 py-3 text-sm"
           >
             Browse catalog
           </Link>
@@ -120,10 +120,8 @@ export default async function HomePage() {
           {ENTRY_PATHS.map((path) => (
             <div
               key={path.title}
-              className={`flex flex-col rounded-2xl border p-6 md:p-8 ${
-                path.accent
-                  ? "border-[var(--accent)]/40 bg-[var(--accent)]/5"
-                  : "border-[var(--border)] bg-[var(--card)]"
+              className={`neon-card flex flex-col rounded-2xl p-6 md:p-8 ${
+                path.accent ? "neon-card-active" : ""
               }`}
             >
               <h3 className="text-lg font-semibold">{path.title}</h3>
@@ -133,17 +131,15 @@ export default async function HomePage() {
               <ul className="mt-4 flex-1 space-y-2 text-sm text-[var(--muted)]">
                 {path.bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-2">
-                    <span className="text-[var(--accent)]">·</span>
+                    <span className="text-[var(--cyan-bright)]">·</span>
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
               <Link
                 href={path.href}
-                className={`mt-6 inline-block w-fit rounded-lg px-5 py-2.5 text-sm font-medium transition ${
-                  path.accent
-                    ? "bg-[var(--accent)] text-black hover:opacity-90"
-                    : "border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--accent)]"
+                className={`mt-6 inline-block w-fit rounded-lg px-5 py-2.5 text-sm font-medium ${
+                  path.accent ? "neon-btn" : "neon-btn-ghost"
                 }`}
               >
                 {path.cta}
@@ -195,7 +191,7 @@ export default async function HomePage() {
         <div className="flex flex-wrap justify-center gap-4 pt-2">
           <Link
             href="/brainstorm"
-            className="rounded-lg bg-[var(--primary)] px-6 py-3 text-sm font-medium text-black transition hover:bg-white"
+            className="neon-btn rounded-lg px-6 py-3 text-sm font-medium"
           >
             Enter the flow →
           </Link>

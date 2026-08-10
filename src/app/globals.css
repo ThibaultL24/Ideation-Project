@@ -2,22 +2,31 @@
 @import "../styles/intuition-wallet.css";
 
 /*
- * Intuition theme — monochrome OKLCH base from 0xintuition/intuition-advanced-template,
- * plus our teal accent kept for links, active states and guidance.
+ * Hunch × Intuition theme
+ * Dark glass base + Corvus-style cyan neon (#4eead5) for cards, CTAs, focus.
  */
 :root {
-  --background: oklch(0.145 0 0);
+  --background: #050505;
   --foreground: oklch(0.985 0 0);
-  --card: oklch(1 0 0 / 0.045);
+  --card: oklch(1 0 0 / 0.04);
   --border: oklch(1 0 0 / 0.1);
   --muted: oklch(0.708 0 0);
-  --primary: oklch(0.922 0 0);
-  --accent: oklch(0.87 0.085 174);
+  /* Primary actions = cyan neon (never flat white) */
+  --primary: var(--cyan);
+
+  /* Neon cyan — shared with Corvus / Portal sea accent */
+  --cyan: #4eead5;
+  --cyan-bright: #70fff0;
+  --rgb-sea-accent: 78 234 213;
+  --accent: var(--cyan);
+  --accent-bright: var(--cyan-bright);
+  --accent-glow: rgba(78, 234, 213, 0.18);
+  --accent-glow-soft: rgba(78, 234, 213, 0.06);
+  --accent-border: rgba(78, 234, 213, 0.35);
 
   /* Wallet panel design tokens */
-  --rgb-sea-accent: 120 220 210;
-  --color-bg-elevated: oklch(0.18 0 0);
-  --color-bg-surface: oklch(0.145 0 0);
+  --color-bg-elevated: #0c0c0e;
+  --color-bg-surface: #050505;
   --color-border-strong: oklch(1 0 0 / 0.14);
   --color-border-subtle: oklch(1 0 0 / 0.08);
   --color-text-primary: var(--foreground);
@@ -25,7 +34,7 @@
   --color-text-muted: var(--muted);
   --color-accent: rgb(var(--rgb-sea-accent));
   --color-accent-soft: rgba(var(--rgb-sea-accent), 0.14);
-  --color-accent-strong: oklch(0.87 0.085 174);
+  --color-accent-strong: var(--cyan);
   --color-on-accent: oklch(0.145 0 0);
   --color-trust-medium: oklch(0.82 0.12 85);
   --color-trust-low: oklch(0.72 0.14 25);
@@ -47,10 +56,10 @@
 
 body {
   background-color: var(--background);
-  /* Signature halo: faint white glow up top, faint teal glow bottom-right. */
+  /* Near-black stage; cyan stays as a faint rim light, not a green wash */
   background-image:
-    radial-gradient(60rem 38rem at 50% -12%, oklch(1 0 0 / 0.06), transparent 60%),
-    radial-gradient(48rem 32rem at 88% 112%, oklch(0.87 0.085 174 / 0.05), transparent 65%);
+    radial-gradient(56rem 28rem at 50% -18%, oklch(1 0 0 / 0.04), transparent 62%),
+    radial-gradient(36rem 28rem at 100% 100%, rgba(78, 234, 213, 0.035), transparent 70%);
   background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -62,8 +71,135 @@ pre,
   font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
+::selection {
+  background: var(--cyan);
+  color: var(--background);
+}
+
 /* Glass effect for every panel built on the shared card token. */
 [class*="bg-[var(--card)]"] {
   backdrop-filter: blur(14px) saturate(1.15);
   -webkit-backdrop-filter: blur(14px) saturate(1.15);
+}
+
+/* —— Neon surfaces (Corvus / Portal inspired) —— */
+
+.neon-card {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: oklch(1 0 0 / 0.035);
+  backdrop-filter: blur(12px) saturate(1.1);
+  -webkit-backdrop-filter: blur(12px) saturate(1.1);
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.05);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease;
+}
+
+.neon-card:hover {
+  border-color: rgba(78, 234, 213, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(78, 234, 213, 0.08),
+    0 0 18px rgba(78, 234, 213, 0.1);
+}
+
+.neon-card-active {
+  border-color: rgba(78, 234, 213, 0.55);
+  background: oklch(1 0 0 / 0.05);
+  box-shadow:
+    0 0 0 1px rgba(78, 234, 213, 0.12),
+    0 0 16px rgba(78, 234, 213, 0.12);
+}
+
+.neon-card-soft {
+  border: 1px solid rgba(78, 234, 213, 0.22);
+  background: oklch(1 0 0 / 0.04);
+  box-shadow: none;
+}
+
+.neon-panel {
+  border: 1px solid var(--border);
+  background: oklch(1 0 0 / 0.045);
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.05);
+}
+
+.neon-kicker {
+  color: var(--cyan);
+  letter-spacing: 0.18em;
+  text-shadow: 0 0 10px rgba(78, 234, 213, 0.2);
+}
+
+.neon-btn {
+  border: 1px solid var(--cyan);
+  background: var(--cyan);
+  color: #050505;
+  box-shadow: 0 0 14px rgba(78, 234, 213, 0.14);
+  transition:
+    background 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+.neon-btn:hover:not(:disabled) {
+  background: var(--cyan-bright);
+  border-color: var(--cyan-bright);
+  box-shadow: 0 0 18px rgba(112, 255, 240, 0.2);
+}
+
+.neon-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.neon-btn-ghost {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  transition:
+    border-color 200ms ease,
+    color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.neon-btn-ghost:hover:not(:disabled) {
+  border-color: var(--accent-border);
+  color: var(--cyan-bright);
+  box-shadow: 0 0 10px rgba(78, 234, 213, 0.08);
+}
+
+.neon-input:focus {
+  border-color: var(--cyan) !important;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(78, 234, 213, 0.18);
+}
+
+.neon-tabs {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(5, 5, 5, 0.85);
+}
+
+.neon-tab-active {
+  background: rgba(78, 234, 213, 0.1);
+  color: var(--cyan-bright);
+  box-shadow: 0 0 0 1px rgba(78, 234, 213, 0.28);
+}
+
+@keyframes neon-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 1px rgba(78, 234, 213, 0.28);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(112, 255, 240, 0.45),
+      0 0 12px rgba(78, 234, 213, 0.16);
+  }
+}
+
+.neon-generating {
+  animation: neon-pulse 1.6s ease-in-out infinite;
 }

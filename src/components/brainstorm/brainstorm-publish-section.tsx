@@ -483,7 +483,7 @@ export function BrainstormPublishSection({
                 type="button"
                 onClick={() => void createGithubPr()}
                 disabled={!githubConnected}
-                className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black disabled:cursor-not-allowed disabled:opacity-50"
+                className="neon-btn rounded-lg px-4 py-2 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {s.openGithubPr}
               </button>
@@ -581,7 +581,7 @@ export function BrainstormPublishSection({
                 type="button"
                 onClick={() => void publishOnchain()}
                 disabled={!canPublishOnchain || onchainPreviewLoading}
-                className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
+                className="neon-btn rounded-lg px-4 py-2 text-sm font-medium disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {onchainPreview?.alreadyComplete ? s.verifyOnchain : s.publishOnchain}
               </button>

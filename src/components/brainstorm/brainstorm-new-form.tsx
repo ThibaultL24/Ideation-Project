@@ -76,7 +76,7 @@ export function BrainstormNewForm({ category }: BrainstormNewFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className="rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black disabled:opacity-50"
+          className="neon-btn rounded-lg px-4 py-2 text-sm font-medium"
         >
           {loading ? "Checking…" : "Check for similarities"}
         </button>
@@ -133,7 +133,7 @@ export function BrainstormNewForm({ category }: BrainstormNewFormProps) {
           {!blocked ? (
             <Link
               href={continueHref}
-              className="inline-block rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+              className="inline-block neon-btn rounded-lg px-4 py-2 text-sm font-medium"
             >
               Structure my idea →
             </Link>

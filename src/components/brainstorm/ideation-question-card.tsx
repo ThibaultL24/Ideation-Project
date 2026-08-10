@@ -42,7 +42,7 @@ export function IdeationQuestionCard({
           type="button"
           disabled={disabled || (!question.optional && value.trim().length < 8)}
           onClick={onContinue}
-          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white disabled:opacity-40"
+          className="neon-btn rounded-lg px-4 py-2 text-sm font-medium disabled:opacity-40"
         >
           Continue
         </button>

@@ -315,7 +315,7 @@ export function IdeationFlow() {
             type="button"
             disabled={loading || intent.trim().length < 10}
             onClick={() => void searchSimilar()}
-            className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white disabled:opacity-40"
+            className="neon-btn rounded-lg px-4 py-2 text-sm font-medium disabled:opacity-40"
           >
             {loading ? "Searching…" : "Find similar ideas"}
           </button>
@@ -338,8 +338,14 @@ export function IdeationFlow() {
         <>
           <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--muted)]">
             <span>
-              {similar.matchCount} similar idea
-              {similar.matchCount !== 1 ? "s" : ""} in the catalog
+              {similar.matchCount === 0
+                ? "No close catalog matches — your angle looks fresh"
+                : similar.matchCount === 1
+                  ? "1 nearby idea in the catalog"
+                  : `${similar.matchCount} nearby ideas in the catalog`}
+              {similar.matchCount > similar.cards.length
+                ? ` · showing top ${similar.cards.length}`
+                : null}
             </span>
             <button
               type="button"
@@ -367,7 +373,7 @@ export function IdeationFlow() {
             <button
               type="button"
               onClick={chooseNew}
-              className="mt-4 rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
+              className="mt-4 neon-btn rounded-lg px-4 py-2 text-sm font-medium"
             >
               Start from my idea →
             </button>
@@ -508,7 +514,7 @@ export function IdeationFlow() {
                 type="button"
                 onClick={() => void runChallenge()}
                 disabled={appDescription.trim().length < 20 || loading}
-                className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white disabled:opacity-40"
+                className="neon-btn rounded-lg px-4 py-2 text-sm font-medium disabled:opacity-40"
               >
                 Challenge my idea →
               </button>
@@ -607,7 +613,7 @@ export function IdeationFlow() {
                 type="button"
                 onClick={finalizeAndPrepare}
                 disabled={appDescription.trim().length < 20}
-                className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white disabled:opacity-40"
+                className="neon-btn rounded-lg px-4 py-2 text-sm font-medium disabled:opacity-40"
               >
                 Continue to publication →
               </button>

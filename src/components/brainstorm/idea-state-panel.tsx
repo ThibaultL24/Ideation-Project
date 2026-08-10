@@ -36,6 +36,8 @@ interface IdeaStatePanelProps {
   prompt: string;
   loadingOnchain: boolean;
   githubPrUrl?: string;
+  /** Hide duplicate title + navigation when embedded in the brainstorm workspace. */
+  compact?: boolean;
 }
 
 export function IdeaStatePanel({
@@ -43,6 +45,7 @@ export function IdeaStatePanel({
   prompt,
   loadingOnchain,
   githubPrUrl,
+  compact = false,
 }: IdeaStatePanelProps) {
   const [copied, setCopied] = useState(false);
   const action = ACTION_COPY[state.nextAction];
@@ -54,14 +57,20 @@ export function IdeaStatePanel({
   }
 
   return (
-    <div className="space-y-6 rounded-xl border border-[var(--border)] bg-[var(--card)] p-6">
-      <div>
-        <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
-          {state.category}
-        </p>
-        <h2 className="mt-1 text-2xl font-bold">{state.title}</h2>
-        <p className="mt-2 text-sm text-[var(--muted)]">{state.tagline}</p>
-      </div>
+    <div
+      className={`rounded-xl border border-[var(--border)] bg-[var(--card)] ${
+        compact ? "space-y-4 p-4" : "space-y-6 p-6"
+      }`}
+    >
+      {!compact ? (
+        <div>
+          <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
+            {state.category}
+          </p>
+          <h2 className="mt-1 text-2xl font-bold">{state.title}</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">{state.tagline}</p>
+        </div>
+      ) : null}
 
       <section className="grid gap-3 sm:grid-cols-3">
         <StatusBlock
@@ -96,53 +105,74 @@ export function IdeaStatePanel({
         />
       </section>
 
-      <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-4">
-        <h3 className="font-semibold text-[var(--accent)]">{action.title}</h3>
-        <p className="mt-1 text-sm text-[var(--muted)]">{action.description}</p>
+      <div className="rounded-lg border border-[var(--border)] bg-[var(--background)] p-3">
+        <h3 className="text-sm font-semibold text-[var(--accent)]">{action.title}</h3>
+        <p className="mt-1 text-xs text-[var(--muted)]">{action.description}</p>
       </div>
 
-      <div className="flex flex-wrap gap-3">
-        <Link
-          href={`/brainstorm/idea/${state.slug}`}
-          className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
-        >
-          Brainstorm
-        </Link>
-        <Link
-          href={`/brainstorm/idea/${state.slug}#publication`}
-          className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
-        >
-          Publish
-        </Link>
-        <Link
-          href={`/ideas/${state.slug}`}
-          className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
-        >
-          Catalog entry
-        </Link>
-        {!state.db.hasGithubPr ? (
-          <button
-            type="button"
-            onClick={() => void copyPrompt()}
-            className="rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-medium text-black transition hover:bg-white"
+      {!compact ? (
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href={`/brainstorm/idea/${state.slug}`}
+            className="neon-btn rounded-lg px-4 py-2 text-sm font-medium"
           >
-            {copied ? "Copied" : "Copy prompt"}
-          </button>
-        ) : null}
-        {githubPrUrl ? (
-          <a
-            href={githubPrUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            Brainstorm
+          </Link>
+          <Link
+            href={`/brainstorm/idea/${state.slug}#publication`}
+            className="rounded-lg border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] hover:bg-[var(--accent)]/10"
+          >
+            Publish
+          </Link>
+          <Link
+            href={`/ideas/${state.slug}`}
             className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
           >
-            View PR
-          </a>
-        ) : null}
-      </div>
+            Catalog entry
+          </Link>
+          {!state.db.hasGithubPr ? (
+            <button
+              type="button"
+              onClick={() => void copyPrompt()}
+              className="neon-btn rounded-lg px-4 py-2 text-sm font-medium"
+            >
+              {copied ? "Copied" : "Copy prompt"}
+            </button>
+          ) : null}
+          {githubPrUrl ? (
+            <a
+              href={githubPrUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-[var(--border)] px-4 py-2 text-sm hover:border-[var(--accent)]"
+            >
+              View PR
+            </a>
+          ) : null}
+        </div>
+      ) : (
+        <div className="flex flex-wrap gap-2">
+          <Link
+            href={`/ideas/${state.slug}`}
+            className="neon-btn-ghost rounded-lg px-3 py-1.5 text-xs"
+          >
+            Catalog entry
+          </Link>
+          {!state.db.hasGithubPr ? (
+            <button
+              type="button"
+              onClick={() => void copyPrompt()}
+              className="neon-btn-ghost rounded-lg px-3 py-1.5 text-xs"
+            >
+              {copied ? "Copied" : "Copy prompt"}
+            </button>
+          ) : null}
+        </div>
+      )}
 
-      {state.nextAction === "create_with_prompt" ||
-      state.nextAction === "brainstorm" ? (
+      {!compact &&
+      (state.nextAction === "create_with_prompt" ||
+        state.nextAction === "brainstorm") ? (
         <section>
           <h3 className="text-sm font-semibold">Suggested prompt</h3>
           <pre className="mt-2 max-h-48 overflow-auto rounded-lg bg-[var(--background)] p-4 text-xs text-[var(--muted)] whitespace-pre-wrap">

@@ -120,7 +120,7 @@ export function GithubAuthPanel({
       <button
         type="button"
         onClick={connect}
-        className="mt-3 rounded-lg bg-[var(--accent)] px-4 py-2 text-sm font-medium text-black"
+        className="mt-3 neon-btn rounded-lg px-4 py-2 text-sm font-medium"
       >
         {s.connectButton}
       </button>

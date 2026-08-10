@@ -13,7 +13,7 @@ interface AppShellProps {
 export function AppShell({ children }: AppShellProps) {
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[oklch(0.145_0_0_/_0.65)] backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-[#050505]/85 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-5xl flex-wrap items-center gap-4 px-4 py-4 text-sm md:gap-6">
           <Link
             href="/"
@@ -21,25 +21,34 @@ export function AppShell({ children }: AppShellProps) {
           >
             <HunchGlyph size={22} />
             Hunch
-            <span className="text-[10px] font-normal uppercase tracking-widest text-[var(--accent)]">
+            <span className="neon-kicker text-[10px] font-normal uppercase">
               Intuition
             </span>
           </Link>
-          <Link href="/ideas" className="text-[var(--muted)] hover:text-white">
+          <Link
+            href="/ideas"
+            className="text-[var(--muted)] transition hover:text-[var(--cyan-bright)]"
+          >
             Catalog
           </Link>
           <a
             href={EXPLORER_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[var(--muted)] hover:text-white"
+            className="text-[var(--muted)] transition hover:text-[var(--cyan-bright)]"
           >
             Explorer
           </a>
-          <Link href="/brainstorm" className="text-[var(--muted)] hover:text-white">
+          <Link
+            href="/brainstorm"
+            className="text-[var(--muted)] transition hover:text-[var(--cyan-bright)]"
+          >
             Brainstorm
           </Link>
-          <Link href="/random" className="text-[var(--muted)] hover:text-white">
+          <Link
+            href="/random"
+            className="text-[var(--muted)] transition hover:text-[var(--cyan-bright)]"
+          >
             Random
           </Link>
           <WalletHeaderSlot />

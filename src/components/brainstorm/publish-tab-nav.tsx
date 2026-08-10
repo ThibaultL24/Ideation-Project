@@ -15,7 +15,7 @@ export function PublishTabNav<T extends string>({
 }: PublishTabNavProps<T>) {
   return (
     <nav
-      className="flex flex-wrap gap-1 rounded-xl border border-[var(--border)] bg-[var(--background)] p-1"
+      className="neon-tabs flex flex-wrap gap-1 rounded-xl p-1"
       aria-label="Publication sections"
     >
       {tabs.map((tab) => {
@@ -27,8 +27,8 @@ export function PublishTabNav<T extends string>({
             onClick={() => onChange(tab.id)}
             className={`rounded-lg px-4 py-2 text-sm font-medium transition ${
               isActive
-                ? "bg-[var(--card)] text-[var(--foreground)] shadow-sm ring-1 ring-[var(--border)]"
-                : "text-[var(--muted)] hover:text-[var(--foreground)]"
+                ? "neon-tab-active"
+                : "text-[var(--muted)] hover:text-[var(--cyan-bright)]"
             }`}
             aria-current={isActive ? "page" : undefined}
           >

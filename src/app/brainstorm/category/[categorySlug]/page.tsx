@@ -62,7 +62,7 @@ export default async function BrainstormCategoryPage({
         </p>
         <Link
           href={`/brainstorm/new?category=${encodeURIComponent(category)}`}
-          className="mt-4 inline-block rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-black"
+          className="mt-4 inline-block neon-btn rounded-lg px-5 py-2.5 text-sm font-medium"
         >
           Create a new idea
         </Link>
