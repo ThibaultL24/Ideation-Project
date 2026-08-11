@@ -138,6 +138,8 @@ export async function publishIdeaWithWriteConfig(params: {
     writeConfig,
     githubBlobUrl: params.githubBlobUrl,
     draft: params.draft,
+    // Preview already pinned on the server — reuse to avoid a second pin round-trip.
+    ipfsUri: preview.ideaIpfsUri,
   });
   if (ideaAtom.txHash) txHashes.push(ideaAtom.txHash);
 

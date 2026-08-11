@@ -25,10 +25,27 @@ function networkFromWriteConfig(writeConfig: WriteConfig): IntuitionNetwork {
   return chainId === 1155 ? "mainnet" : "testnet";
 }
 
+/** Pin on the server — browser must not see PINATA_JWT / INTUITION_PIN_API_KEY. */
 async function resolveIpfsUri(
   thing: PinThingMutationVariables,
   network: IntuitionNetwork,
+  existingUri?: string,
 ): Promise<string> {
+  if (existingUri?.startsWith("ipfs://")) return existingUri;
+
+  if (typeof window !== "undefined") {
+    const res = await fetch("/api/publish/onchain/pin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ thing }),
+    });
+    const data = (await res.json()) as { uri?: string; error?: string };
+    if (!res.ok || !data.uri?.startsWith("ipfs://")) {
+      throw new Error(data.error ?? `pinThing failed for "${thing.name}"`);
+    }
+    return data.uri;
+  }
+
   const uri = await pinThingForNetwork(getNetworkConfig(network), thing);
   if (!uri.startsWith("ipfs://")) {
     throw new Error(`pinThing failed for "${thing.name}"`);
@@ -40,10 +57,11 @@ export async function ensureAtomFromThing(params: {
   thing: PinThingMutationVariables;
   writeConfig: WriteConfig;
   depositWei?: bigint;
+  ipfsUri?: string;
 }): Promise<EnsureAtomResult> {
   const { thing, writeConfig, depositWei } = params;
   const network = networkFromWriteConfig(writeConfig);
-  const ipfsUri = await resolveIpfsUri(thing, network);
+  const ipfsUri = await resolveIpfsUri(thing, network, params.ipfsUri);
   const termId = calculateAtomId(toHex(ipfsUri)) as Hex;
 
   const exists = await multiVaultIsTermCreated(writeConfig, { args: [termId] });
@@ -71,11 +89,13 @@ export async function ensureAtomFromIdea(params: {
   githubBlobUrl?: string;
   draft?: Partial<BrainstormDraft> | null;
   depositWei?: bigint;
+  ipfsUri?: string;
 }): Promise<EnsureAtomResult> {
   return ensureAtomFromThing({
     thing: ideaToPinThing(params.idea, params.githubBlobUrl, params.draft),
     writeConfig: params.writeConfig,
     depositWei: params.depositWei,
+    ipfsUri: params.ipfsUri,
   });
 }
 
