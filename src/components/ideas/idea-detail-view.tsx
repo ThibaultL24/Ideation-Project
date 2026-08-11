@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { IdeaDetailAttachments } from "@/components/ideas/idea-detail-attachments";
-import { loadLocalCommunityIdeas } from "@/lib/ideas/community-catalog";
+import { loadLocalCommunityIdeas } from "@/lib/ideas/community-catalog-shared";
 import type { Idea } from "@/lib/ideas/schema";
 import { networkExplorerAtomUrl } from "@/lib/intuition/config";
 

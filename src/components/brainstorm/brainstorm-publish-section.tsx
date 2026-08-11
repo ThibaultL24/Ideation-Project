@@ -8,7 +8,7 @@ import type { IdeaFullState } from "@/lib/ideas/idea-state";
 import {
   buildPublishedCatalogIdea,
   upsertLocalCommunityIdea,
-} from "@/lib/ideas/community-catalog";
+} from "@/lib/ideas/community-catalog-shared";
 import {
   buildPublishPlan,
   type BrainstormDraft,

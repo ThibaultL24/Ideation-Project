@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   buildPublishedCatalogIdea,
   mergeCommunityIntoCatalog,
-} from "@/lib/ideas/community-catalog";
+} from "@/lib/ideas/community-catalog-shared";
 import type { Idea } from "@/lib/ideas/schema";
 
 const baseIdea: Idea = {

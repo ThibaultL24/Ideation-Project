@@ -6,7 +6,7 @@ import { useMemo, useState, useEffect } from "react";
 import {
   loadLocalCommunityIdeas,
   mergeCommunityIntoCatalog,
-} from "@/lib/ideas/community-catalog";
+} from "@/lib/ideas/community-catalog-shared";
 import type { Idea } from "@/lib/ideas/schema";
 
 interface IdeasCatalogListProps {
