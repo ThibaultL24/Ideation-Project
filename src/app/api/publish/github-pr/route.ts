@@ -1,4 +1,5 @@
 import type { NextRequest } from "next/server";
+import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 import type { BrainstormDraft } from "@/lib/ideas/publish-plan";
 import { resolvePublishIdea } from "@/lib/ideas/resolve-publish-idea";
@@ -10,6 +11,10 @@ import { getGithubOAuthConfig } from "@/lib/auth/github-oauth-config";
 import { readGithubSessionFromRequest } from "@/lib/auth/github-session";
 import { getGithubPublishEnv } from "@/lib/env/github-config";
 import { ensureUserIdeasFork } from "@/lib/github/user-fork";
+import {
+  buildPublishedCatalogIdea,
+  upsertCommunityIdea,
+} from "@/lib/ideas/community-catalog";
 import { buildPublishPlan } from "@/lib/ideas/publish-plan";
 
 function loginUrl(returnTo: string): string {
@@ -122,7 +127,19 @@ export async function POST(request: NextRequest) {
   });
 
   if (result.mode === "created") {
-    return NextResponse.json(result);
+    const catalogIdea = buildPublishedCatalogIdea({
+      idea,
+      draft: body.draft,
+      prUrl: result.prUrl,
+      githubPath: result.plan.githubPath,
+    });
+    try {
+      upsertCommunityIdea(catalogIdea);
+      revalidateTag("catalog-ideas");
+    } catch {
+      /* catalog write is best-effort — PR already succeeded */
+    }
+    return NextResponse.json({ ...result, catalogIdea });
   }
 
   if (result.mode === "manual") {

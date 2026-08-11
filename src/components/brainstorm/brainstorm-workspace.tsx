@@ -145,6 +145,7 @@ export function BrainstormWorkspace({ idea }: BrainstormWorkspaceProps) {
               state={fullState}
               prompt={statePrompt}
               loadingOnchain={loadingState}
+              githubPrUrl={idea.github?.prUrl ?? idea.github?.blobUrl}
             />
           ) : null}
 

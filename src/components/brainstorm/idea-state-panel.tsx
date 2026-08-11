@@ -46,6 +46,7 @@ export function IdeaStatePanel({
 }: IdeaStatePanelProps) {
   const [copied, setCopied] = useState(false);
   const action = ACTION_COPY[state.nextAction];
+  const hasPr = Boolean(githubPrUrl || state.db.hasGithubPr);
 
   async function copyPrompt() {
     await navigator.clipboard.writeText(prompt);
@@ -75,8 +76,8 @@ export function IdeaStatePanel({
         />
         <StatusBlock
           label="GitHub PR"
-          ok={state.db.hasGithubPr}
-          detail={state.db.hasGithubPr ? "PR on record" : "No PR detected"}
+          ok={hasPr}
+          detail={hasPr ? "PR on record" : "No PR detected"}
         />
         <StatusBlock
           label="On-chain"
@@ -120,7 +121,7 @@ export function IdeaStatePanel({
         >
           Catalog entry
         </Link>
-        {!state.db.hasGithubPr ? (
+        {!hasPr ? (
           <button
             type="button"
             onClick={() => void copyPrompt()}

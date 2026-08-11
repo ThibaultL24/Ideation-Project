@@ -6,6 +6,10 @@ import { usePathname } from "next/navigation";
 import type { Idea } from "@/lib/ideas/schema";
 import type { IdeaFullState } from "@/lib/ideas/idea-state";
 import {
+  buildPublishedCatalogIdea,
+  upsertLocalCommunityIdea,
+} from "@/lib/ideas/community-catalog";
+import {
   buildPublishPlan,
   type BrainstormDraft,
   type PublishPlan,
@@ -286,6 +290,7 @@ export function BrainstormPublishSection({
       error?: string;
       githubNewFileUrl?: string;
       loginUrl?: string;
+      catalogIdea?: Idea;
     };
     try {
       data = (await res.json()) as typeof data;
@@ -310,6 +315,15 @@ export function BrainstormPublishSection({
       } catch {
         /* ignore */
       }
+      const catalogIdea =
+        data.catalogIdea ??
+        buildPublishedCatalogIdea({
+          idea,
+          draft,
+          prUrl: data.prUrl,
+          githubPath: plan.githubPath,
+        });
+      upsertLocalCommunityIdea(catalogIdea);
       window.open(data.prUrl, "_blank", "noopener,noreferrer");
       setGithubPrUrl(data.prUrl);
       setStatus({

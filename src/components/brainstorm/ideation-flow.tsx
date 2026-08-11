@@ -51,20 +51,24 @@ export function IdeationFlow() {
   const currentQuestion: IdeationQuestion | undefined =
     IDEATION_QUESTIONS[questionIndex];
 
+  const fetchSimilar = useCallback(async (): Promise<PickRefineResponse | null> => {
+    const res = await fetch("/api/brainstorm/similar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ intent: intent.trim() }),
+    });
+    if (!res.ok) {
+      const err = (await res.json()) as { error?: string };
+      throw new Error(err.error ?? "Search failed");
+    }
+    return (await res.json()) as PickRefineResponse;
+  }, [intent]);
+
   const searchSimilar = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/brainstorm/similar", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ intent: intent.trim() }),
-      });
-      if (!res.ok) {
-        const err = (await res.json()) as { error?: string };
-        throw new Error(err.error ?? "Search failed");
-      }
-      const data = (await res.json()) as PickRefineResponse;
+      const data = await fetchSimilar();
       setSimilar(data);
       setPhase("similar");
     } catch (e) {
@@ -72,7 +76,7 @@ export function IdeationFlow() {
     } finally {
       setLoading(false);
     }
-  }, [intent]);
+  }, [fetchSimilar]);
 
   function chooseCatalog(card: IdeaFullState) {
     setSource("catalog");
@@ -93,6 +97,16 @@ export function IdeationFlow() {
     setAnswers([]);
     setCurrentAnswer("");
     setPhase("questions");
+    // Keep nearby catalog ideas visible under the questions for inspiration.
+    if (!similar && intent.trim().length >= 10) {
+      void fetchSimilar()
+        .then((data) => {
+          if (data) setSimilar(data);
+        })
+        .catch(() => {
+          /* non-blocking inspiration strip */
+        });
+    }
   }
 
   function persistAnswer(text: string, questionId: string) {
@@ -414,6 +428,44 @@ export function IdeationFlow() {
             onSkip={currentQuestion.optional ? handleSkipQuestion : undefined}
             disabled={loading}
           />
+
+          {similar && similar.cards.length > 0 ? (
+            <section className="space-y-3 border-t border-[var(--border)] pt-6">
+              <div>
+                <h3 className="text-sm font-semibold">
+                  Nearby catalog ideas
+                </h3>
+                <p className="mt-1 text-xs text-[var(--muted)]">
+                  {similar.matchCount} close match
+                  {similar.matchCount !== 1 ? "es" : ""} — use them as
+                  inspiration while you answer (your wording stays primary).
+                </p>
+              </div>
+              <ul className="space-y-2">
+                {similar.cards.map((card) => (
+                  <li key={card.slug}>
+                    <Link
+                      href={`/brainstorm/idea/${card.slug}`}
+                      className="block rounded-lg border border-[var(--border)] bg-[var(--card)] px-4 py-3 transition hover:border-[var(--accent)]"
+                    >
+                      <p className="text-xs uppercase tracking-wide text-[var(--accent)]">
+                        {card.category}
+                      </p>
+                      <p className="mt-1 text-sm font-medium text-white">
+                        {card.title}
+                      </p>
+                      {card.tagline ? (
+                        <p className="mt-1 line-clamp-2 text-xs text-[var(--muted)]">
+                          {card.tagline}
+                        </p>
+                      ) : null}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
           <button
             type="button"
             onClick={resetAll}

@@ -3,6 +3,10 @@ import { unstable_cache } from "next/cache";
 import type { Hex } from "viem";
 import { getNetworkConfig, type IntuitionNetwork } from "@/lib/intuition/config";
 import { fetchCatalogGraphSlice, type CatalogGraphSubject } from "@/lib/intuition/catalog-graph";
+import {
+  loadCommunityIdeas,
+  mergeCommunityIntoCatalog,
+} from "./community-catalog";
 import { getCategories, loadNormalizedIdeas } from "./load";
 import {
   invertAtomMap,
@@ -123,11 +127,12 @@ export function mergeCatalogGraphWithJson(params: {
 async function loadCatalogIdeasUncached(): Promise<CatalogLoadResult> {
   const network = getNetworkConfig().network;
   const jsonIdeas = loadNormalizedIdeas();
+  const communityIdeas = loadCommunityIdeas();
   const slice = await fetchCatalogGraphSlice(network);
 
   if (!slice || slice.subjects.length === 0) {
     return {
-      ideas: jsonIdeas,
+      ideas: mergeCommunityIntoCatalog(jsonIdeas, communityIdeas),
       source: "json-fallback",
       network,
       onchainCount: 0,
@@ -137,18 +142,21 @@ async function loadCatalogIdeasUncached(): Promise<CatalogLoadResult> {
   const termByCanonical = loadMigrationAtomMap(network);
   const canonicalByTerm = invertAtomMap(termByCanonical);
 
-  const ideas = mergeCatalogGraphWithJson({
+  const graphIdeas = mergeCatalogGraphWithJson({
     subjects: slice.subjects,
     jsonIdeas,
     canonicalByTerm,
     termByCanonical,
   });
 
+  // Keep graph-backed rows, then layer PR-published community ideas (incl. new free ideas).
+  const ideas = mergeCommunityIntoCatalog(graphIdeas, communityIdeas);
+
   return {
     ideas,
     source: "graph",
     network,
-    onchainCount: ideas.length,
+    onchainCount: graphIdeas.length,
   };
 }
 
@@ -157,7 +165,7 @@ export async function loadCatalogIdeas(): Promise<CatalogLoadResult> {
   const cached = unstable_cache(
     loadCatalogIdeasUncached,
     ["catalog-ideas", network],
-    { revalidate: 120 },
+    { revalidate: 120, tags: ["catalog-ideas"] },
   );
   return cached();
 }
