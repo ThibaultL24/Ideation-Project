@@ -130,7 +130,7 @@ Catalog migration uses `catalogIdeaToPinThing` (stable metadata). The dapp brain
 **Mainnet notes**
 
 - Set `INTUITION_NETWORK=mainnet` and `INTUITION_RPC_URL=https://rpc.intuition.systems/http`.
-- Mainnet GraphQL is read-only — IPFS pinning uses testnet GraphQL (`pinThingForNetwork`); atom term IDs stay identical.
+- IPFS pinning uses `https://pin.intuition.systems` with server secret `INTUITION_PIN_API_KEY` (read GraphQL endpoints no longer expose mutations).
 - Fund the server wallet with **~72 TRUST** for 362 ideas (~0.2 TRUST per idea: atom + triple).
 - Preflight: `npm run mainnet:preflight`
 - After migration: `npm run verify:graphql` and `npm run verify:migration`

@@ -92,18 +92,56 @@ export async function execGraphql<T>(
   return json.data as T;
 }
 
+/** Public gated pinning endpoint (read GraphQL endpoints no longer expose mutations). */
+export const INTUITION_PIN_API_URL = "https://pin.intuition.systems/v1/graphql";
+
+export function getIntuitionPinApiKey(): string | undefined {
+  return process.env["INTUITION_PIN_API_KEY"]?.trim() || undefined;
+}
+
+/**
+ * Pin Thing metadata to IPFS via Intuition's pin API.
+ * Requires server env `INTUITION_PIN_API_KEY` (never expose to the browser).
+ */
 export async function pinThing(
-  config: IntuitionNetworkConfig,
+  _config: IntuitionNetworkConfig,
   input: PinThingInput,
 ): Promise<string> {
+  const apiKey = getIntuitionPinApiKey();
+  if (!apiKey) {
+    throw new Error(
+      "Missing INTUITION_PIN_API_KEY — add it in Coolify (server secret) to enable IPFS pinning.",
+    );
+  }
+
   type Out = { pinThing?: { uri?: string | null } | null };
-  const data = await execGraphql<Out>(config.graphql, PIN_THING_MUTATION, {
-    name: input.name,
-    description: input.description,
-    image: input.image ?? "",
-    url: input.url ?? "",
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+    apikey: apiKey,
+  };
+
+  const response = await fetch(INTUITION_PIN_API_URL, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      query: PIN_THING_MUTATION,
+      variables: {
+        name: input.name,
+        description: input.description,
+        image: input.image ?? "",
+        url: input.url ?? "",
+      },
+    }),
   });
-  const uri = data.pinThing?.uri?.trim();
+
+  const json = (await response.json()) as GraphqlEnvelope<Out>;
+  if (!response.ok) {
+    throw new Error(`pinThing HTTP ${response.status}`);
+  }
+  if (json.errors?.length && (!json.data || Object.keys(json.data).length === 0)) {
+    throw new Error(json.errors.map((e) => e.message).join("; "));
+  }
+  const uri = json.data?.pinThing?.uri?.trim();
   if (!uri?.startsWith("ipfs://")) {
     throw new Error("pinThing returned no valid ipfs:// URI");
   }

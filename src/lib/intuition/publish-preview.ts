@@ -101,8 +101,9 @@ export async function previewOnchainPublish(params: {
     );
     ideaIpfsUri = uri;
     ideaTermId = calculateAtomId(toHex(uri)) as Hex;
-  } catch {
-    blockers.push(`IPFS pin failed for "${params.idea.title}".`);
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : "unknown pin error";
+    blockers.push(`IPFS pin failed for "${params.idea.title}": ${detail}`);
   }
 
   let predicateTermId = await lookupPredicateTermId(config);
