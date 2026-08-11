@@ -100,29 +100,26 @@ export function getIntuitionPinApiKey(): string | undefined {
 }
 
 /**
- * Pin Thing metadata to IPFS via Intuition's pin API.
+ * Pin Thing metadata to IPFS via Intuition's gated pin API.
  * Requires server env `INTUITION_PIN_API_KEY` (never expose to the browser).
  */
-export async function pinThing(
-  _config: IntuitionNetworkConfig,
+export async function pinThingWithIntuitionApi(
   input: PinThingInput,
 ): Promise<string> {
   const apiKey = getIntuitionPinApiKey();
   if (!apiKey) {
     throw new Error(
-      "Missing INTUITION_PIN_API_KEY — add it in Coolify (server secret) to enable IPFS pinning.",
+      "Missing INTUITION_PIN_API_KEY — add it in Coolify (server secret) to enable Intuition IPFS pinning.",
     );
   }
 
   type Out = { pinThing?: { uri?: string | null } | null };
-  const headers: Record<string, string> = {
-    "Content-Type": "application/json",
-    apikey: apiKey,
-  };
-
   const response = await fetch(INTUITION_PIN_API_URL, {
     method: "POST",
-    headers,
+    headers: {
+      "Content-Type": "application/json",
+      apikey: apiKey,
+    },
     body: JSON.stringify({
       query: PIN_THING_MUTATION,
       variables: {
@@ -146,6 +143,14 @@ export async function pinThing(
     throw new Error("pinThing returned no valid ipfs:// URI");
   }
   return uri;
+}
+
+/** @deprecated Prefer pinThingForNetwork — kept for scripts that call pinThing(config, input). */
+export async function pinThing(
+  _config: IntuitionNetworkConfig,
+  input: PinThingInput,
+): Promise<string> {
+  return pinThingWithIntuitionApi(input);
 }
 
 export interface AtomRow {

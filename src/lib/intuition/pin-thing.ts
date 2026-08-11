@@ -1,7 +1,8 @@
 // src/lib/intuition/pin-thing.ts
 import type { PinThingMutationVariables } from "@0xintuition/graphql";
 import type { IntuitionNetworkConfig } from "./config";
-import { pinThing } from "./graphql";
+import { getIntuitionPinApiKey, pinThingWithIntuitionApi } from "./graphql";
+import { getPinataJwt, pinThingWithPinata } from "./pinata-pin";
 
 function toPinInput(thing: PinThingMutationVariables) {
   return {
@@ -12,14 +13,33 @@ function toPinInput(thing: PinThingMutationVariables) {
   };
 }
 
+export type PinBackend = "intuition" | "pinata";
+
+export function resolvePinBackend(): PinBackend | null {
+  if (getIntuitionPinApiKey()) return "intuition";
+  if (getPinataJwt()) return "pinata";
+  return null;
+}
+
 /**
  * Pin structured atom metadata to IPFS before an on-chain write.
- * Uses https://pin.intuition.systems (INTUITION_PIN_API_KEY) — read GraphQL
- * endpoints are mutation-free; IPFS URIs are chain-agnostic.
+ * Prefers Intuition pin API; falls back to Pinata JWT for demos.
  */
 export async function pinThingForNetwork(
-  networkConfig: IntuitionNetworkConfig,
+  _networkConfig: IntuitionNetworkConfig,
   input: PinThingMutationVariables,
 ): Promise<string> {
-  return pinThing(networkConfig, toPinInput(input));
+  const payload = toPinInput(input);
+  const backend = resolvePinBackend();
+
+  if (backend === "intuition") {
+    return pinThingWithIntuitionApi(payload);
+  }
+  if (backend === "pinata") {
+    return pinThingWithPinata(payload);
+  }
+
+  throw new Error(
+    "No IPFS pin credential — set INTUITION_PIN_API_KEY or PINATA_JWT in Coolify (server secrets).",
+  );
 }
